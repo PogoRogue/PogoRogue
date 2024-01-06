@@ -11,3 +11,5 @@ item_swap = false;
 //game resolution
 res_w = camera_get_view_width(view_camera[0])*5;
 res_h = camera_get_view_height(view_camera[0])*5;
+
+audio_play_sound(snd_pause,0,false);

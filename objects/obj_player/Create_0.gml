@@ -285,6 +285,7 @@ state_chargejump = function() {
 }
 
 state_groundpound = function() {
+	
 	hspeed = hspeed * 0.9;
 	can_shoot = false;
 	if slam_speed < 15.9 { //15.9 because dont wanna glitch through 16px platforms
@@ -321,7 +322,7 @@ state_groundpound = function() {
 		can_rotate = true; //allow rotation again
 		vsp_basicjump = -8;
 		//switch states
-		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) { 
+		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
 				y += sign(vspeed);
 			}

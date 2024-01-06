@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 0.307875,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Enemies",
+    "path": "folders/Sounds/Enemies.yy",
   },
   "preload": false,
   "sampleRate": 44100,
