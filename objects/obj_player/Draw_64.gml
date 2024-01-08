@@ -68,7 +68,7 @@ if pickups_array[0].reload_on_bounce = false {
 		if pickups_array[0] != pickup_nothing {
 			//draw seconds left
 			draw_set_font(fnt_item_popup);
-			scr_Draw_Text_Outlined(32,104,ceil(pickups_array[0].cooldown_time/60),c_white);
+			scr_Draw_Text_Outlined(32,104,string(ceil((pickups_array[0].cooldown_time+6)/60)-1) + "." + string(ceil(pickups_array[0].cooldown_time/6)%10),c_white); 
 		}
 	}
 }else {
@@ -128,7 +128,7 @@ if pickups_array[1].reload_on_bounce = false {
 		if pickups_array[1] != pickup_nothing {
 			//draw seconds left
 			draw_set_font(fnt_item_popup);
-			scr_Draw_Text_Outlined(68,104,ceil(pickups_array[1].cooldown_time/60),c_white); 
+			scr_Draw_Text_Outlined(68,104,string(ceil((pickups_array[1].cooldown_time+6)/60)-1) + "." + string(ceil(pickups_array[1].cooldown_time/6)%10),c_white); 
 		}
 	}
 }else {

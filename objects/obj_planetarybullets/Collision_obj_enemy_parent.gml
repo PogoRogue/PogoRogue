@@ -1,5 +1,5 @@
 /// @description Damage enemy
-if(!other.is_dead && other.current_iframes <= 0) {
+if(!other.is_dead) {
 	other.hp -= (damage + (obj_player.damage_buff/10)) * other.bullet_defense;
 	other.red_frames = 10;
 	

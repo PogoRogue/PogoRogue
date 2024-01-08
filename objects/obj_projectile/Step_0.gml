@@ -44,6 +44,9 @@ if (gun_name = "Grenade Launcher") {
 //bounces
 //left
 if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0) {
+	while !place_meeting(x+sign(hspd),y,obj_ground) {
+		x += sign(hspd);
+	}
 	hspd *= -bounce_amount;
 	num_of_bounces -= 1;
 	if (gun_name = "Grenade Launcher") {
@@ -57,6 +60,9 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0) {
 
 //right
 if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0) {
+	while !place_meeting(x+sign(hspd),y,obj_ground) {
+		x += sign(hspd);
+	}
 	hspd *= -bounce_amount;
 	num_of_bounces -= 1;
 	if (gun_name = "Grenade Launcher") {
@@ -70,6 +76,9 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0) {
 
 //bottom
 if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0) {
+	while !place_meeting(x,y+sign(vspd),obj_ground) {
+		y += sign(vspd);
+	}
 	vspd *= -bounce_amount;
 	num_of_bounces -= 1;
 	if (gun_name = "Grenade Launcher") {
@@ -84,6 +93,9 @@ if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0) {
 //top
 if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0)
 or (place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and num_of_bounces > 0) {
+	while !place_meeting(x,y+sign(vspd),obj_ground) and !place_meeting(x,y+sign(vspd),obj_ground_oneway) {
+		y += sign(vspd);
+	}
 	vspd *= -bounce_amount;
 	num_of_bounces -= 1;
 	if (gun_name = "Grenade Launcher") {
@@ -115,15 +127,14 @@ if (gun_name = "Missile Launcher") {
 	
 	//rotate
 	if closest_enemy != noone {
+		num_of_bounces = 0;
 		damage = init_damage;
-		destroy_on_impact = false;
 		scr_Gradually_Turn(self.id,closest_enemy,45,1);
 		direction = image_angle;
 		if place_meeting(x,y,closest_enemy) {
 			instance_destroy();	
 		}
 	}else {
-		destroy_on_impact = true;
 		direction = image_angle;
 		
 		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces <= 0 {

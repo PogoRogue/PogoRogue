@@ -7,5 +7,12 @@ function scr_Buff_Replace() {
 				sold_out = true;
 			}
 		}
+	}else {
+		for (j = 0; j < array_length(global.all_buff_sprites); j++) {
+			if (sprite_index = global.all_buff_sprites[j] and global.all_buff_numbers[j] >= max_uses and max_uses != 0) {
+				sold_out = true;
+				instance_destroy();
+			}
+		}
 	}
 }
