@@ -1,7 +1,7 @@
 /// @description Update camera
 
 //Update destination
-if (instance_exists(follow) && !in_shop) {
+if (instance_exists(follow)) {
 	//update destination
 	xTo = follow.x;
 	yTo = follow.y - 32;

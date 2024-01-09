@@ -33,6 +33,3 @@ buff = 0; //buffer
 if !instance_exists(obj_control) {
 	instance_create_depth(x,y,depth,obj_control);
 }
-
-//state variable for being in the proc gen shop or not
-in_shop = false;
