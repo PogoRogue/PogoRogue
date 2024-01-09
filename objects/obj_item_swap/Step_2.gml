@@ -5,11 +5,13 @@ key_select = global.key_interact and global.use_keyboard or global.key_select;
 if selected = false and fade_away = false {
 	if key_left {
 		if select > 1 {
+			audio_play_sound(snd_menuNavigation,0,false);
 			select -= 1;
 		}
 		selected = true;
 	}
 	if key_right {
+		audio_play_sound(snd_menuNavigation,0,false);
 		if select < num_of_slots {
 			select += 1;
 		}
@@ -22,6 +24,7 @@ if selected = false and fade_away = false {
 }
 
 if key_select and fade_away = false {
+	audio_play_sound(snd_selectOption,0,false);
 	//slot 1
 	if select = 1 {
 		sprite_1 = sprite_new;

@@ -277,3 +277,11 @@ dead = hp <= 0;
 if(dead && current_iframes <= 0) {
 	game_restart(); // TODO: Handle death screen or whatever we want to do	
 }
+
+//One Heart Stresser
+if (hp <= 8) {
+	if !audio_is_playing(snd_oneHeart) {
+		audio_play_sound(snd_oneHeart,0,false);
+	}	
+}
+	

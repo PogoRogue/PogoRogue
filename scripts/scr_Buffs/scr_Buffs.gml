@@ -7,6 +7,7 @@ function scr_Buffs(){
 		with obj_player {
 			if hp < max_hp {
 				hp += 8;	
+				audio_play_sound(snd_heartPickup,0,false);
 			}
 		}
 	}
@@ -28,12 +29,14 @@ function scr_Buffs(){
 		with obj_player {
 			if armor_buff < max_armor_buff {
 				armor_buff += 1;
+				audio_play_sound(snd_ArmorHeart,0,false);
 			}
 		}
 	}
 	
 	buff_dmg = function(){
 		global.damage_buff += 1;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_max_ammo = function(){
@@ -41,14 +44,17 @@ function scr_Buffs(){
 			if gun_1.bullets_per_bounce < gun_1.init_bullets_per_bounce + gun_1.max_added_bullets {
 				gun_1.bullets_per_bounce += 1;
 				gun_1.current_bullets += 1;
+				audio_play_sound(snd_passivePowerup,0,false);
 			}
 			if gun_2.bullets_per_bounce < gun_2.init_bullets_per_bounce + gun_2.max_added_bullets and gun_2 != gun_1 {
 				gun_2.bullets_per_bounce += 1;
 				gun_2.current_bullets += 1;
+				audio_play_sound(snd_passivePowerup,0,false);
 			}
 			if gun_3.bullets_per_bounce < gun_3.init_bullets_per_bounce + gun_3.max_added_bullets and gun_3 != gun_1 and gun_3 != gun_2 {
 				gun_3.bullets_per_bounce += 1;
 				gun_3.current_bullets += 1;
+				audio_play_sound(snd_passivePowerup,0,false);
 			}
 		}
 	}
@@ -57,6 +63,7 @@ function scr_Buffs(){
 		with obj_player {
 			if max_hp < max_max_hp {
 				max_hp += 8;
+				audio_play_sound(snd_passivePowerup,0,false);
 			}
 			if hp < max_hp {
 				hp += 8;	

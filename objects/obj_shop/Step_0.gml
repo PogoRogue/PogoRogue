@@ -17,6 +17,7 @@ if cant_move = false {
 
 if selected_x = false {
 	if key_left and select % 2 = 0 {
+		audio_play_sound(snd_menuNavigation,0,false);
 		if select != 0 {
 			if refresh_button = false {
 				select -= 1;
@@ -26,6 +27,8 @@ if selected_x = false {
 		}
 		selected_x = true;
 	}else if key_right and select % 2 != 0 {
+		
+		audio_play_sound(snd_menuNavigation,0,false);
 		if refresh_button = false {
 			select += 1;
 		}
@@ -39,6 +42,7 @@ if selected_x = false {
 
 if selected_y = false {
 	if key_up and select > 2 {
+		audio_play_sound(snd_menuNavigation,0,false);
 		selected_y = true;
 		if refresh_button = true {
 			refresh_button = false;	
@@ -46,10 +50,12 @@ if selected_y = false {
 			select -= 2;	
 		}
 	}else if key_down and select < 7 {
+		audio_play_sound(snd_menuNavigation,0,false);
 		select += 2;	
 		selected_y = true;
 	}else if key_down {
 		if refresh_button = false {
+			audio_play_sound(snd_menuNavigation,0,false);
 			refresh_button = true;	
 		}
 	}
@@ -162,8 +168,13 @@ if select != 0 {
 		//sold out
 		if slot_items_array[select-1].sold_out = true {
 			sold_out = true;
+			if soundPlayed = false {
+				audio_play_sound(snd_unavailable,0,false);
+				soundPlayed = true;
+			}
 		}else {
 			sold_out = false;
+			soundPlayed = false;
 		}
 		
 	}else {
@@ -176,9 +187,11 @@ if select != 0 {
 //select item 
 if key_select {
 	if select != 0 and instance_exists(slot_items_array[select-1]) and refresh_button = false {
+		audio_play_sound(snd_selectOption,0,false);
 		last_select = select;
 		select = 0;
 	}else if select = 0 and refresh_button = false {
+		audio_play_sound(snd_selectOption,0,false);
 		select = last_select;
 		if global.num_of_coins >= round(slot_items_array[last_select-1].item_cost * global.sale) and slot_items_array[select-1].sold_out = false {
 			//item follow player
@@ -193,6 +206,7 @@ if key_select {
 			}
 		}
 	}else if refresh_button = true and refreshes_left > 0 {
+		audio_play_sound(snd_refreshShop,0,false);
 		if global.num_of_coins >= refresh_cost {
 			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth-1,obj_coin_spawner) {
 				num_of_coins = other.refresh_cost;

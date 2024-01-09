@@ -53,3 +53,7 @@ item_cost = 0;
 
 
 ii = 0;
+
+
+//bool to prevent looping sounds
+soundPlayed = false;
