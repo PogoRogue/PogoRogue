@@ -40,6 +40,7 @@ if keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_escape) || game
 		}
 		pause_surf_buffer = buffer_create(res_w * res_h * 4, buffer_fixed, 1);
 		buffer_get_surface(pause_surf_buffer, pause_surf, 0);
+		audio_play_sound(snd_pause,0,false);
 	}else { //unpause now
 		if item_swap = false {
 			pause = false;

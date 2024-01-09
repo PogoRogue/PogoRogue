@@ -23,7 +23,8 @@ if(is_grounded && !is_jumping) {
 }
 
 // When in range, jump towards the player
-if(!is_dead && distance_to_object(player) < jump_range) {	
+if(!is_dead && distance_to_object(player) < jump_range) {
+	
 	// Jump towards player
 	if (is_grounded) {
 		// Head towards the player
