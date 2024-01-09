@@ -412,6 +412,12 @@ state_shop = function() {
 	}
 }
 
+state_immobile = function() {
+	can_rotate = false;
+	can_shoot = false;
+	speed = 0;
+}
+
 state = state_free;
 #endregion
 

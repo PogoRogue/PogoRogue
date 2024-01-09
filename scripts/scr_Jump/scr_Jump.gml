@@ -60,4 +60,16 @@ function scr_Jump(add_to_jump){
 			bounce_sound = not bounce_sound;
 		}
 	}
+	
+	//spring
+	if place_meeting(x,y-vspeed,obj_spring) {
+		if instance_place(x,y-vspeed,obj_spring).state = instance_place(x,y-vspeed,obj_spring).state_unsprung {
+			state = state_free;
+			vspeed = 0;
+			motion_add(90,12);
+		}
+		with instance_place(x,y-vspeed,obj_spring) {
+			state = state_springing;
+		}
+	}
 }
