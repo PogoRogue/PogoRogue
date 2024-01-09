@@ -89,10 +89,6 @@ if (global.allow_screenshake) {
 	gamepad_set_vibration(0, 0, 0);	
 }
 
-
-if(!in_shop)
-{
-	//update camera view
-	camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
-}
+//update camera view
+camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
 
