@@ -14,6 +14,7 @@ function scr_Buffs(){
 	
 	buff_lasersight = function() { 
 		laser_sight = true;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_planetarybullets = function() { 
@@ -73,52 +74,64 @@ function scr_Buffs(){
 	
 	buff_luck = function(){
 		global.luck += 10;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_pickybuyer = function(){
 		global.picky_buyer = true;	
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_bouncybullets = function() {
 		global.bouncy_bullets = 1;	
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_hotshells = function(){
 		global.hot_shells = true;	
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_combomaster = function(){
 		global.combo_master = true;	
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_blackfriday = function(){
 		global.sale = 0.85;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_triplethreat = function(){
 		with obj_player {
 			num_of_weapons = 3;
 			gun_array = [gun_1, gun_2, gun_3];
+			audio_play_sound(snd_passivePowerup,0,false);
 		}
 	}
 	
 	buff_flamingcoins = function(){
 		global.flaming_coins = true;	
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_combotime = function(){
 		global.combo_time_added += 100;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_sharpshooter = function(){
 		global.sharpshooter = true;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_coinsup = function(){
 		global.added_coins += 1;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_sharptip = function(){
 		obj_player.stomp_damage *= 2;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 }

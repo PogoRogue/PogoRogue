@@ -24,9 +24,9 @@ if selected = false and fade_away = false {
 }
 
 if key_select and fade_away = false {
-	audio_play_sound(snd_selectOption,0,false);
 	//slot 1
 	if select = 1 {
+		audio_play_sound(snd_selectOption,0,false);
 		sprite_1 = sprite_new;
 		sprite_new = spr_nothing;
 		item_name = "";
@@ -56,6 +56,7 @@ if key_select and fade_away = false {
 	}
 	//slot 2
 	if select = 2 {
+		audio_play_sound(snd_selectOption,0,false);
 		sprite_2 = sprite_new;
 		sprite_new = spr_nothing;
 		item_name = "";
@@ -78,6 +79,7 @@ if key_select and fade_away = false {
 	}
 	//slot 3
 	if select = 3 and num_of_slots > 3 {
+		audio_play_sound(snd_selectOption,0,false);
 		sprite_3 = sprite_new;
 		sprite_new = spr_nothing;
 		item_name = "";
@@ -95,6 +97,7 @@ if key_select and fade_away = false {
 	}
 	//cancel
 	if select = num_of_slots {
+		audio_play_sound(snd_unavailable,0,false);
 		with obj_pause {
 			item_swap = false;
 			paused_outside = true;	

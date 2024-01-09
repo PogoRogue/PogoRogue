@@ -169,7 +169,8 @@ if select != 0 {
 		if slot_items_array[select-1].sold_out = true {
 			sold_out = true;
 			if soundPlayed = false {
-				audio_play_sound(snd_unavailable,0,false);
+				//temporarily disabled
+				//audio_play_sound(snd_unavailable,0,false);
 				soundPlayed = true;
 			}
 		}else {
@@ -187,11 +188,14 @@ if select != 0 {
 //select item 
 if key_select {
 	if select != 0 and instance_exists(slot_items_array[select-1]) and refresh_button = false {
-		audio_play_sound(snd_selectOption,0,false);
+		if slot_items_array[select-1].sold_out = false {
+			audio_play_sound(snd_selectOption,0,false);
+		}else {
+			audio_play_sound(snd_unavailable,0,false);
+		}
 		last_select = select;
 		select = 0;
 	}else if select = 0 and refresh_button = false {
-		audio_play_sound(snd_selectOption,0,false);
 		select = last_select;
 		if global.num_of_coins >= round(slot_items_array[last_select-1].item_cost * global.sale) and slot_items_array[select-1].sold_out = false {
 			//item follow player
@@ -204,6 +208,8 @@ if key_select {
 					other.cant_move = true;
 				}
 			}
+		}else {
+			audio_play_sound(snd_unavailable,0,false);	
 		}
 	}else if refresh_button = true and refreshes_left > 0 {
 		audio_play_sound(snd_refreshShop,0,false);
@@ -233,6 +239,7 @@ if key_select {
 
 //if item canceled on item swap pop up
 if recreated_bought_item = true {
+	audio_play_sound(snd_unavailable,0,false);
 	if (select-1) % 2 = 0 {
 		xx = 272;
 	}else {

@@ -302,6 +302,7 @@ state_groundpound = function() {
 			audio_play_sound(snd_groundpound,0,false);
 			stomp_damage = 8;
 			soundPlayed = false;
+		}
 	}
 }
 
