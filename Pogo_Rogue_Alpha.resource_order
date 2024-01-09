@@ -9,6 +9,7 @@
     {"name":"Weapons","order":2,"path":"folders/Sounds/Weapons.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"obj_player_start","order":1,"path":"objects/obj_player_start/obj_player_start.yy",},
     {"name":"snd_enemyJump","order":1,"path":"sounds/snd_enemyJump/snd_enemyJump.yy",},
     {"name":"snd_paintball","order":9,"path":"sounds/snd_paintball/snd_paintball.yy",},
     {"name":"snd_shotgun","order":11,"path":"sounds/snd_shotgun/snd_shotgun.yy",},
