@@ -7,6 +7,7 @@ function scr_Buffs(){
 		with obj_player {
 			if hp < max_hp {
 				hp += 8;	
+				audio_play_sound(snd_heartPickup,0,false);
 			}
 		}
 	}
@@ -28,6 +29,7 @@ function scr_Buffs(){
 		with obj_player {
 			if armor_buff < max_armor_buff {
 				armor_buff += 1;
+				audio_play_sound(snd_ArmorHeart,0,false);
 			}
 		}
 	}
@@ -35,6 +37,7 @@ function scr_Buffs(){
 	buff_dmg = function(){
 		with obj_player {
 			damage_buff += 1;
+			audio_play_sound(snd_passivePowerup,0,false);
 		}
 	}
 	
@@ -42,6 +45,7 @@ function scr_Buffs(){
 		with obj_player {
 			if max_ammo_buff < max_max_ammo_buff {
 				max_ammo_buff += 1;
+				audio_play_sound(snd_passivePowerup,0,false);
 			}
 		}
 	}
@@ -50,6 +54,7 @@ function scr_Buffs(){
 		with obj_player {
 			if max_hp < max_max_hp {
 				max_hp += 8;
+				audio_play_sound(snd_passivePowerup,0,false);
 			}
 		}
 	}

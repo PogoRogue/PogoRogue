@@ -83,6 +83,9 @@ dead = false;
 enemies_killed = 0;
 enemies_required = 0;
 
+//Sound Bool for preventing looping sounds
+soundPlayed = false;
+
 //starting position
 if global.player_spawn_x = 0 and global.player_spawn_y = 0 {
 	global.player_spawn_x = x;
@@ -141,7 +144,7 @@ state_free = function() {
 	}
 	
 	//check for collision with ground x axis
-	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
+	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {	
 		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
 			x += sign(hspeed);
 		}
@@ -285,10 +288,16 @@ state_chargejump = function() {
 }
 
 state_groundpound = function() {
+	
 	hspeed = hspeed * 0.9;
 	can_shoot = false;
 	if slam_speed < 15.9 { //15.9 because dont wanna glitch through 16px platforms
 		slam_speed += 0.1;
+	}
+	
+	if soundPlayed = false {
+		audio_play_sound(snd_slamCharge,0,false);
+		soundPlayed = true;
 	}
 	//rise
 	if ground_pound_rise = true {
@@ -321,7 +330,7 @@ state_groundpound = function() {
 		can_rotate = true; //allow rotation again
 		vsp_basicjump = -8;
 		//switch states
-		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) { 
+		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
 				y += sign(vspeed);
 			}
@@ -331,6 +340,7 @@ state_groundpound = function() {
 			vspeed = 0;
 			scr_Screen_Shake(6, 15);
 			audio_play_sound(snd_groundpound,0,false);
+			soundPlayed = false;
 		}
 		
 	}
