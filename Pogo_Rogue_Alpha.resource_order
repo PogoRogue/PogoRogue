@@ -6,7 +6,6 @@
     {"name":"Boss Cut-In","order":22,"path":"folders/Sprites/UI/Boss Cut-In.yy",},
   ],
   "ResourceOrderSettings": [
-    {"name":"obj_player_start","order":1,"path":"objects/obj_player_start/obj_player_start.yy",},
     {"name":"snd_enemyJump","order":1,"path":"sounds/snd_enemyJump/snd_enemyJump.yy",},
     {"name":"snd_paintball","order":9,"path":"sounds/snd_paintball/snd_paintball.yy",},
     {"name":"snd_shotgun","order":11,"path":"sounds/snd_shotgun/snd_shotgun.yy",},
@@ -26,6 +25,7 @@
     {"name":"snd_bounce2","order":1,"path":"sounds/snd_bounce2/snd_bounce2.yy",},
     {"name":"snd_coin","order":1,"path":"sounds/snd_coin/snd_coin.yy",},
     {"name":"snd_groundpound","order":1,"path":"sounds/snd_groundpound/snd_groundpound.yy",},
+    {"name":"obj_player_start","order":1,"path":"objects/obj_player_start/obj_player_start.yy",},
     {"name":"snd_slamCharge","order":5,"path":"sounds/snd_slamCharge/snd_slamCharge.yy",},
     {"name":"snd_electricity","order":2,"path":"sounds/snd_electricity/snd_electricity.yy",},
     {"name":"snd_selectOption","order":3,"path":"sounds/snd_selectOption/snd_selectOption.yy",},
