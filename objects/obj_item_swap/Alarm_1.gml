@@ -8,3 +8,4 @@ if room = room_shop {
 		obj_shop.cant_move = false;
 	}
 }
+

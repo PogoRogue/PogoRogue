@@ -17,6 +17,7 @@ image_index = room = room_shop;
 //check for button press
 if (colliding and key_open_door) {
 	if room != room_shop {
+		room_persistent = true;
 		room = room_shop;
 		global.player_spawn_x_prev = x;
 		global.player_spawn_y_prev = y - 64;
@@ -24,6 +25,7 @@ if (colliding and key_open_door) {
 	}else if !instance_exists(obj_coin_spawner) {
 		if global.last_room != room_shop {
 			room = global.last_room;
+			room_persistent = false;
 			global.player_spawn_x = global.player_spawn_x_prev;
 			global.player_spawn_y = global.player_spawn_y_prev;
 		}else {
