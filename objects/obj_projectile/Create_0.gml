@@ -7,12 +7,13 @@ vspd = lengthdir_y(spd,angle);
 max_num_of_bounces = num_of_bounces;
 init_damage = damage;
 sound = audio_play_sound(snd_nothing,0,false);
+colliding_with_enemy = false;
 
 with instance_create_depth(x,y,depth-1,obj_projectile_flash_effect) {
 	image_index = other.flash_frame;
 	
 	if (image_index < 4)  {
-		alarm[0] = 4;
+		alarm[0] = 2;
 	}else {
 		alarm[0] = 2;
 	}
@@ -69,4 +70,13 @@ if (gun_name = "Missile Launcher") {
 	}else {
 		closest_enemy = noone;
 	}
+}
+
+if (gun_name = "Star Sucker") {
+	x = obj_player.x + lengthdir_x(224,image_angle);
+	y = obj_player.y + lengthdir_y(224,image_angle);
+	image_angle = point_direction(x,y,obj_player.x,obj_player.y);
+	init_damage = damage;
+	colliding_with_enemy = false;
+	depth = obj_player.depth + 1;
 }

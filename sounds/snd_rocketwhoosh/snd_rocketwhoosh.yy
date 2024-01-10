@@ -10,7 +10,7 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 2.285669,
+  "duration": 2.175329,
   "parent": {
     "name": "Weapons",
     "path": "folders/Sounds/Weapons.yy",

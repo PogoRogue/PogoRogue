@@ -14,6 +14,13 @@ if(is_dead) {
 	//combo
 	global.combo += 1;
 	global.combo_length = global.combo_max;
+	if global.combo = 10 and global.combo_master = true { //combo master powerup
+		with obj_player {
+			if hp < max_hp {
+				hp += 8;
+			}
+		}
+	}
 	
 	//create coins and items
 	var center_x = x - sprite_get_xoffset(sprite_index) + ((sprite_width / 2)*image_xscale);
@@ -21,9 +28,9 @@ if(is_dead) {
 	if drop_coins = true {
 		with instance_create_depth(center_x,center_y,depth-1,obj_coin_spawner) {
 			if global.combo < global.combo_max_coins {
-				num_of_coins = global.combo + 4;
+				num_of_coins = global.combo + global.added_coins;
 			}else {
-				num_of_coins = global.combo_max_coins + 4;
+				num_of_coins = global.combo_max_coins + global.added_coins;
 			}
 		}
 	}
@@ -38,4 +45,5 @@ current_iframes = max(current_iframes - 1, 0);
 red_frames = max(red_frames - 1, 0);
 
 // Round HP to nearest integer
-hp = round(hp);
+//Commented this out because it makes the laser act weird
+//hp = round(hp);

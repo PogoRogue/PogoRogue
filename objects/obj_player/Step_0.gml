@@ -2,29 +2,33 @@
 
 #region //Get inputs (1 = pressed, 0 = not pressed)
 if (dead = false) {
-	key_right = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.5;
-	key_left = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.5;
-	key_fire_projectile = keyboard_check(vk_space) || gamepad_button_check(0,gp_shoulderrb);
+	key_right = global.key_right_player;
+	key_left = global.key_left_player;
+	key_fire_projectile = global.key_fire_projectile;
 
-	key_right_pressed = keyboard_check(vk_right) || keyboard_check(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.5;
-	key_left_pressed = keyboard_check(vk_left) || keyboard_check(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.5;
+	key_right_pressed = global.key_right_pressed_player;
+	key_left_pressed = global.key_left_pressed_player;
+	
+	key_recenter = global.key_recenter;
+	
 	if use_mouse {
-		key_fire_projectile_pressed = mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0,gp_shoulderrb);
-		key_fire_projectile_released = mouse_check_button_released(mb_left) || gamepad_button_check_released(0,gp_shoulderrb);
+		key_fire_projectile_pressed = global.key_fire_projectile_pressed;
+		key_fire_projectile_released = global.key_fire_projectile_released;
 	}else {
-		key_fire_projectile_pressed = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_shoulderrb);
-		key_fire_projectile_released = keyboard_check_released(vk_space) || gamepad_button_check_released(0,gp_shoulderrb);
+		key_fire_projectile_pressed = global.key_fire_projectile_pressed;
+		key_fire_projectile_released = global.key_fire_projectile_released;
 	}
-	key_pickup_1 = keyboard_check(vk_shift) || mouse_check_button(mb_left) || gamepad_button_check(0,gp_face1);
-	key_pickup_2 = keyboard_check(vk_control) || mouse_check_button(mb_right) || gamepad_button_check(0,gp_face2);
-	key_pickup_1_pressed = keyboard_check_pressed(vk_shift) || mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0,gp_face1);
-	key_pickup_2_pressed = keyboard_check_pressed(vk_control) || mouse_check_button_pressed(mb_right) || gamepad_button_check_pressed(0,gp_face2);
+	key_pickup_1 = global.key_pickup_1;
+	key_pickup_2 = global.key_pickup_2;
+	key_pickup_1_pressed = global.key_pickup_1_pressed;
+	key_pickup_2_pressed = global.key_pickup_2_pressed;
 }else {
 	key_right = 0;
 	key_left = 0;
 	key_fire_projectile = 0;
 	key_right_pressed = 0;
 	key_left_pressed = 0;
+	key_recenter = 0;
 	key_fire_projectile_pressed = 0;
 	key_fire_projectile_released = 0;
 	key_pickup_1 = 0;
@@ -47,28 +51,30 @@ state();
 #region //pickups
 
 //call pickups
-if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false { //cooldown
-	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
-	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
-		pickups_array[0].on_call();
+if room != room_shop {
+	if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false { //cooldown
+		if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
+		or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
+			pickups_array[0].on_call();
+		}
+	}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 { //no cooldown
+		if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
+		or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
+			pickups_array[0].on_call();
+		}
 	}
-}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 { //no cooldown
-	if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
-	or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
-		pickups_array[0].on_call();
-	}
-}
 	
-//call pickup 2
-if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false { //cooldown
-	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
-	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
-		pickups_array[1].on_call();
-	}
-}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 { //no cooldown
-	if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
-	or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
-		pickups_array[1].on_call();
+	//call pickup 2
+	if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false { //cooldown
+		if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
+		or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
+			pickups_array[1].on_call();
+		}
+	}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 { //no cooldown
+		if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
+		or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
+			pickups_array[1].on_call();
+		}
 	}
 }
 
@@ -147,9 +153,30 @@ if (can_rotate) {
 }
 angle = clamp(angle,-anglemax,anglemax); //cant tilt too far
 
-
 image_angle = angle;
 #endregion
+
+//recentering
+if key_recenter and centering = false and angle != 0 {
+	centering = true;
+}
+
+if centering = true {
+	can_rotate = false;
+	if angle >= rotation_speed or angle <= -rotation_speed {
+		angle += rotation_speed * -sign(angle);
+	}else {
+		angle = 0;
+		can_rotate = true;
+		centering = false;
+	}
+	
+	//stop if right or left key
+	if key_left or key_right or state = state_bouncing {
+		can_rotate = true;
+		centering = false;
+	}
+}
 
 #region shooting
 
@@ -199,8 +226,8 @@ if !(key_fire_projectile) { //lerp back to starting firerate while not shooting
 #endregion
 
 //switch between weapons
-if keyboard_check_pressed(ord("E")) || mouse_wheel_up() || gamepad_button_check_released(0,gp_shoulderr) {
-	if (current_gun) < array_length(gun_array)-1 {
+if global.key_weapon_up {
+	if (current_gun) < weapons_equipped-1 {
 		current_gun += 1;
 	}else {
 		current_gun = 0;
@@ -209,15 +236,37 @@ if keyboard_check_pressed(ord("E")) || mouse_wheel_up() || gamepad_button_check_
 	gun = gun_array[current_gun];
 }
 
-if keyboard_check_pressed(ord("Q")) || mouse_wheel_down() || gamepad_button_check_released(0,gp_shoulderl) {
+if global.key_weapon_down {
 	if (current_gun) > 0 {
 		current_gun -= 1;
 	}else {
-		current_gun = array_length(gun_array)-1;
+		current_gun = weapons_equipped-1;
 	}
 	
 	gun = gun_array[current_gun];
 }
+
+//number keys
+if global.key_weapon_1 {
+	current_gun = 0;
+	gun = gun_array[current_gun];
+}else if global.key_weapon_2 and weapons_equipped > 1 {
+	current_gun = 1;
+	gun = gun_array[current_gun];
+}
+else if global.key_weapon_3 and weapons_equipped > 2 {
+	current_gun = 2;
+	gun = gun_array[current_gun];
+}
+
+if gun_2 = gun_1 {
+	weapons_equipped = 1;	
+}else if gun_2 != gun_1 and gun_3 = gun_1 or gun_2 != gun_1 and gun_3 = gun_2 {
+	weapons_equipped = 2;	
+}else if gun_2 != gun_1 and gun_3 != gun_1 and gun_3 != gun_2 {
+	weapons_equipped = 3;
+}
+
 
 
 // Update iframes

@@ -1,6 +1,7 @@
 /// @description initialize variables
 //movement stats
 grv = 0.21; //gravity
+init_grv = grv; //initial gravity
 h_grv = 0.01; //horizontal drag
 rotation_speed = 3; //rotation speed
 original_rotation_speed = rotation_speed;
@@ -14,14 +15,15 @@ bounce_sound = true; //alternating pitch
 shop_bouncing = false; //only use this var in the shop
 animation_complete = false; //bounce animation before jumping
 use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
-mouse_sensitivity = 150; //the lower the value, the more sensitive the player is to mouse movement and vice versa
-mouse_reanglespeed = 4; //the lower the value, the faster the player will reangle itself and vice versa
+mouse_sensitivity = 200; //the lower the value, the more sensitive the player is to mouse movement and vice versa
+mouse_reanglespeed = 6; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
 conveyor_speed = 0;
 can_rotate = true;
 can_shoot = true;
 platform_on = true;
+centering = false;
 
 //buffs
 damage_buff = 0;
@@ -29,9 +31,6 @@ max_ammo_buff = 0;
 max_max_ammo_buff = 5; //max amount this buff can be received
 laser_sight = false;
 planetary_bullets = 0;
-all_buff_sprites = []; //buffs equipped in side bar
-all_buff_sprites_index = []; //image index of each buff sprite
-all_buff_numbers = []; //how many of each buff you have
 
 //pickups
 charge = 0;
@@ -46,6 +45,9 @@ slam_trail_distance = 0;
 invincible = false;
 max_dash_time = 15;
 dash_time = 15;
+bulletblast_frames = 0;
+bulletblast_frames_max = 65; //how many frames before blasting
+freeze_time = 0;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -134,50 +136,7 @@ state_free = function() {
 		motion_add(0,h_grv);
 	}
 	
-	//check for collision with one way ground
-	if (place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway)) and vspeed > 0 {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
-			y += sign(vspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
-	
-	//check for collision with ground x axis
-	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {	
-		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
-			x += sign(hspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
-	
-	//check for collision with ground y axis
-	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
-			y += sign(vspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
-	
-	//check for collision with on off platform	
-	if (place_meeting(x,y+vspeed,obj_temp_platform_on_off) and !place_meeting(x,y-1,obj_temp_platform_on_off)) and vspeed > 0 and platform_on {
-		while !(place_meeting(x,y+sign(vspeed),obj_temp_platform_on_off)) {
-			y += sign(vspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
-	
-	//check for collision with off on platform	
-	if (place_meeting(x,y+vspeed,obj_temp_platform_off_on) and !place_meeting(x,y-1,obj_temp_platform_off_on)) and vspeed > 0 and !platform_on {
-		while !(place_meeting(x,y+sign(vspeed),obj_temp_platform_off_on)) {
-			y += sign(vspeed);
-		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-	}
+	scr_Player_Collision();
 	
 	//make sure player isn't colliding with anything before checking for collisions again
 	if !(place_meeting(x,y,obj_ground)) free = false {
@@ -329,6 +288,7 @@ state_groundpound = function() {
 		vspeed = slam_speed;
 		can_rotate = true; //allow rotation again
 		vsp_basicjump = -8;
+		stomp_damage = 40;
 		//switch states
 		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
@@ -340,9 +300,9 @@ state_groundpound = function() {
 			vspeed = 0;
 			scr_Screen_Shake(6, 15);
 			audio_play_sound(snd_groundpound,0,false);
+			stomp_damage = 8;
 			soundPlayed = false;
 		}
-		
 	}
 }
 
@@ -367,6 +327,68 @@ state_firedash = function() {
 			obj_player_flames_upward.despawn = true;	
 		}
 	}
+}
+
+temp_x = 0.5;
+init_x = x;
+state_bulletblast = function() {
+	if bulletblast_frames < bulletblast_frames_max {
+		speed = speed * 0.9;
+		if scr_Animation_Complete() and sprite_index = spr_player_zekai {
+			sprite_index = spr_player_zekai_charging;	
+		}else if sprite_index = spr_player_zekai {
+			image_index += 1;
+			init_x = x;
+		}else {
+			image_index += 0.25;	
+			x += temp_x;
+			if bulletblast_frames % 3 = 0 { //every 3 frames
+				temp_x *= -1.2;
+			}
+		}
+		scr_Player_Collision();
+		if state = state_bouncing { //dont want to cancel powerup after collision
+			state = state_bulletblast;	
+		}
+		bulletblast_frames += 1;
+		if bulletblast_frames >= bulletblast_frames_max - 2 {
+			sprite_index = spr_player_zekai_charging_red;	
+		}
+	}else {
+		old_gun = gun;
+		gun = bulletblast_gun;
+		image_angle += 180;
+		x -= lengthdir_x(21,image_angle+90);
+		y -= lengthdir_y(21,image_angle+90);
+		scr_Shoot();
+		x += lengthdir_x(21,image_angle+90);
+		y += lengthdir_y(21,image_angle+90);
+		image_angle -= 180;
+		gun = old_gun;
+		state = state_free;
+		x = init_x;
+	}
+}
+
+state_freeze = function() {
+	if abs(speed) > 0.01 {
+		speed *= 0.8;	
+	}else {
+		speed = 0;	
+	}
+	if freeze_time > 0 {
+		freeze_time -= 1;	
+	}else {
+		state = state_free;
+		grv = init_grv;
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+	}
+	can_rotate = true;
+	can_shoot = true;
+	grav = 0;
+	
+	scr_Player_Collision();
 }
 
 state_shop = function() {
@@ -399,6 +421,12 @@ state_shop = function() {
 	}
 }
 
+state_immobile = function() {
+	can_rotate = false;
+	can_shoot = false;
+	speed = 0;
+}
+
 state = state_free;
 #endregion
 
@@ -420,29 +448,46 @@ canshoot = 0; //shooting timer
 bullet_index = 0; //current bullet
 
 //EQUIP WEAPONS
-num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2
-all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun]; //all guns
+num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2 to start, but include functionality of 3 for "triple threat" buff
+weapons_equipped = num_of_weapons;
+all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun]; //all guns
 
 if (random_weapon = true) { //choose random weapons
 	randomize();
 	gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-	gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-
-	while (gun_2 = gun_1) { //dont want 2 of the same weapon
+	if num_of_weapons > 1 {
 		gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+	}else {
+		gun_2 = gun_1;
+	}
+	if num_of_weapons > 2 {
+		gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+	}else {
+		gun_3 = gun_1;
+	}
+
+	while (gun_2 = gun_1) and num_of_weapons > 1 { //dont want 2 of the same weapon
+		gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+	}
+	
+	while (gun_3 = gun_1 and num_of_weapons > 2) or (gun_3 = gun_2 and num_of_weapons > 2) { //dont want 2 of the same weapon
+		gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
 	}
 }else { //decide which weapons we want manually if not random. 
 	//we do this by changing gun_1_manual and gun_2_manual in the variable definitions tab. Can be changed room by room.
 	//Integers correspond to values in all_guns_array, 0 = default_gun, 1 = paintball_gun, etc.
 	gun_1 = all_guns_array[gun_1_manual_value];
 	gun_2 = all_guns_array[gun_2_manual_value];
+	gun_3 = all_guns_array[gun_3_manual_value];
 }
 
 //set what weapons will actually be equipped at the start
 if (num_of_weapons = 1) {
-	gun_array = [gun_1];
+	gun_array = [gun_1, gun_1, gun_1];
+}else if (num_of_weapons = 2) {
+	gun_array = [gun_1, gun_2, gun_1];
 }else {
-	gun_array = [gun_1, gun_2];
+	gun_array = [gun_1, gun_2, gun_3];
 }
 current_gun = 0;
 gun = gun_array[current_gun];
@@ -458,7 +503,7 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze]; //all pickups
 
 if (random_pickup = true) { //choose random pickups
 	randomize();
@@ -473,6 +518,10 @@ if (random_pickup = true) { //choose random pickups
 	//Integers correspond to values in all_pickups_array, 0 = pickup_chargejump, 1 = pickup_groundpound, etc.
 	pickup_1 = all_pickups_array[pickup_1_manual_value];
 	pickup_2 = all_pickups_array[pickup_2_manual_value];
+}
+if num_of_pickups = 0 {
+	pickup_1 = pickup_nothing;
+	pickup_2 = pickup_nothing;
 }
 
 //set what weapons will actually be equipped at the start

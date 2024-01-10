@@ -2,31 +2,41 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Pickups(){
 	
+	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze];
+	
 	pickup_nothing = {
-		_name: "",                               //item name
+		_name: "",                              //item name
+		tagline: "",                            //item tagline (short description)
 		gui_sprite: spr_pickup_empty,           //pickup gui sprite
 		max_cooldown_time: 0,                   //reset cooldown time to this value on every use
 		cooldown_time: 0,                       //actual cooldown value that decreases over time when used
+		cooldown_text: "",                      //text description that shows how cooldowns work for this item
 		on_cooldown: false,                     //is this pickup currently on cooldown
 		states_to_call_in: [state_free],        //when this ability can be activated
 		key_held: false,                        //do you need to hold the key to call this ability (true) or just press it (false)
 		reload_on_bounce: false,                //does this ability recharge on bounce instead of cooldown?
 		max_uses_per_bounce: 0,                 //how many times can you use this per bounce
 		uses_per_bounce: 0,                     //same as max_uses_per_bounce, except this value changes
+		bounce_reset: 1,                        //how many bounces it take to reset a cooldown, 1 = every bounce
+		bounce_reset_max: 1,					//make same as bounce_reset
 		on_call: function() { }                 //specific actions to do when this event is called           
 	};
 	
 	pickup_chargejump = {
 		_name: "Charge Jump",
+		tagline: "Hold while bouncing to launch yourself to great heights.",
 		gui_sprite: spr_pickup_chargejump,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
+		cooldown_text: "Cooldown: " + string(300 / 60) + "s" + " / kill",
 		on_cooldown: false,
 		states_to_call_in: [state_bouncing],
 		key_held: true,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
 		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
 		on_call: function() {
 			if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump {
 				obj_player.state = obj_player.state_chargejump;
@@ -37,15 +47,19 @@ function scr_Pickups(){
 	
 	pickup_groundpound = {
 		_name: "Ground Pound",
+		tagline: "Slam to the ground with massive power.",
 		gui_sprite: spr_pickup_groundpound,
 		max_cooldown_time: 180,
 		cooldown_time: 180,
+		cooldown_text: "Cooldown: " + string(180 / 60) + "s" + " / kill",
 		on_cooldown: false,
-		states_to_call_in: [state_free],
+		states_to_call_in: [state_free,state_freeze],
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
 		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
 		on_call: function() {
 			obj_player.state = obj_player.state_groundpound;
 			obj_player.ground_pound_rise = true;
@@ -56,15 +70,19 @@ function scr_Pickups(){
 	
 	pickup_hatgun = {
 		_name: "Hat Gun",
+		tagline: "Shoot 3 bullets from your head per bounce.",
 		gui_sprite: spr_pickup_hatgun,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
+		cooldown_text: "Cooldown: On bounce" + " / kill",
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_bouncing,state_chargejump],
+		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze],
 		key_held: false,
 		reload_on_bounce: true,
 		max_uses_per_bounce: 3,
 		uses_per_bounce: 3,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
 		on_call: function() {
 			with obj_player {
 				old_gun = gun;
@@ -87,33 +105,41 @@ function scr_Pickups(){
 	
 	pickup_shieldbubble = {
 		_name: "Shield Bubble",
+		tagline: "Creates a shield around the player. Lasts for 5s or until it is destroyed.",
 		gui_sprite: spr_pickup_shieldbubble,
 		max_cooldown_time: 600,
 		cooldown_time: 600,
+		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_groundpound],
+		states_to_call_in: all_states,
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
 		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
 		on_call: function() {
 			if !instance_exists(obj_shieldbubble) {
-				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_shieldbubble);
+				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-2,obj_shieldbubble);
 			}
 		}
 	};
 	
 	pickup_firedash = {
 		_name: "Fire Dash",
+		tagline: "Turn into a fireball and dash upwards. Cooldown resets for every dash kill you get.",
 		gui_sprite: spr_pickup_firedash,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
+		cooldown_text: "Cooldown: " + string(300 / 60) + "s" + " / kill",
 		on_cooldown: false,
-		states_to_call_in: [state_free],
+		states_to_call_in: [state_free,state_freeze],
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
 		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
 		on_call: function() {
 			cooldown_time = max_cooldown_time;
 			obj_player.state = obj_player.state_firedash;
@@ -124,15 +150,19 @@ function scr_Pickups(){
 	
 	pickup_jetpack = {
 		_name: "Jetpack",
+		tagline: "A jetpack that gives you additional momentum when used.",
 		gui_sprite: spr_pickup_jetpack,
 		max_cooldown_time: 60,
 		cooldown_time: 60,
+		cooldown_text: "Cooldown: On bounce",
 		on_cooldown: false,
-		states_to_call_in: [state_free],
+		states_to_call_in: [state_free,state_freeze],
 		key_held: true,
 		reload_on_bounce: true,
 		max_uses_per_bounce: 1,
 		uses_per_bounce: 1,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
 		on_call: function() {
 			if cooldown_time > 0 {
 				cooldown_time -= 1;
@@ -164,6 +194,14 @@ function scr_Pickups(){
 					if !audio_is_playing(snd_jetpack) {
 						audio_play_sound(snd_jetpack,0,false);
 					}
+					
+					//unfreeze if applicable
+					if state = state_freeze {
+						state = state_free;
+						grv = init_grv;
+						rotation_speed = original_rotation_speed;
+						rotation_delay = rotation_speed / 10;
+					}
 				}
 			}else {
 				if audio_is_playing(snd_jetpack) {
@@ -172,6 +210,155 @@ function scr_Pickups(){
 			}
 			on_cooldown = true;
 		}                  
+	};
+	
+	pickup_slowmo = {
+		_name: "Magic Stopwatch",
+		tagline: "Slows down time temporarily.",
+		gui_sprite: spr_pickup_slowmo,
+		max_cooldown_time: 1200,
+		cooldown_time: 1200,
+		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		on_call: function() {
+			if !instance_exists(obj_slowmo) {
+				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_slowmo);
+			}
+		}
+	};
+	
+	pickup_bulletblast = {
+		_name: "Bullet Blast",
+		tagline: "Creates a massive blast of bullets in all directions.",
+		gui_sprite: spr_pickup_bulletblast,
+		max_cooldown_time: 900,
+		cooldown_time: 900,
+		cooldown_text: "Cooldown: " + string(900 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: [state_free,state_freeze],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		on_call: function() {
+			obj_player.can_rotate = false;
+			obj_player.can_shoot = false;
+			obj_player.bulletblast_frames = 0;
+			obj_player.temp_x = 0.5;
+			obj_player.init_x = obj_player.x;
+			obj_player.sprite_index = spr_player_zekai;
+			obj_player.image_index = 0;
+			obj_player.state = obj_player.state_bulletblast;
+			on_cooldown = true;
+		}
+	};
+	
+	pickup_reload = {
+		_name: "Quick Reload",
+		tagline: "Automatically reloads both of your weapons.",
+		gui_sprite: spr_pickup_reload,
+		max_cooldown_time: 300,
+		cooldown_time: 300,
+		cooldown_text: "Cooldown: " + string(300 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		on_call: function() {
+			
+			with obj_player {
+				if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun { //reload bullets
+					//reload sound
+					audio_play_sound(snd_reload,0,false);
+					gun_1.current_bullets = gun_1.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+					instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+					other.cooldown_time = other.max_cooldown_time;
+					other.on_cooldown = true;
+				}
+				if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun { //reload bullets
+					//reload sound
+					audio_play_sound(snd_reload,0,false);
+					gun_2.current_bullets = gun_2.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+					instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+					other.cooldown_time = other.max_cooldown_time;
+					other.on_cooldown = true;
+				}
+				if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun { //reload bullets
+					//reload sound
+					audio_play_sound(snd_reload,0,false);
+					gun_3.current_bullets = gun_3.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+					instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+					other.cooldown_time = other.max_cooldown_time;
+					other.on_cooldown = true;
+				}
+			}
+		}
+	};
+	
+	pickup_camera = {
+		_name: "Camera",
+		tagline: "Snap a bright picture of every enemy on screen.",
+		gui_sprite: spr_pickup_camera,
+		max_cooldown_time: 600,
+		cooldown_time: 600,
+		cooldown_text: "Cooldown: " + string(600 / 60) + "s" + " / kill",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		on_call: function() {
+			audio_play_sound(snd_camera,0,false);
+			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup);
+			on_cooldown = true;
+		}
+	};
+	
+	pickup_freeze = {
+		_name: "Freeze",
+		tagline: "Temporarily freeze movement while mid-air, canceling after 3 seconds or when the player shoots.",
+		gui_sprite: spr_pickup_freeze,
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: Every 5 bounces",
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: true,
+		max_uses_per_bounce: 1,
+		uses_per_bounce: 1,
+		bounce_reset: 5,
+		bounce_reset_max: 5,
+		on_call: function() {
+			with obj_player {
+				state = state_freeze;
+				rotation_speed = 0;
+				current_rotation_speed = 0;
+				rotation_speed = original_rotation_speed * (2/3);
+				rotation_delay = rotation_speed / 10;
+				freeze_time = 180;
+			}
+			uses_per_bounce -= 1;
+			if uses_per_bounce <= 0 {
+				on_cooldown = true;
+			}
+		}
 	};
 	
 }
