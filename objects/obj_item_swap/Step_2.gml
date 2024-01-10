@@ -53,6 +53,11 @@ if key_select and fade_away = false {
 				}
 			}
 		}
+		
+		//experimentation buff
+		if global.experimentation = true {
+			global.num_of_coins += 25;
+		}
 	}
 	//slot 2
 	if select = 2 {
@@ -76,6 +81,11 @@ if key_select and fade_away = false {
 				gun = gun_array[current_gun];
 			}
 		}
+		
+		//experimentation buff
+		if global.experimentation = true {
+			global.num_of_coins += 25;
+		}
 	}
 	//slot 3
 	if select = 3 and num_of_slots > 3 {
@@ -93,6 +103,11 @@ if key_select and fade_away = false {
 			gun_3 = other.new_item;
 			gun_array = [gun_1, gun_2, gun_3];
 			gun = gun_array[current_gun];
+		}
+		
+		//experimentation buff
+		if global.experimentation = true {
+			global.num_of_coins += 25;
 		}
 	}
 	//cancel

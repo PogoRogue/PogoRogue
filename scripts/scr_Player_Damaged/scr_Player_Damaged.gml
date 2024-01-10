@@ -14,8 +14,13 @@ function scr_Player_Damaged(damage){
 			vspeed = 0;
 		
 			//combo reset
-			global.combo = 0;
-			global.combo_length = 0;
+			//commented these out to experiement with other method
+			//global.combo = 0;
+			//global.combo_length = 0;
+		
+			with obj_combo {
+				global.combo_length -= (global.combo_max/5)*2;
+			}
 			
 			//screen shake
 			scr_Screen_Shake(8, 15);

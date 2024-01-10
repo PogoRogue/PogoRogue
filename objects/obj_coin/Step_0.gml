@@ -1,4 +1,5 @@
 /// @description move towards player
+
 if room != room_shop {
 	follow_object = obj_player;
 	follow_object2 = obj_player_mask;

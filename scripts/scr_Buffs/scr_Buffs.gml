@@ -134,4 +134,8 @@ function scr_Buffs(){
 		obj_player.stomp_damage *= 2;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
+	
+	buff_experimentation = function(){
+		global.experimentation = true;
+	}
 }
