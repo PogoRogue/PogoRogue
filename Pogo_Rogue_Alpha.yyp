@@ -67,6 +67,8 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"DR","folderPath":"folders/Sprites/ProcGenLevelData/DR.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"LR","folderPath":"folders/Sprites/ProcGenLevelData/LR.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"PrebuiltRooms","folderPath":"folders/Sprites/ProcGenLevelData/PrebuiltRooms.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"1x1","folderPath":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/1x1.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"2x2","folderPath":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/2x2.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"3x3","folderPath":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/3x3.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"testRooms","folderPath":"folders/Sprites/ProcGenLevelData/testRooms.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UD","folderPath":"folders/Sprites/ProcGenLevelData/UD.yy",},
@@ -79,8 +81,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"2x2","folderPath":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/2x2.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"1x1","folderPath":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/1x1.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"snd_ArmorHeart.mp3","CopyToMask":-1,"filePath":"datafiles",},

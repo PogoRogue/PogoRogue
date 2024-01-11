@@ -7,8 +7,8 @@
     {"name":"Miscellaneous","order":6,"path":"folders/Sounds/Miscellaneous.yy",},
     {"name":"Powerups","order":7,"path":"folders/Sounds/Powerups.yy",},
     {"name":"Weapons","order":2,"path":"folders/Sounds/Weapons.yy",},
-    {"name":"2x2","order":1,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/2x2.yy",},
     {"name":"1x1","order":2,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/1x1.yy",},
+    {"name":"2x2","order":1,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/2x2.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"snd_enemyJump","order":1,"path":"sounds/snd_enemyJump/snd_enemyJump.yy",},
