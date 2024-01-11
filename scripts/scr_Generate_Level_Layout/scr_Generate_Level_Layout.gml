@@ -114,7 +114,7 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	// Function to connect two rooms with a winding path
 function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height, room2_x, room2_y, room2_width, room2_height) {
 	var start_x = room1_x + irandom(room1_width - 1);
-	var start_y = room1_y-1;
+	var start_y = room1_y - 1;
 	var end_x = room2_x + irandom(room2_width - 1);
 	var end_y = room2_y;
 	
