@@ -19,6 +19,7 @@ mouse_sensitivity = 200; //the lower the value, the more sensitive the player is
 mouse_reanglespeed = 6; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
+not_colliding = true; //prevent glitches with wall collision
 conveyor_speed = 0;
 can_rotate = true;
 can_shoot = true;
@@ -31,6 +32,7 @@ max_ammo_buff = 0;
 max_max_ammo_buff = 5; //max amount this buff can be received
 laser_sight = false;
 planetary_bullets = 0;
+aerial_assassin_count = 0;
 
 //pickups
 charge = 0;
@@ -139,7 +141,7 @@ state_free = function() {
 	scr_Player_Collision();
 	
 	//make sure player isn't colliding with anything before checking for collisions again
-	if !(place_meeting(x,y,obj_ground)) free = false {
+	if !(place_meeting(x,y,obj_ground)) and free = false {
 		free = true;	
 	}
 	
@@ -294,6 +296,11 @@ state_groundpound = function() {
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
 				y += sign(vspeed);
 			}
+			
+			if place_meeting(x,y+vspeed,obj_ground_parent) {
+				aerial_assassin_count = 0;	
+			}
+			
 			scr_Enemy_Collision_Check(true);
 			pickup_groundpound.on_cooldown = true;
 			state = state_bouncing;
@@ -402,6 +409,7 @@ state_shop = function() {
 		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
 			y += sign(vspeed);
 		}
+		aerial_assassin_count = 0;
 		shop_bouncing = true;
 		speed = 0; //stop player movement while bouncing
 	}

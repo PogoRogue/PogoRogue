@@ -14,7 +14,9 @@ function scr_Random_Item_Drops(){
 	
 	//heart
 	if (heart_drop <= heart_chance) {
-		with instance_create_depth(center_x,center_y+4,depth-2,obj_item_buff_heart) {
+		randomize();
+		var heart_type = choose(obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_max_hp);
+		with instance_create_depth(center_x,center_y+4,depth-2,heart_type) {
 			follow_player = true;
 		}
 	}
@@ -32,6 +34,12 @@ function scr_Random_Item_Drops(){
 		with obj_item_buff_heart {
 			instance_destroy();	
 		}
+		with obj_item_buff_armor {
+			instance_destroy();	
+		}
+		with obj_item_buff_max_hp {
+			instance_destroy();	
+		}
 	}
 	
 	//weapon
@@ -46,6 +54,12 @@ function scr_Random_Item_Drops(){
 		with obj_item_buff_heart {
 			instance_destroy();	
 		}
+		with obj_item_buff_armor {
+			instance_destroy();	
+		}
+		with obj_item_buff_max_hp {
+			instance_destroy();	
+		}
 	}
 	
 	//pickup
@@ -56,6 +70,12 @@ function scr_Random_Item_Drops(){
 		}
 		num_of_coins = 0;
 		with obj_item_buff_heart {
+			instance_destroy();	
+		}
+		with obj_item_buff_armor {
+			instance_destroy();	
+		}
+		with obj_item_buff_max_hp {
 			instance_destroy();	
 		}
 	}

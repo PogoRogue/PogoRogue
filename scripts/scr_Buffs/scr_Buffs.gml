@@ -138,4 +138,12 @@ function scr_Buffs(){
 	buff_experimentation = function(){
 		global.experimentation = true;
 	}
+	
+	buff_aerialassassin = function(){
+		global.aerial_assassin = true;
+	}
+	
+	buff_supershield = function(){
+		global.super_shield = true;
+	}
 }

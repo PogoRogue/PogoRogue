@@ -8,6 +8,7 @@ function scr_Player_Collision(){
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+		aerial_assassin_count = 0;
 	}
 	
 	//check for collision with ground x axis
@@ -17,6 +18,7 @@ function scr_Player_Collision(){
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+		aerial_assassin_count = 0;
 	}
 	
 	//check for collision with ground y axis
@@ -26,6 +28,7 @@ function scr_Player_Collision(){
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+		aerial_assassin_count = 0;
 	}
 	
 	//check for collision with on off platform	
@@ -35,6 +38,7 @@ function scr_Player_Collision(){
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+		aerial_assassin_count = 0;
 	}
 	
 	//check for collision with off on platform	
@@ -44,6 +48,7 @@ function scr_Player_Collision(){
 		}
 		state = state_bouncing;
 		speed = 0; //stop player movement while bouncing
+		aerial_assassin_count = 0;
 	}
 	
 	//unfreeze
