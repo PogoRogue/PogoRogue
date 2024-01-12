@@ -64,7 +64,7 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 		}
 		// Connect the rooms with winding paths
 		if (previous_room != -1) {
-			Connect_Rooms(layout_grid, previous_room[0], previous_room[1]+rHeight, previous_room[2], previous_room[3], currentX, currentY, rWidth, rHeight);
+			Connect_Rooms(layout_grid, previous_room[0], previous_room[1]+previous_room[3] - 1, previous_room[2], previous_room[3], currentX, currentY, rWidth, rHeight);
 		}
 
 		// Place the current room
@@ -114,28 +114,35 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	// Function to connect two rooms with a winding path
 function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height, room2_x, room2_y, room2_width, room2_height) {
 	var start_x = room1_x + irandom(room1_width - 1);
-	var start_y = room1_y - 1;
+	var start_y = room1_y;
 	var end_x = room2_x + irandom(room2_width - 1);
 	var end_y = room2_y;
 	
 	while (start_x != end_x || start_y != end_y) {
 		var path_randomizer = random_range(0,1);
+		
+		//Navigate directly up or sideways if we're already at the correct x/y coord
 		if (start_x == end_x) {
 			path_randomizer = 0;
 		}
 		else if (start_y == end_y) {
 			path_randomizer = 1;
 		}
-		if (path_randomizer <= 0.6) {
-			if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
+		
+		//Don't exit a 2 height or smaller room from the left or right
+		if(room1_height <= 2 && start_y == room1_y)
+		{
+			path_randomizer = 0;
+		}
+		
+		if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
 				ds_grid_set(layout_grid, start_x, start_y, "1");
-			}
+		}
+		
+		if (path_randomizer <= 0.6) {	//path upwards 60% of the time	(see special cases above)	
 			start_y += 1;
 		}
-		else {
-			if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
-				ds_grid_set(layout_grid, start_x, start_y, "1");
-			}
+		else {			//Otherwise path sideways
 			start_x += (end_x - start_x) / abs(end_x - start_x);
 		}
 	}
