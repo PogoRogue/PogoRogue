@@ -1,7 +1,7 @@
 if usable = true {
-	key_up = keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up) || gamepad_axis_value(0,gp_axislv) < -0.5;
-	key_down = keyboard_check_pressed(ord("S")) || keyboard_check_pressed(vk_down) || gamepad_axis_value(0,gp_axislv) > 0.5;
-	key_select = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_face1);
+	key_up = global.key_up_menu;
+	key_down = global.key_down_menu;
+	key_select = global.key_select;
 }else {
 	key_up = 0;
 	key_down = 0;
@@ -31,19 +31,19 @@ if key_select {
 			paused_outside = true;
 		}
 	}else if select = 2 {
-		audio_play_sound(snd_unavailable,0,false);
-		//implement later
+		usable = false;
+		instance_create_depth(x,y,depth+1,obj_items);
 	}else if select = 3 {
 		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
-		instance_create_depth(x,y,depth-1,obj_popup_restart);
+		instance_create_depth(x,y,depth+1,obj_popup_restart);
 	}else if select = 4 {
 		audio_play_sound(snd_unavailable,0,false);
 		//implement later
 	}else if select = 5 {
 		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
-		instance_create_depth(x,y,depth-1,obj_popup_exit);
+		instance_create_depth(x,y,depth+1,obj_popup_exit);
 	}
 }
 

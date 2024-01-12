@@ -18,6 +18,6 @@
   "preload": false,
   "sampleRate": 44100,
   "soundFile": "snd_coin.wav",
-  "type": 0,
+  "type": 1,
   "volume": 1.0,
 }

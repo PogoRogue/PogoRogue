@@ -16,7 +16,7 @@ function scr_Bullets(){
 		flash_frame: 2,                  //how big of a flash you want the bullet to make, 0 = biggest, 12 = nothing/smallest
 		grav_affected: false,            //is this bullet affected by gravity
 		grv: obj_player.grv,             //amount of gravity added per frame
-		num_of_bounces: 0,               //how many times will this bullet bounce before being destroyed
+		num_of_bounces: 0 + global.bouncy_bullets,               //how many times will this bullet bounce before being destroyed
 		bounce_amount: 1,                //multiply hspeed/vspeed by this amount per bounce, 1 = no slowdown
 		damage: 8                         //how much damage each bullet does
 	};
@@ -35,9 +35,28 @@ function scr_Bullets(){
 		flash_frame: 12,
 		grav_affected: false,
 		grv: obj_player.grv,
-		num_of_bounces: 0,
+		num_of_bounces: 0 + global.bouncy_bullets,
 		bounce_amount: 1,
 		damage: 8
+	};
+	
+	bulletblast_bullet = {
+		sprite: spr_planetarybullets_bullet,
+		gui_sprite: spr_planetarybullets_bullet,
+		spd: 12,
+		firerate_start: 1,
+		firerate_end: 1,
+		firerate_mult: 0,
+		firerate: 1,
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 20, frames: 10},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: -1,
+		bounce_amount: 1,
+		damage: 20
 	};
 
 	paintball_bullet = {
@@ -54,7 +73,7 @@ function scr_Bullets(){
 		flash_frame: 4,
 		grav_affected: false,
 		grv: obj_player.grv,
-		num_of_bounces: 0,
+		num_of_bounces: 0 + global.bouncy_bullets,
 		bounce_amount: 1,
 		damage: 6
 	};
@@ -73,7 +92,7 @@ function scr_Bullets(){
 		flash_frame: 0,
 		grav_affected: false,
 		grv: obj_player.grv,
-		num_of_bounces: 0,
+		num_of_bounces: 0 + global.bouncy_bullets,
 		bounce_amount: 1,
 		damage: 10
 	};
@@ -92,7 +111,7 @@ function scr_Bullets(){
 		flash_frame: 12,
 		grav_affected: false,
 		grv: obj_player.grv,
-		num_of_bounces: 0,
+		num_of_bounces: 0 + global.bouncy_bullets,
 		bounce_amount: 1,
 		damage: 4
 	};
@@ -111,7 +130,7 @@ function scr_Bullets(){
 		flash_frame: 1,
 		grav_affected: false,
 		grv: obj_player.grv,
-		num_of_bounces: 0,
+		num_of_bounces: 0 + global.bouncy_bullets,
 		bounce_amount: 1,
 		damage: 8
 	};
@@ -170,7 +189,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 3,
 		bounce_amount: 1,
-		damage: 5
+		damage: 7
 	};
 	
 	missile_bullet = {
@@ -190,5 +209,43 @@ function scr_Bullets(){
 		num_of_bounces: 0,
 		bounce_amount: 1,
 		damage: 16
+	};
+	
+	boomerang_bullet = {
+		sprite: spr_projectile_boomerang,
+		gui_sprite: spr_projectile_boomerang_gui,
+		spd: 8,                          
+		firerate_start: 0,               
+		firerate_end: 0,                 
+		firerate_mult: 0,               
+		firerate: 0,                     
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 3, frames: 8},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 8
+	};
+	
+	starsucker_bullet = {
+		sprite: spr_projectile_star,
+		gui_sprite: spr_projectile_star_gui,
+		spd: 14,                        
+		firerate_start: 25,              
+		firerate_end: 25,                
+		firerate_mult: 0,               
+		firerate: 25,                    
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 0, frames: 0},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 6
 	};
 }

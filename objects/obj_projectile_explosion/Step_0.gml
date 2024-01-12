@@ -17,8 +17,8 @@ if instance_exists(obj_player) {
 	}
 }
 
-// Only collide on 5th frame
-if(image_index == 5) {
+// Only collide on 4th frame
+if(image_index = 4) {
 	mask_index = sprite_index;
 } else {
 	mask_index = spr_nothing;	

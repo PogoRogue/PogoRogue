@@ -1,11 +1,11 @@
 if room = room_shop {
 
 if cant_move = false {
-	key_left = keyboard_check_pressed(ord("A")) || keyboard_check_pressed(vk_left) || gamepad_axis_value(0,gp_axislh) < -0.5;
-	key_right = keyboard_check_pressed(ord("D")) || keyboard_check_pressed(vk_right) || gamepad_axis_value(0,gp_axislh) > 0.5;
-	key_up = keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up) || gamepad_axis_value(0,gp_axislv) < -0.5;
-	key_down = keyboard_check_pressed(ord("S")) || keyboard_check_pressed(vk_down) || gamepad_axis_value(0,gp_axislv) > 0.5;
-	key_select = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_face1);
+	key_left = global.key_left_menu;
+	key_right = global.key_right_menu;
+	key_up = global.key_up_menu;
+	key_down = global.key_down_menu;
+	key_select = global.key_select;
 }else {
 	key_left = 0;
 	key_right = 0;
@@ -97,11 +97,11 @@ if created_items = false {
 	for (i = 0; i < array_length(slot_items_array); i++) {
 		index = i;
 		if i % 2 = 0 {
-			xx = 304;
+			xx = 272;
 		}else {
-			xx = 368;
+			xx = 336;
 		}
-		yy = 120 + 64 * floor(i / 2);
+		yy = 104 + 64 * floor(i / 2);
 		with instance_create_depth(xx,yy,depth-1,slot_items_array[i]) {
 			follow_player = false;
 			index = other.index;
@@ -110,8 +110,8 @@ if created_items = false {
 		//replace weapon with new weapon if player already has it
 		if i = 4 
 		or i = 5 {
-			while (obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon) {
-				if obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon {
+			while (obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon or obj_player.gun_array[2] = slot_items_array[i].weapon) {
+				if obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon or obj_player.gun_array[2] = slot_items_array[i].weapon {
 					//destroy old item
 					slot_items_array[i].item_cost = 0;
 					instance_destroy(slot_items_array[i]);
@@ -157,10 +157,10 @@ if select != 0 {
 	if instance_exists(slot_items_array[select-1]) {
 		item_name = slot_items_array[select-1].item_name;
 		item_description = slot_items_array[select-1].item_description;
-		item_cost = slot_items_array[select-1].item_cost;
+		item_cost = round(slot_items_array[select-1].item_cost * global.sale);
 		
 		//sold out
-		if global.num_of_coins >= slot_items_array[select-1].item_cost {
+		if global.num_of_coins >= round(slot_items_array[select-1].item_cost * global.sale) {
 			too_expensive = false;
 		}else {
 			too_expensive = true;
@@ -169,7 +169,8 @@ if select != 0 {
 		if slot_items_array[select-1].sold_out = true {
 			sold_out = true;
 			if soundPlayed = false {
-				audio_play_sound(snd_unavailable,0,false);
+				//temporarily disabled
+				//audio_play_sound(snd_unavailable,0,false);
 				soundPlayed = true;
 			}
 		}else {
@@ -187,13 +188,16 @@ if select != 0 {
 //select item 
 if key_select {
 	if select != 0 and instance_exists(slot_items_array[select-1]) and refresh_button = false {
-		audio_play_sound(snd_selectOption,0,false);
+		if slot_items_array[select-1].sold_out = false {
+			audio_play_sound(snd_selectOption,0,false);
+		}else {
+			audio_play_sound(snd_unavailable,0,false);
+		}
 		last_select = select;
 		select = 0;
 	}else if select = 0 and refresh_button = false {
-		audio_play_sound(snd_selectOption,0,false);
 		select = last_select;
-		if global.num_of_coins >= slot_items_array[last_select-1].item_cost and slot_items_array[select-1].sold_out = false {
+		if global.num_of_coins >= round(slot_items_array[last_select-1].item_cost * global.sale) and slot_items_array[select-1].sold_out = false {
 			//item follow player
 			last_item_created = slot_items_array[select-1];
 			audio_play_sound(snd_chaching,0,false);
@@ -204,8 +208,10 @@ if key_select {
 					other.cant_move = true;
 				}
 			}
+		}else {
+			audio_play_sound(snd_unavailable,0,false);	
 		}
-	}else if refresh_button = true {
+	}else if refresh_button = true and refreshes_left > 0 {
 		audio_play_sound(snd_refreshShop,0,false);
 		if global.num_of_coins >= refresh_cost {
 			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth-1,obj_coin_spawner) {
@@ -218,24 +224,40 @@ if key_select {
 				instance_destroy();
 			}
 			instance_destroy();
-			instance_create_depth(x,y,depth,obj_shop);
+			with instance_create_depth(x,y,depth,obj_shop) {
+				refreshes_left = other.refreshes_left - 1;
+				if other.refresh_cost != 0 {
+					refresh_cost = other.refresh_cost*2;
+				}else {
+					refresh_cost = 25;
+				}
+				first_shop = false;
+			}
 		}
 	}
 }
 
 //if item canceled on item swap pop up
 if recreated_bought_item = true {
+	audio_play_sound(snd_unavailable,0,false);
 	if (select-1) % 2 = 0 {
-		xx = 304;
+		xx = 272;
 	}else {
-		xx = 368;
+		xx = 336;
 	}
-	yy = 120 + 64 * floor((select-1) / 2);
+	yy = 104 + 64 * floor((select-1) / 2);
 	with instance_create_depth(xx,yy,depth-1,last_item_created) {
 		index = other.select-1;
 		follow_player = false;
 	}
 	recreated_bought_item = false;
+}
+
+//picky buyer item
+if global.picky_buyer = true {
+	if refreshes_left = max_refreshes {
+		refresh_cost = 0;
+	}
 }
 
 }

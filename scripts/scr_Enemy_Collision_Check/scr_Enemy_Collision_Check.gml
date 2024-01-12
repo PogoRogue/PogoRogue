@@ -7,7 +7,7 @@ function scr_Enemy_Collision_Check(condition){
 		}
 		free = false;
 		with instance_place(x,y+1,obj_enemy_parent) {
-			if (!is_dead && current_iframes <= 0 && other.current_iframes <= 0) and other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
+			if (!is_dead && current_iframes <= 0) and other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
 				if other.state != other.state_chargejump {
 					other.state = other.state_bouncing;
 				}
@@ -17,7 +17,6 @@ function scr_Enemy_Collision_Check(condition){
 				}
 				hp -= other.stomp_damage * stomp_defense;
 				red_frames = 10;
-				current_iframes = num_iframes;
 					
 				// For Sphere boss, change its direction when you hit it from above
 				if(object_index == obj_boss_sphere) {
