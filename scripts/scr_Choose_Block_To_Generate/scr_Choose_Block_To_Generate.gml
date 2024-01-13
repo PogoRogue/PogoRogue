@@ -4,11 +4,27 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 	var room_string = ds_grid_get(layout_grid, grid_x, grid_y);
 	
 	//Set to a 3x3 room
-	if(room_string == "b1c")
+	if(room_string == "c3c")
 	{
 		return spr_3x3_Combat;
 	}
-	else if(room_string == "s") //s marks the player start!
+	else if(room_string == "c2c") //2x2 Combat room
+	{
+		return spr_2x2_Combat;
+	}
+	else if(room_string == "Tc") //Marks the player starting room!
+	{
+		return spr_3x3_StartingRoom;
+	}	
+	else if(room_string == "Shc") //Shop Room
+	{
+		return spr_1x1_Shop_Hallway;
+	}
+	else if(room_string == "Bc") //Boss Teleport Room
+	{
+		return spr_3x3_BossTeleporter;
+	}
+	else if(room_string == "s") //s marks the player start! (In case the first room doesn't
 	{
 		return 0;
 	}
