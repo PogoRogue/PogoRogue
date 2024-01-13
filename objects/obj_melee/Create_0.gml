@@ -1,11 +1,10 @@
-/// @description Insert description here
+/// @description Set despawn timer
 // You can write your code in this editor
 
 
 
 // Inherit the parent event
 event_inherited();
-
-action_cd = false
-
-bullet_defense = 0.15;
+damage = 8;
+alarm_set(1, 5);
+launched = false;

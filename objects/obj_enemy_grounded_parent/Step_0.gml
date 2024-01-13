@@ -5,6 +5,7 @@
 
 // Inherit the parent event
 event_inherited();
+if(!is_flying){
 is_grounded = instance_place(x, y, [obj_ground_parent]);
 if (is_grounded <= 0) {
 	vspeed = vspeed+grav;
@@ -13,4 +14,5 @@ if (is_grounded <= 0) {
 	if (is_falling > 0) {
 		vspeed=0;
 	}
+}
 }
