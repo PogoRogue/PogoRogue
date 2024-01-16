@@ -7,7 +7,7 @@ list_of_possible_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybulle
 							obj_item_buff_blackfriday, obj_item_buff_triplethreat, obj_item_buff_flamingcoins, 
 							obj_item_buff_combotime, obj_item_buff_sharpshooter, obj_item_buff_coinsup, 
 							obj_item_buff_sharptip, obj_item_buff_experimentation, obj_item_buff_aerialassassin,
-							obj_item_buff_supershield];
+							obj_item_buff_supershield, obj_item_buff_revive];
 random_buff_drop = list_of_possible_buffs[irandom_range(0,array_length(list_of_possible_buffs)-1)];
 
 buff = obj_player.buff_nothing;

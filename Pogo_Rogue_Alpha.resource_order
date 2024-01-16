@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings": [
+    {"name":"ProcGen","order":13,"path":"folders/Objects/Environmental/ProcGen.yy",},
     {"name":"Character","order":1,"path":"folders/Sounds/Character.yy",},
     {"name":"Enemies","order":5,"path":"folders/Sounds/Enemies.yy",},
     {"name":"Environmental","order":3,"path":"folders/Sounds/Environmental.yy",},
@@ -7,11 +8,10 @@
     {"name":"Miscellaneous","order":6,"path":"folders/Sounds/Miscellaneous.yy",},
     {"name":"Powerups","order":7,"path":"folders/Sounds/Powerups.yy",},
     {"name":"Weapons","order":2,"path":"folders/Sounds/Weapons.yy",},
-    {"name":"1x1","order":2,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/1x1.yy",},
-    {"name":"2x2","order":1,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/2x2.yy",},
-    {"name":"ProcGen","order":13,"path":"folders/Objects/Environmental/ProcGen.yy",},
     {"name":"Boss Sphere","order":26,"path":"folders/Sprites/Enemy/Boss Sphere.yy",},
     {"name":"Passives","order":1,"path":"folders/Sprites/Items/Passives.yy",},
+    {"name":"1x1","order":2,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/1x1.yy",},
+    {"name":"2x2","order":1,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/2x2.yy",},
     {"name":"Boss Cut-In","order":22,"path":"folders/Sprites/UI/Boss Cut-In.yy",},
   ],
   "ResourceOrderSettings": [
@@ -24,6 +24,7 @@
     {"name":"snd_whoosh","order":3,"path":"sounds/snd_whoosh/snd_whoosh.yy",},
     {"name":"snd_passivePowerup","order":2,"path":"sounds/snd_passivePowerup/snd_passivePowerup.yy",},
     {"name":"snd_collision","order":3,"path":"sounds/snd_collision/snd_collision.yy",},
+    {"name":"obj_item_buff_revive","order":4,"path":"objects/obj_item_buff_revive/obj_item_buff_revive.yy",},
     {"name":"snd_ArmorHeart","order":1,"path":"sounds/snd_ArmorHeart/snd_ArmorHeart.yy",},
     {"name":"spr_buffitem_experimentation","order":1,"path":"sprites/spr_buffitem_experimentation/spr_buffitem_experimentation.yy",},
     {"name":"snd_laser","order":8,"path":"sounds/snd_laser/snd_laser.yy",},
@@ -54,6 +55,7 @@
     {"name":"snd_shieldBubble","order":4,"path":"sounds/snd_shieldBubble/snd_shieldBubble.yy",},
     {"name":"room_sprite_level_test","order":1,"path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},
     {"name":"snd_refreshShop","order":3,"path":"sounds/snd_refreshShop/snd_refreshShop.yy",},
+    {"name":"spr_buffitem_revive","order":4,"path":"sprites/spr_buffitem_revive/spr_buffitem_revive.yy",},
     {"name":"snd_jetpack","order":2,"path":"sounds/snd_jetpack/snd_jetpack.yy",},
     {"name":"snd_hurt","order":2,"path":"sounds/snd_hurt/snd_hurt.yy",},
     {"name":"snd_outofammo","order":6,"path":"sounds/snd_outofammo/snd_outofammo.yy",},

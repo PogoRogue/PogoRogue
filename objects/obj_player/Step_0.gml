@@ -274,7 +274,31 @@ current_iframes = max(current_iframes - 1, 0);
 
 // Handle death
 dead = hp <= 0;
-if(dead && current_iframes <= 0) {
+if(dead && current_iframes <= 0 and global.revive = false) {
+	game_restart(); // TODO: Handle death screen or whatever we want to do	
+}else if (dead && current_iframes <= 0 and global.revived = false) {
+	//Revive
+	global.revived = true;
+	global.revive = false;
+	hp = floor((max_hp/8)/2) * 8;
+	state = state_revive;
+	current_iframes = max(current_iframes - 1, 0);
+	
+	//change revive item sprite
+	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
+		if global.all_buff_sprites[i] = spr_buffitem_revive {
+			//update image index
+			global.all_buff_sprites_index[i] += 2;
+		}
+	}
+	
+	//change revive item name
+	for (i = 0; i < array_length(global.all_buff_names); i++) {
+		if global.all_buff_names[i] = "Revive" {
+			global.all_buff_names[i] = "Revive (Used)";
+		}
+	}
+}else if (dead && current_iframes <= 0) {
 	game_restart(); // TODO: Handle death screen or whatever we want to do	
 }
 

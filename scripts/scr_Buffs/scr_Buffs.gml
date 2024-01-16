@@ -146,4 +146,10 @@ function scr_Buffs(){
 	buff_supershield = function(){
 		global.super_shield = true;
 	}
+	
+	buff_revive = function(){
+		if global.revived = false {
+			global.revive = true;
+		}
+	}
 }
