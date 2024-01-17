@@ -44,6 +44,3 @@ if(!is_dead && distance_to_object(player) < jump_range) {
 }
 
 jump_cooldown = max(jump_cooldown - 1, 0);
-if(!is_grounded&&vspeed==0){
-
-}

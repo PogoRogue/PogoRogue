@@ -7,12 +7,11 @@ if(is_dead) {
 	spd = 0;	
 }
 if(is_flying){
-if(is_dead) {
-	spd = 0;	
-} else if (place_meeting(x + speed, y, obj_ground)) {
-	spd *= -1;
-	image_xscale = sign(spd);
-}
-
-x += spd;
+    if(is_dead) {
+	    spd = 0;	
+    } else if (place_meeting(x + speed, y, obj_ground)) {
+	    spd *= -1;
+	    image_xscale = sign(spd);
+    }
+    x += spd;
 }
