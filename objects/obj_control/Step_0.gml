@@ -4,6 +4,7 @@ mute_button = keyboard_check_pressed(ord("M")); //press M to mute audio (tempora
 itemmenu_button = global.key_item_menu; 
 
 if (restart_button) {
+	room_persistent = false;
 	room_restart();
 	instance_deactivate_all(false);
 }

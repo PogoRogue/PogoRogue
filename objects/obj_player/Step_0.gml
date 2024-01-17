@@ -275,6 +275,10 @@ current_iframes = max(current_iframes - 1, 0);
 // Handle death
 dead = hp <= 0;
 if(dead && current_iframes <= 0 and global.revive = false) {
+	//see stats
+	with obj_runstats {
+		event_user(0);	
+	}
 	game_restart(); // TODO: Handle death screen or whatever we want to do	
 }else if (dead && current_iframes <= 0 and global.revived = false) {
 	//Revive
@@ -299,6 +303,10 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 		}
 	}
 }else if (dead && current_iframes <= 0) {
+	//see stats
+	with obj_runstats {
+		event_user(0);	
+	}
 	game_restart(); // TODO: Handle death screen or whatever we want to do	
 }
 

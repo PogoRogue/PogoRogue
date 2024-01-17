@@ -57,6 +57,7 @@ if key_select and fade_away = false {
 		//experimentation buff
 		if global.experimentation = true {
 			global.num_of_coins += 25;
+			global.current_total_coins += 25;
 		}
 	}
 	//slot 2
@@ -85,6 +86,7 @@ if key_select and fade_away = false {
 		//experimentation buff
 		if global.experimentation = true {
 			global.num_of_coins += 25;
+			global.current_total_coins += 25;
 		}
 	}
 	//slot 3
@@ -108,6 +110,7 @@ if key_select and fade_away = false {
 		//experimentation buff
 		if global.experimentation = true {
 			global.num_of_coins += 25;
+			global.current_total_coins += 25;
 		}
 	}
 	//cancel
