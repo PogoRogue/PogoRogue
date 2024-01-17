@@ -1,4 +1,4 @@
-function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, total_non_random_rooms, generate_starting_room)
+function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, total_non_random_rooms, generate_starting_room, min_distance_between_rooms, max_distance_between_rooms)
 {
 
 	// Create a grid to hold our layout
@@ -6,10 +6,6 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	var grid_width = max_gen_width;
 
 	var layout_grid = ds_grid_create(grid_width + 1, grid_height + 1); // +1 since we start at 0
-
-	// Print what seed we're currently on
-	var seed = randomize();
-	show_debug_message("Random seed: " + string(seed));
 
 	var currentY = 1; //Start above the bottom of the grid so that we can put walls below it
 	var currentX = 0;
@@ -89,7 +85,7 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 		// Update the previous room
 		previous_room = [currentX, currentY, rWidth, rHeight];
 		
-		currentY += rHeight + irandom_range(2, 5); // Move up by the height of our current room & random spacing
+		currentY += rHeight + irandom_range(min_distance_between_rooms, max_distance_between_rooms); // Move up by the height of our current room & random spacing
 	
 	} //End of for loop
 	
@@ -118,6 +114,13 @@ function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height,
 	var end_x = room2_x + irandom(room2_width - 1);
 	var end_y = room2_y;
 	
+	//For the special case our end room is a 1x1, we need to enter from the bottom, so lets target the grid just below it
+	if(room2_height == 1 && room2_width == 1)
+	{
+		end_y = room2_y - 1; //Notably, we will need to make sure to fill this in with a 1 at the end,
+		//since it breaks the condition of the while loop below
+	}
+	
 	while (start_x != end_x || start_y != end_y) {
 		var path_randomizer = random_range(0,1);
 		
@@ -135,12 +138,6 @@ function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height,
 			path_randomizer = 0;
 		}
 		
-		//Always enter a 1x1 from the bottom
-		if(room2_height == 1 && start_y == room1_y)
-		{
-			path_randomizer = 0;
-		}
-		
 		if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
 				ds_grid_set(layout_grid, start_x, start_y, "1");
 		}
@@ -150,6 +147,12 @@ function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height,
 		}
 		else {			//Otherwise path sideways
 			start_x += (end_x - start_x) / abs(end_x - start_x);
+		}
+	}
+	//Do an extra set after the while loop for 1x1s since we target a grid outside the room
+	if(room2_height == 1 && room2_width == 1){
+		if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
+					ds_grid_set(layout_grid, start_x, start_y, "1");
 		}
 	}
 }

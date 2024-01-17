@@ -1,5 +1,10 @@
+/// @desc Set up procedural generation variables, generate layout
 
-randomize();
+//Store the randomized seed, and print it to console
+seed = randomize();
+show_debug_message("Random seed: " + string(seed));
+
+
 
 // Our prebuilt rooms and their dimensions
 // Room format: [width, height, room_id]
@@ -17,13 +22,16 @@ ds_list_add(prebuilt_rooms, [2, 2, "c2"]); //2x2 Combat room
 
 rooms_to_generate = 5; //Need: Start, Combat, Combat, Shop, Boss (room order)
 
-//Max and min lengths of hallways (unimplemented)
-max_distance_between_rooms = 10;
-min_distance_between_rooms = 2;
+//Max and min heights of hallways
+min_distance_between_rooms = 2; //Go no lower than 2 for this number
+max_distance_between_rooms = 6; //Notably, this max is only concerned with height. 
+max_gen_width = 12; //This is the max width. Because of some details in the proc gen,
+//you are much less likely to hit this max than the height max
+//Example: since max distance is 10 up 12 sideways, maximum hall length is actually 10 + 12 = 22
 
 generate_proc_gen = true;
 
-max_gen_width = 12;
+
 generate_start_room = true; //Since structure will be the exact same, just with or without a starter room,
 //We use this bool to remember that we have (or haven't) already seen a start room
 
@@ -31,13 +39,14 @@ generate_start_room = true; //Since structure will be the exact same, just with 
 //Generate a few different layouts for test purposes
 for(var loopInd = 0; loopInd < 5; loopInd++)
 {
-	scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, num_non_rand_rooms, generate_start_room);
+	scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, num_non_rand_rooms, 
+	generate_start_room, min_distance_between_rooms, max_distance_between_rooms);
 	show_debug_message("\n");
 }
 
-//*/
-
-layout_grid = scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, num_non_rand_rooms, generate_start_room);
+//Generate the general layout of the procedural generation in text form
+layout_grid = scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, num_non_rand_rooms,
+generate_start_room, min_distance_between_rooms, max_distance_between_rooms);
 
 //We already generated a start room, so instead generate a random combat room the next time we proc gen
 generate_start_room = false;
