@@ -1,4 +1,4 @@
-function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms)
+function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, total_non_random_rooms, generate_starting_room)
 {
 
 	// Create a grid to hold our layout
@@ -13,47 +13,71 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms)
 
 	var currentY = 1; //Start above the bottom of the grid so that we can put walls below it
 	var currentX = 0;
-
-	ds_list_shuffle(prebuilt_rooms); // Shuffle our rooms, THIS IS SEEDED!
-
 	var previous_room = -1;
-
-	for (var rCount = 0; rCount < room_number; rCount++) {
-	    var room_index = choose(0);//, 1, 2, 3); // Pick a random prebuilt_room
-	    var r = ds_list_find_value(prebuilt_rooms, room_index);
-	    var rWidth = r[0];
-	    var rHeight = r[1];
-	    var room_id = r[2];
-	    //show_debug_message("Y: " + string(currentY));
-	    currentX = irandom_range(1, grid_width - rWidth - 1); // Random X axis placement 
+	var total_rooms = ds_list_size(prebuilt_rooms);
+	var room_index = 0; //Keeps track of which room we're about to generate
+	
+	for (var rCount = 0; rCount < room_number; rCount++) 
+	{	
+		if(rCount == 0)
+		{//If we need a starting room, it goes here (stored in index 0 of prebuilt_rooms)
+			if(generate_starting_room)
+			{
+				room_index = 0;
+			}
+			else
+			{					
+				room_index = irandom_range(total_non_random_rooms, total_rooms - 1); // Pick a prebuilt_room from the random rooms 		
+			}
+		}			
+		else if(rCount == room_number - 2) //Where the shop room needs to go (stored in index 1)
+		{
+			room_index = 1;
+		}
+		else if(rCount == room_number - 1) //The last room is the boss room (stored in index 2)
+		{
+			room_index = 2;
+		}
+		else //Otherwise, we use a random combat room	
+		{			
+			room_index = irandom_range(total_non_random_rooms, total_rooms - 1); // Pick a prebuilt_room from the random rooms 		
+		}		
+		
+		//Now that a room type has been selected, use it's values to add it to the layout
+		var r = ds_list_find_value(prebuilt_rooms, room_index);		
+		var rWidth = r[0];
+		var rHeight = r[1];
+		var room_id = r[2];
+		//show_debug_message("Y: " + string(currentY));
+		currentX = irandom_range(1, grid_width - rWidth - 1); // Random X axis placement 
 		//within room with at least 1 space between room and grid edge
 
-	    // Ensure rooms are in the grid bounds
-	    if (!(
-	        currentY >= 0 &&
-	        currentX >= 0 &&
-	        currentY + rHeight <= grid_height + 1 &&
-	        currentX + rWidth <= grid_width
-	    )) {
-				ds_grid_resize(layout_grid, grid_width+1, (grid_height*2)+1);
-				grid_height *= 2;
-			}
+		// Ensure rooms are in the grid bounds
+		if (!(
+		currentY >= 0 &&
+		currentX >= 0 &&
+		currentY + rHeight <= grid_height + 1 &&
+		currentX + rWidth <= grid_width
+		)) {
+			ds_grid_resize(layout_grid, grid_width+1, (grid_height*2)+1);
+			grid_height *= 2;
+		}
 		// Connect the rooms with winding paths
-	    if (previous_room != -1) {
-	        Connect_Rooms(layout_grid, previous_room[0], previous_room[1]+rHeight, previous_room[2], previous_room[3], currentX, currentY, rWidth, rHeight);
-	    }
+		if (previous_room != -1) {
+			Connect_Rooms(layout_grid, previous_room[0], previous_room[1]+previous_room[3] - 1, previous_room[2], previous_room[3], currentX, currentY, rWidth, rHeight);
+		}
 
-	    // Place the current room
-	    for (var roomX = currentX; roomX < currentX + rWidth; roomX++) {
-	        for (var roomY = currentY; roomY < currentY + rHeight; roomY++) {
-	            ds_grid_set(layout_grid, roomX, roomY, room_id);
+		// Place the current room
+		for (var roomX = currentX; roomX < currentX + rWidth; roomX++) {
+			 for (var roomY = currentY; roomY < currentY + rHeight; roomY++) {
+				ds_grid_set(layout_grid, roomX, roomY, room_id);
 				//Mark corners of rooms
 				if(roomX == currentX && roomY == currentY + rHeight - 1)
 				{
 					ds_grid_set(layout_grid, roomX, roomY, room_id + "c")
 				}
-	        }
-	    }
+			}
+		}
 		
 		//Set player starting point if this is the first room
 		if(previous_room = -1)
@@ -62,11 +86,12 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms)
 			ds_grid_set(layout_grid, currentX + floor(rWidth/2), currentY + floor(rHeight/2), "s");
 		}
 
-	    // Update the previous room
-	    previous_room = [currentX, currentY, rWidth, rHeight];
+		// Update the previous room
+		previous_room = [currentX, currentY, rWidth, rHeight];
 		
-	    currentY += rHeight + irandom_range(2, 5); // Move up by the height of our current room & random spacing
-	}
+		currentY += rHeight + irandom_range(2, 5); // Move up by the height of our current room & random spacing
+	
+	} //End of for loop
 	
 	Remove_Useless_Tiles(layout_grid);
 
@@ -89,28 +114,35 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms)
 	// Function to connect two rooms with a winding path
 function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height, room2_x, room2_y, room2_width, room2_height) {
 	var start_x = room1_x + irandom(room1_width - 1);
-	var start_y = room1_y-1;
+	var start_y = room1_y;
 	var end_x = room2_x + irandom(room2_width - 1);
 	var end_y = room2_y;
 	
 	while (start_x != end_x || start_y != end_y) {
 		var path_randomizer = random_range(0,1);
+		
+		//Navigate directly up or sideways if we're already at the correct x/y coord
 		if (start_x == end_x) {
 			path_randomizer = 0;
 		}
 		else if (start_y == end_y) {
 			path_randomizer = 1;
 		}
-		if (path_randomizer <= 0.6) {
-			if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
+		
+		//Don't exit a 2 height or smaller room from the left or right
+		if(room1_height <= 2 && start_y == room1_y)
+		{
+			path_randomizer = 0;
+		}
+		
+		if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
 				ds_grid_set(layout_grid, start_x, start_y, "1");
-			}
+		}
+		
+		if (path_randomizer <= 0.6) {	//path upwards 60% of the time	(see special cases above)	
 			start_y += 1;
 		}
-		else {
-			if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
-				ds_grid_set(layout_grid, start_x, start_y, "1");
-			}
+		else {			//Otherwise path sideways
 			start_x += (end_x - start_x) / abs(end_x - start_x);
 		}
 	}
