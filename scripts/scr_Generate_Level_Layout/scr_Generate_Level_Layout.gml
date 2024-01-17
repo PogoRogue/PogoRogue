@@ -135,6 +135,12 @@ function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height,
 			path_randomizer = 0;
 		}
 		
+		//Always enter a 1x1 from the bottom
+		if(room2_height == 1 && start_y == room1_y)
+		{
+			path_randomizer = 0;
+		}
+		
 		if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
 				ds_grid_set(layout_grid, start_x, start_y, "1");
 		}
