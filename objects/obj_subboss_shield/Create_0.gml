@@ -7,7 +7,7 @@ depth = -7;
 
 drop = false
 
-boss = instance_nearest(x, y, obj_boss_sphere);
+boss = instance_nearest(x, y, parent);
 
 // Position and rotation variables
 boss_dir = point_direction(x, y, boss.x, boss.y);
