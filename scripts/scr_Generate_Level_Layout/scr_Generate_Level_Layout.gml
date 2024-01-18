@@ -89,7 +89,7 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	
 	} //End of for loop
 	
-	Remove_Useless_Tiles(layout_grid);
+	Remove_Useless_Tiles(layout_grid);					
 
 	// Show the grid in the console
 	for (var i = grid_height; i >= 0; i--) {
@@ -103,6 +103,18 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	    }
 	    show_debug_message(row);
 	}
+	
+	// For testing
+	/*global.debug_draw = true; // Set this to false to stop debugging rectangles.
+	if (global.debug_draw) {
+		for (var i = 0; i < ds_list_size(gate_positions); i++) {
+			var pos = ds_list_find_value(gate_positions, i);
+			var debug_x = pos[0];
+			var debug_y = pos[1];
+			draw_set_color(c_red);
+			draw_rectangle(debug_x, debug_y, debug_x + 512, debug_y + 512, true);
+		}
+	}*/
 	
 	return layout_grid;
 }
@@ -214,3 +226,4 @@ function Remove_Useless_Tiles(layout_grid)
 	    }
 	}
 }
+		
