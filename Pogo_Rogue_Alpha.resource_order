@@ -36,6 +36,7 @@
     {"name":"spr_enemy_jump","order":19,"path":"sprites/spr_enemy_jump/spr_enemy_jump.yy",},
     {"name":"spr_enemy_turret_move","order":18,"path":"sprites/spr_enemy_turret_move/spr_enemy_turret_move.yy",},
     {"name":"spr_miniboss_cube","order":29,"path":"sprites/spr_miniboss_cube/spr_miniboss_cube.yy",},
+    {"name":"scr_Create_Gate_Objects_From_Grid","order":1,"path":"scripts/scr_Create_Gate_Objects_From_Grid/scr_Create_Gate_Objects_From_Grid.yy",},
     {"name":"snd_laser","order":8,"path":"sounds/snd_laser/snd_laser.yy",},
     {"name":"snd_pause","order":2,"path":"sounds/snd_pause/snd_pause.yy",},
     {"name":"spr_enemy_stomp_only_Shield","order":15,"path":"sprites/spr_enemy_stomp_only_Shield/spr_enemy_stomp_only_Shield.yy",},

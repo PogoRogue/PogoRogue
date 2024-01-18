@@ -272,6 +272,7 @@
     {"id":{"name":"spr_boss_cutin_back","path":"sprites/spr_boss_cutin_back/spr_boss_cutin_back.yy",},},
     {"id":{"name":"spr_3x3_Combat","path":"sprites/spr_3x3_Combat/spr_3x3_Combat.yy",},},
     {"id":{"name":"spr_enemy_jump","path":"sprites/spr_enemy_jump/spr_enemy_jump.yy",},},
+    {"id":{"name":"scr_Create_Gate_Objects_From_Grid","path":"scripts/scr_Create_Gate_Objects_From_Grid/scr_Create_Gate_Objects_From_Grid.yy",},},
     {"id":{"name":"spr_pickup_reload","path":"sprites/spr_pickup_reload/spr_pickup_reload.yy",},},
     {"id":{"name":"obj_item_pickup_jetpack","path":"objects/obj_item_pickup_jetpack/obj_item_pickup_jetpack.yy",},},
     {"id":{"name":"obj_jetpack_smoke","path":"objects/obj_jetpack_smoke/obj_jetpack_smoke.yy",},},
