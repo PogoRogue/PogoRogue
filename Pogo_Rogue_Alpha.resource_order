@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings": [
+    {"name":"ProcGen","order":13,"path":"folders/Objects/Environmental/ProcGen.yy",},
     {"name":"Character","order":1,"path":"folders/Sounds/Character.yy",},
     {"name":"Enemies","order":5,"path":"folders/Sounds/Enemies.yy",},
     {"name":"Environmental","order":3,"path":"folders/Sounds/Environmental.yy",},
@@ -7,11 +8,10 @@
     {"name":"Miscellaneous","order":6,"path":"folders/Sounds/Miscellaneous.yy",},
     {"name":"Powerups","order":7,"path":"folders/Sounds/Powerups.yy",},
     {"name":"Weapons","order":2,"path":"folders/Sounds/Weapons.yy",},
-    {"name":"1x1","order":2,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/1x1.yy",},
-    {"name":"2x2","order":1,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/2x2.yy",},
-    {"name":"ProcGen","order":13,"path":"folders/Objects/Environmental/ProcGen.yy",},
     {"name":"Boss Sphere","order":26,"path":"folders/Sprites/Enemy/Boss Sphere.yy",},
     {"name":"Passives","order":1,"path":"folders/Sprites/Items/Passives.yy",},
+    {"name":"1x1","order":2,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/1x1.yy",},
+    {"name":"2x2","order":1,"path":"folders/Sprites/ProcGenLevelData/PrebuiltRooms/2x2.yy",},
     {"name":"Boss Cut-In","order":22,"path":"folders/Sprites/UI/Boss Cut-In.yy",},
   ],
   "ResourceOrderSettings": [
