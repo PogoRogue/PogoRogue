@@ -6,6 +6,7 @@ colliding_with_ground = false;
 colliding_with_ground_left = false;
 colliding_with_ground_right = false;
 colliding_with_enemies = false;
+_hit_button = false;
 
 if (global.arm_cannon = false) {
 	sprite_index = spr_player_mask_zekai;

@@ -50,11 +50,13 @@ function scr_Player_Collision(){
 		speed = 0; //stop player movement while bouncing
 		aerial_assassin_count = 0;
 	}
-	
+
 	//unfreeze
 	if state = state_bouncing {
 		grv = init_grv;
 		rotation_speed = original_rotation_speed;
 		rotation_delay = rotation_speed / 10;
 	}
+	
+	
 }

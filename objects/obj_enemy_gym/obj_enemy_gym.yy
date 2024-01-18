@@ -1,21 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_enemy_moving",
+  "name": "obj_enemy_gym",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":70,"eventType":10,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":13,"eventType":10,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Ready Enemies",
-    "path": "folders/Objects/Enemy/Ready Enemies.yy",
+    "name": "Control Objects",
+    "path": "folders/Objects/Control Objects.yy",
   },
-  "parentObjectId": {
-    "name": "obj_enemy_grounded_parent",
-    "path": "objects/obj_enemy_grounded_parent/obj_enemy_grounded_parent.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -32,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_moving",
-    "path": "sprites/spr_enemy_moving/spr_enemy_moving.yy",
+    "name": "Sprite284",
+    "path": "sprites/Sprite284/Sprite284.yy",
   },
   "spriteMaskId": null,
   "visible": true,
