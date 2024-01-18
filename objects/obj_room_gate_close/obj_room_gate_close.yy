@@ -13,10 +13,7 @@
     "name": "Environmental",
     "path": "folders/Objects/Environmental.yy",
   },
-  "parentObjectId": {
-    "name": "obj_ground",
-    "path": "objects/obj_ground/obj_ground.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

@@ -224,6 +224,3 @@ if (place_meeting(x,y,obj_wallbutton) and parent_index.vspeed < 0) {
 	
 	ds_list_destroy(_list);
 }
-
-
-}
