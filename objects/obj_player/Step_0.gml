@@ -1,5 +1,10 @@
 /// @description player movement
 
+/* //Print player position for debug purposes
+var debug_message = "Player position" + string(x) + ", " + string(y)
+show_debug_message(debug_message);
+*/
+
 #region //Get inputs (1 = pressed, 0 = not pressed)
 if (dead = false) {
 	key_right = global.key_right_player;

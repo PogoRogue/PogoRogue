@@ -62,6 +62,16 @@ function scr_Convert_Layout_To_Rooms(layout_grid){
 									y = player.y - 32;
 								}								
 								show_debug_message("Moved player!")
+								
+								/* //Debug code for gates to make sure they're actually being placed and visible/interactable
+								if(instance_exists(obj_room_gate_close))
+								{
+									var nearestDoor = instance_nearest(player.x, player.y, obj_room_gate_close);
+									nearestDoor.x = player.x;
+									nearestDoor.y = player.y + 100;
+									show_debug_message("Moved gate")
+								} */
+								
 							}
 							else
 							{
@@ -79,4 +89,7 @@ function scr_Convert_Layout_To_Rooms(layout_grid){
 			}
 		}
 	}
+	
+	//After creating all of the room objects, also add gates between hallways and rooms
+	scr_Create_Gate_Objects_From_Grid(layout_grid);
 }
