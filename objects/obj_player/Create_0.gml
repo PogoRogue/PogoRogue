@@ -464,6 +464,14 @@ state_revive = function() {
 	}
 }
 
+state_dead = function() {
+	if y < 100000 {
+		vspeed += grv; //falling
+	}else {
+		speed = 0;
+	}
+}
+
 state = state_free;
 #endregion
 

@@ -7,7 +7,9 @@ if (instance_number(obj_runstats) > 1) {
 	global.current_area_reached = 1;
 	global.current_time_elapsed = 0;
 	
-	global.all_weapons_used = [spr_gun_default]; //only need sprites
+	global.all_weapons_used = []; //only need sprites
 	global.all_passives_used = []; //only need sprites
 	global.all_actives_used = []; //only need sprites
 }
+
+shown_stats = false;

@@ -272,6 +272,22 @@ if gun_2 = gun_1 {
 // Update iframes
 current_iframes = max(current_iframes - 1, 0);
 
+//create death screen
+if (dead = true and global.revive = false and state != state_revive) {
+	//death screen
+	if !instance_exists(obj_deathscreen) {
+		instance_create_depth(x,y,depth-1000,obj_deathscreen);
+		speed /= 2;
+	}
+	
+	//fall through ground on death
+	mask_index = spr_nothing;
+	state = state_dead;
+	with obj_player_mask {
+		mask_index = spr_nothing;
+	}
+}
+
 // Handle death
 dead = hp <= 0;
 if(dead && current_iframes <= 0 and global.revive = false) {
@@ -279,7 +295,6 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 	with obj_runstats {
 		event_user(0);	
 	}
-	game_restart(); // TODO: Handle death screen or whatever we want to do	
 }else if (dead && current_iframes <= 0 and global.revived = false) {
 	//Revive
 	global.revived = true;
@@ -307,11 +322,10 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 	with obj_runstats {
 		event_user(0);	
 	}
-	game_restart(); // TODO: Handle death screen or whatever we want to do	
 }
 
 //One Heart Stresser
-if (hp <= 8) {
+if (hp <= 8 and hp > 0) {
 	if !audio_is_playing(snd_oneHeart) {
 		audio_play_sound(snd_oneHeart,0,false);
 	}	

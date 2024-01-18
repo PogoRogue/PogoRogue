@@ -12,10 +12,16 @@ function scr_Convert_Frames_To_Time(frames) {
 		var zero = "";	
 	}
 	
+	if milliseconds < 10 {
+		var zero2 = "0";	
+	}else {
+		var zero2 = "";	
+	}
+	
 	//convert to string
 	if (hours > 0) {
-		return (string(hours) + ":" + string(minutes) + ":" + zero + string(seconds) + "." + string(milliseconds));
+		return (string(hours) + ":" + string(minutes) + ":" + zero + string(seconds) + "." + zero2 + string(milliseconds));
 	}else {
-		return (string(minutes) + ":" + zero + string(seconds) + "." + string(milliseconds));
+		return (string(minutes) + ":" + zero + string(seconds) + "." + zero2 + string(milliseconds));
 	}
 }

@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b91269da-d673-4a7d-bcb4-21ddf1e1489a",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6c9c21ad-b9cd-44d2-a7fb-5989eead6618",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c8b90924-8ad0-452a-aeac-78b0a5c15f21",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b91269da-d673-4a7d-bcb4-21ddf1e1489a","path":"sprites/spr_pickup_chargejump/spr_pickup_chargejump.yy",},},},"Disabled":false,"id":"5f7effd7-d157-46a6-b638-7a97329db2a0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6c9c21ad-b9cd-44d2-a7fb-5989eead6618","path":"sprites/spr_pickup_chargejump/spr_pickup_chargejump.yy",},},},"Disabled":false,"id":"46d54ae0-10d8-46d4-bddc-f0772dca3034","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c8b90924-8ad0-452a-aeac-78b0a5c15f21","path":"sprites/spr_pickup_chargejump/spr_pickup_chargejump.yy",},},},"Disabled":false,"id":"21e45106-81e1-4b7e-82af-841b7caf7dc9","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
