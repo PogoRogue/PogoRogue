@@ -21,6 +21,9 @@ if instance_exists(obj_camera) {
 }
 
 if centered = true {
+	x = obj_camera.x;
+	y = obj_camera.y;
+	
 	//left/right
 	if key_left and select_x > 1 and selected_x = false {
 		select_x -= 1;
