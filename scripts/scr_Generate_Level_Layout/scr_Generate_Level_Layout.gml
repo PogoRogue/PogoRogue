@@ -89,51 +89,7 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	
 	} //End of for loop
 	
-	Remove_Useless_Tiles(layout_grid);
-	
-	var gate_positions = ds_list_create();
-	// Scan for gate positions
-	for (var i = 0; i < grid_width; i++) {
-	    for (var j = 0; j < grid_height; j++) {
-	        var current_cell = ds_grid_get(layout_grid, i, j);
-	        if (string(current_cell) == "1") { // Is a hallway
-	            // Check adjacent cells for room IDs (non-numeric values that are not "w" or "1")
-	            var neighbours = [ds_grid_get(layout_grid, i-1, j), ds_grid_get(layout_grid, i+1, j),
-	                              ds_grid_get(layout_grid, i, j+1), ds_grid_get(layout_grid, i, j-1)];
-								  
-	            for (var k = 0; k < array_length_1d(neighbours); k++) {
-					var neighbour = neighbours[k];
-	                var n_value = string(neighbour);
-	                if (n_value != "1" && n_value != "w" && n_value != "0") {
-	                    // We found a transition from hallway to room, add to gate positions.
-	                    ds_list_add(gate_positions, [i, j]);
-	                    break; // Skip checking other neighbours since we found our gate position.
-	                }
-	            }
-	        }
-	    }
-	}
-	
-	// Loop through our gate positions to create gates at the stored positions.
-	for (var i = 0; i < ds_list_size(gate_positions); i++) {
-		var pos = ds_list_find_value(gate_positions, i);
-		var gate_x = pos[0];
-		var gate_y = pos[1];
-		// Convert grid pos to room coords and create gate instance
-		cell_size = 32; // Size of our cells in the grid. not sure if 32x16 = 512 pixels per room? or if this is what we set to honestly.
-		var room_x = gate_x * cell_size + cell_size;
-		var room_y = gate_y * cell_size + cell_size;
-		var inst = instance_create_layer(room_x, room_y, "Instances", obj_room_gate_close);
-		if (inst == noone) {
-			show_debug_message("Gate instance could not be created");
-		}
-		instance_create_layer(room_x, room_y, "Instances", obj_room_gate_open);
-		show_debug_message("Gate Placed at: " + string(room_x) + ", " + string(room_y));
-	}
-	
-	// Delete to prevent memory leaks
-	//ds_list_destroy(gate_positions);
-						
+	Remove_Useless_Tiles(layout_grid);					
 
 	// Show the grid in the console
 	for (var i = grid_height; i >= 0; i--) {

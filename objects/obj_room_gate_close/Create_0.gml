@@ -4,4 +4,4 @@
 //create collision walls
 scr_Create_Collision_Walls();
 
-depth = -50;
+//depth = -50;
