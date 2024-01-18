@@ -22,7 +22,7 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 	}
 	else if(room_string == "Bc") //Boss Teleport Room
 	{
-		return spr_3x3_BossTeleporter;
+		return spr_before_boss;
 	}
 	else if(room_string == "s") //s marks the player start! (In case the first room doesn't
 	{
