@@ -83,7 +83,8 @@ dead = false;
 
 // Room Gate Handling
 enemies_killed = 0;
-enemies_required = 0;
+enemies_required = 3;
+room_number = 0;
 
 //Sound Bool for preventing looping sounds
 soundPlayed = false;
@@ -346,7 +347,7 @@ state_bulletblast = function() {
 				temp_x *= -1.2;
 			}
 		}
-		scr_Player_Collision();
+		//scr_Player_Collision();
 		if state = state_bouncing { //dont want to cancel powerup after collision
 			state = state_bulletblast;	
 		}
