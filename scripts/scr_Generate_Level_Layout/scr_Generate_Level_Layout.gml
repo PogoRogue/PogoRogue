@@ -1,4 +1,4 @@
-function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, total_non_random_rooms, generate_starting_room)
+function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, total_non_random_rooms, generate_starting_room, min_distance_between_rooms, max_distance_between_rooms)
 {
 
 	// Create a grid to hold our layout
@@ -6,10 +6,6 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	var grid_width = max_gen_width;
 
 	var layout_grid = ds_grid_create(grid_width + 1, grid_height + 1); // +1 since we start at 0
-
-	// Print what seed we're currently on
-	var seed = randomize();
-	show_debug_message("Random seed: " + string(seed));
 
 	var currentY = 1; //Start above the bottom of the grid so that we can put walls below it
 	var currentX = 0;
@@ -89,11 +85,11 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 		// Update the previous room
 		previous_room = [currentX, currentY, rWidth, rHeight];
 		
-		currentY += rHeight + irandom_range(2, 5); // Move up by the height of our current room & random spacing
+		currentY += rHeight + irandom_range(min_distance_between_rooms, max_distance_between_rooms); // Move up by the height of our current room & random spacing
 	
 	} //End of for loop
 	
-	Remove_Useless_Tiles(layout_grid);
+	Remove_Useless_Tiles(layout_grid);					
 
 	// Show the grid in the console
 	for (var i = grid_height; i >= 0; i--) {
@@ -108,6 +104,18 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	    show_debug_message(row);
 	}
 	
+	// For testing
+	/*global.debug_draw = true; // Set this to false to stop debugging rectangles.
+	if (global.debug_draw) {
+		for (var i = 0; i < ds_list_size(gate_positions); i++) {
+			var pos = ds_list_find_value(gate_positions, i);
+			var debug_x = pos[0];
+			var debug_y = pos[1];
+			draw_set_color(c_red);
+			draw_rectangle(debug_x, debug_y, debug_x + 512, debug_y + 512, true);
+		}
+	}*/
+	
 	return layout_grid;
 }
 
@@ -117,6 +125,13 @@ function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height,
 	var start_y = room1_y;
 	var end_x = room2_x + irandom(room2_width - 1);
 	var end_y = room2_y;
+	
+	//For the special case our end room is a 1x1, we need to enter from the bottom, so lets target the grid just below it
+	if(room2_height == 1 && room2_width == 1)
+	{
+		end_y = room2_y - 1; //Notably, we will need to make sure to fill this in with a 1 at the end,
+		//since it breaks the condition of the while loop below
+	}
 	
 	while (start_x != end_x || start_y != end_y) {
 		var path_randomizer = random_range(0,1);
@@ -144,6 +159,12 @@ function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height,
 		}
 		else {			//Otherwise path sideways
 			start_x += (end_x - start_x) / abs(end_x - start_x);
+		}
+	}
+	//Do an extra set after the while loop for 1x1s since we target a grid outside the room
+	if(room2_height == 1 && room2_width == 1){
+		if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
+					ds_grid_set(layout_grid, start_x, start_y, "1");
 		}
 	}
 }
@@ -205,3 +226,4 @@ function Remove_Useless_Tiles(layout_grid)
 	    }
 	}
 }
+		

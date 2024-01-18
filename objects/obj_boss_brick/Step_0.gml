@@ -34,3 +34,5 @@ if(collision_point(x + 32, y, obj_boss_brick, true, true)) {
 event_inherited();
 
 draw_hp = hp < hp_max;
+
+mask_index = image_index;

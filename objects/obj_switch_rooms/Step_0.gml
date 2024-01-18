@@ -2,7 +2,7 @@
 if (keyboard_check_pressed(vk_alt)) /*|| gamepad_button_check_pressed(0,gp_shoulderlb))*/ {
 	if (room = room_proc_gen_test || room = room_sprite_level_test) {
 		//game_restart(); Do nothing. This breaks proc gen shop since tab is also the shop switch button
-	} else if(room == room_boss_test) {
+	} else if(room == room_boss_1) {
 		
 	} else if (room = room_sam_movement) {
 		room = room_gym_enemy;
@@ -15,8 +15,8 @@ if (keyboard_check_pressed(vk_alt)) /*|| gamepad_button_check_pressed(0,gp_shoul
 	} 
 	
 	if (room = room_gameplay_video) {
-		room = room_boss_test;
-	} else if (room = room_boss_test) {
+		room = room_boss_1;
+	} else if (room = room_boss_1) {
 		//game_restart();
 	}
 }

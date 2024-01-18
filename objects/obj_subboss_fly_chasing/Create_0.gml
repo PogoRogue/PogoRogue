@@ -7,6 +7,11 @@ depth = -7;
 target_x = obj_player.x;
 target_y = obj_player.y;
 
+// Create pathway object if it doesn't exist
+if(!instance_exists(obj_setup_pathway)) {
+	instance_create_layer(0, 0, "enemies", obj_setup_pathway);
+}
+
 
 drop = false
 //grid_follow = mp_grid_create(0,0,room_width/16,room_height/16,16,16);

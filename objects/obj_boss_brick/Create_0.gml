@@ -6,7 +6,7 @@ event_inherited();
 // Layer in front of boss (-5)
 depth = -6;
 
-boss = instance_nearest(x, y, obj_boss_sphere);
+boss = instance_nearest(x, y, parent);
 draw_hp = false;
 
 // Position and rotation variables
