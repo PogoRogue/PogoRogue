@@ -1,1 +1,1 @@
-room = room_boss_test;
+room = room_boss_1;
