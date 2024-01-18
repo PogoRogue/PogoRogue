@@ -22,6 +22,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sub-bosses","folderPath":"folders/Objects/Enemy/Boss Sphere/Sub-bosses.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"boss2","folderPath":"folders/Objects/Enemy/boss2.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Hitbox","folderPath":"folders/Objects/Enemy/Hitbox.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Mini Bosses","folderPath":"folders/Objects/Enemy/Mini Bosses.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ready Enemies","folderPath":"folders/Objects/Enemy/Ready Enemies.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Environmental","folderPath":"folders/Objects/Environmental.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"ProcGen","folderPath":"folders/Objects/Environmental/ProcGen.yy",},
@@ -84,7 +85,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Mini Bosses","folderPath":"folders/Objects/Enemy/Mini Bosses.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"snd_ArmorHeart.mp3","CopyToMask":-1,"filePath":"datafiles",},
@@ -106,7 +106,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
