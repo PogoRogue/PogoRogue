@@ -83,7 +83,8 @@ dead = false;
 
 // Room Gate Handling
 enemies_killed = 0;
-enemies_required = 0;
+enemies_required = 3;
+room_number = 0;
 
 //Sound Bool for preventing looping sounds
 soundPlayed = false;
