@@ -38,8 +38,8 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			}
 			else if(Red > 150)
 			{
-				//return obj_enemy_shooter;
-				return obj_enemy_shooter_moving;
+				return obj_enemy_shooter;
+				//return obj_enemy_shooter_moving;
 			}
 		}
 		else if(Green >= 50)
@@ -55,7 +55,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			}
 			else if(Red > 200)
 			{
-				return obj_enemy_chasing;
+				return obj_enemy_stomp_only_moving;
 			}
 			else if(Red > 170)
 			{
