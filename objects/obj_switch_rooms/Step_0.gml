@@ -14,10 +14,11 @@ if (instance_exists(obj_player)) {
 		} else if (room = room_shop) {
 			//room = global.last_room;
 		} 
-	
-	if (room = room_gameplay_video) {
-		room = room_boss_1;
-	} else if (room = room_boss_1) {
-		//game_restart();
+		
+		if (room = room_gameplay_video) {
+			room = room_boss_1;
+		} else if (room = room_boss_1) {
+			//game_restart();
+		}
 	}
 }

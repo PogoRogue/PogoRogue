@@ -1,11 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_room_gate_close",
+  "name": "obj_movingplatform_horizontal",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_player_mask","path":"objects/obj_player_mask/obj_player_mask.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -14,8 +16,8 @@
     "path": "folders/Objects/Environmental.yy",
   },
   "parentObjectId": {
-    "name": "obj_ground",
-    "path": "objects/obj_ground/obj_ground.yy",
+    "name": "obj_ground_oneway",
+    "path": "objects/obj_ground_oneway/obj_ground_oneway.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -33,8 +35,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_gate_close",
-    "path": "sprites/spr_gate_close/spr_gate_close.yy",
+    "name": "spr_movingplatform_horizontal",
+    "path": "sprites/spr_movingplatform_horizontal/spr_movingplatform_horizontal.yy",
   },
   "spriteMaskId": null,
   "visible": true,

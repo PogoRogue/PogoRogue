@@ -41,6 +41,9 @@ if (dead = false) {
 }
 #endregion
 
+//get mask object
+msk_index = instance_nearest(x,y,obj_player_mask);
+
 //land on and damage enemy
 var condition = ground_pound_slam = false;
 scr_Enemy_Collision_Check(condition);

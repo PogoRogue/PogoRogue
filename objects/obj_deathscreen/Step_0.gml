@@ -10,19 +10,24 @@ if instance_exists(obj_camera) {
 	}
 	
 	if y < obj_camera.y {
+		x = obj_camera.x;
 		y += spd * spd_multiply;
 	}
 	
-	if y >= obj_camera.y and centered = false {
+	if y >= obj_camera.y {
 		y = obj_camera.y;
+	}
+	
+	if y >= obj_camera.y - 16 and centered = false {
 		centered = true;
 		select_x = 1;
 	}
 }
 
 if centered = true {
-	x = obj_camera.x;
-	y = obj_camera.y;
+	if select_x = 0 {
+		select_x = 1;	
+	}
 	
 	//left/right
 	if key_left and select_x > 1 and selected_x = false {
