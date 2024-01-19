@@ -22,6 +22,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sub-bosses","folderPath":"folders/Objects/Enemy/Boss Sphere/Sub-bosses.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"boss2","folderPath":"folders/Objects/Enemy/boss2.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Hitbox","folderPath":"folders/Objects/Enemy/Hitbox.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Mini Bosses","folderPath":"folders/Objects/Enemy/Mini Bosses.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ready Enemies","folderPath":"folders/Objects/Enemy/Ready Enemies.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Environmental","folderPath":"folders/Objects/Environmental.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"ProcGen","folderPath":"folders/Objects/Environmental/ProcGen.yy",},
@@ -84,7 +85,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Mini Bosses","folderPath":"folders/Objects/Enemy/Mini Bosses.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"snd_ArmorHeart.mp3","CopyToMask":-1,"filePath":"datafiles",},
@@ -270,6 +270,7 @@
     {"id":{"name":"scr_Laser_Sight","path":"scripts/scr_Laser_Sight/scr_Laser_Sight.yy",},},
     {"id":{"name":"spr_pause_areyousure_restart","path":"sprites/spr_pause_areyousure_restart/spr_pause_areyousure_restart.yy",},},
     {"id":{"name":"snd_nothing","path":"sounds/snd_nothing/snd_nothing.yy",},},
+    {"id":{"name":"obj_generated_object_parent","path":"objects/obj_generated_object_parent/obj_generated_object_parent.yy",},},
     {"id":{"name":"spr_projectile_burstfire","path":"sprites/spr_projectile_burstfire/spr_projectile_burstfire.yy",},},
     {"id":{"name":"spr_background2","path":"sprites/spr_background2/spr_background2.yy",},},
     {"id":{"name":"obj_switch_rooms","path":"objects/obj_switch_rooms/obj_switch_rooms.yy",},},
