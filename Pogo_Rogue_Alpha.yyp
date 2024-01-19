@@ -278,6 +278,7 @@
     {"id":{"name":"scr_Laser_Sight","path":"scripts/scr_Laser_Sight/scr_Laser_Sight.yy",},},
     {"id":{"name":"spr_pause_areyousure_restart","path":"sprites/spr_pause_areyousure_restart/spr_pause_areyousure_restart.yy",},},
     {"id":{"name":"snd_nothing","path":"sounds/snd_nothing/snd_nothing.yy",},},
+    {"id":{"name":"obj_generated_object_parent","path":"objects/obj_generated_object_parent/obj_generated_object_parent.yy",},},
     {"id":{"name":"spr_projectile_burstfire","path":"sprites/spr_projectile_burstfire/spr_projectile_burstfire.yy",},},
     {"id":{"name":"spr_background2","path":"sprites/spr_background2/spr_background2.yy",},},
     {"id":{"name":"obj_switch_rooms","path":"objects/obj_switch_rooms/obj_switch_rooms.yy",},},
