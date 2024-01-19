@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_boss_cutin",
-  "bbox_bottom": 1213,
+  "bbox_bottom": 425,
   "bbox_left": 0,
-  "bbox_right": 1943,
-  "bbox_top": 0,
+  "bbox_right": 759,
+  "bbox_top": 2,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6e6867db-5e3a-483e-a596-29265145fb21",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9184c1fb-4dc0-4327-8797-9205a8e23468",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1214,
+  "height": 432,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"68bb71fb-5297-4891-8f79-096a5af29461","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8690290e-dc4d-43c3-98ec-fdfb61bed2c9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6e6867db-5e3a-483e-a596-29265145fb21","path":"sprites/spr_boss_cutin/spr_boss_cutin.yy",},},},"Disabled":false,"id":"b55c1244-cf2a-4626-b69d-5aedcb0f51a4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9184c1fb-4dc0-4327-8797-9205a8e23468","path":"sprites/spr_boss_cutin/spr_boss_cutin.yy",},},},"Disabled":false,"id":"94768eeb-9a22-41b5-853c-e0abf11427b6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1944,
+  "width": 760,
 }
