@@ -19,6 +19,7 @@ mouse_sensitivity = 200; //the lower the value, the more sensitive the player is
 mouse_reanglespeed = 6; //the lower the value, the faster the player will reangle itself and vice versa
 invert = false;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
+not_colliding = true; //prevent glitches with wall collision
 conveyor_speed = 0;
 can_rotate = true;
 can_shoot = true;
@@ -31,6 +32,8 @@ max_ammo_buff = 0;
 max_max_ammo_buff = 5; //max amount this buff can be received
 laser_sight = false;
 planetary_bullets = 0;
+aerial_assassin_count = 0;
+revive_time = 0;
 
 //pickups
 charge = 0;
@@ -140,7 +143,7 @@ state_free = function() {
 	scr_Player_Collision();
 	
 	//make sure player isn't colliding with anything before checking for collisions again
-	if !(place_meeting(x,y,obj_ground)) free = false {
+	if !(place_meeting(x,y,obj_ground)) and free = false {
 		free = true;	
 	}
 	
@@ -295,6 +298,11 @@ state_groundpound = function() {
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
 				y += sign(vspeed);
 			}
+			
+			if place_meeting(x,y+vspeed,obj_ground_parent) {
+				aerial_assassin_count = 0;	
+			}
+			
 			scr_Enemy_Collision_Check(true);
 			pickup_groundpound.on_cooldown = true;
 			state = state_bouncing;
@@ -403,6 +411,7 @@ state_shop = function() {
 		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
 			y += sign(vspeed);
 		}
+		aerial_assassin_count = 0;
 		shop_bouncing = true;
 		speed = 0; //stop player movement while bouncing
 	}
@@ -426,6 +435,42 @@ state_immobile = function() {
 	can_rotate = false;
 	can_shoot = false;
 	speed = 0;
+}
+
+state_revive = function() {
+	can_rotate = false;
+	can_shoot = false;
+	sprite_index = player_sprite;
+	image_index = 0;
+	hspeed = hspeed * 0.9;
+	vspeed = 0;
+	if (angle != 0)	{
+		var angle_side = sign(angle);
+		angle += (rotation_speed*sign(-angle))/2;
+		if (sign(angle) != angle_side) {
+			angle = 0;
+			current_rotation_speed = 0;
+		}
+	}
+		
+	if (revive_time) < 90 {
+		revive_time += 1;
+		with (msk_index) {
+			if !place_meeting(x,y-1,obj_ground) {
+				other.vspeed = -1;	
+			}
+		}
+	}else {
+		state = state_free;
+	}
+}
+
+state_dead = function() {
+	if y < 100000 {
+		vspeed += grv; //falling
+	}else {
+		speed = 0;
+	}
 }
 
 state = state_free;

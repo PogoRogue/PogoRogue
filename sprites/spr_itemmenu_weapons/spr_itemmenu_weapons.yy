@@ -22,8 +22,9 @@
   "height": 28,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"88ceedc8-3b7c-4f5f-9e2b-a1b8a7a11243","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d1368b09-d9c3-4ae5-ab64-16a613fa42e7","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"96e0f89f-1d17-494b-8396-3930da2c2be9","blendMode":0,"displayName":"Outlines","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"88ceedc8-3b7c-4f5f-9e2b-a1b8a7a11243","blendMode":0,"displayName":"Text","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d1368b09-d9c3-4ae5-ab64-16a613fa42e7","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,

@@ -3,9 +3,11 @@
 function scr_Player_Damaged(damage){
 	
 	with obj_player {
+		var armored = false;
 		if !instance_exists(obj_shieldbubble) and invincible = false {
 			if armor_buff > 0 {
 				armor_buff -= 1;
+				armored = true;
 			}else {
 				hp -= (damage);
 			}
@@ -14,8 +16,13 @@ function scr_Player_Damaged(damage){
 			vspeed = 0;
 		
 			//combo reset
-			global.combo = 0;
-			global.combo_length = 0;
+			//commented these out to experiement with other method
+			//global.combo = 0;
+			//global.combo_length = 0;
+		
+			if global.super_shield = false or global.super_shield = true and armored = false {
+				global.combo_length -= (global.combo_max/5)*2;
+			}
 			
 			//screen shake
 			scr_Screen_Shake(8, 15);
