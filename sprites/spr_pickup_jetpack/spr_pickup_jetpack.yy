@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"01a92f97-8577-44ce-9388-99fd81bd8f6e",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"263bd179-3e9a-473f-b732-7c99d49b3eca",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ac634444-852a-4c11-a599-295d432eddaa",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"01a92f97-8577-44ce-9388-99fd81bd8f6e","path":"sprites/spr_pickup_jetpack/spr_pickup_jetpack.yy",},},},"Disabled":false,"id":"efa0a38c-a0e1-4eb3-86f6-44b503915da4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"263bd179-3e9a-473f-b732-7c99d49b3eca","path":"sprites/spr_pickup_jetpack/spr_pickup_jetpack.yy",},},},"Disabled":false,"id":"3443f47f-bb5b-4096-b7c1-3fcd05bdbcf3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ac634444-852a-4c11-a599-295d432eddaa","path":"sprites/spr_pickup_jetpack/spr_pickup_jetpack.yy",},},},"Disabled":false,"id":"c7a2149c-766b-476a-abaf-1362206120a2","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

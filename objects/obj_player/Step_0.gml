@@ -41,6 +41,9 @@ if (dead = false) {
 }
 #endregion
 
+//get mask object
+msk_index = instance_nearest(x,y,obj_player_mask);
+
 //land on and damage enemy
 var condition = ground_pound_slam = false;
 scr_Enemy_Collision_Check(condition);
@@ -277,14 +280,60 @@ if gun_2 = gun_1 {
 // Update iframes
 current_iframes = max(current_iframes - 1, 0);
 
+//create death screen
+if (dead = true and global.revive = false and state != state_revive) {
+	//death screen
+	if !instance_exists(obj_deathscreen) {
+		instance_create_depth(x,y,depth-1000,obj_deathscreen);
+		speed /= 2;
+	}
+	
+	//fall through ground on death
+	mask_index = spr_nothing;
+	state = state_dead;
+	with obj_player_mask {
+		mask_index = spr_nothing;
+	}
+}
+
 // Handle death
 dead = hp <= 0;
-if(dead && current_iframes <= 0) {
-	game_restart(); // TODO: Handle death screen or whatever we want to do	
+if(dead && current_iframes <= 0 and global.revive = false) {
+	//see stats
+	with obj_runstats {
+		event_user(0);	
+	}
+}else if (dead && current_iframes <= 0 and global.revived = false) {
+	//Revive
+	global.revived = true;
+	global.revive = false;
+	hp = floor((max_hp/8)/2) * 8;
+	state = state_revive;
+	current_iframes = max(current_iframes - 1, 0);
+	
+	//change revive item sprite
+	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
+		if global.all_buff_sprites[i] = spr_buffitem_revive {
+			//update image index
+			global.all_buff_sprites_index[i] += 2;
+		}
+	}
+	
+	//change revive item name
+	for (i = 0; i < array_length(global.all_buff_names); i++) {
+		if global.all_buff_names[i] = "Revive" {
+			global.all_buff_names[i] = "Revive (Used)";
+		}
+	}
+}else if (dead && current_iframes <= 0) {
+	//see stats
+	with obj_runstats {
+		event_user(0);	
+	}
 }
 
 //One Heart Stresser
-if (hp <= 8) {
+if (hp <= 8 and hp > 0) {
 	if !audio_is_playing(snd_oneHeart) {
 		audio_play_sound(snd_oneHeart,0,false);
 	}	

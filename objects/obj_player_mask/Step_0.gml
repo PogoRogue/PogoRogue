@@ -25,8 +25,9 @@ if place_meeting(x+4,y,obj_ground) {
 	colliding_with_ground_right = false;	
 }
 
-if (parent_index.state != parent_index.state_bouncing)
-{
+//pretty sure commenting this out fixed some of our collision glitches, 
+//but I'm leaving it in just in case it breaks something and we need it back
+//if (parent_index.state != parent_index.state_bouncing) {
 
 //right
 if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed >= 0 {
@@ -142,9 +143,6 @@ if (place_meeting(x,y+parent_index.vspeed,obj_walltoprightcorner) and parent_ind
 	}
 }
 
-
-
-
 //right
 if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed >= 0 {
 	var _list = ds_list_create();
@@ -225,7 +223,4 @@ if (place_meeting(x,y,obj_wallbutton) and parent_index.vspeed < 0) {
 	}
 	
 	ds_list_destroy(_list);
-}
-
-
 }
