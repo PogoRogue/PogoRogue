@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_B1_Shield_Move",
-    "path": "sprites/spr_B1_Shield_Move/spr_B1_Shield_Move.yy",
+    "name": "old_B1_Shield_Move",
+    "path": "sprites/old_B1_Shield_Move/old_B1_Shield_Move.yy",
   },
   "spriteMaskId": null,
   "visible": true,

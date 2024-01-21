@@ -11,7 +11,11 @@ if(!is_dead && dist_to_player < range) {
 		
 		// Fire when ready
 		weapon_cooldown--;
+		//sprite_index=spr_TurretShoot
+		//if(image_index <= 8){image_index = 7}
+		
 		if(weapon_cooldown <= 0) {
+			//sprite_index=spr_TurretHead
 			// Create bullet
 			var _bullet = instance_create_layer(x, y, "Instances", obj_enemy_projectile_bullet);
 			_bullet.direction = point_direction(x, y, player.x, player.y);
