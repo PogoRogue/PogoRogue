@@ -355,7 +355,7 @@ state_bulletblast = function() {
 				temp_x *= -1.2;
 			}
 		}
-		//scr_Player_Collision();
+		scr_Player_Collision();
 		if state = state_bouncing { //dont want to cancel powerup after collision
 			state = state_bulletblast;	
 		}

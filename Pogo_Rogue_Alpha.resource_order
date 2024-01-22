@@ -1,17 +1,4 @@
 {
-  "FolderOrderSettings": [
-    {"name":"Sandbox Rooms","order":9,"path":"folders/Rooms/Sandbox Rooms.yy",},
-  ],
-  "ResourceOrderSettings": [
-    {"name":"room_boss_1","order":10,"path":"rooms/room_boss_1/room_boss_1.yy",},
-    {"name":"room_gym_enemy","order":8,"path":"rooms/room_gym_enemy/room_gym_enemy.yy",},
-    {"name":"room_fight_1","order":7,"path":"rooms/room_fight_1/room_fight_1.yy",},
-    {"name":"room_gym_enemy12","order":6,"path":"rooms/room_gym_enemy12/room_gym_enemy12.yy",},
-    {"name":"obj_generated_object_parent","order":11,"path":"objects/obj_generated_object_parent/obj_generated_object_parent.yy",},
-    {"name":"room_shop","order":5,"path":"rooms/room_shop/room_shop.yy",},
-    {"name":"room_proc_gen_test","order":1,"path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},
-    {"name":"room_sam_movement","order":3,"path":"rooms/room_sam_movement/room_sam_movement.yy",},
-    {"name":"room_sprite_level_test","order":2,"path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},
-    {"name":"room_menu","order":4,"path":"rooms/room_menu/room_menu.yy",},
-  ],
+  "FolderOrderSettings": [],
+  "ResourceOrderSettings": [],
 }

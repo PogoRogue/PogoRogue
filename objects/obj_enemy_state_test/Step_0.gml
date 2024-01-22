@@ -3,9 +3,11 @@
 
 // Inherit the parent event
 event_inherited();
+
 if(is_dead) {
 	spd = 0;	
 }
+
 if(is_flying){
     if(is_dead) {
 	    spd = 0;	
