@@ -3,7 +3,11 @@ if(current_iframes >= num_iframes - 10 || dead) {
 	shader_set(sh_tint_red);
 }
 
-image_alpha = abs(cos(current_iframes / 5)) + 0.2;
+if (!dead) {
+	image_alpha = abs(cos(current_iframes / 5)) + 0.2;
+}else {
+	image_alpha = 1;
+}
 
 //draw jetpack
 if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {

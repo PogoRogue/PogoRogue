@@ -37,8 +37,8 @@
   ],
   "solid": false,
   "spriteId": {
-    "name": "spr_spikeball",
-    "path": "sprites/spr_spikeball/spr_spikeball.yy",
+    "name": "spr_axe",
+    "path": "sprites/spr_axe/spr_axe.yy",
   },
   "spriteMaskId": null,
   "visible": true,
