@@ -22,8 +22,8 @@ function scr_Player_Collision(){
 	}
 	
 	//check for collision with ground y axis
-	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+	if (place_meeting(x,y+vspeed,obj_ground) || place_meeting(x,y+vspeed,obj_ground_rising)) and free = true {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground) || place_meeting(x,y+vspeed,obj_ground_rising)) {
 			y += sign(vspeed);
 		}
 		state = state_bouncing;
