@@ -15,6 +15,9 @@ fade_away = false;
 item1_name = "";
 item2_name = "";
 item3_name = "";
+player_x = obj_player_mask.x;
+player_y = obj_player_mask.y;
+player_depth = obj_player_mask.depth;
 
 with obj_pause {
 	paused_outside = true;

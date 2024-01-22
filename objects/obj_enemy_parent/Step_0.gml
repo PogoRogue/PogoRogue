@@ -4,7 +4,6 @@ if(is_dead) {
 	image_alpha *= 0.9;
 	mask_index = spr_nothing;
 } else if (hp <= 0) {
-	is_dead = true;
 	alarm_set(0, room_speed);
 	audio_play_sound(snd_enemyhurt,0,false);
 	
@@ -39,6 +38,19 @@ if(is_dead) {
 	}
 	
 	alarm[11] = 8; //drops
+	
+	//aerial assassin buff
+	with obj_player {
+		if global.aerial_assassin = true {
+			aerial_assassin_count += 1;	
+			if aerial_assassin_count >= 2 {
+				global.combo += 1;
+				aerial_assassin_count = 0;
+			}
+		}
+	}
+	
+	is_dead = true;
 }
 
 // Update iframes

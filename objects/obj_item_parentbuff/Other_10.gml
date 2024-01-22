@@ -16,6 +16,11 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 	global.all_buff_names[array_length(global.all_buff_names)-1] = item_name;
 	global.all_buff_descriptions[array_length(global.all_buff_descriptions)-1] = item_tagline;
 	global.all_buff_stats[array_length(global.all_buff_stats)-1] = item_stats;
+	
+	if scr_In_Array(global.all_passives_used,sprite_index) = false {
+		array_resize(global.all_passives_used,array_length(global.all_passives_used)+1);
+		global.all_passives_used[array_length(global.all_passives_used)-1] = sprite_index;
+	}
 }else if add_sprite_to_list = true {
 	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
 		if global.all_buff_sprites[i] = sprite_index {

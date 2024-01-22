@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_gun_missile",
-  "bbox_bottom": 24,
+  "bbox_bottom": 23,
   "bbox_left": 0,
   "bbox_right": 31,
   "bbox_top": 9,
@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"28d263ec-745f-4e78-8ccc-c4601bae7599",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"87b6cffb-d95f-443a-bf42-e2393a034333",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"092e2132-4564-4be9-808f-5936bbf3a9db",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d6e28106-da1f-474c-acb6-d7fe6938073b",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2f625ea1-c13b-4eb4-a5af-7750431623b3","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6f334ea9-43d7-43ef-bd00-ed3c29b6f416","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"28d263ec-745f-4e78-8ccc-c4601bae7599","path":"sprites/spr_gun_missile/spr_gun_missile.yy",},},},"Disabled":false,"id":"fdbdd70a-87f4-43b8-9e27-2d5633d3f6d8","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"87b6cffb-d95f-443a-bf42-e2393a034333","path":"sprites/spr_gun_missile/spr_gun_missile.yy",},},},"Disabled":false,"id":"e3f5dc28-aa71-4486-96b1-a8939846a6c9","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"092e2132-4564-4be9-808f-5936bbf3a9db","path":"sprites/spr_gun_missile/spr_gun_missile.yy",},},},"Disabled":false,"id":"e105ef86-491a-4dfd-8bee-031acd420bb3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d6e28106-da1f-474c-acb6-d7fe6938073b","path":"sprites/spr_gun_missile/spr_gun_missile.yy",},},},"Disabled":false,"id":"90c81135-1cb6-4ad4-b7a4-f89bc5ce33b6","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

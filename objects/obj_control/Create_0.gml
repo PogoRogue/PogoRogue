@@ -49,6 +49,12 @@ global.flaming_coins = false;
 global.combo_time_added = 0;
 global.sharpshooter = false;
 global.added_coins = 0;
+global.experimentation = false;
+global.experimentation_coins = 25;
+global.aerial_assassin = false;
+global.super_shield = false;
+global.revive = false;
+global.revived = false; //once the player has used their revive, set this to true
 
 
 //items unlockable in the shop
@@ -57,7 +63,8 @@ global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets,obj
 					obj_item_buff_rubberbullets, obj_item_buff_hotshells, obj_item_buff_combomaster,
 					obj_item_buff_blackfriday, obj_item_buff_triplethreat, obj_item_buff_flamingcoins,
 					obj_item_buff_combotime, obj_item_buff_sharpshooter, obj_item_buff_coinsup,
-					obj_item_buff_sharptip];
+					obj_item_buff_sharptip, obj_item_buff_experimentation, obj_item_buff_aerialassassin,
+					obj_item_buff_supershield, obj_item_buff_revive];
 					
 global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_item_weapon_shotgun, 
 					obj_item_weapon_bubble, obj_item_weapon_burstfire, obj_item_weapon_grenade, 
