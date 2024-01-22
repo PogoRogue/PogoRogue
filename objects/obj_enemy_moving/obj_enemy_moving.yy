@@ -9,12 +9,12 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemy",
-    "path": "folders/Objects/Enemy.yy",
+    "name": "Ready Enemies",
+    "path": "folders/Objects/Enemy/Ready Enemies.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy_generic",
-    "path": "objects/obj_enemy_generic/obj_enemy_generic.yy",
+    "name": "obj_enemy_grounded_parent",
+    "path": "objects/obj_enemy_grounded_parent/obj_enemy_grounded_parent.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

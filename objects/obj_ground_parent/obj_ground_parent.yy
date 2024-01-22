@@ -6,10 +6,13 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Ground",
+    "path": "folders/Objects/Ground.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_generated_object_parent",
+    "path": "objects/obj_generated_object_parent/obj_generated_object_parent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

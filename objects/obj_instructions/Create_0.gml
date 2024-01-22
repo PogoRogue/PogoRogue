@@ -1,19 +1,52 @@
 /// @description Initialize strings by column
+depth += 10;
 
-controls_left =	  "Controls:\n\n" +
-				  "Rotate\n" +
-				  "Shoot\n" +
-				  "Switch Weapon\n" +
-				  "Switch Preset\n";
+if gamepad_is_connected(0) {
+	controls_left =	  "Controls:\n\n" +
+					  "Rotate\n" +
+					  "Shoot\n" +
+					  "Switch Weapon\n" +
+					  "Powerup 1\n" +
+					  "Powerup 2\n" +
+					  "Pause\n"
 					
-controls_middle = "\n\n" +
-				  "->\n" +
-				  "->\n" +
-				  "->\n" +
-				  "->\n";
+	controls_middle = "\n\n" +
+					  "->\n" +
+					  "->\n" +
+					  "->\n" +
+					  "->\n" +
+					  "->\n" +
+					  "->\n"
 					
-controls_right =  "\n\n" +
-				  "M ouse  /  Arrow  Keys\n" +
-				  "L M  B  /  Spacebar\n" + 
-				  "E\n" +
-				  "Numbers 1-6\n";
+	controls_right =  "\n\n" +
+					  "Left Joystick\n" +
+					  "Right Trigger\n" + 
+					  "Bumpers\n" +
+					  "A Button\n" +
+					  "B Button\n" +
+					  "Start Button\n"
+}else {
+	controls_left =	  "Controls:\n\n" +
+					  "Rotate\n" +
+					  "Shoot\n" +
+					  "Switch Weapon\n" +
+					  "Powerup 1\n" +
+					  "Powerup 2\n" +
+					  "Pause\n"
+					
+	controls_middle = "\n\n" +
+					  "->\n" +
+					  "->\n" +
+					  "->\n" +
+					  "->\n" +
+					  "->\n" +
+					  "->\n"
+					
+	controls_right =  "\n\n" +
+					  "WASD/Arrow Keys\n" +
+					  "Spacebar\n" + 
+					  "Q / E\n" +
+					  "Shift / LMB\n" +
+					  "Ctrl / RMB\n" +
+					  "Escape\n"
+}
