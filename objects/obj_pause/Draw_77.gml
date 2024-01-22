@@ -12,15 +12,18 @@ if (pause) { //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0,gp_start) || paused_outside {
+if global.key_pause and !instance_exists(obj_items) || paused_outside {
 	if !pause { //pause now
 		pause = true;
 		
 		//deactivate everything other than this surface
 		instance_deactivate_all(true);
 		instance_activate_object(obj_control);	
+		instance_activate_object(obj_controls_controller);
+		instance_activate_object(obj_controls_keyboard);
 		if paused_outside = true {
 			instance_activate_object(obj_item_swap);
+			instance_activate_object(obj_items);
 			item_swap = true;
 		}else {
 			instance_activate_object(obj_pausemenu);
@@ -40,10 +43,14 @@ if keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_escape) || game
 		}
 		pause_surf_buffer = buffer_create(res_w * res_h * 4, buffer_fixed, 1);
 		buffer_get_surface(pause_surf_buffer, pause_surf, 0);
+		audio_play_sound(snd_pause,0,false);
 	}else { //unpause now
 		if item_swap = false {
 			pause = false;
 			instance_activate_all();
+			with obj_pausemenu {
+				usable = true;
+			}
 			instance_deactivate_object(obj_pausemenu);
 			instance_deactivate_object(obj_popup_exit);
 			instance_deactivate_object(obj_popup_restart);

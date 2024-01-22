@@ -1,10 +1,12 @@
-restart_button = keyboard_check_pressed(ord("R")) || gamepad_button_check_pressed(0,gp_start); //press R key to restart room
-screenshake_button = keyboard_check_pressed(vk_backspace); //press escape key to restart room
-mute_button = keyboard_check_pressed(ord("M")); 
+restart_button = keyboard_check_pressed(ord("R")); //press R key to restart room (temporary)
+screenshake_button = keyboard_check_pressed(vk_backspace); //press escape key to restart room (temporary)
+mute_button = keyboard_check_pressed(ord("M")); //press M to mute audio (temporary)
+itemmenu_button = global.key_item_menu; 
 
 if (restart_button) {
-	//temporarily commented out
-	//game_restart(); //restart room
+	room_persistent = false;
+	room_restart();
+	instance_deactivate_all(false);
 }
 
 if (mute_button) {
@@ -20,6 +22,10 @@ if (mute_button) {
 		}
 	    ds_map_destroy(info);
 	}
+}
+
+if (itemmenu_button) and obj_pause.pause = false {
+	instance_create_depth(x,y,depth-1,obj_items);
 }
 
 

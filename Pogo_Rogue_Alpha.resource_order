@@ -1,7 +1,4 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [
-    {"name":"spr_trigger","order":1,"path":"sprites/spr_trigger/spr_trigger.yy",},
-    {"name":"obj_boss_trigger","order":1,"path":"objects/obj_boss_trigger/obj_boss_trigger.yy",},
-  ],
+  "ResourceOrderSettings": [],
 }

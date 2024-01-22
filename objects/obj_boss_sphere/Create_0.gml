@@ -45,7 +45,7 @@ for(var _i = -3; _i < 4; _i++) {
 					break;
 			}
 			
-			instance_create_layer(x + (_i * 32), y + (_j * 32), "enemies", type_index);
+			instance_create_layer(x + (_i * 32), y + (_j * 32), "enemies", type_index, {parent: obj_boss_sphere});
 			type = irandom(3);
 		}
 	}

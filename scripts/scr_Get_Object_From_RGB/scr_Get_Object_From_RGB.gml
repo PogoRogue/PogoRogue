@@ -10,6 +10,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 	return -1;
 	}
+	else if(Red == 255 && Green == 255 && Blue == 255) //White = player start location
+	{
+		return obj_player_start;
+	}
 	else if(Red > 150) //This space of colors is designated for enemies
 	{
 		if(Green < 50)
@@ -30,12 +34,12 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			else if(Red > 177)
 			{
 				//return obj_enemy_shoot_only;
-				return obj_enemy_shoot_only;
+				return obj_enemy_shoot_only_jumping;
 			}
 			else if(Red > 150)
 			{
-				//return obj_enemy_shooter;
-				return obj_enemy_shooter_moving;
+				return obj_enemy_shooter;
+				//return obj_enemy_shooter_moving;
 			}
 		}
 		else if(Green >= 50)
@@ -51,11 +55,15 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			}
 			else if(Red > 200)
 			{
-				return obj_enemy_chasing;
+				return obj_enemy_stomp_only_moving;
 			}
 			else if(Red > 170)
 			{
 				return obj_enemy_turret;
+			}
+			else if(Red > 160)
+			{
+				return obj_enemy_turret_mobile;
 			}
 			else if(Red > 150)
 			{
@@ -73,6 +81,11 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_shop_door;
 		}
+		else if(Green > 200)
+		{
+			return obj_boss_door;
+		}
+		
 	}
 	else if(Blue > 150) //These are environmental hazards!
 	{

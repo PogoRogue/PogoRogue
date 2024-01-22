@@ -1,5 +1,7 @@
 /// @description Inherit parent code
 
-// Inherit the parent event
-event_inherited();
-depth = 1;
+
+//create collision walls
+scr_Create_Collision_Walls();
+
+//depth = -50;

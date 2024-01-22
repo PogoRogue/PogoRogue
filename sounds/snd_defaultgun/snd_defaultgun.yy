@@ -12,12 +12,12 @@
   "conversionMode": 0,
   "duration": 0.450499,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Weapons",
+    "path": "folders/Sounds/Weapons.yy",
   },
   "preload": false,
   "sampleRate": 44100,
   "soundFile": "snd_defaultgun.wav",
   "type": 0,
-  "volume": 0.8,
+  "volume": 0.5,
 }

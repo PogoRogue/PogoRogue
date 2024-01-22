@@ -6,4 +6,6 @@
 // Inherit the parent event
 event_inherited();
 
-raise_cd = false
+action_cd = false
+
+bullet_defense = 0.15;

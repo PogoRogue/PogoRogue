@@ -9,22 +9,41 @@ function scr_Jump(add_to_jump){
 	image_speed = 0;
 	image_index = 0; //reset animation to starting frame
 	animation_complete = false;
-	if gun.current_bullets != gun.bullets_per_bounce { //reload bullets
+	if gun.current_bullets != gun.bullets_per_bounce+obj_player.max_ammo_buff and gun != boomerang_gun { //reload bullets
 		//reload sound
 		audio_play_sound(snd_reload,0,false);
-		gun.current_bullets = gun.bullets_per_bounce; 
+		gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+		instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+	}else if gun.current_bullets != gun.bullets_per_bounce+obj_player.max_ammo_buff and gun = boomerang_gun { //boomerang
+		if !instance_exists(obj_projectile) {
+			//reload sound
+			audio_play_sound(snd_reload,0,false);
+			gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+			instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+		}
 	}
+	
 	state = state_free;
 	charge = 0;
 	bouncing = false;
 	
-	if pickups_array[0].reload_on_bounce = true {
-		pickups_array[0].uses_per_bounce = pickups_array[0].max_uses_per_bounce;
-		pickups_array[0].on_cooldown = false;
+	if pickups_array[0].reload_on_bounce = true and pickups_array[0].on_cooldown = true {
+		pickups_array[0].bounce_reset -= 1;
+		if pickups_array[0].bounce_reset <= 0 {
+			pickups_array[0].uses_per_bounce = pickups_array[0].max_uses_per_bounce;
+			pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
+			pickups_array[0].on_cooldown = false;
+			pickups_array[0].bounce_reset = pickups_array[0].bounce_reset_max;
+		}
 	}
-	if pickups_array[1].reload_on_bounce = true {
-		pickups_array[1].uses_per_bounce = pickups_array[1].max_uses_per_bounce;
-		pickups_array[1].on_cooldown = false;
+	if pickups_array[1].reload_on_bounce = true and pickups_array[1].on_cooldown = true {
+		pickups_array[1].bounce_reset -= 1;
+		if pickups_array[1].bounce_reset <= 0 {
+			pickups_array[1].uses_per_bounce = pickups_array[1].max_uses_per_bounce;
+			pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
+			pickups_array[1].on_cooldown = false;
+			pickups_array[1].bounce_reset = pickups_array[1].bounce_reset_max;
+		}
 	}
 	
 	//flames
@@ -39,6 +58,18 @@ function scr_Jump(add_to_jump){
 		}else {
 			audio_play_sound(snd_bounce2,0,false);
 			bounce_sound = not bounce_sound;
+		}
+	}
+	
+	//spring
+	if place_meeting(x,y-vspeed,obj_spring) {
+		if instance_place(x,y-vspeed,obj_spring).state = instance_place(x,y-vspeed,obj_spring).state_unsprung {
+			state = state_free;
+			vspeed = 0;
+			motion_add(90,12);
+		}
+		with instance_place(x,y-vspeed,obj_spring) {
+			state = state_springing;
 		}
 	}
 }

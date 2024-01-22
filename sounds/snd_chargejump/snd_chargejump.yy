@@ -12,12 +12,12 @@
   "conversionMode": 0,
   "duration": 2.058231,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Powerups",
+    "path": "folders/Sounds/Powerups.yy",
   },
   "preload": false,
   "sampleRate": 44100,
   "soundFile": "snd_chargejump.wav",
   "type": 0,
-  "volume": 0.5,
+  "volume": 0.25,
 }
