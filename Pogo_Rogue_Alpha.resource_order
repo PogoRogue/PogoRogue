@@ -1,4 +1,10 @@
 {
-  "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "FolderOrderSettings": [
+    {"name":"Projectile","order":1,"path":"folders/Objects/Enemy/Hitbox/Projectile.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"obj_enemy_projectile_lob","order":1,"path":"objects/obj_enemy_projectile_lob/obj_enemy_projectile_lob.yy",},
+    {"name":"obj_explode_projectile","order":2,"path":"objects/obj_explode_projectile/obj_explode_projectile.yy",},
+    {"name":"obj_explode_projectile_r","order":3,"path":"objects/obj_explode_projectile_r/obj_explode_projectile_r.yy",},
+  ],
 }

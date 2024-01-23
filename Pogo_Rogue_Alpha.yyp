@@ -89,6 +89,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Projectile","folderPath":"folders/Objects/Enemy/Hitbox/Projectile.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"snd_ArmorHeart.mp3","CopyToMask":-1,"filePath":"datafiles",},
@@ -110,7 +111,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -555,7 +556,7 @@
     {"id":{"name":"spr_enemy_moving","path":"sprites/spr_enemy_moving/spr_enemy_moving.yy",},},
     {"id":{"name":"obj_subboss_fly_chasing","path":"objects/obj_subboss_fly_chasing/obj_subboss_fly_chasing.yy",},},
     {"id":{"name":"spr_player_zekai_invincible_falling","path":"sprites/spr_player_zekai_invincible_falling/spr_player_zekai_invincible_falling.yy",},},
-    {"id":{"name":"obj_enemy_projectile_bullet","path":"objects/obj_enemy_projectile_bullet/obj_enemy_projectile_bullet.yy",},},
+    {"id":{"name":"obj_enemy_projectile_parent","path":"objects/obj_enemy_projectile_parent/obj_enemy_projectile_parent.yy",},},
     {"id":{"name":"obj_item_buff_combomaster","path":"objects/obj_item_buff_combomaster/obj_item_buff_combomaster.yy",},},
     {"id":{"name":"spr_buffitem_blackfriday","path":"sprites/spr_buffitem_blackfriday/spr_buffitem_blackfriday.yy",},},
     {"id":{"name":"spr_buffitem_pickybuyer","path":"sprites/spr_buffitem_pickybuyer/spr_buffitem_pickybuyer.yy",},},
