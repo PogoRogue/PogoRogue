@@ -28,6 +28,7 @@ global.combo = 0;
 global.combo_length = 0;
 global.combo_max = 32;
 global.combo_max_coins = 5;
+global.init_combo_highscore = global.best_combo;
 
 
 //buffs

@@ -21,6 +21,8 @@ invert = false;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
 not_colliding = true; //prevent glitches with wall collision
 conveyor_speed = 0;
+platform_speed = 0;
+platform_index = noone;
 can_rotate = true;
 can_shoot = true;
 platform_on = true;
@@ -355,7 +357,7 @@ state_bulletblast = function() {
 				temp_x *= -1.2;
 			}
 		}
-		//scr_Player_Collision();
+		scr_Player_Collision();
 		if state = state_bouncing { //dont want to cancel powerup after collision
 			state = state_bulletblast;	
 		}

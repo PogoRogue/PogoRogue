@@ -5,7 +5,9 @@
   "ResourceOrderSettings": [
     {"name":"room_boss_1","order":10,"path":"rooms/room_boss_1/room_boss_1.yy",},
     {"name":"room_gym_enemy","order":8,"path":"rooms/room_gym_enemy/room_gym_enemy.yy",},
+    {"name":"spr_coingui_centered","order":1,"path":"sprites/spr_coingui_centered/spr_coingui_centered.yy",},
     {"name":"room_fight_1","order":7,"path":"rooms/room_fight_1/room_fight_1.yy",},
+    {"name":"scr_Draw_Coins","order":1,"path":"scripts/scr_Draw_Coins/scr_Draw_Coins.yy",},
     {"name":"room_gym_enemy12","order":6,"path":"rooms/room_gym_enemy12/room_gym_enemy12.yy",},
     {"name":"room_shop","order":5,"path":"rooms/room_shop/room_shop.yy",},
     {"name":"room_proc_gen_test","order":1,"path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},
