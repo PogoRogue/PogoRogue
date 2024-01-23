@@ -93,26 +93,49 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_fan_pointer;
 		}
-		else if(Blue > 250)
+		else if(Blue == 255)
 		{
 			return obj_env_fan;
 		}
-		else if(Blue > 220 && Green == 75)
+		else if(Blue == 225 && Green == 75)
 		{
 			return obj_temp_platform_off_on;
 		}
-		else if(Blue > 220 && Green == 0)
+		else if(Blue == 225 && Green == 0)
 		{
 			return obj_temp_platform_on_off;
 		}
-		else if(Blue > 200)
+		else if(Blue == 204)
 		{
 			return obj_conveyor_belt;
 		}
-		else if(Blue > 170)
+		else if(Blue == 178)
 		{
-			//return obj_electric_floor;
 			return obj_electric_current;
+		}
+		else if(Blue == 200)
+		{
+			return obj_pinballbumper;
+		}
+		else if(Blue == 155)
+		{
+			return obj_spike;
+		}
+		else if(Blue == 220)
+		{
+			return obj_spikeblock;
+		}
+		else if(Blue == 151)
+		{
+			return obj_spikeswing;
+		}
+		else if(Blue == 152)
+		{
+			return obj_spring;
+		}
+		else if(Blue == 206)
+		{
+			return obj_movingplatform_horizontal;
 		}
 		
 	}
