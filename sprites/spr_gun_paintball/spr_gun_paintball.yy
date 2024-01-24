@@ -14,7 +14,7 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b4e29e6e-0a2e-4d02-9e3f-556bf413056f",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"17978b23-ae70-4ade-ac75-ad7353dfe5a1",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7f8bdb2f-a3a1-469c-b5eb-54984bbdd0eb",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -56,7 +56,7 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b4e29e6e-0a2e-4d02-9e3f-556bf413056f","path":"sprites/spr_gun_paintball/spr_gun_paintball.yy",},},},"Disabled":false,"id":"c05ebd56-553c-4633-b91e-2cf8eb92605a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"17978b23-ae70-4ade-ac75-ad7353dfe5a1","path":"sprites/spr_gun_paintball/spr_gun_paintball.yy",},},},"Disabled":false,"id":"56a91660-da70-402f-af3d-48b7a0d5cee2","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7f8bdb2f-a3a1-469c-b5eb-54984bbdd0eb","path":"sprites/spr_gun_paintball/spr_gun_paintball.yy",},},},"Disabled":false,"id":"100444ea-eb2f-4ce5-bb02-727f1b5c063b","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

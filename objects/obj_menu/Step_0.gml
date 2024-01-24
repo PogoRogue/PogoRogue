@@ -27,6 +27,9 @@ if key_select {
 		room = room_gameplay_video;
 	}else if select = 2 {
 		room = room_proc_gen_test;
+	}else if select = 3 {
+		room = room_settings;
+		room_persistent = true;
 	}
 }
 
