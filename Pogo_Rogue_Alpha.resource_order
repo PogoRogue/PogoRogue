@@ -15,4 +15,6 @@
     {"name":"room_sprite_level_test","order":2,"path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},
     {"name":"room_menu","order":4,"path":"rooms/room_menu/room_menu.yy",},
   ],
+  "FolderOrderSettings": [],
+  "ResourceOrderSettings": [],
 }
