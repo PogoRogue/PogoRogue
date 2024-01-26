@@ -68,7 +68,7 @@ function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset)
 			}
 		}
 	}
-	//wall_list = scr_Create_Walls_From_Pixel_Array()
+	var wall_queue = scr_Create_Walls_From_Pixel_Array(pixel_array, x_offset, y_offset)
 	return object_queue;
 }
 
@@ -79,7 +79,8 @@ function Create_Instance_From_RGB(RGB, x_offset, y_offset)
 {
 	var object_to_create = scr_Get_Object_From_RGB(RGB[0], RGB[1], RGB[2], RGB[3]);
 	
-	if(object_to_create != -1)// && object_to_create != obj_ground_outer) //Optimization to minimize ground objects being created
+	if(object_to_create != -1 && object_to_create != obj_ground_outer) //Optimization to minimize ground objects being created
+	//(We create ground objects in the scr_Create_Walls_From_Pixel_Array script)
 	{
 	return instance_create_layer(x_offset, y_offset, "Instances", object_to_create);
 	}

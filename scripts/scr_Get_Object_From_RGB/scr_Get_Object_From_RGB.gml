@@ -1,6 +1,7 @@
 ///@description Correlates an RGB to a Pogo Rogue object, returning the object index
 function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	//Object categories:
+	//White = player start location
 	//Red = enemy	
 	//Green = item
 	//Blue = environmental hazard
@@ -141,7 +142,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	}
 	else //All other colors are ground/unassigned
 	{
-		if(Red < 10)
+		if(Red == 0)
 		{
 			return obj_ground_outer;
 		}
