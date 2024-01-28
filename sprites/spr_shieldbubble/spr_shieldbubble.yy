@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_shieldbubble",
-  "bbox_bottom": 62,
-  "bbox_left": 1,
-  "bbox_right": 62,
-  "bbox_top": 1,
+  "bbox_bottom": 63,
+  "bbox_left": 0,
+  "bbox_right": 63,
+  "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -14,7 +14,7 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"48c649ef-030b-4e75-a8de-f785c797e17e",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1aa1874d-d826-4a4e-8e60-e6c458bc7d27",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3f65e175-ed2b-41f6-b575-5171c632d086",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2ecff918-4e50-483f-87e6-97ccf49d2b09",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9a24349e-6107-4c72-9674-be7123434002",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"33c379e9-67ed-4f45-8107-e97babdab9ae",},
@@ -28,7 +28,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"554211f7-b74a-4099-bb5f-78c3d97556ab","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "Player",
     "path": "folders/Sprites/Player.yy",
@@ -60,7 +60,7 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"48c649ef-030b-4e75-a8de-f785c797e17e","path":"sprites/spr_shieldbubble/spr_shieldbubble.yy",},},},"Disabled":false,"id":"436020bf-e588-4abc-868a-946a7f3b94a7","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1aa1874d-d826-4a4e-8e60-e6c458bc7d27","path":"sprites/spr_shieldbubble/spr_shieldbubble.yy",},},},"Disabled":false,"id":"580e24a6-1720-4992-b959-216407d5b956","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3f65e175-ed2b-41f6-b575-5171c632d086","path":"sprites/spr_shieldbubble/spr_shieldbubble.yy",},},},"Disabled":false,"id":"9d27e34e-e7ab-4ba2-a82c-0f3debbf1496","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2ecff918-4e50-483f-87e6-97ccf49d2b09","path":"sprites/spr_shieldbubble/spr_shieldbubble.yy",},},},"Disabled":false,"id":"6082790e-63d7-4649-a727-cf115b104e56","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9a24349e-6107-4c72-9674-be7123434002","path":"sprites/spr_shieldbubble/spr_shieldbubble.yy",},},},"Disabled":false,"id":"e3f22f4e-fe34-49d3-9efd-5a674698e16c","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"33c379e9-67ed-4f45-8107-e97babdab9ae","path":"sprites/spr_shieldbubble/spr_shieldbubble.yy",},},},"Disabled":false,"id":"f4b3772b-923f-46b6-a219-2608472fa661","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
@@ -70,7 +70,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 32,
-    "yorigin": 32,
+    "yorigin": 33,
   },
   "swatchColours": [
     4278190335,

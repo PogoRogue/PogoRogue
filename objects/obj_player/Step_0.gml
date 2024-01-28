@@ -165,7 +165,7 @@ image_angle = angle;
 #endregion
 
 //recentering
-if key_recenter and centering = false and angle != 0 {
+if key_recenter and centering = false and angle != 0 and !key_left and !key_right {
 	centering = true;
 }
 

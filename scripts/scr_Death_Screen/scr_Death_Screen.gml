@@ -38,3 +38,5 @@ function scr_Death_Screen(win){
 		scr_Draw_Text_Outlined(x-78,y-60+17,"(New Best!)",make_color_rgb(237,225,158));
 	}
 }
+
+draw_set_color(c_white);
