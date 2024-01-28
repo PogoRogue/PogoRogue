@@ -5,6 +5,7 @@ player = instance_find(obj_player, 0);
 dist_to_player = distance_to_object(player);
 can_see_player = false;
 range = 150;
+is_turret = true;
 
 // Weapon variables
 bullet_speed = 5;
