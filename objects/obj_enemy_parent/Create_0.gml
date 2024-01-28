@@ -26,3 +26,5 @@ weapon_chance = (global.luck/2); //percent
 drop_coins = true;
 
 num_of_coins = global.combo;
+//when invinsible, can't take damage
+invinsible=false;

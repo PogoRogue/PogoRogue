@@ -36,9 +36,6 @@ if global.combo = 0 {
 }
 
 //check if combo is new best
-if global.combo > global.current_best_combo {
-	global.current_best_combo = global.combo;
-}
 if global.combo > global.best_combo { //best combo across all runs
 	global.best_combo = global.combo;
 	scr_Save_Real("best_combo",global.best_combo);
