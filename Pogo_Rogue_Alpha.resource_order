@@ -1,4 +1,6 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"obj_boss_portal","order":1,"path":"objects/obj_boss_portal/obj_boss_portal.yy",},
+  ],
 }

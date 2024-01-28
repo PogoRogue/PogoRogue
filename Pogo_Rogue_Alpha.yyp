@@ -605,6 +605,7 @@
     {"id":{"name":"obj_player_mask","path":"objects/obj_player_mask/obj_player_mask.yy",},},
     {"id":{"name":"scr_Draw_Passive_Description","path":"scripts/scr_Draw_Passive_Description/scr_Draw_Passive_Description.yy",},},
     {"id":{"name":"obj_boss_room","path":"objects/obj_boss_room/obj_boss_room.yy",},},
+    {"id":{"name":"obj_boss_portal","path":"objects/obj_boss_portal/obj_boss_portal.yy",},},
     {"id":{"name":"scr_Draw_Weapon_Description","path":"scripts/scr_Draw_Weapon_Description/scr_Draw_Weapon_Description.yy",},},
     {"id":{"name":"obj_angled_platform_right","path":"objects/obj_angled_platform_right/obj_angled_platform_right.yy",},},
     {"id":{"name":"obj_weaponheight2","path":"objects/obj_weaponheight2/obj_weaponheight2.yy",},},
