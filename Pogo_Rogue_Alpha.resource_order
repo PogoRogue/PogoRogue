@@ -1,7 +1,11 @@
 {
   "FolderOrderSettings": [],
   "ResourceOrderSettings": [
+<<<<<<< Updated upstream
     {"name":"obj_ground_rising","order":1,"path":"objects/obj_ground_rising/obj_ground_rising.yy",},
     {"name":"spr_tansquare","order":1,"path":"sprites/spr_tansquare/spr_tansquare.yy",},
+=======
+    {"name":"obj_boss_portal","order":1,"path":"objects/obj_boss_portal/obj_boss_portal.yy",},
+>>>>>>> Stashed changes
   ],
 }

@@ -742,6 +742,7 @@
     {"id":{"name":"spr_before_boss","path":"sprites/spr_before_boss/spr_before_boss.yy",},},
     {"id":{"name":"spr_projectile_bouncyball_gui","path":"sprites/spr_projectile_bouncyball_gui/spr_projectile_bouncyball_gui.yy",},},
     {"id":{"name":"obj_player_test","path":"objects/obj_player_test/obj_player_test.yy",},},
+    {"id":{"name":"obj_boss_portal","path":"objects/obj_boss_portal/obj_boss_portal.yy",},},
     {"id":{"name":"spr_shop_workbench","path":"sprites/spr_shop_workbench/spr_shop_workbench.yy",},},
     {"id":{"name":"spr_dl1","path":"sprites/spr_dl1/spr_dl1.yy",},},
     {"id":{"name":"spr_gun_default","path":"sprites/spr_gun_default/spr_gun_default.yy",},},
@@ -757,6 +758,12 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"room_boss_1","path":"rooms/room_boss_1/room_boss_1.yy",},},
     {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"roomId":{"name":"room_boss_1","path":"rooms/room_boss_1/room_boss_1.yy",},},
+    {"roomId":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
+    {"roomId":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
+>>>>>>> Stashed changes
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
     {"roomId":{"name":"room_gym_enemy12","path":"rooms/room_gym_enemy12/room_gym_enemy12.yy",},},
     {"roomId":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},
@@ -769,7 +776,6 @@
     {"roomId":{"name":"room_sam_movement","path":"rooms/room_sam_movement/room_sam_movement.yy",},},
     {"roomId":{"name":"room_fight_1","path":"rooms/room_fight_1/room_fight_1.yy",},},
     {"roomId":{"name":"room_test_env","path":"rooms/room_test_env/room_test_env.yy",},},
-    {"roomId":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

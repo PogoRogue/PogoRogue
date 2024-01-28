@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /// @description Player collision + button pressed
 if room != room_shop {
 	key_open_door = global.key_interact;
@@ -34,3 +35,28 @@ if (colliding and key_open_door) {
 		
 	}
 }
+=======
+// @description Player collision + button pressed
+key_open_door = global.key_interact; 
+
+// 检测玩家碰撞
+colliding = place_meeting(x, y, obj_player) or place_meeting(x, y, obj_player_mask);
+
+
+if (colliding and key_open_door) {
+	var nextRoom = room_next(room);
+// find if has nextroom
+if (room_exists(nextRoom)) {
+    room_goto_next();
+} else {
+    game_restart();
+}
+} 
+
+
+
+
+
+    
+
+>>>>>>> Stashed changes
