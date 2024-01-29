@@ -48,9 +48,6 @@ msk_index = instance_nearest(x,y,obj_player_mask);
 var condition = ground_pound_slam = false;
 scr_Enemy_Collision_Check(condition);
 
-// Land on and press buttons
-scr_Button_Collision_Check();
-
 //shop
 if (room = room_shop) {
 	state = state_shop;

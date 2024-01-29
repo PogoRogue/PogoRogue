@@ -34,7 +34,6 @@
     {"name":"spr_shield_small","order":17,"path":"sprites/spr_shield_small/spr_shield_small.yy",},
     {"name":"spr_enemy_shooter_walking","order":15,"path":"sprites/spr_enemy_shooter_walking/spr_enemy_shooter_walking.yy",},
     {"name":"spr_button_yellow","order":9,"path":"sprites/spr_button_yellow/spr_button_yellow.yy",},
-    {"name":"scr_Button_Collision_Check","order":21,"path":"scripts/scr_Button_Collision_Check/scr_Button_Collision_Check.yy",},
     {"name":"spr_enemy_shooting_explosion","order":14,"path":"sprites/spr_enemy_shooting_explosion/spr_enemy_shooting_explosion.yy",},
     {"name":"spr_enemy_walking_explosion_idle","order":13,"path":"sprites/spr_enemy_walking_explosion_idle/spr_enemy_walking_explosion_idle.yy",},
     {"name":"obj_button","order":2,"path":"objects/obj_button/obj_button.yy",},

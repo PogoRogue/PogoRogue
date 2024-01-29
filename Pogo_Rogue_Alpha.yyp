@@ -364,7 +364,6 @@
     {"id":{"name":"obj_enemy_moving_jumping","path":"objects/obj_enemy_moving_jumping/obj_enemy_moving_jumping.yy",},},
     {"id":{"name":"spr_player_zekai_hat","path":"sprites/spr_player_zekai_hat/spr_player_zekai_hat.yy",},},
     {"id":{"name":"spr_purplesquare","path":"sprites/spr_purplesquare/spr_purplesquare.yy",},},
-    {"id":{"name":"scr_Button_Collision_Check","path":"scripts/scr_Button_Collision_Check/scr_Button_Collision_Check.yy",},},
     {"id":{"name":"spr_controller_button_left","path":"sprites/spr_controller_button_left/spr_controller_button_left.yy",},},
     {"id":{"name":"spr_enemy_shooting_explosion","path":"sprites/spr_enemy_shooting_explosion/spr_enemy_shooting_explosion.yy",},},
     {"id":{"name":"obj_boss_brick_red","path":"objects/obj_boss_brick_red/obj_boss_brick_red.yy",},},
