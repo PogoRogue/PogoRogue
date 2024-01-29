@@ -9,14 +9,14 @@ if usable = true {
 }
 
 if key_up and selected = false {
-	audio_play_sound(snd_menuNavigation,0,false);
 	if select > 1 {
+		audio_play_sound(snd_menuNavigation,0,false);
 		select -= 1;
 	}
 	selected = true;
 }else if key_down and selected = false {
-	audio_play_sound(snd_menuNavigation,0,false);
 	if select < num_of_options {
+		audio_play_sound(snd_menuNavigation,0,false);
 		select += 1;
 	}
 	selected = true;
@@ -47,6 +47,10 @@ if key_select {
 		usable = false;
 		instance_create_depth(x,y,depth+1,obj_popup_exit);
 	}
+}
+
+if instance_number(obj_pausemenu) > 1 {
+	instance_destroy();	
 }
 
 image_index = select-1;

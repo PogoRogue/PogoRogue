@@ -14,6 +14,38 @@ if select_y = 0 {
 }
 
 //draw settings options here
+if select = 1 { //audio
+	for(i = 0; i < menu_audio.num_of_options; i++) {
+		var color = c_white;
+		if i = select_y-1 {
+			draw_set_color(make_color_rgb(211,160,104));
+			color = make_color_rgb(211,160,104);
+		}else {
+			draw_set_color(make_color_rgb(242,240,229));
+			color = make_color_rgb(242,240,229);
+		}
+		
+		//text
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_center);
+		draw_set_font(fnt_combo2);
+		draw_text(camera_get_view_width(view_camera[0])/2-96,option_1_y+(item_height*i),menu_audio.options_array[i]._text);
+		
+		draw_set_halign(fa_center);
+		if (menu_audio.options_array[i]._type = "slider") {
+			var slider_range = menu_audio.options_array[i].highest_value - menu_audio.options_array[i].lowest_value;
+			var slider_x = ((menu_audio.options_array[i].highest_value - menu_audio.options_array[i].current_value) / slider_range) * sprite_get_width(spr_slider_bar_settings);
+			draw_sprite(spr_slider_bar_settings,(i = select_y-1),camera_get_view_width(view_camera[0])/2+96,option_1_y+(item_height*i));
+			draw_sprite(spr_slider_button_settings,(i = select_y-1),camera_get_view_width(view_camera[0])/2+96-slider_x,option_1_y+(item_height*i));
+			draw_text(camera_get_view_width(view_camera[0])/2+96-slider_x,option_1_y+(item_height*i)-14,string(menu_audio.options_array[i].current_value) + "%");
+			
+			if (i = select_y-1) {
+				draw_sprite(spr_slider_button_outline,(i = select_y-1),camera_get_view_width(view_camera[0])/2+96-slider_x,option_1_y+(item_height*i));	
+			}
+		}
+	}
+}
+
 if select = 2 { //video
 	for(i = 0; i < menu_video.num_of_options; i++) {
 		var color = c_white;

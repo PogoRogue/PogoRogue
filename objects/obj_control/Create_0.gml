@@ -23,13 +23,17 @@ if !instance_exists(obj_controls_keyboard) {
 	instance_create_depth(x,y,depth,obj_controls_keyboard);
 }
 
+//music test
+if !audio_is_playing(snd_music) {
+	audio_play_sound(snd_music,0,true);
+}
+
 //combo
 global.combo = 0;
 global.combo_length = 0;
 global.combo_max = 32;
 global.combo_max_coins = 5;
 global.init_combo_highscore = global.best_combo;
-
 
 //buffs
 global.all_buff_sprites = []; //buffs equipped in side bar

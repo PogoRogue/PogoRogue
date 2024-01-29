@@ -11,8 +11,8 @@ if selected = false and fade_away = false and centered = true {
 		selected = true;
 	}
 	if key_right {
-		audio_play_sound(snd_menuNavigation,0,false);
 		if select < num_of_slots {
+			audio_play_sound(snd_menuNavigation,0,false);
 			select += 1;
 		}
 		selected = true;

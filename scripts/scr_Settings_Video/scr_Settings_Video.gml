@@ -22,7 +22,7 @@ function scr_Settings_Video(){
 		_text: "Window Resolution: ",
 		_type: "list_slider",
 		num_of_values: 5,
-		list_of_options: [[768,432],[1280,720],[1536,900],[1760,990],[1920,1080]],
+		list_of_options: [[768,432],[1280,720],[1536,864],[1760,990],[1920,1080]],
 		default_mode: 4,
 		current_selection: global.resolution_num,
 		on_select: function() {
