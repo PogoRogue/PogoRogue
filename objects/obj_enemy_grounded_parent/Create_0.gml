@@ -10,3 +10,6 @@ grav=0.2;
 
 is_grounded = 0;
 is_falling = 0;
+
+//when flying, ingnore falling codes
+is_flying=0;

@@ -26,7 +26,7 @@
   "origin": 9,
   "parent": {
     "name": "buttons",
-    "path": "folders/Sprites/Enemy/Boss Sphere/buttons.yy",
+    "path": "folders/Sprites/Enemy/Boss Sequence/buttons.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

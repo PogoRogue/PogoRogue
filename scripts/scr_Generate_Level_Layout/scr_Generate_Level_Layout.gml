@@ -17,7 +17,7 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	{	
 		if(rCount == 0)
 		{//If we need a starting room, it goes here (stored in index 0 of prebuilt_rooms)
-			if(generate_starting_room)
+			if(generate_starting_room && total_non_random_rooms >= 1)
 			{
 				room_index = 0;
 			}
@@ -26,11 +26,11 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 				room_index = irandom_range(total_non_random_rooms, total_rooms - 1); // Pick a prebuilt_room from the random rooms 		
 			}
 		}			
-		else if(rCount == room_number - 2) //Where the shop room needs to go (stored in index 1)
+		else if(rCount == room_number - 2 && total_non_random_rooms >= 3) //Where the shop room needs to go (stored in index 1)
 		{
 			room_index = 1;
 		}
-		else if(rCount == room_number - 1) //The last room is the boss room (stored in index 2)
+		else if(rCount == room_number - 1 && total_non_random_rooms >= 2) //The last room is the boss room (stored in index 2)
 		{
 			room_index = 2;
 		}
