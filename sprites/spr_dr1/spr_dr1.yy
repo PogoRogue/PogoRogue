@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "DR",
-    "path": "folders/Sprites/ProcGenLevelData/DR.yy",
+    "path": "folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites/HallwayBlocks/DR.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "UL",
-    "path": "folders/Sprites/ProcGenLevelData/UL.yy",
+    "path": "folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites/HallwayBlocks/UL.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
