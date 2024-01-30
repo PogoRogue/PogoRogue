@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_2x2_Combat",
+  "name": "spr_2x2_Combat_Talens_store",
   "bbox_bottom": 61,
   "bbox_left": 3,
-  "bbox_right": 58,
+  "bbox_right": 63,
   "bbox_top": 11,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,7 +13,8 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"051cb332-8210-4b00-ad59-5af15f70582c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f2750621-f61d-4edc-b041-7b1d4bee4c58",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5e0bc719-2120-4823-9eea-5a68bab7cdc1",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -32,7 +33,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_2x2_Combat",
+    "name": "spr_2x2_Combat_Talens_store",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -43,7 +44,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 2.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -54,7 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"051cb332-8210-4b00-ad59-5af15f70582c","path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},},},"Disabled":false,"id":"c7da90db-5694-45cd-a779-eb161d004e05","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f2750621-f61d-4edc-b041-7b1d4bee4c58","path":"sprites/spr_2x2_Combat_Talens_store/spr_2x2_Combat_Talens_store.yy",},},},"Disabled":false,"id":"d786e3b9-d676-4c25-9947-c39c0263fc2b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5e0bc719-2120-4823-9eea-5a68bab7cdc1","path":"sprites/spr_2x2_Combat_Talens_store/spr_2x2_Combat_Talens_store.yy",},},},"Disabled":false,"id":"daba0a50-84c6-4049-8c33-f224fed322aa","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
