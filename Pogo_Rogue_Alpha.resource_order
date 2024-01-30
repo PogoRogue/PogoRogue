@@ -1,8 +1,4 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [
-    {"name":"spr_ur_ZehaoChen","order":1,"path":"sprites/spr_ur_ZehaoChen/spr_ur_ZehaoChen.yy",},
-    {"name":"spr_2x2_Combat_ZehaoChen","order":1,"path":"sprites/spr_2x2_Combat_ZehaoChen/spr_2x2_Combat_ZehaoChen.yy",},
-    {"name":"spr_ul1_ZehaoChen","order":1,"path":"sprites/spr_ul1_ZehaoChen/spr_ul1_ZehaoChen.yy",},
-  ],
+  "ResourceOrderSettings": [],
 }
