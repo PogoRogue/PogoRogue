@@ -4,7 +4,7 @@ grv = 0.21; //gravity
 init_grv = grv; //initial gravity
 h_grv = 0.01; //horizontal drag
 rotation_speed = 3; //rotation speed
-original_rotation_speed = rotation_speed;
+original_rotation_speed = global.tilt_speed;
 current_rotation_speed = 0;
 rotation_delay = rotation_speed / 10; //0.5
 vsp_basicjump = -6.6; //bounce height
@@ -229,7 +229,7 @@ state_chargejump = function() {
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
 	
 	if not_charging_1 and not_charging_2 or end_of_charge {
-		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5)
+		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5,true);
 		scr_Jump(charge);
 		audio_stop_sound(snd_chargejump);
 		allow_flames = true;
@@ -309,7 +309,7 @@ state_groundpound = function() {
 			pickup_groundpound.on_cooldown = true;
 			state = state_bouncing;
 			vspeed = 0;
-			scr_Screen_Shake(6, 15);
+			scr_Screen_Shake(6, 15, true);
 			audio_play_sound(snd_groundpound,0,false);
 			stomp_damage = 8;
 			soundPlayed = false;
@@ -325,7 +325,7 @@ state_firedash = function() {
 		speed = 10;
 		direction = image_angle+90;
 		min_flames_speed = speed;
-		scr_Screen_Shake(4, 4);
+		scr_Screen_Shake(4, 4, true);
 		if !instance_exists(obj_player_flames_upward) {
 			instance_create_depth(x,y,depth+1,obj_player_flames_upward);	
 		}

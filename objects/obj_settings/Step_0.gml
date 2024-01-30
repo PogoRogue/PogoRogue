@@ -1,9 +1,18 @@
-key_left = global.key_left_menu;
-key_right = global.key_right_menu;
-key_up = global.key_up_menu;
-key_down = global.key_down_menu;
-key_select = global.key_select;
-key_back = global.key_back;
+if usable = true { 
+	key_left = global.key_left_menu;
+	key_right = global.key_right_menu;
+	key_up = global.key_up_menu;
+	key_down = global.key_down_menu;
+	key_select = global.key_select;
+	key_back = global.key_back;
+}else {
+	key_left = 0;
+	key_right = 0;
+	key_up = 0;
+	key_down = 0;
+	key_select = 0;
+	key_back = 0;
+}
 
 if select_y = 0 { //top row, change between setting types
 	select_x = 1;
@@ -18,12 +27,7 @@ if select_y = 0 { //top row, change between setting types
 		audio_play_sound(snd_menuNavigation,0,false);
 	}
 	//down
-	if select = 1 and key_down and select_y < select_y_max and selected_y = false {
-		select_y += 1;
-		selected_y = true;
-		audio_play_sound(snd_menuNavigation,0,false);
-	}
-	if select = 2 and key_down and select_y < select_y_max and selected_y = false {
+	if select != 4 and key_down and select_y < select_y_max and selected_y = false {
 		select_y += 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
@@ -54,7 +58,7 @@ if select = 1 { //video
 			if menu_audio.options_array[i]._type = "slider" {
 				if i = select_y-1 {
 					//navigate left and right
-					if key_left and menu_audio.options_array[i].current_value > 0 and selected_x = false {
+					if key_left and menu_audio.options_array[i].current_value > menu_audio.options_array[i].lowest_value and selected_x = false {
 						menu_audio.options_array[i].current_value -= menu_audio.options_array[i].increment;
 						selected_x = true;
 						menu_audio.options_array[i].on_select();
@@ -92,25 +96,20 @@ if select = 2 { //video
 				if i = select_y-1 and key_select {
 					menu_video.options_array[i].current_mode = not menu_video.options_array[i].current_mode;
 					if menu_video.options_array[i].current_mode = true {
-						global.fullscreen = true;
-						scr_Save_Real("fullscreen",global.fullscreen);
 						menu_video.options_array[i].do_on_true();
-						audio_play_sound(snd_selectOption,0,false);
 					}else {
-						global.fullscreen = false;
-						scr_Save_Real("fullscreen",global.fullscreen);
 						menu_video.options_array[i].do_on_false();
-						audio_play_sound(snd_selectOption,0,false);
 					}
 				}
 			}
 			if menu_video.options_array[i]._type = "list_slider" {
+				menu_video.options_array[i].current_selection = global.resolution_num;
 				if i = select_y-1 {
 					//navigate left and right
 					if key_left and menu_video.options_array[i].current_selection > 0 and selected_x = false {
 						global.resolution_num -= 1;
 						scr_Save_Real("resolution_num",global.resolution_num);
-						menu_video.options_array[i].current_selection -= 1;
+						
 						selected_x = true;
 						global.resolution_x = menu_video.options_array[i].list_of_options[menu_video.options_array[i].current_selection][0];
 						global.resolution_y = menu_video.options_array[i].list_of_options[menu_video.options_array[i].current_selection][1];
@@ -121,7 +120,6 @@ if select = 2 { //video
 					if key_right and menu_video.options_array[i].current_selection < menu_video.options_array[i].num_of_values - 1 and selected_x = false {
 						global.resolution_num += 1;
 						scr_Save_Real("resolution_num",global.resolution_num);
-						menu_video.options_array[i].current_selection += 1;
 						selected_x = true;
 						global.resolution_x = menu_video.options_array[i].list_of_options[menu_video.options_array[i].current_selection][0];
 						global.resolution_y = menu_video.options_array[i].list_of_options[menu_video.options_array[i].current_selection][1];
@@ -146,6 +144,49 @@ if select = 2 { //video
 }
 #endregion
 
+#region //GAMEPLAY
+if select = 3 { //video
+	
+	select_y_max = menu_gameplay.num_of_options;
+	
+	if select_y > 0 {
+		for(i = 0; i < menu_gameplay.num_of_options; i++) {
+			if menu_gameplay.options_array[i]._type = "slider" {
+				if i = select_y-1 {
+					//navigate left and right
+					if key_left and menu_gameplay.options_array[i].current_value > menu_gameplay.options_array[i].lowest_value and selected_x = false {
+						menu_gameplay.options_array[i].current_value -= menu_gameplay.options_array[i].increment;
+						selected_x = true;
+						menu_gameplay.options_array[i].on_select();
+						alarm[2] = alarm2_time;
+					}
+					if key_right and menu_gameplay.options_array[i].current_value < menu_gameplay.options_array[i].highest_value and selected_x = false {
+						menu_gameplay.options_array[i].current_value += menu_gameplay.options_array[i].increment;
+						selected_x = true;
+						menu_gameplay.options_array[i].on_select();
+						alarm[2] = alarm2_time;
+					}
+				}
+			}
+			if menu_gameplay.options_array[i]._type = "checkbox" {
+				if i = select_y-1 and key_select {
+					menu_gameplay.options_array[i].current_mode = not menu_gameplay.options_array[i].current_mode;
+					if menu_gameplay.options_array[i].current_mode = true {
+						menu_gameplay.options_array[i].do_on_true();
+					}else {
+						menu_gameplay.options_array[i].do_on_false();
+					}
+				}
+			}
+			if menu_gameplay.options_array[i]._type = "doonpress" {
+				if i = select_y-1 and key_select {
+						menu_gameplay.options_array[i].do_on_press();
+				}
+			}
+		}
+	}
+}
+#endregion
 
 //end settings code
 if !key_left and !key_right {

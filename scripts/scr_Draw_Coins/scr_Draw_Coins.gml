@@ -7,7 +7,7 @@ function scr_Draw_Coins(distance) {
 	draw_set_color(c_white);
 	
 	//draw coins
-	if (other.current_coins > 0) {
+	if (other.current_coins > 0 and global.show_coins) {
 		str = "x" + string(other.current_coins);
 		text_width = string_width(str);
 		spr = spr_coingui_centered;

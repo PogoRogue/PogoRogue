@@ -27,3 +27,4 @@ alarm2_time = 30;
 
 scr_Settings_Audio();
 scr_Settings_Video();
+scr_Settings_Gameplay();

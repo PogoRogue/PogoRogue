@@ -8,7 +8,7 @@ if(is_dead) {
 	audio_play_sound(snd_enemyhurt,0,false);
 	
 	//screen shake
-	scr_Screen_Shake(6, 10);
+	scr_Screen_Shake(6, 10, false);
 	
 	//combo
 	global.combo += 1;

@@ -9,6 +9,7 @@ function scr_Settings_Audio(){
 		increment: 10,
 		default_value: global.sound_volume,
 		current_value: global.sound_volume,
+		add_to_string: "%",
 		on_select: function() {
 			with obj_settings {
 				global.sound_volume = menu_audio.options_array[0].current_value;
@@ -29,14 +30,13 @@ function scr_Settings_Audio(){
 		increment: 10,
 		default_value: global.music_volume,
 		current_value: global.music_volume,
+		add_to_string: "%",
 		on_select: function() {
 			with obj_settings {
 				global.music_volume = menu_audio.options_array[1].current_value;
 				scr_Save_Real("music_volume",global.music_volume);
 				audio_group_set_gain(audiogroup_music,global.music_volume/100,100);
-				if menu_audio.options_array[1].current_value > menu_audio.options_array[1].lowest_value {
-					audio_play_sound(snd_menuNavigation,0,false);
-				}
+				audio_play_sound(snd_menuNavigation,0,false);
 			}
 		},
 	};
