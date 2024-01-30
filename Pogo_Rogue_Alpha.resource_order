@@ -6,5 +6,9 @@
   "ResourceOrderSettings": [
     {"name":"obj_worm","order":2,"path":"objects/obj_worm/obj_worm.yy",},
     {"name":"spr_holes","order":2,"path":"sprites/spr_holes/spr_holes.yy",},
+    {"name":"spr_start","order":2,"path":"sprites/spr_start/spr_start.yy",},
+    {"name":"spr_ud_sam","order":1,"path":"sprites/spr_ud_sam/spr_ud_sam.yy",},
+    {"name":"spr_u195","order":1,"path":"sprites/spr_u195/spr_u195.yy",},
+    {"name":"spr_2x2_Combat","order":1,"path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},
   ],
 }
