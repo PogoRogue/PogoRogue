@@ -21,20 +21,16 @@ if(sprite_index == spr_enemy_walking_explosion_walk){
 	if (image_index > image_number - 1){
 		depth = 201;
 	}
-	
 }
 
 
 //bullet control
 if(depth == 201){
 	bullet_speed = 0;
-}
-
-else{
+} else {
 	if(sprite_index == spr_enemy_turret_barrel){
 		bullet_speed = 5;
 	}
-	
 }
 
 
