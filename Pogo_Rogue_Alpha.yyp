@@ -705,6 +705,7 @@
     {"id":{"name":"obj_item_buff_dmg","path":"objects/obj_item_buff_dmg/obj_item_buff_dmg.yy",},},
     {"id":{"name":"spr_enemy_shooter_cannon","path":"sprites/spr_enemy_shooter_cannon/spr_enemy_shooter_cannon.yy",},},
     {"id":{"name":"snd_pinball","path":"sounds/snd_pinball/snd_pinball.yy",},},
+    {"id":{"name":"spr_sequence_body","path":"sprites/spr_sequence_body/spr_sequence_body.yy",},},
     {"id":{"name":"spr_angled_platform_left_mask","path":"sprites/spr_angled_platform_left_mask/spr_angled_platform_left_mask.yy",},},
     {"id":{"name":"obj_angled_platform_left","path":"objects/obj_angled_platform_left/obj_angled_platform_left.yy",},},
     {"id":{"name":"obj_boss_brick","path":"objects/obj_boss_brick/obj_boss_brick.yy",},},

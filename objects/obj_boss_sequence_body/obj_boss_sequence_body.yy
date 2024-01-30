@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_jump",
-    "path": "sprites/spr_enemy_jump/spr_enemy_jump.yy",
+    "name": "spr_sequence_body",
+    "path": "sprites/spr_sequence_body/spr_sequence_body.yy",
   },
   "spriteMaskId": null,
   "visible": true,
