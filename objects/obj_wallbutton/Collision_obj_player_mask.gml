@@ -1,5 +1,4 @@
 
-
 if(state = "up" && sprite_index = spr_button_1){
 	//show_message(point_direction(x,y,obj_player.x,obj_player.y));
 	if(point_direction(x,y,obj_player.x,obj_player.y)>0 && point_direction(x,y,obj_player.x,obj_player.y)<180){
