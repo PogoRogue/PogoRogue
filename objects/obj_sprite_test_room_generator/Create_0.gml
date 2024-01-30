@@ -10,10 +10,10 @@ ds_list_add(prebuilt_rooms, [3, 3, "b1"]);
 //ds_list_add(prebuilt_rooms, [4, 4, "b4"]);
 
 
-rooms_to_generate = 1;
+rooms_to_generate = 2;
 max_gen_width = 15;
 
-layout_grid = scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms);
+layout_grid = scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, 0, false, 5, 5);
 
 
 //tiling layer

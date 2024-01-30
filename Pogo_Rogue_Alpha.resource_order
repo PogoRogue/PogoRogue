@@ -9,6 +9,8 @@
     {"name":"Boss Sphere","order":28,"path":"folders/Sprites/Enemy/Boss Sphere.yy",},
     {"name":"buttons","order":1,"path":"folders/Sprites/Enemy/Boss Sequence/buttons.yy",},
     {"name":"Sequence Boss","order":22,"path":"folders/Scripts/Sequence Boss.yy",},
+    {"name":"mole worm","order":1,"path":"folders/Objects/Enemy/mole worm.yy",},
+    {"name":"sprite_temp","order":1,"path":"folders/Objects/Enemy/mole worm/sprite_temp.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_enemy_generic","order":26,"path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},
@@ -66,5 +68,7 @@
     {"name":"spr_enemy_shooter","order":1,"path":"sprites/spr_enemy_shooter/spr_enemy_shooter.yy",},
     {"name":"obj_boss_sequence_body","order":3,"path":"objects/obj_boss_sequence_body/obj_boss_sequence_body.yy",},
     {"name":"scr_Screen_Shake","order":1,"path":"scripts/scr_Screen_Shake/scr_Screen_Shake.yy",},
+    {"name":"obj_worm","order":2,"path":"objects/obj_worm/obj_worm.yy",},
+    {"name":"spr_holes","order":2,"path":"sprites/spr_holes/spr_holes.yy",},
   ],
 }
