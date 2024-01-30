@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_2x2_Combat",
-  "bbox_bottom": 47,
-  "bbox_left": 17,
-  "bbox_right": 51,
-  "bbox_top": 13,
+  "bbox_bottom": 61,
+  "bbox_left": 3,
+  "bbox_right": 58,
+  "bbox_top": 11,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f2750621-f61d-4edc-b041-7b1d4bee4c58",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"051cb332-8210-4b00-ad59-5af15f70582c",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -77,7 +77,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f2750621-f61d-4edc-b041-7b1d4bee4c58","path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},},},"Disabled":false,"id":"5edc50d2-4ebd-43f0-98e4-9930bf7d5a80","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"051cb332-8210-4b00-ad59-5af15f70582c","path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},},},"Disabled":false,"id":"c7da90db-5694-45cd-a779-eb161d004e05","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
