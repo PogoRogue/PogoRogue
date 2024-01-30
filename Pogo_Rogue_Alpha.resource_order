@@ -4,6 +4,8 @@
     {"name":"Music","order":1,"path":"folders/Sounds/Music.yy",},
     {"name":"Boss Sphere","order":28,"path":"folders/Sprites/Enemy/Boss Sphere.yy",},
     {"name":"Environmental","order":29,"path":"folders/Sprites/Enemy/Environmental.yy",},
+    {"name":"mole worm","order":1,"path":"folders/Objects/Enemy/mole worm.yy",},
+    {"name":"sprite_temp","order":1,"path":"folders/Objects/Enemy/mole worm/sprite_temp.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_timergui","order":2,"path":"sprites/spr_timergui/spr_timergui.yy",},
@@ -73,5 +75,7 @@
     {"name":"room_menu","order":4,"path":"rooms/room_menu/room_menu.yy",},
     {"name":"spr_pause_areyousure_savedata","order":9,"path":"sprites/spr_pause_areyousure_savedata/spr_pause_areyousure_savedata.yy",},
     {"name":"spr_slider_bar_settings","order":1,"path":"sprites/spr_slider_bar_settings/spr_slider_bar_settings.yy",},
+    {"name":"obj_worm","order":2,"path":"objects/obj_worm/obj_worm.yy",},
+    {"name":"spr_holes","order":2,"path":"sprites/spr_holes/spr_holes.yy",},
   ],
 }
