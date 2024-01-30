@@ -13,6 +13,39 @@ if select_y = 0 {
 	draw_sprite(spr_settingsmenu_bindings,(select = 4)*2,center_x+144,72);
 }
 
+//background tiles
+draw_set_color(c_white);
+for (xx = camera_get_view_width(view_camera[0])/2 - 128; xx < camera_get_view_width(view_camera[0])/2 + 128; xx += 16) {
+	for (yy = option_1_y-32; yy < option_1_y+(select_y_max*item_height); yy += 16) {
+		if (xx = camera_get_view_width(view_camera[0])/2 - 128) {
+			if (yy = option_1_y-32) {
+				var tile_data = 1;
+			}else if (yy = option_1_y+(select_y_max*item_height)-16) {
+				var tile_data = 9;
+			}else {
+				var tile_data = 5;
+			}
+		}else if (xx = camera_get_view_width(view_camera[0])/2 + 128 - 16) {
+			if (yy = option_1_y-32) {
+				var tile_data = 3;
+			}else if (yy = option_1_y+(select_y_max*item_height)-16) {
+				var tile_data = 11;
+			}else {
+				var tile_data = 7;
+			}
+		}else {
+			if (yy = option_1_y-32) {
+				var tile_data = 2;
+			}else if (yy = option_1_y+(select_y_max*item_height)-16) {
+				var tile_data = 10;
+			}else {
+				var tile_data = 6;
+			}
+		}
+		draw_tile(tl_settingsbg,tile_data,0,xx,yy);
+	}
+}
+
 //draw settings options here
 if select = 1 { //audio
 	for(i = 0; i < menu_audio.num_of_options; i++) {

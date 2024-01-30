@@ -20,17 +20,20 @@ if select_y = 0 { //top row, change between setting types
 		select -= 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[2] = alarm2_time;
 	}
 	if key_right and select < select_max and selected_x = false {
 		select += 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[2] = alarm2_time;
 	}
 	//down
 	if select != 4 and key_down and select_y < select_y_max and selected_y = false {
 		select_y += 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[3] = alarm3_time;
 	}
 }else {
 	//navigate up and down
@@ -39,12 +42,14 @@ if select_y = 0 { //top row, change between setting types
 		selected_y = true;
 		alarm2_time = 30;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[3] = alarm3_time;
 	}
 	if key_down and select_y < select_y_max and selected_y = false {
 		select_y += 1;
 		selected_y = true;
 		alarm2_time = 30;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[3] = alarm3_time;
 	}
 }
 
@@ -116,6 +121,7 @@ if select = 2 { //video
 						scr_Save_Real("resolution_x",global.resolution_x);
 						scr_Save_Real("resolution_y",global.resolution_y);
 						audio_play_sound(snd_menuNavigation,0,false);
+						alarm[2] = alarm2_time;
 					}
 					if key_right and menu_video.options_array[i].current_selection < menu_video.options_array[i].num_of_values - 1 and selected_x = false {
 						global.resolution_num += 1;
@@ -126,6 +132,7 @@ if select = 2 { //video
 						scr_Save_Real("resolution_x",global.resolution_x);
 						scr_Save_Real("resolution_y",global.resolution_y);
 						audio_play_sound(snd_menuNavigation,0,false);
+						alarm[2] = alarm2_time;
 					}
 					//select
 					if (key_select and !window_get_fullscreen()) {
@@ -192,10 +199,13 @@ if select = 3 { //video
 if !key_left and !key_right {
 	selected_x = false;
 	alarm2_time = 30;
+	alarm[2] = alarm2_time;
 }
 
 if !key_up and !key_down {
 	selected_y = false;
+	alarm3_time = 30;
+	alarm[3] = alarm3_time;
 }
 
 if key_back {

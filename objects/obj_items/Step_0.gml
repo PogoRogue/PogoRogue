@@ -11,17 +11,20 @@ if select_y = 0 { //top row, change between item types
 		select -= 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[2] = alarm2_time;
 	}
 	if key_right and select < select_max and selected_x = false {
 		select += 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[2] = alarm2_time;
 	}
 	//down
 	if select = 1 and key_down and select_y < select_y_max and selected_y = false {
 		select_y += 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[3] = alarm3_time;
 	}
 }
 
@@ -31,30 +34,38 @@ if select = 1 and select_y > 0 {
 		select_x -= 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[2] = alarm2_time;
 	}
 	if key_right and select_x < select_x_max and selected_x = false {
 		select_x += 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[2] = alarm2_time;
 	}
 	if key_up and select_y > 0 and selected_y = false {
 		select_y -= 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[3] = alarm3_time;
 	}
 	if key_down and select_y < select_y_max and selected_y = false {
 		select_y += 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[3] = alarm3_time;
 	}
 }
 
 if !key_left and !key_right {
 	selected_x = false;
+	alarm2_time = 30;
+	alarm[2] = alarm2_time;
 }
 
 if !key_up and !key_down {
 	selected_y = false;
+	alarm3_time = 30;
+	alarm[3] = alarm3_time;
 }
 
 if key_back {
