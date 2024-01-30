@@ -1,13 +1,14 @@
 {
   "FolderOrderSettings": [
+    {"name":"mole worm","order":1,"path":"folders/Objects/Enemy/mole worm.yy",},
+    {"name":"sprite_temp","order":1,"path":"folders/Objects/Enemy/mole worm/sprite_temp.yy",},
     {"name":"Sandbox Rooms","order":9,"path":"folders/Rooms/Sandbox Rooms.yy",},
     {"name":"Music","order":1,"path":"folders/Sounds/Music.yy",},
     {"name":"Boss Sphere","order":28,"path":"folders/Sprites/Enemy/Boss Sphere.yy",},
     {"name":"Environmental","order":29,"path":"folders/Sprites/Enemy/Environmental.yy",},
-    {"name":"mole worm","order":1,"path":"folders/Objects/Enemy/mole worm.yy",},
-    {"name":"sprite_temp","order":1,"path":"folders/Objects/Enemy/mole worm/sprite_temp.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"obj_worm","order":2,"path":"objects/obj_worm/obj_worm.yy",},
     {"name":"spr_timergui","order":2,"path":"sprites/spr_timergui/spr_timergui.yy",},
     {"name":"spr_enemy_generic","order":27,"path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},
     {"name":"spr_enemy_shoot_only","order":26,"path":"sprites/spr_enemy_shoot_only/spr_enemy_shoot_only.yy",},
@@ -19,6 +20,7 @@
     {"name":"scr_Save_Load_Variables","order":2,"path":"scripts/scr_Save_Load_Variables/scr_Save_Load_Variables.yy",},
     {"name":"spr_settingsmenu_video","order":3,"path":"sprites/spr_settingsmenu_video/spr_settingsmenu_video.yy",},
     {"name":"spr_enemy_stomp_only","order":24,"path":"sprites/spr_enemy_stomp_only/spr_enemy_stomp_only.yy",},
+    {"name":"spr_holes","order":2,"path":"sprites/spr_holes/spr_holes.yy",},
     {"name":"scr_Settings_Gameplay","order":3,"path":"scripts/scr_Settings_Gameplay/scr_Settings_Gameplay.yy",},
     {"name":"spr_shieldbubble_mask","order":1,"path":"sprites/spr_shieldbubble_mask/spr_shieldbubble_mask.yy",},
     {"name":"spr_settingsmenu","order":1,"path":"sprites/spr_settingsmenu/spr_settingsmenu.yy",},
@@ -75,7 +77,5 @@
     {"name":"room_menu","order":4,"path":"rooms/room_menu/room_menu.yy",},
     {"name":"spr_pause_areyousure_savedata","order":9,"path":"sprites/spr_pause_areyousure_savedata/spr_pause_areyousure_savedata.yy",},
     {"name":"spr_slider_bar_settings","order":1,"path":"sprites/spr_slider_bar_settings/spr_slider_bar_settings.yy",},
-    {"name":"obj_worm","order":2,"path":"objects/obj_worm/obj_worm.yy",},
-    {"name":"spr_holes","order":2,"path":"sprites/spr_holes/spr_holes.yy",},
   ],
 }

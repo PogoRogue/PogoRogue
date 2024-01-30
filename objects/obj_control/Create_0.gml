@@ -1,3 +1,5 @@
+scr_Save_Load_Variables();
+
 restart_button = 0;
 endgame_button = 0;
 //alarm[0] = 300; //set fullscreen
@@ -21,6 +23,11 @@ if !instance_exists(obj_controls_controller) {
 }
 if !instance_exists(obj_controls_keyboard) {
 	instance_create_depth(x,y,depth,obj_controls_keyboard);
+}
+
+//run stats
+if !instance_exists(obj_runstats) {
+	instance_create_depth(x,y,depth,obj_runstats);
 }
 
 //music test
