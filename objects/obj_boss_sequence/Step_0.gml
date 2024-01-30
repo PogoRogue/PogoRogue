@@ -55,6 +55,10 @@ switch(current_state) {
 	break;
 	case STATES.DEAD: // Dead code goes here
 		image_alpha *= 0.9;
+		if(state_has_changed) {
+			instance_destroy(obj_enemy_turret);
+			alarm_set(3, room_speed * 2);
+		}
 	break;
 }
 
@@ -69,6 +73,10 @@ if(current_state != STATES.VULNERABLE) {
 			state = state_bouncing;
 		}
 	}	
+}
+
+if(body.hp <= 0) {
+	current_state = STATES.DEAD;
 }
 
 state_has_changed = previous_state != current_state;
