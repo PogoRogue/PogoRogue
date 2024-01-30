@@ -14,5 +14,5 @@ jump_cooldown = 0;
 cooldown_length = 2 * room_speed;
 
 // Add jump
-jump_height = -6;
+jump_height = -5;
 

@@ -1,9 +1,4 @@
-/// @description 在此处插入描述 
-// 你可以在此编辑器中写入代码 
-
-
-
-
+/// @description Walk back and forth
 
 // Inherit the parent event
 event_inherited();
@@ -18,11 +13,7 @@ if (spd == 0.5) { image_xscale = -1;}
 if (spd == -0.5) { image_xscale = 1;}
 
 if(is_dead) {
-	spd = 0;	
-}
-
-if(is_dead) {
-	spd = 0;	
+	spd = 0;
 	sprite_index = spr_enemy_stomp_only;
 }
 
