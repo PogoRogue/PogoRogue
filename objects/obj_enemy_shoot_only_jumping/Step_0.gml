@@ -1,9 +1,4 @@
-/// @description 在此处插入描述 
-// 你可以在此编辑器中写入代码 
-
-
-
-
+/// @description Jump towards player when in range
 
 // Inherit the parent event
 event_inherited();
@@ -36,13 +31,12 @@ if(!is_dead && distance_to_object(player) < jump_range) {
 			jump_cooldown = cooldown_length;
 			alarm_set(1, 1.4 * room_speed);
 		}
-	
-		/*if(jump_cooldown <= 0) {
-			vspeed = jump_height;
-			jump_cooldown = cooldown_length;
-			hspeed = spd;
-		}*/
 	}
+}
+
+if(place_meeting(x + hspeed, y + vspeed, obj_ground)) {
+	x -= hspeed;
+	y -= vspeed;
 }
 
 jump_cooldown = max(jump_cooldown - 1, 0);
