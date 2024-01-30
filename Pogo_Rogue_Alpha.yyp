@@ -115,7 +115,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -560,6 +560,7 @@
     {"id":{"name":"spr_projectile_explosion","path":"sprites/spr_projectile_explosion/spr_projectile_explosion.yy",},},
     {"id":{"name":"obj_weaponheight4","path":"objects/obj_weaponheight4/obj_weaponheight4.yy",},},
     {"id":{"name":"snd_bounce","path":"sounds/snd_bounce/snd_bounce.yy",},},
+    {"id":{"name":"spr_2x2_Combat_Talen_store","path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},},
     {"id":{"name":"obj_controls_keyboard","path":"objects/obj_controls_keyboard/obj_controls_keyboard.yy",},},
     {"id":{"name":"spr_treasurechest2","path":"sprites/spr_treasurechest2/spr_treasurechest2.yy",},},
     {"id":{"name":"spr_axe","path":"sprites/spr_axe/spr_axe.yy",},},
