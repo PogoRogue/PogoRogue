@@ -5,6 +5,8 @@
 initial_x = x;
 initial_y = y;
 
+dist_from_start = 0;
+
 
 // Inherit the parent event
 event_inherited();

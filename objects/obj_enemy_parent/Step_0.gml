@@ -3,6 +3,8 @@
 if(is_dead) {
 	image_alpha *= 0.9;
 	mask_index = spr_nothing;
+	spd = 0;
+	speed = 0;
 } else if (hp <= 0) {
 	alarm_set(0, room_speed);
 	audio_play_sound(snd_enemyhurt,0,false);
