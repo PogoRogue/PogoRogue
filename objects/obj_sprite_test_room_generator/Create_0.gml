@@ -15,7 +15,10 @@ max_gen_width = 15;
 
 global.debug_wall_count = 0;
 
-layout_grid = scr_Generate_Sprite_Test_Layout(prebuilt_rooms, true, false);
+var generate_start_room = false;
+var generate_boss_room = false;
+
+layout_grid = scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_start_room, generate_boss_room);
 
 //tiling layer
 global.ground_layer = layer_create(-1);
