@@ -204,6 +204,7 @@
     {"id":{"name":"spr_arm_cannon","path":"sprites/spr_arm_cannon/spr_arm_cannon.yy",},},
     {"id":{"name":"spr_player_zekai_charging","path":"sprites/spr_player_zekai_charging/spr_player_zekai_charging.yy",},},
     {"id":{"name":"spr_projectile_grenade","path":"sprites/spr_projectile_grenade/spr_projectile_grenade.yy",},},
+    {"id":{"name":"spr_2x2_Combat","path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},},
     {"id":{"name":"obj_enemy_shooter_moving","path":"objects/obj_enemy_shooter_moving/obj_enemy_shooter_moving.yy",},},
     {"id":{"name":"obj_walltop","path":"objects/obj_walltop/obj_walltop.yy",},},
     {"id":{"name":"obj_sprite_test_room_generator","path":"objects/obj_sprite_test_room_generator/obj_sprite_test_room_generator.yy",},},
