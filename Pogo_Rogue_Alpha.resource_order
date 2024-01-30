@@ -1,6 +1,13 @@
 {
-  "FolderOrderSettings": [],
+  "FolderOrderSettings": [
+    {"name":"mole worm","order":1,"path":"folders/Objects/Enemy/mole worm.yy",},
+    {"name":"sprite_temp","order":1,"path":"folders/Objects/Enemy/mole worm/sprite_temp.yy",},
+  ],
   "ResourceOrderSettings": [
+    {"name":"obj_worm","order":2,"path":"objects/obj_worm/obj_worm.yy",},
+    {"name":"spr_holes","order":2,"path":"sprites/spr_holes/spr_holes.yy",},
+    {"name":"spr_2x2_Combat","order":2,"path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},
+    {"name":"spr_2x2_Combat_Talen_store","order":1,"path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},
     {"name":"spr_ur_ZehaoChen","order":1,"path":"sprites/spr_ur_ZehaoChen/spr_ur_ZehaoChen.yy",},
     {"name":"spr_2x2_Combat_ZehaoChen","order":1,"path":"sprites/spr_2x2_Combat_ZehaoChen/spr_2x2_Combat_ZehaoChen.yy",},
     {"name":"spr_ul1_ZehaoChen","order":1,"path":"sprites/spr_ul1_ZehaoChen/spr_ul1_ZehaoChen.yy",},
