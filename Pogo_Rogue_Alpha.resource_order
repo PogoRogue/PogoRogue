@@ -56,6 +56,7 @@
     {"name":"room_shop","order":5,"path":"rooms/room_shop/room_shop.yy",},
     {"name":"room_proc_gen_test","order":1,"path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},
     {"name":"room_settings","order":11,"path":"rooms/room_settings/room_settings.yy",},
+    {"name":"spr_2x2_Combat_Talen_store","order":1,"path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},
     {"name":"spr_buffitem_aerialassassin_old","order":1,"path":"sprites/spr_buffitem_aerialassassin_old/spr_buffitem_aerialassassin_old.yy",},
     {"name":"spr_enemy_moving","order":8,"path":"sprites/spr_enemy_moving/spr_enemy_moving.yy",},
     {"name":"room_sam_movement","order":3,"path":"rooms/room_sam_movement/room_sam_movement.yy",},
@@ -77,6 +78,5 @@
     {"name":"room_menu","order":4,"path":"rooms/room_menu/room_menu.yy",},
     {"name":"spr_pause_areyousure_savedata","order":9,"path":"sprites/spr_pause_areyousure_savedata/spr_pause_areyousure_savedata.yy",},
     {"name":"spr_slider_bar_settings","order":1,"path":"sprites/spr_slider_bar_settings/spr_slider_bar_settings.yy",},
-    {"name":"spr_2x2_Combat_Talen_store","order":1,"path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},
   ],
 }

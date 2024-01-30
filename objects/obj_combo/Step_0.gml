@@ -41,6 +41,10 @@ if global.combo > global.best_combo { //best combo across all runs
 	scr_Save_Real("best_combo",global.best_combo);
 }
 
+if global.combo > global.current_best_combo {
+	global.current_best_combo =  global.combo;	
+}
+
 if coin_alpha > 0 {
 	coin_alpha -= 0.05;
 }else {

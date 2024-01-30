@@ -25,11 +25,6 @@ if !instance_exists(obj_controls_keyboard) {
 	instance_create_depth(x,y,depth,obj_controls_keyboard);
 }
 
-//run stats
-if !instance_exists(obj_runstats) {
-	instance_create_depth(x,y,depth,obj_runstats);
-}
-
 //music test
 if !audio_is_playing(snd_music) {
 	audio_play_sound(snd_music,0,true);

@@ -1,6 +1,4 @@
 /// @description Initialize strings by column
-depth += 10;
-
 if global.use_controller {
 	controls_left =	  "Controls:\n\n" +
 					  "Rotate\n" +

@@ -53,6 +53,7 @@ if(is_dead) {
 	}
 	
 	is_dead = true;
+	mask_index = spr_nothing;
 }
 
 // Update iframes
