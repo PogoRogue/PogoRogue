@@ -3,10 +3,10 @@
 cur_amt = 0;
 cur_angle=0;
 while(cur_amt<amount){
-	var _bullet=instance_create_layer(x,y,"Instances",obj_enemy_projectile_parent);
+	var _bullet=instance_create_layer(x,y,"Instances",obj_enemy_projectile_bullet);
 	
 	//manually set variables of the bullet here
-	_bullet.speed=10;
+	_bullet.speed=3;
 	
 	if(rand){
 		_bullet.direction=dir_central+random_range(-spread/2,spread/2);

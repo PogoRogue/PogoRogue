@@ -17,5 +17,5 @@ spread = 60;
 rand=false;
 
 if(cur_rep<repeats){
-	alarm_set(0,0);
+	alarm_set(0,1);
 }

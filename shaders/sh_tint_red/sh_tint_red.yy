@@ -4,7 +4,7 @@
   "name": "sh_tint_red",
   "parent": {
     "name": "Shaders",
-    "path": "folders/Shaders.yy",
+    "path": "folders/Tile Sets/Shaders.yy",
   },
   "type": 1,
 }

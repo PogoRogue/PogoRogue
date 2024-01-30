@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Pogo_Rogue_Alpha",
-    "path": "Pogo_Rogue_Alpha.yyp",
+    "name": "Projectile",
+    "path": "folders/Objects/Enemy/Hitbox/Projectile.yy",
   },
   "parentObjectId": {
     "name": "obj_explode_projectile",
