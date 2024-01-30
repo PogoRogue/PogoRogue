@@ -780,8 +780,8 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"room_boss_2","path":"rooms/room_boss_2/room_boss_2.yy",},},
     {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
+    {"roomId":{"name":"room_boss_2","path":"rooms/room_boss_2/room_boss_2.yy",},},
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
     {"roomId":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
     {"roomId":{"name":"room_gym_enemy12","path":"rooms/room_gym_enemy12/room_gym_enemy12.yy",},},
