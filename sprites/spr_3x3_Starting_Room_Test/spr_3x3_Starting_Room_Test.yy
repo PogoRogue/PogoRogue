@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_3x3_StartingRoom",
-  "bbox_bottom": 94,
-  "bbox_left": 0,
-  "bbox_right": 95,
-  "bbox_top": 12,
+  "name": "spr_3x3_Starting_Room_Test",
+  "bbox_bottom": 85,
+  "bbox_left": 3,
+  "bbox_right": 81,
+  "bbox_top": 4,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fe34808a-0902-4f33-be99-208b3e6abdee",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5b0a997c-a5ec-4d36-a3b3-4d5d75e2eeeb",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -25,14 +25,14 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "3x3",
-    "path": "folders/Sprites/ProcGenLevelData/PrebuiltRooms/3x3.yy",
+    "name": "OtherRooms",
+    "path": "folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/OtherRooms.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_3x3_StartingRoom",
+    "name": "spr_3x3_Starting_Room_Test",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fe34808a-0902-4f33-be99-208b3e6abdee","path":"sprites/spr_3x3_StartingRoom/spr_3x3_StartingRoom.yy",},},},"Disabled":false,"id":"0f8de979-1e97-4ff5-9a1f-adbe7bf06768","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5b0a997c-a5ec-4d36-a3b3-4d5d75e2eeeb","path":"sprites/spr_3x3_Starting_Room_Test/spr_3x3_Starting_Room_Test.yy",},},},"Disabled":false,"id":"f35d7d06-e211-4479-b5c6-e88c74cf2fe4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -73,7 +73,7 @@ function scr_Create_Walls_From_Pixel_Array(pixel_array, x_offset, y_offset){
 					image_yscale : height
 				});				
 				global.debug_wall_count++;
-				show_debug_message("Created wall object number " + string(global.debug_wall_count) + " with width: " + string(width) + ", height: " + string(height) + "\n");
+				//show_debug_message("Created wall object number " + string(global.debug_wall_count) + " with width: " + string(width) + ", height: " + string(height) + "\n");
 				//Queue the object so we can return all the walls at the end of this script
 				ds_queue_enqueue(object_queue, new_object);
 			}
