@@ -32,10 +32,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "old_B1_Shield_Move",
-    "path": "sprites/old_B1_Shield_Move/old_B1_Shield_Move.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

@@ -25,7 +25,8 @@ if(place_meeting(x + 20, y, obj_ground_parent)) {
 	is_vertical = false;
 }
 
-windup = false
+windup = true
+w_alarm_cd = false
 
 image_angle = rotation;
 
