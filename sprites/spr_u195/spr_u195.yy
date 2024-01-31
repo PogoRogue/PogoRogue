@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "testRooms",
-    "path": "folders/Sprites/ProcGenLevelData/testRooms.yy",
+    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther/testRooms.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "2x2",
-    "path": "folders/Sprites/ProcGenLevelData/PrebuiltRooms/2x2.yy",
+    "name": "RoomStoresAndOther",
+    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
