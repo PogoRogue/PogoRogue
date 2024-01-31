@@ -12,7 +12,7 @@ if (pause) { //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if global.key_pause and !instance_exists(obj_items) || paused_outside {
+if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_settings) || paused_outside {
 	if !pause { //pause now
 		pause = true;
 		
@@ -24,6 +24,7 @@ if global.key_pause and !instance_exists(obj_items) || paused_outside {
 		if paused_outside = true {
 			instance_activate_object(obj_item_swap);
 			instance_activate_object(obj_items);
+			instance_activate_object(obj_settings);
 			item_swap = true;
 		}else {
 			instance_activate_object(obj_pausemenu);

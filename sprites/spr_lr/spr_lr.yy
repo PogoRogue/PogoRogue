@@ -30,7 +30,7 @@
   "origin": 0,
   "parent": {
     "name": "LR",
-    "path": "folders/Sprites/ProcGenLevelData/LR.yy",
+    "path": "folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites/HallwayBlocks/LR.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

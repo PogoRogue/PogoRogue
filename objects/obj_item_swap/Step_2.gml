@@ -2,7 +2,7 @@ key_left = global.key_left_menu;
 key_right = global.key_right_menu;
 key_select = global.key_interact and global.use_keyboard or global.key_select;
 
-if selected = false and fade_away = false {
+if selected = false and fade_away = false and centered = true {
 	if key_left {
 		if select > 1 {
 			audio_play_sound(snd_menuNavigation,0,false);
@@ -11,8 +11,8 @@ if selected = false and fade_away = false {
 		selected = true;
 	}
 	if key_right {
-		audio_play_sound(snd_menuNavigation,0,false);
 		if select < num_of_slots {
+			audio_play_sound(snd_menuNavigation,0,false);
 			select += 1;
 		}
 		selected = true;
@@ -23,7 +23,7 @@ if selected = false and fade_away = false {
 	}
 }
 
-if key_select and fade_away = false {
+if key_select and fade_away = false and centered = true {
 	//slot 1
 	if select = 1 {
 		audio_play_sound(snd_selectOption,0,false);
@@ -56,8 +56,9 @@ if key_select and fade_away = false {
 		
 		//experimentation buff
 		if global.experimentation = true {
-			global.num_of_coins += 25;
-			global.current_total_coins += 25;
+			global.num_of_coins += experimenting_coins;
+			global.current_total_coins += experimenting_coins;
+			alarm[2] = 1;
 		}
 	}
 	//slot 2
@@ -85,8 +86,9 @@ if key_select and fade_away = false {
 		
 		//experimentation buff
 		if global.experimentation = true {
-			global.num_of_coins += 25;
-			global.current_total_coins += 25;
+			global.num_of_coins += experimenting_coins;
+			global.current_total_coins += experimenting_coins;
+			alarm[2] = 1;
 		}
 	}
 	//slot 3
@@ -109,8 +111,9 @@ if key_select and fade_away = false {
 		
 		//experimentation buff
 		if global.experimentation = true {
-			global.num_of_coins += 25;
-			global.current_total_coins += 25;
+			global.num_of_coins += experimenting_coins;
+			global.current_total_coins += experimenting_coins;
+			alarm[2] = 1;
 		}
 	}
 	//cancel
@@ -126,6 +129,10 @@ if key_select and fade_away = false {
 }
 
 if fade_away = true {
+	if spd2 < 16 {
+		spd2 += 1;
+	}
+	x += spd2;
 	alpha -= 0.025	
 	if alpha <= 0 {
 		instance_destroy();	
