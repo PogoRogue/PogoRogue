@@ -1,6 +1,5 @@
 {
   "FolderOrderSettings": [
-    {"name":"Boss Simon","order":18,"path":"folders/Objects/Enemy/Boss Simon.yy",},
     {"name":"Boss Sphere","order":19,"path":"folders/Objects/Enemy/Boss Sphere.yy",},
     {"name":"Hitbox","order":20,"path":"folders/Objects/Enemy/Hitbox.yy",},
     {"name":"Projectile","order":1,"path":"folders/Objects/Enemy/Hitbox/Projectile.yy",},

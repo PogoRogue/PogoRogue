@@ -21,5 +21,7 @@ while(cur_amt<amount){
 cur_rep++;
 if(cur_rep<repeats){
 	alarm_set(0,delay);
+}else{
+	instance_destroy(self);
 }
 
