@@ -46,6 +46,16 @@ draw_set_valign(fa_bottom);
 draw_sprite(spr_coingui,0,coin_x,coin_y);
 draw_text_color(coin_x+1,coin_y+1,"x"+string(global.num_of_coins),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
 
+//coins
+timer_x = 123;
+draw_set_halign(fa_right);
+draw_set_valign(fa_bottom);
+
+if global.show_timer = true {
+	draw_sprite(spr_timergui,0,timer_x,coin_y);
+	draw_text_color(timer_x-1,coin_y+1,scr_Convert_Frames_To_Time(global.current_time_elapsed),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
+}
+
 //PICKUPS
 draw_set_font(fnt_combo);
 draw_set_halign(fa_center);
@@ -197,16 +207,18 @@ if (global.use_controller = true) {
 }
 
 //all buffs
-for (i = 0; i < array_length(global.all_buff_sprites); i++) {
-	var xx = 24;
-	var yy = camera_get_view_height(view_camera[0]) - 16;
-	draw_sprite(global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,xx+i*20,yy);
+if (global.show_passives = true) {
+	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
+		var xx = 24;
+		var yy = camera_get_view_height(view_camera[0]) - 16;
+		draw_sprite(global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,xx+i*20,yy);
 	
-	//numbers of each buff
-	draw_set_halign(fa_center);
-	draw_set_valign(fa_center);
-	draw_set_font(fnt_itemdescription2);
-	if global.all_buff_numbers[i] > 1 {
-		scr_Draw_Text_Outlined(xx+i*20-6,yy+4,global.all_buff_numbers[i],c_white);
+		//numbers of each buff
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_center);
+		draw_set_font(fnt_itemdescription2);
+		if global.all_buff_numbers[i] > 1 {
+			scr_Draw_Text_Outlined(xx+i*20-6,yy+4,global.all_buff_numbers[i],c_white);
+		}
 	}
 }

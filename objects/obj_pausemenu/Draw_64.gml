@@ -1,5 +1,5 @@
 /// @description draw self
-if !instance_exists(obj_popup_restart) and !instance_exists(obj_popup_exit) and !instance_exists(obj_items) {
+if !instance_exists(obj_popup_restart) and !instance_exists(obj_popup_exit) and !instance_exists(obj_items) and !instance_exists(obj_settings) {
 	
 	var xx = camera_get_view_width(view_camera[0])/2;
 	var yy = camera_get_view_height(view_camera[0])/2;

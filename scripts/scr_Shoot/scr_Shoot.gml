@@ -28,9 +28,10 @@ function scr_Shoot(){
 			audio_play_sound(gun.sound,0,false);
 			
 			//screen shake
-			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames)
+			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames,true);
 			if (global.allow_screenshake) {
-				gamepad_set_vibration(0, 1, 1);
+				var controller_vibration = global.controller_vibration/100;
+				gamepad_set_vibration(0, 1*controller_vibration, 1*controller_vibration);
 			}
 			
 			//decrease ammo

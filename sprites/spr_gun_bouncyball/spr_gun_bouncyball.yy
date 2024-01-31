@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7d9b6f5f-b066-4007-b60e-9cbbb24318a8",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c59d819a-2f82-48d4-a990-b3b7c9382a92",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"59dd1cf7-ad12-411a-b912-5b43b08e0244",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"226a6a04-e204-4f66-bffe-0ed46698eb28",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"b62bf1ab-6157-48d2-b1a3-751732f0651b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8f2c559c-2fb9-4277-b768-28666ef80492","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7d9b6f5f-b066-4007-b60e-9cbbb24318a8","path":"sprites/spr_gun_bouncyball/spr_gun_bouncyball.yy",},},},"Disabled":false,"id":"ff775dc7-35ec-46b3-9b0d-601d8c980be5","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c59d819a-2f82-48d4-a990-b3b7c9382a92","path":"sprites/spr_gun_bouncyball/spr_gun_bouncyball.yy",},},},"Disabled":false,"id":"55635e5f-4361-4ec9-a44f-ccc23e6ca174","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"59dd1cf7-ad12-411a-b912-5b43b08e0244","path":"sprites/spr_gun_bouncyball/spr_gun_bouncyball.yy",},},},"Disabled":false,"id":"c50aa0e7-4df6-454b-ba99-99cc342e5205","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"226a6a04-e204-4f66-bffe-0ed46698eb28","path":"sprites/spr_gun_bouncyball/spr_gun_bouncyball.yy",},},},"Disabled":false,"id":"efa3e186-a9a5-4bb1-b1aa-105f20d0240c","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

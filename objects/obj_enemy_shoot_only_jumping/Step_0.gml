@@ -3,6 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
+
 is_grounded = place_meeting(x, y + 1, obj_ground_parent);
 at_wall = place_meeting(x + spd, y, obj_ground_parent);
 

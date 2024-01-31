@@ -37,6 +37,7 @@ if selected_x = false {
 }else {
 	if !key_left and !key_right {
 		selected_x = false;
+		alarm2_time = 30;
 	}
 }
 
@@ -49,22 +50,26 @@ if selected_y = false {
 		}else {
 			select -= 2;	
 		}
+		alarm[3] = alarm3_time;
 	}else if key_down and select < 7 {
 		audio_play_sound(snd_menuNavigation,0,false);
 		select += 2;	
 		selected_y = true;
+		alarm[3] = alarm3_time;
 	}else if key_down {
 		if refresh_button = false {
 			audio_play_sound(snd_menuNavigation,0,false);
 			refresh_button = true;	
+			alarm[3] = alarm3_time;
 		}
-	}
-}else {
-	if !key_up and !key_down {
-		selected_y = false;
 	}
 }
 
+if !key_up and !key_down {
+	selected_y = false;
+	alarm3_time = 30;
+	alarm[3] = alarm3_time;
+}
 
 //create items
 var xx = 0;
