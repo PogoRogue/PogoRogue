@@ -1,2 +1,2 @@
 //temporarily disabled for sprint 6 build
-//draw_self();
+mask_index = spr_nothing;
