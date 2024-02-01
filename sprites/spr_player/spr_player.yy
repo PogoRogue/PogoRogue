@@ -58,7 +58,7 @@
   "origin": 7,
   "parent": {
     "name": "Old",
-    "path": "folders/Sprites/Sliders/Player/Old.yy",
+    "path": "folders/Sprites/Player/Old.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
