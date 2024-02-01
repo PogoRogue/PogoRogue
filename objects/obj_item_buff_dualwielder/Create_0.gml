@@ -5,8 +5,8 @@ item_name = "Dual Wielder";
 item_tagline = "Reload all items on bounce.";
 item_description = item_tagline;
 add_sprite_to_list = true;
-item_cost = 20;
-max_uses = 5;
+item_cost = 10;
+max_uses = 1;
 item_stats = "";
 scr_Buff_Stats();
 

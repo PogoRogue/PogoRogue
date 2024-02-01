@@ -5,8 +5,8 @@ item_name = "Drill Tip Bullets";
 item_tagline = "All bullets now pass through the ground.";
 item_description = item_tagline;
 add_sprite_to_list = true;
-item_cost = 20;
-max_uses = 5;
+item_cost = 10;
+max_uses = 1;
 item_stats = "";
 scr_Buff_Stats();
 
