@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_conveyor_belt",
-    "path": "sprites/spr_conveyor_belt/spr_conveyor_belt.yy",
+    "name": "spr_belt_1x1",
+    "path": "sprites/spr_belt_1x1/spr_belt_1x1.yy",
   },
   "spriteMaskId": null,
   "visible": true,
