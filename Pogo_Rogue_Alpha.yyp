@@ -77,6 +77,8 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Items","folderPath":"folders/Sprites/Items.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Passives","folderPath":"folders/Sprites/Items/Passives.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Pickups","folderPath":"folders/Sprites/Items/Pickups.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Sprites/Player.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Old","folderPath":"folders/Sprites/Player/Old.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"ProcGenLevelData","folderPath":"folders/Sprites/ProcGenLevelData.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"ProcGenOperatingSprites","folderPath":"folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CombatRooms","folderPath":"folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites/CombatRooms.yy",},
@@ -102,8 +104,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"testRooms","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/testRooms.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Projectiles","folderPath":"folders/Sprites/Projectiles.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sliders","folderPath":"folders/Sprites/Sliders.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Sprites/Player.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Old","folderPath":"folders/Sprites/Player/Old.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Boss Cut-In","folderPath":"folders/Sprites/UI/Boss Cut-In.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
@@ -130,7 +130,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -849,9 +849,9 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
   ],
   "RoomOrderNodes": [
+    {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
     {"roomId":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
     {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
-    {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
     {"roomId":{"name":"room_boss_2","path":"rooms/room_boss_2/room_boss_2.yy",},},
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
     {"roomId":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
