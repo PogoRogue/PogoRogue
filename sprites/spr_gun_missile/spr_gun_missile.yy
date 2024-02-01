@@ -14,7 +14,7 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"092e2132-4564-4be9-808f-5936bbf3a9db",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d6e28106-da1f-474c-acb6-d7fe6938073b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e023c975-946b-4e9c-9e62-e93e74ee60de",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -56,7 +56,7 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"092e2132-4564-4be9-808f-5936bbf3a9db","path":"sprites/spr_gun_missile/spr_gun_missile.yy",},},},"Disabled":false,"id":"e105ef86-491a-4dfd-8bee-031acd420bb3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d6e28106-da1f-474c-acb6-d7fe6938073b","path":"sprites/spr_gun_missile/spr_gun_missile.yy",},},},"Disabled":false,"id":"90c81135-1cb6-4ad4-b7a4-f89bc5ce33b6","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e023c975-946b-4e9c-9e62-e93e74ee60de","path":"sprites/spr_gun_missile/spr_gun_missile.yy",},},},"Disabled":false,"id":"0bdbe975-5232-426b-b0ef-846c4cf84c71","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

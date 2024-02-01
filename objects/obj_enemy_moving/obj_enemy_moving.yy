@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_moving",
-    "path": "sprites/spr_enemy_moving/spr_enemy_moving.yy",
+    "name": "spr_WalkEnemy_Walk",
+    "path": "sprites/spr_WalkEnemy_Walk/spr_WalkEnemy_Walk.yy",
   },
   "spriteMaskId": null,
   "visible": true,

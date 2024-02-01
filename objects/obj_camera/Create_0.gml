@@ -28,6 +28,10 @@ scroll = 0;
 shake_length = 0; //# of frames
 shake_magnitude = 0; //# of pixels in each direction, max value
 shake_remain = 0; //decrease this value until it reaches zero
+shake_magnitude_controller = 0;
+shake_remain_controller = 0;
+shake_length_controller = 0;
+controller_vibrate = 0;
 buff = 0; //buffer
 
 if !instance_exists(obj_control) {

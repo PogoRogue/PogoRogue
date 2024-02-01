@@ -11,7 +11,7 @@ if activated = true {
 //collision
 with obj_player {
 	if place_meeting(x+hspeed,y+vspeed,other) and other.activated = false {
-		scr_Screen_Shake(4,8);
+		scr_Screen_Shake(4,8,false);
 		audio_play_sound(snd_pinball,0,false);
 		other.activated = true;
 		other.sprite_index = spr_pinballbumper_activated;

@@ -137,19 +137,31 @@ function scr_Buffs(){
 	
 	buff_experimentation = function(){
 		global.experimentation = true;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_aerialassassin = function(){
 		global.aerial_assassin = true;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_supershield = function(){
 		global.super_shield = true;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_revive = function(){
 		if global.revived = false {
 			global.revive = true;
+			audio_play_sound(snd_passivePowerup,0,false);
 		}
+	}
+	
+	buff_drilltipbullets = function(){
+		global.drilltipbullets = true;
+	}
+	
+	buff_dualwielder = function(){
+		global.dualwielder = true;
 	}
 }
