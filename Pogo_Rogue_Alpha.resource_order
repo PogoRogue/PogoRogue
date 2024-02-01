@@ -127,6 +127,7 @@
     {"name":"scr_Draw_Tiles","order":4,"path":"scripts/scr_Draw_Tiles/scr_Draw_Tiles.yy",},
     {"name":"tl_rightbelt_left_corner","order":5,"path":"tilesets/tl_rightbelt_left_corner/tl_rightbelt_left_corner.yy",},
     {"name":"spr_enemy_turret_barrel","order":9,"path":"sprites/spr_enemy_turret_barrel/spr_enemy_turret_barrel.yy",},
+    {"name":"spr_ud_2x1","order":1,"path":"sprites/spr_ud_2x1/spr_ud_2x1.yy",},
     {"name":"spr_env_air_effect","order":3,"path":"sprites/spr_env_air_effect/spr_env_air_effect.yy",},
     {"name":"spr_rightbelt_right_corner","order":5,"path":"sprites/spr_rightbelt_right_corner/spr_rightbelt_right_corner.yy",},
     {"name":"tl_leftbelt_center","order":3,"path":"tilesets/tl_leftbelt_center/tl_leftbelt_center.yy",},

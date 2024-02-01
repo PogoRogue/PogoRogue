@@ -557,6 +557,7 @@
     {"id":{"name":"obj_conveyor_belt","path":"objects/obj_conveyor_belt/obj_conveyor_belt.yy",},},
     {"id":{"name":"spr_enemy_turret_barrel","path":"sprites/spr_enemy_turret_barrel/spr_enemy_turret_barrel.yy",},},
     {"id":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
+    {"id":{"name":"spr_ud_2x1","path":"sprites/spr_ud_2x1/spr_ud_2x1.yy",},},
     {"id":{"name":"spr_env_air_effect","path":"sprites/spr_env_air_effect/spr_env_air_effect.yy",},},
     {"id":{"name":"spr_conveyor_belt","path":"sprites/spr_conveyor_belt/spr_conveyor_belt.yy",},},
     {"id":{"name":"snd_electricity","path":"sounds/snd_electricity/snd_electricity.yy",},},
