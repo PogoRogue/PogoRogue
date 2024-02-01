@@ -133,7 +133,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -420,6 +420,7 @@
     {"id":{"name":"spr_purplesquare","path":"sprites/spr_purplesquare/spr_purplesquare.yy",},},
     {"id":{"name":"spr_controller_button_left","path":"sprites/spr_controller_button_left/spr_controller_button_left.yy",},},
     {"id":{"name":"spr_enemy_shooting_explosion","path":"sprites/spr_enemy_shooting_explosion/spr_enemy_shooting_explosion.yy",},},
+    {"id":{"name":"obj_item_buff_dualwielder","path":"objects/obj_item_buff_dualwielder/obj_item_buff_dualwielder.yy",},},
     {"id":{"name":"obj_boss_brick_red","path":"objects/obj_boss_brick_red/obj_boss_brick_red.yy",},},
     {"id":{"name":"obj_camera_constrain_y_bottom","path":"objects/obj_camera_constrain_y_bottom/obj_camera_constrain_y_bottom.yy",},},
     {"id":{"name":"obj_heart_gain","path":"objects/obj_heart_gain/obj_heart_gain.yy",},},
@@ -699,6 +700,7 @@
     {"id":{"name":"spr_projectile_flasheffect","path":"sprites/spr_projectile_flasheffect/spr_projectile_flasheffect.yy",},},
     {"id":{"name":"spr_cancel","path":"sprites/spr_cancel/spr_cancel.yy",},},
     {"id":{"name":"spr_enemy_flying","path":"sprites/spr_enemy_flying/spr_enemy_flying.yy",},},
+    {"id":{"name":"obj_item_buff_drilltipbullets","path":"objects/obj_item_buff_drilltipbullets/obj_item_buff_drilltipbullets.yy",},},
     {"id":{"name":"obj_item_weapon_shotgun","path":"objects/obj_item_weapon_shotgun/obj_item_weapon_shotgun.yy",},},
     {"id":{"name":"spr_spring","path":"sprites/spr_spring/spr_spring.yy",},},
     {"id":{"name":"snd_characterDeath","path":"sounds/snd_characterDeath/snd_characterDeath.yy",},},
