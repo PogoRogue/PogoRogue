@@ -23,8 +23,9 @@ if (gun_name = "Star Sucker") {
 		motion_add(angle - 90, vsp_basicjump*1.1);
 	}
 	//screen shake
-	scr_Screen_Shake(5, 10)
+	scr_Screen_Shake(5, 10, true);
 	if (global.allow_screenshake) {
-		gamepad_set_vibration(0, 1, 1);
+		var controller_vibration = global.controller_vibration/100;
+		//gamepad_set_vibration(0, 1*controller_vibration, 1*controller_vibration);
 	}
 }

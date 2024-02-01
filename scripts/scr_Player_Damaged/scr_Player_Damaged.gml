@@ -25,7 +25,7 @@ function scr_Player_Damaged(damage){
 			}
 			
 			//screen shake
-			scr_Screen_Shake(8, 15);
+			scr_Screen_Shake(8, 15, false);
 			
 			audio_play_sound(snd_hurt,0,false);
 		}else if invincible = false {
