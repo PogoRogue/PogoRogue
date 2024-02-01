@@ -8,3 +8,5 @@ draw_set_alpha(1);
 draw_sprite(spr_deathscreen_bg,win,x,y);
 draw_sprite(spr_deathscreen_buttons,select_x,x,y);
 scr_Death_Screen(false);
+
+draw_set_color(c_white);

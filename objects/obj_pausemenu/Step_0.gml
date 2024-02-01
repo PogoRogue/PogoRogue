@@ -9,42 +9,53 @@ if usable = true {
 }
 
 if key_up and selected = false {
-	audio_play_sound(snd_menuNavigation,0,false);
 	if select > 1 {
+		audio_play_sound(snd_menuNavigation,0,false);
 		select -= 1;
 	}
 	selected = true;
+	alarm[3] = alarm3_time;
 }else if key_down and selected = false {
-	audio_play_sound(snd_menuNavigation,0,false);
 	if select < num_of_options {
+		audio_play_sound(snd_menuNavigation,0,false);
 		select += 1;
 	}
 	selected = true;
-}else if !key_up and !key_down {
+	alarm[3] = alarm3_time;
+}
+if !key_up and !key_down {
 	selected = false;
+	alarm3_time = 30;
+	alarm[3] = alarm3_time;
 }
 
 if key_select {
 	if select = 1 {
-		with obj_pause {
+		with obj_pause { //resume
 			audio_play_sound(snd_selectOption,0,false);
 			paused_outside = true;
 		}
-	}else if select = 2 {
+	}else if select = 2 { //items
+		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
 		instance_create_depth(x,y,depth+1,obj_items);
-	}else if select = 3 {
+	}else if select = 3 { //restart
 		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
 		instance_create_depth(x,y,depth+1,obj_popup_restart);
-	}else if select = 4 {
-		audio_play_sound(snd_unavailable,0,false);
-		//implement later
-	}else if select = 5 {
+	}else if select = 4 { //settings
+		audio_play_sound(snd_selectOption,0,false);
+		usable = false;
+		instance_create_depth(x,y,depth+1,obj_settings);
+	}else if select = 5 { //exit
 		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
 		instance_create_depth(x,y,depth+1,obj_popup_exit);
 	}
+}
+
+if instance_number(obj_pausemenu) > 1 {
+	instance_destroy();	
 }
 
 image_index = select-1;

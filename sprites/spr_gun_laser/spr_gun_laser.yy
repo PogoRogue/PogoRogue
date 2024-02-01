@@ -14,7 +14,7 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d866839-01ef-4205-8257-fe6f089081d1",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0b3bf30a-024e-4678-a2d4-6ba60d7e4ccd",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"14681e0f-9398-412e-b740-9b1f616699a2",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -56,7 +56,7 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d866839-01ef-4205-8257-fe6f089081d1","path":"sprites/spr_gun_laser/spr_gun_laser.yy",},},},"Disabled":false,"id":"a6c8d99e-6ba9-44cc-9570-f10507cac936","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0b3bf30a-024e-4678-a2d4-6ba60d7e4ccd","path":"sprites/spr_gun_laser/spr_gun_laser.yy",},},},"Disabled":false,"id":"ebe7bdc9-cf88-4964-97d9-12f98fe3daf3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"14681e0f-9398-412e-b740-9b1f616699a2","path":"sprites/spr_gun_laser/spr_gun_laser.yy",},},},"Disabled":false,"id":"80ca4185-14a4-4725-8e62-5b94ca476a0f","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

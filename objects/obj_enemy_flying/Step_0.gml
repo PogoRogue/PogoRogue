@@ -1,5 +1,4 @@
-/// @description 在此处插入描述 
-// 你可以在此编辑器中写入代码 
+/// @description Fly back and forth
 
 // Inherit the parent event
 event_inherited();
@@ -12,3 +11,7 @@ if(is_dead) {
 }
 
 x += spd;
+
+y += sin(y_spd);
+
+y_spd += 0.05;

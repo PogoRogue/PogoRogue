@@ -33,10 +33,12 @@ if centered = true {
 	if key_left and select_x > 1 and selected_x = false {
 		select_x -= 1;
 		selected_x = true;
+		audio_play_sound(snd_menuNavigation,0,false);
 	}
 	if key_right and select_x < select_x_max and selected_x = false {
 		select_x += 1;
 		selected_x = true;
+		audio_play_sound(snd_menuNavigation,0,false);
 	}
 	
 	if !key_left and !key_right {
@@ -48,10 +50,12 @@ if centered = true {
 		room_persistent = false;
 		room_restart();
 		instance_deactivate_all(false);
+		audio_play_sound(snd_selectOption,0,false);
 	}
 	
 	if key_select and select_x = 2 { //main menu
 		game_restart();
+		audio_play_sound(snd_selectOption,0,false);
 	}
 }
 

@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Boss Simon",
-    "path": "folders/Objects/Enemy/Boss Simon.yy",
+    "name": "Boss Sequence",
+    "path": "folders/Objects/Enemy/Boss Sequence.yy",
   },
   "parentObjectId": null,
   "persistent": false,

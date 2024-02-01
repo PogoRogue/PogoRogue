@@ -9,6 +9,9 @@ select_y_max = 5; //number of rows
 selected_x = false;
 selected_y = false;
 
+alarm2_time = 30;
+alarm3_time = 30;
+
 with obj_pause {
 	if pause = false {
 		paused_outside = true;	

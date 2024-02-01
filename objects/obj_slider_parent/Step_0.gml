@@ -1,6 +1,6 @@
 /// @description Check if no longer select
-left_button_pressed = keyboard_check_pressed(vk_left) or keyboard_check_pressed(ord("A"));
-right_button_pressed = keyboard_check_pressed(vk_right) or keyboard_check_pressed(ord("D"));
+left_button_pressed = global.key_left_menu;
+right_button_pressed = global.key_right_menu;
 
 if (global.use_mouse_for_slider = true) {
 	if (mouse_check_button_pressed(mb_left)) {
