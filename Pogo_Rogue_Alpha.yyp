@@ -307,7 +307,7 @@
     {"id":{"name":"spr_buffitem_bouncybullets","path":"sprites/spr_buffitem_bouncybullets/spr_buffitem_bouncybullets.yy",},},
     {"id":{"name":"obj_item_pickup_hatgun","path":"objects/obj_item_pickup_hatgun/obj_item_pickup_hatgun.yy",},},
     {"id":{"name":"spr_boss_cutin_words","path":"sprites/spr_boss_cutin_words/spr_boss_cutin_words.yy",},},
-    {"id":{"name":"spr_ud_sam","path":"sprites/spr_ud_sam/spr_ud_sam.yy",},},
+    {"id":{"name":"spr_ud_sam_2x1","path":"sprites/spr_ud_sam_2x1/spr_ud_sam_2x1.yy",},},
     {"id":{"name":"scr_In_Array","path":"scripts/scr_In_Array/scr_In_Array.yy",},},
     {"id":{"name":"spr_miniboss_cube","path":"sprites/spr_miniboss_cube/spr_miniboss_cube.yy",},},
     {"id":{"name":"spr_pickup_freeze","path":"sprites/spr_pickup_freeze/spr_pickup_freeze.yy",},},

@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_2x2_Combat",
-  "bbox_bottom": 59,
+  "bbox_bottom": 60,
   "bbox_left": 0,
   "bbox_right": 63,
   "bbox_top": 5,
