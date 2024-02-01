@@ -9,6 +9,6 @@
     {"name":"spr_start","order":2,"path":"sprites/spr_start/spr_start.yy",},
     {"name":"spr_ud_sam_2x1","order":1,"path":"sprites/spr_ud_sam_2x1/spr_ud_sam_2x1.yy",},
     {"name":"spr_u195","order":1,"path":"sprites/spr_u195/spr_u195.yy",},
-    {"name":"spr_2x2_Combat","order":1,"path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},
+    {"name":"spr_2x2_Combat_sam","order":1,"path":"sprites/spr_2x2_Combat_sam/spr_2x2_Combat_sam.yy",},
   ],
 }

@@ -10,7 +10,7 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 	}
 	else if(room_string == "c2c") //2x2 Combat room
 	{
-		return spr_2x2_Combat;
+		return spr_2x2_Combat_sam;
 	}
 	else if(room_string == "Tc") //Marks the player starting room!
 	{

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_2x2_Combat",
+  "name": "spr_2x2_Combat_sam",
   "bbox_bottom": 60,
   "bbox_left": 0,
   "bbox_right": 63,
@@ -33,7 +33,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_2x2_Combat",
+    "name": "spr_2x2_Combat_sam",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f2750621-f61d-4edc-b041-7b1d4bee4c58","path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},},},"Disabled":false,"id":"5edc50d2-4ebd-43f0-98e4-9930bf7d5a80","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ef7eedf6-434f-4b23-ad82-ea2036e2125a","path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},},},"Disabled":false,"id":"20538eaf-2b89-42a8-8233-e03fac6911dc","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f2750621-f61d-4edc-b041-7b1d4bee4c58","path":"sprites/spr_2x2_Combat_sam/spr_2x2_Combat_sam.yy",},},},"Disabled":false,"id":"5edc50d2-4ebd-43f0-98e4-9930bf7d5a80","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ef7eedf6-434f-4b23-ad82-ea2036e2125a","path":"sprites/spr_2x2_Combat_sam/spr_2x2_Combat_sam.yy",},},},"Disabled":false,"id":"20538eaf-2b89-42a8-8233-e03fac6911dc","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
