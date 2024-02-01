@@ -156,4 +156,12 @@ function scr_Buffs(){
 			audio_play_sound(snd_passivePowerup,0,false);
 		}
 	}
+	
+	buff_drilltipbullets = function(){
+		global.drilltipbullets = true;
+	}
+	
+	buff_dualwielder = function(){
+		global.dualwielder = true;
+	}
 }

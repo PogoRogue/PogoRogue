@@ -10,12 +10,18 @@ function scr_Shoot(){
 		
 		for (var i = 0; i < gun.spread_number; i++;) {
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
+			var destroyOnImpact;
+			if(global.drilltipbullets){
+				destroyOnImpact = false;
+			}else{
+				destroyOnImpact = gun.ammo[bullet_index].destroy_on_impact
+			}
 			
 			instance_create_depth(x,y,depth-1,obj_projectile,{
 				image_angle: angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90,
 				sprite_index: gun.ammo[bullet_index].sprite,
 				spd: gun.ammo[bullet_index].spd,
-				destroy_on_impact: gun.ammo[bullet_index].destroy_on_impact,
+				destroy_on_impact: destroyOnImpact,
 				destroy_time: gun.ammo[bullet_index].destroy_time,
 				flash_frame: gun.ammo[bullet_index].flash_frame,
 				gun_name: gun._name,
