@@ -11,11 +11,13 @@ if usable = true {
 if key_up and selected = false {
 	if select > 1 {
 		select -= 1;
+		audio_play_sound(snd_menuNavigation,0,false);
 	}
 	selected = true;
 }else if key_down and selected = false {
 	if select < num_of_options {
 		select += 1;
+		audio_play_sound(snd_menuNavigation,0,false);
 	}
 	selected = true;
 }else if !key_up and !key_down {
@@ -23,10 +25,14 @@ if key_up and selected = false {
 }
 
 if key_select {
+	audio_play_sound(snd_selectOption,0,false);
 	if select = 1 {
 		room = room_gameplay_video;
 	}else if select = 2 {
 		room = room_proc_gen_test;
+	}else if select = 3 {
+		room = room_settings;
+		room_persistent = true;
 	}
 }
 

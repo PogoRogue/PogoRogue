@@ -32,8 +32,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "3x3",
-    "path": "folders/Sprites/ProcGenLevelData/PrebuiltRooms/3x3.yy",
+    "name": "RoomStoresAndOther",
+    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

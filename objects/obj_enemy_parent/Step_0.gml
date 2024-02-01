@@ -10,7 +10,7 @@ if(is_dead) {
 	audio_play_sound(snd_enemyhurt,0,false);
 	
 	//screen shake
-	scr_Screen_Shake(6, 10);
+	scr_Screen_Shake(6, 10, false);
 	
 	//combo
 	global.combo += 1;
@@ -53,6 +53,7 @@ if(is_dead) {
 	}
 	
 	is_dead = true;
+	mask_index = spr_nothing;
 }
 
 // Update iframes

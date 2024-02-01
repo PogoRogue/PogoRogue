@@ -63,7 +63,7 @@ state_slamming = function() {
 			}
 			slammed_time = init_slammed_time;
 			if on_screen = true {
-				scr_Screen_Shake(8,15);
+				scr_Screen_Shake(8,15,false);
 			}	
 			state = state_slammed;	
 		}
@@ -75,7 +75,7 @@ state_slamming = function() {
 			}
 			slammed_time = init_slammed_time;
 			if on_screen = true {
-				scr_Screen_Shake(8,15);
+				scr_Screen_Shake(8,15,false);
 			}
 			state = state_slammed;
 		}

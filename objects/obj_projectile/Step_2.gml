@@ -53,8 +53,9 @@ if (gun_name = "Laser Gun") {
 		
 		//screen shake
 		if (other.laser_boost){
-			scr_Screen_Shake(2,1);
-			gamepad_set_vibration(0, 0.25, 0.25);
+			var controller_vibration = global.controller_vibration/100;
+			scr_Screen_Shake(2,1,true);
+			//gamepad_set_vibration(0, 0.25*controller_vibration, 0.25*controller_vibration);
 			rotation_speed = other.rotation_speed * 0.75;
 			rotation_delay = rotation_speed / 7;
 		}

@@ -1,6 +1,6 @@
 /// @description Switch sliders
-up_button = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W"));
-down_button = keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord("S"));
+up_button = global.key_up_menu;
+down_button = global.key_down_menu;
 
 if (global.use_mouse_for_slider = false) {
 

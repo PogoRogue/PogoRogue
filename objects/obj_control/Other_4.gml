@@ -8,6 +8,6 @@ if !instance_exists(obj_pausemenu) {
 	instance_create_depth(0,0,depth-2,obj_pausemenu);	
 }
 
-audio_stop_all();
+audio_group_stop_all(audiogroup_default);
 
 room_speed = 60;
