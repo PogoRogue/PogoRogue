@@ -35,10 +35,9 @@ if(!is_dead && distance_to_object(player) < jump_range) {
 		}
 	
 		if(jump_cooldown <= 0) {
-			vspeed = jump_height;
-			image_index = 0
-			sprite_index = spr_WalkEnemy_Jump
-			is_jumping = true
+			image_index = 0;
+			sprite_index = spr_WalkEnemy_Jump;
+			is_jumping = true;
 			show_debug_message(string(jump_cooldown));
 			jump_cooldown = cooldown_length;
 		}
@@ -49,11 +48,12 @@ if(!is_dead && distance_to_object(player) < jump_range) {
 }
 
 jump_cooldown = max(jump_cooldown - 1, 0);
-if (is_jumping == true)
-	{
-		if (image_index >= 6)
-			{
-				is_jumping = false
-				image_index = 0
-			}
+
+if (is_jumping) {
+	hspeed = 0;
+	if (image_index >= 6) {
+		is_jumping = false;
+		image_index = 0;
+		vspeed = jump_height;
 	}
+}

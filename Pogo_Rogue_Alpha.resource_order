@@ -12,6 +12,7 @@
     {"name":"Boss Sequence","order":29,"path":"folders/Sprites/Enemy/Boss Sequence.yy",},
     {"name":"buttons","order":1,"path":"folders/Sprites/Enemy/Boss Sequence/buttons.yy",},
     {"name":"Boss Sphere","order":28,"path":"folders/Sprites/Enemy/Boss Sphere.yy",},
+    {"name":"Old Sprites","order":39,"path":"folders/Sprites/Enemy/Old Sprites.yy",},
     {"name":"ProcGenOperatingSprites","order":2,"path":"folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites.yy",},
     {"name":"CombatRooms","order":1,"path":"folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites/CombatRooms.yy",},
     {"name":"DL","order":1,"path":"folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites/HallwayBlocks/DL.yy",},
@@ -31,7 +32,6 @@
     {"name":"UR","order":6,"path":"folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/HallwayBlocks/UR.yy",},
     {"name":"OtherRooms","order":3,"path":"folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/OtherRooms.yy",},
     {"name":"testRooms","order":3,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/testRooms.yy",},
-    {"name":"Old Sprites","order":39,"path":"folders/Sprites/Enemy/Old Sprites.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_worm","order":2,"path":"objects/obj_worm/obj_worm.yy",},
