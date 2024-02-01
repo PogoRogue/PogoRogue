@@ -13,15 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d7497bff-533c-481c-a75f-8941e1a680fd",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ef23d7ea-6bf9-485c-9c25-971b662b249e",},
   ],
-  "gridX": 16,
-  "gridY": 4,
+  "gridX": 8,
+  "gridY": 8,
   "height": 46,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3800989d-ea32-4ed1-820b-0a102e1146e8","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":false,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"883d9732-c3dd-4f73-806c-2a4174fabf4a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"78323362-ccd0-4f40-8612-3f70e697be6f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 9,
@@ -55,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d7497bff-533c-481c-a75f-8941e1a680fd","path":"sprites/spr_B1_Explode_Attached/spr_B1_Explode_Attached.yy",},},},"Disabled":false,"id":"cefe39c0-7312-45b4-b2bc-76b85783bfeb","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ef23d7ea-6bf9-485c-9c25-971b662b249e","path":"sprites/spr_B1_Explode_Attached/spr_B1_Explode_Attached.yy",},},},"Disabled":false,"id":"da9c3c61-03a7-465e-a507-365570d8e64d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
