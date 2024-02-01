@@ -27,7 +27,7 @@
   "origin": 7,
   "parent": {
     "name": "Player",
-    "path": "folders/Sprites/Player.yy",
+    "path": "folders/Sprites/Sliders/Player.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
