@@ -3,12 +3,14 @@
 if(is_dead) {
 	image_alpha *= 0.9;
 	mask_index = spr_nothing;
+	spd = 0;
+	speed = 0;
 } else if (hp <= 0) {
 	alarm_set(0, room_speed);
 	audio_play_sound(snd_enemyhurt,0,false);
 	
 	//screen shake
-	scr_Screen_Shake(6, 10);
+	scr_Screen_Shake(6, 10, false);
 	
 	//combo
 	global.combo += 1;
@@ -51,6 +53,7 @@ if(is_dead) {
 	}
 	
 	is_dead = true;
+	mask_index = spr_nothing;
 }
 
 // Update iframes

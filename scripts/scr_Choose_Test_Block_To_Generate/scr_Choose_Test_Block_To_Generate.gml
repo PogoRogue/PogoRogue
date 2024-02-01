@@ -3,10 +3,25 @@
 function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 	var room_string = ds_grid_get(layout_grid, grid_x, grid_y);
 	
-	//Set to a 3x3 room
-	if(room_string == "b1c")
+	if(room_string == "c3c") //3x3 test room
 	{
-		return spr_test_room;
+		return spr_3x3_Combat_Test;
+	}
+	else if(room_string == "c2c") //2x2 test room
+	{
+		return spr_2x2_Combat_Test;
+	}
+	else if(room_string == "Tc") //Player start test room
+	{
+		return spr_3x3_Starting_Room_Test;
+	}	
+	else if(room_string == "Shc") //Shop test room
+	{
+		return spr_1x1_Shop_Hallway_Test;
+	}
+	else if(room_string == "Bc") //Boss teleporter test room
+	{
+		return spr_1x1_boss_portal_test;
 	}
 	else if(room_string == "s") //s marks the player start!
 	{
@@ -37,17 +52,17 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				if(down_val != "w")
 				{
 					//Combat room below
-					return spr_ud1;
+					return spr_ud_test;
 				}
 				else if(left_val != "w")
 				{
 					//Combat room left
-					return spr_ul1;
+					return spr_ul_test;
 				}
 				else if(right_val != "w")
 				{
 					//Combat room right
-					return spr_ur1;
+					return spr_ur_test;
 				}
 			}
 			else if(down_val == "1") //Proc gen block below
@@ -55,17 +70,17 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				if(up_val != "w")
 				{
 					//Combat room above
-					return spr_ud1;
+					return spr_ud_test;
 				}
 				else if(left_val != "w")
 				{
 					//Combat room left
-					return spr_dl1;
+					return spr_dl_test;
 				}
 				else if(right_val != "w")
 				{
 					//Combat room right
-					return spr_dr1;
+					return spr_dr_test;
 				}
 			}
 			else if(left_val == "1") //Proc gen block left
@@ -73,17 +88,17 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				if(up_val != "w")
 				{
 					//Combat room above
-					return spr_ul1;
+					return spr_ul_test;
 				}
 				else if(down_val != "w")
 				{
 					//Combat room below
-					return spr_dl1;
+					return spr_dl_test;
 				}
 				else if(right_val != "w")
 				{
 					//Combat room right
-					return spr_lr;
+					return spr_lr_test;
 				}
 			}
 			else if(right_val == "1") //proc gen right
@@ -91,17 +106,17 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				if(up_val != "w") 
 				{
 					//Combat room above
-					return spr_ur1;
+					return spr_ur_test;
 				}
 				else if(down_val != "w")
 				{
 					//Combat room below
-					return spr_dr1;					
+					return spr_dr_test;					
 				}
 				else if(left_val != "w")
 				{
 					//Combat room left
-					return spr_lr;
+					return spr_lr_test;
 				}
 			}
 		}
@@ -112,17 +127,17 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				if(down_val == "1")
 				{
 					//Column block
-					return spr_ud1;
+					return spr_ud_test;
 				}
 				else if(left_val == "1")
 				{
 					//Left and Up corner block
-					return spr_ul1;
+					return spr_ul_test;
 				}
 				else if(right_val == "1")
 				{
 					//right and up corner block
-					return spr_ur1;
+					return spr_ur_test;
 				}
 			}
 			else if(down_val == "1")
@@ -131,18 +146,18 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				if(left_val == "1")
 				{
 					//down and left corner block
-					return spr_dl1;
+					return spr_dl_test;
 				}
 				else if(right_val == "1")
 				{
 					//down and right corner block
-					return spr_dr1;					
+					return spr_dr_test;					
 				}
 			}
 			else if(left_val == "1")
 			{
 				//Only remaining case is a hallway block
-				return spr_lr;
+				return spr_lr_test;
 			}
 			
 		}

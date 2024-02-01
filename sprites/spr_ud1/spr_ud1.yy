@@ -29,7 +29,7 @@
   "origin": 0,
   "parent": {
     "name": "UD",
-    "path": "folders/Sprites/ProcGenLevelData/UD.yy",
+    "path": "folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites/HallwayBlocks/UD.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

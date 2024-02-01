@@ -22,3 +22,15 @@ player_depth = obj_player_mask.depth;
 with obj_pause {
 	paused_outside = true;
 }
+
+moving_in = true;
+centered = false;
+spd = 16;
+spd2 = 0;
+spd_multiply = 1;
+target_x = camera_get_view_width(view_camera[0])/2;
+
+x = -(camera_get_view_width(view_camera[0])/4);
+y = center_y-108;
+
+experimenting_coins = 25;

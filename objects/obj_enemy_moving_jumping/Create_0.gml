@@ -12,7 +12,9 @@ player = instance_nearest(x, y, obj_player);
 jump_range = 100;
 jump_cooldown = 0;
 cooldown_length = 2 * room_speed;
+is_jumping = false;
+jump_anim_cd = false
 
 // Add jump
-jump_height = -6;
+jump_height = -5;
 

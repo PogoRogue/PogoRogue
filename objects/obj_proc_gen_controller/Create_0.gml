@@ -32,7 +32,7 @@ max_gen_width = 12; //This is the max width. Because of some details in the proc
 generate_proc_gen = true;
 
 
-generate_start_room = true; //Since structure will be the exact same, just with or without a starter room,
+generate_start_room = false; //Since structure will be the exact same, just with or without a starter room,
 //We use this bool to remember that we have (or haven't) already seen a start room
 
 ///*
@@ -51,6 +51,8 @@ generate_start_room, min_distance_between_rooms, max_distance_between_rooms);
 //We already generated a start room, so instead generate a random combat room the next time we proc gen
 generate_start_room = false;
 
+
+global.debug_wall_count = 0;
 
 //tiling layer
 global.ground_layer = layer_create(-1);
