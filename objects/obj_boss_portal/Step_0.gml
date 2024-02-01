@@ -10,7 +10,7 @@ image_index = room = room_shop;
 
 //check for button press
 if (colliding and key_open_door) {
-		var nextRoom = room_next(room);
+	var nextRoom = room_next(room);
 	if (room_exists(nextRoom)) {
 		room_goto_next();
 	} else {
