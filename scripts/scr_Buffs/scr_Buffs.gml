@@ -8,6 +8,9 @@ function scr_Buffs(){
 			if hp < max_hp {
 				hp += 8;	
 				audio_play_sound(snd_heartPickup,0,false);
+				with obj_player_health {
+					heart_gain_num = other.hp;	
+				}
 			}
 		}
 	}
@@ -31,6 +34,9 @@ function scr_Buffs(){
 			if armor_buff < max_armor_buff {
 				armor_buff += 1;
 				audio_play_sound(snd_ArmorHeart,0,false);
+				with obj_player_health {
+					heart_shield_gain_num = other.armor_buff;	
+				}
 			}
 		}
 	}
@@ -67,7 +73,10 @@ function scr_Buffs(){
 				audio_play_sound(snd_passivePowerup,0,false);
 			}
 			if hp < max_hp {
-				hp += 8;	
+				hp += 8;
+				with obj_player_health {
+					heart_gain_num = other.hp;	
+				}
 			}
 		}
 	}

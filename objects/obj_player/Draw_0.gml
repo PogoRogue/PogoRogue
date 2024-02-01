@@ -20,6 +20,16 @@ if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {
 	}
 }
 
+//freeze
+if state = state_freeze {
+	draw_sprite_ext(spr_freezeanimation,sprite_get_number(spr_freezeanimation)-1-(freeze_time/2),x+lengthdir_x(22,freeze_angle+90),y+lengthdir_y(22,freeze_angle+90),1,1,freeze_angle,c_white,freeze_alpha);	
+}else {
+	if (freeze_alpha > 0) {
+		freeze_alpha -= 0.1;	
+		draw_sprite_ext(spr_freezeanimation,sprite_get_number(spr_freezeanimation)-1,x+lengthdir_x(22,freeze_angle+90),y+lengthdir_y(22,freeze_angle+90),1,1,freeze_angle,c_white,freeze_alpha);
+	}
+}
+
 draw_self();
 shader_reset();
 

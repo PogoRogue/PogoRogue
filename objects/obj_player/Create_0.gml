@@ -53,6 +53,8 @@ dash_time = 15;
 bulletblast_frames = 0;
 bulletblast_frames_max = 65; //how many frames before blasting
 freeze_time = 0;
+freeze_alpha = 0;
+freeze_angle = 0;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -382,11 +384,13 @@ state_bulletblast = function() {
 }
 
 state_freeze = function() {
+	
 	if abs(speed) > 0.01 {
 		speed *= 0.8;	
 	}else {
 		speed = 0;	
 	}
+	
 	if freeze_time > 0 {
 		freeze_time -= 1;	
 	}else {
@@ -395,9 +399,15 @@ state_freeze = function() {
 		rotation_speed = original_rotation_speed;
 		rotation_delay = rotation_speed / 10;
 	}
+	
+	if (freeze_alpha < 1) {
+		freeze_alpha += 0.1;	
+	}
+	
 	can_rotate = true;
 	can_shoot = true;
 	grav = 0;
+	freeze_angle = image_angle;
 	
 	scr_Player_Collision();
 }

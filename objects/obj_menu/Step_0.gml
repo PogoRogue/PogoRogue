@@ -33,6 +33,8 @@ if key_select {
 	}else if select = 3 {
 		room = room_settings;
 		room_persistent = true;
+	}else if select = 4 {
+		game_end();
 	}
 }
 

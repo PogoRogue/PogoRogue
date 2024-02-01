@@ -85,3 +85,9 @@ global.all_pickups = [obj_item_pickup_chargejump, obj_item_pickup_groundpound, o
 
 
 surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);
+
+if room = room_gameplay_video {
+	//tiling layer
+	global.ground_layer = layer_create(-1);
+	global.tilemap_ground = layer_tilemap_create(global.ground_layer,0,0,tl_ground,20000,20000);	
+}

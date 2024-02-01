@@ -353,6 +353,7 @@ function scr_Pickups(){
 				rotation_speed = original_rotation_speed * (2/3);
 				rotation_delay = rotation_speed / 10;
 				freeze_time = 180;
+				freeze_angle = angle;
 			}
 			uses_per_bounce -= 1;
 			if uses_per_bounce <= 0 {
