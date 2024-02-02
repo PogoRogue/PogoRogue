@@ -7,8 +7,8 @@ prebuilt_rooms = ds_list_create();
 ds_list_add(prebuilt_rooms, [3, 3, "T"]); //First room in list is starting room T for tutorial
 ds_list_add(prebuilt_rooms, [1, 1, "Sh"]); //Second room in list is shop room Sh for shop
 ds_list_add(prebuilt_rooms, [1, 1, "B"]); //Third room in list is boss entry room B for boss
-ds_list_add(prebuilt_rooms, [3, 3, "c3"]); //3x3 Combat room, c stands for combat
-ds_list_add(prebuilt_rooms, [2, 2, "c2"]); //2x2 Combat room
+ds_list_add(prebuilt_rooms, [2, 2, "c2"]); //3x3 Combat room, c stands for combat
+ds_list_add(prebuilt_rooms, [3, 3, "c3"]); //2x2 Combat room
 
 rooms_to_generate = 2;
 max_gen_width = 15;

@@ -150,11 +150,11 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_ground_oneway;
 		}
-		else if(Red == Green == Blue == 75)
+		else if(Red == 75 && Green == 75 && Blue == 75)
 		{
 			return obj_angled_platform_left;
 		}
-		else if(Red == Green == Blue == 50)
+		else if(Red == 50 && Green == 50 && Blue == 50)
 		{
 			return obj_angled_platform_right;
 		}
