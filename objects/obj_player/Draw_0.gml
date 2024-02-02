@@ -1,10 +1,14 @@
 /// @description draw self
-if(current_iframes >= num_iframes - 10 || dead) {
+if(current_iframes >= num_iframes - 10 and bubble = false || dead) {
 	shader_set(sh_tint_red);
 }
 
 if (!dead) {
-	image_alpha = abs(cos(current_iframes / 5)) + 0.2;
+	if bubble = false {
+		image_alpha = abs(cos(current_iframes / 5)) + 0.2;
+	}else {
+		image_alpha = 1;
+	}
 }else {
 	image_alpha = 1;
 }

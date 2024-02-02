@@ -50,6 +50,7 @@ slam_trail_distance = 0;
 invincible = false;
 max_dash_time = 15;
 dash_time = 15;
+bubble = false;
 bulletblast_frames = 0;
 bulletblast_frames_max = 65; //how many frames before blasting
 freeze_time = 0;
@@ -255,6 +256,9 @@ state_chargejump = function() {
 }
 
 state_groundpound = function() {
+	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
+		sprite_index = player_sprite;
+	}
 	
 	hspeed = hspeed * 0.9;
 	can_shoot = false;
@@ -345,11 +349,14 @@ state_firedash = function() {
 temp_x = 0.5;
 init_x = x;
 state_bulletblast = function() {
+	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
+		sprite_index = player_sprite;
+	}
 	if bulletblast_frames < bulletblast_frames_max {
 		speed = speed * 0.9;
-		if scr_Animation_Complete() and sprite_index = spr_player_zekai {
-			sprite_index = spr_player_zekai_charging;	
-		}else if sprite_index = spr_player_zekai {
+		if scr_Animation_Complete() and sprite_index = player_sprite {
+			sprite_index = charging_sprite;	
+		}else if sprite_index = player_sprite {
 			image_index += 1;
 			init_x = x;
 		}else {
@@ -384,7 +391,7 @@ state_bulletblast = function() {
 }
 
 state_freeze = function() {
-	
+	sprite_index = player_sprite;
 	if abs(speed) > 0.01 {
 		speed *= 0.8;	
 	}else {

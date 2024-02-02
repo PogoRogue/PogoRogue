@@ -53,8 +53,13 @@ if (room = room_shop) {
 	state = state_shop;
 }
 
+//get sprites
+scr_Get_Player_Sprites();
+
 //run state machine
 state();
+
+show_debug_message(current_iframes);
 
 #region //pickups
 
