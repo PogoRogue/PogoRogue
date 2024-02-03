@@ -41,3 +41,4 @@ global.key_pause = 0;
 global.key_back = 0;
 global.key_item_menu = 0;
 global.key_select = 0;
+

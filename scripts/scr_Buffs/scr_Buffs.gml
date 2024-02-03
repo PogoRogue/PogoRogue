@@ -125,7 +125,7 @@ function scr_Buffs(){
 	}
 	
 	buff_combotime = function(){
-		global.combo_time_added += 100;
+		global.combo_time_added += 150;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	

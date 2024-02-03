@@ -41,3 +41,7 @@ if global.use_controller = true {
 	global.key_item_menu = array_key_item_menu[0] || array_key_item_menu[1];
 	global.key_select = array_key_select[0] || array_key_select[1];
 }
+
+if gamepad_is_connected(0) {
+	gamepad_set_axis_deadzone(0,0.1);
+}

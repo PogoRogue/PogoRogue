@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "spr_arrow_down",
   "bbox_bottom": 11,
-  "bbox_left": 5,
-  "bbox_right": 14,
+  "bbox_left": 1,
+  "bbox_right": 10,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -59,7 +59,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 10,
+    "xorigin": 6,
     "yorigin": 6,
   },
   "swatchColours": [
@@ -149,5 +149,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 20,
+  "width": 12,
 }
