@@ -34,7 +34,7 @@
   "origin": 7,
   "parent": {
     "name": "Environmental",
-    "path": "folders/Sprites/Environmental.yy",
+    "path": "folders/Sprites/Enemy/Environmental.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

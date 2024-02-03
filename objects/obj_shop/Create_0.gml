@@ -51,9 +51,10 @@ item_name = "";
 item_description = "";
 item_cost = 0;
 
-
 ii = 0;
 
+alarm2_time = 30;
+alarm3_time = 30;
 
 //bool to prevent looping sounds
 soundPlayed = false;

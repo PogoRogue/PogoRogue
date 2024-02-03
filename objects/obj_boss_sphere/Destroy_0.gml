@@ -15,3 +15,7 @@ instance_create_layer(x, y, "enemies", obj_explosion);
 with instance_create_depth(x,y,depth-1,obj_coin_spawner) {
 	num_of_coins = 100;
 }
+// set active when destroy
+with(obj_boss_portal) {
+    is_active = true; 
+}
