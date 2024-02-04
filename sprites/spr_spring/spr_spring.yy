@@ -31,7 +31,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"dcc40f3d-44c3-44f6-a7c9-936e63ea7aa0","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 7,
+  "origin": 9,
   "parent": {
     "name": "Environmental",
     "path": "folders/Sprites/Enemy/Environmental.yy",
@@ -74,8 +74,8 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 48,
-    "yorigin": 48,
+    "xorigin": 0,
+    "yorigin": 32,
   },
   "swatchColours": [
     4278190335,
