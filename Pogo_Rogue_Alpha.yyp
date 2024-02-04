@@ -111,6 +111,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"SamRooms","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/SamRooms.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"snd_ArmorHeart.mp3","CopyToMask":-1,"filePath":"datafiles",},
@@ -132,7 +133,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -568,7 +569,7 @@
     {"id":{"name":"obj_conveyor_belt","path":"objects/obj_conveyor_belt/obj_conveyor_belt.yy",},},
     {"id":{"name":"spr_enemy_turret_barrel","path":"sprites/spr_enemy_turret_barrel/spr_enemy_turret_barrel.yy",},},
     {"id":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
-    {"id":{"name":"spr_ud_2x1","path":"sprites/spr_ud_2x1/spr_ud_2x1.yy",},},
+    {"id":{"name":"spr_ud_2x1_Sam","path":"sprites/spr_ud_2x1_Sam/spr_ud_2x1_Sam.yy",},},
     {"id":{"name":"spr_env_air_effect","path":"sprites/spr_env_air_effect/spr_env_air_effect.yy",},},
     {"id":{"name":"spr_conveyor_belt","path":"sprites/spr_conveyor_belt/spr_conveyor_belt.yy",},},
     {"id":{"name":"snd_electricity","path":"sounds/snd_electricity/snd_electricity.yy",},},
@@ -642,6 +643,7 @@
     {"id":{"name":"obj_spring","path":"objects/obj_spring/obj_spring.yy",},},
     {"id":{"name":"obj_weaponheightfun","path":"objects/obj_weaponheightfun/obj_weaponheightfun.yy",},},
     {"id":{"name":"spr_o_enemy_moving","path":"sprites/spr_o_enemy_moving/spr_o_enemy_moving.yy",},},
+    {"id":{"name":"spr_Combat_2x2_Sam","path":"sprites/spr_Combat_2x2_Sam/spr_Combat_2x2_Sam.yy",},},
     {"id":{"name":"obj_subboss_fly_chasing","path":"objects/obj_subboss_fly_chasing/obj_subboss_fly_chasing.yy",},},
     {"id":{"name":"spr_player_zekai_invincible_falling","path":"sprites/spr_player_zekai_invincible_falling/spr_player_zekai_invincible_falling.yy",},},
     {"id":{"name":"obj_enemy_projectile_bullet","path":"objects/obj_enemy_projectile_bullet/obj_enemy_projectile_bullet.yy",},},
@@ -663,7 +665,6 @@
     {"id":{"name":"snd_bubblepop","path":"sounds/snd_bubblepop/snd_bubblepop.yy",},},
     {"id":{"name":"spr_projectile_grenade_gui","path":"sprites/spr_projectile_grenade_gui/spr_projectile_grenade_gui.yy",},},
     {"id":{"name":"obj_slider_switch_invert","path":"objects/obj_slider_switch_invert/obj_slider_switch_invert.yy",},},
-    {"id":{"name":"spr_2x2_Combat","path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},},
     {"id":{"name":"obj_item_weapon_paintball","path":"objects/obj_item_weapon_paintball/obj_item_weapon_paintball.yy",},},
     {"id":{"name":"spr_off_platform","path":"sprites/spr_off_platform/spr_off_platform.yy",},},
     {"id":{"name":"obj_slowmo","path":"objects/obj_slowmo/obj_slowmo.yy",},},

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_ud_2x1",
+  "name": "spr_Combat_2x2_Sam",
   "bbox_bottom": 60,
   "bbox_left": 0,
   "bbox_right": 31,
@@ -26,14 +26,14 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "UD",
-    "path": "folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites/HallwayBlocks/UD.yy",
+    "name": "SamRooms",
+    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther/SamRooms.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_ud_2x1",
+    "name": "spr_Combat_2x2_Sam",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6b30a578-1c37-4a8e-939f-d661bb08af75","path":"sprites/spr_ud_2x1/spr_ud_2x1.yy",},},},"Disabled":false,"id":"ae155c68-39cd-450c-aedf-adadaa511798","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2ce6c9cf-4636-4a37-a66e-4113dc2f4143","path":"sprites/spr_ud_2x1/spr_ud_2x1.yy",},},},"Disabled":false,"id":"df847ff0-8a02-4ab0-865a-1074c4ad3d42","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6b30a578-1c37-4a8e-939f-d661bb08af75","path":"sprites/spr_Combat_2x2_Sam/spr_Combat_2x2_Sam.yy",},},},"Disabled":false,"id":"5ec2af7a-e988-44f5-86e7-59ef9da4a118","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2ce6c9cf-4636-4a37-a66e-4113dc2f4143","path":"sprites/spr_Combat_2x2_Sam/spr_Combat_2x2_Sam.yy",},},},"Disabled":false,"id":"2dc675da-7274-4f9b-a04c-ce10f087413d","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
