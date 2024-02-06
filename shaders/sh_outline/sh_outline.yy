@@ -4,7 +4,7 @@
   "name": "sh_outline",
   "parent": {
     "name": "Shaders",
-    "path": "folders/Tile Sets/Shaders.yy",
+    "path": "folders/Shaders.yy",
   },
   "type": 1,
 }
