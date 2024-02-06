@@ -1,19 +1,21 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_explode_projectile_r",
+  "name": "obj_enemy_pattern_test",
   "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Projectile",
-    "path": "folders/Objects/Enemy/Hitbox/Projectile.yy",
+    "name": "Enemy",
+    "path": "folders/Objects/Enemy.yy",
   },
   "parentObjectId": {
-    "name": "obj_explode_projectile",
-    "path": "objects/obj_explode_projectile/obj_explode_projectile.yy",
+    "name": "obj_enemy_generic",
+    "path": "objects/obj_enemy_generic/obj_enemy_generic.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_projectile",
-    "path": "sprites/spr_enemy_projectile/spr_enemy_projectile.yy",
+    "name": "spr_enemy_turret_barrel",
+    "path": "sprites/spr_enemy_turret_barrel/spr_enemy_turret_barrel.yy",
   },
   "spriteMaskId": null,
   "visible": true,
