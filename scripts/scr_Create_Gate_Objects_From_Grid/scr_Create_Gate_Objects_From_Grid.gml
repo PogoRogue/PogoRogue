@@ -13,7 +13,7 @@ function scr_Create_Gate_Objects_From_Grid(layout_grid){
 	for (var i = 0; i < grid_width; i++) {
 	    for (var j = 0; j < grid_height; j++) {
 	        var current_cell = ds_grid_get(layout_grid, i, j);
-	        if (string(current_cell) == "1") { // Is a hallway
+	        if (string_count("1", current_cell) > 0) { // Is a hallway
 	            // Check adjacent cells for room IDs (non-numeric values that are not "w" or "1")
 	            var neighbours = [ds_grid_get(layout_grid, i-1, j), ds_grid_get(layout_grid, i+1, j),
 	                              ds_grid_get(layout_grid, i, j+1), ds_grid_get(layout_grid, i, j-1)];
@@ -22,7 +22,7 @@ function scr_Create_Gate_Objects_From_Grid(layout_grid){
 					var neighbour = neighbours[k];
 	                var n_value = string(neighbour);
 					
-	                if (n_value != "1" && n_value != "w" && n_value != "0") {
+	                if (string_count("1", n_value) == 0 && n_value != "w" && n_value != "0") {
 						// Determine exit direction based on relative position of hallways
 						var exit_direction = determineExitDir(k);
 						// Store gate pos along with exit direction in the list

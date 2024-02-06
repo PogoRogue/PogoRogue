@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Proc Gen",
-    "path": "folders/Scripts/Proc Gen.yy",
+    "name": "PixelBufferReadingScripts",
+    "path": "folders/Scripts/Proc Gen/PixelBufferReadingScripts.yy",
   },
 }
