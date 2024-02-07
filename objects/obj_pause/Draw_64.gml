@@ -17,5 +17,11 @@ if pause = true {
 	//draw pause button
 	draw_sprite(spr_pause,0,16,camera_get_view_height(view_camera[0])-16);
 	
-	
+	if instance_exists(obj_pausemenu) {
+		depth = obj_pausemenu.depth+5;
+	}
+	if instance_exists(obj_items) {
+		depth = obj_items.depth+5;
+	}
 }
+draw_set_color(c_white);
