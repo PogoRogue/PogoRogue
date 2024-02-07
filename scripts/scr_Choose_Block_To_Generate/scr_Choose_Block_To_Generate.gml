@@ -71,7 +71,7 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 				else if(right_val != "w")
 				{
 					//Combat room right
-					return spr_ur1;
+					return spr_ul1; //Mirrored
 				}
 			}
 			else if(string_count("1", down_val) > 0) //Proc gen block below
@@ -84,7 +84,7 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 				else if(left_val != "w")
 				{
 					//Combat room left
-					return spr_dl1;
+					return spr_dr1; //Mirrored
 				}
 				else if(right_val != "w")
 				{
@@ -102,7 +102,7 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 				else if(down_val != "w")
 				{
 					//Combat room below
-					return spr_dl1;
+					return spr_dr1; //Mirrored
 				}
 				else if(right_val != "w")
 				{
@@ -115,7 +115,7 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 				if(up_val != "w") 
 				{
 					//Combat room above
-					return spr_ur1;
+					return spr_ul1; //Mirrored
 				}
 				else if(down_val != "w")
 				{
@@ -146,7 +146,7 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 				else if(string_count("1", right_val) > 0)
 				{
 					//right and up corner block
-					return spr_ur1;
+					return spr_ul1; //Mirrored
 				}
 			}
 			else if(string_count("1", down_val) > 0)
@@ -155,7 +155,7 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 				if(string_count("1", left_val) > 0)
 				{
 					//down and left corner block
-					return spr_dl1;
+					return spr_dr1; //Mirrored
 				}
 				else if(string_count("1", right_val) > 0)
 				{

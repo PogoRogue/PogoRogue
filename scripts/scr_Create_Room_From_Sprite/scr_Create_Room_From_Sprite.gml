@@ -61,7 +61,7 @@ function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror
 			var object_x_offset = x_offset + grid_size * i;
 				var object_y_offset = y_offset + grid_size * j;
 			
-			/*
+			
 			if(!mirror)
 			{
 				//Objects are placed within the pixel editor in 16 pixel increments, so offsets 
@@ -72,18 +72,19 @@ function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror
 			else
 			{
 				//For mirrored rooms, place them on the opposite side
-				var object_x_offset = x_offset + grid_size * (array_length(pixel_array) - i - 1);
+				var object_x_offset = x_offset + grid_size * (array_length(pixel_array) - 1 - i);				
 				var object_y_offset = y_offset + grid_size * j;
-			}*/
+			}
 			
 			var new_object = Create_Instance_From_RGB(RGB, object_x_offset, object_y_offset)
+			
 			if(new_object != -1)
 			{
 			ds_queue_enqueue(object_queue, new_object);
 			}
 		}
 	}
-	var wall_queue = scr_Create_Walls_From_Pixel_Array(pixel_array, x_offset, y_offset)
+	scr_Create_Walls_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror)
 	return object_queue;
 }
 
