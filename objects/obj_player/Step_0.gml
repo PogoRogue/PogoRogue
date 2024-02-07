@@ -59,8 +59,6 @@ scr_Get_Player_Sprites();
 //run state machine
 state();
 
-show_debug_message(current_iframes);
-
 #region //pickups
 
 //call pickups

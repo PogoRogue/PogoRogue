@@ -9,9 +9,12 @@ select_x = 1; //passives only
 select_x_max = 1; //number of columns
 select_y = 0;
 select_y_max = 2; //number of rows
+select_y_added = 0; //bindings menu scrolling
 
 selected_x = false;
 selected_y = false;
+
+bindings_x = 1; //1st or 2nd slot
 
 with obj_pause {
 	if pause = false {
@@ -29,3 +32,4 @@ alarm3_time = 30;
 scr_Settings_Audio();
 scr_Settings_Video();
 scr_Settings_Gameplay();
+scr_Settings_Bindings();

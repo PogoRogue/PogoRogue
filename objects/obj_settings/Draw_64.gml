@@ -15,12 +15,16 @@ if select_y = 0 {
 
 //background tiles
 draw_set_color(c_white);
+var temp_select_y_max = select_y_max;
+if temp_select_y_max > 8 {
+	temp_select_y_max = 8;
+}
 for (xx = camera_get_view_width(view_camera[0])/2 - 128; xx < camera_get_view_width(view_camera[0])/2 + 128; xx += 16) {
-	for (yy = option_1_y-32; yy < option_1_y+(select_y_max*item_height); yy += 16) {
+	for (yy = option_1_y-32; yy < option_1_y+(temp_select_y_max*item_height); yy += 16) {
 		if (xx = camera_get_view_width(view_camera[0])/2 - 128) {
 			if (yy = option_1_y-32) {
 				var tile_data = 1;
-			}else if (yy = option_1_y+(select_y_max*item_height)-16) {
+			}else if (yy = option_1_y+(temp_select_y_max*item_height)-16) {
 				var tile_data = 9;
 			}else {
 				var tile_data = 5;
@@ -28,7 +32,7 @@ for (xx = camera_get_view_width(view_camera[0])/2 - 128; xx < camera_get_view_wi
 		}else if (xx = camera_get_view_width(view_camera[0])/2 + 128 - 16) {
 			if (yy = option_1_y-32) {
 				var tile_data = 3;
-			}else if (yy = option_1_y+(select_y_max*item_height)-16) {
+			}else if (yy = option_1_y+(temp_select_y_max*item_height)-16) {
 				var tile_data = 11;
 			}else {
 				var tile_data = 7;
@@ -36,7 +40,7 @@ for (xx = camera_get_view_width(view_camera[0])/2 - 128; xx < camera_get_view_wi
 		}else {
 			if (yy = option_1_y-32) {
 				var tile_data = 2;
-			}else if (yy = option_1_y+(select_y_max*item_height)-16) {
+			}else if (yy = option_1_y+(temp_select_y_max*item_height)-16) {
 				var tile_data = 10;
 			}else {
 				var tile_data = 6;
@@ -148,6 +152,57 @@ if select = 3 { //gameplay
 		draw_set_halign(fa_right);
 		if menu_gameplay.options_array[i]._type = "checkbox" {
 			draw_sprite(spr_checkbox,(menu_gameplay.options_array[i].current_mode)+((i = select_y-1) * 2),camera_get_view_width(view_camera[0])/2+104,option_1_y+(item_height*i));
+		}
+	}
+}
+
+if select = 4 { //bindings
+	for(i = 0; i < menu_bindings.num_of_options; i++) {
+		var color = c_white;
+		if i = select_y-1 {
+			draw_set_color(make_color_rgb(211,160,104));
+			color = make_color_rgb(211,160,104);
+		}else {
+			draw_set_color(make_color_rgb(242,240,229));
+			color = make_color_rgb(242,240,229);
+		}
+		
+		//arrows
+		if (select_y_added < menu_bindings.num_of_options-8) {
+			//down arrow
+			draw_sprite(spr_settings_downarrow,0,camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*8)-20);
+		}else {
+			//down arrow
+			draw_sprite(spr_settings_downarrow,1,camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*8)-20);
+		}
+		if (select_y_added > 0) {
+			//up arrow
+			draw_sprite(spr_settings_uparrow,0,camera_get_view_width(view_camera[0])/2,option_1_y-12);
+		}
+		
+		//text
+		draw_set_valign(fa_center);
+		draw_set_font(fnt_combo2);
+		if menu_bindings.options_array[i]._type = "doonpress" {
+			if (i - select_y_added >= 0 and i - select_y_added < 8) {
+				if (i = 0) {
+					draw_set_halign(fa_center);
+					draw_text(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i)-(select_y_added*item_height),menu_bindings.options_array[i]._text);	
+				}else {
+					draw_set_halign(fa_left);
+					draw_text(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i)-(select_y_added*item_height),menu_bindings.options_array[i]._text);
+				}
+
+				//icon sprites
+				if global.use_controller = true and i != 0 {
+					var subtract_rectangle_length = 32*(select_y_added = 0);
+					var white = make_color_rgb(242,240,229);
+					draw_rectangle_color(camera_get_view_width(view_camera[0])/2+83,option_1_y-8+subtract_rectangle_length,camera_get_view_width(view_camera[0])/2+84,option_1_y+(item_height*7)+8,white,white,white,white,false);
+					draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[i-1][0]),(i = select_y-1 and bindings_x = 1),camera_get_view_width(view_camera[0])/2+64,option_1_y+(item_height*i)-(select_y_added*item_height));
+					draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[i-1][1]),(i = select_y-1 and bindings_x = 2),camera_get_view_width(view_camera[0])/2+104,option_1_y+(item_height*i)-(select_y_added*item_height));
+				}
+			}
+			
 		}
 	}
 }

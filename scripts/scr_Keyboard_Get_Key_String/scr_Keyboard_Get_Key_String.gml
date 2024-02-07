@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Keyboard_Get_Key_String(key){
+	
 	switch(key) {
 		//sprites
 		case vk_up: return spr_arrow_up; break;

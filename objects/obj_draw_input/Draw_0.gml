@@ -11,5 +11,5 @@ if global.use_controller = true {
 		draw_set_valign(fa_center);
 		draw_text(x,y,scr_Keyboard_Get_Key_String(keyboard_key));
 	}
-	
+	draw_sprite(scr_Mouse_Get_Button_Sprite(mouse_button),0,x,y);
 }

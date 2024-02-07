@@ -30,7 +30,7 @@ function scr_Gamepad_Get_Button_Sprite(button){
 		case gp_padl:     return spr_dpad_l; break;
 		case gp_padr:     return spr_dpad_r; break;
 		case gp_padd:     return spr_dpad_d; break;
-		case 0: return spr_nothing; break;
-		default: return spr_nothing; break;
+		case 0: return spr_button_empty; break;
+		default: return spr_button_empty; break;
 	}
 }
