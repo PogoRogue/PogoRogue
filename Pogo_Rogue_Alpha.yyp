@@ -314,6 +314,7 @@
     {"id":{"name":"snd_newsound","path":"sounds/snd_newsound/snd_newsound.yy",},},
     {"id":{"name":"spr_player_falling","path":"sprites/spr_player_falling/spr_player_falling.yy",},},
     {"id":{"name":"obj_wallbutton","path":"objects/obj_wallbutton/obj_wallbutton.yy",},},
+    {"id":{"name":"scr_Replace_Hallway_Chunks_Test","path":"scripts/scr_Replace_Hallway_Chunks_Test/scr_Replace_Hallway_Chunks_Test.yy",},},
     {"id":{"name":"spr_button_orange_pressed","path":"sprites/spr_button_orange_pressed/spr_button_orange_pressed.yy",},},
     {"id":{"name":"scr_Controls_Array_Controller","path":"scripts/scr_Controls_Array_Controller/scr_Controls_Array_Controller.yy",},},
     {"id":{"name":"spr_pickup_shieldbubble","path":"sprites/spr_pickup_shieldbubble/spr_pickup_shieldbubble.yy",},},

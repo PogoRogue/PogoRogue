@@ -27,6 +27,14 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 	{
 		return 0;
 	}
+	else if(room_string == "1hc" || room_string == "1hcf") //Marks the corner of a horizontal length 2 hallway chunk
+	{
+		return spr_lr_length2_test;
+	}
+	else if(room_string == "1vc" || room_string == "1vcf") //Marks the corner of a vertical length 2 hallway chunk
+	{
+		return spr_ud_length2_test;
+	}
 	else if(room_string == "1" || room_string == "1f") //Decide what proc gen block to use
 	{
 		//Get all neighboring blocks
@@ -62,7 +70,7 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				else if(right_val != "w")
 				{
 					//Combat room right
-					return spr_ur_test;
+					return spr_ul_test; //Mirrored
 				}
 			}
 			else if(string_count("1", down_val) > 0) //Proc gen block below
@@ -75,7 +83,7 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				else if(left_val != "w")
 				{
 					//Combat room left
-					return spr_dl_test;
+					return spr_dr_test; //Mirrored
 				}
 				else if(right_val != "w")
 				{
@@ -93,7 +101,7 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				else if(down_val != "w")
 				{
 					//Combat room below
-					return spr_dl_test;
+					return spr_dr_test; //Mirrored
 				}
 				else if(right_val != "w")
 				{
@@ -106,7 +114,7 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				if(up_val != "w") 
 				{
 					//Combat room above
-					return spr_ur_test;
+					return spr_ul_test; //Mirrored
 				}
 				else if(down_val != "w")
 				{
@@ -137,7 +145,7 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				else if(string_count("1", right_val) > 0)
 				{
 					//right and up corner block
-					return spr_ur_test;
+					return spr_ul_test; //Mirrored
 				}
 			}
 			else if(string_count("1", down_val) > 0)
@@ -146,7 +154,7 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 				if(string_count("1", left_val) > 0)
 				{
 					//down and left corner block
-					return spr_dl_test;
+					return spr_dr_test; //Mirrored
 				}
 				else if(string_count("1", right_val) > 0)
 				{
