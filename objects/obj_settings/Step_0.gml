@@ -252,6 +252,6 @@ if key_back {
 	if room != room_settings {
 		alarm[0] = 1;
 	}else {
-		room = room_menu;	
+		room = room_menu;
 	}
 }

@@ -24,7 +24,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8137a5d7-58b7-4ac9-a93a-cae18e4abd31","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "Input buttons",
     "path": "folders/Sprites/UI/Input buttons.yy",
@@ -61,7 +61,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 7,
+    "xorigin": 8,
     "yorigin": 8,
   },
   "swatchColours": [

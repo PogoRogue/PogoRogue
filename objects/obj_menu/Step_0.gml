@@ -34,7 +34,9 @@ if key_select {
 		room = room_settings;
 		room_persistent = true;
 	}else if select = 4 {
-		game_end();
+		audio_play_sound(snd_selectOption,0,false);
+		usable = false;
+		instance_create_depth(x,y,depth-1,obj_popup_exit);
 	}
 }
 

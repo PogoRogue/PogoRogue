@@ -35,12 +35,12 @@ function scr_Joysticks(left_lr,left_ud,right_lr,right_ud,action_type,button) {
 		if (obj_controls_controller.joystick_left_lr) {
 			_gp_axislhl_pressed = false;
 			_gp_axislhr_pressed = false;
-		}else if (_gp_axislhr) and button = "gp_axislhr" {
+		}else if (_gp_axislhr) and button = -10001 {
 			_gp_axislhr_pressed = true;
 		    with obj_controls_controller {
 				joystick_left_lr  = true;
 		    }
-		} else if (_gp_axislhl) and button = "gp_axislhl" {
+		} else if (_gp_axislhl) and button = -10000 {
 		   _gp_axislhl_pressed = true;
 		    with obj_controls_controller {
 				joystick_left_lr  = true;
@@ -57,12 +57,12 @@ function scr_Joysticks(left_lr,left_ud,right_lr,right_ud,action_type,button) {
 		if (obj_controls_controller.joystick_left_ud) {
 			_gp_axislvu_pressed = false;
 			_gp_axislvd_pressed = false;
-		}else if (_gp_axislvd) and button = "gp_axislvd" {
+		}else if (_gp_axislvd) and button = -10003 {
 		    _gp_axislvd_pressed = true;
 		    with obj_controls_controller {
 				joystick_left_ud  = true;
 		    }
-		} else if (_gp_axislvu) and button = "gp_axislvu" {
+		} else if (_gp_axislvu) and button = -10002 {
 		    _gp_axislvu_pressed = true;
 		    with obj_controls_controller {
 				joystick_left_ud  = true;
@@ -79,12 +79,12 @@ function scr_Joysticks(left_lr,left_ud,right_lr,right_ud,action_type,button) {
 		if (obj_controls_controller.joystick_right_lr) {
 			_gp_axisrhl_pressed = false;
 			_gp_axisrhr_pressed = false;
-		}else if (_gp_axisrhr) and button = "gp_axisrhr" {
+		}else if (_gp_axisrhr) and button = -10005 {
 		    _gp_axisrhr_pressed = true;
 		    with obj_controls_controller {
 				joystick_right_lr  = true;
 		    }
-		} else if (_gp_axisrhl) and button = "gp_axisrhl" {
+		} else if (_gp_axisrhl) and button = -10004 {
 		    _gp_axisrhl_pressed = true;
 		    with obj_controls_controller {
 				joystick_right_lr  = true;
@@ -101,12 +101,12 @@ function scr_Joysticks(left_lr,left_ud,right_lr,right_ud,action_type,button) {
 		if (obj_controls_controller.joystick_right_ud) {
 			_gp_axisrvu_pressed = false;
 			_gp_axisrvd_pressed = false;
-		}else if (_gp_axisrvd) and button = "gp_axisrvd" {
+		}else if (_gp_axisrvd) and button = -10007 {
 		    _gp_axisrvd_pressed = true;
 		    with obj_controls_controller {
 				joystick_right_ud = true;
 		    }
-		} else if (_gp_axisrvu) and button = "gp_axisrvu" {
+		} else if (_gp_axisrvu) and button = -10006 {
 		    _gp_axisrvu_pressed = true;
 		    with obj_controls_controller {
 				joystick_right_ud = true;

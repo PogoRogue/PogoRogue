@@ -31,7 +31,9 @@ if key_select {
 	if select = 1 {
 		alarm[0] = 1;
 	}else if select = 2 {
-		alarm[0] = 1;
+		scr_Reset_Controls_Data();
+		deleted = true;
+		alarm[1] = 30;
 	}
 }
 

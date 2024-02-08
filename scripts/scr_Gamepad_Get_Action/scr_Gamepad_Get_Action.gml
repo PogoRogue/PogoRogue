@@ -33,41 +33,41 @@ function scr_Gamepad_Get_Action(button,action_type){
 		if action_type = "check" {
 			
 			switch (button) {
-				case "gp_axislhl": return _gp_axislhl; break;
-				case "gp_axislhr": return _gp_axislhr; break;
-				case "gp_axislvu": return _gp_axislvu; break;
-				case "gp_axislvd": return _gp_axislvd; break;
-				case "gp_axisrhl": return _gp_axisrhl; break;
-				case "gp_axisrhr": return _gp_axisrhr; break;
-				case "gp_axisrvu": return _gp_axisrvu; break;
-				case "gp_axisrvd": return _gp_axisrvd; break;
+				case -10000: return _gp_axislhl; break;
+				case -10001: return _gp_axislhr; break;
+				case -10002: return _gp_axislvu; break;
+				case -10003: return _gp_axislvd; break;
+				case -10004: return _gp_axisrhl; break;
+				case -10005: return _gp_axisrhr; break;
+				case -10006: return _gp_axisrvu; break;
+				case -10007: return _gp_axisrvd; break;
 				default: return 0;
 			}
 		}else if action_type = "pressed" {
 			
 			switch (button) {
-				case "gp_axislhl": return _gp_axislhl_pressed; break;
-				case "gp_axislhr": return _gp_axislhr_pressed; break;
-				case "gp_axislvu": return _gp_axislvu_pressed; break;
-				case "gp_axislvd": return _gp_axislvd_pressed; break;
-				case "gp_axisrhl": return _gp_axisrhl_pressed; break;
-				case "gp_axisrhr": return _gp_axisrhr_pressed; break;
-				case "gp_axisrvu": return _gp_axisrvu_pressed; break;
-				case "gp_axisrvd": return _gp_axisrvd_pressed; break;
+				case -10000: return _gp_axislhl_pressed; break;
+				case -10001: return _gp_axislhr_pressed; break;
+				case -10002: return _gp_axislvu_pressed; break;
+				case -10003: return _gp_axislvd_pressed; break;
+				case -10004: return _gp_axisrhl_pressed; break;
+				case -10005: return _gp_axisrhr_pressed; break;
+				case -10006: return _gp_axisrvu_pressed; break;
+				case -10007: return _gp_axisrvd_pressed; break;
 				default: return 0;
 			}
 			
 		}else if action_type = "released" {
 
 			switch (button) {
-				case "gp_axislhl": return _gp_axislhl_released; break;
-				case "gp_axislhr": return _gp_axislhr_released; break;
-				case "gp_axislvu": return _gp_axislvu_released; break;
-				case "gp_axislvd": return _gp_axislvd_released; break;
-				case "gp_axisrhl": return _gp_axisrhl_released; break;
-				case "gp_axisrhr": return _gp_axisrhr_released; break;
-				case "gp_axisrvu": return _gp_axisrvu_released; break;
-				case "gp_axisrvd": return _gp_axisrvd_released; break;
+				case -10000: return _gp_axislhl_released; break;
+				case -10001: return _gp_axislhr_released; break;
+				case -10002: return _gp_axislvu_released; break;
+				case -10003: return _gp_axislvd_released; break;
+				case -10004: return _gp_axisrhl_released; break;
+				case -10005: return _gp_axisrhr_released; break;
+				case -10006: return _gp_axisrvu_released; break;
+				case -10007: return _gp_axisrvd_released; break;
 				default: return 0;
 			}
 		}else {

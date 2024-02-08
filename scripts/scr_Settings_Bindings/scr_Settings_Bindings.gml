@@ -20,7 +20,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -31,7 +32,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -42,7 +44,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -53,7 +56,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -64,7 +68,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -75,7 +80,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -86,7 +92,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -97,7 +104,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -108,7 +116,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -119,7 +128,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -130,7 +140,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -141,73 +152,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
-			}
-		}
-	};
-	
-	option_right_menu = {
-		_text: "Menu Right",
-		_type: "doonpress",
-		do_on_press: function() {
-			with obj_settings {
-				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
-			}
-		}
-	};
-	
-	option_left_menu = {
-		_text: "Menu Left",
-		_type: "doonpress",
-		do_on_press: function() {
-			with obj_settings {
-				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
-			}
-		}
-	};
-	
-	option_down_menu = {
-		_text: "Menu Down",
-		_type: "doonpress",
-		do_on_press: function() {
-			with obj_settings {
-				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
-			}
-		}
-	};
-	
-	option_up_menu = {
-		_text: "Menu Up",
-		_type: "doonpress",
-		do_on_press: function() {
-			with obj_settings {
-				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
-			}
-		}
-	};
-	
-	option_select = {
-		_text: "Select",
-		_type: "doonpress",
-		do_on_press: function() {
-			with obj_settings {
-				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
-			}
-		}
-	};
-	
-	option_back = {
-		_text: "Back",
-		_type: "doonpress",
-		do_on_press: function() {
-			with obj_settings {
-				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -218,7 +164,8 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -229,7 +176,80 @@ function scr_Settings_Bindings(){
 		do_on_press: function() {
 			with obj_settings {
 				audio_play_sound(snd_selectOption,0,false);
-				//do bindings code here
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
+			}
+		}
+	};
+	
+	option_right_menu = {
+		_text: "Menu Right",
+		_type: "doonpress",
+		do_on_press: function() {
+			with obj_settings {
+				audio_play_sound(snd_selectOption,0,false);
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
+			}
+		}
+	};
+	
+	option_left_menu = {
+		_text: "Menu Left",
+		_type: "doonpress",
+		do_on_press: function() {
+			with obj_settings {
+				audio_play_sound(snd_selectOption,0,false);
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
+			}
+		}
+	};
+	
+	option_down_menu = {
+		_text: "Menu Down",
+		_type: "doonpress",
+		do_on_press: function() {
+			with obj_settings {
+				audio_play_sound(snd_selectOption,0,false);
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
+			}
+		}
+	};
+	
+	option_up_menu = {
+		_text: "Menu Up",
+		_type: "doonpress",
+		do_on_press: function() {
+			with obj_settings {
+				audio_play_sound(snd_selectOption,0,false);
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
+			}
+		}
+	};
+	
+	option_select = {
+		_text: "Select",
+		_type: "doonpress",
+		do_on_press: function() {
+			with obj_settings {
+				audio_play_sound(snd_selectOption,0,false);
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
+			}
+		}
+	};
+	
+	option_back = {
+		_text: "Back",
+		_type: "doonpress",
+		do_on_press: function() {
+			with obj_settings {
+				audio_play_sound(snd_selectOption,0,false);
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
 			}
 		}
 	};
@@ -240,8 +260,7 @@ function scr_Settings_Bindings(){
 						option_recenter,option_pickup1,option_pickup2,
 						option_interact,option_weapon1,option_weapon2,
 						option_weapon3,option_nextweapon,option_prevweapon,
-						option_right_menu,option_left_menu,option_down_menu,
-						option_up_menu,option_select,option_back,option_pause,
-						option_item],
+						option_pause,option_item,option_right_menu,option_left_menu,
+						option_down_menu,option_up_menu,option_select,option_back],
 	};
 }

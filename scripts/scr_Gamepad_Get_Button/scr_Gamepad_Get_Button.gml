@@ -9,43 +9,25 @@ function scr_Gamepad_Get_Button(){
 		}
 		for (var i=gp_axislh;i<=gp_axisrv;i++) {    // loop analogue axis
 			if gamepad_axis_value(0,i) !=0 {
-				if i = gp_axislh {
-					if gamepad_axis_value(0,gp_axislh) < -0.75 {
-						return "gp_axislhl";
-					}else if gamepad_axis_value(0,gp_axislh) > 0.75 {
-						return "gp_axislhr";
-					}else {
-						return 0;
-					}
+				if gamepad_axis_value(0,gp_axislh) < -0.5 {
+					return -10000;
+				}else if gamepad_axis_value(0,gp_axislh) > 0.5 {
+					return -10001;
+				}else if gamepad_axis_value(0,gp_axislv) < -0.5 {
+					return -10002;
+				}else if gamepad_axis_value(0,gp_axislv) > 0.5 {
+					return -10003;
+				}else if gamepad_axis_value(0,gp_axisrh) < -0.5 {
+					return -10004;
+				}else if gamepad_axis_value(0,gp_axisrh) > 0.5 {
+					return -10005;
+				}else if gamepad_axis_value(0,gp_axisrv) < -0.5 {
+					return -10006;
+				}else if gamepad_axis_value(0,gp_axisrv) > 0.5 {
+					return -10007;
+				}else {
+					return 0;
 				}
-				if i = gp_axislv {
-					if gamepad_axis_value(0,gp_axislv) < -0.75 {
-						return "gp_axislvu";
-					}else if gamepad_axis_value(0,gp_axislv) > 0.75 {
-						return "gp_axislvd";
-					}else {
-						return 0;
-					}
-				}
-				if i = gp_axisrh {
-					if gamepad_axis_value(0,gp_axisrh) < -0.75 {
-						return "gp_axisrhl";
-					}else if gamepad_axis_value(0,gp_axisrh) > 0.75 {
-						return "gp_axisrhr";
-					}else {
-						return 0;
-					}
-				}
-				if i = gp_axisrv {
-					if gamepad_axis_value(0,gp_axisrv) < -0.75 {
-						return "gp_axisrvu";
-					}else if gamepad_axis_value(0,gp_axisrv) > 0.75 {
-						return "gp_axisrvd";
-					}else {
-						return 0;
-					}
-				}
-				
 			}
 		}
 	}
