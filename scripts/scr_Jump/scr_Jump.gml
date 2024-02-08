@@ -9,10 +9,17 @@ function scr_Jump(add_to_jump){
 	image_speed = 0;
 	image_index = 0; //reset animation to starting frame
 	animation_complete = false;
-	if gun.current_bullets != gun.bullets_per_bounce+obj_player.max_ammo_buff and gun != boomerang_gun { //reload bullets
+	if(global.dualwielder == true){
+			for(var i = 0; i < array_length(gun_array); i++){
+				var gun_temp = gun_array[i];
+				gun_temp.current_bullets = gun_temp.bullets_per_bounce;
+			}
+		}
+	else if gun.current_bullets != gun.bullets_per_bounce+obj_player.max_ammo_buff and gun != boomerang_gun { //reload bullets
 		//reload sound
 		audio_play_sound(snd_reload,0,false);
 		gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+
 		instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 	}else if gun.current_bullets != gun.bullets_per_bounce+obj_player.max_ammo_buff and gun = boomerang_gun { //boomerang
 		if !instance_exists(obj_projectile) {

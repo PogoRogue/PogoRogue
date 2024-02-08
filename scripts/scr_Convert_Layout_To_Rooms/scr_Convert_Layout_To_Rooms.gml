@@ -14,13 +14,51 @@ function scr_Convert_Layout_To_Rooms(layout_grid){
 				if(ds_grid_get(layout_grid, i, j) == "w")
 				{
 					//Generate large wall to fill block
-					//Don't necessarilly need to fill the entire grid this way, only the borders of the rooms
-					//For now just fill the whole grid with wall blocks
+					//Don't need to fill the entire grid this way, only the borders of the rooms
 					var wall = instance_create_depth(x_offset, y_offset, depth, obj_ground_outer, 
 					{
 						image_xscale : block_grid_size,
 						image_yscale : block_grid_size
 					});
+					
+					//Place camera constraints around block
+					if(j < ds_grid_height(layout_grid) - 1 && ds_grid_get(layout_grid, i, j + 1) != 0 && ds_grid_get(layout_grid, i, j + 1) != "w")
+					{
+					//Generate camera constraint objects in the same place as the 32x32 block
+					top_camera_constraint = instance_create_layer(x_offset, y_offset, "TilesGround", obj_camera_constrain_y_bottom,
+					{
+						image_xscale : block_grid_size,
+						depth : -10000
+					});
+					}
+					
+					if(j > 0 && ds_grid_get(layout_grid, i, j - 1) != 0 && ds_grid_get(layout_grid, i, j - 1) != "w")
+					{
+					bottom_camera_constraint = instance_create_layer(x_offset, y_offset + block_room_size, "TilesGround", obj_camera_constrain_y_top,
+					{
+						image_xscale : block_grid_size,
+						depth : -10000
+					});
+					}
+					
+					if(i > 0 && ds_grid_get(layout_grid, i - 1, j) != 0 && ds_grid_get(layout_grid, i - 1, j) != "w")
+					{
+					left_camera_constraint = instance_create_layer(x_offset, y_offset, "TilesGround", obj_camera_constrain_x_right,
+					{
+						image_yscale : block_grid_size,
+						depth : -10000
+					});
+					}
+					
+					if(i < ds_grid_width(layout_grid) - 1 && ds_grid_get(layout_grid, i + 1, j) != 0 && ds_grid_get(layout_grid, i + 1, j) != "w")
+					{
+					right_camera_constraint = instance_create_layer(x_offset + block_room_size, y_offset, "TilesGround", obj_camera_constrain_x_left,
+					{
+						image_yscale : block_grid_size,
+						depth : -10000
+					});
+					}
+					
 				}
 				else
 				{
