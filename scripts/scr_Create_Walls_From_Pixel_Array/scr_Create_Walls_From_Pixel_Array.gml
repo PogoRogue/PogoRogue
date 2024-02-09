@@ -1,7 +1,7 @@
 // @description Takes in an array of pixels corresponding to a room, 
 //and creates as few walls as needed for that room. This is to save on computing efficiency by
 //*hopefully cutting the amount of wall objects created by proc gen considerably.
-function scr_Create_Walls_From_Pixel_Array(pixel_array, x_offset, y_offset){
+function scr_Create_Walls_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror){
 	var object_queue = ds_queue_create();
 	for(var i = 0; i < array_length(pixel_array); i++)
 	{
@@ -63,15 +63,39 @@ function scr_Create_Walls_From_Pixel_Array(pixel_array, x_offset, y_offset){
 				}
 				
 				var grid_size = 16;
-				//Objects are placed within the pixel editor in 16 pixel increments, so offsets 
-				//are the initial block offset + 16 * their grid location
-				var object_x_offset = x_offset + grid_size * i;
-				var object_y_offset = y_offset + grid_size * j;
-				var new_object = instance_create_layer(object_x_offset, object_y_offset, "Instances", obj_ground_outer, 
-				{	//Set the objects x and y scale to the width and height we got above					
-					image_xscale : width,
-					image_yscale : height
-				});				
+				var new_object = 0;
+				if(!mirror)
+				{
+					//Objects are placed within the pixel editor in 16 pixel increments, so offsets 
+					//are the initial block offset + 16 * their grid location
+					var object_x_offset = x_offset + grid_size * i;
+					var object_y_offset = y_offset + grid_size * j;
+					new_object = instance_create_layer(object_x_offset, object_y_offset, "Instances", obj_ground_outer, 
+					{	//Set the objects x and y scale to the width and height we got above					
+						image_xscale : width,
+						image_yscale : height
+					});	
+				}
+				else
+				{
+					//For mirrored rooms, place them on the opposite side
+					//This is tricky for walls since we're dealing with image scaling
+					//First, find the 1x1 "mirrored" location.
+					var object_x_offset = x_offset + grid_size * (array_length(pixel_array) - i - 1);
+					//Since we placed the object in the mirrored location, but we'll stretch it normally,
+					//We need to move it over an amount dependent on the width of the wall
+					var new_x_offset = object_x_offset - grid_size * (width - 1);
+					
+					
+					var object_y_offset = y_offset + grid_size * j;
+					new_object = instance_create_layer(new_x_offset, object_y_offset, "Instances", obj_ground_outer, 
+					{	//Set the objects x and y scale to the width and height we got above					
+						image_xscale : width,
+						image_yscale : height
+					});	
+
+				}
+			
 				global.debug_wall_count++;
 				//show_debug_message("Created wall object number " + string(global.debug_wall_count) + " with width: " + string(width) + ", height: " + string(height) + "\n");
 				//Queue the object so we can return all the walls at the end of this script

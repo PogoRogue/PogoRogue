@@ -5,12 +5,12 @@
 /// @param spriteIndex
 /// @param x_offset
 /// @param y_offset
-function scr_Create_Room_From_Sprite(spriteIndex, sprite_sub_image, x_offset, y_offset){
+function scr_Create_Room_From_Sprite(spriteIndex, sprite_sub_image, x_offset, y_offset, mirror){
 	//Read the sprite into an array
 	var pixel_array = Read_Sprite_To_Array(spriteIndex, sprite_sub_image);
 	
 	//Create all objects corresponding to the pixel data with matching offsets
-	return Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset)	
+	return Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror)	
 }
 
 
@@ -48,7 +48,7 @@ function Read_Sprite_To_Array(spriteIndex, sprite_sub_image){
 	return pixel_data;
 }
 
-function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset)
+function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror)
 {
 	var object_queue = ds_queue_create();
 	for(var i = 0; i < array_length(pixel_array); i++)
@@ -56,19 +56,35 @@ function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset)
 		for(var j = 0; j <  array_length(pixel_array[0]); j++)
 		{
 			var RGB = pixel_array[i][j]
-			var grid_size = 16;
-			//Objects are placed within the pixel editor in 16 pixel increments, so offsets 
-			//are the initial block offset + 16 * their grid location
+			var grid_size = 16;	
+			
 			var object_x_offset = x_offset + grid_size * i;
-			var object_y_offset = y_offset + grid_size * j;
+				var object_y_offset = y_offset + grid_size * j;
+			
+			
+			if(!mirror)
+			{
+				//Objects are placed within the pixel editor in 16 pixel increments, so offsets 
+				//are the initial block offset + 16 * their grid location
+				var object_x_offset = x_offset + grid_size * i;
+				var object_y_offset = y_offset + grid_size * j;
+			}
+			else
+			{
+				//For mirrored rooms, place them on the opposite side
+				var object_x_offset = x_offset + grid_size * (array_length(pixel_array) - 1 - i);				
+				var object_y_offset = y_offset + grid_size * j;
+			}
+			
 			var new_object = Create_Instance_From_RGB(RGB, object_x_offset, object_y_offset)
+			
 			if(new_object != -1)
 			{
 			ds_queue_enqueue(object_queue, new_object);
 			}
 		}
 	}
-	var wall_queue = scr_Create_Walls_From_Pixel_Array(pixel_array, x_offset, y_offset)
+	scr_Create_Walls_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror)
 	return object_queue;
 }
 
