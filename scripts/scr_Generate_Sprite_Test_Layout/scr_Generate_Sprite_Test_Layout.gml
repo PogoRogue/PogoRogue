@@ -14,13 +14,13 @@ function scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_starting_room,
 	//Index 0: Starting room
 	//Index 1: Shop Room
 	//Index 2: Boss Room
-	//Index 3: Combat room, 3x3
-	//Index 4: Combat room, 2x2
+	//Index 3: Combat room, 2x2
+	//Index 4: Combat room, 3x3
 	var room_index = 0; //Keeps track of which room we're about to generate
 	
 	for (var rCount = 0; rCount < room_number; rCount++) 
 	{
-		//If we want to test a starting room, generate that first. Otherwise, just make a 3x3.	
+		//If we want to test a starting room, generate that first. Otherwise, just make a 2x2	
 		if(rCount == 0)
 		{//If we need a starting room, it goes here (stored in index 0 of prebuilt_rooms)
 			if(generate_starting_room)
@@ -42,7 +42,7 @@ function scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_starting_room,
 			{
 			room_index = 2;
 			}
-			else //Otherwise make a 2x2
+			else //Otherwise make a 3x3
 			{
 			room_index = 4;
 			}
@@ -123,7 +123,10 @@ function scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_starting_room,
 	
 	} //End of for loop
 	
-	Remove_Useless_Tiles(layout_grid);					
+	Remove_Useless_Tiles(layout_grid);		
+	
+	//Replace 1 block hallway chunks with 2 block chunks where possible
+	scr_Replace_Hallway_Chunks_Test(layout_grid);			
 
 	// Show the grid in the console
 	for (var i = grid_height; i >= 0; i--) {
