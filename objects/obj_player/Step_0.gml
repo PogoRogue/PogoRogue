@@ -53,6 +53,9 @@ if (room = room_shop) {
 	state = state_shop;
 }
 
+//get sprites
+scr_Get_Player_Sprites();
+
 //run state machine
 state();
 
