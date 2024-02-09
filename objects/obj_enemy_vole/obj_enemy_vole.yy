@@ -1,11 +1,12 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_worm",
+  "name": "obj_enemy_vole",
   "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -14,8 +15,8 @@
     "path": "folders/Objects/Enemy/mole worm.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy_turret",
-    "path": "objects/obj_enemy_turret/obj_enemy_turret.yy",
+    "name": "obj_enemy_generic",
+    "path": "objects/obj_enemy_generic/obj_enemy_generic.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -33,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_walking_explosion",
-    "path": "sprites/spr_enemy_walking_explosion/spr_enemy_walking_explosion.yy",
+    "name": "spr_enemy_vole_out_pipe",
+    "path": "sprites/spr_enemy_vole_out_pipe/spr_enemy_vole_out_pipe.yy",
   },
   "spriteMaskId": null,
   "visible": true,

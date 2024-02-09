@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_holes",
+  "name": "obj_enemy_whack_a_vole",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_holes",
-    "path": "sprites/spr_holes/spr_holes.yy",
+    "name": "spr_background_minigame",
+    "path": "sprites/spr_background_minigame/spr_background_minigame.yy",
   },
   "spriteMaskId": null,
   "visible": true,
