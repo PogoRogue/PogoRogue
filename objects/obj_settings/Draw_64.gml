@@ -202,6 +202,11 @@ if select = 4 { //bindings
 					draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[i-1][1]),(i = select_y-1 and bindings_x = 2),camera_get_view_width(view_camera[0])/2+98,option_1_y+(item_height*i)-(select_y_added*item_height));
 				}
 				
+				if (i = 15) {
+					//draw line separating gameplay buttons from menu buttons
+					draw_rectangle_color(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i)-(select_y_added*item_height)-16,camera_get_view_width(view_camera[0])/2+104,option_1_y+(item_height*i)-(select_y_added*item_height)-15,white,white,white,white,false);	
+				}
+				
 				if global.use_controller = false and i != 0 {
 					var subtract_rectangle_length = 32*(select_y_added = 0);
 					var white = make_color_rgb(242,240,229);
