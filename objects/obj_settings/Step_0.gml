@@ -29,7 +29,7 @@ if select_y = 0 { //top row, change between setting types
 		alarm[2] = alarm2_time;
 	}
 	//down
-	if select != 4 and key_down and select_y < select_y_max and selected_y = false {
+	if key_down and select_y < select_y_max and selected_y = false {
 		select_y += 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
@@ -195,6 +195,46 @@ if select = 3 { //video
 }
 #endregion
 
+#region //BINDINGS
+if select = 4 { //bindings
+	
+	select_y_max = menu_bindings.num_of_options;
+	
+	if select_y > 0 {
+		for(i = 0; i < menu_bindings.num_of_options; i++) {
+			if menu_bindings.options_array[i]._type = "doonpress" {
+				if i = select_y-1 and key_select {
+					menu_bindings.options_array[i].do_on_press();
+				}
+			}
+			//change slot (1st or 2nd binding)
+			if (i > 0) {
+				if key_left and bindings_x > 1 and selected_x = false {
+					bindings_x -= 1;
+					selected_x = true;
+					audio_play_sound(snd_menuNavigation,0,false);
+					alarm[2] = alarm2_time;
+				}
+				if key_right and bindings_x < 2 and selected_x = false {
+					bindings_x += 1;
+					selected_x = true;
+					audio_play_sound(snd_menuNavigation,0,false);
+					alarm[2] = alarm2_time;
+				}
+					
+			}
+		}
+		if select_y > 8 and select_y - select_y_added > 8 {
+			select_y_added += 1;
+		}else if select_y - select_y_added <= 0 {
+			select_y_added -= 1;
+		}else if select_y <= 8 {
+			//select_y_added = 0;
+		}
+	}
+}
+#endregion
+
 //end settings code
 if !key_left and !key_right {
 	selected_x = false;
@@ -212,6 +252,6 @@ if key_back {
 	if room != room_settings {
 		alarm[0] = 1;
 	}else {
-		room = room_menu;	
+		room = room_menu;
 	}
 }

@@ -67,6 +67,7 @@ function scr_Random_Item_Drops(){
 		with instance_create_depth(center_x,center_y,depth-1,obj_item_parentpickup) {
 			follow_player = false;
 			alarm[0] = 1;
+			image_index = 3;
 		}
 		num_of_coins = 0;
 		with obj_item_buff_heart {

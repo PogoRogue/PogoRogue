@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_buffitem_planetarybullets",
-    "path": "sprites/spr_buffitem_planetarybullets/spr_buffitem_planetarybullets.yy",
+    "name": "spr_buffitem_drilltipbullets",
+    "path": "sprites/spr_buffitem_drilltipbullets/spr_buffitem_drilltipbullets.yy",
   },
   "spriteMaskId": null,
   "visible": true,

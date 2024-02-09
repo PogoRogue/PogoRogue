@@ -19,6 +19,9 @@ if(is_dead) {
 		with obj_player {
 			if hp < max_hp {
 				hp += 8;
+				with obj_player_health {
+					heart_gain_num = other.hp;	
+				}
 			}
 		}
 	}

@@ -1,13 +1,13 @@
 function scr_In_Array(array,value) {
-	ii = 0;
+	jj = 0;
 	
-	for (i = 0; i < array_length(array); i++) {
-		if array[i] = value {
-			ii++;
+	for (j = 0; j < array_length(array); j++) {
+		if array[j] = value {
+			jj++;
 		}
 	}
 	
-	if ii = 0 {
+	if jj = 0 {
 		return false;
 	}else {
 		return true;
