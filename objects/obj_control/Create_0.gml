@@ -73,7 +73,8 @@ global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets,obj
 					obj_item_buff_blackfriday, obj_item_buff_triplethreat, obj_item_buff_flamingcoins,
 					obj_item_buff_combotime, obj_item_buff_sharpshooter, obj_item_buff_coinsup,
 					obj_item_buff_sharptip, obj_item_buff_experimentation, obj_item_buff_aerialassassin,
-					obj_item_buff_supershield, obj_item_buff_revive, obj_item_buff_drilltipbullets, obj_item_buff_dualwielder];
+					obj_item_buff_supershield, obj_item_buff_revive, obj_item_buff_drilltipbullets, 
+					obj_item_buff_dualwielder];
 					
 global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_item_weapon_shotgun, 
 					obj_item_weapon_bubble, obj_item_weapon_burstfire, obj_item_weapon_grenade, 
@@ -87,3 +88,9 @@ global.all_pickups = [obj_item_pickup_chargejump, obj_item_pickup_groundpound, o
 
 
 surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);
+
+if room = room_gameplay_video {
+	//tiling layer
+	global.ground_layer = layer_create(-1);
+	global.tilemap_ground = layer_tilemap_create(global.ground_layer,0,0,tl_ground,20000,20000);	
+}
