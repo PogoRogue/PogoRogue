@@ -12,7 +12,11 @@ global.player_spawn_x = 0;
 global.player_spawn_y = 0;
 global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
-global.num_of_coins = 2000;
+if room = room_gameplay_video {
+	global.num_of_coins = 2000;
+}else {
+	global.num_of_coins = 0;	
+}
 global.mute = false;
 global.shop_index = 0;
 global.num_of_ground_objects = 0;
@@ -24,6 +28,10 @@ if !instance_exists(obj_controls_controller) {
 if !instance_exists(obj_controls_keyboard) {
 	instance_create_depth(x,y,depth,obj_controls_keyboard);
 }
+if !instance_exists(obj_runstats) {
+	instance_create_depth(x,y,depth,obj_runstats);
+}
+
 
 //music test
 if !audio_is_playing(snd_music) {

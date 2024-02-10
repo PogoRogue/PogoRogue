@@ -8,7 +8,7 @@ function scr_Reload_On_Kill(){
 					gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
 					instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 					audio_play_sound(snd_reload,0,false);
-				}else if gun = sniper_gun {
+				}else if gun = sniper_gun and gun.current_bullets < gun.bullets_per_bounce+obj_player.max_ammo_buff+1 {
 					gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff+1; //reload bullets	
 					instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 					audio_play_sound(snd_reload,0,false);

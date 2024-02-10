@@ -243,6 +243,7 @@
     {"name":"spr_button","order":1,"path":"sprites/spr_button/spr_button.yy",},
     {"name":"snd_slime","order":2,"path":"sounds/snd_slime/snd_slime.yy",},
     {"name":"scr_Gamepad_Get_Action","order":7,"path":"scripts/scr_Gamepad_Get_Action/scr_Gamepad_Get_Action.yy",},
+    {"name":"obj_mastercontroller","order":24,"path":"objects/obj_mastercontroller/obj_mastercontroller.yy",},
     {"name":"spr_mouse_left","order":29,"path":"sprites/spr_mouse_left/spr_mouse_left.yy",},
     {"name":"spr_player_zekai_charging_hurt","order":12,"path":"sprites/spr_player_zekai_charging_hurt/spr_player_zekai_charging_hurt.yy",},
     {"name":"spr_player_zekai_hurt1","order":1,"path":"sprites/spr_player_zekai_hurt1/spr_player_zekai_hurt1.yy",},
