@@ -29,21 +29,23 @@ if (gun_name = "Laser Gun" ) {
 			current_max = 0;
 		}
 		
-		//reset/preserve momentum
-		if (gun.reset_momentum and slower_than_max) {
-			speed = 0;
-		}else if (gun.reset_momentum) {
-			speed = current_max + (vsp_basicjump*gun.momentum_added);	
-		}
+		if (gun = laser_gun) {
+			//reset/preserve momentum
+			if (gun.reset_momentum and slower_than_max) {
+				speed = 0;
+			}else if (gun.reset_momentum) {
+				speed = current_max + (vsp_basicjump*gun.momentum_added);	
+			}
 		
-		//add momentum
-		if (other.laser_boost) {
-			motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
-		}
+			//add momentum
+			if (other.laser_boost) {
+				motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
+			}
 		
-		//set max speed for auto weapons
-		if (speed > gun.max_speed) { //player cant exceed certain speed if full_auto = true
-			speed = max(gun.max_speed, current_max);
+			//set max speed for auto weapons
+			if (speed > gun.max_speed) { //player cant exceed certain speed if full_auto = true
+				speed = max(gun.max_speed, current_max);
+			}
 		}
 		
 		//decrease ammo
@@ -61,7 +63,7 @@ if (gun_name = "Laser Gun" ) {
 		}
 		
 		//retract laser if not firing
-		if !(key_fire_projectile) {
+		if !(key_fire_projectile) or gun != laser_gun {
 			scr_Retract_Laser();
 			other.laser_boost = false;
 		}
@@ -79,7 +81,6 @@ if (gun_name = "Laser Gun" ) {
 		}
 	}
 }
-
 if (gun_name = "Sniper Rifle" ) {
 	
 	image_angle = obj_player.image_angle-90;
@@ -123,6 +124,7 @@ if (gun_name = "Sniper Rifle" ) {
 			motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
 			scr_Retract_Laser();
 			other.laser_boost = false;
+			gun.current_bullets -= 1;
 			
 			with obj_sniper {
 				cut_sound = false;	
@@ -140,7 +142,7 @@ if (gun_name = "Sniper Rifle" ) {
 			other.sniped = true;
 		}
 		
-		if (state != state_free) {
+		if (state != state_free or gun != sniper_gun) {
 			scr_Retract_Laser();
 			other.laser_boost = false;
 		}
@@ -148,7 +150,7 @@ if (gun_name = "Sniper Rifle" ) {
 	
 		
 	//change sprite after animation complete
-	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
+	if (floor(image_index) = sprite_get_number(sprite_index)-1 and laser_boost = false) {
 		sprite_index = full_sprite;
 		mask_index = sprite_index;
 		laser_boost = true;

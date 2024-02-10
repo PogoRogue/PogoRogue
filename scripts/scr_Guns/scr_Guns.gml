@@ -105,7 +105,7 @@ function scr_Guns(){
 		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
-		max_added_bullets: 3,
+		max_added_bullets: 2,
 		max_speed: -vsp_basicjump          
 	};
 
@@ -303,7 +303,29 @@ function scr_Guns(){
 		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
-		max_added_bullets: 0,
+		max_added_bullets: 2,
 		max_speed: 9
 	};	
+	
+	slime_gun = {
+		_name: "Slime Blaster",  
+		tagline: "Unleash massive blasts of slime onto enemies below.",
+		sprite: spr_gun_slime,  
+		ammo: [slime_bullet],
+		inaccuracy: 15,       
+		kick: 2,             
+		sound: snd_slime,
+		spread_number: 30,     
+		spread_angle: 5,     
+		full_auto: false,     
+		burst_number: 1,    
+		burst_delay: 0,     
+		momentum_added: 1.15, 
+		reset_momentum: true, 
+		bullets_per_bounce: 3 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 3,
+		current_bullets: 3 + obj_player.max_ammo_buff,  
+		max_added_bullets: 3,
+		max_speed: -vsp_basicjump          
+	};
 }

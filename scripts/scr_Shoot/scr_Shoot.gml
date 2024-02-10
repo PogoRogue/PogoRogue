@@ -8,6 +8,11 @@ function scr_Shoot(){
 		//calculate distaence from center to tip of gun
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
 		
+		//sound
+		if !instance_exists(obj_sniper) {
+			audio_play_sound(gun.sound,0,false);
+		}
+		
 		for (var i = 0; i < gun.spread_number; i++;) {
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
 			var destroyOnImpact;
@@ -15,10 +20,6 @@ function scr_Shoot(){
 				destroyOnImpact = false;
 			}else{
 				destroyOnImpact = gun.ammo[bullet_index].destroy_on_impact
-			}
-			
-			if !instance_exists(obj_sniper) {
-				audio_play_sound(gun.sound,0,false);
 			}
 			
 			instance_create_depth(x,y,depth-1,obj_projectile,{
@@ -46,7 +47,7 @@ function scr_Shoot(){
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 {
+			if gun.spread_number = 1 and gun != sniper_gun {
 				gun.current_bullets -= 1;
 			}
 			

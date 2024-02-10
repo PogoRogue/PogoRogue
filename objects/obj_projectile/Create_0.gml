@@ -114,5 +114,12 @@ if (gun_name = "Sniper Rifle") {
 		}
 	
 	}
+}
 
+//slime blaster
+if (gun_name = "Slime Blaster") {
+	spd += irandom_range(-4,0); //random speed for bubbles
+	hspd = lengthdir_x(spd,angle);
+	vspd = lengthdir_y(spd,angle);
+	image_index = irandom_range(0,sprite_get_number(sprite_index)-1);
 }
