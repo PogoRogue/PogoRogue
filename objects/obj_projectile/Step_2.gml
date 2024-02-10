@@ -1,6 +1,6 @@
 /// @description laser
 //too many unique properties of the laser compared to other projectiles so I had to make a separate event
-if (gun_name = "Laser Gun") {
+if (gun_name = "Laser Gun" ) {
 	
 	image_angle = obj_player.image_angle-90;
 	x = obj_player.x +laser_x;
@@ -77,5 +77,80 @@ if (gun_name = "Laser Gun") {
 			scr_Retract_Laser();
 			other.laser_boost = false;
 		}
+	}
+}
+
+if (gun_name = "Sniper Rifle" ) {
+	
+	image_angle = obj_player.image_angle-90;
+	x = obj_player.x +laser_x;
+	y = obj_player.y +laser_y;
+	
+	//retract laser
+	if (floor(image_index) = 0 and image_speed = -1) {
+		instance_destroy();
+		with obj_sniper {
+			instance_destroy();
+		}
+	}
+	
+	with obj_player {
+		
+		//check if speed slower or faster than max speed to preserve momentum
+		if (abs(speed) > gun.max_speed and vspeed < 0) {
+			slower_than_max = false;
+			current_max = speed;
+		}else {
+			slower_than_max = true;	
+			current_max = 0;
+		}
+		
+		//reset/preserve momentum
+		if (gun.reset_momentum and slower_than_max) {
+			//speed = 0;
+		}else if (gun.reset_momentum) {
+			//speed = current_max + (vsp_basicjump*gun.momentum_added);	
+		}
+		
+		
+		//add momentum
+		if (other.laser_boost) {
+			var controller_vibration = global.controller_vibration/100;
+			scr_Screen_Shake(6,14,true);
+			rotation_speed = other.rotation_speed * 0.75;
+			rotation_delay = rotation_speed / 7;
+			speed = 0;
+			motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
+			scr_Retract_Laser();
+			other.laser_boost = false;
+			
+			with obj_sniper {
+				cut_sound = false;	
+			}
+		}
+		
+		//set max speed for auto weapons
+		if (speed > gun.max_speed) { //player cant exceed certain speed if full_auto = true
+			speed = max(gun.max_speed, current_max);
+		}
+		
+		//decrease ammo
+		if (gun.spread_number = 1 and other.laser_boost and other.sniped = false) {
+			//gun.current_bullets -= 1;
+			other.sniped = true;
+		}
+		
+		if (state != state_free) {
+			scr_Retract_Laser();
+			other.laser_boost = false;
+		}
+	}
+	
+		
+	//change sprite after animation complete
+	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
+		sprite_index = full_sprite;
+		mask_index = sprite_index;
+		laser_boost = true;
 	}
 }

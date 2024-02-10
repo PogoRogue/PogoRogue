@@ -237,7 +237,7 @@ function scr_Guns(){
 		bullets_per_bounce: 1 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 1,
 		current_bullets: 1 + obj_player.max_ammo_buff,  
-		max_added_bullets: 1,
+		max_added_bullets: 0,
 		max_speed: 8
 	};
 	
@@ -284,4 +284,26 @@ function scr_Guns(){
 		max_added_bullets: 4,
 		max_speed: -vsp_basicjump          
 	};
+	
+	sniper_gun = {
+		_name: "Sniper Rifle",  
+		tagline: "Powerful, long-range hitscan blast.",
+		sprite: spr_gun_sniper,
+		ammo: [sniper_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_sniper,
+		spread_number: 1,    
+		spread_angle: 0,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1.25, 
+		reset_momentum: true, 
+		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 2,
+		current_bullets: 2 + obj_player.max_ammo_buff,  
+		max_added_bullets: 0,
+		max_speed: 9
+	};	
 }

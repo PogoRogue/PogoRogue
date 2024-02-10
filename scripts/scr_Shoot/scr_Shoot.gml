@@ -17,6 +17,10 @@ function scr_Shoot(){
 				destroyOnImpact = gun.ammo[bullet_index].destroy_on_impact
 			}
 			
+			if !instance_exists(obj_sniper) {
+				audio_play_sound(gun.sound,0,false);
+			}
+			
 			instance_create_depth(x,y,depth-1,obj_projectile,{
 				image_angle: angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90,
 				sprite_index: gun.ammo[bullet_index].sprite,
@@ -31,7 +35,8 @@ function scr_Shoot(){
 				bounce_amount: gun.ammo[bullet_index].bounce_amount,
 				damage: gun.ammo[bullet_index].damage * (1 + ((global.sharpshooter = true and gun.current_bullets = gun.bullets_per_bounce) * 0.5)),
 			});
-			audio_play_sound(gun.sound,0,false);
+			
+			
 			
 			//screen shake
 			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames,true);
@@ -59,19 +64,21 @@ function scr_Shoot(){
 			current_max = 0;
 		}
 		
-		//reset/preserve momentum
-		if (gun.reset_momentum and slower_than_max) {
-			speed = 0;
-		}else if (gun.reset_momentum) {
-			speed = current_max + (vsp_basicjump*gun.momentum_added);	
-		}
+		if gun != sniper_gun {
+			//reset/preserve momentum
+			if (gun.reset_momentum and slower_than_max and gun != sniper_gun) {
+				speed = 0;
+			}else if (gun.reset_momentum and gun != sniper_gun) {
+				speed = current_max + (vsp_basicjump*gun.momentum_added);	
+			}
 		
-		//add momentum
-		motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
+			//add momentum
+			motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
 		
-		//set max speed for auto weapons
-		if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
-			speed = max(gun.max_speed, current_max);
+			//set max speed for auto weapons
+			if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
+				speed = max(gun.max_speed, current_max);
+			}
 		}
 		
 		//iterate through ammo types

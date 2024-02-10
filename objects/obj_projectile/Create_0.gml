@@ -72,6 +72,7 @@ if (gun_name = "Missile Launcher") {
 	}
 }
 
+//star sucker
 if (gun_name = "Star Sucker") {
 	x = obj_player.x + lengthdir_x(224,image_angle);
 	y = obj_player.y + lengthdir_y(224,image_angle);
@@ -79,4 +80,39 @@ if (gun_name = "Star Sucker") {
 	init_damage = damage;
 	colliding_with_enemy = false;
 	depth = obj_player.depth + 1;
+}
+
+//sniper rifle
+if (gun_name = "Sniper Rifle") {
+	laser_x = obj_player.x - x;
+	laser_y = obj_player.y - y;
+	full_sprite = spr_projectile_sniper_start_held;
+	init_sprite = sprite_index;
+	laser_boost = false; //only apply momentum if this is true
+	mask_index = spr_nothing;
+	image_speed = 1;
+	rotation_speed = obj_player.rotation_speed;
+	sniped = false;
+	sound = true;
+	
+	if instance_exists(obj_sniper) {
+		instance_destroy();	
+	}else {
+	
+		//create rest of laser
+		for (i = 2; i < 48; i++) {
+			instance_create_depth(x+lengthdir_x(32*i,image_angle+180),y+lengthdir_y(32*i,image_angle+180),depth,obj_sniper, {
+				image_angle: image_angle,
+				damage: damage,
+				parent_obj: other,
+				i: i,
+				destroy_on_impact: destroy_on_impact,
+				full_sprite: spr_projectile_sniper_middle_held,
+				mask_index: spr_nothing,
+				rotation_speed: rotation_speed
+			});
+		}
+	
+	}
+
 }
