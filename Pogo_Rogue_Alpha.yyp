@@ -137,7 +137,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -274,6 +274,7 @@
     {"id":{"name":"spr_enemy_mole_attack","path":"sprites/spr_enemy_mole_attack/spr_enemy_mole_attack.yy",},},
     {"id":{"name":"obj_item_buff_luck","path":"objects/obj_item_buff_luck/obj_item_buff_luck.yy",},},
     {"id":{"name":"obj_shop_door","path":"objects/obj_shop_door/obj_shop_door.yy",},},
+    {"id":{"name":"obj_changeanmition","path":"objects/obj_changeanmition/obj_changeanmition.yy",},},
     {"id":{"name":"spr_B1_Explode_Move","path":"sprites/spr_B1_Explode_Move/spr_B1_Explode_Move.yy",},},
     {"id":{"name":"scr_Linebreak","path":"scripts/scr_Linebreak/scr_Linebreak.yy",},},
     {"id":{"name":"obj_enemy_flying","path":"objects/obj_enemy_flying/obj_enemy_flying.yy",},},
@@ -431,6 +432,7 @@
     {"id":{"name":"scr_Buffer_Get_Pixel","path":"scripts/scr_Buffer_Get_Pixel/scr_Buffer_Get_Pixel.yy",},},
     {"id":{"name":"obj_control_armcannon","path":"objects/obj_control_armcannon/obj_control_armcannon.yy",},},
     {"id":{"name":"spr_button_yellow","path":"sprites/spr_button_yellow/spr_button_yellow.yy",},},
+    {"id":{"name":"obj_enemy_jackinthebox","path":"objects/obj_enemy_jackinthebox/obj_enemy_jackinthebox.yy",},},
     {"id":{"name":"obj_item_pickup_groundpound","path":"objects/obj_item_pickup_groundpound/obj_item_pickup_groundpound.yy",},},
     {"id":{"name":"B1_Tar_Drop","path":"sprites/B1_Tar_Drop/B1_Tar_Drop.yy",},},
     {"id":{"name":"spr_pause_areyousure_resetbindings","path":"sprites/spr_pause_areyousure_resetbindings/spr_pause_areyousure_resetbindings.yy",},},
@@ -683,6 +685,7 @@
     {"id":{"name":"spr_projectile_explosion","path":"sprites/spr_projectile_explosion/spr_projectile_explosion.yy",},},
     {"id":{"name":"obj_weaponheight4","path":"objects/obj_weaponheight4/obj_weaponheight4.yy",},},
     {"id":{"name":"snd_bounce","path":"sounds/snd_bounce/snd_bounce.yy",},},
+    {"id":{"name":"obj_fakechest","path":"objects/obj_fakechest/obj_fakechest.yy",},},
     {"id":{"name":"spr_2x2_Combat_Talen_store","path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},},
     {"id":{"name":"obj_controls_keyboard","path":"objects/obj_controls_keyboard/obj_controls_keyboard.yy",},},
     {"id":{"name":"spr_treasurechest2","path":"sprites/spr_treasurechest2/spr_treasurechest2.yy",},},
