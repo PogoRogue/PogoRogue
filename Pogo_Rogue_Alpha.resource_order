@@ -10,7 +10,6 @@
     {"name":"Projectile","order":1,"path":"folders/Objects/Enemy/Hitbox/Projectile.yy",},
     {"name":"Mini Bosses","order":21,"path":"folders/Objects/Enemy/Mini Bosses.yy",},
     {"name":"mole worm","order":5,"path":"folders/Objects/Enemy/mole worm.yy",},
-    {"name":"sprite_temp","order":1,"path":"folders/Objects/Enemy/mole worm/sprite_temp.yy",},
     {"name":"Ready Enemies","order":22,"path":"folders/Objects/Enemy/Ready Enemies.yy",},
     {"name":"Particle Systems","order":5,"path":"folders/Particle Systems.yy",},
     {"name":"Paths","order":6,"path":"folders/Paths.yy",},
@@ -60,7 +59,6 @@
   ],
   "ResourceOrderSettings": [
     {"name":"scr_Replace_Hallway_Chunks","order":15,"path":"scripts/scr_Replace_Hallway_Chunks/scr_Replace_Hallway_Chunks.yy",},
-    {"name":"obj_worm","order":2,"path":"objects/obj_worm/obj_worm.yy",},
     {"name":"scr_Buffer_Get_Pixel_A","order":1,"path":"scripts/scr_Buffer_Get_Pixel_A/scr_Buffer_Get_Pixel_A.yy",},
     {"name":"spr_enemy_generic","order":34,"path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},
     {"name":"room_gameplay_video","order":1,"path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
@@ -90,7 +88,6 @@
     {"name":"scr_Choose_Block_To_Generate","order":10,"path":"scripts/scr_Choose_Block_To_Generate/scr_Choose_Block_To_Generate.yy",},
     {"name":"spr_enemy_stomp_only","order":32,"path":"sprites/spr_enemy_stomp_only/spr_enemy_stomp_only.yy",},
     {"name":"spr_bumper_l","order":12,"path":"sprites/spr_bumper_l/spr_bumper_l.yy",},
-    {"name":"spr_holes","order":2,"path":"sprites/spr_holes/spr_holes.yy",},
     {"name":"spr_player_zekai_charging_hurt3","order":9,"path":"sprites/spr_player_zekai_charging_hurt3/spr_player_zekai_charging_hurt3.yy",},
     {"name":"spr_arrow_down","order":24,"path":"sprites/spr_arrow_down/spr_arrow_down.yy",},
     {"name":"spr_enemy_snail_slime","order":38,"path":"sprites/spr_enemy_snail_slime/spr_enemy_snail_slime.yy",},
