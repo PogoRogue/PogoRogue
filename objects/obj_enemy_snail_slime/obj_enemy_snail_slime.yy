@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_enemy_snail_tar",
+  "name": "obj_enemy_snail_slime",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "snail",
-    "path": "folders/Objects/Enemy/snail.yy",
+    "name": "Enemy",
+    "path": "folders/Objects/Enemy.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_tar_test1",
-    "path": "sprites/spr_tar_test1/spr_tar_test1.yy",
+    "name": "spr_enemy_snail_slime",
+    "path": "sprites/spr_enemy_snail_slime/spr_enemy_snail_slime.yy",
   },
   "spriteMaskId": null,
   "visible": true,

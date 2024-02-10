@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "snail",
-    "path": "folders/Objects/Enemy/snail.yy",
+    "name": "Enemy",
+    "path": "folders/Objects/Enemy.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy_generic",
@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_WalkEnemy_Idle362",
-    "path": "sprites/spr_WalkEnemy_Idle362/spr_WalkEnemy_Idle362.yy",
+    "name": "spr_enemy_snail",
+    "path": "sprites/spr_enemy_snail/spr_enemy_snail.yy",
   },
   "spriteMaskId": null,
   "visible": true,
