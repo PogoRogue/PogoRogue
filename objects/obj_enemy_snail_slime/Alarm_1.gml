@@ -1,3 +1,3 @@
-/// @description Destroy
+/// @description Despawn
 
 instance_destroy(self);

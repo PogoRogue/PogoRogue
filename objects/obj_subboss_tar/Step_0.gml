@@ -13,11 +13,11 @@ if(!place_meeting(x, y + 1, obj_ground_parent) || !collision_point(x, y + 20, ob
 }
 
 if(place_meeting(x, y, obj_player)) {
-	obj_player.vsp_basicjump = -3;
+	obj_player.vsp_basicjump = diminished_player_jump;
 	is_touching_player = true;
 	wobble = 0.4;
 } else if(is_touching_player){
-	obj_player.vsp_basicjump = -6.6;
+	obj_player.vsp_basicjump = initial_player_jump;
 	is_touching_player = false;
 }
 

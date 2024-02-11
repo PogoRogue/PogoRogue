@@ -6,16 +6,18 @@ dir_central = 0;
 
 //amount of projectile
 amount = 3;
+cur_amt = 0;
+cur_angle = 0;
 
 //amount of repeats and delay
 repeats = 2;
-cur_rep=0;
-delay = room_speed/4;
+cur_rep = 0;
+delay = room_speed / 4;
 
 //Spread of the projectile, and if they are random or not
 spread = 60;
-rand=false;
+rand = false;
 
-if(cur_rep<repeats){
-	alarm_set(0,1);
+if(cur_rep < repeats) {
+	alarm_set(0, 1);
 }
