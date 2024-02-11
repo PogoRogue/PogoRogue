@@ -115,6 +115,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Zehao Combatroom 2x2 *6","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao Combatroom 2x2 *6.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"snd_ArmorHeart.mp3","CopyToMask":-1,"filePath":"datafiles",},
@@ -136,7 +137,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -304,6 +305,7 @@
     {"id":{"name":"spr_player_hurt1","path":"sprites/spr_player_hurt1/spr_player_hurt1.yy",},},
     {"id":{"name":"obj_electric_floor","path":"objects/obj_electric_floor/obj_electric_floor.yy",},},
     {"id":{"name":"spr_item_slot_name","path":"sprites/spr_item_slot_name/spr_item_slot_name.yy",},},
+    {"id":{"name":"spr_2x2_Combat_Area2_Zehao","path":"sprites/spr_2x2_Combat_Area2_Zehao/spr_2x2_Combat_Area2_Zehao.yy",},},
     {"id":{"name":"snd_collision","path":"sounds/snd_collision/snd_collision.yy",},},
     {"id":{"name":"spr_angled_platform_right_mask","path":"sprites/spr_angled_platform_right_mask/spr_angled_platform_right_mask.yy",},},
     {"id":{"name":"obj_item_buff_revive","path":"objects/obj_item_buff_revive/obj_item_buff_revive.yy",},},
@@ -994,10 +996,10 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
+    {"roomId":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
     {"roomId":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
     {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
-    {"roomId":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
     {"roomId":{"name":"room_boss_1","path":"rooms/room_boss_1/room_boss_1.yy",},},
     {"roomId":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},
     {"roomId":{"name":"room_boss_1","path":"rooms/room_boss_1/room_boss_1.yy",},},
