@@ -515,7 +515,7 @@ bullet_index = 0; //current bullet
 //EQUIP WEAPONS
 num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2 to start, but include functionality of 3 for "triple threat" buff
 weapons_equipped = num_of_weapons;
-all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun]; //all guns
+all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun]; //all guns
 
 if (random_weapon = true) { //choose random weapons
 	randomize();

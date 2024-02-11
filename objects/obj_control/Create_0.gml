@@ -12,7 +12,11 @@ global.player_spawn_x = 0;
 global.player_spawn_y = 0;
 global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
-global.num_of_coins = 2000;
+if room = room_gameplay_video {
+	global.num_of_coins = 2000;
+}else {
+	global.num_of_coins = 0;	
+}
 global.mute = false;
 global.shop_index = 0;
 global.num_of_ground_objects = 0;
@@ -24,6 +28,10 @@ if !instance_exists(obj_controls_controller) {
 if !instance_exists(obj_controls_keyboard) {
 	instance_create_depth(x,y,depth,obj_controls_keyboard);
 }
+if !instance_exists(obj_runstats) {
+	instance_create_depth(x,y,depth,obj_runstats);
+}
+
 
 //music test
 if !audio_is_playing(snd_music) {
@@ -79,7 +87,8 @@ global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets,obj
 global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_item_weapon_shotgun, 
 					obj_item_weapon_bubble, obj_item_weapon_burstfire, obj_item_weapon_grenade, 
 					obj_item_weapon_laser, obj_item_weapon_bouncyball, obj_item_weapon_missile,
-					obj_item_weapon_boomerang, obj_item_weapon_starsucker];
+					obj_item_weapon_boomerang, obj_item_weapon_starsucker, obj_item_weapon_sniper,
+					obj_item_weapon_slime];
 					
 global.all_pickups = [obj_item_pickup_chargejump, obj_item_pickup_groundpound, obj_item_pickup_hatgun, 
 					obj_item_pickup_shieldbubble, obj_item_pickup_firedash, obj_item_pickup_jetpack,
