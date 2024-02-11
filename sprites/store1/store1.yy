@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_3x3_Combat_Test",
+  "name": "store1",
   "bbox_bottom": 95,
-  "bbox_left": 32,
+  "bbox_left": 0,
   "bbox_right": 95,
-  "bbox_top": 32,
+  "bbox_top": 2,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a63d38b7-5eef-47d2-955e-84a090acb205",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5b0a997c-a5ec-4d36-a3b3-4d5d75e2eeeb",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -25,14 +25,14 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "CombatRooms",
-    "path": "folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/CombatRooms.yy",
+    "name": "tempstore",
+    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther/ZehaoChen roomstore/tempstore.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_3x3_Combat_Test",
+    "name": "store1",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a63d38b7-5eef-47d2-955e-84a090acb205","path":"sprites/spr_3x3_Combat_Test/spr_3x3_Combat_Test.yy",},},},"Disabled":false,"id":"28a3c15c-c4cb-490e-afc5-97f6a480084d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5b0a997c-a5ec-4d36-a3b3-4d5d75e2eeeb","path":"sprites/store1/store1.yy",},},},"Disabled":false,"id":"75e2205b-c184-4e02-916d-49e4bdc726f5","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

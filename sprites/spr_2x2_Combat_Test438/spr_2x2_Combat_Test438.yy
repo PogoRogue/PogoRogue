@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_3x3_Combat_Test",
-  "bbox_bottom": 95,
-  "bbox_left": 32,
-  "bbox_right": 95,
-  "bbox_top": 32,
+  "name": "spr_2x2_Combat_Test438",
+  "bbox_bottom": 63,
+  "bbox_left": 0,
+  "bbox_right": 63,
+  "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,11 +13,11 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a63d38b7-5eef-47d2-955e-84a090acb205",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1bc7fba5-7909-4791-a945-645711dc7df6",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 96,
+  "height": 64,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ce2571ff-41d7-4f17-a8d5-51ed81b1695e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
@@ -25,14 +25,14 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "CombatRooms",
-    "path": "folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/CombatRooms.yy",
+    "name": "tempstore",
+    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther/ZehaoChen roomstore/tempstore.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_3x3_Combat_Test",
+    "name": "spr_2x2_Combat_Test",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a63d38b7-5eef-47d2-955e-84a090acb205","path":"sprites/spr_3x3_Combat_Test/spr_3x3_Combat_Test.yy",},},},"Disabled":false,"id":"28a3c15c-c4cb-490e-afc5-97f6a480084d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1bc7fba5-7909-4791-a945-645711dc7df6","path":"sprites/spr_2x2_Combat_Test438/spr_2x2_Combat_Test438.yy",},},},"Disabled":false,"id":"2c9dc240-f042-409d-859e-e1a14d6c3c00","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 96,
+  "width": 64,
 }
