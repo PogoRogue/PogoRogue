@@ -33,5 +33,12 @@ if drawn_tiles = false and distance_to_object(obj_player) < 800 and (instance_ex
 			scr_Draw_Tiles(bbox_right-16, y + yy*16,16,tl_ground,obj_ground_outer);
 			tilemap_set_at_pixel(global.tilemap_ground, tile_frame, bbox_right-16, y + yy*16*sign(image_yscale));
 		}
+		
+		for (xx = 1; xx < abs(image_xscale-1); xx++) {
+			for (yy = 1; yy < abs(image_yscale-1); yy++) {
+				scr_Draw_Tiles(x + xx*16, y + yy*16,16,tl_ground,obj_ground_outer);
+				tilemap_set_at_pixel(global.tilemap_ground, tile_frame, x + xx*16*sign(image_xscale), y + yy*16*sign(image_yscale));
+			}	
+		}
 	}
 }

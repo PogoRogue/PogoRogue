@@ -8,6 +8,11 @@ function scr_Shoot(){
 		//calculate distaence from center to tip of gun
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
 		
+		//sound
+		if !instance_exists(obj_sniper) {
+			audio_play_sound(gun.sound,0,false);
+		}
+		
 		for (var i = 0; i < gun.spread_number; i++;) {
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
 			var destroyOnImpact;
@@ -31,7 +36,8 @@ function scr_Shoot(){
 				bounce_amount: gun.ammo[bullet_index].bounce_amount,
 				damage: gun.ammo[bullet_index].damage * (1 + ((global.sharpshooter = true and gun.current_bullets = gun.bullets_per_bounce) * 0.5)),
 			});
-			audio_play_sound(gun.sound,0,false);
+			
+			
 			
 			//screen shake
 			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames,true);

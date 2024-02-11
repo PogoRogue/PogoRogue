@@ -1,3 +1,3 @@
 /// @description Dont draw
 
-draw_self()
+//draw_self()

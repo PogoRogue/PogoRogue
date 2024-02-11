@@ -120,7 +120,15 @@ function scr_Convert_Layout_To_Rooms(layout_grid){
 						{
 							var sub_image_num = sprite_get_number(block_to_generate);
 							var sub_image_to_make = irandom_range(0,sub_image_num - 1);
-							scr_Create_Room_From_Sprite(block_to_generate, sub_image_to_make, x_offset, y_offset);
+							
+							//Need to decide if the room we're making should be mirrored.
+							var mirror = false;
+							if(string_count("f", ds_grid_get(layout_grid, i, j)) > 0) //rooms labeled with an f are mirrored
+							{
+								mirror = true;
+							}
+							
+							scr_Create_Room_From_Sprite(block_to_generate, sub_image_to_make, x_offset, y_offset, mirror);
 						}
 					}	
 				}
