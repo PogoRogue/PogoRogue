@@ -136,7 +136,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -580,6 +580,7 @@
     {"id":{"name":"obj_spike","path":"objects/obj_spike/obj_spike.yy",},},
     {"id":{"name":"obj_explode_projectile_r","path":"objects/obj_explode_projectile_r/obj_explode_projectile_r.yy",},},
     {"id":{"name":"scr_Reset_Save_Data","path":"scripts/scr_Reset_Save_Data/scr_Reset_Save_Data.yy",},},
+    {"id":{"name":"obj_slime_pattern","path":"objects/obj_slime_pattern/obj_slime_pattern.yy",},},
     {"id":{"name":"obj_shieldbubble","path":"objects/obj_shieldbubble/obj_shieldbubble.yy",},},
     {"id":{"name":"obj_env_air_effect","path":"objects/obj_env_air_effect/obj_env_air_effect.yy",},},
     {"id":{"name":"obj_arrowL","path":"objects/obj_arrowL/obj_arrowL.yy",},},
