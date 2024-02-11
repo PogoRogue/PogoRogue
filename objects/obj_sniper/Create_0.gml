@@ -9,3 +9,5 @@ sniped = false;
 laser_boost = false;
 angle = obj_player.image_angle-90;
 cut_sound = true;
+image_index = sprite_get_number(sprite_index)-2;
+image_angle = obj_player.image_angle-90;

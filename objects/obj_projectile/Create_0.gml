@@ -91,6 +91,7 @@ if (gun_name = "Sniper Rifle") {
 	laser_boost = false; //only apply momentum if this is true
 	mask_index = spr_nothing;
 	image_speed = 1;
+	image_index = sprite_get_number(sprite_index)-2;
 	rotation_speed = obj_player.rotation_speed;
 	sniped = false;
 	sound = true;
@@ -101,7 +102,7 @@ if (gun_name = "Sniper Rifle") {
 	
 		//create rest of laser
 		for (i = 2; i < 48; i++) {
-			instance_create_depth(x+lengthdir_x(32*i,image_angle+180),y+lengthdir_y(32*i,image_angle+180),depth,obj_sniper, {
+			instance_create_depth(x+lengthdir_x(32*i,image_angle),y+lengthdir_y(32*i,image_angle),depth,obj_sniper, {
 				image_angle: image_angle,
 				damage: damage,
 				parent_obj: other,
@@ -112,8 +113,8 @@ if (gun_name = "Sniper Rifle") {
 				rotation_speed: rotation_speed
 			});
 		}
-	
 	}
+	//image_angle = obj_player.image_angle-90;
 }
 
 //slime blaster

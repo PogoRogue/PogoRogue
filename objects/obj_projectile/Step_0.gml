@@ -57,9 +57,8 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0) {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 }
-
 //right
-if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0) {
+if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0) { 
 	while !place_meeting(x+sign(hspd),y,obj_ground) {
 		x += sign(hspd);
 	}
@@ -88,11 +87,8 @@ if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0) {
 	}else {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
-}
-
-//top
-if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0)
-or (place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and num_of_bounces > 0) {
+}else if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0)
+or (place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and num_of_bounces > 0) { //top
 	while !place_meeting(x,y+sign(vspd),obj_ground) and !place_meeting(x,y+sign(vspd),obj_ground_oneway) {
 		y += sign(vspd);
 	}

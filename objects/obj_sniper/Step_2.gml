@@ -1,5 +1,5 @@
 /// @description follow player
-image_angle = obj_player.image_angle-90;
+//image_angle = obj_player.image_angle-90;
 x = obj_player.x + laser_x;
 y = obj_player.y + laser_y;
 x = parent_obj.x+lengthdir_x(32*i,image_angle);
@@ -12,7 +12,7 @@ if (floor(image_index) = sprite_get_number(sprite_index)-1) {
 }
 
 //retract laser
-if (floor(image_index) = 0 and image_speed = -1) {
+if (floor(image_index) <= 1 and image_speed = -1) {
 	instance_destroy();
 }
 

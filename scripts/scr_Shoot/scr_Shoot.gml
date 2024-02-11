@@ -47,7 +47,7 @@ function scr_Shoot(){
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 and gun != sniper_gun {
+			if gun.spread_number = 1 {
 				gun.current_bullets -= 1;
 			}
 			
@@ -65,21 +65,19 @@ function scr_Shoot(){
 			current_max = 0;
 		}
 		
-		if gun != sniper_gun {
-			//reset/preserve momentum
-			if (gun.reset_momentum and slower_than_max and gun != sniper_gun) {
-				speed = 0;
-			}else if (gun.reset_momentum and gun != sniper_gun) {
-				speed = current_max + (vsp_basicjump*gun.momentum_added);	
-			}
+		//reset/preserve momentum
+		if (gun.reset_momentum and slower_than_max) {
+			speed = 0;
+		}else if (gun.reset_momentum) {
+			speed = current_max + (vsp_basicjump*gun.momentum_added);	
+		}
 		
-			//add momentum
-			motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
+		//add momentum
+		motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
 		
-			//set max speed for auto weapons
-			if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
-				speed = max(gun.max_speed, current_max);
-			}
+		//set max speed for auto weapons
+		if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
+			speed = max(gun.max_speed, current_max);
 		}
 		
 		//iterate through ammo types
