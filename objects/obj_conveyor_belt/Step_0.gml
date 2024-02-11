@@ -10,3 +10,9 @@ if (distance_to_object(obj_player) < 96) {
 }else {
 	created_walls = false;
 }
+
+if frame < 8 {
+	frame += 1;	
+}else {
+	frame = 0;	
+}
