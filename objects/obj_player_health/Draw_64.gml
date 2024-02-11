@@ -5,8 +5,16 @@ display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_heig
 for(var _i = 0; _i < max_hp; _i += 8) {
 	if (_i < hp) {
 		draw_sprite(spr_heart_ui, 0, 28 + (_i * 3), 32);
+		if heart_gain_num > 0 and heart_gain_num-8 = _i {
+			instance_create_depth(28 + (_i * 3), 32,depth-1,obj_heart_gain);
+			heart_gain_num = 0;	
+		}
 	} else {
 		draw_sprite(spr_heart_ui, 1, 28 + (_i * 3), 32);
+		if heart_lost_num >= 0 and heart_lost_num = _i {
+			instance_create_depth(28 + (_i * 3), 32,depth-1,obj_heart_lost);
+			heart_lost_num = -0;	
+		}
 	}
 }
 
@@ -14,4 +22,20 @@ for(var _i = 0; _i < max_hp; _i += 8) {
 //armor
 for(var _j = 0; _j < armor_buff; _j += 1) {
 	draw_sprite(spr_heart_shield_ui, 0, 28 + (max_hp/8 * 24) + (_j * 24), 32);
+	if heart_shield_gain_num > 0 and heart_shield_gain_num-1 = _j {
+		instance_create_depth(28 + (max_hp/8 * 24) + (_j * 24), 32,depth-1,obj_heart_shield_gain);
+		show_debug_message("shield gained!");
+		heart_shield_gain_num = 0;	
+	}
+	if heart_shield_lost_num > 0 and heart_shield_lost_num-1 = _j {
+		instance_create_depth(28 + (max_hp/8 * 24) + (_j * 24), 32,depth-1,obj_heart_shield_lost);
+		show_debug_message("shield lost!");
+		heart_shield_lost_num = 0;	
+	}
+}
+
+if heart_shield_lost_num > 0  {
+	instance_create_depth(28 + (max_hp/8 * 24) + (_j * 24), 32,depth-1,obj_heart_shield_lost);
+	show_debug_message("shield lost!");
+	heart_shield_lost_num = 0;	
 }

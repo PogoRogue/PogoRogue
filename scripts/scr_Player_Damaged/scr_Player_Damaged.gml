@@ -8,8 +8,14 @@ function scr_Player_Damaged(damage){
 			if armor_buff > 0 {
 				armor_buff -= 1;
 				armored = true;
+				with obj_player_health {
+					heart_shield_lost_num = other.armor_buff+1;	
+				}
 			}else {
 				hp -= (damage);
+				with obj_player_health {
+					heart_lost_num = other.hp;	
+				}
 			}
 			current_iframes = num_iframes;
 			hspeed = -2 * sign(hspeed);
@@ -35,8 +41,8 @@ function scr_Player_Damaged(damage){
 			
 			with obj_shieldbubble {
 				instance_destroy();	
+				audio_play_sound(snd_bubblepop,0,false);
 			}
 		}
 	}
-	
 }

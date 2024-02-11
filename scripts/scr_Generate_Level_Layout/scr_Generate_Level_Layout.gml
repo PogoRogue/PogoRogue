@@ -89,7 +89,10 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	
 	} //End of for loop
 	
-	Remove_Useless_Tiles(layout_grid);					
+	Remove_Useless_Tiles(layout_grid);
+	
+	//Replace 1 block hallway chunks with 2 block chunks where possible
+	scr_Replace_Hallway_Chunks(layout_grid);
 
 	// Show the grid in the console
 	for (var i = grid_height; i >= 0; i--) {
@@ -122,16 +125,22 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	// Function to connect two rooms with a winding path
 function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height, room2_x, room2_y, room2_width, room2_height) {
 	var start_x = room1_x + irandom(room1_width - 1);
-	var start_y = room1_y;
+	var start_y = room1_y + 1;
 	var end_x = room2_x + irandom(room2_width - 1);
-	var end_y = room2_y;
+	var end_y = room2_y - 1;
 	
-	//For the special case our end room is a 1x1, we need to enter from the bottom, so lets target the grid just below it
-	if(room2_height == 1 && room2_width == 1)
+	var mirror = false;
+	if(start_x > end_x) //In this case, we need to mirror hallway chunks
 	{
-		end_y = room2_y - 1; //Notably, we will need to make sure to fill this in with a 1 at the end,
-		//since it breaks the condition of the while loop below
+		mirror = true;
 	}
+	
+	////For the special case our end room is a 1x1, we need to enter from the bottom, so lets target the grid just below it
+	//if(room2_height == 1 && room2_width == 1)
+	//{
+	//	end_y = room2_y - 1; //Notably, we will need to make sure to fill this in with a 1 at the end,
+	//	//since it breaks the condition of the while loop below
+	//}
 	
 	while (start_x != end_x || start_y != end_y) {
 		var path_randomizer = random_range(0,1);
@@ -151,7 +160,14 @@ function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height,
 		}
 		
 		if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
-				ds_grid_set(layout_grid, start_x, start_y, "1");
+			if(mirror)
+			{
+				ds_grid_set(layout_grid, start_x, start_y, "1f");  //"1f" for 'flipped'
+			}
+			else
+			{
+				ds_grid_set(layout_grid, start_x, start_y, "1"); //Regular 1 for left to rights
+			}
 		}
 		
 		if (path_randomizer <= 0.6) {	//path upwards 60% of the time	(see special cases above)	
@@ -161,11 +177,16 @@ function Connect_Rooms(layout_grid, room1_x, room1_y, room1_width, room1_height,
 			start_x += (end_x - start_x) / abs(end_x - start_x);
 		}
 	}
-	//Do an extra set after the while loop for 1x1s since we target a grid outside the room
-	if(room2_height == 1 && room2_width == 1){
-		if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
-					ds_grid_set(layout_grid, start_x, start_y, "1");
-		}
+	//Do an extra set after the while loop since we target a grid outside the room
+	if (ds_grid_get(layout_grid, start_x, start_y) == "0") {
+			if(mirror)
+			{
+				ds_grid_set(layout_grid, start_x, start_y, "1f");  //"1f" for 'flipped'
+			}
+			else
+			{
+				ds_grid_set(layout_grid, start_x, start_y, "1"); //Regular 1 for left to rights
+			}
 	}
 }
 

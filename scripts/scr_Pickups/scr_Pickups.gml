@@ -255,7 +255,7 @@ function scr_Pickups(){
 			obj_player.bulletblast_frames = 0;
 			obj_player.temp_x = 0.5;
 			obj_player.init_x = obj_player.x;
-			obj_player.sprite_index = spr_player_zekai;
+			obj_player.sprite_index = obj_player.player_sprite;
 			obj_player.image_index = 0;
 			obj_player.state = obj_player.state_bulletblast;
 			on_cooldown = true;
@@ -353,6 +353,7 @@ function scr_Pickups(){
 				rotation_speed = original_rotation_speed * (2/3);
 				rotation_delay = rotation_speed / 10;
 				freeze_time = 180;
+				freeze_angle = angle;
 			}
 			uses_per_bounce -= 1;
 			if uses_per_bounce <= 0 {

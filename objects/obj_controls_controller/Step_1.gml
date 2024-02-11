@@ -36,8 +36,13 @@ if global.use_controller = true {
 	global.key_left_pressed_menu = array_key_left_pressed_menu[0] || array_key_left_pressed_menu[1];
 	global.key_down_pressed_menu = array_key_down_pressed_menu[0] || array_key_down_pressed_menu[1];
 	global.key_up_pressed_menu = array_key_up_pressed_menu[0] || array_key_up_pressed_menu[1];
-	global.key_pause = array_key_pause[0] || array_key_pause[1];
-	global.key_back = array_key_back[0] || array_key_back[1];
-	global.key_item_menu = array_key_item_menu[0] || array_key_item_menu[1];
 	global.key_select = array_key_select[0] || array_key_select[1];
+	global.key_back = array_key_back[0] || array_key_back[1];
+	global.key_pause = array_key_pause[0] || array_key_pause[1];
+	global.key_item_menu = array_key_item_menu[0] || array_key_item_menu[1];
+	
+}
+
+if gamepad_is_connected(0) {
+	gamepad_set_axis_deadzone(0,0.1);
 }
