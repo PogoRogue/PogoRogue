@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_lr_length2_test",
+  "name": "Spr_1x1_boss2_portal",
   "bbox_bottom": 31,
   "bbox_left": 0,
-  "bbox_right": 63,
+  "bbox_right": 31,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,26 +13,26 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"431866cc-a81b-4a72-b3ff-9f547e88dd85",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5f92cd56-c888-4b55-8757-9b9b8215b4ab",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5fd90fb9-2a1d-4b2e-a7cc-f4c8a3d3229f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"947d7856-8eae-4025-8083-a6a5083bd71f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "MultiBlockHallwayChunks",
-    "path": "folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/HallwayBlocks/MultiBlockHallwayChunks.yy",
+    "name": "Talens_sprites",
+    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_lr_length2_test",
+    "name": "Spr_1x1_boss2_portal",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"431866cc-a81b-4a72-b3ff-9f547e88dd85","path":"sprites/spr_lr_length2_test/spr_lr_length2_test.yy",},},},"Disabled":false,"id":"0502662a-43c5-4e2e-859f-771ae723b241","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5f92cd56-c888-4b55-8757-9b9b8215b4ab","path":"sprites/Spr_1x1_boss2_portal/Spr_1x1_boss2_portal.yy",},},},"Disabled":false,"id":"354fdb9c-2229-44c6-a972-d7fcf2d7d634","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 64,
+  "width": 32,
 }
