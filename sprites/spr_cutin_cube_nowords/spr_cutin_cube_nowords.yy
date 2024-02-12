@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_boss_cutin",
+  "name": "spr_cutin_cube_nowords",
   "bbox_bottom": 425,
   "bbox_left": 0,
   "bbox_right": 759,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9184c1fb-4dc0-4327-8797-9205a8e23468",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"30514060-a590-4ad0-8876-083fa64106fd",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 432,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8690290e-dc4d-43c3-98ec-fdfb61bed2c9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0cb6f769-102c-4b97-98aa-9d4d16aadf6b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_boss_cutin",
+    "name": "spr_cutin_cube_nowords",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9184c1fb-4dc0-4327-8797-9205a8e23468","path":"sprites/spr_boss_cutin/spr_boss_cutin.yy",},},},"Disabled":false,"id":"94768eeb-9a22-41b5-853c-e0abf11427b6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"30514060-a590-4ad0-8876-083fa64106fd","path":"sprites/spr_cutin_cube_nowords/spr_cutin_cube_nowords.yy",},},},"Disabled":false,"id":"e05b9289-e0e4-407c-aca0-242c1976d7d0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

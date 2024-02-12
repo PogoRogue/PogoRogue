@@ -72,6 +72,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shield","folderPath":"folders/Sprites/Enemy/Boss Sphere/Shield.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tar","folderPath":"folders/Sprites/Enemy/Boss Sphere/Tar.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Environmental","folderPath":"folders/Sprites/Enemy/Environmental.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Mole Enemy","folderPath":"folders/Sprites/Enemy/Mole Enemy.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Old Sprites","folderPath":"folders/Sprites/Enemy/Old Sprites.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ground","folderPath":"folders/Sprites/Ground.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"spr_belt","folderPath":"folders/Sprites/Ground/spr_belt.yy",},
@@ -110,7 +111,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Mole Enemy","folderPath":"folders/Sprites/Enemy/Mole Enemy.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Boss Cut-In: Cube","folderPath":"folders/Sprites/UI/Boss Cut-In/Boss Cut-In: Cube.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"snd_ArmorHeart.mp3","CopyToMask":-1,"filePath":"datafiles",},
@@ -132,7 +133,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -353,6 +354,7 @@
     {"id":{"name":"spr_3x3_Combat_Test","path":"sprites/spr_3x3_Combat_Test/spr_3x3_Combat_Test.yy",},},
     {"id":{"name":"spr_boss_cutin_words","path":"sprites/spr_boss_cutin_words/spr_boss_cutin_words.yy",},},
     {"id":{"name":"scr_In_Array","path":"scripts/scr_In_Array/scr_In_Array.yy",},},
+    {"id":{"name":"spr_cutin_cube_words","path":"sprites/spr_cutin_cube_words/spr_cutin_cube_words.yy",},},
     {"id":{"name":"spr_miniboss_cube","path":"sprites/spr_miniboss_cube/spr_miniboss_cube.yy",},},
     {"id":{"name":"spr_pickup_freeze","path":"sprites/spr_pickup_freeze/spr_pickup_freeze.yy",},},
     {"id":{"name":"obj_item_weapon_burstfire","path":"objects/obj_item_weapon_burstfire/obj_item_weapon_burstfire.yy",},},
@@ -640,6 +642,7 @@
     {"id":{"name":"spr_WalkEnemy_Jump","path":"sprites/spr_WalkEnemy_Jump/spr_WalkEnemy_Jump.yy",},},
     {"id":{"name":"obj_spring","path":"objects/obj_spring/obj_spring.yy",},},
     {"id":{"name":"obj_weaponheightfun","path":"objects/obj_weaponheightfun/obj_weaponheightfun.yy",},},
+    {"id":{"name":"spr_cutin_cube_nowords","path":"sprites/spr_cutin_cube_nowords/spr_cutin_cube_nowords.yy",},},
     {"id":{"name":"spr_o_enemy_moving","path":"sprites/spr_o_enemy_moving/spr_o_enemy_moving.yy",},},
     {"id":{"name":"obj_subboss_fly_chasing","path":"objects/obj_subboss_fly_chasing/obj_subboss_fly_chasing.yy",},},
     {"id":{"name":"spr_player_zekai_invincible_falling","path":"sprites/spr_player_zekai_invincible_falling/spr_player_zekai_invincible_falling.yy",},},

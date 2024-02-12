@@ -1,4 +1,9 @@
 {
-  "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "FolderOrderSettings": [
+    {"name":"Boss Cut-In: Cube","order":1,"path":"folders/Sprites/UI/Boss Cut-In/Boss Cut-In: Cube.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"spr_cutin_cube_words","order":1,"path":"sprites/spr_cutin_cube_words/spr_cutin_cube_words.yy",},
+    {"name":"spr_boss_cutin","order":2,"path":"sprites/spr_boss_cutin/spr_boss_cutin.yy",},
+  ],
 }
