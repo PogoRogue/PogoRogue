@@ -4,7 +4,6 @@ switch(current_state) {
 	case STATES.IDLE: // Idle code goes here
 		
 		// Generate new sequence and animate it
-		instance_destroy(obj_enemy_turret);
 		if(state_has_changed) {
 			if(body.hp_percent >= 100) {
 				sequence_length = 2;
@@ -15,7 +14,14 @@ switch(current_state) {
 			} else {
 				sequence_length = 5;
 			}
-				
+			
+			instance_destroy(obj_enemy_turret);
+			instance_destroy(obj_spikeswing);
+			
+			with(obj_electric_current) {
+				is_active = false;
+			}
+			
 			current_frame = 4;
 			sequence_index = 0;
 			current_sequence = scr_Generate_Sequence(sequence_length);
@@ -30,9 +36,15 @@ switch(current_state) {
 		
 		if(state_has_changed) {
 			instance_destroy(obj_enemy_turret);
+			instance_destroy(obj_spikeswing);
 			
 			instance_create_layer(turret_pos_1.x, turret_pos_1.y, "enemies", obj_enemy_turret);
 			instance_create_layer(turret_pos_2.x, turret_pos_2.y, "enemies", obj_enemy_turret);
+			instance_create_layer(axe_pos.x, axe_pos.y, "enemies", obj_spikeswing, {distance: 120});
+			
+			with(obj_electric_current) {
+				is_active = true;
+			}
 		}
 		
 		if(sequence_index >= sequence_length) {
@@ -50,6 +62,12 @@ switch(current_state) {
 		current_frame = 5;
 		if(state_has_changed) {
 			instance_destroy(obj_enemy_turret);
+			instance_destroy(obj_spikeswing);
+			
+			with(obj_electric_current) {
+				is_active = false;
+			}
+			
 			alarm_set(2, room_speed * 10);
 		}
 	break;
@@ -57,6 +75,10 @@ switch(current_state) {
 		image_alpha *= 0.9;
 		if(state_has_changed) {
 			instance_destroy(obj_enemy_turret);
+			instance_destroy(obj_spikeswing);
+			with(obj_electric_current) {
+				is_active = false;
+			}
 			alarm_set(3, room_speed * 2);
 		}
 	break;
@@ -75,7 +97,7 @@ if(current_state != STATES.VULNERABLE) {
 	}	
 }
 
-if(body.hp <= 0) {
+if(!instance_exists(body) || body.hp <= 0) {
 	current_state = STATES.DEAD;
 }
 

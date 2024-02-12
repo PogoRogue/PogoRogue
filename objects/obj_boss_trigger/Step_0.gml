@@ -8,3 +8,8 @@ if(draw_cutin) {
 
 alpha = clamp(alpha, 0.0, 1.0);
 
+if(triggered) {
+	with(obj_player) {
+		speed = 0;
+	}
+}
