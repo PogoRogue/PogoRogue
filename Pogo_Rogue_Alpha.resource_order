@@ -2,6 +2,7 @@
   "FolderOrderSettings": [
     {"name":"mole worm","order":1,"path":"folders/Objects/Enemy/mole worm.yy",},
     {"name":"sprite_temp","order":1,"path":"folders/Objects/Enemy/mole worm/sprite_temp.yy",},
+    {"name":"TutorialText","order":1,"path":"folders/Objects/Text/TutorialText.yy",},
     {"name":"Sandbox Rooms","order":10,"path":"folders/Rooms/Sandbox Rooms.yy",},
     {"name":"Items","order":14,"path":"folders/Scripts/Items.yy",},
     {"name":"Player","order":15,"path":"folders/Scripts/Player.yy",},
@@ -31,9 +32,8 @@
     {"name":"UL","order":5,"path":"folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/HallwayBlocks/UL.yy",},
     {"name":"UR","order":6,"path":"folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/HallwayBlocks/UR.yy",},
     {"name":"OtherRooms","order":3,"path":"folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/OtherRooms.yy",},
-    {"name":"testRooms","order":3,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/testRooms.yy",},
     {"name":"SamRooms","order":6,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/SamRooms.yy",},
-    {"name":"TutorialText","order":1,"path":"folders/Objects/Text/TutorialText.yy",},
+    {"name":"testRooms","order":3,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/testRooms.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_worm","order":2,"path":"objects/obj_worm/obj_worm.yy",},
