@@ -11,3 +11,7 @@ max_hp = parent_index.max_hp;
 max_max_hp = parent_index.max_max_hp;
 armor_buff = parent_index.armor_buff;
 max_armor_buff = parent_index.max_armor_buff;
+heart_gain_num = 0;
+heart_lost_num = -8;
+heart_shield_gain_num = 0;
+heart_shield_lost_num = 0;

@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Hitbox",
-    "path": "folders/Objects/Enemy/Hitbox.yy",
+    "name": "Projectile",
+    "path": "folders/Objects/Enemy/Hitbox/Projectile.yy",
   },
   "parentObjectId": null,
   "persistent": false,
