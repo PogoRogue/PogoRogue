@@ -56,6 +56,7 @@ bulletblast_frames_max = 65; //how many frames before blasting
 freeze_time = 0;
 freeze_alpha = 0;
 freeze_angle = 0;
+frenzy = false;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -568,7 +569,7 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy]; //all pickups
 
 if (random_pickup = true) { //choose random pickups
 	randomize();

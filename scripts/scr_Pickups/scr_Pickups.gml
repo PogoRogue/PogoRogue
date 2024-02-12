@@ -362,4 +362,27 @@ function scr_Pickups(){
 		}
 	};
 	
+	pickup_frenzy = {
+		_name: "Frenzy",
+		tagline: "Bullets are unlimited without reloading for 5 seconds.",
+		gui_sprite: spr_pickup_frenzy,
+		max_cooldown_time: 1800,
+		cooldown_time: 1800,
+		cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		on_call: function() {
+			with obj_player {
+				frenzy = true;
+				alarm[3] = 300;
+				gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff;
+			}
+		}
+	};
 }

@@ -47,7 +47,7 @@ function scr_Shoot(){
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 {
+			if gun.spread_number = 1 and frenzy = false {
 				gun.current_bullets -= 1;
 			}
 			

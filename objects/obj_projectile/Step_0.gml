@@ -27,7 +27,12 @@ if instance_exists(obj_camera) {
 //destroy when touching ground
 if (destroy_on_impact and num_of_bounces <= 0) {
 	if (place_meeting(x,y,obj_ground)) {
-		alarm[0] = 1;
+		if gun_name = "Paintball Gun" {
+			alarm[0] = 1;
+			//splatter code here
+		}else {
+			alarm[0] = 1;	
+		}
 	}
 }
 
@@ -227,6 +232,12 @@ if (gun_name = "Star Sucker") {
 if (gun_name = "Slime Blaster") {
 	image_angle -= hspd*2;
 	if place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and num_of_bounces <= 0 and destroy_on_impact = true {
-		alarm[0] = 1;
+		
+		if gun_name = "Paintball Gun" {
+			alarm[0] = 1;
+			//splatter code here
+		}else {
+			alarm[0] = 1;	
+		}
 	}
 }
