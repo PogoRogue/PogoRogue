@@ -8,6 +8,6 @@ text_scale = lerp(text_scale, lerp_destination, text_lerp_speed);
 
 if(triggered) {
 	with(obj_player) {
-		speed = 0;
+		state = state_immobile;
 	}
 }
