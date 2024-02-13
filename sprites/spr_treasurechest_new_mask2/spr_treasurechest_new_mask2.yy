@@ -4,7 +4,7 @@
   "name": "spr_treasurechest_new_mask2",
   "bbox_bottom": 38,
   "bbox_left": 7,
-  "bbox_right": 56,
+  "bbox_right": 72,
   "bbox_top": 0,
   "bboxMode": 2,
   "collisionKind": 1,
@@ -150,5 +150,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 64,
+  "width": 80,
 }
