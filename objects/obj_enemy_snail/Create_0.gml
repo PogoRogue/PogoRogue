@@ -12,10 +12,19 @@ enum SNAIL_STATES {
 
 if(image_angle == 0) {
 	state = SNAIL_STATES.HORIZONTAL;
+	while(!place_meeting(x, y + 1, obj_ground_parent)) {
+		y++;
+	}
 } else if(image_angle == -90 || image_angle == 270) {
 	state = SNAIL_STATES.VERTICAL_LEFT;
+	while(!place_meeting(x - 1, y, obj_ground_parent)) {
+		x--;
+	}
 } else if(image_angle == 90) {
 	state = SNAIL_STATES.VERTICAL_RIGHT;
+	while(!place_meeting(x + 1, y, obj_ground_parent)) {
+		x++;
+	}
 } else {
 	// Do not allow snails of any other orientation
 	instance_destroy(self);

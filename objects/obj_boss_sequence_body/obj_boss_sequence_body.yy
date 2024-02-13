@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_sequence_body",
-    "path": "sprites/spr_sequence_body/spr_sequence_body.yy",
+    "name": "spr_boss2_idle",
+    "path": "sprites/spr_boss2_idle/spr_boss2_idle.yy",
   },
   "spriteMaskId": null,
   "visible": true,
