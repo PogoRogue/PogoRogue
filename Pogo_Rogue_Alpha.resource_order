@@ -54,6 +54,7 @@
     {"name":"spr_button_r","order":6,"path":"sprites/spr_button_r/spr_button_r.yy",},
     {"name":"scr_Convert_Layout_To_Test_Room","order":2,"path":"scripts/scr_Convert_Layout_To_Test_Room/scr_Convert_Layout_To_Test_Room.yy",},
     {"name":"spr_enemy_explode","order":31,"path":"sprites/spr_enemy_explode/spr_enemy_explode.yy",},
+    {"name":"spr_enemy_stomp_only_melee","order":40,"path":"sprites/spr_enemy_stomp_only_melee/spr_enemy_stomp_only_melee.yy",},
     {"name":"spr_1x1_Shop_Hallway_Test","order":1,"path":"sprites/spr_1x1_Shop_Hallway_Test/spr_1x1_Shop_Hallway_Test.yy",},
     {"name":"spr_stick_r_l","order":21,"path":"sprites/spr_stick_r_l/spr_stick_r_l.yy",},
     {"name":"obj_enemy_test","order":17,"path":"objects/obj_enemy_test/obj_enemy_test.yy",},

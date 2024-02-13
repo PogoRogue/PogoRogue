@@ -137,7 +137,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.2.1.75",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -323,6 +323,7 @@
     {"id":{"name":"spr_enemy_explode","path":"sprites/spr_enemy_explode/spr_enemy_explode.yy",},},
     {"id":{"name":"obj_fancircle2","path":"objects/obj_fancircle2/obj_fancircle2.yy",},},
     {"id":{"name":"spr_projectile_burstfire_gui","path":"sprites/spr_projectile_burstfire_gui/spr_projectile_burstfire_gui.yy",},},
+    {"id":{"name":"spr_enemy_stomp_only_melee","path":"sprites/spr_enemy_stomp_only_melee/spr_enemy_stomp_only_melee.yy",},},
     {"id":{"name":"snd_ArmorHeart","path":"sounds/snd_ArmorHeart/snd_ArmorHeart.yy",},},
     {"id":{"name":"spr_1x1_Shop_Hallway_Test","path":"sprites/spr_1x1_Shop_Hallway_Test/spr_1x1_Shop_Hallway_Test.yy",},},
     {"id":{"name":"spr_player_zekai_hat_falling","path":"sprites/spr_player_zekai_hat_falling/spr_player_zekai_hat_falling.yy",},},
@@ -1014,6 +1015,7 @@
     {"roomId":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
     {"roomId":{"name":"room_settings","path":"rooms/room_settings/room_settings.yy",},},
   ],
+  "templateType": null,
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
   ],
