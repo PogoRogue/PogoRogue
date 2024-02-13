@@ -1,16 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-switch(controller.current_state) {
-	case STATES.IDLE:
-		is_lowering = false;
-		break;
-	case STATES.VULNERABLE:
-		is_lowering = true;
-		break;
-	case STATES.DEAD:
-		is_lowering = true;
-		break;
+if(instance_exists(controller)) {
+	switch(controller.current_state) {
+		case STATES.IDLE:
+			is_lowering = false;
+			break;
+		case STATES.VULNERABLE:
+			is_lowering = true;
+			break;
+		case STATES.DEAD:
+			is_lowering = true;
+			break;
+	}
 }
 
 if(is_lowering) {
