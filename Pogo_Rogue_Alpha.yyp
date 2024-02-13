@@ -278,6 +278,7 @@
     {"id":{"name":"scr_Convert_Layout_To_Rooms","path":"scripts/scr_Convert_Layout_To_Rooms/scr_Convert_Layout_To_Rooms.yy",},},
     {"id":{"name":"obj_runstats","path":"objects/obj_runstats/obj_runstats.yy",},},
     {"id":{"name":"snd_burstfire","path":"sounds/snd_burstfire/snd_burstfire.yy",},},
+    {"id":{"name":"spr_1x1_boss1_portal","path":"sprites/spr_1x1_boss1_portal/spr_1x1_boss1_portal.yy",},},
     {"id":{"name":"spr_enemy_turret_base_new","path":"sprites/spr_enemy_turret_base_new/spr_enemy_turret_base_new.yy",},},
     {"id":{"name":"spr_enemy_vole_attack","path":"sprites/spr_enemy_vole_attack/spr_enemy_vole_attack.yy",},},
     {"id":{"name":"obj_item_buff_luck","path":"objects/obj_item_buff_luck/obj_item_buff_luck.yy",},},
