@@ -480,7 +480,7 @@
     {"id":{"name":"spr_dr_test","path":"sprites/spr_dr_test/spr_dr_test.yy",},},
     {"id":{"name":"spr_enemy_walking_explosion_idle","path":"sprites/spr_enemy_walking_explosion_idle/spr_enemy_walking_explosion_idle.yy",},},
     {"id":{"name":"spr_button_u","path":"sprites/spr_button_u/spr_button_u.yy",},},
-    {"id":{"name":"room_sam_tutorial","path":"rooms/room_sam_tutorial/room_sam_tutorial.yy",},},
+    {"id":{"name":"room_tutorial","path":"rooms/room_tutorial/room_tutorial.yy",},},
     {"id":{"name":"Sprite284","path":"sprites/Sprite284/Sprite284.yy",},},
     {"id":{"name":"obj_ground_tiles_outer","path":"objects/obj_ground_tiles_outer/obj_ground_tiles_outer.yy",},},
     {"id":{"name":"spr_controller_button_right","path":"sprites/spr_controller_button_right/spr_controller_button_right.yy",},},
@@ -1027,7 +1027,7 @@
     {"roomId":{"name":"room_test_env","path":"rooms/room_test_env/room_test_env.yy",},},
     {"roomId":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
     {"roomId":{"name":"room_settings","path":"rooms/room_settings/room_settings.yy",},},
-    {"roomId":{"name":"room_sam_tutorial","path":"rooms/room_sam_tutorial/room_sam_tutorial.yy",},},
+    {"roomId":{"name":"room_tutorial","path":"rooms/room_tutorial/room_tutorial.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

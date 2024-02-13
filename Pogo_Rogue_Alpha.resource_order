@@ -117,7 +117,7 @@
     {"name":"scr_In_Nested_Array","order":14,"path":"scripts/scr_In_Nested_Array/scr_In_Nested_Array.yy",},
     {"name":"spr_enemy_walking_explosion_idle","order":23,"path":"sprites/spr_enemy_walking_explosion_idle/spr_enemy_walking_explosion_idle.yy",},
     {"name":"spr_button_u","order":10,"path":"sprites/spr_button_u/spr_button_u.yy",},
-    {"name":"room_sam_tutorial","order":12,"path":"rooms/room_sam_tutorial/room_sam_tutorial.yy",},
+    {"name":"room_tutorial","order":12,"path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"obj_presets","order":14,"path":"objects/obj_presets/obj_presets.yy",},
     {"name":"scr_Choose_Test_Block_To_Generate","order":1,"path":"scripts/scr_Choose_Test_Block_To_Generate/scr_Choose_Test_Block_To_Generate.yy",},
     {"name":"spr_3x3_Combat_store","order":1,"path":"sprites/spr_3x3_Combat_store/spr_3x3_Combat_store.yy",},
