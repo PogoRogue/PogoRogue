@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_1x1_boss_portal",
+  "name": "spr_1x1_boss1_portal",
   "bbox_bottom": 31,
   "bbox_left": 0,
   "bbox_right": 31,
@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"35f19ec6-00cd-40b1-9fca-dfe267242234",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"19548130-8d66-46e4-aa42-cd80a0c25cf0",},
   ],
   "gridX": 2,
   "gridY": 5,
@@ -25,14 +25,14 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "OtherRooms",
-    "path": "folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites/OtherRooms.yy",
+    "name": "Talens_sprites",
+    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_1x1_boss_portal",
+    "name": "spr_1x1_boss1_portal",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"35f19ec6-00cd-40b1-9fca-dfe267242234","path":"sprites/spr_1x1_boss_portal/spr_1x1_boss_portal.yy",},},},"Disabled":false,"id":"6f51c7eb-0e04-4d0f-89ad-3e4acfc1c22e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"19548130-8d66-46e4-aa42-cd80a0c25cf0","path":"sprites/spr_1x1_boss1_portal/spr_1x1_boss1_portal.yy",},},},"Disabled":false,"id":"713654e9-970c-4ea7-b413-9db235fc838b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
