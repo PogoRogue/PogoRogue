@@ -19,3 +19,6 @@ if(instance_place_list(x, y, obj_boss_brick, ds_list_create(), false) >= 8) {
 
 // Inherit the parent event
 event_inherited();
+if(alarm[1]<0){
+alarm[1] = room_speed * 20;
+}
