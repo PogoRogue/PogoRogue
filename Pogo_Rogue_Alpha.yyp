@@ -326,6 +326,7 @@
     {"id":{"name":"spr_enemy_explode","path":"sprites/spr_enemy_explode/spr_enemy_explode.yy",},},
     {"id":{"name":"obj_fancircle2","path":"objects/obj_fancircle2/obj_fancircle2.yy",},},
     {"id":{"name":"spr_projectile_burstfire_gui","path":"sprites/spr_projectile_burstfire_gui/spr_projectile_burstfire_gui.yy",},},
+    {"id":{"name":"spr_enemy_stomp_only_melee","path":"sprites/spr_enemy_stomp_only_melee/spr_enemy_stomp_only_melee.yy",},},
     {"id":{"name":"snd_ArmorHeart","path":"sounds/snd_ArmorHeart/snd_ArmorHeart.yy",},},
     {"id":{"name":"spr_1x1_Shop_Hallway_Test","path":"sprites/spr_1x1_Shop_Hallway_Test/spr_1x1_Shop_Hallway_Test.yy",},},
     {"id":{"name":"spr_player_zekai_hat_falling","path":"sprites/spr_player_zekai_hat_falling/spr_player_zekai_hat_falling.yy",},},
@@ -1020,9 +1021,9 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
   ],
   "RoomOrderNodes": [
+    {"roomId":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
     {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
     {"roomId":{"name":"room_boss_2","path":"rooms/room_boss_2/room_boss_2.yy",},},
-    {"roomId":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
     {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
     {"roomId":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
