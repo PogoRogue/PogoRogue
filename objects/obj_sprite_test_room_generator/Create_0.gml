@@ -10,9 +10,6 @@ ds_list_add(prebuilt_rooms, [1, 1, "B"]); //Third room in list is boss entry roo
 ds_list_add(prebuilt_rooms, [2, 2, "c2"]); //3x3 Combat room, c stands for combat
 ds_list_add(prebuilt_rooms, [3, 3, "c3"]); //2x2 Combat room
 
-rooms_to_generate = 2;
-max_gen_width = 15;
-
 global.debug_wall_count = 0;
 
 var generate_start_room = false;
