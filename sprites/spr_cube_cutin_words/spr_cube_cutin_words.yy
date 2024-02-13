@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_boss_cutin",
-  "bbox_bottom": 425,
-  "bbox_left": 0,
-  "bbox_right": 759,
-  "bbox_top": 2,
+  "name": "spr_cube_cutin_words",
+  "bbox_bottom": 415,
+  "bbox_left": 121,
+  "bbox_right": 708,
+  "bbox_top": 248,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e079d537-af58-487a-bc44-8c79ede21924",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e7462e39-2401-4e33-9356-20fb2a86c12a",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 432,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a2ba990d-7286-409b-9607-0bd8ad112517","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"33f3b779-f2f3-4eca-b4d5-7888306ebb16","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_boss_cutin",
+    "name": "spr_cube_cutin_words",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e079d537-af58-487a-bc44-8c79ede21924","path":"sprites/spr_boss_cutin/spr_boss_cutin.yy",},},},"Disabled":false,"id":"3ca5a3aa-f47a-40f2-a03e-1ac0bd555437","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e7462e39-2401-4e33-9356-20fb2a86c12a","path":"sprites/spr_cube_cutin_words/spr_cube_cutin_words.yy",},},},"Disabled":false,"id":"1598bb9d-89e1-4239-a80e-910affe0cfaa","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
