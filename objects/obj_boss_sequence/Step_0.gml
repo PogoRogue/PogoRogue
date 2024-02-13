@@ -62,19 +62,6 @@ switch(current_state) {
 	break;
 }
 
-// Chandle collision
-if(current_state != STATES.VULNERABLE) {
-	if(place_meeting(x, y, obj_player)) {
-		with(obj_player) {
-			while(place_meeting(x, y, obj_boss_sequence)) {
-				y--;
-			}
-			speed = 0;
-			state = state_bouncing;
-		}
-	}	
-}
-
 if(body.hp <= 0) {
 	current_state = STATES.DEAD;
 }
