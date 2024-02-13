@@ -1,8 +1,8 @@
 {
   "FolderOrderSettings": [
+    {"name":"TutorialText","order":1,"path":"folders/Objects/Text/TutorialText.yy",},
     {"name":"Sam_Rooms","order":9,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms.yy",},
     {"name":"Talens_sprites","order":8,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy",},
-    {"name":"TutorialText","order":1,"path":"folders/Objects/Text/TutorialText.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"scr_Replace_Hallway_Chunks","order":15,"path":"scripts/scr_Replace_Hallway_Chunks/scr_Replace_Hallway_Chunks.yy",},
