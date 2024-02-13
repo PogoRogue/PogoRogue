@@ -50,6 +50,7 @@
     {"name":"scr_Keyboard_Get_Key_String","order":5,"path":"scripts/scr_Keyboard_Get_Key_String/scr_Keyboard_Get_Key_String.yy",},
     {"name":"scr_Convert_Layout_To_Rooms","order":7,"path":"scripts/scr_Convert_Layout_To_Rooms/scr_Convert_Layout_To_Rooms.yy",},
     {"name":"obj_runstats","order":18,"path":"objects/obj_runstats/obj_runstats.yy",},
+    {"name":"spr_1x1_boss1_portal","order":5,"path":"sprites/spr_1x1_boss1_portal/spr_1x1_boss1_portal.yy",},
     {"name":"spr_enemy_turret_base_new","order":23,"path":"sprites/spr_enemy_turret_base_new/spr_enemy_turret_base_new.yy",},
     {"name":"spr_3x3_Starting_Room_Test","order":2,"path":"sprites/spr_3x3_Starting_Room_Test/spr_3x3_Starting_Room_Test.yy",},
     {"name":"scr_Create_Walls_From_Pixel_Array","order":6,"path":"scripts/scr_Create_Walls_From_Pixel_Array/scr_Create_Walls_From_Pixel_Array.yy",},
