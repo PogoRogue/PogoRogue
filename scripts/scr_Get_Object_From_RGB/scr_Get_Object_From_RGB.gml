@@ -158,6 +158,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_angled_platform_right;
 		}
+			else if(Red == 25 && Green == 25 && Blue == 25)
+		{
+			return obj_instructions;
+		}
 	}
 	
 	//Color had no matches, generate nothing
