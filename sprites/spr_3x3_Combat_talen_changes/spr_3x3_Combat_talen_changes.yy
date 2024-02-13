@@ -32,8 +32,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "RoomStoresAndOther",
-    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther.yy",
+    "name": "Talens_sprites",
+    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
