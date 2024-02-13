@@ -1,5 +1,5 @@
 /// @description Reset button
 
 is_pressed = false;
-sprite_index = default_sprite;
+image_index = 0;
 script_execute(on_press_event);

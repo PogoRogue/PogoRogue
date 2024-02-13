@@ -42,8 +42,8 @@
   ],
   "solid": false,
   "spriteId": {
-    "name": "spr_button",
-    "path": "sprites/spr_button/spr_button.yy",
+    "name": "spr_button_red",
+    "path": "sprites/spr_button_red/spr_button_red.yy",
   },
   "spriteMaskId": null,
   "visible": true,

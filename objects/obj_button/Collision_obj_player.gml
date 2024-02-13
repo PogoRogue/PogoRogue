@@ -12,6 +12,6 @@ if(!is_pressed) {
 	other.speed = 0;
 
 	is_pressed = true;
-	sprite_index = pressed_sprite;
+	image_index = 1;
 	alarm_set(0, press_duration);
 }
