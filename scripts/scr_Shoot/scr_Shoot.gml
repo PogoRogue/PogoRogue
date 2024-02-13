@@ -9,9 +9,7 @@ function scr_Shoot(){
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
 		
 		//sound
-		if !instance_exists(obj_sniper) {
-			audio_play_sound(gun.sound,0,false);
-		}
+		audio_play_sound(gun.sound,0,false);
 		
 		for (var i = 0; i < gun.spread_number; i++;) {
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));

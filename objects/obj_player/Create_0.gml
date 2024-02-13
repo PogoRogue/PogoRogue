@@ -520,16 +520,23 @@ all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun
 
 if (random_weapon = true) { //choose random weapons
 	randomize();
-	gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-	if num_of_weapons > 1 {
-		gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-	}else {
-		gun_2 = gun_1;
-	}
-	if num_of_weapons > 2 {
-		gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-	}else {
+	//temporarily change items for playtest
+	if room = room_proc_gen_test or room = room_boss_2 {
+		gun_1 = default_gun;
+		gun_2 = choose(sniper_gun,slime_gun);
 		gun_3 = gun_1;
+	}else {
+		gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		if num_of_weapons > 1 {
+			gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_2 = gun_1;
+		}
+		if num_of_weapons > 2 {
+			gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_3 = gun_1;
+		}
 	}
 
 	while (gun_2 = gun_1) and num_of_weapons > 1 { //dont want 2 of the same weapon
@@ -573,7 +580,14 @@ all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_s
 
 if (random_pickup = true) { //choose random pickups
 	randomize();
-	pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+	
+	//temporarily change items for playtest
+	if room = room_proc_gen_test or room = room_boss_2 {
+		pickup_1 = choose(pickup_frenzy,pickup_target);
+	}else {
+		pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+	}
+	
 	pickup_2 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
 
 	while (pickup_2 = pickup_1) { //dont want 2 of the same weapon

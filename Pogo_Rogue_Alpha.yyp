@@ -726,6 +726,7 @@
     {"id":{"name":"spr_sequence_door","path":"sprites/spr_sequence_door/spr_sequence_door.yy",},},
     {"id":{"name":"spr_axe","path":"sprites/spr_axe/spr_axe.yy",},},
     {"id":{"name":"spr_enemy_snail","path":"sprites/spr_enemy_snail/spr_enemy_snail.yy",},},
+    {"id":{"name":"spr_menu_procgenonly","path":"sprites/spr_menu_procgenonly/spr_menu_procgenonly.yy",},},
     {"id":{"name":"obj_text_weaponreload1","path":"objects/obj_text_weaponreload1/obj_text_weaponreload1.yy",},},
     {"id":{"name":"spr_blacksquare","path":"sprites/spr_blacksquare/spr_blacksquare.yy",},},
     {"id":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},},

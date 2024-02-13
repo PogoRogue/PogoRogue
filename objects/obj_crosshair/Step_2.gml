@@ -1,10 +1,26 @@
 /// @description shoot enemy
 
 if image_index = 6 and fade_out = false {
-	with enemy_to_target {
-		hp = 0;
-		with obj_player {
-			scr_Reload_On_Kill();	
+	if room != room_boss_2 {
+		with enemy_to_target {
+			hp = 0;
+			with obj_player {
+				scr_Reload_On_Kill();	
+			}
+		}
+	}else if room = room_boss_2 {
+		with enemy_to_target {
+			if object_get_name(object_index) = "obj_boss_sequence_body" {
+				hp -= hp_max/10;
+				with obj_player {
+					scr_Reload_On_Kill();	
+				}
+			}else {
+				hp = 0;
+				with obj_player {
+					scr_Reload_On_Kill();	
+				}
+			}
 		}
 	}
 	image_speed = 0;
