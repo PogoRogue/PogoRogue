@@ -1,9 +1,9 @@
 {
   "FolderOrderSettings": [
-    {"name":"Boss: Cube","order":1,"path":"folders/Sprites/UI/Boss Cut-In/Boss: Cube.yy",},
     {"name":"TutorialText","order":1,"path":"folders/Objects/Text/TutorialText.yy",},
     {"name":"Sam_Rooms","order":9,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms.yy",},
     {"name":"Talens_sprites","order":8,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy",},
+    {"name":"Boss: Cube","order":1,"path":"folders/Sprites/UI/Boss Cut-In/Boss: Cube.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"scr_Replace_Hallway_Chunks","order":15,"path":"scripts/scr_Replace_Hallway_Chunks/scr_Replace_Hallway_Chunks.yy",},
@@ -172,9 +172,9 @@
     {"name":"spr_gun_slime","order":2,"path":"sprites/spr_gun_slime/spr_gun_slime.yy",},
     {"name":"obj_enemy_shooter_explode","order":12,"path":"objects/obj_enemy_shooter_explode/obj_enemy_shooter_explode.yy",},
     {"name":"spr_player_zekai_falling_hurt4","order":14,"path":"sprites/spr_player_zekai_falling_hurt4/spr_player_zekai_falling_hurt4.yy",},
-    {"name":"spr_boss_cutin","order":2,"path":"sprites/spr_boss_cutin/spr_boss_cutin.yy",},
     {"name":"obj_text_useweapon","order":2,"path":"objects/obj_text_useweapon/obj_text_useweapon.yy",},
     {"name":"spr_electric_floor_on","order":13,"path":"sprites/spr_electric_floor_on/spr_electric_floor_on.yy",},
+    {"name":"spr_boss_cutin","order":2,"path":"sprites/spr_boss_cutin/spr_boss_cutin.yy",},
     {"name":"spr_TurretShoot","order":6,"path":"sprites/spr_TurretShoot/spr_TurretShoot.yy",},
     {"name":"spr_player_hurt4","order":7,"path":"sprites/spr_player_hurt4/spr_player_hurt4.yy",},
     {"name":"obj_softshield","order":11,"path":"objects/obj_softshield/obj_softshield.yy",},
