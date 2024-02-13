@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_sequence_door",
-    "path": "sprites/spr_sequence_door/spr_sequence_door.yy",
+    "name": "spr_boss2_sequence_lights",
+    "path": "sprites/spr_boss2_sequence_lights/spr_boss2_sequence_lights.yy",
   },
   "spriteMaskId": null,
   "visible": true,
