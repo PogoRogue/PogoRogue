@@ -171,4 +171,4 @@ gun = gun_array[current_gun];
 
 #endregion
 
-instance_create_depth(x,y,depth,obj_crosshair)
+instance_create_depth(x,y,depth,obj_crosshair_cursor);

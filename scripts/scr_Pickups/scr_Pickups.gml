@@ -385,4 +385,25 @@ function scr_Pickups(){
 			}
 		}
 	};
+	
+	pickup_target = {
+		_name: "Targeted Assassination",
+		tagline: "Instantly kills a random enemy on screen, 10% damage to bosses.",
+		gui_sprite: spr_pickup_target,
+		max_cooldown_time: 1200,
+		cooldown_time: 1200,
+		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		on_call: function() {
+			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_crosshair);
+			on_cooldown = true;
+		}
+	};
 }

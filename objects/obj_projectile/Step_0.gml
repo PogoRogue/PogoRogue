@@ -232,12 +232,6 @@ if (gun_name = "Star Sucker") {
 if (gun_name = "Slime Blaster") {
 	image_angle -= hspd*2;
 	if place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and num_of_bounces <= 0 and destroy_on_impact = true {
-		
-		if gun_name = "Paintball Gun" {
-			alarm[0] = 1;
-			//splatter code here
-		}else {
-			alarm[0] = 1;	
-		}
+		alarm[0] = 1;	
 	}
 }

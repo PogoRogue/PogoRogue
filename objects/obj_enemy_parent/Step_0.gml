@@ -5,6 +5,9 @@ if(is_dead) {
 	mask_index = spr_nothing;
 	spd = 0;
 	speed = 0;
+	if image_alpha <= 0.005 {
+		instance_destroy();	
+	}
 } else if (hp <= 0) {
 	alarm_set(0, room_speed);
 	audio_play_sound(snd_enemyhurt,0,false);
