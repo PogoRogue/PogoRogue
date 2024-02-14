@@ -12,7 +12,7 @@ if(!is_dead) {
 image_angle -= rotation_spd;
 
 // If surrounded, brick cannot be damaged
-if(instance_place_list(x, y, obj_boss_brick, ds_list_create(), false) >= 9) {
+if(instance_place_list(x, y, obj_boss_brick, ds_list_create(), false) >= 8) {
 	hp = hp_max;
 	is_dead = false;
 }

@@ -18,7 +18,7 @@ if (floor(image_index) = 0 and image_speed = -1) {
 	
 with obj_player {
 	//retract laser if not firing
-	if !(key_fire_projectile) {
+	if !(key_fire_projectile) or gun != laser_gun {
 		scr_Retract_Laser();
 	}
 	

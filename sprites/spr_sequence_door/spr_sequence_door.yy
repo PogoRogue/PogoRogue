@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_sequence_door",
-  "bbox_bottom": 255,
+  "bbox_bottom": 288,
   "bbox_left": 0,
   "bbox_right": 127,
   "bbox_top": 0,
@@ -22,7 +22,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 256,
+  "height": 289,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"40f83ab8-494f-4c01-bcab-b1d93e2f19d4","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},

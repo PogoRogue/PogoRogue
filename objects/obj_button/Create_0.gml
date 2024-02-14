@@ -2,5 +2,5 @@
 
 is_pressed = false;
 sprite_index = default_sprite;
-press_duration = 45;
+press_duration = 0.75 * room_speed;
 
