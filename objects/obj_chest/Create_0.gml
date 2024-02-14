@@ -16,13 +16,15 @@ buff_chance = 40 + global.luck;
 weapon_chance = 40 + global.luck;
 pickup_chance = 40 + global.luck;
 
-if !position_meeting(bbox_left+1,y+33,obj_ground_parent) and !position_meeting(bbox_left+1,y+33,obj_ground_oneway) {
-	x += 16;
-}else if position_meeting(bbox_right-1,y+33,obj_ground_parent) and !position_meeting(bbox_right-1,y+33,obj_ground_oneway) {
-	x -= 16;	
+if object_get_name(object_index) = "obj_chest" { //dont move special chests
+	if !position_meeting(bbox_left+1,y+33,obj_ground_parent) and !position_meeting(bbox_left+1,y+33,obj_ground_oneway) {
+		x += 16;
+	}else if !position_meeting(bbox_right-1,y+33,obj_ground_parent) and !position_meeting(bbox_right-1,y+33,obj_ground_oneway) {
+		x -= 16;	
+	}
 }
 
-new_chest = choose(obj_chest,obj_chest,obj_chest,obj_chest,obj_chest_coin,obj_chest_weapon,obj_chest_active);
+new_chest = choose(obj_chest,obj_chest,obj_chest,obj_chest_coin,obj_chest_weapon,obj_chest_active);
 
 if new_chest != obj_chest and object_get_name(object_index) = "obj_chest" {
 	instance_destroy();
