@@ -9,9 +9,7 @@ function scr_Shoot(){
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
 		
 		//sound
-		if !instance_exists(obj_sniper) {
-			audio_play_sound(gun.sound,0,false);
-		}
+		audio_play_sound(gun.sound,0,false);
 		
 		for (var i = 0; i < gun.spread_number; i++;) {
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
@@ -47,7 +45,7 @@ function scr_Shoot(){
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 {
+			if gun.spread_number = 1 and frenzy = false {
 				gun.current_bullets -= 1;
 			}
 			

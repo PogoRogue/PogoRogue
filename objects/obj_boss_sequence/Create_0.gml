@@ -40,6 +40,6 @@ current_frame = 4;
 image_speed = 0;
 
 // Set up turret positions
-turret_pos_1 = {x: 448, y: 416};
+turret_pos_1 = {x: 432, y: 416};
 turret_pos_2 = {x: 672, y: 416};
 axe_pos = {x: 560, y: 184};
