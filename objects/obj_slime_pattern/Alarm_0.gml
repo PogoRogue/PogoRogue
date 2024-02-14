@@ -7,7 +7,7 @@ while(cur_amt<amount){
 	
 	//manually set variables of the bullet here
 	_bullet.speed=3;
-	_bullet.grav=.03;
+	_bullet.grav=.12;
 	
 	if(rand){
 		_bullet.direction=dir_central+random_range(-spread/2,spread/2);
@@ -22,8 +22,8 @@ while(cur_amt<amount){
 	//upward adjustment
 	player = instance_nearest(x, y, obj_player);
 	time=sqrt(abs(player.x-x)^2+abs(player.y-y)^2)/3;
-	down_spd=time*0.03;
-	_bullet.vspeed-=down_spd*4;
+	down_spd=time*0.12;
+	_bullet.vspeed-=down_spd*2*3;
 	cur_amt++;
 }
 cur_rep++;

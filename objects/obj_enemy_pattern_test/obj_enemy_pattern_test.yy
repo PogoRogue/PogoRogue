@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_turret_barrel",
-    "path": "sprites/spr_enemy_turret_barrel/spr_enemy_turret_barrel.yy",
+    "name": "spr_SlimeTurretHead",
+    "path": "sprites/spr_SlimeTurretHead/spr_SlimeTurretHead.yy",
   },
   "spriteMaskId": null,
   "visible": true,

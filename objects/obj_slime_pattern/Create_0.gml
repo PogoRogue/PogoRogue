@@ -6,9 +6,8 @@
 // Inherit the parent event
 event_inherited();
 
-rand=true
-spread=30
-amount=5
-repeats=3
-delay=room_speed/8
+spread=0;
+amount=1;
+repeats=5;
+delay=room_speed/16;
 
