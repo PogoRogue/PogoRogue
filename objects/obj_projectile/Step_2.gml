@@ -91,7 +91,9 @@ if (gun_name = "Sniper Rifle" ) {
 	if (floor(image_index) <= 1 and image_speed = -1) {
 		instance_destroy();
 		with obj_sniper {
-			instance_destroy();
+			if image_speed = other.image_speed {
+				instance_destroy();
+			}
 		}
 	}
 	

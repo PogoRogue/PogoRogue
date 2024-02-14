@@ -96,23 +96,19 @@ if (gun_name = "Sniper Rifle") {
 	sniped = false;
 	sound = true;
 	
-	if instance_exists(obj_sniper) {
-		instance_destroy();	
-	}else {
-	
-		//create rest of laser
-		for (i = 2; i < 48; i++) {
-			instance_create_depth(x+lengthdir_x(32*i,image_angle),y+lengthdir_y(32*i,image_angle),depth,obj_sniper, {
-				image_angle: image_angle,
-				damage: damage,
-				parent_obj: other,
-				i: i,
-				destroy_on_impact: destroy_on_impact,
-				full_sprite: spr_projectile_sniper_middle_held,
-				mask_index: spr_nothing,
-				rotation_speed: rotation_speed
-			});
-		}
+	//create rest of laser
+	for (i = 2; i < 48; i++) {
+		instance_create_depth(x+lengthdir_x(32*i,image_angle),y+lengthdir_y(32*i,image_angle),depth,obj_sniper, {
+			image_angle: image_angle,
+			image_speed: image_speed,
+			damage: damage,
+			parent_obj: other,
+			i: i,
+			destroy_on_impact: destroy_on_impact,
+			full_sprite: spr_projectile_sniper_middle_held,
+			mask_index: spr_nothing,
+			rotation_speed: rotation_speed
+		});
 	}
 	//image_angle = obj_player.image_angle-90;
 }

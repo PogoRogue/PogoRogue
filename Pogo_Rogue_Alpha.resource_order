@@ -1,6 +1,9 @@
 {
-  "FolderOrderSettings": [
-  ],
+  "FolderOrderSettings": [],
   "ResourceOrderSettings": [
+    {"name":"spr_spike_mask_right","order":4,"path":"sprites/spr_spike_mask_right/spr_spike_mask_right.yy",},
+    {"name":"spr_spike_mask_up","order":2,"path":"sprites/spr_spike_mask_up/spr_spike_mask_up.yy",},
+    {"name":"spr_spike_mask_left","order":3,"path":"sprites/spr_spike_mask_left/spr_spike_mask_left.yy",},
+    {"name":"spr_boss_door_skull","order":1,"path":"sprites/spr_boss_door_skull/spr_boss_door_skull.yy",},
   ],
 }
