@@ -13,7 +13,7 @@ if(!vole_is_dead) {
 			break;
 	}
 	
-	var _vole = instance_create_layer(current_position.x, current_position.y, "enemies", obj_enemy_vole);
+	var _vole = instance_create_layer(current_position.x, current_position.y, "Instances", obj_enemy_vole);
 	_vole.parent = self;
 	_vole.hp = vole_hp;
 	

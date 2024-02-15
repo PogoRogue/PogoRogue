@@ -13,7 +13,7 @@ hp = 24;
 hp_max = hp;
 
 
-instance_create_layer(x + 16, y + 16, "enemies", obj_boss_brick_black, {parent: obj_miniboss_cube});
-instance_create_layer(x - 16, y + 16, "enemies", obj_boss_brick_blue, {parent: obj_miniboss_cube});
-instance_create_layer(x + 16, y - 16, "enemies", obj_boss_brick_red, {parent: obj_miniboss_cube});
-instance_create_layer(x - 16, y - 16, "enemies", obj_boss_brick_yellow, {parent: obj_miniboss_cube});
+instance_create_layer(x + 16, y + 16, "Instances", obj_boss_brick_black, {parent: obj_miniboss_cube});
+instance_create_layer(x - 16, y + 16, "Instances", obj_boss_brick_blue, {parent: obj_miniboss_cube});
+instance_create_layer(x + 16, y - 16, "Instances", obj_boss_brick_red, {parent: obj_miniboss_cube});
+instance_create_layer(x - 16, y - 16, "Instances", obj_boss_brick_yellow, {parent: obj_miniboss_cube});

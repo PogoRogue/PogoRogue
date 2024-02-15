@@ -19,25 +19,33 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 		if(Green < 50)
 		{
-			if(Red == 255)
+			if(Red == 255) //#ff0000 (255, 0, 0)
 			{
 				return Get_Random_Enemy();
 			}
-			else if(Red > 228)
+			else if(Red > 228) //#e50000 (229, 0, 0)
 			{			
 				return obj_enemy_flying;
 			}
-			else if(Red > 203)
+			else if(Red > 203) //#cc0000 (204, 0, 0)
 			{		
 				//return obj_enemy_stomp_only;
 				return obj_enemy_stomp_only_moving;
 			}
-			else if(Red > 177)
+			else if(Red == 180 && Blue == 100) //#b40064 (180, 0, 100)
+			{
+				return obj_enemy_snail;
+			}
+			//else if(Red == 180 && Blue == 50) //#b40032 (180, 0, 50)
+			//{
+			//	// snail rotation 
+			//}
+			else if(Red > 177) //#b20000 (178, 0, 0)
 			{
 				//return obj_enemy_shoot_only;
 				return obj_enemy_shoot_only_jumping;
 			}
-			else if(Red > 150)
+			else if(Red > 150) //#990000 (153, 0, 0)
 			{
 				return obj_enemy_shooter;
 				//return obj_enemy_shooter_moving;
@@ -45,28 +53,37 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}
 		else if(Green >= 50)
 		{
-			if(Red > 240)
+			if(Red > 240) //#FF5500 (255, 85, 0)
 			{
 				return obj_enemy_moving;
 			}
-			else if(Red > 220)
+			else if(Red > 230) //#eb4b4b (235, 75, 75)
+			{
+				return obj_miniboss_cube;
+			}
+			else if(Red > 220) //#E54C00 (229, 76, 0)
 			{
 				//return obj_enemy_explode;
 				return obj_enemy_explode_walking;
 			}
-			else if(Red > 200)
+			else if(Red > 200) //#CC4300 (204, 67, 0)
 			{
-				return obj_enemy_stomp_only_moving;
+				//return obj_enemy_stomp_only_moving;
+				return obj_enemy_shooter_moving;
 			}
-			else if(Red > 170)
+			else if(Red > 179) //#b46414 (180, 100, 20)
+			{
+				return obj_enemy_whack_a_vole;
+			}
+			else if(Red > 170) //#b23a00 (178, 58, 0)
 			{
 				return obj_enemy_turret;
 			}
-			else if(Red > 160)
+			else if(Red > 160) //#a83a3a (168, 58, 58)
 			{
 				return obj_enemy_turret_mobile;
 			}
-			else if(Red > 150)
+			else if(Red > 150) //#993200 (153, 50, 0)
 			{
 				return obj_enemy_moving_jumping;
 			}
