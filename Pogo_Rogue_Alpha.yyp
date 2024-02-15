@@ -140,7 +140,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -385,6 +385,7 @@
     {"id":{"name":"spr_settings_uparrow","path":"sprites/spr_settings_uparrow/spr_settings_uparrow.yy",},},
     {"id":{"name":"obj_jetpack_smoke","path":"objects/obj_jetpack_smoke/obj_jetpack_smoke.yy",},},
     {"id":{"name":"spr_buffitem_lasersight","path":"sprites/spr_buffitem_lasersight/spr_buffitem_lasersight.yy",},},
+    {"id":{"name":"obj_jack_in_the_box","path":"objects/obj_jack_in_the_box/obj_jack_in_the_box.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"spr_enemy_turret_move","path":"sprites/spr_enemy_turret_move/spr_enemy_turret_move.yy",},},
     {"id":{"name":"spr_projectile_paintball_gui","path":"sprites/spr_projectile_paintball_gui/spr_projectile_paintball_gui.yy",},},
@@ -480,6 +481,7 @@
     {"id":{"name":"spr_buffitem_dualwielder","path":"sprites/spr_buffitem_dualwielder/spr_buffitem_dualwielder.yy",},},
     {"id":{"name":"spr_controller_button_left","path":"sprites/spr_controller_button_left/spr_controller_button_left.yy",},},
     {"id":{"name":"spr_projectile_sniper_gui","path":"sprites/spr_projectile_sniper_gui/spr_projectile_sniper_gui.yy",},},
+    {"id":{"name":"spr_jack_in_the_box","path":"sprites/spr_jack_in_the_box/spr_jack_in_the_box.yy",},},
     {"id":{"name":"spr_enemy_shooting_explosion","path":"sprites/spr_enemy_shooting_explosion/spr_enemy_shooting_explosion.yy",},},
     {"id":{"name":"spr_cube_cutin_words","path":"sprites/spr_cube_cutin_words/spr_cube_cutin_words.yy",},},
     {"id":{"name":"obj_item_buff_dualwielder","path":"objects/obj_item_buff_dualwielder/obj_item_buff_dualwielder.yy",},},
