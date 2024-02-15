@@ -73,7 +73,9 @@ global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets,obj
 					obj_item_buff_blackfriday, obj_item_buff_triplethreat, obj_item_buff_flamingcoins,
 					obj_item_buff_combotime, obj_item_buff_sharpshooter, obj_item_buff_coinsup,
 					obj_item_buff_sharptip, obj_item_buff_experimentation, obj_item_buff_aerialassassin,
-					obj_item_buff_supershield, obj_item_buff_revive, obj_item_buff_drilltipbullets, obj_item_buff_dualwielder];
+					obj_item_buff_supershield, obj_item_buff_revive, obj_item_buff_drilltipbullets, 
+					obj_item_buff_dualwielder, obj_item_buff_magicianstouch, obj_item_buff_steadyhands,
+					obj_item_buff_tightspring];
 					
 global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_item_weapon_shotgun, 
 					obj_item_weapon_bubble, obj_item_weapon_burstfire, obj_item_weapon_grenade, 

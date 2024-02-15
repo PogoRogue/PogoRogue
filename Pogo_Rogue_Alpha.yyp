@@ -132,7 +132,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.8.1.102",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -429,6 +429,7 @@
     {"id":{"name":"spr_pickup_firedash","path":"sprites/spr_pickup_firedash/spr_pickup_firedash.yy",},},
     {"id":{"name":"obj_boss_brick_yellow","path":"objects/obj_boss_brick_yellow/obj_boss_brick_yellow.yy",},},
     {"id":{"name":"obj_presets","path":"objects/obj_presets/obj_presets.yy",},},
+    {"id":{"name":"obj_item_buff_magicianstouch","path":"objects/obj_item_buff_magicianstouch/obj_item_buff_magicianstouch.yy",},},
     {"id":{"name":"scr_Choose_Test_Block_To_Generate","path":"scripts/scr_Choose_Test_Block_To_Generate/scr_Choose_Test_Block_To_Generate.yy",},},
     {"id":{"name":"spr_B1_Fly_Move","path":"sprites/spr_B1_Fly_Move/spr_B1_Fly_Move.yy",},},
     {"id":{"name":"scr_Settings_Video","path":"scripts/scr_Settings_Video/scr_Settings_Video.yy",},},
@@ -741,6 +742,7 @@
     {"id":{"name":"spr_enemy_explosion","path":"sprites/spr_enemy_explosion/spr_enemy_explosion.yy",},},
     {"id":{"name":"scr_Controls_Array_Keyboard","path":"scripts/scr_Controls_Array_Keyboard/scr_Controls_Array_Keyboard.yy",},},
     {"id":{"name":"spr_player_mask","path":"sprites/spr_player_mask/spr_player_mask.yy",},},
+    {"id":{"name":"obj_item_buff_steadyhands","path":"objects/obj_item_buff_steadyhands/obj_item_buff_steadyhands.yy",},},
     {"id":{"name":"snd_enemyhurt","path":"sounds/snd_enemyhurt/snd_enemyhurt.yy",},},
     {"id":{"name":"obj_bulletcasing","path":"objects/obj_bulletcasing/obj_bulletcasing.yy",},},
     {"id":{"name":"spr_on_platform","path":"sprites/spr_on_platform/spr_on_platform.yy",},},
@@ -808,6 +810,7 @@
     {"id":{"name":"spr_greensquare","path":"sprites/spr_greensquare/spr_greensquare.yy",},},
     {"id":{"name":"fnt_item_popup","path":"fonts/fnt_item_popup/fnt_item_popup.yy",},},
     {"id":{"name":"spr_projectile_boomerang","path":"sprites/spr_projectile_boomerang/spr_projectile_boomerang.yy",},},
+    {"id":{"name":"obj_item_buff_tightspring","path":"objects/obj_item_buff_tightspring/obj_item_buff_tightspring.yy",},},
     {"id":{"name":"spr_dl_test","path":"sprites/spr_dl_test/spr_dl_test.yy",},},
     {"id":{"name":"obj_wall_parent","path":"objects/obj_wall_parent/obj_wall_parent.yy",},},
     {"id":{"name":"spr_planetarybullets","path":"sprites/spr_planetarybullets/spr_planetarybullets.yy",},},
