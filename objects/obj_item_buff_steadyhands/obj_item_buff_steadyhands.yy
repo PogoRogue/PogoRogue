@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_buffitem_aerialassassin",
-    "path": "sprites/spr_buffitem_aerialassassin/spr_buffitem_aerialassassin.yy",
+    "name": "spr_buffitem_steadyhands",
+    "path": "sprites/spr_buffitem_steadyhands/spr_buffitem_steadyhands.yy",
   },
   "spriteMaskId": null,
   "visible": true,

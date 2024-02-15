@@ -132,7 +132,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.1.102",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -469,6 +469,7 @@
     {"id":{"name":"spr_trigger","path":"sprites/spr_trigger/spr_trigger.yy",},},
     {"id":{"name":"snd_coin","path":"sounds/snd_coin/snd_coin.yy",},},
     {"id":{"name":"spr_TurretHead","path":"sprites/spr_TurretHead/spr_TurretHead.yy",},},
+    {"id":{"name":"spr_buffitem_tightspring","path":"sprites/spr_buffitem_tightspring/spr_buffitem_tightspring.yy",},},
     {"id":{"name":"spr_button_1","path":"sprites/spr_button_1/spr_button_1.yy",},},
     {"id":{"name":"obj_ground_parent","path":"objects/obj_ground_parent/obj_ground_parent.yy",},},
     {"id":{"name":"spr_player_mask_zekai","path":"sprites/spr_player_mask_zekai/spr_player_mask_zekai.yy",},},
@@ -738,6 +739,7 @@
     {"id":{"name":"sh_white","path":"shaders/sh_white/sh_white.yy",},},
     {"id":{"name":"spr_projectile_bouncyball","path":"sprites/spr_projectile_bouncyball/spr_projectile_bouncyball.yy",},},
     {"id":{"name":"spr_spikeball_handle_base","path":"sprites/spr_spikeball_handle_base/spr_spikeball_handle_base.yy",},},
+    {"id":{"name":"spr_buffitem_steadyhands","path":"sprites/spr_buffitem_steadyhands/spr_buffitem_steadyhands.yy",},},
     {"id":{"name":"obj_boss_door","path":"objects/obj_boss_door/obj_boss_door.yy",},},
     {"id":{"name":"spr_enemy_explosion","path":"sprites/spr_enemy_explosion/spr_enemy_explosion.yy",},},
     {"id":{"name":"scr_Controls_Array_Keyboard","path":"scripts/scr_Controls_Array_Keyboard/scr_Controls_Array_Keyboard.yy",},},
@@ -821,6 +823,7 @@
     {"id":{"name":"snd_camera","path":"sounds/snd_camera/snd_camera.yy",},},
     {"id":{"name":"obj_subboss_shield","path":"objects/obj_subboss_shield/obj_subboss_shield.yy",},},
     {"id":{"name":"obj_wallleft","path":"objects/obj_wallleft/obj_wallleft.yy",},},
+    {"id":{"name":"spr_buffitem_magicianstouch","path":"sprites/spr_buffitem_magicianstouch/spr_buffitem_magicianstouch.yy",},},
     {"id":{"name":"obj_item_buff_hotshells","path":"objects/obj_item_buff_hotshells/obj_item_buff_hotshells.yy",},},
     {"id":{"name":"spr_leftbelt_center","path":"sprites/spr_leftbelt_center/spr_leftbelt_center.yy",},},
     {"id":{"name":"obj_bounceheight1","path":"objects/obj_bounceheight1/obj_bounceheight1.yy",},},

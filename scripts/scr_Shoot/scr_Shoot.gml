@@ -17,9 +17,9 @@ function scr_Shoot(){
 				destroyOnImpact = gun.ammo[bullet_index].destroy_on_impact
 			}
 			if(global.steadyhands){
-				imageAngle = angle_ + random_range(-gun.inaccuracy*0.5,gun.inaccuracy*0.5)  - 90
+				imageAngle = angle_ - 90;
 			}else{
-				imageAngle = angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90
+				imageAngle = angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90;
 			}
 			instance_create_depth(x,y,depth-1,obj_projectile,{
 				image_angle: imageAngle,

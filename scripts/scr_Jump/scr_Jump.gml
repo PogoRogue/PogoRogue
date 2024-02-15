@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Jump(add_to_jump){
-	speed = vsp_basicjump+add_to_jump; //bounce speed
+	speed = vsp_basicjump+add_to_jump+((vsp_basicjump/10)*global.tightspring); //bounce speed
 	direction = angle - 90; //bounce angle
 	hspeed += conveyor_speed;
 	conveyor_speed = 0;

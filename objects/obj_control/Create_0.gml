@@ -64,6 +64,9 @@ global.drilltipbullets = false;
 global.dualwielder = false;
 global.revive = false;
 global.revived = false; //once the player has used their revive, set this to true
+global.magicianstouch = false;
+global.steadyhands = false;
+global.tightspring = false;
 
 
 //items unlockable in the shop
