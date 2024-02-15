@@ -14,7 +14,7 @@ if global.combo_length <= global.combo_max/4 {
 	low_combo_meter = false;
 }
 
-combo_decrease_speed = global.combo_max/(500+global.combo_time_added); //# of frames for each combo to last
+combo_decrease_speed = global.combo_max/(600+global.combo_time_added); //# of frames for each combo to last
 
 //increase combo meter size
 if increase_combometer_scale = false and global.combo > prev_combo {

@@ -13,20 +13,20 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9184c1fb-4dc0-4327-8797-9205a8e23468",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e079d537-af58-487a-bc44-8c79ede21924",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 432,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8690290e-dc4d-43c3-98ec-fdfb61bed2c9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a2ba990d-7286-409b-9607-0bd8ad112517","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Boss Cut-In",
-    "path": "folders/Sprites/UI/Boss Cut-In.yy",
+    "name": "Boss: Cube",
+    "path": "folders/Sprites/UI/Boss Cut-In/Boss: Cube.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9184c1fb-4dc0-4327-8797-9205a8e23468","path":"sprites/spr_boss_cutin/spr_boss_cutin.yy",},},},"Disabled":false,"id":"94768eeb-9a22-41b5-853c-e0abf11427b6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e079d537-af58-487a-bc44-8c79ede21924","path":"sprites/spr_boss_cutin/spr_boss_cutin.yy",},},},"Disabled":false,"id":"3ca5a3aa-f47a-40f2-a03e-1ac0bd555437","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

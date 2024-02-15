@@ -45,6 +45,10 @@ for(var _i = -3; _i < 4; _i++) {
 					break;
 			}
 			
+			if(_i == 0 && _j == 0) {
+				type_index = obj_boss_brick_gap;
+			}
+			
 			instance_create_layer(x + (_i * 32), y + (_j * 32), "enemies", type_index, {parent: obj_boss_sphere});
 			type = irandom(3);
 		}

@@ -50,9 +50,13 @@ slam_trail_distance = 0;
 invincible = false;
 max_dash_time = 15;
 dash_time = 15;
+bubble = false;
 bulletblast_frames = 0;
 bulletblast_frames_max = 65; //how many frames before blasting
 freeze_time = 0;
+freeze_alpha = 0;
+freeze_angle = 0;
+frenzy = false;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -253,6 +257,9 @@ state_chargejump = function() {
 }
 
 state_groundpound = function() {
+	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
+		sprite_index = player_sprite;
+	}
 	
 	hspeed = hspeed * 0.9;
 	can_shoot = false;
@@ -343,11 +350,14 @@ state_firedash = function() {
 temp_x = 0.5;
 init_x = x;
 state_bulletblast = function() {
+	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
+		sprite_index = player_sprite;
+	}
 	if bulletblast_frames < bulletblast_frames_max {
 		speed = speed * 0.9;
-		if scr_Animation_Complete() and sprite_index = spr_player_zekai {
-			sprite_index = spr_player_zekai_charging;	
-		}else if sprite_index = spr_player_zekai {
+		if scr_Animation_Complete() and sprite_index = player_sprite {
+			sprite_index = charging_sprite;	
+		}else if sprite_index = player_sprite {
 			image_index += 1;
 			init_x = x;
 		}else {
@@ -382,11 +392,13 @@ state_bulletblast = function() {
 }
 
 state_freeze = function() {
+	sprite_index = player_sprite;
 	if abs(speed) > 0.01 {
 		speed *= 0.8;	
 	}else {
 		speed = 0;	
 	}
+	
 	if freeze_time > 0 {
 		freeze_time -= 1;	
 	}else {
@@ -395,9 +407,15 @@ state_freeze = function() {
 		rotation_speed = original_rotation_speed;
 		rotation_delay = rotation_speed / 10;
 	}
+	
+	if (freeze_alpha < 1) {
+		freeze_alpha += 0.1;	
+	}
+	
 	can_rotate = true;
 	can_shoot = true;
 	grav = 0;
+	freeze_angle = image_angle;
 	
 	scr_Player_Collision();
 }
@@ -498,20 +516,27 @@ bullet_index = 0; //current bullet
 //EQUIP WEAPONS
 num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2 to start, but include functionality of 3 for "triple threat" buff
 weapons_equipped = num_of_weapons;
-all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun]; //all guns
+all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun]; //all guns
 
 if (random_weapon = true) { //choose random weapons
 	randomize();
-	gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-	if num_of_weapons > 1 {
-		gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-	}else {
-		gun_2 = gun_1;
-	}
-	if num_of_weapons > 2 {
-		gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-	}else {
+	//temporarily change items for playtest
+	if room = room_proc_gen_test or room = room_boss_2 {
+		gun_1 = default_gun;
+		gun_2 = choose(sniper_gun,slime_gun);
 		gun_3 = gun_1;
+	}else {
+		gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		if num_of_weapons > 1 {
+			gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_2 = gun_1;
+		}
+		if num_of_weapons > 2 {
+			gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_3 = gun_1;
+		}
 	}
 
 	while (gun_2 = gun_1) and num_of_weapons > 1 { //dont want 2 of the same weapon
@@ -551,11 +576,18 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target]; //all pickups
 
 if (random_pickup = true) { //choose random pickups
 	randomize();
-	pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+	
+	//temporarily change items for playtest
+	if room = room_proc_gen_test or room = room_boss_2 {
+		pickup_1 = choose(pickup_frenzy,pickup_target);
+	}else {
+		pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+	}
+	
 	pickup_2 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
 
 	while (pickup_2 = pickup_1) { //dont want 2 of the same weapon

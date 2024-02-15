@@ -5,6 +5,9 @@ if(is_dead) {
 	mask_index = spr_nothing;
 	spd = 0;
 	speed = 0;
+	if image_alpha <= 0.005 {
+		instance_destroy();	
+	}
 } else if (hp <= 0) {
 	alarm_set(0, room_speed);
 	audio_play_sound(snd_enemyhurt,0,false);
@@ -19,6 +22,9 @@ if(is_dead) {
 		with obj_player {
 			if hp < max_hp {
 				hp += 8;
+				with obj_player_health {
+					heart_gain_num = other.hp;	
+				}
 			}
 		}
 	}
@@ -61,7 +67,3 @@ current_iframes = max(current_iframes - 1, 0);
 
 // Update red shader frames
 red_frames = max(red_frames - 1, 0);
-
-// Round HP to nearest integer
-//Commented this out because it makes the laser act weird
-//hp = round(hp);

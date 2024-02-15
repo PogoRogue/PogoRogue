@@ -4,7 +4,7 @@ function scr_Random_Item_Drops(){
 	randomize();
 
 	//get center of enemy
-	var center_x = x - sprite_get_xoffset(sprite_index) + sprite_width / 2;
+	var center_x = x;
 	var center_y = y - sprite_get_yoffset( sprite_index) + sprite_height / 2;
 	
 	heart_drop = irandom_range(1,100);
@@ -67,6 +67,7 @@ function scr_Random_Item_Drops(){
 		with instance_create_depth(center_x,center_y,depth-1,obj_item_parentpickup) {
 			follow_player = false;
 			alarm[0] = 1;
+			image_index = 3;
 		}
 		num_of_coins = 0;
 		with obj_item_buff_heart {

@@ -1,10 +1,14 @@
 /// @description draw self
-if(current_iframes >= num_iframes - 10 || dead) {
+if(current_iframes >= num_iframes - 10 and bubble = false || dead) {
 	shader_set(sh_tint_red);
 }
 
 if (!dead) {
-	image_alpha = abs(cos(current_iframes / 5)) + 0.2;
+	if bubble = false {
+		image_alpha = abs(cos(current_iframes / 5)) + 0.2;
+	}else {
+		image_alpha = 1;
+	}
 }else {
 	image_alpha = 1;
 }
@@ -17,6 +21,16 @@ if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {
 		draw_sprite_ext(spr_jetpack,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}else if sprite_index = charging_sprite {
 		draw_sprite_ext(spr_jetpack_charging,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}
+}
+
+//freeze
+if state = state_freeze {
+	draw_sprite_ext(spr_freezeanimation,sprite_get_number(spr_freezeanimation)-1-(freeze_time/2),x+lengthdir_x(22,freeze_angle+90),y+lengthdir_y(22,freeze_angle+90),1,1,freeze_angle,c_white,freeze_alpha);	
+}else {
+	if (freeze_alpha > 0) {
+		freeze_alpha -= 0.1;	
+		draw_sprite_ext(spr_freezeanimation,sprite_get_number(spr_freezeanimation)-1,x+lengthdir_x(22,freeze_angle+90),y+lengthdir_y(22,freeze_angle+90),1,1,freeze_angle,c_white,freeze_alpha);
 	}
 }
 

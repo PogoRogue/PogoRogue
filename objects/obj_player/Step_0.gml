@@ -53,6 +53,9 @@ if (room = room_shop) {
 	state = state_shop;
 }
 
+//get sprites
+scr_Get_Player_Sprites();
+
 //run state machine
 state();
 
@@ -221,7 +224,7 @@ if (canshoot > 0) {
 		}
 		
 		//decrease ammo count for spread weapons
-		if gun.spread_number > 1 {
+		if gun.spread_number > 1 and frenzy = false{
 			gun.current_bullets -= 1;
 		}
 	}

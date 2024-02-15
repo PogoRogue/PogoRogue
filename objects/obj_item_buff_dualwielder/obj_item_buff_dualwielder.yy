@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_buffitem_planetarybullets",
-    "path": "sprites/spr_buffitem_planetarybullets/spr_buffitem_planetarybullets.yy",
+    "name": "spr_buffitem_dualwielder",
+    "path": "sprites/spr_buffitem_dualwielder/spr_buffitem_dualwielder.yy",
   },
   "spriteMaskId": null,
   "visible": true,

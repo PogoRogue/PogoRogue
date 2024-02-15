@@ -20,13 +20,14 @@
   "height": 16,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d5c0a53b-73bd-40ce-bf4e-d353e7f30d0d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2d0b4fd9-750b-495e-ad09-97db0be10c69","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d5c0a53b-73bd-40ce-bf4e-d353e7f30d0d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":false,},
   ],
   "nineSlice": null,
   "origin": 0,
   "parent": {
     "name": "Environmental",
-    "path": "folders/Sprites/Enemy/Environmental.yy",
+    "path": "folders/Sprites/Environmental.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

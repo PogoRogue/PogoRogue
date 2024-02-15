@@ -35,3 +35,5 @@ state_retract = function() {
 }
 
 state = state_unsprung;
+
+adjusted = false;

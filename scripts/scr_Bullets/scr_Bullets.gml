@@ -248,4 +248,42 @@ function scr_Bullets(){
 		bounce_amount: 1,
 		damage: 6
 	};
+	
+	sniper_bullet = {
+		sprite: spr_projectile_sniper_start,
+		gui_sprite: spr_projectile_sniper_gui,
+		spd: 0,                          
+		firerate_start: 1,               
+		firerate_end: 1,                 
+		firerate_mult: 0,               
+		firerate: 1,                     
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 6, frames: 14},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 20
+	};
+	
+	slime_bullet = {
+		sprite: spr_projectile_slime,
+		gui_sprite: spr_projectile_slime_gui,
+		spd: 5,                        
+		firerate_start: 1,              
+		firerate_end: 1,                
+		firerate_mult: 0,               
+		firerate: 1,                    
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 4, frames: 13},
+		destroy_time: 0,
+		flash_frame: 0,
+		grav_affected: true,
+		grv: obj_player.grv,
+		num_of_bounces: 0 + global.bouncy_bullets,
+		bounce_amount: 1,
+		damage: 0.8
+	};
 }
