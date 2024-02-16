@@ -140,7 +140,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -616,6 +616,7 @@
     {"id":{"name":"obj_spike","path":"objects/obj_spike/obj_spike.yy",},},
     {"id":{"name":"obj_explode_projectile_r","path":"objects/obj_explode_projectile_r/obj_explode_projectile_r.yy",},},
     {"id":{"name":"scr_Reset_Save_Data","path":"scripts/scr_Reset_Save_Data/scr_Reset_Save_Data.yy",},},
+    {"id":{"name":"obj_slime_pattern","path":"objects/obj_slime_pattern/obj_slime_pattern.yy",},},
     {"id":{"name":"obj_shieldbubble","path":"objects/obj_shieldbubble/obj_shieldbubble.yy",},},
     {"id":{"name":"obj_env_air_effect","path":"objects/obj_env_air_effect/obj_env_air_effect.yy",},},
     {"id":{"name":"obj_arrowL","path":"objects/obj_arrowL/obj_arrowL.yy",},},
@@ -1047,11 +1048,11 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
   ],
   "RoomOrderNodes": [
+    {"roomId":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
     {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
     {"roomId":{"name":"room_boss_2","path":"rooms/room_boss_2/room_boss_2.yy",},},
     {"roomId":{"name":"room_boss_1","path":"rooms/room_boss_1/room_boss_1.yy",},},
-    {"roomId":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
     {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
     {"roomId":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
     {"roomId":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},
