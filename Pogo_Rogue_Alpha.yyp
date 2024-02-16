@@ -140,7 +140,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -961,7 +961,6 @@
     {"id":{"name":"fnt_item_popup","path":"fonts/fnt_item_popup/fnt_item_popup.yy",},},
     {"id":{"name":"spr_projectile_boomerang","path":"sprites/spr_projectile_boomerang/spr_projectile_boomerang.yy",},},
     {"id":{"name":"obj_item_buff_tightspring","path":"objects/obj_item_buff_tightspring/obj_item_buff_tightspring.yy",},},
-    {"id":{"name":"spr_dl_test","path":"sprites/spr_dl_test/spr_dl_test.yy",},},
     {"id":{"name":"obj_wall_parent","path":"objects/obj_wall_parent/obj_wall_parent.yy",},},
     {"id":{"name":"spr_planetarybullets","path":"sprites/spr_planetarybullets/spr_planetarybullets.yy",},},
     {"id":{"name":"scr_Mouse_Get_Button_Sprite","path":"scripts/scr_Mouse_Get_Button_Sprite/scr_Mouse_Get_Button_Sprite.yy",},},
