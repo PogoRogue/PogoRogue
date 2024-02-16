@@ -23,8 +23,14 @@ for(i = 0; i < num_of_slots; i++) {
 	draw_set_font(fnt_uifontsmall);
 	
 	if instance_exists(slot_items_array[i]) {
-		scr_Draw_Text_Outlined(xx-6,yy+21,round(slot_items_array[i].item_cost * global.sale),c_white);
 		draw_sprite(spr_coin,0,xx+10,yy+21);
+		
+		if global.num_of_coins < round(slot_items_array[i].item_cost * global.sale) {
+			scr_Draw_Text_Outlined(xx-6,yy+21,round(slot_items_array[i].item_cost * global.sale),make_color_rgb(180,82,82));
+			draw_set_color(c_white);
+		} else {
+			scr_Draw_Text_Outlined(xx-6,yy+21,round(slot_items_array[i].item_cost * global.sale),c_white);
+		}
 		
 		//sold out
 		if slot_items_array[i].sold_out = true {
@@ -81,10 +87,18 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_font(fnt_uifont2small);
 draw_sprite(spr_item_slot_refresh,refresh_button + (((global.num_of_coins < refresh_cost or refreshes_left <= 0)*refresh_button)),xx,yy2);
+
 draw_text(xx,yy2,"REFRESH");
 if refreshes_left > 0 {
 	draw_set_font(fnt_uifontsmall);
-	scr_Draw_Text_Outlined(xx-6,yy2+9,refresh_cost,c_white);
+	
+	if global.num_of_coins < refresh_cost {
+		scr_Draw_Text_Outlined(xx-6,yy2+9,refresh_cost,make_color_rgb(180,82,82));
+		draw_set_color(c_white);
+	} else {
+		scr_Draw_Text_Outlined(xx-6,yy2+9,refresh_cost,c_white);
+	}
+	
 	draw_sprite(spr_coin,0,xx+10,yy2+9);
 }
 draw_set_font(fnt_uifont2small);

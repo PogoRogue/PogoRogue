@@ -388,7 +388,7 @@ function scr_Pickups(){
 	
 	pickup_target = {
 		_name: "Targeted Assassination",
-		tagline: "Instantly kills a random enemy on screen, 10% damage to bosses.",
+		tagline: "Instantly kills a random enemy on screen, 20% damage to bosses.",
 		gui_sprite: spr_pickup_target,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
