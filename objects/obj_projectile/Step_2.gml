@@ -49,7 +49,7 @@ if (gun_name = "Laser Gun" ) {
 		}
 		
 		//decrease ammo
-		if (gun.spread_number = 1 and other.laser_boost) {
+		if (gun.spread_number = 1 and other.laser_boost and frenzy = false) {
 			gun.current_bullets -= 1;
 		}
 		
@@ -91,7 +91,9 @@ if (gun_name = "Sniper Rifle" ) {
 	if (floor(image_index) <= 1 and image_speed = -1) {
 		instance_destroy();
 		with obj_sniper {
-			instance_destroy();
+			if image_speed = other.image_speed {
+				instance_destroy();
+			}
 		}
 	}
 	
@@ -108,8 +110,6 @@ if (gun_name = "Sniper Rifle" ) {
 		
 		//add momentum
 		if (other.laser_boost) {
-			rotation_speed = other.rotation_speed * 0.75;
-			rotation_delay = rotation_speed / 7;
 			scr_Retract_Laser();
 			other.laser_boost = false;
 			

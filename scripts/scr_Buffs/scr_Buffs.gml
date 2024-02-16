@@ -173,4 +173,16 @@ function scr_Buffs(){
 	buff_dualwielder = function(){
 		global.dualwielder = true;
 	}
+	
+	buff_magicianstouch = function(){
+		global.magicianstouch = true;
+	}
+	
+	buff_tightspring = function(){
+		global.tightspring = true;
+	}
+	
+	buff_steadyhands = function(){
+		global.steadyhands = true;
+	}
 }
