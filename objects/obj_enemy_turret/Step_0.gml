@@ -13,13 +13,13 @@ if(!is_dead && dist_to_player < range) {
 		weapon_cooldown--;
 		
 		if(weapon_cooldown <= 0 and w_alarm_cd == false and windup == true) {
-			sprite_index = spr_TurretShoot;
+			sprite_index = shooting_sprite;
 			alarm_set(5,100);
 			w_alarm_cd = true;
 		}
 		
 		if(weapon_cooldown <= 0 and windup == false) {
-			sprite_index = spr_TurretHead;
+			sprite_index = default_sprite;
 			// Create bullet
 			var _xx = x + lengthdir_x(48, image_angle);
 			var _yy = y + lengthdir_y(48, image_angle)

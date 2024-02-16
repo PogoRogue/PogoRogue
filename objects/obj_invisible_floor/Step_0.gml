@@ -29,7 +29,7 @@ if(place_meeting(x, y, obj_player)) {
 			y--;
 		}
 		speed = 0;
-		if(other.image_yscale >= other.initial_scale) {
+		if(other.image_yscale >= other.initial_scale && state != state_bouncing && state != state_chargejump) {
 			state = state_bouncing;
 		}
 	}

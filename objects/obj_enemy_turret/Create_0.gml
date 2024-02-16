@@ -18,6 +18,10 @@ alarm[1] = 1;
 windup = true;
 w_alarm_cd = false;
 
+// Animation variables
+default_sprite = spr_turret_head;
+body_sprite = spr_turret_body;
+shooting_sprite = spr_turret_shoot;
 image_angle = rotation;
 
 // Inherit the parent event
