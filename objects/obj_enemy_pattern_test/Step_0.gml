@@ -13,7 +13,7 @@ if(!is_dead && dist_to_player < range) {
 		weapon_cooldown--;
 		if(weapon_cooldown <= 0) {
 			// Create bullet
-			var _bullet = instance_create_layer(x, y, "Instances", obj_pattern_template);
+			var _bullet = instance_create_layer(x, y, "Instances", obj_slime_pattern);
 			_bullet.dir_central = point_direction(x, y, player.x, player.y);
 			weapon_cooldown = cooldown_length;
 		}
