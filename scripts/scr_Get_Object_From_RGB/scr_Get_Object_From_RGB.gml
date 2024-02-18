@@ -11,6 +11,22 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 	return -1;
 	}
+	else if(Red == 34 && Green == 204 && Blue == 0)
+	{
+		return obj_tag_Sam;
+	}
+	else if(false) //Insert Talon signature color here
+	{
+		return obj_tag_Talon;
+	}
+	else if(false)
+	{
+		return obj_tag_Zehao; // Insert Talon signature color here
+	}
+	else if(Red == 213 && Green == 110 && Blue == 5)
+	{
+		return obj_pixel_tag; //Default tag color for testing purposes
+	}
 	else if(Red == 255 && Green == 255 && Blue == 255) //White = player start location
 	{
 		return obj_player_start;

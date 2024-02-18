@@ -37,12 +37,12 @@ generate_start_room = true; //Since structure will be the exact same, just with 
 
 ///*
 //Generate a few different layouts for test purposes
-for(var loopInd = 0; loopInd < 5; loopInd++)
-{
-	scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, num_non_rand_rooms, 
-	generate_start_room, min_distance_between_rooms, max_distance_between_rooms);
-	show_debug_message("\n");
-}
+//for(var loopInd = 0; loopInd < 5; loopInd++)
+//{
+//	scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, num_non_rand_rooms, 
+//	generate_start_room, min_distance_between_rooms, max_distance_between_rooms);
+//	show_debug_message("\n");
+//}
 
 //Generate the general layout of the procedural generation in text form
 layout_grid = scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, num_non_rand_rooms,
