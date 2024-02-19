@@ -7,7 +7,7 @@ function scr_Draw_Passive_Description(xx,yy,item_sprite,item_image_index,item_na
 	draw_set_font(fnt_combo2);
 			
 	//slot
-	draw_sprite(spr_itemmenu_passive_slot,0,xx,yy);
+	draw_sprite(spr_itemmenu_passive_slot,1,xx,yy);
 			
 	//sprite
 	draw_sprite(item_sprite,item_image_index,xx-42,yy-27);

@@ -341,4 +341,8 @@ if (hp <= 8 and hp > 0) {
 		audio_play_sound(snd_oneHeart,0,false);
 	}	
 }
+
+if room = room_items {
+	speed = 0;
+}	
 	

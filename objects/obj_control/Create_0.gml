@@ -78,28 +78,11 @@ global.tightspring = false;
 
 
 //items unlockable in the shop
-global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets,obj_item_buff_dmg,
-					obj_item_buff_max_ammo, obj_item_buff_luck, obj_item_buff_pickybuyer,
-					obj_item_buff_rubberbullets, obj_item_buff_hotshells, obj_item_buff_combomaster,
-					obj_item_buff_blackfriday, obj_item_buff_triplethreat, obj_item_buff_flamingcoins,
-					obj_item_buff_combotime, obj_item_buff_sharpshooter, obj_item_buff_coinsup,
-					obj_item_buff_sharptip, obj_item_buff_experimentation, obj_item_buff_aerialassassin,
-					obj_item_buff_supershield, obj_item_buff_revive, obj_item_buff_drilltipbullets, 
-					obj_item_buff_dualwielder, obj_item_buff_steadyhands, obj_item_buff_tightspring,
-          obj_item_buff_magicianstouch];
-					
-global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_item_weapon_shotgun, 
-					obj_item_weapon_bubble, obj_item_weapon_burstfire, obj_item_weapon_grenade, 
-					obj_item_weapon_laser, obj_item_weapon_bouncyball, obj_item_weapon_missile,
-					obj_item_weapon_boomerang, obj_item_weapon_starsucker, obj_item_weapon_sniper,
-					obj_item_weapon_slime];
-					
-global.all_pickups = [obj_item_pickup_chargejump, obj_item_pickup_groundpound, obj_item_pickup_hatgun, 
-					obj_item_pickup_shieldbubble, obj_item_pickup_firedash, obj_item_pickup_jetpack,
-					obj_item_pickup_slowmo, obj_item_pickup_bulletblast, obj_item_pickup_reload,
-					obj_item_pickup_camera, obj_item_pickup_freeze, obj_item_pickup_frenzy,
-					obj_item_pickup_target];
+scr_All_Passives_Array();
 
+scr_All_Weapons_Array();
+
+scr_All_Actives_Array();
 
 surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);
 

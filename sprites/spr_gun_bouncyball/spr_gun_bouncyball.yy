@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"59dd1cf7-ad12-411a-b912-5b43b08e0244",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"226a6a04-e204-4f66-bffe-0ed46698eb28",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5841defe-f5f2-412c-a82f-958f1d4862f1",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"59dd1cf7-ad12-411a-b912-5b43b08e0244","path":"sprites/spr_gun_bouncyball/spr_gun_bouncyball.yy",},},},"Disabled":false,"id":"c50aa0e7-4df6-454b-ba99-99cc342e5205","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"226a6a04-e204-4f66-bffe-0ed46698eb28","path":"sprites/spr_gun_bouncyball/spr_gun_bouncyball.yy",},},},"Disabled":false,"id":"efa3e186-a9a5-4bb1-b1aa-105f20d0240c","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5841defe-f5f2-412c-a82f-958f1d4862f1","path":"sprites/spr_gun_bouncyball/spr_gun_bouncyball.yy",},},},"Disabled":false,"id":"8f161a7e-53cc-47dc-a77f-588f4a67ca37","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -108,10 +108,6 @@ image_speed = 0;
 
 depth = -10;
 
-if (global.arm_cannon = true) {
-	instance_destroy();
-}
-
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {
 	parent_index = other;
@@ -393,11 +389,7 @@ state_bulletblast = function() {
 
 state_freeze = function() {
 	sprite_index = player_sprite;
-	if abs(speed) > 0.01 {
-		speed *= 0.8;	
-	}else {
-		speed = 0;	
-	}
+	speed = 0;	
 	
 	if freeze_time > 0 {
 		freeze_time -= 1;	

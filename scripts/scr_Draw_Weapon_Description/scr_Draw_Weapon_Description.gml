@@ -3,7 +3,7 @@
 function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num) {
 	
 	//slot
-	draw_sprite(spr_itemmenu_weapon_slot,0,xx,yy);
+	draw_sprite(spr_itemmenu_weapon_slot,1,xx,yy);
 	
 	//sprites
 	draw_sprite(weapon.sprite,1,xx-49,yy-105);

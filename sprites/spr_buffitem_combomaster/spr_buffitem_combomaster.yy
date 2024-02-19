@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c05b71ff-0941-4490-9cb4-f386bdf6146f",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ffd45b9e-d9f6-4fb6-87c4-3e56758bc129",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2ecaf0f1-f628-4147-980a-8bf18b68e2c2",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -45,7 +46,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -58,6 +59,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c05b71ff-0941-4490-9cb4-f386bdf6146f","path":"sprites/spr_buffitem_combomaster/spr_buffitem_combomaster.yy",},},},"Disabled":false,"id":"1c86efda-e924-4066-8eba-2f2c590cc3f9","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ffd45b9e-d9f6-4fb6-87c4-3e56758bc129","path":"sprites/spr_buffitem_combomaster/spr_buffitem_combomaster.yy",},},},"Disabled":false,"id":"e597b63b-d441-486e-97cc-e7c5fef09963","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2ecaf0f1-f628-4147-980a-8bf18b68e2c2","path":"sprites/spr_buffitem_combomaster/spr_buffitem_combomaster.yy",},},},"Disabled":false,"id":"a5a83c78-f2c7-45b9-b660-d9cb5daeef14","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

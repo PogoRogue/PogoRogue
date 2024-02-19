@@ -3,7 +3,7 @@
 function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num) {
 	
 	//slot
-	draw_sprite(spr_itemmenu_pickup_slot,0,xx,yy);
+	draw_sprite(spr_itemmenu_pickup_slot,1,xx,yy);
 	
 	//sprites
 	draw_sprite(pickup.gui_sprite,1,xx-49,yy-97);
