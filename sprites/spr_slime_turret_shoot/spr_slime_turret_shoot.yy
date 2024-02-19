@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "spr_slime_turret_shoot",
   "bbox_bottom": 38,
-  "bbox_left": 1,
+  "bbox_left": 0,
   "bbox_right": 49,
   "bbox_top": 12,
   "bboxMode": 2,
