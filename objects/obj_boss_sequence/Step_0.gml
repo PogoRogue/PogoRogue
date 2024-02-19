@@ -31,6 +31,13 @@ switch(current_state) {
 				}
 			}
 			
+			alarm_set(4, 0);
+			
+			with(obj_boss_sequence_melee) {
+				hp = 0;
+				is_dead = true;
+			}
+			
 			with(obj_spikeswing) {
 				is_active = false;
 			}
@@ -54,8 +61,9 @@ switch(current_state) {
 	break;
 	case STATES.ATTACKING: // Attacking code goes here
 		// Check for sequence match
-		
 		if(state_has_changed) {
+			alarm_set(4, (12 - (2 * sequence_length)) * room_speed);
+			
 			with(obj_spikeswing) {
 				is_active = true;
 			}
@@ -63,6 +71,7 @@ switch(current_state) {
 			with(obj_enemy_turret_unkillable) {
 				is_active = true;
 				sprite_index = default_sprite;
+				cooldown_length = (2 - (other.sequence_length / 4)) * room_speed
 			}
 			
 			with(obj_electric_current) {
@@ -72,10 +81,9 @@ switch(current_state) {
 		
 		if(sequence_index >= 1 && player_sequence[sequence_index - 1] != current_sequence[sequence_index - 1]) {
 			// Create a new sequence
+			sequence_failed = true;
 			current_frame = 6;
-			if(!audio_is_playing(snd_beep_placeholder)) {
-				audio_play_sound(snd_beep_placeholder, 0, false, 1, 0, 0.1);
-			}
+			audio_play_sound(snd_beep_placeholder, 0, false, 1, 0, 0.1);
 			current_state = STATES.IDLE;
 		}
 		
@@ -86,6 +94,7 @@ switch(current_state) {
 				sequence_index = 0;
 			} else {
 				// Create a new sequence
+				sequence_failed = true;
 				current_frame = 6;
 				audio_play_sound(snd_beep_placeholder, 0, false, 1, 0, 0.1);
 				current_state = STATES.IDLE;
@@ -95,12 +104,18 @@ switch(current_state) {
 	case STATES.VULNERABLE: // Vulnerable code goes here
 		current_frame = 5;
 
-		if(current_hp_segment < previous_hp_segment) {
+		if(body.hp_percent < previous_hp_percent - 34) {
+			previous_hp_percent = body.hp_percent;
 			current_state = STATES.IDLE;
 			alarm_set(2, 0);
 		}
 		
 		if(state_has_changed) {
+			with(obj_boss_sequence_melee) {
+				hp = 0;
+				is_dead = true;
+			}
+			
 			with(obj_spikeswing) {
 				is_active = false;
 			}
@@ -138,5 +153,4 @@ switch(current_state) {
 
 state_has_changed = previous_state != current_state;
 previous_state = current_state;
-previous_hp_segment = current_hp_segment;
 image_index = current_frame;

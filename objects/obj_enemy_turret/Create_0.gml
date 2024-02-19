@@ -10,6 +10,7 @@ range = 300;
 bullet_speed = 5;
 cooldown_length = 1.5 * room_speed;
 weapon_cooldown = cooldown_length;
+pattern = obj_enemy_projectile_bullet; // For more complicated projectile patterns
 
 // Determine which surface the turret is on
 rotation = 0;

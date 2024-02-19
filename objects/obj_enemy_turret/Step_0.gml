@@ -8,6 +8,7 @@ if(!is_dead && dist_to_player < range) {
 	can_see_player = !collision_line(x, y, player.x, player.y, obj_ground, false, true);
 	if(can_see_player) {
 		image_angle = point_direction(x, y, player.x, player.y);
+		direction = point_direction(x, y, player.x, player.y);
 		
 		// Fire when ready
 		weapon_cooldown--;
@@ -22,10 +23,15 @@ if(!is_dead && dist_to_player < range) {
 			sprite_index = default_sprite;
 			// Create bullet
 			var _xx = x + lengthdir_x(48, image_angle);
-			var _yy = y + lengthdir_y(48, image_angle)
-			var _bullet = instance_create_layer(_xx, _yy, "Instances", obj_enemy_projectile_bullet);
-			_bullet.direction = point_direction(x, y, player.x, player.y);
-			_bullet.speed = bullet_speed;
+			var _yy = y + lengthdir_y(48, image_angle);
+			if(pattern == obj_enemy_projectile_bullet) {
+				var _bullet = instance_create_layer(_xx, _yy, "Instances", obj_enemy_projectile_bullet);
+				_bullet.direction = point_direction(_xx, _yy, player.x, player.y);
+				_bullet.speed = bullet_speed;
+			} else {
+				var _bullet = instance_create_layer(_xx, _yy, "Instances", pattern);
+				_bullet.dir_central = point_direction(_xx, _yy, player.x, player.y);
+			}
 			weapon_cooldown = cooldown_length;
 			windup = true;
 		}
