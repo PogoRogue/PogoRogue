@@ -1,21 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_enemy_pattern_test",
+  "name": "obj_slime_pattern",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemy",
-    "path": "folders/Objects/Enemy.yy",
+    "name": "Projectile",
+    "path": "folders/Objects/Enemy/Hitbox/Projectile.yy",
   },
   "parentObjectId": {
-    "name": "obj_enemy_generic",
-    "path": "objects/obj_enemy_generic/obj_enemy_generic.yy",
+    "name": "obj_pattern_template",
+    "path": "objects/obj_pattern_template/obj_pattern_template.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,10 +31,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_SlimeTurretHead",
-    "path": "sprites/spr_SlimeTurretHead/spr_SlimeTurretHead.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }
