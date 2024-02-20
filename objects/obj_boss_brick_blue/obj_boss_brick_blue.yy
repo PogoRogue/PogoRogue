@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_B1_Shield_Attached",
-    "path": "sprites/spr_B1_Shield_Attached/spr_B1_Shield_Attached.yy",
+    "name": "spr_b1_shield_attached",
+    "path": "sprites/spr_b1_shield_attached/spr_b1_shield_attached.yy",
   },
   "spriteMaskId": null,
   "visible": true,

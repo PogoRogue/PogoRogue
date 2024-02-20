@@ -56,11 +56,3 @@ for(var _i = -3; _i < 4; _i++) {
 }
 
 drop_coins = false;
-for(var i = 0; i<3; i++)
-instance_create_layer(x + (choose(-5,5) * 32), y + (random_range(-3,3) * 32), "enemies", obj_subboss_fly_chasing, {parent: obj_boss_sphere});
-
-for(var i = 0; i<5; i++){
-	
-instance_create_layer(random_range(100,675),61, "enemies", obj_subboss_tar);
-
-}

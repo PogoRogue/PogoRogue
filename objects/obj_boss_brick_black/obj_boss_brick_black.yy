@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "B1_Tar_Attached",
-    "path": "sprites/B1_Tar_Attached/B1_Tar_Attached.yy",
+    "name": "spr_b1_tar_attached",
+    "path": "sprites/spr_b1_tar_attached/spr_b1_tar_attached.yy",
   },
   "spriteMaskId": null,
   "visible": true,

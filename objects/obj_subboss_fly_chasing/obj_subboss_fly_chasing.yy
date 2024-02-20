@@ -34,8 +34,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_B1_Fly_Drop",
-    "path": "sprites/spr_B1_Fly_Drop/spr_B1_Fly_Drop.yy",
+    "name": "spr_b1_fly_drop",
+    "path": "sprites/spr_b1_fly_drop/spr_b1_fly_drop.yy",
   },
   "spriteMaskId": null,
   "visible": true,

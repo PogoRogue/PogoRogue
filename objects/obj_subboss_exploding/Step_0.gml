@@ -22,13 +22,13 @@ if (is_grounded <= 0) {
 event_inherited();
 if(is_dead!=true)
 {
-	sprite_index = spr_B1_Explode_Move;
+	sprite_index = spr_b1_explode_move;
 }
 if(is_dead) {
 	spd = 0;
-	if (sprite_index == spr_B1_Explode_Move)
+	if (sprite_index == spr_b1_explode_move)
 	{
 		image_index = 0;
-		sprite_index = spr_B1_Explode_Fuse;
+		sprite_index = spr_b1_explode_fuse;
 	}
 }

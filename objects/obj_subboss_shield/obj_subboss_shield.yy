@@ -35,8 +35,8 @@
   ],
   "solid": false,
   "spriteId": {
-    "name": "spr_B1_Shield_Drop",
-    "path": "sprites/spr_B1_Shield_Drop/spr_B1_Shield_Drop.yy",
+    "name": "spr_b1_shield_drop",
+    "path": "sprites/spr_b1_shield_drop/spr_b1_shield_drop.yy",
   },
   "spriteMaskId": null,
   "visible": true,

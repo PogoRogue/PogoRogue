@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_B1_Fly_Attached",
-    "path": "sprites/spr_B1_Fly_Attached/spr_B1_Fly_Attached.yy",
+    "name": "spr_b1_fly_attached",
+    "path": "sprites/spr_b1_fly_attached/spr_b1_fly_attached.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_B1_Fly_Move",
+  "name": "spr_b1_fly_move",
   "bbox_bottom": 42,
   "bbox_left": 0,
   "bbox_right": 31,
@@ -35,7 +35,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_B1_Fly_Move",
+    "name": "spr_b1_fly_move",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -57,10 +57,10 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"805d9984-0b9d-4edd-8f7c-4536b30c4539","path":"sprites/spr_B1_Fly_Move/spr_B1_Fly_Move.yy",},},},"Disabled":false,"id":"a5630f07-63b0-48f4-b242-72afca117503","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7155d45e-3096-499d-968b-29f33e3f92a4","path":"sprites/spr_B1_Fly_Move/spr_B1_Fly_Move.yy",},},},"Disabled":false,"id":"b3271027-4b8d-45a8-b53f-9e4251a39b42","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7ab14dbf-193f-4c5d-890b-276ecca86793","path":"sprites/spr_B1_Fly_Move/spr_B1_Fly_Move.yy",},},},"Disabled":false,"id":"b739ee88-a8cf-4290-a2b8-35d83f4cb02d","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"60c93e78-d39b-4638-8e3d-a663a1256566","path":"sprites/spr_B1_Fly_Move/spr_B1_Fly_Move.yy",},},},"Disabled":false,"id":"72376c07-ff15-4e61-a0f1-3daea094a6e2","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"805d9984-0b9d-4edd-8f7c-4536b30c4539","path":"sprites/spr_b1_fly_move/spr_b1_fly_move.yy",},},},"Disabled":false,"id":"a5630f07-63b0-48f4-b242-72afca117503","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7155d45e-3096-499d-968b-29f33e3f92a4","path":"sprites/spr_b1_fly_move/spr_b1_fly_move.yy",},},},"Disabled":false,"id":"b3271027-4b8d-45a8-b53f-9e4251a39b42","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7ab14dbf-193f-4c5d-890b-276ecca86793","path":"sprites/spr_b1_fly_move/spr_b1_fly_move.yy",},},},"Disabled":false,"id":"b739ee88-a8cf-4290-a2b8-35d83f4cb02d","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"60c93e78-d39b-4638-8e3d-a663a1256566","path":"sprites/spr_b1_fly_move/spr_b1_fly_move.yy",},},},"Disabled":false,"id":"72376c07-ff15-4e61-a0f1-3daea094a6e2","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

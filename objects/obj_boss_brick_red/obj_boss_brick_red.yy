@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_B1_Explode_Attached",
-    "path": "sprites/spr_B1_Explode_Attached/spr_B1_Explode_Attached.yy",
+    "name": "spr_b1_explode_attached",
+    "path": "sprites/spr_b1_explode_attached/spr_b1_explode_attached.yy",
   },
   "spriteMaskId": null,
   "visible": true,

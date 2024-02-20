@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_B1_Explode_Drop",
-    "path": "sprites/spr_B1_Explode_Drop/spr_B1_Explode_Drop.yy",
+    "name": "spr_b1_explode_drop",
+    "path": "sprites/spr_b1_explode_drop/spr_b1_explode_drop.yy",
   },
   "spriteMaskId": null,
   "visible": true,

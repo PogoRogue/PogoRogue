@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "B1_Tar_Drop",
-    "path": "sprites/B1_Tar_Drop/B1_Tar_Drop.yy",
+    "name": "spr_b1_tar_drop",
+    "path": "sprites/spr_b1_tar_drop/spr_b1_tar_drop.yy",
   },
   "spriteMaskId": null,
   "visible": true,

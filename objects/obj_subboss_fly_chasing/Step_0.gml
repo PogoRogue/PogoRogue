@@ -12,7 +12,7 @@ if (drop == false)
 	if (image_index==6)
 	{
 		image_index=1
-		sprite_index=spr_B1_Fly_Move
+		sprite_index=spr_b1_fly_move
 		follow_path = path_add();
 		alarm[1]=1;
 		drop=true

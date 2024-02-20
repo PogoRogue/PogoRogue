@@ -5,7 +5,7 @@ if (drop == false)
 {
 	if (image_index==4)
 	{
-		sprite_index=spr_B1_Shield_Move
+		sprite_index=spr_b1_shield_move
 		drop = true
 	}
 }
