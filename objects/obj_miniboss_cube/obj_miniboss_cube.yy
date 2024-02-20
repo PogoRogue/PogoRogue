@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Mini Bosses",
-    "path": "folders/Objects/Enemy/Mini Bosses.yy",
+    "name": "Ready Enemies",
+    "path": "folders/Objects/Enemy/Ready Enemies.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy_generic",

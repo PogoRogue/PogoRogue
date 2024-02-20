@@ -13,27 +13,27 @@ enum SNAIL_STATES {
 	VERTICAL_RIGHT,
 }
 
-
-if(image_angle == 0) {
+if(place_meeting(x, y + 12, obj_ground_parent)) {
 	state = SNAIL_STATES.HORIZONTAL;
 	while(!place_meeting(x, y + 1, obj_ground_parent)) {
 		y++;
 	}
-} else if(image_angle == -90 || image_angle == 270) {
+} else if(place_meeting(x - 12, y, obj_ground_parent)) {
 	state = SNAIL_STATES.VERTICAL_LEFT;
+	image_angle -= 90;
 	while(!place_meeting(x - 1, y, obj_ground_parent)) {
 		x--;
 	}
-} else if(image_angle == 90) {
+} else if(place_meeting(x + 12, y, obj_ground_parent)) {
 	state = SNAIL_STATES.VERTICAL_RIGHT;
+	image_angle += 90;
 	while(!place_meeting(x + 1, y, obj_ground_parent)) {
 		x++;
 	}
 } else {
-	// Do not allow snails of any other orientation
+	// Do not allow snails that aren't on a surface
 	instance_destroy(self);
 }
-
 
 // Instantiate additional variables
 depth = 5;
