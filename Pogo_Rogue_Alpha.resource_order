@@ -2,14 +2,14 @@
   "FolderOrderSettings": [
     {"name":"Enemy","order":1,"path":"folders/Objects/Enemy.yy",},
     {"name":"Environmental","order":2,"path":"folders/Objects/Environmental.yy",},
-    {"name":"ProcGen","order":9,"path":"folders/Objects/ProcGen.yy",},
     {"name":"Ground","order":3,"path":"folders/Objects/Ground.yy",},
     {"name":"item","order":4,"path":"folders/Objects/item.yy",},
     {"name":"Player","order":5,"path":"folders/Objects/Player.yy",},
+    {"name":"ProcGen","order":9,"path":"folders/Objects/ProcGen.yy",},
+    {"name":"Designer Pixel Tag Objects","order":2,"path":"folders/Objects/ProcGen/Designer Pixel Tag Objects.yy",},
     {"name":"Sliders","order":6,"path":"folders/Objects/Sliders.yy",},
     {"name":"Text","order":7,"path":"folders/Objects/Text.yy",},
     {"name":"UI","order":8,"path":"folders/Objects/UI.yy",},
-    {"name":"Designer Pixel Tag Objects","order":2,"path":"folders/Objects/ProcGen/Designer Pixel Tag Objects.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"scr_Replace_Hallway_Chunks","order":15,"path":"scripts/scr_Replace_Hallway_Chunks/scr_Replace_Hallway_Chunks.yy",},
