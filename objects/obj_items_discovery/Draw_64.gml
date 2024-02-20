@@ -20,6 +20,10 @@ for(xx = 0; xx < select_x_max; xx++) {
 		draw_sprite(select_sprite,(select_x-1 = xx and select_y-1 = yy),center_x-((x_gap*select_x_max-x_gap)/2)+xx*x_gap,128+yy*y_gap);
 	}
 }
+
+draw_set_font(fnt_itemdescription2);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
 	
 //item sprites
 for (i = 0; i < 32; i++) {
@@ -31,7 +35,12 @@ for (i = 0; i < 32; i++) {
 			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27);
 		}
 		draw_sprite(passives_array[i],(sprite_get_number(passives_array[i])-1)*(global.passive_unlocked_array[i] = false) + (global.passive_unlocked_array[i] = true),xx,yy-27);
+
+		if (i < array_length(global.all_buffs) and global.passive_unlocked_array[i]= true) {
+			scr_Draw_Text_Outlined(xx,yy-48,scr_Linebreak(all_buff_names[i],12,99),c_white);
+		}
 	}
+	
 
 	//ACTIVES
 	if select = 2 and i < array_length(actives_array) {
@@ -39,6 +48,10 @@ for (i = 0; i < 32; i++) {
 			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27);
 		}
 		draw_sprite(actives_array[i],(sprite_get_number(actives_array[i])-1)*(global.active_unlocked_array[i] = false) + (global.active_unlocked_array[i] = true),xx,yy-27);
+	
+		if (i < array_length(global.all_pickups) and global.active_unlocked_array[i]= true) {
+			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_pickups[i]._name,12,99),c_white);
+		}
 	}
 
 	//WEAPONS
@@ -47,11 +60,14 @@ for (i = 0; i < 32; i++) {
 			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27);
 		}
 		draw_sprite(weapons_array[i],(sprite_get_number(weapons_array[i])-1)*(global.weapon_unlocked_array[i] = false) + (global.weapon_unlocked_array[i] = true),xx,yy-27);
+	
+		if (i < array_length(global.all_weapons) and global.weapon_unlocked_array[i]= true) {
+			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_weapons[i]._name,12,99),c_white);
+		}
 	}
 		
 	//draw item description
 	if i = item_selected-1 {
-			
 		var bubble_x = center_x-181;
 		if select_x <= 2 {
 			bubble_x = center_x-181;
@@ -67,9 +83,9 @@ for (i = 0; i < array_length(global.all_buffs); i++) {
 	if (select = 1) {
 		if (i = ((select_y-1)*select_x_max)+(select_x-1)) {
 			if select_x <= select_x_max/2 {
-				var xx = 92;
+				var xx = 74;
 			}else {
-				var xx = room_width - 92;
+				var xx = room_width - 74;
 			}
 			scr_Draw_Passive_Description(xx,yy,all_buff_sprites[i],all_buff_sprites_index[i],all_buff_names[i],all_buff_descriptions[i],all_buff_stats[i],global.passive_unlocked_array[i]);
 		}

@@ -76,7 +76,7 @@ all_pickups = [];
 for (i = 0; i < array_length(global.all_buffs); i++) {
 	with instance_create_depth(x,y,depth,global.all_buffs[i]) {
 		other.all_buff_sprites[other.i] = sprite_index; //buffs equipped in side bar
-		other.all_buff_sprites_index[other.i] = image_index; //image index of each buff sprite
+		other.all_buff_sprites_index[other.i] = image_index+1; //image index of each buff sprite
 		other.all_buff_names[other.i] = item_name; //names of each buff currently equipped
 		other.all_buff_descriptions[other.i] = item_tagline; //descriptions of each buff currently equipped
 		other.all_buff_stats[other.i] = item_stats; //stats (mainly stackability) of each buff currently equipped

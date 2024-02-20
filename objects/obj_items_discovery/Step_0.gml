@@ -70,8 +70,8 @@ if select = 1 {
 	select_x_max = 8;
 	select_y_max = 4;
 	select_sprite = spr_item_slot_passives;
-	x_gap = 56;
-	y_gap = 56;
+	x_gap = 60;
+	y_gap = 60;
 	current_array = passives_array;
 }
 
