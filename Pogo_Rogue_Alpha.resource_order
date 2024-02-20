@@ -1,4 +1,21 @@
 {
-  "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "FolderOrderSettings": [
+    {"name":"Hurt","order":12,"path":"folders/Sprites/Player/Player Sprites/Hurt.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"spr_player_zekai_charging","order":11,"path":"sprites/spr_player_zekai_charging/spr_player_zekai_charging.yy",},
+    {"name":"spr_player_revive","order":14,"path":"sprites/spr_player_revive/spr_player_revive.yy",},
+    {"name":"spr_player_zekai","order":10,"path":"sprites/spr_player_zekai/spr_player_zekai.yy",},
+    {"name":"spr_player_revive_white","order":15,"path":"sprites/spr_player_revive_white/spr_player_revive_white.yy",},
+    {"name":"spr_player_zekai_jumping","order":9,"path":"sprites/spr_player_zekai_jumping/spr_player_zekai_jumping.yy",},
+    {"name":"spr_player_revive_animation","order":13,"path":"sprites/spr_player_revive_animation/spr_player_revive_animation.yy",},
+    {"name":"spr_player_zekai_invincible_charging","order":8,"path":"sprites/spr_player_zekai_invincible_charging/spr_player_zekai_invincible_charging.yy",},
+    {"name":"spr_player_zekai_invincible_falling","order":7,"path":"sprites/spr_player_zekai_invincible_falling/spr_player_zekai_invincible_falling.yy",},
+    {"name":"spr_player_ziteng","order":6,"path":"sprites/spr_player_ziteng/spr_player_ziteng.yy",},
+    {"name":"spr_player_ziteng_fullanimation","order":5,"path":"sprites/spr_player_ziteng_fullanimation/spr_player_ziteng_fullanimation.yy",},
+    {"name":"spr_player_ziteng2","order":4,"path":"sprites/spr_player_ziteng2/spr_player_ziteng2.yy",},
+    {"name":"spr_player_zekai_falling","order":3,"path":"sprites/spr_player_zekai_falling/spr_player_zekai_falling.yy",},
+    {"name":"spr_player_zekai_invincible","order":2,"path":"sprites/spr_player_zekai_invincible/spr_player_zekai_invincible.yy",},
+    {"name":"spr_player_zekai_charging_hurt","order":1,"path":"sprites/spr_player_zekai_charging_hurt/spr_player_zekai_charging_hurt.yy",},
+  ],
 }

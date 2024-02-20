@@ -36,6 +36,7 @@ laser_sight = false;
 planetary_bullets = 0;
 aerial_assassin_count = 0;
 revive_time = 0;
+revive_alpha = 0;
 
 //pickups
 charge = 0;
@@ -456,6 +457,11 @@ state_revive = function() {
 	image_index = 0;
 	hspeed = hspeed * 0.9;
 	vspeed = 0;
+	
+	if revive_alpha > 0 {
+		revive_alpha -= 0.05;	
+	}
+	
 	if (angle != 0)	{
 		var angle_side = sign(angle);
 		angle += (rotation_speed*sign(-angle))/2;
@@ -474,6 +480,7 @@ state_revive = function() {
 		}
 	}else {
 		state = state_free;
+		revive_alpha = 1;
 	}
 }
 
