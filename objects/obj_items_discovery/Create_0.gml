@@ -69,6 +69,9 @@ all_buff_names = []; //names of each buff currently equipped
 all_buff_descriptions = []; //descriptions of each buff currently equipped
 all_buff_stats = []; //stats (mainly stackability) of each buff currently equipped
 
+all_weapons = [];
+all_pickups = [];
+
 for (i = 0; i < array_length(global.all_buffs); i++) {
 	with instance_create_depth(x,y,depth,global.all_buffs[i]) {
 		other.all_buff_sprites[other.i] = sprite_index; //buffs equipped in side bar
@@ -76,6 +79,20 @@ for (i = 0; i < array_length(global.all_buffs); i++) {
 		other.all_buff_names[other.i] = item_name; //names of each buff currently equipped
 		other.all_buff_descriptions[other.i] = item_tagline; //descriptions of each buff currently equipped
 		other.all_buff_stats[other.i] = item_stats; //stats (mainly stackability) of each buff currently equipped
+		instance_destroy();
+	}
+}
+
+for (i = 0; i < array_length(global.all_pickups); i++) {
+	with instance_create_depth(x,y,depth,global.all_pickups[i]) {
+		other.all_pickups[other.i] = pickup;
+		instance_destroy();
+	}
+}
+
+for (i = 0; i < array_length(global.all_weapons); i++) {
+	with instance_create_depth(x,y,depth,global.all_weapons[i]) {
+		other.all_weapons[other.i] = weapon;
 		instance_destroy();
 	}
 }

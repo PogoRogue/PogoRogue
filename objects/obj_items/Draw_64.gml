@@ -45,7 +45,7 @@ if select = 1 {
 				var bubble_x = center_x+181;
 			}
 			
-			scr_Draw_Passive_Description(bubble_x,yy,global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,global.all_buff_names[i],global.all_buff_descriptions[i],global.all_buff_stats[i]);
+			scr_Draw_Passive_Description(bubble_x,yy,global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,global.all_buff_names[i],global.all_buff_descriptions[i],global.all_buff_stats[i],true);
 		}
 	}
 }
@@ -57,10 +57,10 @@ if select = 2 {
 	var yy = 234;
 	
 	if num_of_pickups = 1 {
-		scr_Draw_Pickup_Description(center_x,yy,pickup_1,1);
+		scr_Draw_Pickup_Description(center_x,yy,pickup_1,1,true);
 	}else if num_of_pickups = 2 {
-		scr_Draw_Pickup_Description(xx1,yy,pickup_1,1);
-		scr_Draw_Pickup_Description(xx2,yy,pickup_2,2);
+		scr_Draw_Pickup_Description(xx1,yy,pickup_1,1,true);
+		scr_Draw_Pickup_Description(xx2,yy,pickup_2,2,true);
 	}
 }
 
@@ -72,14 +72,14 @@ if select = 3 {
 	var yy = 234;
 	
 	if num_of_weapons = 1 {
-		scr_Draw_Weapon_Description(center_x,yy,gun_1,1);
+		scr_Draw_Weapon_Description(center_x,yy,gun_1,1,true);
 	}else if num_of_weapons = 2 {
-		scr_Draw_Weapon_Description(xx1,yy,gun_1,1);
-		scr_Draw_Weapon_Description(xx2,yy,gun_2,2);
+		scr_Draw_Weapon_Description(xx1,yy,gun_1,1,true);
+		scr_Draw_Weapon_Description(xx2,yy,gun_2,2,true);
 	}else if num_of_weapons = 3 {
 		xx1 = center_x-172;
-		scr_Draw_Weapon_Description(xx1,yy,gun_1,1);
-		scr_Draw_Weapon_Description(center_x,yy,gun_2,2);
-		scr_Draw_Weapon_Description(xx3,yy,gun_3,3);
+		scr_Draw_Weapon_Description(xx1,yy,gun_1,1,true);
+		scr_Draw_Weapon_Description(center_x,yy,gun_2,2,true);
+		scr_Draw_Weapon_Description(xx3,yy,gun_3,3,true);
 	}
 }
