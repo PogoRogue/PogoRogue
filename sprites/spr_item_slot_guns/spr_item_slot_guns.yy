@@ -15,6 +15,8 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f0d09c98-cac6-49e2-afa3-3da50952120a",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"52f050f7-6467-40e7-8223-7413e41dcfca",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"75a36709-33c1-426d-a3c6-5f8d6308fce4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"17a86886-4fcc-4ecb-8411-78ade419bdd2",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +46,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 4.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +59,8 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f0d09c98-cac6-49e2-afa3-3da50952120a","path":"sprites/spr_item_slot_guns/spr_item_slot_guns.yy",},},},"Disabled":false,"id":"a484170c-4347-4286-9efd-2c23d9f31bc0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"52f050f7-6467-40e7-8223-7413e41dcfca","path":"sprites/spr_item_slot_guns/spr_item_slot_guns.yy",},},},"Disabled":false,"id":"e5d650d1-531e-434f-8ca4-b217241e1fc2","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"75a36709-33c1-426d-a3c6-5f8d6308fce4","path":"sprites/spr_item_slot_guns/spr_item_slot_guns.yy",},},},"Disabled":false,"id":"b1659021-0e5b-4ede-bf93-e896dd9f3aa7","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"17a86886-4fcc-4ecb-8411-78ade419bdd2","path":"sprites/spr_item_slot_guns/spr_item_slot_guns.yy",},},},"Disabled":false,"id":"7b22fe4e-f81c-4c35-a727-20f682d20f95","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

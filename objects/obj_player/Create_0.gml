@@ -606,6 +606,16 @@ if (num_of_pickups = 1) {
 //buffs
 scr_Buffs();
 
+all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
+				buff_max_ammo, buff_luck, buff_pickybuyer,
+				buff_bouncybullets, buff_hotshells, buff_combomaster,
+				buff_blackfriday, buff_triplethreat, buff_flamingcoins,
+				buff_combotime, buff_sharpshooter, buff_coinsup,
+				buff_sharptip, buff_experimentation, buff_aerialassassin,
+				buff_supershield, buff_revive, buff_drilltipbullets, 
+				buff_dualwielder, buff_steadyhands, buff_tightspring,
+				buff_magicianstouch];		
+
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {
 	alarm[2] = 10;

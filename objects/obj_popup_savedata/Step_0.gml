@@ -32,6 +32,20 @@ if key_select {
 		alarm[0] = 1;
 	}else if select = 2 {
 		scr_Reset_Save_Data();
+		
+		ini_open("itemsunlocked.ini");
+		for(i = 0; i < array_length(global.passive_unlocked_array); i++) { //passives
+			ini_key_delete("itemsunlocked", "passive " + string(i));
+		}
+		for(i = 0; i < array_length(global.active_unlocked_array); i++) { //actives
+			ini_key_delete("itemsunlocked", "active " + string(i));
+		}
+		for(i = 0; i < array_length(global.weapon_unlocked_array); i++) { //weapons
+			ini_key_delete("itemsunlocked", "weapon " + string(i));
+		}
+		ini_close();
+		scr_Items_Unlocked();
+		
 		deleted = true;
 		with obj_settings {
 			usable = true;	

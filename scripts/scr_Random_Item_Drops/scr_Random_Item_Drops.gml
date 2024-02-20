@@ -24,9 +24,11 @@ function scr_Random_Item_Drops(){
 	//buff
 	if (buff_drop <= buff_chance) {
 		num_of_coins = round(num_of_coins/2);
-		with instance_create_depth(center_x,center_y+4,depth-2,obj_item_parentbuff) {
-			follow_player = false;
-			alarm[0] = irandom_range(1,other.num_of_coins*2);
+		if created_items = false {
+			with instance_create_depth(center_x,center_y+4,depth-2,obj_item_parentbuff) {
+				follow_player = false;
+			}
+			created_items = true;
 		}
 		//only one powerup per chest
 		pickup_chance = -1;

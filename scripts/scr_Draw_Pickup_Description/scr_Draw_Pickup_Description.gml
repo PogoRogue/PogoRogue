@@ -3,11 +3,13 @@
 function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked) {
 	
 	if unlocked = true {
+		var bg_spr_index = 1;
 		var img_index = 1;
 		var item_name = pickup._name;
 		var item_description = pickup.tagline;
 		var item_stats = pickup.cooldown_text;
 	}else {
+		var bg_spr_index = 0;
 		var img_index = sprite_get_number(pickup.gui_sprite)-1;
 		var item_name = "?????";
 		var item_description = "This item has not been discovered yet.";
@@ -15,7 +17,7 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked) {
 	}
 	
 	//slot
-	draw_sprite(spr_itemmenu_pickup_slot,1,xx,yy);
+	draw_sprite(spr_itemmenu_pickup_slot,bg_spr_index,xx,yy);
 	
 	//sprites
 	draw_sprite(pickup.gui_sprite,img_index,xx-49,yy-97);

@@ -3,17 +3,19 @@
 function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked) {
 	
 	if unlocked = true {
+		var bg_spr_index = 1;
 		var img_index = 1;
 		var item_name = weapon._name;
 		var item_description = weapon.tagline;
 	}else {
+		var bg_spr_index = 0;
 		var img_index = sprite_get_number(weapon.sprite)-1;
 		var item_name = "?????";
 		var item_description = "This weapon has not been discovered yet.";
 	}
 	
 	//slot
-	draw_sprite(spr_itemmenu_weapon_slot,1,xx,yy);
+	draw_sprite(spr_itemmenu_weapon_slot,bg_spr_index,xx,yy);
 	
 	//sprites
 	draw_sprite(weapon.sprite,img_index,xx-49,yy-105);

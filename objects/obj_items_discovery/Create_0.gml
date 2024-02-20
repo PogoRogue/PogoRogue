@@ -53,6 +53,7 @@ weapons_array = [spr_gun_default, spr_gun_paintball, spr_gun_shotgun,
 				
 current_array = passives_array;
 
+
 scr_All_Passives_Array();
 scr_All_Actives_Array();
 scr_All_Weapons_Array();
