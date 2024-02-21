@@ -14,3 +14,5 @@ global.mouse_button_array = [mb_left, mb_middle, mb_right, mb_side1, mb_side2];
 scr_Items_Unlocked();
 
 scr_Controls();
+
+room_speed = 60;

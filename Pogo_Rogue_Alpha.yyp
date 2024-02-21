@@ -486,6 +486,7 @@
     {"id":{"name":"obj_planetarybullets","path":"objects/obj_planetarybullets/obj_planetarybullets.yy",},},
     {"id":{"name":"obj_nothing","path":"objects/obj_nothing/obj_nothing.yy",},},
     {"id":{"name":"spr_player_health_empty","path":"sprites/spr_player_health_empty/spr_player_health_empty.yy",},},
+    {"id":{"name":"obj_sound_controller","path":"objects/obj_sound_controller/obj_sound_controller.yy",},},
     {"id":{"name":"obj_stats","path":"objects/obj_stats/obj_stats.yy",},},
     {"id":{"name":"obj_enemy_moving_jumping","path":"objects/obj_enemy_moving_jumping/obj_enemy_moving_jumping.yy",},},
     {"id":{"name":"spr_player_zekai_hat","path":"sprites/spr_player_zekai_hat/spr_player_zekai_hat.yy",},},

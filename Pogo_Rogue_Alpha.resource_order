@@ -1,6 +1,6 @@
 {
-  "FolderOrderSettings": [
-  ],
+  "FolderOrderSettings": [],
   "ResourceOrderSettings": [
+    {"name":"obj_sound_controller","order":1,"path":"objects/obj_sound_controller/obj_sound_controller.yy",},
   ],
 }
