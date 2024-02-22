@@ -11,9 +11,18 @@ if image_index = 6 and fade_out = false {
 	}else if room = room_boss_1 or room = room_boss_2 {
 		with enemy_to_target {
 			if object_get_name(object_index) = "obj_boss_sequence_body" or object_get_name(object_index) = "obj_boss_sphere" {
-				hp -= hp_max/5;
-				with obj_player {
-					scr_Reload_On_Kill();	
+				if object_get_name(object_index) = "obj_boss_sequence_body" {
+					if (controller.current_state = STATES.VULNERABLE) {
+						hp -= hp_max/5;
+						with obj_player {
+							scr_Reload_On_Kill();	
+						}
+					}
+				}else {
+					hp -= hp_max/5;
+					with obj_player {
+						scr_Reload_On_Kill();	
+					}
 				}
 			}else {
 				hp = 0;

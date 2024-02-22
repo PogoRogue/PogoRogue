@@ -202,6 +202,7 @@
     {"id":{"name":"snd_enemyJump","path":"sounds/snd_enemyJump/snd_enemyJump.yy",},},
     {"id":{"name":"scr_Convert_Frames_To_Time","path":"scripts/scr_Convert_Frames_To_Time/scr_Convert_Frames_To_Time.yy",},},
     {"id":{"name":"spr_item_slot_passives","path":"sprites/spr_item_slot_passives/spr_item_slot_passives.yy",},},
+    {"id":{"name":"obj_choosemenu_weapon","path":"objects/obj_choosemenu_weapon/obj_choosemenu_weapon.yy",},},
     {"id":{"name":"spr_projectile_sniper_middle_held","path":"sprites/spr_projectile_sniper_middle_held/spr_projectile_sniper_middle_held.yy",},},
     {"id":{"name":"obj_bouncedistance2","path":"objects/obj_bouncedistance2/obj_bouncedistance2.yy",},},
     {"id":{"name":"spr_player_zekai_charging_hurt4","path":"sprites/spr_player_zekai_charging_hurt4/spr_player_zekai_charging_hurt4.yy",},},

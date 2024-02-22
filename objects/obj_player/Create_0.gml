@@ -521,9 +521,20 @@ if (random_weapon = true) { //choose random weapons
 	randomize();
 	//temporarily change items for playtest
 	if room = room_proc_gen_test or room = room_boss_2 {
-		gun_1 = default_gun;
-		gun_2 = choose(sniper_gun,slime_gun);
-		gun_3 = gun_1;
+		//gun_1 = default_gun;
+		//gun_2 = choose(sniper_gun,slime_gun);
+		//gun_3 = gun_1;
+		gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		if num_of_weapons > 1 {
+			gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_2 = gun_1;
+		}
+		if num_of_weapons > 2 {
+			gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_3 = gun_1;
+		}
 	}else {
 		gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
 		if num_of_weapons > 1 {
@@ -582,7 +593,8 @@ if (random_pickup = true) { //choose random pickups
 	
 	//temporarily change items for playtest
 	if room = room_proc_gen_test or room = room_boss_2 {
-		pickup_1 = choose(pickup_frenzy,pickup_target);
+		//pickup_1 = choose(pickup_frenzy,pickup_target);
+		pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
 	}else {
 		pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
 	}
