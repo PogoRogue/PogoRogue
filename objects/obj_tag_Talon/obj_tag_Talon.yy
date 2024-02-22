@@ -11,7 +11,10 @@
     "name": "Designer Pixel Tag Objects",
     "path": "folders/Objects/ProcGen/Designer Pixel Tag Objects.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_pixel_tag",
+    "path": "objects/obj_pixel_tag/obj_pixel_tag.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
