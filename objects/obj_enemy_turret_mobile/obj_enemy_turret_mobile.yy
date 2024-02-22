@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_TurretHead",
-    "path": "sprites/spr_TurretHead/spr_TurretHead.yy",
+    "name": "spr_turret_head",
+    "path": "sprites/spr_turret_head/spr_turret_head.yy",
   },
   "spriteMaskId": null,
   "visible": true,

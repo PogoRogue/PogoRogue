@@ -8,6 +8,7 @@ while(cur_amt < amount) {
 	//manually set variables of the bullet here
 	_bullet.speed = 3;
 	_bullet.grav = 0.12 ;
+	_bullet.sprite_index = projectile_sprite;
 	
 	if(rand) {
 		_bullet.direction = dir_central + random_range(-spread / 2, spread / 2);
