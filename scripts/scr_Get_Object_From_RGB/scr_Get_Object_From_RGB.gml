@@ -15,13 +15,13 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 		return obj_tag_Sam;
 	}
-	else if(false) //Insert Talon signature color here
+	else if(Red == 17 && Green == 69 && Blue == 20) //Insert Talon signature color here
 	{
-		return obj_tag_Talon;
+		return obj_tag_Zehao;
 	}
-	else if(false)
+	else if(Red == 250 && Green == 115 && Blue == 255)
 	{
-		return obj_tag_Zehao; // Insert Talon signature color here
+		return obj_tag_Talon; // Insert Talon signature color here
 	}
 	else if(Red == 213 && Green == 110 && Blue == 5)
 	{
