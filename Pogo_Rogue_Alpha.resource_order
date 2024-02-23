@@ -15,6 +15,7 @@
     {"name":"obj_stats","order":18,"path":"objects/obj_stats/obj_stats.yy",},
     {"name":"obj_presets","order":16,"path":"objects/obj_presets/obj_presets.yy",},
     {"name":"obj_popup_restart","order":15,"path":"objects/obj_popup_restart/obj_popup_restart.yy",},
+    {"name":"obj_choosemenu_active","order":30,"path":"objects/obj_choosemenu_active/obj_choosemenu_active.yy",},
     {"name":"obj_settings","order":13,"path":"objects/obj_settings/obj_settings.yy",},
     {"name":"obj_menu","order":14,"path":"objects/obj_menu/obj_menu.yy",},
     {"name":"obj_popup_exit","order":12,"path":"objects/obj_popup_exit/obj_popup_exit.yy",},

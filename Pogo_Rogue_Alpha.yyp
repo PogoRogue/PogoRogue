@@ -552,6 +552,7 @@
     {"id":{"name":"spr_treasurechest_new","path":"sprites/spr_treasurechest_new/spr_treasurechest_new.yy",},},
     {"id":{"name":"spr_pickup_groundpound","path":"sprites/spr_pickup_groundpound/spr_pickup_groundpound.yy",},},
     {"id":{"name":"spr_stick_l_d","path":"sprites/spr_stick_l_d/spr_stick_l_d.yy",},},
+    {"id":{"name":"obj_choosemenu_active","path":"objects/obj_choosemenu_active/obj_choosemenu_active.yy",},},
     {"id":{"name":"spr_slider_bar_outline","path":"sprites/spr_slider_bar_outline/spr_slider_bar_outline.yy",},},
     {"id":{"name":"spr_logo_black","path":"sprites/spr_logo_black/spr_logo_black.yy",},},
     {"id":{"name":"obj_settings","path":"objects/obj_settings/obj_settings.yy",},},

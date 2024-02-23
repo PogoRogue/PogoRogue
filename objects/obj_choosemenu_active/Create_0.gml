@@ -33,25 +33,23 @@ center_x = -(camera_get_view_width(view_camera[0])/2);
 center_y = camera_get_view_height(view_camera[0])/2;
 
 alarm[1] = 2;
+
+scr_All_Actives_Array()
+actives_array = global.all_pickups;
 				
-weapons_array = [obj_item_weapon_paintball, obj_item_weapon_shotgun, obj_item_weapon_bubble, 
-				obj_item_weapon_burstfire, obj_item_weapon_grenade, obj_item_weapon_laser,
-				obj_item_weapon_bouncyball, obj_item_weapon_missile, obj_item_weapon_boomerang, 
-				obj_item_weapon_starsucker, obj_item_weapon_sniper, obj_item_weapon_slime];
-				
-select_max = array_length(weapons_array);
+select_max = array_length(actives_array);
 
 if select_max < select_x_max { 
 	select_x_max = select_max;
 }
 				
-current_array = weapons_array;
+current_array = actives_array;
 
-scr_All_Weapons_Array();
+scr_All_Actives_Array();
 
-for (i = 0; i < array_length(weapons_array); i++) {
-	with instance_create_depth(x,y,depth,weapons_array[i]) {
-		other.all_weapons[other.i] = weapon;
+for (i = 0; i < array_length(actives_array); i++) {
+	with instance_create_depth(x,y,depth,actives_array[i]) {
+		other.all_actives[other.i] = pickup;
 		instance_destroy();
 	}
 }

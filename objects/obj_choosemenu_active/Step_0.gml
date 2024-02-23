@@ -63,27 +63,22 @@ if key_select and centered = true and fade_away = false {
 	audio_play_sound(snd_selectOption,0,false);
 	
 	alarm[0] = 1;
-	alarm[4] = 2; //create active item menu
 	fade_away = true;
 	
-	//change weapon
+	//change item
 	instance_activate_object(obj_player);
 	with obj_player {
-		num_of_weapons = 2;
-		gun_1 = other.all_weapons[other.select-1];
-		gun_2 = all_guns_array[0];
-		gun_3 = gun_1;
-		gun_array = [gun_1, gun_2, gun_1];
-		current_gun = 0;
-		gun = gun_array[current_gun];
+		num_of_pickups = 1;
+		pickup_1 = other.all_actives[other.select-1];
+		pickups_array = [pickup_1, pickup_2];
 	}
-	//save weapon
+	//save item
 	ini_open("itemsunlocked.ini");
-	if scr_In_Array(obj_player.all_guns_array,all_weapons[select-1]) {
-		for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
-			if obj_player.all_guns_array[i] = all_weapons[select-1] {
-				global.weapon_unlocked_array[i] = true;
-				ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
+	if scr_In_Array(obj_player.all_pickups_array,all_actives[select-1]) {
+		for(i = 0; i < array_length(obj_player.all_pickups_array);i++) {
+			if obj_player.all_pickups_array[i] = all_actives[select-1] {
+				global.active_unlocked_array[i] = true;
+				ini_write_real("itemsunlocked", "active " + string(i), global.active_unlocked_array[i]);
 			}
 		}
 	}
