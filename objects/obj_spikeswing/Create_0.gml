@@ -5,6 +5,7 @@ angle = 0;
 anchor_x = x;
 anchor_y = y - distance;
 damage = 8;
+is_active = true;
 
 image_index = 1;
 

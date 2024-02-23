@@ -10,3 +10,6 @@ if !instance_exists(obj_controls_keyboard) {
 if !instance_exists(obj_sound_controller) {
 	instance_create_depth(x,y,depth,obj_sound_controller);
 }
+if !instance_exists(obj_phase) {
+	instance_create_depth(x,y,depth,obj_phase);
+}
