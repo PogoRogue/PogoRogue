@@ -15,8 +15,9 @@ accel=1;
 //if homing, make this to true and change hm_spd and max_spd
 homing=false;
 hm_spd=0;
+hm_range=300;
 max_spd=0;
 //If bounce, change the bounce, lifetime, and add the alarm
 bounce=false;
-lifetime=0;
+lifetime=room_speed;
 //alarm_set(0,lifetime);
