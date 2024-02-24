@@ -117,6 +117,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Zehao_Rooms","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"snd_ArmorHeart.mp3","CopyToMask":-1,"filePath":"datafiles",},
@@ -562,6 +563,7 @@
     {"id":{"name":"spr_pickup_groundpound","path":"sprites/spr_pickup_groundpound/spr_pickup_groundpound.yy",},},
     {"id":{"name":"spr_stick_l_d","path":"sprites/spr_stick_l_d/spr_stick_l_d.yy",},},
     {"id":{"name":"spr_slider_bar_outline","path":"sprites/spr_slider_bar_outline/spr_slider_bar_outline.yy",},},
+    {"id":{"name":"Sprint_8_Area2_x4","path":"sprites/Sprint_8_Area2_x4/Sprint_8_Area2_x4.yy",},},
     {"id":{"name":"obj_settings","path":"objects/obj_settings/obj_settings.yy",},},
     {"id":{"name":"spr_3x3_Starting_Room","path":"sprites/spr_3x3_Starting_Room/spr_3x3_Starting_Room.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
@@ -803,6 +805,7 @@
     {"id":{"name":"obj_item_buff_combomaster","path":"objects/obj_item_buff_combomaster/obj_item_buff_combomaster.yy",},},
     {"id":{"name":"spr_buffitem_blackfriday","path":"sprites/spr_buffitem_blackfriday/spr_buffitem_blackfriday.yy",},},
     {"id":{"name":"spr_buffitem_pickybuyer","path":"sprites/spr_buffitem_pickybuyer/spr_buffitem_pickybuyer.yy",},},
+    {"id":{"name":"Sprint_8_Area1_x3","path":"sprites/Sprint_8_Area1_x3/Sprint_8_Area1_x3.yy",},},
     {"id":{"name":"obj_enemy_shooter","path":"objects/obj_enemy_shooter/obj_enemy_shooter.yy",},},
     {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},},
     {"id":{"name":"room_sam_movement","path":"rooms/room_sam_movement/room_sam_movement.yy",},},
