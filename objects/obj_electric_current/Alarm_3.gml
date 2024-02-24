@@ -1,3 +1,3 @@
 /// @description Begin cycle after initial delay
 
-alarm[0] = room_speed * cycle_time;
+alarm[2] = room_speed * off_time;

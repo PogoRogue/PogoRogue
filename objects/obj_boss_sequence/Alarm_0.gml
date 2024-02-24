@@ -9,5 +9,6 @@ if(sequence_index < sequence_length) {
 } else {
 	sequence_index = 0;
 	current_frame = 4;
+	sequence_failed = false;
 	current_state = STATES.ATTACKING;
 }

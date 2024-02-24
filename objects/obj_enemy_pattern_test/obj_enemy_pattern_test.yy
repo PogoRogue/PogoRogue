@@ -32,10 +32,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_SlimeTurretHead",
-    "path": "sprites/spr_SlimeTurretHead/spr_SlimeTurretHead.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

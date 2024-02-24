@@ -23,6 +23,8 @@ buff_chance = 5 + (global.luck/2); //percent
 pickup_chance = (global.luck/2); //percent
 weapon_chance = (global.luck/2); //percent
 
+created_items = false;
+
 drop_coins = true;
 
 num_of_coins = global.combo;

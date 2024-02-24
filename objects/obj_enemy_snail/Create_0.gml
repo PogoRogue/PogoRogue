@@ -3,6 +3,10 @@
 // Inherit the parent event
 event_inherited();
 
+if(!instance_exists(obj_slime_outline)) {
+	instance_create_layer(0, 0, "enemies", obj_slime_outline);
+}
+
 enum SNAIL_STATES {
 	HORIZONTAL,
 	VERTICAL_LEFT,

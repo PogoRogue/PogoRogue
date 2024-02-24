@@ -3,6 +3,12 @@
 function scr_Reload_On_Kill(){
 	if(object_get_parent(other.object_index) != obj_boss_brick) { // Don't reload for boss bricks
 		if other.hp <= 0 {
+			with other {
+				if (created_items = false) {
+					scr_Random_Item_Drops();
+					created_items = true;
+				}
+			}
 			with obj_player {
 				if gun.current_bullets < gun.bullets_per_bounce+obj_player.max_ammo_buff and gun != boomerang_gun {
 					gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	

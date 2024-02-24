@@ -312,6 +312,7 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 	global.revive = false;
 	hp = floor((max_hp/8)/2) * 8;
 	state = state_revive;
+	revive_alpha = 1;
 	current_iframes = max(current_iframes - 1, 0);
 	
 	//change revive item sprite
@@ -341,4 +342,13 @@ if (hp <= 8 and hp > 0) {
 		audio_play_sound(snd_oneHeart,0,false);
 	}	
 }
+
+if room = room_items {
+	speed = 0;
+}	
 	
+	
+//revive fade out
+if revive_alpha > 0 {
+	revive_alpha -= 0.05;	
+}
