@@ -32,10 +32,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_enemy_turret_barrel",
-    "path": "sprites/spr_enemy_turret_barrel/spr_enemy_turret_barrel.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

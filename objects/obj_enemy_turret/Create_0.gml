@@ -10,25 +10,19 @@ range = 300;
 bullet_speed = 5;
 cooldown_length = 1.5 * room_speed;
 weapon_cooldown = cooldown_length;
+pattern = obj_enemy_projectile_bullet; // For more complicated projectile patterns
 
 // Determine which surface the turret is on
 rotation = 0;
 is_vertical = true;
-if(place_meeting(x + 20, y, obj_ground_parent)) {
-	rotation = 180;
-	is_vertical = true;
-	image_yscale = -1;
-} else if (place_meeting(x, y + 20, obj_ground_parent)) {
-	rotation = 90;
-	is_vertical = false;
-} else if (place_meeting(x, y - 20, obj_ground_parent)) {
-	rotation = -90;
-	is_vertical = false;
-}
-
+alarm[1] = 1;
 windup = true;
 w_alarm_cd = false;
 
+// Animation variables
+default_sprite = spr_turret_head;
+body_sprite = spr_turret_body;
+shooting_sprite = spr_turret_shoot;
 image_angle = rotation;
 
 // Inherit the parent event

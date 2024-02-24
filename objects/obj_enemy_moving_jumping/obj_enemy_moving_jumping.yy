@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_WalkEnemy_Idle",
-    "path": "sprites/spr_WalkEnemy_Idle/spr_WalkEnemy_Idle.yy",
+    "name": "spr_walk_enemy_idle",
+    "path": "sprites/spr_walk_enemy_idle/spr_walk_enemy_idle.yy",
   },
   "spriteMaskId": null,
   "visible": true,

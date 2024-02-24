@@ -1,7 +1,7 @@
 /// @description Press and jump
 
 if(!is_pressed) {
-	if other.state != other.state_chargejump {
+	if(other.state != other.state_chargejump && other.state != other.state_bouncing) {
 		other.state = other.state_bouncing;
 	}
 		
@@ -12,6 +12,7 @@ if(!is_pressed) {
 	other.speed = 0;
 
 	is_pressed = true;
-	sprite_index = pressed_sprite;
 	alarm_set(0, press_duration);
+	
+	audio_play_sound(snd_beep_placeholder, 0, false, 1, 0, pitch);
 }

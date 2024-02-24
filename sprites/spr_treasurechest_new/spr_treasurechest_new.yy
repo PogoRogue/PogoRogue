@@ -4,7 +4,7 @@
   "name": "spr_treasurechest_new",
   "bbox_bottom": 47,
   "bbox_left": 0,
-  "bbox_right": 63,
+  "bbox_right": 79,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -32,8 +32,9 @@
   "height": 48,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5ed62d92-1b2d-4312-a6f0-69265818b39d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"764f44c5-dfb2-48ad-8998-dfe46051e1aa","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5ed62d92-1b2d-4312-a6f0-69265818b39d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":false,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"764f44c5-dfb2-48ad-8998-dfe46051e1aa","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":false,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5b67fbd0-0eef-4ac7-89ef-443d6741b58b","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 9,
@@ -84,7 +85,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
+    "xorigin": 40,
     "yorigin": 16,
   },
   "swatchColours": [
@@ -174,5 +175,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 64,
+  "width": 80,
 }

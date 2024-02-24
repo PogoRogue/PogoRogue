@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Jump(add_to_jump){
-	speed = vsp_basicjump+add_to_jump; //bounce speed
+	speed = vsp_basicjump+add_to_jump+((vsp_basicjump/10)*global.tightspring); //bounce speed
 	direction = angle - 90; //bounce angle
 	hspeed += conveyor_speed;
 	conveyor_speed = 0;
@@ -77,7 +77,11 @@ function scr_Jump(add_to_jump){
 		if instance_place(x,y-vspeed,obj_spring).state = instance_place(x,y-vspeed,obj_spring).state_unsprung {
 			state = state_free;
 			vspeed = 0;
-			motion_add(90,12);
+			if(global.tightspring){
+				motion_add(90,12*1.2);
+			}else{
+				motion_add(90,12);
+			}
 		}
 		with instance_place(x,y-vspeed,obj_spring) {
 			state = state_springing;

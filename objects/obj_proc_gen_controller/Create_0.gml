@@ -31,8 +31,13 @@ max_gen_width = 12; //This is the max width. Because of some details in the proc
 
 generate_proc_gen = true;
 
-
-generate_start_room = false; //Since structure will be the exact same, just with or without a starter room,
+if (global.phase == 1) {
+	generate_start_room = true;
+}
+else {
+	generate_start_room = false;
+}
+// generate_start_room = true; //Since structure will be the exact same, just with or without a starter room,
 //We use this bool to remember that we have (or haven't) already seen a start room
 
 ///*

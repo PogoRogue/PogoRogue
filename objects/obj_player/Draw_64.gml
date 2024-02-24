@@ -67,7 +67,8 @@ if pickups_array[0].reload_on_bounce = false {
 		draw_sprite(pickups_array[0].gui_sprite,1,32,88);
 		//shield bubble / slow mo darkening
 		if pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble)
-		or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo) {
+		or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
+		or pickups_array[0] = pickup_frenzy and frenzy = true {
 			draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
 		}
 	}else {
@@ -126,7 +127,8 @@ if pickups_array[1].reload_on_bounce = false {
 		draw_sprite(pickups_array[1].gui_sprite,1,68,88);
 		//shield bubble / slow mo darkening
 		if pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
-		or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo) {
+		or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
+		or pickups_array[1] = pickup_frenzy and frenzy = true {
 			draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
 		}
 	}else {
@@ -185,11 +187,17 @@ if pickups_array[1].reload_on_bounce = false {
 //show buttons
 if (global.use_controller = true) {
 	//button 1
-	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)) {
+	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
+	and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
+	or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
+	or pickups_array[0] = pickup_frenzy and frenzy = true) {
 		draw_sprite(spr_controller_button_bottom,0,32,104);
 	}
 	//button 2
-	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)) {
+	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing 
+	and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
+	or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
+	or pickups_array[1] = pickup_frenzy and frenzy = true) {
 		draw_sprite(spr_controller_button_right,0,68,104);
 	}
 }else { //draw text
@@ -197,11 +205,17 @@ if (global.use_controller = true) {
 	draw_set_valign(fa_center);
 	draw_set_font(fnt_itemdescription2);
 	//button 1
-	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)) {
+	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
+	and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
+	or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
+	or pickups_array[0] = pickup_frenzy and frenzy = true) {
 		scr_Draw_Text_Outlined(32,104,"LMB",c_white); 
 	}
 	//button 2
-	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)) {
+	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing 
+	and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
+	or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
+	or pickups_array[1] = pickup_frenzy and frenzy = true) {
 		scr_Draw_Text_Outlined(68,104,"RMB",c_white); 
 	}
 }
