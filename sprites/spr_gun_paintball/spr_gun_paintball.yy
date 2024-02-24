@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b4e29e6e-0a2e-4d02-9e3f-556bf413056f",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7f8bdb2f-a3a1-469c-b5eb-54984bbdd0eb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"35d832ed-c715-4e71-bf1b-c3901b39f48c",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b4e29e6e-0a2e-4d02-9e3f-556bf413056f","path":"sprites/spr_gun_paintball/spr_gun_paintball.yy",},},},"Disabled":false,"id":"c05ebd56-553c-4633-b91e-2cf8eb92605a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7f8bdb2f-a3a1-469c-b5eb-54984bbdd0eb","path":"sprites/spr_gun_paintball/spr_gun_paintball.yy",},},},"Disabled":false,"id":"100444ea-eb2f-4ce5-bb02-727f1b5c063b","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"35d832ed-c715-4e71-bf1b-c3901b39f48c","path":"sprites/spr_gun_paintball/spr_gun_paintball.yy",},},},"Disabled":false,"id":"70cce994-b729-4386-abb6-a014550009ef","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

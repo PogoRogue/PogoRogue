@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cb47eb77-4d7a-43df-8489-470926099e5d",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d1890b3a-e41f-4f17-aae2-7a8e41b8423f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"27ff3e05-849f-4425-91f0-b3b0da973874",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cb47eb77-4d7a-43df-8489-470926099e5d","path":"sprites/spr_gun_shotgun/spr_gun_shotgun.yy",},},},"Disabled":false,"id":"9dc4861d-622c-4327-b7de-9d489ae21b18","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d1890b3a-e41f-4f17-aae2-7a8e41b8423f","path":"sprites/spr_gun_shotgun/spr_gun_shotgun.yy",},},},"Disabled":false,"id":"a6f04ec9-d1be-4814-8733-13ff4cece729","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"27ff3e05-849f-4425-91f0-b3b0da973874","path":"sprites/spr_gun_shotgun/spr_gun_shotgun.yy",},},},"Disabled":false,"id":"86ff4ee3-98a4-499d-a518-baf23dbec631","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

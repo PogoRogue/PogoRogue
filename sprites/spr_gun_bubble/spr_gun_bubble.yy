@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6da6655e-ad0a-4cd1-91f7-b03d32d389ae",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d7268f7-f808-4c4b-801d-49da31028a37",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"805c3029-884f-4947-8fb4-cf2af3461cad",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6da6655e-ad0a-4cd1-91f7-b03d32d389ae","path":"sprites/spr_gun_bubble/spr_gun_bubble.yy",},},},"Disabled":false,"id":"97fca809-7a47-42c7-990c-c543b21491c3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d7268f7-f808-4c4b-801d-49da31028a37","path":"sprites/spr_gun_bubble/spr_gun_bubble.yy",},},},"Disabled":false,"id":"5d401ea6-1165-43da-a3ec-16f6063b59be","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"805c3029-884f-4947-8fb4-cf2af3461cad","path":"sprites/spr_gun_bubble/spr_gun_bubble.yy",},},},"Disabled":false,"id":"5c5f0c70-ea9e-4460-8a1a-efe3ca855ffd","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

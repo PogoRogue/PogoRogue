@@ -3,6 +3,7 @@ options_decrease = 1;
 
 select = 1;
 selected = false;
-num_of_options = 4-options_decrease;
+num_of_options = 6-options_decrease;
 usable = true;
 room_persistent = false;
+move_spd = 0;

@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"600e9a20-e2ed-40db-91bb-831f086708dd",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0b936af4-2e0e-4aad-9ae4-9a3ac1bd624b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"aadeaed6-668e-475e-9a69-b488f6edb631",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"600e9a20-e2ed-40db-91bb-831f086708dd","path":"sprites/spr_gun_starsucker/spr_gun_starsucker.yy",},},},"Disabled":false,"id":"70694e5b-827d-4eed-9e11-e3d33f06abbe","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0b936af4-2e0e-4aad-9ae4-9a3ac1bd624b","path":"sprites/spr_gun_starsucker/spr_gun_starsucker.yy",},},},"Disabled":false,"id":"31c09115-0b6a-4f2d-9f09-da75213ef51f","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"aadeaed6-668e-475e-9a69-b488f6edb631","path":"sprites/spr_gun_starsucker/spr_gun_starsucker.yy",},},},"Disabled":false,"id":"e7a77298-df73-441d-88a4-20f596a3c899","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

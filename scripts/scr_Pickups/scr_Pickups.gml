@@ -332,7 +332,7 @@ function scr_Pickups(){
 	
 	pickup_freeze = {
 		_name: "Freeze",
-		tagline: "Temporarily freeze movement while mid-air, canceling after 3 seconds or when the player shoots.",
+		tagline: "Temporarily freeze movement while mid-air, allowing the player to fire in place. Unfreeze after 3 seconds.",
 		gui_sprite: spr_pickup_freeze,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
@@ -388,7 +388,7 @@ function scr_Pickups(){
 	
 	pickup_target = {
 		_name: "Targeted Assassination",
-		tagline: "Instantly kills a random enemy on screen, 10% damage to bosses.",
+		tagline: "Instantly kills a random enemy on screen, 20% damage to bosses.",
 		gui_sprite: spr_pickup_target,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,

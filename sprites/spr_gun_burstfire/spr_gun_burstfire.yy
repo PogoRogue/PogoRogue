@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"28d263ec-745f-4e78-8ccc-c4601bae7599",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"50efead3-4e39-4aaf-9d6a-30bad0a61016",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"392cbb57-5ca9-48e2-b207-9e0237f86083",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"28d263ec-745f-4e78-8ccc-c4601bae7599","path":"sprites/spr_gun_burstfire/spr_gun_burstfire.yy",},},},"Disabled":false,"id":"00990732-9f7d-4131-b57b-4c2b9fd84956","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"50efead3-4e39-4aaf-9d6a-30bad0a61016","path":"sprites/spr_gun_burstfire/spr_gun_burstfire.yy",},},},"Disabled":false,"id":"faf132ff-9450-4c65-ab82-b51385ca15a9","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"392cbb57-5ca9-48e2-b207-9e0237f86083","path":"sprites/spr_gun_burstfire/spr_gun_burstfire.yy",},},},"Disabled":false,"id":"ce22cf78-815a-49c5-9d01-2a2a40a90831","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
