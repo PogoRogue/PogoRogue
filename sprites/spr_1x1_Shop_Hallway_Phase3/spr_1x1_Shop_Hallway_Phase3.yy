@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_1x1_Shop_Hallway_Phase3",
-  "bbox_bottom": 27,
-  "bbox_left": 2,
-  "bbox_right": 28,
-  "bbox_top": 4,
+  "bbox_bottom": 31,
+  "bbox_left": 0,
+  "bbox_right": 31,
+  "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f2750621-f61d-4edc-b041-7b1d4bee4c58",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0dd75e9a-2bb5-49bf-a230-004aa362d5e7",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f2750621-f61d-4edc-b041-7b1d4bee4c58","path":"sprites/spr_1x1_Shop_Hallway_Phase3/spr_1x1_Shop_Hallway_Phase3.yy",},},},"Disabled":false,"id":"639f1eaa-4b0f-4d5b-b87c-644bddb7870b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0dd75e9a-2bb5-49bf-a230-004aa362d5e7","path":"sprites/spr_1x1_Shop_Hallway_Phase3/spr_1x1_Shop_Hallway_Phase3.yy",},},},"Disabled":false,"id":"9f2d35c5-ae9d-40fc-8bf6-794ef6956011","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
