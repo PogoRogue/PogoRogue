@@ -34,7 +34,7 @@ center_y = camera_get_view_height(view_camera[0])/2;
 
 alarm[1] = 2;
 
-scr_All_Actives_Array()
+scr_All_Actives_Array();
 actives_array = global.all_pickups;
 				
 select_max = array_length(actives_array);

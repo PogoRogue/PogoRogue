@@ -61,6 +61,15 @@ if(is_dead) {
 		}
 	}
 	
+	with obj_player {
+		if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count > 0 {
+			pickups_array[0].enemies_count -= 1;
+		}
+		if pickups_array[1].enemies_count_max > 0 and pickups_array[1].enemies_count > 0 {
+			pickups_array[1].enemies_count -= 1;
+		}
+	}
+	
 	is_dead = true;
 	mask_index = spr_nothing;
 }
