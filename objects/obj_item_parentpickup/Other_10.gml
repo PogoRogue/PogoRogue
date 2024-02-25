@@ -13,6 +13,8 @@ or obj_player.num_of_pickups = 0 {
 			pickups_array = [pickup_1,pickup_2];
 		}
 		
+		audio_play_sound(snd_passivePowerup,0,false);
+		
 		ini_open("itemsunlocked.ini");
 		if scr_In_Array(obj_player.all_pickups_array,pickup) {
 			for(i = 0; i < array_length(obj_player.all_pickups_array);i++) {
@@ -29,6 +31,8 @@ or obj_player.num_of_pickups = 0 {
 			pickup_2 = other.pickup;
 			pickups_array = [pickup_1,pickup_2];
 		}
+		
+		audio_play_sound(snd_passivePowerup,0,false);
 		
 		ini_open("itemsunlocked.ini");
 		if scr_In_Array(obj_player.all_pickups_array,pickup) {

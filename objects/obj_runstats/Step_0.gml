@@ -27,11 +27,11 @@ with obj_player {
 
 //actives
 with obj_player {
-	if scr_In_Array(global.all_actives_used,pickup_1.gui_sprite) = false {
+	if scr_In_Array(global.all_actives_used,pickup_1.gui_sprite) = false and pickup_1.gui_sprite != spr_pickup_empty {
 		array_resize(global.all_actives_used,array_length(global.all_actives_used)+1);
 		global.all_actives_used[array_length(global.all_actives_used)-1] = pickup_1.gui_sprite;
 	}
-	if scr_In_Array(global.all_actives_used,pickup_2.gui_sprite) = false {
+	if scr_In_Array(global.all_actives_used,pickup_2.gui_sprite) = false and pickup_2.gui_sprite != spr_pickup_empty {
 		array_resize(global.all_actives_used,array_length(global.all_actives_used)+1);
 		global.all_actives_used[array_length(global.all_actives_used)-1] = pickup_2.gui_sprite;
 	}

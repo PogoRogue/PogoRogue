@@ -1,5 +1,5 @@
-sprite_index = spr_menu_procgenonly;
-options_decrease = 1;
+//sprite_index = spr_menu_procgenonly;
+options_decrease = 0;
 
 select = 1;
 selected = false;
