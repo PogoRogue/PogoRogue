@@ -53,19 +53,19 @@ layout_grid = scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebui
 generate_start_room, min_distance_between_rooms, max_distance_between_rooms);
 Show_Grid_In_Console(layout_grid)
 
-var conduct_freq_analysis = true;
-var conduct_location_analysis = true;
+var conduct_freq_analysis = false;
+conduct_location_analysis = true;
 
 if(conduct_freq_analysis)
-	inst = instance_create_depth(x,y,depth,obj_proc_gen_freq_analysis)
+{
+	var inst = instance_create_depth(x,y,depth,obj_proc_gen_freq_analysis);
 	with(inst)
 	{
 	min_distance_between_rooms = other.min_distance_between_rooms;
 	max_distance_between_rooms = other.max_distance_between_rooms;
 	max_gen_width = other.max_gen_width;
 	}
-if(conduct_location_analysis)
-	inst = instance_create_depth(x,y,depth, obj_proc_gen_location_analysis);
+}
 
 //We already generated a start room, so instead generate a random combat room the next time we proc gen
 generate_start_room = false;

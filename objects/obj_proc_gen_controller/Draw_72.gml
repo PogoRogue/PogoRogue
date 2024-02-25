@@ -4,10 +4,13 @@ if(generate_proc_gen = true)
 	scr_Convert_Layout_To_Rooms(layout_grid);
 	generate_proc_gen = false;
 	
-	location_analysis_obj = instance_create_depth(x, y, depth, obj_proc_gen_location_analysis);
-	with(location_analysis_obj)
+	if(conduct_location_analysis)
 	{
-		layout_grid = other.layout_grid;
+		location_analysis_obj = instance_create_depth(x, y, depth, obj_proc_gen_location_analysis);
+		with(location_analysis_obj)
+		{
+			layout_grid = other.layout_grid;
+		}
 	}
 }
 
