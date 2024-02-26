@@ -1,6 +1,6 @@
 /// @description pickup drop
-if random_pickup = true {
-	scr_Random_Item_Drops();	
+if random_pickup == true {
+	Create_Item_Drops(random_items);	
 }else {
 	var center_x = x;
 	var center_y = y - sprite_get_yoffset( sprite_index) + sprite_height / 2;

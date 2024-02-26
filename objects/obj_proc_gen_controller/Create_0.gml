@@ -1,7 +1,7 @@
 /// @desc Set up procedural generation variables, generate layout
 
 //Store the randomized seed, and print it to console
-seed = 992878819;//randomize();
+seed = 992878;//randomize();
 
 random_set_seed(seed)
 show_debug_message("Random seed: " + string(seed));

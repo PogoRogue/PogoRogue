@@ -40,3 +40,7 @@ if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") {
 		instance_create_depth(x,y,depth,new_chest);
 	}
 }
+
+random_items = scr_Random_Item_Drops();
+
+var test = 0;
