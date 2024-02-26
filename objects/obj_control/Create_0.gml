@@ -95,9 +95,10 @@ if room = room_gameplay_video {
 }
 
 //Store the randomized seed, and print it to console
-//randomize();
-global.seed = 992878;
 
+//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######
+randomize()
+seed = random_get_seed();
 
-random_set_seed(global.seed)
-show_debug_message("Random seed: " + string(global.seed));
+random_set_seed(seed);
+show_debug_message("Random seed: " + string(seed));
