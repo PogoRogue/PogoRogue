@@ -1,19 +1,5 @@
 /// @desc Set up procedural generation variables, generate layout
 
-//Store the randomized seed, and print it to console
-
-randomize()
-seed = random_get_seed();
-
-random_set_seed(seed);
-show_debug_message("Random seed: " + string(seed));
-
-//for(var i = 0; i < 10; i++)
-//{
-//	show_debug_message(random_get_seed());
-//	show_debug_message(irandom_range(1, 10));
-//}
-
 // Our prebuilt rooms and their dimensions
 // Room format: [width, height, room_id]
 prebuilt_rooms = ds_list_create();

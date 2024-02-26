@@ -1,2 +1,2 @@
 /// @description random drops
-scr_Random_Item_Drops();
+Create_Item_Drops(random_items);
