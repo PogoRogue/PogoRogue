@@ -1,5 +1,13 @@
 /// @desc Set up procedural generation variables, generate layout
 
+//Store the randomized seed, and print it to console
+
+//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######
+randomize()
+seed = random_get_seed();
+
+random_set_seed(seed);
+show_debug_message("Random seed: " + string(seed));
 
 // Our prebuilt rooms and their dimensions
 // Room format: [width, height, room_id]
