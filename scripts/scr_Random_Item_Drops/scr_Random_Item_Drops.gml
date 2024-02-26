@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Random_Item_Drops(){
-	randomize();
+	//randomize();
 
 	//get center of enemy
 	var center_x = x;
@@ -14,7 +14,7 @@ function scr_Random_Item_Drops(){
 	
 	//heart
 	if (heart_drop <= heart_chance) {
-		randomize();
+		//randomize();
 		var heart_type = choose(obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_max_hp);
 		with instance_create_depth(center_x,center_y+4,depth-2,heart_type) {
 			follow_player = true;

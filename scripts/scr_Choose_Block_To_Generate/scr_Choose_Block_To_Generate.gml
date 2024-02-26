@@ -4,27 +4,9 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 	var room_string = ds_grid_get(layout_grid, grid_x, grid_y);
 	
 	//Set to a 3x3 room
-	if(room_string == "c3c")
+	if(room_string == "c3c" || room_string == "c2c")
 	{
-		switch (global.phase) {
-			case 1:
-				return spr_3x3_Combat_Phase1;
-			case 2:
-				return spr_3x3_Combat_Phase2;
-			case 3:
-				return spr_3x3_Combat_Phase3;
-		}
-	}
-	else if(room_string == "c2c") //2x2 Combat room
-	{
-		switch (global.phase) {
-			case 1:
-				return spr_2x2_Combat_Phase1;
-			case 2:
-				return spr_2x2_Combat_Phase2;
-			case 3:
-				return spr_2x2_Combat_Phase3;
-		}
+		return Get_Combat_Room(room_string);
 	}
 	else if(room_string == "Tc") //Marks the player starting room!
 	{
@@ -216,6 +198,30 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 	return -1; //No current valid block for the conditions
 }
 
+function Get_Combat_Room(room_string) {
+	if(room_string == "c3c")
+	{
+		switch (global.phase) {
+			case 1:
+				return spr_3x3_Combat_Phase1;
+			case 2:
+				return spr_3x3_Combat_Phase2;
+			case 3:
+				return spr_3x3_Combat_Phase3;
+		}
+	}
+	else if(room_string == "c2c") //2x2 Combat room
+	{
+		switch (global.phase) {
+			case 1:
+				return spr_2x2_Combat_Phase1;
+			case 2:
+				return spr_2x2_Combat_Phase2;
+			case 3:
+				return spr_2x2_Combat_Phase3;
+		}
+	}
+}
 
 function Get_DR_Hallway() {
 	switch (global.phase) {
