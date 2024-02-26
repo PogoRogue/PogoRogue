@@ -1,4 +1,9 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"obj_enemy_sweeper","order":1,"path":"objects/obj_enemy_sweeper/obj_enemy_sweeper.yy",},
+    {"name":"spr_enemy_swepeer","order":1,"path":"sprites/spr_enemy_swepeer/spr_enemy_swepeer.yy",},
+    {"name":"spr_enemy_swepeer_mine","order":2,"path":"sprites/spr_enemy_swepeer_mine/spr_enemy_swepeer_mine.yy",},
+    {"name":"obj_enemy_sweeper_mine","order":3,"path":"objects/obj_enemy_sweeper_mine/obj_enemy_sweeper_mine.yy",},
+  ],
 }
