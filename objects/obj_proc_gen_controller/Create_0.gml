@@ -1,8 +1,16 @@
 /// @desc Set up procedural generation variables, generate layout
 
 //Store the randomized seed, and print it to console
-seed = randomize();
+seed = 992878819;//randomize();
+
+random_set_seed(seed)
 show_debug_message("Random seed: " + string(seed));
+
+for(var i = 0; i < 10; i++)
+{
+	show_debug_message(random_get_seed());
+	show_debug_message(irandom_range(1, 10));
+}
 
 // Our prebuilt rooms and their dimensions
 // Room format: [width, height, room_id]
@@ -40,13 +48,13 @@ else {
 
 
 //Generate a few different layouts for test purposes
-for(var loopInd = 0; loopInd < 5; loopInd++)
-{
-	layout_grid = scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, num_non_rand_rooms, 
-	generate_start_room, min_distance_between_rooms, max_distance_between_rooms);
-	Show_Grid_In_Console(layout_grid)
-	show_debug_message("\n");
-}
+//for(var loopInd = 0; loopInd < 5; loopInd++)
+//{
+//	layout_grid = scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, num_non_rand_rooms, 
+//	generate_start_room, min_distance_between_rooms, max_distance_between_rooms);
+//	Show_Grid_In_Console(layout_grid)
+//	show_debug_message("\n");
+//}
 
 //Generate the general layout of the procedural generation in text form
 layout_grid = scr_Generate_Level_Layout(rooms_to_generate, max_gen_width, prebuilt_rooms, num_non_rand_rooms,

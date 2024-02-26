@@ -1,4 +1,4 @@
-randomize();
+//randomize();
 shop_index = global.shop_index;
 
 if instance_number(obj_shop) > 1 {

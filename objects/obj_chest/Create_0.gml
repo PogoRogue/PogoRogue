@@ -1,6 +1,6 @@
 /// @description create collision walls
 
-randomize();
+//randomize();
 open = false;
 colliding = false; //is the player currently colliding with the chest
 create_coins = false;

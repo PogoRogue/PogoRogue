@@ -1,4 +1,4 @@
-randomize();
+//randomize();
 
 room_started = false;
 // Our prebuilt rooms and their dimensions
