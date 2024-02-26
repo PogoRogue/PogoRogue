@@ -93,3 +93,11 @@ if room = room_gameplay_video {
 	global.ground_layer = layer_create(-1);
 	global.tilemap_ground = layer_tilemap_create(global.ground_layer,0,0,tl_ground,20000,20000);	
 }
+
+//Store the randomized seed, and print it to console
+//randomize();
+global.seed = 992878;
+
+
+random_set_seed(global.seed)
+show_debug_message("Random seed: " + string(global.seed));
