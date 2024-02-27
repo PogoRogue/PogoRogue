@@ -1,6 +1,6 @@
 /// @description Create coins
 
-randomize();
+//randomize();
 var random_spawn_x = irandom_range(-16,16);
 
 if (create_coins = true and num_of_coins > 0) {

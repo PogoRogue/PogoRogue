@@ -5,12 +5,12 @@
 /// @param spriteIndex
 /// @param x_offset
 /// @param y_offset
-function scr_Create_Room_From_Sprite(spriteIndex, sprite_sub_image, x_offset, y_offset, mirror){
+function scr_Create_Room_From_Sprite(spriteIndex, sprite_sub_image, x_offset, y_offset, mirror, signature_grid){
 	//Read the sprite into an array
 	var pixel_array = Read_Sprite_To_Array(spriteIndex, sprite_sub_image);
 	
 	//Create all objects corresponding to the pixel data with matching offsets
-	return Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror)	
+	return Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, spriteIndex, sprite_sub_image, mirror, signature_grid)	
 }
 
 
@@ -48,7 +48,7 @@ function Read_Sprite_To_Array(spriteIndex, sprite_sub_image){
 	return pixel_data;
 }
 
-function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror)
+function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, spriteIndex, sprite_sub_image, mirror)
 {
 	var object_queue = ds_queue_create();
 	for(var i = 0; i < array_length(pixel_array); i++)
@@ -81,6 +81,14 @@ function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror
 			if(new_object != -1)
 			{
 			ds_queue_enqueue(object_queue, new_object);
+			if(instance_exists(new_object) && object_is_ancestor(new_object.object_index, obj_pixel_tag))
+			{
+				with(new_object)
+				{
+					sprite_name = sprite_get_name(spriteIndex);
+					frame_number = sprite_sub_image;
+				}				
+			}
 			}
 		}
 	}

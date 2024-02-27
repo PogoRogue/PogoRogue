@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c05b71ff-0941-4490-9cb4-f386bdf6146f",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"17664e9c-5951-4511-976a-35748ba7e82b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"034e7d95-881e-479a-8889-ec346258f3c9",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c05b71ff-0941-4490-9cb4-f386bdf6146f","path":"sprites/spr_buffitem_experimentation/spr_buffitem_experimentation.yy",},},},"Disabled":false,"id":"ce5c27e1-5a1a-4a79-9621-99cfea513e3f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"17664e9c-5951-4511-976a-35748ba7e82b","path":"sprites/spr_buffitem_experimentation/spr_buffitem_experimentation.yy",},},},"Disabled":false,"id":"1113ff73-a849-4bdf-9ec4-40737ffa93d1","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"034e7d95-881e-479a-8889-ec346258f3c9","path":"sprites/spr_buffitem_experimentation/spr_buffitem_experimentation.yy",},},},"Disabled":false,"id":"a83eb9b9-ec5e-4cd2-929c-7abca425b4ae","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

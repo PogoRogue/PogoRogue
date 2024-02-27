@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c05b71ff-0941-4490-9cb4-f386bdf6146f",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ffd45b9e-d9f6-4fb6-87c4-3e56758bc129",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8b751114-7d96-4d56-8e70-bfe157bbccba",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -45,7 +46,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -58,6 +59,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c05b71ff-0941-4490-9cb4-f386bdf6146f","path":"sprites/spr_buffitem_blackfriday/spr_buffitem_blackfriday.yy",},},},"Disabled":false,"id":"977d2b48-cbbc-48ef-a6fd-cfa289629ec3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ffd45b9e-d9f6-4fb6-87c4-3e56758bc129","path":"sprites/spr_buffitem_blackfriday/spr_buffitem_blackfriday.yy",},},},"Disabled":false,"id":"76bdf40a-189a-48dd-a9d8-293df494c278","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8b751114-7d96-4d56-8e70-bfe157bbccba","path":"sprites/spr_buffitem_blackfriday/spr_buffitem_blackfriday.yy",},},},"Disabled":false,"id":"a4a46815-aa7b-498a-a3da-57947bb01e96","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

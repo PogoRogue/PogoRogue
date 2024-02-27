@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"35f19ec6-00cd-40b1-9fca-dfe267242234",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"03180718-a5d8-44f5-8ce4-1b226565b59b",},
   ],
   "gridX": 2,
   "gridY": 5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"35f19ec6-00cd-40b1-9fca-dfe267242234","path":"sprites/spr_1x1_boss_portal_Phase3/spr_1x1_boss_portal_Phase3.yy",},},},"Disabled":false,"id":"390664e5-ee2f-4d48-859b-f15f17334356","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"03180718-a5d8-44f5-8ce4-1b226565b59b","path":"sprites/spr_1x1_boss_portal_Phase3/spr_1x1_boss_portal_Phase3.yy",},},},"Disabled":false,"id":"9e5598a7-6bce-4736-adb6-1c3866b0820f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

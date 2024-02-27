@@ -1,6 +1,8 @@
 /// @description Player collision
 if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
+	
 	if (room == room_proc_gen_test) {
+		room_persistent = false;
 		switch (global.phase) {
 			case 1:
 				room = room_boss_1;
@@ -16,6 +18,6 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 	}
 	else {
 		global.phase++;
-		room = room_proc_gen_test;
+		room_goto(room_proc_gen_test)
 	}
 }

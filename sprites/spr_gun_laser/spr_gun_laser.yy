@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d866839-01ef-4205-8257-fe6f089081d1",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"14681e0f-9398-412e-b740-9b1f616699a2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b70044a3-31d9-4986-81d6-b946d6397920",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d866839-01ef-4205-8257-fe6f089081d1","path":"sprites/spr_gun_laser/spr_gun_laser.yy",},},},"Disabled":false,"id":"a6c8d99e-6ba9-44cc-9570-f10507cac936","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"14681e0f-9398-412e-b740-9b1f616699a2","path":"sprites/spr_gun_laser/spr_gun_laser.yy",},},},"Disabled":false,"id":"80ca4185-14a4-4725-8e62-5b94ca476a0f","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b70044a3-31d9-4986-81d6-b946d6397920","path":"sprites/spr_gun_laser/spr_gun_laser.yy",},},},"Disabled":false,"id":"41a3c8f7-bb8c-42dd-9c91-bbca82d0d347","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

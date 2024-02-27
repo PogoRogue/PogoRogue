@@ -8,11 +8,8 @@ colliding_with_ground_right = false;
 colliding_with_enemies = false;
 _hit_button = false;
 
-if (global.arm_cannon = false) {
-	sprite_index = spr_player_mask_zekai;
-}else {
-	sprite_index = spr_player_mask_ziteng;
-}
+sprite_index = spr_player_mask_zekai;
+	
 //local variables were being weird so I just defined them here
 _break = false; //left
 _break2 = false; //right
