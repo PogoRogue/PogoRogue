@@ -141,7 +141,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -481,6 +481,7 @@
     {"id":{"name":"spr_settingsmenu_gameplay","path":"sprites/spr_settingsmenu_gameplay/spr_settingsmenu_gameplay.yy",},},
     {"id":{"name":"scr_Boss_Button_Press","path":"scripts/scr_Boss_Button_Press/scr_Boss_Button_Press.yy",},},
     {"id":{"name":"spr_dpad_u","path":"sprites/spr_dpad_u/spr_dpad_u.yy",},},
+    {"id":{"name":"obj_enemy_rewards","path":"objects/obj_enemy_rewards/obj_enemy_rewards.yy",},},
     {"id":{"name":"spr_angled_platform_left","path":"sprites/spr_angled_platform_left/spr_angled_platform_left.yy",},},
     {"id":{"name":"obj_item_buff_planetarybullets","path":"objects/obj_item_buff_planetarybullets/obj_item_buff_planetarybullets.yy",},},
     {"id":{"name":"scr_Items_Unlocked","path":"scripts/scr_Items_Unlocked/scr_Items_Unlocked.yy",},},

@@ -38,6 +38,7 @@
     {"name":"spr_enemy_stomp_only_Shield","order":33,"path":"sprites/spr_enemy_stomp_only_Shield/spr_enemy_stomp_only_Shield.yy",},
     {"name":"spr_shield_small","order":31,"path":"sprites/spr_shield_small/spr_shield_small.yy",},
     {"name":"spr_enemy_shooter_walking","order":30,"path":"sprites/spr_enemy_shooter_walking/spr_enemy_shooter_walking.yy",},
+    {"name":"obj_enemy_rewards","order":26,"path":"objects/obj_enemy_rewards/obj_enemy_rewards.yy",},
     {"name":"spr_room_UD_1x1_Sam_Sprint8_Area1","order":3,"path":"sprites/spr_room_UD_1x1_Sam_Sprint8_Area1/spr_room_UD_1x1_Sam_Sprint8_Area1.yy",},
     {"name":"spr_enemy_shooting_explosion","order":29,"path":"sprites/spr_enemy_shooting_explosion/spr_enemy_shooting_explosion.yy",},
     {"name":"spr_slime_turret_head_inactive","order":27,"path":"sprites/spr_slime_turret_head_inactive/spr_slime_turret_head_inactive.yy",},
