@@ -107,6 +107,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"OtherRooms","folderPath":"folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/OtherRooms.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"RoomStoresAndOther","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sam_Rooms","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprint 8","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 8.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Talens_sprites","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"testRooms","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/testRooms.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Projectiles","folderPath":"folders/Sprites/Projectiles.yy",},
@@ -118,7 +119,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprint 8","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 8.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"snd_ArmorHeart.mp3","CopyToMask":-1,"filePath":"datafiles",},
