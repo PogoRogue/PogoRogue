@@ -180,11 +180,11 @@ image_angle = angle;
 #endregion
 
 //recentering
-if key_recenter and centering = false and angle != 0 and !key_left and !key_right {
+if key_recenter and centering = false and angle != 0 and !key_left and !key_right and can_rotate {
 	centering = true;
 }
 
-if centering = true {
+if centering = true and can_rotate {
 	can_rotate = false;
 	if angle >= rotation_speed or angle <= -rotation_speed {
 		angle += rotation_speed * -sign(angle);

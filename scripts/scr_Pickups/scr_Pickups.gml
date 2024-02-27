@@ -478,4 +478,27 @@ function scr_Pickups(){
 			on_cooldown = true;
 		}
 	};
+	
+	pickup_blink = {
+		_name: "Blink",
+		tagline: "Disappear, then reappear from any position on screen.",
+		gui_sprite: spr_pickup_blink,
+		max_cooldown_time: 1200,
+		cooldown_time: 1200,
+		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		on_call: function() {
+			obj_player.state = obj_player.state_blink;
+			instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box);
+		}
+	};
 }

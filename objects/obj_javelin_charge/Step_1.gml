@@ -1,4 +1,4 @@
-if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true {
+if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true or obj_player.state = obj_player.state_blink {
 	instance_destroy();	
 }else if global.key_fire_projectile_released {
 	instance_activate_object(javelin_object);	

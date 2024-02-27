@@ -484,6 +484,26 @@ state_revive = function() {
 	}
 }
 
+state_blink = function() {
+	speed = 0;
+	can_rotate = false;
+	can_shoot = false;
+	mask_index = spr_nothing;
+	with obj_player_mask {
+		mask_index = spr_nothing;
+	}
+	
+	if image_xscale > 0 {
+		image_xscale -= 0.1;
+	}else if image_xscale < 0 {
+		image_xscale += 0.1;
+	}
+	
+	if image_yscale > 0 {
+		image_yscale -= 0.1;
+	}
+}
+
 state_dead = function() {
 	if y < 100000 {
 		vspeed += grv; //falling
@@ -586,7 +606,7 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target,pickup_emergency]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target,pickup_emergency,pickup_blink]; //all pickups
 
 if (random_pickup = true) { //choose random pickups
 	randomize();

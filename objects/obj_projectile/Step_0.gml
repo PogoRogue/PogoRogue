@@ -207,6 +207,11 @@ if (gun_name = "Boomerangs") {
 	}else {
 		damage = init_damage;	
 	}
+	
+	if obj_player.state = obj_player.state_blink {
+		spd = 0;
+		speed = 0;
+	}
 }
 
 if (gun_name = "Yo-yo") {
@@ -312,6 +317,10 @@ if (gun_name = "Star Sucker") {
 	//end animation
 	if !scr_Animation_Complete() {
 		image_index += 0.5;	
+	}
+	
+	if obj_player.state = obj_player.state_blink {
+		speed = 0;
 	}
 }
 

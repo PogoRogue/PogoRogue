@@ -1,4 +1,6 @@
 /// @description draw self
+if state != state_blink {
+	
 if(current_iframes >= num_iframes - 10 and bubble = false || dead) {
 	shader_set(sh_tint_red);
 }
@@ -88,3 +90,6 @@ if ground_pound_slam = true {
 scr_Laser_Sight();
 
 shader_reset();
+}else {
+	draw_sprite_ext(spr_player_zekai_falling_white,0,x+lengthdir_x(22,angle+90),y+lengthdir_y(22,angle+90),image_xscale,image_yscale,angle,c_white,1);	
+}

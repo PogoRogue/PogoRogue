@@ -68,7 +68,8 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		//shield bubble / slow mo darkening
 		if pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble)
 		or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
-		or pickups_array[0] = pickup_frenzy and frenzy = true {
+		or pickups_array[0] = pickup_frenzy and frenzy = true 
+		or pickups_array[0] = pickup_blink and instance_exists(obj_blink_box) {
 			draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
 		}
 	}else {
@@ -145,7 +146,8 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		//shield bubble / slow mo darkening
 		if pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 		or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
-		or pickups_array[1] = pickup_frenzy and frenzy = true {
+		or pickups_array[1] = pickup_frenzy and frenzy = true 
+		or pickups_array[1] = pickup_blink and instance_exists(obj_blink_box) {
 			draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
 		}
 	}else {
@@ -224,7 +226,7 @@ if (global.use_controller = true) {
 	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
 	and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 	or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
-	or pickups_array[0] = pickup_frenzy and frenzy = true) {
+	or pickups_array[0] = pickup_frenzy and frenzy = true)  {
 		draw_sprite(spr_controller_button_bottom,0,32,104);
 	}
 	//button 2
