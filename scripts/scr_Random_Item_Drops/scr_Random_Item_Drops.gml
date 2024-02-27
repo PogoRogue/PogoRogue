@@ -147,7 +147,7 @@ function scr_Get_Rand_Weapon_Object()
 							obj_item_weapon_bubble,obj_item_weapon_burstfire,obj_item_weapon_grenade,
 							obj_item_weapon_laser, obj_item_weapon_bouncyball,obj_item_weapon_missile,
 							obj_item_weapon_boomerang, obj_item_weapon_starsucker, obj_item_weapon_sniper,
-							obj_item_weapon_slime];
+							obj_item_weapon_slime, obj_item_weapon_yoyo, obj_item_weapon_javelins];
 	random_weapon_drop = list_of_possible_weapons[irandom_range(0,array_length(list_of_possible_weapons)-1)];
 	return random_weapon_drop;
 }
@@ -158,7 +158,7 @@ function scr_Get_Rand_Pickup_Object()
 							obj_item_pickup_shieldbubble,obj_item_pickup_firedash,obj_item_pickup_jetpack,
 							obj_item_pickup_slowmo, obj_item_pickup_bulletblast, obj_item_pickup_reload,
 							obj_item_pickup_camera, obj_item_pickup_freeze, obj_item_pickup_frenzy,
-							obj_item_pickup_target];
+							obj_item_pickup_target, obj_item_pickup_emergency, obj_item_pickup_blink];
 	random_pickup_drop = list_of_possible_pickups[irandom_range(0,array_length(list_of_possible_pickups)-1)];
 
 	return random_pickup_drop;
