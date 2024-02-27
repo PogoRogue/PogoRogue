@@ -1,4 +1,21 @@
 {
-  "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "FolderOrderSettings": [
+    {"name":"phase_1T","order":4,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_1T.yy",},
+    {"name":"phase_2T","order":7,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_2T.yy",},
+    {"name":"phase_3T","order":5,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_3T.yy",},
+    {"name":"extra_storage","order":8,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/extra_storage.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"spr_2x2_Combat_Talen_store_P1","order":1,"path":"sprites/spr_2x2_Combat_Talen_store_P1/spr_2x2_Combat_Talen_store_P1.yy",},
+    {"name":"spr_dr_Talen_P3","order":2,"path":"sprites/spr_dr_Talen_P3/spr_dr_Talen_P3.yy",},
+    {"name":"spr_2x2_Combat_Talen_store_P3","order":1,"path":"sprites/spr_2x2_Combat_Talen_store_P3/spr_2x2_Combat_Talen_store_P3.yy",},
+    {"name":"spr_dr1_Talen","order":2,"path":"sprites/spr_dr1_Talen/spr_dr1_Talen.yy",},
+    {"name":"spr_lr_length2_Talen","order":3,"path":"sprites/spr_lr_length2_Talen/spr_lr_length2_Talen.yy",},
+    {"name":"spr_lr_length2_Talen_P1","order":3,"path":"sprites/spr_lr_length2_Talen_P1/spr_lr_length2_Talen_P1.yy",},
+    {"name":"spr_dr_Talen_P1","order":2,"path":"sprites/spr_dr_Talen_P1/spr_dr_Talen_P1.yy",},
+    {"name":"spr_3x3_Combat_talen_changes","order":1,"path":"sprites/spr_3x3_Combat_talen_changes/spr_3x3_Combat_talen_changes.yy",},
+    {"name":"spr_dr_Talen_P2","order":1,"path":"sprites/spr_dr_Talen_P2/spr_dr_Talen_P2.yy",},
+    {"name":"spr_ul_Talen_P2","order":3,"path":"sprites/spr_ul_Talen_P2/spr_ul_Talen_P2.yy",},
+    {"name":"spr_lr_length2_Talen_P2","order":2,"path":"sprites/spr_lr_length2_Talen_P2/spr_lr_length2_Talen_P2.yy",},
+  ],
 }

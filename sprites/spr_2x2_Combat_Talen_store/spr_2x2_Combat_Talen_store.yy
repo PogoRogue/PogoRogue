@@ -5,7 +5,7 @@
   "bbox_bottom": 63,
   "bbox_left": 0,
   "bbox_right": 63,
-  "bbox_top": 2,
+  "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Talens_sprites",
-    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy",
+    "name": "extra_storage",
+    "path": "folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/extra_storage.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
