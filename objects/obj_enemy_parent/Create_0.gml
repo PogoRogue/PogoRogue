@@ -30,3 +30,5 @@ drop_coins = true;
 num_of_coins = global.combo;
 //when invinsible, can't take damage
 invinsible=false;
+
+random_items = scr_Random_Item_Drops();

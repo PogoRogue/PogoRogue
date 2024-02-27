@@ -1,9 +1,10 @@
-function scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_starting_room, generate_boss_room)
+function scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_starting_room, generate_boss_room, width_between_rooms, height_between_rooms)
 {
+	
 	var room_number = 3;
 	// Create a grid to hold our layout
-	var grid_height = 10;
-	var grid_width = 10;
+	var grid_height = 20;
+	var grid_width = 15;
 
 	var layout_grid = ds_grid_create(grid_width + 1, grid_height + 1); // +1 since we start at 0
 
@@ -65,11 +66,11 @@ function scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_starting_room,
 		}
 		else if(rCount == 1) //Go far right for shop room
 		{
-		currentX = 9;	
+		currentX = width_between_rooms;	
 		}
 		else if(rCount == 2) //Go far left for last rooms
 		{
-		currentX = 5;	
+		currentX = floor(width_between_rooms/2);	
 		}
 
 		// Ensure rooms are in the grid bounds
@@ -112,12 +113,12 @@ function scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_starting_room,
 		
 		if(rCount == 0)
 		{
-		currentY += rHeight + 2// Move up by the height of our current room & the exact amount 
+		currentY += rHeight + ceil(height_between_rooms/4) // Move up by the height of our current room & the exact amount 
 		//we need to move up to see all variants of hallways
 		}
 		else if(rCount == 1) //Go more vertical for second stretch
 		{
-		currentY += rHeight + 8
+		currentY += rHeight + height_between_rooms
 		}
 		
 	
