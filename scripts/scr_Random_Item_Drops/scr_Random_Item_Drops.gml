@@ -26,6 +26,7 @@ function scr_Random_Item_Drops(){
 	
 	//buff
 	if (buff_drop <= buff_chance) {
+		var object_array = [];
 		num_of_coins = round(num_of_coins/2);
 		if created_items = false {
 			var object_type = scr_Get_Rand_Buff_Object();
@@ -53,6 +54,8 @@ function scr_Random_Item_Drops(){
 	
 	//weapon
 	if (weapon_drop <= weapon_chance) {
+		var object_array = [];
+		
 		var object_type = scr_Get_Rand_Weapon_Object();
 		
 		var location = [0,0,-2];
@@ -64,6 +67,7 @@ function scr_Random_Item_Drops(){
 		//only one powerup per chest
 		pickup_chance = -1;
 		num_of_coins = 0;
+		heart_chance = -1;
 		with obj_item_buff_heart {
 			instance_destroy();	
 		}
@@ -77,6 +81,8 @@ function scr_Random_Item_Drops(){
 	
 	//pickup
 	if (pickup_drop <= pickup_chance) {
+		var object_array = [];
+		
 		var object_type = scr_Get_Rand_Pickup_Object();
 		
 		var location = [0,0,-2];
@@ -86,6 +92,7 @@ function scr_Random_Item_Drops(){
 		array_push(object_array, object_values);
 
 		num_of_coins = 0;
+		heart_chance = -1;
 		with obj_item_buff_heart {
 			instance_destroy();	
 		}

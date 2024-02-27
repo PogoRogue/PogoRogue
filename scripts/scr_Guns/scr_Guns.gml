@@ -25,6 +25,7 @@ function scr_Guns(){
 	
 	empty_gun = {
 		_name: "",
+		tagline: "",
 		sprite: spr_nothing,
 		ammo: [empty_bullet],
 		inaccuracy: 0,

@@ -1,6 +1,8 @@
 /// @description Inherit the parent event
 event_inherited();
 
+num_of_coins = irandom_range(min_num_of_coins,max_num_of_coins);
+
 heart_chance = 0;
 buff_chance = 0;
 weapon_chance = 0;
