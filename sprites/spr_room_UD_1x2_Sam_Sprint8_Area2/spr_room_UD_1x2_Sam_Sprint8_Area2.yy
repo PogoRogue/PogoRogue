@@ -14,10 +14,10 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0a91e199-2607-4506-b303-5f093c7111e0",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"da1c1259-cc11-4587-94c2-e2c58e0280dd",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7473e851-d7f7-4107-9124-45d01881f546",},
   ],
-  "gridX": 0,
-  "gridY": 0,
+  "gridX": 6,
+  "gridY": 4,
   "height": 64,
   "HTile": false,
   "layers": [
@@ -56,7 +56,7 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0a91e199-2607-4506-b303-5f093c7111e0","path":"sprites/spr_room_UD_1x2_Sam_Sprint8_Area2/spr_room_UD_1x2_Sam_Sprint8_Area2.yy",},},},"Disabled":false,"id":"904a8e4d-3e94-43dc-8ed7-c5d4adb5d6d6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"da1c1259-cc11-4587-94c2-e2c58e0280dd","path":"sprites/spr_room_UD_1x2_Sam_Sprint8_Area2/spr_room_UD_1x2_Sam_Sprint8_Area2.yy",},},},"Disabled":false,"id":"85ca3282-a7a8-4967-829b-9a2a47e5b0f2","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7473e851-d7f7-4107-9124-45d01881f546","path":"sprites/spr_room_UD_1x2_Sam_Sprint8_Area2/spr_room_UD_1x2_Sam_Sprint8_Area2.yy",},},},"Disabled":false,"id":"75797791-06af-49ce-a98c-ee473157fd55","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

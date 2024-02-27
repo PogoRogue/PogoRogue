@@ -13,8 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ad6139c9-00a9-473a-aa94-09a9834178aa",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"19b855e8-163c-4345-8082-c8b8ea73e2a0",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e0f1292c-92e1-460d-a46c-abe2e1bf2691",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +43,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 1.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -55,8 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ad6139c9-00a9-473a-aa94-09a9834178aa","path":"sprites/spr_room_UD_1x1_Sam_Sprint8_Area1/spr_room_UD_1x1_Sam_Sprint8_Area1.yy",},},},"Disabled":false,"id":"d8939bb6-67a0-4b3e-9a43-1594d1c4e1ae","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"19b855e8-163c-4345-8082-c8b8ea73e2a0","path":"sprites/spr_room_UD_1x1_Sam_Sprint8_Area1/spr_room_UD_1x1_Sam_Sprint8_Area1.yy",},},},"Disabled":false,"id":"2bb280eb-7057-4ca3-b431-3a362963e9d3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e0f1292c-92e1-460d-a46c-abe2e1bf2691","path":"sprites/spr_room_UD_1x1_Sam_Sprint8_Area1/spr_room_UD_1x1_Sam_Sprint8_Area1.yy",},},},"Disabled":false,"id":"c04f772f-3162-4ac2-86e0-0c6d88c51d75","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
