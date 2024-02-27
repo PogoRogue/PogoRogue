@@ -1,6 +1,6 @@
 {
-  "FolderOrderSettings": [
-  ],
+  "FolderOrderSettings": [],
   "ResourceOrderSettings": [
+    {"name":"spr_menu_tutorial","order":1,"path":"sprites/spr_menu_tutorial/spr_menu_tutorial.yy",},
   ],
 }

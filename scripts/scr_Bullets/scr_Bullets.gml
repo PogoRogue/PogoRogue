@@ -21,6 +21,25 @@ function scr_Bullets(){
 		damage: 8                         //how much damage each bullet does
 	};
 	
+	empty_bullet = {
+		sprite: spr_nothing,
+		gui_sprite: spr_nothing,
+		spd: 0,                          
+		firerate_start: 1,               
+		firerate_end: 1,                 
+		firerate_mult: 0,               
+		firerate: 1,                     
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 0, frames: 0},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 0
+	};
+	
 	hatgun_bullet = {
 		sprite: spr_projectile_default,
 		gui_sprite: spr_projectile_default_gui,

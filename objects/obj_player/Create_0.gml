@@ -164,10 +164,19 @@ state_free = function() {
 	}
 	
 	//restart room if reached the top unless procgen room
-	if room != room_proc_gen_test && room != room_sprite_level_test {
+	if room != room_proc_gen_test && room != room_sprite_level_test && room != room_tutorial {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			instance_deactivate_all(false);
 			room_restart();
+		}
+	}else if room = room_tutorial {
+		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			audio_stop_all();
+			gamepad_set_vibration(0,0,0);
+			room = room_menu;
+			with all {
+				instance_destroy();
+			}
 		}
 	}
 	
@@ -534,6 +543,9 @@ bullet_index = 0; //current bullet
 
 //EQUIP WEAPONS
 num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2 to start, but include functionality of 3 for "triple threat" buff
+if room = room_tutorial {
+	num_of_weapons = 0;
+}
 weapons_equipped = num_of_weapons;
 all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun,yoyo_gun,javelin_gun]; //all guns
 
@@ -552,7 +564,7 @@ if (random_weapon == true) { //choose random weapons
 		}
 		if num_of_weapons > 2 {
 			gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-		}else {
+		}else if num_of_weapons != 0 {
 			gun_3 = gun_1;
 		}
 	}else {
@@ -564,7 +576,7 @@ if (random_weapon == true) { //choose random weapons
 		}
 		if num_of_weapons > 2 {
 			gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-		}else {
+		}else if num_of_weapons != 0 {
 			gun_3 = gun_1;
 		}
 	}
@@ -579,9 +591,15 @@ if (random_weapon == true) { //choose random weapons
 }else { //decide which weapons we want manually if not random. 
 	//we do this by changing gun_1_manual and gun_2_manual in the variable definitions tab. Can be changed room by room.
 	//Integers correspond to values in all_guns_array, 0 = default_gun, 1 = paintball_gun, etc.
-	gun_1 = all_guns_array[gun_1_manual_value];
-	gun_2 = all_guns_array[gun_2_manual_value];
-	gun_3 = all_guns_array[gun_3_manual_value];
+	if room != room_tutorial {
+		gun_1 = all_guns_array[gun_1_manual_value];
+		gun_2 = all_guns_array[gun_2_manual_value];
+		gun_3 = all_guns_array[gun_3_manual_value];
+	}else {
+		gun_1 = empty_gun;
+		gun_2 = empty_gun;
+		gun_3 = empty_gun;
+	}
 }
 
 //set what weapons will actually be equipped at the start
@@ -589,8 +607,10 @@ if (num_of_weapons = 1) {
 	gun_array = [gun_1, gun_1, gun_1];
 }else if (num_of_weapons = 2) {
 	gun_array = [gun_1, gun_2, gun_1];
-}else {
+}else if (num_of_weapons = 3) {
 	gun_array = [gun_1, gun_2, gun_3];
+}else if (num_of_weapons = 0) {
+	gun_array = [empty_gun, empty_gun, empty_gun];
 }
 current_gun = 0;
 gun = gun_array[current_gun];
@@ -658,4 +678,9 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {
 	alarm[2] = 10;
+}
+
+//destroy if not area 1
+if global.phase != 1 {
+	instance_destroy();	
 }

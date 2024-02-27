@@ -422,6 +422,7 @@
     {"id":{"name":"obj_enemy_snail_slime","path":"objects/obj_enemy_snail_slime/obj_enemy_snail_slime.yy",},},
     {"id":{"name":"spr_settings_uparrow","path":"sprites/spr_settings_uparrow/spr_settings_uparrow.yy",},},
     {"id":{"name":"obj_jetpack_smoke","path":"objects/obj_jetpack_smoke/obj_jetpack_smoke.yy",},},
+    {"id":{"name":"spr_menu_tutorial","path":"sprites/spr_menu_tutorial/spr_menu_tutorial.yy",},},
     {"id":{"name":"spr_buffitem_lasersight","path":"sprites/spr_buffitem_lasersight/spr_buffitem_lasersight.yy",},},
     {"id":{"name":"obj_enemy_jack","path":"objects/obj_enemy_jack/obj_enemy_jack.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},

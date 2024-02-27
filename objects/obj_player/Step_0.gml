@@ -282,6 +282,7 @@ else if global.key_weapon_3 and weapons_equipped > 2 {
 	gun = gun_array[current_gun];
 }
 
+
 if gun_2 = gun_1 {
 	weapons_equipped = 1;	
 }else if gun_2 != gun_1 and gun_3 = gun_1 or gun_2 != gun_1 and gun_3 = gun_2 {

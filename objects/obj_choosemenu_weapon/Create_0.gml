@@ -1,3 +1,9 @@
+if global.phase > 1 {
+	instance_destroy();	
+}
+
+depth -= 100;
+
 usable = true;
 select = 1;
 select_max = 3; //max # of rows
