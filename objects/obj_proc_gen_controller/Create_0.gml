@@ -70,5 +70,6 @@ generate_start_room = false;
 global.debug_wall_count = 0;
 
 //tiling layer
+
 global.ground_layer = layer_create(-1);
-global.tilemap_ground = layer_tilemap_create(global.ground_layer,-20000,-20000,tl_ground,20000,20000);
+global.tilemap_ground = layer_tilemap_create(global.ground_layer,-20000,-20000,global.tileset,20000,20000);

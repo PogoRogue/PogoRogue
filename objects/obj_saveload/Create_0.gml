@@ -16,3 +16,7 @@ scr_Items_Unlocked();
 scr_Controls();
 
 room_speed = 60;
+
+if room != room_boss_2 {
+global.tileset = tl_ground;
+}

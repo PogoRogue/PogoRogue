@@ -2,5 +2,7 @@
   "FolderOrderSettings": [],
   "ResourceOrderSettings": [
     {"name":"spr_menu_tutorial","order":1,"path":"sprites/spr_menu_tutorial/spr_menu_tutorial.yy",},
+    {"name":"spr_groundtiles2","order":1,"path":"sprites/spr_groundtiles2/spr_groundtiles2.yy",},
+    {"name":"tl_ground2","order":1,"path":"tilesets/tl_ground2/tl_ground2.yy",},
   ],
 }

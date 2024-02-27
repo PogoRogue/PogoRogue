@@ -47,10 +47,28 @@ if centered = true {
 	
 	//selected
 	if key_select and select_x = 1 { //restart
-		room_persistent = false;
-		room_restart();
-		instance_deactivate_all(false);
-		audio_play_sound(snd_selectOption,0,false);
+		if room = room_boss_1 or room = room_boss_2 {
+			room = room_proc_gen_test;
+			global.phase = 1;
+			global.tileset = tl_ground;
+			//room_restart();
+			instance_deactivate_all(false);
+			audio_play_sound(snd_selectOption,0,false);
+		}else if room = room_proc_gen_test {
+			if global.phase > 1 {
+				global.phase = 1;	
+			}
+			room_persistent = false;
+			room_restart();
+			instance_deactivate_all(false);
+			audio_play_sound(snd_selectOption,0,false);
+			global.tileset = tl_ground;
+		}else {
+			room_persistent = false;
+			room_restart();
+			instance_deactivate_all(false);
+			audio_play_sound(snd_selectOption,0,false);
+		}
 	}
 	
 	if key_select and select_x = 2 { //main menu

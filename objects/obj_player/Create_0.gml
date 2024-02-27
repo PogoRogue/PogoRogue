@@ -682,5 +682,5 @@ if room = room_proc_gen_test || room = room_sprite_level_test {
 
 //destroy if not area 1
 if global.phase != 1 {
-	instance_destroy();	
+	//instance_destroy();	
 }

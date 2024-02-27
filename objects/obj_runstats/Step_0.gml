@@ -10,6 +10,10 @@ if instance_exists(obj_player) {
 //area reached
 global.current_area_reached = global.phase;
 
+if global.phase = 2 {
+	global.tileset = tl_ground2;	
+}
+
 //add items
 
 //weapons
