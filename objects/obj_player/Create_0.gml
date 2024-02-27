@@ -517,8 +517,8 @@ num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2 to st
 weapons_equipped = num_of_weapons;
 all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun]; //all guns
 
-if (random_weapon = true) { //choose random weapons
-	randomize();
+if (random_weapon == true) { //choose random weapons
+	//randomize();
 	//temporarily change items for playtest
 	if room = room_proc_gen_test or room = room_boss_2 {
 		//gun_1 = default_gun;
@@ -588,8 +588,8 @@ scr_Pickups();
 num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
 all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target]; //all pickups
 
-if (random_pickup = true) { //choose random pickups
-	randomize();
+if (random_pickup == true) { //choose random pickups
+	//randomize();
 	
 	//temporarily change items for playtest
 	if room = room_proc_gen_test or room = room_boss_2 {

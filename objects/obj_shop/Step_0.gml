@@ -76,7 +76,7 @@ var xx = 0;
 var yy = 0;
 if created_items = false {
 	//choose random items
-	randomize();
+	//randomize();
 
 	buff_1 = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
 	buff_2 = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
