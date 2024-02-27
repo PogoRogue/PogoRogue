@@ -498,7 +498,9 @@ function scr_Pickups(){
 		enemies_count_max: 0,
 		on_call: function() {
 			obj_player.state = obj_player.state_blink;
-			instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box);
+			if !instance_exists(obj_blink_box) {
+				instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box);
+			}
 		}
 	};
 }

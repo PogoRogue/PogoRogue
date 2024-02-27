@@ -762,6 +762,7 @@
     {"id":{"name":"scr_Gamepad_Get_Button_Sprite","path":"scripts/scr_Gamepad_Get_Button_Sprite/scr_Gamepad_Get_Button_Sprite.yy",},},
     {"id":{"name":"spr_enemy_jack_spring","path":"sprites/spr_enemy_jack_spring/spr_enemy_jack_spring.yy",},},
     {"id":{"name":"spr_belts","path":"sprites/spr_belts/spr_belts.yy",},},
+    {"id":{"name":"obj_text_tilt","path":"objects/obj_text_tilt/obj_text_tilt.yy",},},
     {"id":{"name":"spr_slime_turret_head","path":"sprites/spr_slime_turret_head/spr_slime_turret_head.yy",},},
     {"id":{"name":"spr_arrow_left","path":"sprites/spr_arrow_left/spr_arrow_left.yy",},},
     {"id":{"name":"spr_itemmenu_actives","path":"sprites/spr_itemmenu_actives/spr_itemmenu_actives.yy",},},

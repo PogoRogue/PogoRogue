@@ -173,10 +173,7 @@ state_free = function() {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			audio_stop_all();
 			gamepad_set_vibration(0,0,0);
-			room = room_menu;
-			with all {
-				instance_destroy();
-			}
+			game_restart();
 		}
 	}
 	
@@ -500,12 +497,6 @@ state_blink = function() {
 	mask_index = spr_nothing;
 	with obj_player_mask {
 		mask_index = spr_nothing;
-	}
-	
-	if image_xscale > 0 {
-		image_xscale -= 0.1;
-	}else if image_xscale < 0 {
-		image_xscale += 0.1;
 	}
 	
 	if image_yscale > 0 {

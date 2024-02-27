@@ -14,7 +14,7 @@ if key_left or key_right or key_up or key_down {
 	moved = true;	
 }
 
-if draw_respawn = false {
+if draw_respawn = false and obj_player.image_yscale = 0 {
 	x += (-key_left + key_right) * move_speed;
 	y += (-key_up + key_down) * move_speed;
 }
