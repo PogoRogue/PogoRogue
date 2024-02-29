@@ -3,9 +3,9 @@
   "resourceVersion": "1.0",
   "name": "spr_2x2_Combat_Test",
   "bbox_bottom": 60,
-  "bbox_left": 7,
-  "bbox_right": 59,
-  "bbox_top": 5,
+  "bbox_left": 9,
+  "bbox_right": 25,
+  "bbox_top": 57,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,7 +13,8 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"49ab0741-f29e-4927-a7c0-8d6e692e56fc",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"29a139a2-940e-4d98-965a-636e48490819",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ccc59d4f-b915-4f73-890f-40add43a82c3",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -54,7 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"49ab0741-f29e-4927-a7c0-8d6e692e56fc","path":"sprites/spr_2x2_Combat_Test/spr_2x2_Combat_Test.yy",},},},"Disabled":false,"id":"8a34c477-f701-4180-9317-1092a02ec864","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"29a139a2-940e-4d98-965a-636e48490819","path":"sprites/spr_2x2_Combat_Test/spr_2x2_Combat_Test.yy",},},},"Disabled":false,"id":"6ff0e578-ec9c-4dae-b50d-e23b5b73a364","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ccc59d4f-b915-4f73-890f-40add43a82c3","path":"sprites/spr_2x2_Combat_Test/spr_2x2_Combat_Test.yy",},},},"Disabled":false,"id":"39334fd0-98c0-43f7-a810-126164d14709","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

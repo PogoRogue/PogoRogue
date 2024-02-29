@@ -1,19 +1,28 @@
 /// @description shoot enemy
 
 if image_index = 6 and fade_out = false {
-	if room != room_boss_2 {
+	if room != room_boss_1 and room != room_boss_2 {
 		with enemy_to_target {
 			hp = 0;
 			with obj_player {
 				scr_Reload_On_Kill();	
 			}
 		}
-	}else if room = room_boss_2 {
+	}else if room = room_boss_1 or room = room_boss_2 {
 		with enemy_to_target {
-			if object_get_name(object_index) = "obj_boss_sequence_body" {
-				hp -= hp_max/10;
-				with obj_player {
-					scr_Reload_On_Kill();	
+			if object_get_name(object_index) = "obj_boss_sequence_body" or object_get_name(object_index) = "obj_boss_sphere" {
+				if object_get_name(object_index) = "obj_boss_sequence_body" {
+					if (controller.current_state = STATES.VULNERABLE) {
+						hp -= hp_max/5;
+						with obj_player {
+							scr_Reload_On_Kill();	
+						}
+					}
+				}else {
+					hp -= hp_max/5;
+					with obj_player {
+						scr_Reload_On_Kill();	
+					}
 				}
 			}else {
 				hp = 0;
@@ -37,7 +46,7 @@ if image_index = 6 and fade_out = false {
 }
 
 if instance_exists(enemy_to_target) and fade_out = false {
-	if speed_up < 8 {
+	if speed_up < 12 {
 		speed_up += 1;	
 	}
 	if point_distance(x,y,enemy_to_target.x,enemy_to_target.y) <= 100 {

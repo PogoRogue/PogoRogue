@@ -35,7 +35,25 @@ if state = state_freeze {
 }
 
 draw_self();
-shader_reset();
+
+//draw hat gun
+if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
+	if sprite_index = player_sprite or sprite_index = spr_player_revive_animation {
+		draw_sprite_ext(spr_player_zekai_hat,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = falling_sprite {
+		draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = charging_sprite {
+		draw_sprite_ext(spr_player_zekai_hat_charging,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}
+}
+
+//revive
+if (state = state_revive) {
+	draw_sprite_ext(spr_player_revive,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);	
+	draw_sprite_ext(spr_player_revive_white,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,revive_alpha);	
+}else if revive_alpha > 0 {
+	draw_sprite_ext(spr_player_revive,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,revive_alpha);	
+}
 
 //draw charge bar
 if (state = state_chargejump) {
@@ -66,17 +84,7 @@ if ground_pound_slam = true {
     }
 	draw_self();
 }
-
-//draw hat gun
-if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
-	if sprite_index = player_sprite {
-		draw_sprite_ext(spr_player_zekai_hat,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	}else if sprite_index = falling_sprite {
-		draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	}else if sprite_index = charging_sprite {
-		draw_sprite_ext(spr_player_zekai_hat_charging,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-	}
-}
-
 //laser sight
 scr_Laser_Sight();
+
+shader_reset();

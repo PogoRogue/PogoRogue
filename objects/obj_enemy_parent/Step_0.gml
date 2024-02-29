@@ -45,7 +45,10 @@ if(is_dead) {
 		}
 	}
 	
-	alarm[11] = 8; //drops
+	if (created_items = false) {
+		scr_Random_Item_Drops();
+		created_items = true;
+	}
 	
 	//aerial assassin buff
 	with obj_player {

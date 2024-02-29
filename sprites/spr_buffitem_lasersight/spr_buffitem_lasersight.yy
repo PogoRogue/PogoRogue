@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"565d11ed-37e8-41be-a728-9b404151e633",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"de252554-c12a-4440-bf1c-b90f757f0b58",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6beac591-c7dd-40ea-82c9-279682e19cea",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"565d11ed-37e8-41be-a728-9b404151e633","path":"sprites/spr_buffitem_lasersight/spr_buffitem_lasersight.yy",},},},"Disabled":false,"id":"4b35e2d8-3d39-4f8b-be70-ee907d58c328","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"de252554-c12a-4440-bf1c-b90f757f0b58","path":"sprites/spr_buffitem_lasersight/spr_buffitem_lasersight.yy",},},},"Disabled":false,"id":"76de84bf-2762-4f5e-914c-f0e6415a126d","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6beac591-c7dd-40ea-82c9-279682e19cea","path":"sprites/spr_buffitem_lasersight/spr_buffitem_lasersight.yy",},},},"Disabled":false,"id":"e52972f8-9d3b-4906-b8b5-838d7a961158","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
