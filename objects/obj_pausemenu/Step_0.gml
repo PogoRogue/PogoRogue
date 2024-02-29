@@ -38,19 +38,19 @@ if key_select {
 	}else if select = 2 { //items
 		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
-		instance_create_depth(x,y,depth+1,obj_items);
+		instance_create_depth(x,y,depth-1,obj_items);
 	}else if select = 3 { //restart
 		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
-		instance_create_depth(x,y,depth+1,obj_popup_restart);
+		instance_create_depth(x,y,depth-1,obj_popup_restart);
 	}else if select = 4 { //settings
 		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
-		instance_create_depth(x,y,depth+1,obj_settings);
+		instance_create_depth(x,y,depth-1,obj_settings);
 	}else if select = 5 { //exit
 		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
-		instance_create_depth(x,y,depth+1,obj_popup_exit);
+		instance_create_depth(x,y,depth-1,obj_popup_menu);
 	}
 }
 

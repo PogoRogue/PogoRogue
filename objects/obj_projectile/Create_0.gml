@@ -158,3 +158,6 @@ if (gun_name = "Javelins") {
 		instance_deactivate_object(javelin_object);	
 	}
 }
+
+//destroy projectile after 30 seconds if still exists
+alarm[2] = 1800;

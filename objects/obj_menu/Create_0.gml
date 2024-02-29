@@ -7,3 +7,4 @@ num_of_options = 6-options_decrease;
 usable = true;
 room_persistent = false;
 move_spd = 0;
+alarm3_time = 30;

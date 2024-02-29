@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8b1cd7c4-276e-41be-8242-03176a99ef90",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"bcb03b96-899a-42bf-a114-ebbced0ae59b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2a2360bf-ef57-42f9-9757-f30598b91051",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8b1cd7c4-276e-41be-8242-03176a99ef90","path":"sprites/spr_dpad_r/spr_dpad_r.yy",},},},"Disabled":false,"id":"19bcf2a5-0f6a-4d70-971d-de7394943550","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"bcb03b96-899a-42bf-a114-ebbced0ae59b","path":"sprites/spr_dpad_r/spr_dpad_r.yy",},},},"Disabled":false,"id":"4ccad310-0a6b-4acb-a26c-95a37ef8134b","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2a2360bf-ef57-42f9-9757-f30598b91051","path":"sprites/spr_dpad_r/spr_dpad_r.yy",},},},"Disabled":false,"id":"493772bc-e9d6-4459-9d41-00c7bc9fdf90","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

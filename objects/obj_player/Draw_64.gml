@@ -9,7 +9,7 @@ draw_set_valign(fa_bottom);
 //draw ammo UI
 for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	var ammo = gun_array[gun_num].ammo[bullet_index];
-	var yy = 42 * gun_num; //add y for other weapons bullets
+	var yy = 48 * gun_num; //add y for other weapons bullets
 	var black_alpha = 0.5 * (gun != gun_array[gun_num]); //darkening for bottom ammo
 	for(i = 0; i < gun_array[gun_num].bullets_per_bounce+max_ammo_buff; i++) {
 		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != laser_gun) {
@@ -33,9 +33,15 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	}
 	
 	//text
-	draw_text_color(camera_get_view_width(view_camera[0])-16,32+yy,gun_array[gun_num]._name,make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
+	draw_text_color(camera_get_view_width(view_camera[0])-52,32+yy,gun_array[gun_num]._name,make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
 	//text darkening
-	draw_text_color(camera_get_view_width(view_camera[0])-16,32+yy,gun_array[gun_num]._name,c_black,c_black,c_black,c_black,black_alpha);
+	draw_text_color(camera_get_view_width(view_camera[0])-52,32+yy,gun_array[gun_num]._name,c_black,c_black,c_black,c_black,black_alpha);
+	
+	//weapon sprites
+	draw_sprite(gun_array[gun_num].sprite,1,camera_get_view_width(view_camera[0])-32,24+yy);
+	//weapon darkening
+	draw_sprite_ext(gun_array[gun_num].sprite,1,camera_get_view_width(view_camera[0])-32,24+yy,1,1,0,c_black,black_alpha);
+	
 }
 
 //coins
@@ -101,12 +107,8 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		//show fuel left
 		draw_sprite_part(pickups_array[0].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[0].cooldown_time/pickups_array[0].max_cooldown_time),sprite_get_height(spr_pickup_empty),16,72);
 		//draw controls
-		if (global.use_controller = true and pickups_array[0].cooldown_time > 0) {
-			draw_sprite(spr_controller_button_bottom,0,32,104);
-		}else if pickups_array[0].cooldown_time > 0 {
-			draw_set_font(fnt_itemdescription2);
-			scr_Draw_Text_Outlined(32,104,"LMB",c_white); 
-			draw_set_font(fnt_combo2); 
+		if (pickups_array[0].cooldown_time > 0) {
+			scr_Draw_Input_UI(32,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
 		}
 	}
 	if pickups_array[0].bounce_reset_max > 1 { //freeze
@@ -180,12 +182,8 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		//show fuel left
 		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time),sprite_get_height(spr_pickup_empty),52,72);
 		//draw controls
-		if (global.use_controller = true and pickups_array[1].cooldown_time > 0) {
-			draw_sprite(spr_controller_button_right,0,68,104);
-		}else if pickups_array[1].cooldown_time > 0 {
-			draw_set_font(fnt_itemdescription2);
-			scr_Draw_Text_Outlined(68,104,"RMB",c_white); 
-			draw_set_font(fnt_combo2);
+		if (pickups_array[1].cooldown_time > 0) {
+			scr_Draw_Input_UI(68,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
 		}
 	}
 	
@@ -220,40 +218,19 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 	}
 }
 
-//show buttons
-if (global.use_controller = true) {
-	//button 1
-	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
-	and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
-	or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
-	or pickups_array[0] = pickup_frenzy and frenzy = true)  {
-		draw_sprite(spr_controller_button_bottom,0,32,104);
-	}
-	//button 2
-	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing 
-	and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
-	or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
-	or pickups_array[1] = pickup_frenzy and frenzy = true) {
-		draw_sprite(spr_controller_button_right,0,68,104);
-	}
-}else { //draw text
-	draw_set_halign(fa_center);
-	draw_set_valign(fa_center);
-	draw_set_font(fnt_itemdescription2);
-	//button 1
-	if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
-	and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
-	or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
-	or pickups_array[0] = pickup_frenzy and frenzy = true) {
-		scr_Draw_Text_Outlined(32,104,"LMB",c_white); 
-	}
-	//button 2
-	if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing 
-	and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
-	or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
-	or pickups_array[1] = pickup_frenzy and frenzy = true) {
-		scr_Draw_Text_Outlined(68,104,"RMB",c_white); 
-	}
+//button 1
+if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
+and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
+or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
+or pickups_array[0] = pickup_frenzy and frenzy = true)  {
+	scr_Draw_Input_UI(32,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
+}
+//button 2
+if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing 
+and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
+or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
+or pickups_array[1] = pickup_frenzy and frenzy = true) {
+	scr_Draw_Input_UI(68,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
 }
 
 //all buffs
@@ -270,6 +247,30 @@ if (global.show_passives = true) {
 		if global.all_buff_numbers[i] > 1 {
 			scr_Draw_Text_Outlined(xx+i*20-6,yy+4,global.all_buff_numbers[i],c_white);
 		}
+	}
+}
+
+//items menu
+draw_set_halign(fa_left);
+draw_set_valign(fa_center);
+draw_set_font(fnt_combo2);
+draw_set_color(make_color_rgb(242,240,229));
+draw_text(18,120,"Items menu: ");
+if global.use_controller = true {
+	draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[13][0]),2,91,120);
+}else {
+	var keyboard_array_value = global.keyboard_array[13][0];
+	var keyboard_text = scr_Keyboard_Get_Key_String(keyboard_array_value);
+			
+	if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
+		if is_string(keyboard_text) {
+			draw_text(85,120,keyboard_text);
+		}else {
+			draw_sprite(keyboard_text,0,91,120);
+		}
+	}else {
+		var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
+		draw_sprite(mouse_sprite,0,91,120);	
 	}
 }
 
