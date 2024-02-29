@@ -2,7 +2,7 @@ if global.phase > 1 {
 	instance_destroy();	
 }
 
-depth -= 100;
+depth -= 1000;
 
 usable = true;
 select = 1;

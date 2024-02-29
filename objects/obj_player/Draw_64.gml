@@ -255,7 +255,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_center);
 draw_set_font(fnt_combo2);
 draw_set_color(make_color_rgb(242,240,229));
-draw_text(18,120,"Items menu: ");
+draw_text(17,120,"Items menu: ");
 if global.use_controller = true {
 	draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[13][0]),2,91,120);
 }else {
