@@ -17,6 +17,7 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 		}	
 	}
 	else {
+		room_persistent = false;
 		global.phase++;
 		room_goto(room_proc_gen_test)
 		if global.phase = 2 {

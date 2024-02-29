@@ -5,7 +5,7 @@ function scr_Restart_Level() {
 		room_persistent = false;
 		instance_activate_all();
 		room = room_proc_gen_test;
-		with instance_create_depth(x,y,depth,obj_restart_game) {
+		with instance_create_depth(x,y,depth,obj_restart_game2) {
 			alarm[0] = 1;	
 		}
 	}else if room = room_proc_gen_test {
@@ -22,7 +22,7 @@ function scr_Restart_Level() {
 			room_persistent = false;
 			instance_activate_all();
 			room = room_proc_gen_test;
-			with instance_create_depth(x,y,depth,obj_restart_game) {
+			with instance_create_depth(x,y,depth,obj_restart_game2) {
 				alarm[0] = 1;	
 			}
 		}else if global.last_room = room_boss_1 or global.last_room = room_boss_2 {
