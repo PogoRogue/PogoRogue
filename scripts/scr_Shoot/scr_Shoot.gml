@@ -9,9 +9,7 @@ function scr_Shoot(){
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
 		
 		//sound
-		if !instance_exists(obj_sniper) {
-			audio_play_sound(gun.sound,0,false);
-		}
+		audio_play_sound(gun.sound,0,false);
 		
 		for (var i = 0; i < gun.spread_number; i++;) {
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
@@ -21,9 +19,13 @@ function scr_Shoot(){
 			}else{
 				destroyOnImpact = gun.ammo[bullet_index].destroy_on_impact
 			}
-			
+			if(global.steadyhands){
+				imageAngle = angle_ - 90;
+			}else{
+				imageAngle = angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90;
+			}
 			instance_create_depth(x,y,depth-1,obj_projectile,{
-				image_angle: angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90,
+				image_angle: imageAngle,
 				sprite_index: gun.ammo[bullet_index].sprite,
 				spd: gun.ammo[bullet_index].spd,
 				destroy_on_impact: destroyOnImpact,
@@ -47,7 +49,7 @@ function scr_Shoot(){
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 {
+			if gun.spread_number = 1 and frenzy = false {
 				gun.current_bullets -= 1;
 			}
 			
@@ -89,10 +91,11 @@ function scr_Shoot(){
 		
 		//unfreeze if applicable
 		if state = state_freeze {
-			state = state_free;
-			grv = init_grv;
-			rotation_speed = original_rotation_speed;
-			rotation_delay = rotation_speed / 10;
+			speed = 0;
+			//state = state_free;
+			//grv = init_grv;
+			//rotation_speed = original_rotation_speed;
+			//rotation_delay = rotation_speed / 10;
 		}
 		
 	}

@@ -25,6 +25,12 @@ if(is_dead) {
 	}
 }
 
+if sprite_index = spr_enemy_walking_explosion {
+	if scr_Animation_Complete() {
+		instance_destroy();	
+	}
+}
+
 image_alpha = 1.0;
 
 x += spd;

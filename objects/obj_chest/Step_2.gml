@@ -36,3 +36,8 @@ if (open) {
 	create_coins = true;
 }
 
+//increase coins
+if (global.magicianstouch and coins_increased = false) {
+	num_of_coins = round(num_of_coins * 1.5);
+	coins_increased = true;
+}

@@ -17,8 +17,8 @@ if (instance_exists(obj_player)) {
 		
 		if (room = room_gameplay_video) {
 			room = room_boss_1;
-		} else if (room = room_boss_1) {
-			//game_restart();
+		} else if (room = room_proc_gen_test) {
+			room = room_boss_2;
 		}
 	}
 }

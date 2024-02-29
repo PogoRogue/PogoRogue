@@ -5,6 +5,9 @@ if(is_dead) {
 	mask_index = spr_nothing;
 	spd = 0;
 	speed = 0;
+	if image_alpha <= 0.005 {
+		instance_destroy();	
+	}
 } else if (hp <= 0) {
 	alarm_set(0, room_speed);
 	audio_play_sound(snd_enemyhurt,0,false);
@@ -42,7 +45,10 @@ if(is_dead) {
 		}
 	}
 	
-	alarm[11] = 8; //drops
+	if (created_items = false) {
+		scr_Random_Item_Drops();
+		created_items = true;
+	}
 	
 	//aerial assassin buff
 	with obj_player {

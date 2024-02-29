@@ -22,6 +22,8 @@ global.shop_index = 0;
 global.num_of_ground_objects = 0;
 global.tiles_left_to_draw = 0;
 
+global.current_music = snd_music;
+
 if !instance_exists(obj_controls_controller) {
 	instance_create_depth(x,y,depth,obj_controls_controller);
 }
@@ -72,29 +74,17 @@ global.drilltipbullets = false;
 global.dualwielder = false;
 global.revive = false;
 global.revived = false; //once the player has used their revive, set this to true
+global.magicianstouch = false;
+global.steadyhands = false;
+global.tightspring = false;
 
 
 //items unlockable in the shop
-global.all_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets,obj_item_buff_dmg,
-					obj_item_buff_max_ammo, obj_item_buff_luck, obj_item_buff_pickybuyer,
-					obj_item_buff_rubberbullets, obj_item_buff_hotshells, obj_item_buff_combomaster,
-					obj_item_buff_blackfriday, obj_item_buff_triplethreat, obj_item_buff_flamingcoins,
-					obj_item_buff_combotime, obj_item_buff_sharpshooter, obj_item_buff_coinsup,
-					obj_item_buff_sharptip, obj_item_buff_experimentation, obj_item_buff_aerialassassin,
-					obj_item_buff_supershield, obj_item_buff_revive, obj_item_buff_drilltipbullets, 
-					obj_item_buff_dualwielder];
-					
-global.all_weapons = [obj_item_weapon_default, obj_item_weapon_paintball, obj_item_weapon_shotgun, 
-					obj_item_weapon_bubble, obj_item_weapon_burstfire, obj_item_weapon_grenade, 
-					obj_item_weapon_laser, obj_item_weapon_bouncyball, obj_item_weapon_missile,
-					obj_item_weapon_boomerang, obj_item_weapon_starsucker, obj_item_weapon_sniper,
-					obj_item_weapon_slime];
-					
-global.all_pickups = [obj_item_pickup_chargejump, obj_item_pickup_groundpound, obj_item_pickup_hatgun, 
-					obj_item_pickup_shieldbubble, obj_item_pickup_firedash, obj_item_pickup_jetpack,
-					obj_item_pickup_slowmo, obj_item_pickup_bulletblast, obj_item_pickup_reload,
-					obj_item_pickup_camera, obj_item_pickup_freeze];
+scr_All_Passives_Array();
 
+scr_All_Weapons_Array();
+
+scr_All_Actives_Array();
 
 surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);
 
@@ -103,3 +93,12 @@ if room = room_gameplay_video {
 	global.ground_layer = layer_create(-1);
 	global.tilemap_ground = layer_tilemap_create(global.ground_layer,0,0,tl_ground,20000,20000);	
 }
+
+//Store the randomized seed, and print it to console
+
+//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######
+randomize()
+global.seed = random_get_seed();
+
+random_set_seed(global.seed);
+show_debug_message("Random seed: " + string(global.seed));

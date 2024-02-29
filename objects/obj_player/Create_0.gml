@@ -36,6 +36,7 @@ laser_sight = false;
 planetary_bullets = 0;
 aerial_assassin_count = 0;
 revive_time = 0;
+revive_alpha = 0;
 
 //pickups
 charge = 0;
@@ -56,6 +57,7 @@ bulletblast_frames_max = 65; //how many frames before blasting
 freeze_time = 0;
 freeze_alpha = 0;
 freeze_angle = 0;
+frenzy = false;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -106,10 +108,6 @@ if global.player_spawn_x = 0 and global.player_spawn_y = 0 {
 image_speed = 0;
 
 depth = -10;
-
-if (global.arm_cannon = true) {
-	instance_destroy();
-}
 
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {
@@ -392,11 +390,7 @@ state_bulletblast = function() {
 
 state_freeze = function() {
 	sprite_index = player_sprite;
-	if abs(speed) > 0.01 {
-		speed *= 0.8;	
-	}else {
-		speed = 0;	
-	}
+	speed = 0;	
 	
 	if freeze_time > 0 {
 		freeze_time -= 1;	
@@ -463,6 +457,11 @@ state_revive = function() {
 	image_index = 0;
 	hspeed = hspeed * 0.9;
 	vspeed = 0;
+	
+	if revive_alpha > 0 {
+		revive_alpha -= 0.05;	
+	}
+	
 	if (angle != 0)	{
 		var angle_side = sign(angle);
 		angle += (rotation_speed*sign(-angle))/2;
@@ -481,6 +480,7 @@ state_revive = function() {
 		}
 	}else {
 		state = state_free;
+		revive_alpha = 1;
 	}
 }
 
@@ -517,18 +517,36 @@ num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2 to st
 weapons_equipped = num_of_weapons;
 all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun]; //all guns
 
-if (random_weapon = true) { //choose random weapons
-	randomize();
-	gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-	if num_of_weapons > 1 {
-		gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+if (random_weapon == true) { //choose random weapons
+	//randomize();
+	//temporarily change items for playtest
+	if room = room_proc_gen_test or room = room_boss_2 {
+		//gun_1 = default_gun;
+		//gun_2 = choose(sniper_gun,slime_gun);
+		//gun_3 = gun_1;
+		gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		if num_of_weapons > 1 {
+			gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_2 = gun_1;
+		}
+		if num_of_weapons > 2 {
+			gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_3 = gun_1;
+		}
 	}else {
-		gun_2 = gun_1;
-	}
-	if num_of_weapons > 2 {
-		gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-	}else {
-		gun_3 = gun_1;
+		gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		if num_of_weapons > 1 {
+			gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_2 = gun_1;
+		}
+		if num_of_weapons > 2 {
+			gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_3 = gun_1;
+		}
 	}
 
 	while (gun_2 = gun_1) and num_of_weapons > 1 { //dont want 2 of the same weapon
@@ -567,12 +585,20 @@ buff_duration = 60 * 5; // buff duration timer
 //pickups
 scr_Pickups();
 
-num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze]; //all pickups
+num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target]; //all pickups
 
-if (random_pickup = true) { //choose random pickups
-	randomize();
-	pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+if (random_pickup == true) { //choose random pickups
+	//randomize();
+	
+	//temporarily change items for playtest
+	if room = room_proc_gen_test or room = room_boss_2 {
+		//pickup_1 = choose(pickup_frenzy,pickup_target);
+		pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+	}else {
+		pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
+	}
+	
 	pickup_2 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
 
 	while (pickup_2 = pickup_1) { //dont want 2 of the same weapon
@@ -598,6 +624,16 @@ if (num_of_pickups = 1) {
 
 //buffs
 scr_Buffs();
+
+all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
+				buff_max_ammo, buff_luck, buff_pickybuyer,
+				buff_bouncybullets, buff_hotshells, buff_combomaster,
+				buff_blackfriday, buff_triplethreat, buff_flamingcoins,
+				buff_combotime, buff_sharpshooter, buff_coinsup,
+				buff_sharptip, buff_experimentation, buff_aerialassassin,
+				buff_supershield, buff_revive, buff_drilltipbullets, 
+				buff_dualwielder, buff_steadyhands, buff_tightspring,
+				buff_magicianstouch];		
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

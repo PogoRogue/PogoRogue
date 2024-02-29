@@ -5,6 +5,7 @@ mask_index = spr_trigger;
 
 draw_cutin = false;
 triggered = false;
+player_freed = false;
 
 screen_width = 720;
 screen_height = 432;

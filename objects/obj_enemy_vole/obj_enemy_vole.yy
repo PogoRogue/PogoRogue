@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "mole worm",
-    "path": "folders/Objects/Enemy/mole worm.yy",
+    "name": "Enemy",
+    "path": "folders/Objects/Enemy.yy",
   },
   "parentObjectId": {
     "name": "obj_enemy_generic",
