@@ -20,3 +20,5 @@ room_speed = 60;
 if room != room_boss_2 {
 	global.tileset = tl_ground;
 }
+
+gamepad_set_vibration(0,0,0);

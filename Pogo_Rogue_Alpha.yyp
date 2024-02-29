@@ -181,6 +181,7 @@
     {"id":{"name":"spr_buffitem_luck","path":"sprites/spr_buffitem_luck/spr_buffitem_luck.yy",},},
     {"id":{"name":"spr_slider_bar","path":"sprites/spr_slider_bar/spr_slider_bar.yy",},},
     {"id":{"name":"spr_player_zekai_falling_hurt3","path":"sprites/spr_player_zekai_falling_hurt3/spr_player_zekai_falling_hurt3.yy",},},
+    {"id":{"name":"obj_restart_game2","path":"objects/obj_restart_game2/obj_restart_game2.yy",},},
     {"id":{"name":"tl_belts","path":"tilesets/tl_belts/tl_belts.yy",},},
     {"id":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},
     {"id":{"name":"spr_blink_box","path":"sprites/spr_blink_box/spr_blink_box.yy",},},
