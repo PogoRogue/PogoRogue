@@ -72,3 +72,18 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 	}
 }
 
+//Loop through all generated objects and give them the region tag we labeled above
+with(obj_generated_object_parent)
+{
+	var tag_grid_location = scr_Get_Grid_Coord_From_Room_Coord(x, y);
+	var tag_object = ds_grid_get(other.signature_grid, tag_grid_location[0], tag_grid_location[1]);
+	if(instance_exists(tag_object))
+	{
+	proc_gen_tag = tag_object.proc_gen_region;
+	}
+	else
+	{
+		proc_gen_tag = -1;
+	}
+}
+
