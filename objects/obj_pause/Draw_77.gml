@@ -57,6 +57,7 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 			instance_deactivate_object(obj_pausemenu);
 			instance_deactivate_object(obj_popup_exit);
 			instance_deactivate_object(obj_popup_restart);
+			instance_deactivate_object(obj_popup_menu);
 		
 			if surface_exists(pause_surf) {
 				surface_free(pause_surf);

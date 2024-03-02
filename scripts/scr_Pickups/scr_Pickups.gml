@@ -19,6 +19,8 @@ function scr_Pickups(){
 		uses_per_bounce: 0,                     //same as max_uses_per_bounce, except this value changes
 		bounce_reset: 1,                        //how many bounces it take to reset a cooldown, 1 = every bounce
 		bounce_reset_max: 1,					//make same as bounce_reset
+		enemies_count: 0,                       //how many enemies to kill to cooldown
+		enemies_count_max: 0,					//how many enemies to kill to cooldown
 		on_call: function() { }                 //specific actions to do when this event is called           
 	};
 	
@@ -37,6 +39,8 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump {
 				obj_player.state = obj_player.state_chargejump;
@@ -60,6 +64,8 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			obj_player.state = obj_player.state_groundpound;
 			obj_player.ground_pound_rise = true;
@@ -83,6 +89,8 @@ function scr_Pickups(){
 		uses_per_bounce: 3,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			with obj_player {
 				old_gun = gun;
@@ -118,6 +126,8 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			if !instance_exists(obj_shieldbubble) {
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-2,obj_shieldbubble);
@@ -140,6 +150,8 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			cooldown_time = max_cooldown_time;
 			obj_player.state = obj_player.state_firedash;
@@ -163,6 +175,8 @@ function scr_Pickups(){
 		uses_per_bounce: 1,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			if cooldown_time > 0 {
 				cooldown_time -= 1;
@@ -227,6 +241,8 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			if !instance_exists(obj_slowmo) {
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_slowmo);
@@ -249,6 +265,8 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			obj_player.can_rotate = false;
 			obj_player.can_shoot = false;
@@ -277,6 +295,8 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			
 			with obj_player {
@@ -323,6 +343,8 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			audio_play_sound(snd_camera,0,false);
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup);
@@ -345,6 +367,8 @@ function scr_Pickups(){
 		uses_per_bounce: 1,
 		bounce_reset: 5,
 		bounce_reset_max: 5,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			with obj_player {
 				state = state_freeze;
@@ -377,6 +401,8 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			with obj_player {
 				frenzy = true;
@@ -401,9 +427,80 @@ function scr_Pickups(){
 		uses_per_bounce: 0,
 		bounce_reset: 1,
 		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
 		on_call: function() {
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_crosshair);
 			on_cooldown = true;
+		}
+	};
+	
+	pickup_emergency = {
+		_name: "Emergency Treatment",
+		tagline: "Instantly restores 1 HP and generates an armored heart.",
+		gui_sprite: spr_pickup_emergency,
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: Every 15 enemies",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 15,
+		on_call: function() {
+			with obj_player {
+				//heart
+				if hp < max_hp {
+					hp += 8;	
+					audio_play_sound(snd_heartPickup,0,false);
+					with obj_player_health {
+						heart_gain_num = other.hp;	
+					}
+				}
+				
+				//armored heart
+				with obj_player {
+					if armor_buff < max_armor_buff {
+						armor_buff += 1;
+						audio_play_sound(snd_ArmorHeart,0,false);
+						with obj_player_health {
+							heart_shield_gain_num = other.armor_buff;	
+						}
+					}
+				}
+			}
+			enemies_count = enemies_count_max;
+			on_cooldown = true;
+		}
+	};
+	
+	pickup_blink = {
+		_name: "Blink",
+		tagline: "Disappear, then reappear from any position on screen.",
+		gui_sprite: spr_pickup_blink,
+		max_cooldown_time: 1200,
+		cooldown_time: 1200,
+		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		on_call: function() {
+			obj_player.state = obj_player.state_blink;
+			if !instance_exists(obj_blink_box) {
+				instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box);
+			}
 		}
 	};
 }

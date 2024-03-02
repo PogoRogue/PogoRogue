@@ -7,19 +7,26 @@ if instance_exists(obj_player) {
 	}
 }
 
+//area reached
+global.current_area_reached = global.phase;
+
+if global.phase = 2 {
+	global.tileset = tl_ground2;	
+}
+
 //add items
 
 //weapons
 with obj_player {
-	if scr_In_Array(global.all_weapons_used,gun_1.sprite) = false {
+	if scr_In_Array(global.all_weapons_used,gun_1.sprite) = false and gun_1.sprite != spr_nothing {
 		array_resize(global.all_weapons_used,array_length(global.all_weapons_used)+1);
 		global.all_weapons_used[array_length(global.all_weapons_used)-1] = gun_1.sprite;
 	}
-	if scr_In_Array(global.all_weapons_used,gun_2.sprite) = false {
+	if scr_In_Array(global.all_weapons_used,gun_2.sprite) = false and gun_2.sprite != spr_nothing {
 		array_resize(global.all_weapons_used,array_length(global.all_weapons_used)+1);
 		global.all_weapons_used[array_length(global.all_weapons_used)-1] = gun_2.sprite;
 	}
-	if scr_In_Array(global.all_weapons_used,gun_3.sprite) = false {
+	if scr_In_Array(global.all_weapons_used,gun_3.sprite) = false and gun_3.sprite != spr_nothing {
 		array_resize(global.all_weapons_used,array_length(global.all_weapons_used)+1);
 		global.all_weapons_used[array_length(global.all_weapons_used)-1] = gun_3.sprite;
 	}
@@ -27,11 +34,11 @@ with obj_player {
 
 //actives
 with obj_player {
-	if scr_In_Array(global.all_actives_used,pickup_1.gui_sprite) = false {
+	if scr_In_Array(global.all_actives_used,pickup_1.gui_sprite) = false and pickup_1.gui_sprite != spr_pickup_empty {
 		array_resize(global.all_actives_used,array_length(global.all_actives_used)+1);
 		global.all_actives_used[array_length(global.all_actives_used)-1] = pickup_1.gui_sprite;
 	}
-	if scr_In_Array(global.all_actives_used,pickup_2.gui_sprite) = false {
+	if scr_In_Array(global.all_actives_used,pickup_2.gui_sprite) = false and pickup_2.gui_sprite != spr_pickup_empty {
 		array_resize(global.all_actives_used,array_length(global.all_actives_used)+1);
 		global.all_actives_used[array_length(global.all_actives_used)-1] = pickup_2.gui_sprite;
 	}

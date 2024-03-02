@@ -10,6 +10,7 @@ for(i = 0; i < image_xscale; i++) {
 }
 
 sprite_index = spr_groundInnerColor;
+image_index = global.phase - 1;
 //create collision walls
 scr_Create_Collision_Walls();
 
