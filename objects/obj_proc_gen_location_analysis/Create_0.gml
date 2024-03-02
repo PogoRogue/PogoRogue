@@ -13,3 +13,6 @@ current_tag_object = 0;
 
 alarm[0] = 1;
 
+previous_tag_message = ""; //Use to fill in gaps where there might not be tag objects or regions
+previous_region = 0;
+
