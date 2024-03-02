@@ -116,11 +116,11 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Boss Cut-In","folderPath":"folders/Sprites/UI/Boss Cut-In.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Boss: Cube","folderPath":"folders/Sprites/UI/Boss Cut-In/Boss: Cube.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Boss: Slime","folderPath":"folders/Sprites/UI/Boss Cut-In/Boss: Slime.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Input buttons","folderPath":"folders/Sprites/UI/Input buttons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Boss: Slime","folderPath":"folders/Sprites/UI/Boss Cut-In/Boss: Slime.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"snd_ArmorHeart.mp3","CopyToMask":-1,"filePath":"datafiles",},
@@ -142,7 +142,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
