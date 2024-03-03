@@ -142,7 +142,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -646,6 +646,7 @@
     {"id":{"name":"spr_pausemenu","path":"sprites/spr_pausemenu/spr_pausemenu.yy",},},
     {"id":{"name":"spr_enemy_projectile","path":"sprites/spr_enemy_projectile/spr_enemy_projectile.yy",},},
     {"id":{"name":"spr_slime_turret_body","path":"sprites/spr_slime_turret_body/spr_slime_turret_body.yy",},},
+    {"id":{"name":"obj_enemy_rewards","path":"objects/obj_enemy_rewards/obj_enemy_rewards.yy",},},
     {"id":{"name":"scr_Controls","path":"scripts/scr_Controls/scr_Controls.yy",},},
     {"id":{"name":"spr_checkbox","path":"sprites/spr_checkbox/spr_checkbox.yy",},},
     {"id":{"name":"obj_room_title","path":"objects/obj_room_title/obj_room_title.yy",},},
