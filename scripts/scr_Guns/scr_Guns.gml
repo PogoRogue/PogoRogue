@@ -23,6 +23,28 @@ function scr_Guns(){
 		max_speed: -vsp_basicjump //player cant move faster than this if full_auto = true
 	};
 	
+	empty_gun = {
+		_name: "",
+		tagline: "",
+		sprite: spr_nothing,
+		ammo: [empty_bullet],
+		inaccuracy: 0,
+		kick: 2,
+		sound: snd_nothing,
+		spread_number: 1,
+		spread_angle: 0,
+		full_auto: false,
+		burst_number: 0,
+		burst_delay: 0,
+		momentum_added: 0,
+		reset_momentum: false,
+		bullets_per_bounce: 0,
+		init_bullets_per_bounce: 0,
+		current_bullets: 0,
+		max_added_bullets: 0,
+		max_speed: -vsp_basicjump
+	};
+	
 	hat_gun = {
 		_name: "Hat Gun",
 		sprite: spr_nothing,
@@ -190,9 +212,9 @@ function scr_Guns(){
 		burst_delay: 0,     
 		momentum_added: 0.075, 
 		reset_momentum: false, 
-		bullets_per_bounce: 100 + obj_player.max_ammo_buff,
-		init_bullets_per_bounce: 100,
-		current_bullets: 100 + obj_player.max_ammo_buff,  
+		bullets_per_bounce: 90 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 90,
+		current_bullets: 90 + obj_player.max_ammo_buff,  
 		max_added_bullets: 0,
 		max_speed: 5.25
 	};	
@@ -327,5 +349,49 @@ function scr_Guns(){
 		current_bullets: 3 + obj_player.max_ammo_buff,  
 		max_added_bullets: 3,
 		max_speed: -vsp_basicjump          
+	};
+	
+	yoyo_gun = {
+		_name: "Yo-yo",  
+		tagline: "Swings from below the player, causing damage to enemies in its path. Releasing the shoot button makes it come back sooner.",
+		sprite: spr_gun_yoyo,   
+		ammo: [yoyo_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_grenade,
+		spread_number: 1,    
+		spread_angle: 0,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1.1, 
+		reset_momentum: true, 
+		bullets_per_bounce: 1,
+		init_bullets_per_bounce: 1,
+		current_bullets: 1,  
+		max_added_bullets: 0,
+		max_speed: 16
+	};
+	
+	javelin_gun = {
+		_name: "Javelins",
+		tagline: "Launch a javelin downwards. Charging your shot results in a faster, more powerful javelin.",
+		sprite: spr_gun_javelins,
+		ammo: [javelin_bullet],
+		inaccuracy: 0,
+		kick: 2,
+		sound: snd_nothing,
+		spread_number: 1,
+		spread_angle: 0,
+		full_auto: false,
+		burst_number: 1,
+		burst_delay: 0,
+		momentum_added: 0,
+		reset_momentum: false,
+		bullets_per_bounce: 4 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 4,
+		current_bullets: 4 + obj_player.max_ammo_buff,
+		max_added_bullets: 4,
+		max_speed: -vsp_basicjump
 	};
 }

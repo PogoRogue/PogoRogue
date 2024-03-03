@@ -23,6 +23,7 @@ function scr_Buffs(){
 	buff_planetarybullets = function() { 
 		if planetary_bullets < 5 {
 			planetary_bullets += 1;
+			audio_play_sound(snd_passivePowerup,0,false);
 		}
 		if !instance_exists(obj_planetarybullets) {
 			instance_create_depth(x,y,depth,obj_planetarybullets);

@@ -10,7 +10,7 @@ if(!other.invinsible) {
 		
 	}
 
-	if (destroy_on_impact) or (gun_name = "Missile Launcher") or (gun_name = "Bullet Blast") {
+	if (destroy_on_impact) or (gun_name = "Missile Launcher") or (gun_name = "Bullet Blast") or (gun_name = "Javelins") {
 		instance_destroy();
 	}
 

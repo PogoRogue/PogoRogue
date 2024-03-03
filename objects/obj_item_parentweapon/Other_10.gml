@@ -3,7 +3,8 @@ event_inherited();
 
 if weapon != obj_player.gun_1 and obj_player.weapons_equipped = 1
 or weapon != obj_player.gun_1 and weapon != obj_player.gun_2 and obj_player.weapons_equipped = 2
-or weapon != obj_player.gun_1 and weapon != obj_player.gun_2 and weapon != obj_player.gun_3 and obj_player.weapons_equipped = 3 {
+or weapon != obj_player.gun_1 and weapon != obj_player.gun_2 and weapon != obj_player.gun_3 and obj_player.weapons_equipped = 3 
+or obj_player.weapons_equipped = 0 {
 	if obj_player.num_of_weapons = 1 or obj_player.num_of_weapons = 2 and obj_player.weapons_equipped = 1 {
 		with obj_player {
 			num_of_weapons = 2;
@@ -87,5 +88,27 @@ or weapon != obj_player.gun_1 and weapon != obj_player.gun_2 and weapon != obj_p
 			item2_name = obj_player.gun_2._name;
 			item3_name = obj_player.gun_3._name;
 		}
+	}else if obj_player.num_of_weapons = 0 {
+		with obj_player {
+			num_of_weapons = 1;
+			weapons_equipped = 1;
+			gun_1 = other.weapon;
+			gun_2 = other.weapon;
+			gun_3 = other.weapon;
+			gun_array = [gun_1, gun_1, gun_1];	
+			gun =  obj_player.gun_array[0];
+			current_gun = 0;
+		}
+		
+		ini_open("itemsunlocked.ini");
+		if scr_In_Array(obj_player.all_guns_array,weapon) {
+			for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
+				if obj_player.all_guns_array[i] = weapon {
+					global.weapon_unlocked_array[i] = true;
+					ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
+				}
+			}
+		}
+		ini_close();
 	}
 }

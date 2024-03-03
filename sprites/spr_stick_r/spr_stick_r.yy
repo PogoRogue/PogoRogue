@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"753dd0b5-c030-41e4-8d2b-5a4783d533d6",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c786cb21-f70b-4a15-9fef-fc0dcf99a7d2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"053a2c7d-2ba7-4dbf-a3ec-5ff19e95896d",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"753dd0b5-c030-41e4-8d2b-5a4783d533d6","path":"sprites/spr_stick_r/spr_stick_r.yy",},},},"Disabled":false,"id":"4f06a6a0-e949-4921-b398-4dca890b351e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c786cb21-f70b-4a15-9fef-fc0dcf99a7d2","path":"sprites/spr_stick_r/spr_stick_r.yy",},},},"Disabled":false,"id":"b09b9e25-2e77-4cca-a6b6-dcf8b76ab04e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"053a2c7d-2ba7-4dbf-a3ec-5ff19e95896d","path":"sprites/spr_stick_r/spr_stick_r.yy",},},},"Disabled":false,"id":"2dbe86dc-3a84-493e-85e1-12765cbc6a86","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
