@@ -395,16 +395,30 @@ state_bulletblast = function() {
 }
 
 state_freeze = function() {
+	
+	if pickup_1 = pickup_freeze {  
+		var key_unfreeze = global.key_pickup_1_pressed;
+	}else if pickup_2 = pickup_freeze {  
+		var key_unfreeze = global.key_pickup_2_pressed;
+	}else {
+		var key_unfreeze = 0;
+	}
+	
 	sprite_index = player_sprite;
 	speed = 0;	
 	
-	if freeze_time > 0 {
+	if freeze_time > 0 and !key_unfreeze {
 		freeze_time -= 1;	
 	}else {
 		state = state_free;
 		grv = init_grv;
 		rotation_speed = original_rotation_speed;
 		rotation_delay = rotation_speed / 10;
+		
+		pickup_freeze.uses_per_bounce -= 1;
+		if pickup_freeze.uses_per_bounce <= 0 {
+			pickup_freeze.on_cooldown = true;
+		}
 	}
 	
 	if (freeze_alpha < 1) {

@@ -121,6 +121,10 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 			//draw bounces left
 			draw_set_font(fnt_item_popup);
 			scr_Draw_Text_Outlined(32,104,string(pickups_array[0].bounce_reset),make_color_rgb(207,138,203));
+		}else if state = state_freeze {
+			//darkening
+			draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_white,0.5);
+			draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);	
 		}
 	}
 }else {
@@ -183,7 +187,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time),sprite_get_height(spr_pickup_empty),52,72);
 		//draw controls
 		if (pickups_array[1].cooldown_time > 0) {
-			scr_Draw_Input_UI(68,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
+			scr_Draw_Input_UI(68,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
 		}
 	}
 	
@@ -197,6 +201,10 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 			//draw bounces left
 			draw_set_font(fnt_item_popup);
 			scr_Draw_Text_Outlined(68,104,string(pickups_array[1].bounce_reset),make_color_rgb(207,138,203));
+		}else if state = state_freeze {
+			//darkening
+			draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,0.5);
+			draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
 		}
 	}
 }else {
@@ -221,14 +229,12 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 //button 1
 if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
 and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
-or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
 or pickups_array[0] = pickup_frenzy and frenzy = true)  {
 	scr_Draw_Input_UI(32,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
 }
 //button 2
 if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing 
 and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
-or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
 or pickups_array[1] = pickup_frenzy and frenzy = true) {
 	scr_Draw_Input_UI(68,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
 }

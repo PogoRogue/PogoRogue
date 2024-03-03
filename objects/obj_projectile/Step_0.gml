@@ -30,7 +30,7 @@ if instance_exists(obj_camera) {
 
 //destroy when touching ground
 if (destroy_on_impact and num_of_bounces <= 0) {
-	if (place_meeting(x,y,obj_ground)) {
+	if (place_meeting(x,y,obj_ground)) and global.drilltipbullets = false {
 		if gun_name = "Paintball Gun" {
 			alarm[0] = 1;
 			//splatter code here
@@ -110,9 +110,9 @@ or (place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_groun
 	}else {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
-}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0) 
-or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher") 
-or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher") {
+}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false) 
+or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) 
+or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) {
 	instance_destroy();
 }
 
@@ -142,9 +142,9 @@ if (gun_name = "Missile Launcher") {
 	}else {
 		direction = image_angle;
 		
-		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces <= 0 {
+		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces <= 0 and global.drilltipbullets = false{
 			instance_destroy();	
-		}else if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 {
+		}else if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0 {
 			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
 			direction = image_angle;
 			num_of_bounces -= 1;

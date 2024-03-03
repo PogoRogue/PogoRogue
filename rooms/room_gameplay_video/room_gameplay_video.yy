@@ -188,6 +188,7 @@
     {"name":"inst_45CCABDB","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
     {"name":"inst_2B5068D7","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
     {"name":"inst_4C24533F","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
+    {"name":"inst_6EB3A1F3","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -401,6 +402,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_77D15028","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_chest","path":"objects/obj_chest/obj_chest.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4520.0,"y":6528.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_45CCABDB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_fade_in","path":"objects/obj_fade_in/obj_fade_in.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4144.0,"y":4528.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4C24533F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_choosemenu_weapon","path":"objects/obj_choosemenu_weapon/obj_choosemenu_weapon.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":96.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6EB3A1F3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_item_buff_drilltipbullets","path":"objects/obj_item_buff_drilltipbullets/obj_item_buff_drilltipbullets.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4368.0,"y":6384.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"spr_background2","path":"sprites/spr_background2/spr_background2.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],

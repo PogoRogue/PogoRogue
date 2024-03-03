@@ -166,7 +166,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_jetpack,
 		max_cooldown_time: 60,
 		cooldown_time: 60,
-		cooldown_text: "Cooldown: On bounce",
+		cooldown_text: "Cooldown: 1/4 fuel every bounce",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: true,
@@ -379,9 +379,9 @@ function scr_Pickups(){
 				freeze_time = 180;
 				freeze_angle = angle;
 			}
-			uses_per_bounce -= 1;
+			//uses_per_bounce -= 1;
 			if uses_per_bounce <= 0 {
-				on_cooldown = true;
+				//on_cooldown = true;
 			}
 		}
 	};
