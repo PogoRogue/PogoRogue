@@ -1,3 +1,4 @@
+
 // @description Generates an array of random items to create as pickups for the player
 // @description CALL ONLY IN CREATE EVENT
 function scr_Random_Item_Drops(){
