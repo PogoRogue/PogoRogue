@@ -975,6 +975,7 @@
     {"id":{"name":"scr_Settings_Bindings","path":"scripts/scr_Settings_Bindings/scr_Settings_Bindings.yy",},},
     {"id":{"name":"obj_text_walljump","path":"objects/obj_text_walljump/obj_text_walljump.yy",},},
     {"id":{"name":"obj_boss_door","path":"objects/obj_boss_door/obj_boss_door.yy",},},
+    {"id":{"name":"spr_minimap","path":"sprites/spr_minimap/spr_minimap.yy",},},
     {"id":{"name":"spr_enemy_explosion","path":"sprites/spr_enemy_explosion/spr_enemy_explosion.yy",},},
     {"id":{"name":"scr_Controls_Array_Keyboard","path":"scripts/scr_Controls_Array_Keyboard/scr_Controls_Array_Keyboard.yy",},},
     {"id":{"name":"spr_player_mask","path":"sprites/spr_player_mask/spr_player_mask.yy",},},
