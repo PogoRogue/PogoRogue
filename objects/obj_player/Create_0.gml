@@ -578,6 +578,7 @@ scr_Pickups();
 num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
 all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target]; //all pickups
 
+
 if (random_pickup = true) { //choose random pickups
 	randomize();
 	
@@ -617,4 +618,12 @@ scr_Buffs();
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {
 	alarm[2] = 10;
+}
+
+// if player has obtained Impatience passive item, reduce all cooldown times by 25%
+if(global.impatience == true){
+	var cd_multiplier = 0.75;
+	for(var i = 0; i < array_length(all_pickups_array); i++){
+		all_pickups_array[i].cooldown = all_pickups_array[i].cooldown * cd_multiplier;
+	}
 }

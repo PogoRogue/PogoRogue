@@ -185,4 +185,16 @@ function scr_Buffs(){
 	buff_steadyhands = function(){
 		global.steadyhands = true;
 	}
+	
+	buff_impatience = function(){
+		global.impatience = true;
+	}
+	
+	buff_laststand = function(){
+		global.laststand = true;
+	}
+	
+	buff_psychicbullets = function(){
+		global.psychicbullets = true;
+	}
 }
