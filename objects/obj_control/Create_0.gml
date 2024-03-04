@@ -77,9 +77,13 @@ global.revived = false; //once the player has used their revive, set this to tru
 global.magicianstouch = false;
 global.steadyhands = false;
 global.tightspring = false;
+global.impatience = false;
+global.laststand = false;
+global.psychicbullets = false;
 
 
 //items unlockable in the shop
+
 scr_All_Passives_Array();
 
 scr_All_Weapons_Array();
