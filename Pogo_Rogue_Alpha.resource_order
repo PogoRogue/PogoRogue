@@ -8,6 +8,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"scr_Replace_Hallway_Chunks","order":15,"path":"scripts/scr_Replace_Hallway_Chunks/scr_Replace_Hallway_Chunks.yy",},
+    {"name":"spr_buffitem_psychicbullets","order":6,"path":"sprites/spr_buffitem_psychicbullets/spr_buffitem_psychicbullets.yy",},
     {"name":"scr_Buffer_Get_Pixel_A","order":1,"path":"scripts/scr_Buffer_Get_Pixel_A/scr_Buffer_Get_Pixel_A.yy",},
     {"name":"spr_enemy_generic","order":34,"path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},
     {"name":"room_gameplay_video","order":1,"path":"rooms/room_gameplay_video/room_gameplay_video.yy",},
@@ -207,6 +208,7 @@
     {"name":"obj_enemy_shooter","order":9,"path":"objects/obj_enemy_shooter/obj_enemy_shooter.yy",},
     {"name":"room_sam_movement","order":2,"path":"rooms/room_sam_movement/room_sam_movement.yy",},
     {"name":"obj_enemy_shoot_only","order":8,"path":"objects/obj_enemy_shoot_only/obj_enemy_shoot_only.yy",},
+    {"name":"spr_buffitem_impatience","order":4,"path":"sprites/spr_buffitem_impatience/spr_buffitem_impatience.yy",},
     {"name":"spr_button_start","order":15,"path":"sprites/spr_button_start/spr_button_start.yy",},
     {"name":"spr_off_platform","order":18,"path":"sprites/spr_off_platform/spr_off_platform.yy",},
     {"name":"spr_stick_r","order":8,"path":"sprites/spr_stick_r/spr_stick_r.yy",},
@@ -249,6 +251,7 @@
     {"name":"spr_player_zekai_falling","order":3,"path":"sprites/spr_player_zekai_falling/spr_player_zekai_falling.yy",},
     {"name":"obj_enemy_shieldtest","order":6,"path":"objects/obj_enemy_shieldtest/obj_enemy_shieldtest.yy",},
     {"name":"room_sprite_level_test","order":1,"path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},
+    {"name":"spr_buffitem_laststand","order":5,"path":"sprites/spr_buffitem_laststand/spr_buffitem_laststand.yy",},
     {"name":"obj_pause","order":4,"path":"objects/obj_pause/obj_pause.yy",},
     {"name":"obj_shield_parent","order":4,"path":"objects/obj_shield_parent/obj_shield_parent.yy",},
     {"name":"spr_player_zekai_invincible","order":4,"path":"sprites/spr_player_zekai_invincible/spr_player_zekai_invincible.yy",},

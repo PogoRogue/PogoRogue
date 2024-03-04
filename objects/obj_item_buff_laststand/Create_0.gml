@@ -1,7 +1,7 @@
 follow_player = true;
-buff = obj_player.buff_impatience;
-item_name = "Impatience";
-item_tagline = "Reduce all cooldown times by 25%.";
+buff = obj_player.buff_laststand;
+item_name = "Last Stand";
+item_tagline = "Double all weapon damage when you have one heart left.";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 10;

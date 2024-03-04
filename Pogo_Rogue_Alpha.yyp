@@ -142,7 +142,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"spr_pickup_slowmo","path":"sprites/spr_pickup_slowmo/spr_pickup_slowmo.yy",},},
@@ -150,6 +150,7 @@
     {"id":{"name":"obj_textgoal","path":"objects/obj_textgoal/obj_textgoal.yy",},},
     {"id":{"name":"obj_bbb_trail","path":"objects/obj_bbb_trail/obj_bbb_trail.yy",},},
     {"id":{"name":"obj_enemy_vole","path":"objects/obj_enemy_vole/obj_enemy_vole.yy",},},
+    {"id":{"name":"spr_buffitem_psychicbullets","path":"sprites/spr_buffitem_psychicbullets/spr_buffitem_psychicbullets.yy",},},
     {"id":{"name":"spr_projectile_laser_charging_start","path":"sprites/spr_projectile_laser_charging_start/spr_projectile_laser_charging_start.yy",},},
     {"id":{"name":"obj_item_weapon_bouncyball","path":"objects/obj_item_weapon_bouncyball/obj_item_weapon_bouncyball.yy",},},
     {"id":{"name":"spr_item_slot_refresh","path":"sprites/spr_item_slot_refresh/spr_item_slot_refresh.yy",},},
@@ -882,6 +883,7 @@
     {"id":{"name":"snd_selectOption","path":"sounds/snd_selectOption/snd_selectOption.yy",},},
     {"id":{"name":"spr_projectile_default","path":"sprites/spr_projectile_default/spr_projectile_default.yy",},},
     {"id":{"name":"obj_enemy_shoot_only","path":"objects/obj_enemy_shoot_only/obj_enemy_shoot_only.yy",},},
+    {"id":{"name":"spr_buffitem_impatience","path":"sprites/spr_buffitem_impatience/spr_buffitem_impatience.yy",},},
     {"id":{"name":"obj_ground_oneway","path":"objects/obj_ground_oneway/obj_ground_oneway.yy",},},
     {"id":{"name":"snd_bubblepop","path":"sounds/snd_bubblepop/snd_bubblepop.yy",},},
     {"id":{"name":"spr_projectile_grenade_gui","path":"sprites/spr_projectile_grenade_gui/spr_projectile_grenade_gui.yy",},},
@@ -1021,6 +1023,7 @@
     {"id":{"name":"obj_heart_shield_lost","path":"objects/obj_heart_shield_lost/obj_heart_shield_lost.yy",},},
     {"id":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
     {"id":{"name":"spr_2x2_Combat_Test","path":"sprites/spr_2x2_Combat_Test/spr_2x2_Combat_Test.yy",},},
+    {"id":{"name":"spr_buffitem_laststand","path":"sprites/spr_buffitem_laststand/spr_buffitem_laststand.yy",},},
     {"id":{"name":"obj_pause","path":"objects/obj_pause/obj_pause.yy",},},
     {"id":{"name":"obj_item_weapon_bubble","path":"objects/obj_item_weapon_bubble/obj_item_weapon_bubble.yy",},},
     {"id":{"name":"spr_itemmenu_pickup_slot","path":"sprites/spr_itemmenu_pickup_slot/spr_itemmenu_pickup_slot.yy",},},

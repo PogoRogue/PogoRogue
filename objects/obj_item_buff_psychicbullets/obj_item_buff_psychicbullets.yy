@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_buffitem_pickybuyer",
-    "path": "sprites/spr_buffitem_pickybuyer/spr_buffitem_pickybuyer.yy",
+    "name": "spr_buffitem_psychicbullets",
+    "path": "sprites/spr_buffitem_psychicbullets/spr_buffitem_psychicbullets.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_buffitem_pickybuyer",
-    "path": "sprites/spr_buffitem_pickybuyer/spr_buffitem_pickybuyer.yy",
+    "name": "spr_buffitem_laststand",
+    "path": "sprites/spr_buffitem_laststand/spr_buffitem_laststand.yy",
   },
   "spriteMaskId": null,
   "visible": true,

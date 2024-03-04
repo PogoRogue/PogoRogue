@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_buffitem_pickybuyer",
-    "path": "sprites/spr_buffitem_pickybuyer/spr_buffitem_pickybuyer.yy",
+    "name": "spr_buffitem_impatience",
+    "path": "sprites/spr_buffitem_impatience/spr_buffitem_impatience.yy",
   },
   "spriteMaskId": null,
   "visible": true,
