@@ -37,6 +37,7 @@ planetary_bullets = 0;
 aerial_assassin_count = 0;
 revive_time = 0;
 revive_alpha = 0;
+impatience_used = false;
 
 //pickups
 charge = 0;
@@ -664,7 +665,8 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_sharptip, buff_experimentation, buff_aerialassassin,
 				buff_supershield, buff_revive, buff_drilltipbullets, 
 				buff_dualwielder, buff_steadyhands, buff_tightspring,
-				buff_magicianstouch];		
+				buff_magicianstouch, buff_impatience, buff_laststand,
+				buff_psychicbullets];		
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {
