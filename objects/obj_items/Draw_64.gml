@@ -17,14 +17,23 @@ if select = 1 {
 	//grid
 	for(xx = 0; xx < select_x_max; xx++) {
 		for(yy = 0; yy < select_y_max; yy++) {
-			draw_sprite(spr_item_slot_shop,(select_x-1 = xx and select_y-1 = yy),center_x-84+xx*56,128+yy*56);
+			var ii = (xx) + ((yy)*4);
+			draw_sprite(spr_item_slot_shop,(select_x-1 = xx and select_y-1 = yy)+(2*(ii<(array_length(global.all_buff_sprites)))),center_x-84+xx*60,128+yy*60);
 		}
 	}
 	
 	//item sprites
 	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
-		var xx = (center_x - 84) + (i % 4) * 56;
-		var yy = 156 + floor(i / 4) * 56;
+		var xx = (center_x - 84) + (i % 4) * 60;
+		var yy = 156 + floor(i / 4) * 60;
+		
+		//name
+		draw_set_font(fnt_itemdescription2);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_center);
+		scr_Draw_Text_Outlined(xx,yy-48,scr_Linebreak(global.all_buff_names[i],12,99),c_white);
+		
+		//sprite
 		draw_sprite(global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,xx,yy-27);
 	
 		//numbers of each buff
@@ -45,7 +54,7 @@ if select = 1 {
 				var bubble_x = center_x+181;
 			}
 			
-			scr_Draw_Passive_Description(bubble_x,yy,global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,global.all_buff_names[i],global.all_buff_descriptions[i],global.all_buff_stats[i]);
+			scr_Draw_Passive_Description(bubble_x,yy,global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,global.all_buff_names[i],global.all_buff_descriptions[i],global.all_buff_stats[i],true);
 		}
 	}
 }
@@ -57,10 +66,10 @@ if select = 2 {
 	var yy = 234;
 	
 	if num_of_pickups = 1 {
-		scr_Draw_Pickup_Description(center_x,yy,pickup_1,1);
+		scr_Draw_Pickup_Description(center_x,yy,pickup_1,1,true);
 	}else if num_of_pickups = 2 {
-		scr_Draw_Pickup_Description(xx1,yy,pickup_1,1);
-		scr_Draw_Pickup_Description(xx2,yy,pickup_2,2);
+		scr_Draw_Pickup_Description(xx1,yy,pickup_1,1,true);
+		scr_Draw_Pickup_Description(xx2,yy,pickup_2,2,true);
 	}
 }
 
@@ -72,14 +81,14 @@ if select = 3 {
 	var yy = 234;
 	
 	if num_of_weapons = 1 {
-		scr_Draw_Weapon_Description(center_x,yy,gun_1,1);
+		scr_Draw_Weapon_Description(center_x,yy,gun_1,1,true);
 	}else if num_of_weapons = 2 {
-		scr_Draw_Weapon_Description(xx1,yy,gun_1,1);
-		scr_Draw_Weapon_Description(xx2,yy,gun_2,2);
+		scr_Draw_Weapon_Description(xx1,yy,gun_1,1,true);
+		scr_Draw_Weapon_Description(xx2,yy,gun_2,2,true);
 	}else if num_of_weapons = 3 {
 		xx1 = center_x-172;
-		scr_Draw_Weapon_Description(xx1,yy,gun_1,1);
-		scr_Draw_Weapon_Description(center_x,yy,gun_2,2);
-		scr_Draw_Weapon_Description(xx3,yy,gun_3,3);
+		scr_Draw_Weapon_Description(xx1,yy,gun_1,1,true);
+		scr_Draw_Weapon_Description(center_x,yy,gun_2,2,true);
+		scr_Draw_Weapon_Description(xx3,yy,gun_3,3,true);
 	}
 }

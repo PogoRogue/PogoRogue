@@ -23,6 +23,7 @@ function scr_Buffs(){
 	buff_planetarybullets = function() { 
 		if planetary_bullets < 5 {
 			planetary_bullets += 1;
+			audio_play_sound(snd_passivePowerup,0,false);
 		}
 		if !instance_exists(obj_planetarybullets) {
 			instance_create_depth(x,y,depth,obj_planetarybullets);
@@ -168,22 +169,27 @@ function scr_Buffs(){
 	
 	buff_drilltipbullets = function(){
 		global.drilltipbullets = true;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_dualwielder = function(){
 		global.dualwielder = true;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_magicianstouch = function(){
 		global.magicianstouch = true;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_tightspring = function(){
 		global.tightspring = true;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_steadyhands = function(){
 		global.steadyhands = true;
+		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_impatience = function(){

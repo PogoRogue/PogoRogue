@@ -53,7 +53,7 @@ function scr_Shoot(){
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 and frenzy = false {
+			if gun.spread_number = 1 and frenzy = false and gun._name != "Javelins" {
 				gun.current_bullets -= 1;
 			}
 			
@@ -95,10 +95,11 @@ function scr_Shoot(){
 		
 		//unfreeze if applicable
 		if state = state_freeze {
-			state = state_free;
-			grv = init_grv;
-			rotation_speed = original_rotation_speed;
-			rotation_delay = rotation_speed / 10;
+			speed = 0;
+			//state = state_free;
+			//grv = init_grv;
+			//rotation_speed = original_rotation_speed;
+			//rotation_delay = rotation_speed / 10;
 		}
 		
 	}

@@ -4,12 +4,13 @@
   "name": "obj_proc_gen_freq_analysis",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "ProcGen",
-    "path": "folders/Objects/Environmental/ProcGen.yy",
+    "path": "folders/Objects/ProcGen.yy",
   },
   "parentObjectId": null,
   "persistent": false,

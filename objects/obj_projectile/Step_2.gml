@@ -75,9 +75,13 @@ if (gun_name = "Laser Gun" ) {
 		}
 		
 		//delete if not free
-		if (state != state_free) {
+		if (state != state_free and state != state_freeze) {
 			scr_Retract_Laser();
 			other.laser_boost = false;
+		}
+		
+		if (state = state_freeze) {
+			speed = 0;	
 		}
 	}
 }
@@ -129,7 +133,7 @@ if (gun_name = "Sniper Rifle" ) {
 			other.sniped = true;
 		}
 		
-		if (state != state_free or gun != sniper_gun) {
+		if (state != state_free and state != state_freeze or gun != sniper_gun) {
 			scr_Retract_Laser();
 			other.laser_boost = false;
 		}

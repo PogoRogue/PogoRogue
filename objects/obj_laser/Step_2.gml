@@ -28,7 +28,7 @@ with obj_player {
 	}
 	
 	//delete if not free
-	if (state != state_free) {
+	if (state != state_free and state != state_freeze) {
 		scr_Retract_Laser();
 	}
 }

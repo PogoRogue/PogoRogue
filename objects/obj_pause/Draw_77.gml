@@ -13,6 +13,14 @@ if (pause) { //draw frozen image to screen while paused
 }
 
 if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_settings) || paused_outside {
+	
+	//Grab the chunk message so we can give that info to playtesters on the pause menu
+	if(instance_exists(obj_proc_gen_location_analysis))
+	{
+		var inst = instance_nearest(x,y,obj_proc_gen_location_analysis);
+		sprite_chunk_message = inst.player_location_string;
+	}
+	
 	if !pause { //pause now
 		pause = true;
 		
@@ -25,6 +33,8 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 			instance_activate_object(obj_item_swap);
 			instance_activate_object(obj_items);
 			instance_activate_object(obj_settings);
+			instance_activate_object(obj_choosemenu_weapon);
+			instance_activate_object(obj_choosemenu_active);
 			item_swap = true;
 		}else {
 			instance_activate_object(obj_pausemenu);
@@ -55,6 +65,7 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 			instance_deactivate_object(obj_pausemenu);
 			instance_deactivate_object(obj_popup_exit);
 			instance_deactivate_object(obj_popup_restart);
+			instance_deactivate_object(obj_popup_menu);
 		
 			if surface_exists(pause_surf) {
 				surface_free(pause_surf);

@@ -45,7 +45,10 @@ if(is_dead) {
 		}
 	}
 	
-	alarm[11] = 8; //drops
+	if (created_items = false) {
+		scr_Random_Item_Drops();
+		created_items = true;
+	}
 	
 	//aerial assassin buff
 	with obj_player {
@@ -55,6 +58,15 @@ if(is_dead) {
 				global.combo += 1;
 				aerial_assassin_count = 0;
 			}
+		}
+	}
+	
+	with obj_player {
+		if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count > 0 {
+			pickups_array[0].enemies_count -= 1;
+		}
+		if pickups_array[1].enemies_count_max > 0 and pickups_array[1].enemies_count > 0 {
+			pickups_array[1].enemies_count -= 1;
 		}
 	}
 	

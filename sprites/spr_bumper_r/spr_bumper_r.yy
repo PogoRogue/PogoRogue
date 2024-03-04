@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0848374a-d235-4b09-9433-ce825a884b1e",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"09737aac-3a13-4f29-904c-d0069b384294",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d8cd8e74-4e70-4ff9-85fa-9f2c5c5080a9",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0848374a-d235-4b09-9433-ce825a884b1e","path":"sprites/spr_bumper_r/spr_bumper_r.yy",},},},"Disabled":false,"id":"544f5157-538d-43df-a6d4-f6ba45b1bbee","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"09737aac-3a13-4f29-904c-d0069b384294","path":"sprites/spr_bumper_r/spr_bumper_r.yy",},},},"Disabled":false,"id":"d45371a4-6f11-48b2-9cc4-196a8a7a2bcf","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d8cd8e74-4e70-4ff9-85fa-9f2c5c5080a9","path":"sprites/spr_bumper_r/spr_bumper_r.yy",},},},"Disabled":false,"id":"6eff6e93-9023-4d01-8207-68d4d98125e1","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

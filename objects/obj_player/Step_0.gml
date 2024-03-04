@@ -63,12 +63,17 @@ state();
 
 //call pickups
 if room != room_shop {
-	if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false { //cooldown
+	if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_max = 0 { //cooldown
 		if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
 		or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
 			pickups_array[0].on_call();
 		}
-	}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 { //no cooldown
+	}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 and pickups_array[0].enemies_count_max = 0 { //no cooldown
+		if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
+		or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
+			pickups_array[0].on_call();
+		}
+	}else if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count <= 0 {
 		if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
 		or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
 			pickups_array[0].on_call();
@@ -76,12 +81,17 @@ if room != room_shop {
 	}
 	
 	//call pickup 2
-	if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false { //cooldown
+	if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_max = 0 { //cooldown
 		if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
 		or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
 			pickups_array[1].on_call();
 		}
-	}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 { //no cooldown
+	}else if pickups_array[1].reload_on_bounce = true and pickups_array[1].uses_per_bounce > 0 and pickups_array[1].enemies_count_max = 0 { //no cooldown
+		if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
+		or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
+			pickups_array[1].on_call();
+		}
+	}else if pickups_array[1].enemies_count_max > 0 and pickups_array[1].enemies_count <= 0 {
 		if (key_pickup_2) and scr_In_Array(pickups_array[1].states_to_call_in, state) and pickups_array[1].key_held 
 		or (key_pickup_2_pressed) and scr_In_Array(pickups_array[1].states_to_call_in, state) and !pickups_array[1].key_held {
 			pickups_array[1].on_call();
@@ -92,11 +102,13 @@ if room != room_shop {
 //cooldowns
 for (i = 0; i <= 1; i++) {
 	if pickups_array[i].reload_on_bounce = false {
-		if pickups_array[i].on_cooldown and pickups_array[i].cooldown_time > 0 {
+		if pickups_array[i].on_cooldown and pickups_array[i].cooldown_time > 0 and pickups_array[i].enemies_count_max = 0 {
 			pickups_array[i].cooldown_time -= 1;
-		}else if pickups_array[i].on_cooldown {
+		}else if pickups_array[i].on_cooldown and pickups_array[i].enemies_count_max = 0 {
 			pickups_array[i].on_cooldown = false;
 			pickups_array[i].cooldown_time = pickups_array[i].max_cooldown_time;
+		}else if pickups_array[i].on_cooldown and pickups_array[i].enemies_count <= 0 {
+			pickups_array[i].on_cooldown = false;
 		}
 	}
 }
@@ -177,11 +189,11 @@ image_angle = angle;
 #endregion
 
 //recentering
-if key_recenter and centering = false and angle != 0 and !key_left and !key_right {
+if key_recenter and centering = false and angle != 0 and !key_left and !key_right and can_rotate {
 	centering = true;
 }
 
-if centering = true {
+if centering = true and can_rotate {
 	can_rotate = false;
 	if angle >= rotation_speed or angle <= -rotation_speed {
 		angle += rotation_speed * -sign(angle);
@@ -202,7 +214,7 @@ if centering = true {
 
 if can_shoot = true and room != room_shop { 
 	var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
-	if gun = laser_gun and !instance_exists(obj_laser) { //special conditions for laser gun
+	if gun = laser_gun and !instance_exists(obj_laser) or gun = javelin_gun and !instance_exists(obj_javelin_charge) { //special conditions for laser gun and javelins
 		shoot = key_fire_projectile;
 	}
 	if key_fire_projectile_pressed and gun.current_bullets <= 0 {
@@ -279,6 +291,7 @@ else if global.key_weapon_3 and weapons_equipped > 2 {
 	gun = gun_array[current_gun];
 }
 
+
 if gun_2 = gun_1 {
 	weapons_equipped = 1;	
 }else if gun_2 != gun_1 and gun_3 = gun_1 or gun_2 != gun_1 and gun_3 = gun_2 {
@@ -321,6 +334,7 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 	global.revive = false;
 	hp = floor((max_hp/8)/2) * 8;
 	state = state_revive;
+	revive_alpha = 1;
 	current_iframes = max(current_iframes - 1, 0);
 	
 	//change revive item sprite
@@ -350,4 +364,13 @@ if (hp <= 8 and hp > 0) {
 		audio_play_sound(snd_oneHeart,0,false);
 	}	
 }
+
+if room = room_items {
+	speed = 0;
+}	
 	
+	
+//revive fade out
+if revive_alpha > 0 {
+	revive_alpha -= 0.05;	
+}

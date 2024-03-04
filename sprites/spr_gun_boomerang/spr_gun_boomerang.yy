@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1ad24241-52fa-41d0-8060-28470519f644",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"10fd45e9-5ec8-4a1a-b735-0349a98e6411",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"56fe40b4-6995-4be1-970e-309b61ee5a74",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1ad24241-52fa-41d0-8060-28470519f644","path":"sprites/spr_gun_boomerang/spr_gun_boomerang.yy",},},},"Disabled":false,"id":"0fe598eb-f20a-43ad-bc6e-cee911a370b5","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"10fd45e9-5ec8-4a1a-b735-0349a98e6411","path":"sprites/spr_gun_boomerang/spr_gun_boomerang.yy",},},},"Disabled":false,"id":"aef35a30-61eb-487a-81df-882d91119b58","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"56fe40b4-6995-4be1-970e-309b61ee5a74","path":"sprites/spr_gun_boomerang/spr_gun_boomerang.yy",},},},"Disabled":false,"id":"ebaf0b87-b321-463a-bcd7-773a68a834db","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

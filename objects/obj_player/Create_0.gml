@@ -36,6 +36,7 @@ laser_sight = false;
 planetary_bullets = 0;
 aerial_assassin_count = 0;
 revive_time = 0;
+revive_alpha = 0;
 
 //pickups
 charge = 0;
@@ -108,10 +109,6 @@ image_speed = 0;
 
 depth = -10;
 
-if (global.arm_cannon = true) {
-	instance_destroy();
-}
-
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {
 	parent_index = other;
@@ -167,10 +164,16 @@ state_free = function() {
 	}
 	
 	//restart room if reached the top unless procgen room
-	if room != room_proc_gen_test && room != room_sprite_level_test {
+	if room != room_proc_gen_test && room != room_sprite_level_test && room != room_tutorial {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			instance_deactivate_all(false);
 			room_restart();
+		}
+	}else if room = room_tutorial {
+		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			audio_stop_all();
+			gamepad_set_vibration(0,0,0);
+			game_restart();
 		}
 	}
 	
@@ -393,11 +396,7 @@ state_bulletblast = function() {
 
 state_freeze = function() {
 	sprite_index = player_sprite;
-	if abs(speed) > 0.01 {
-		speed *= 0.8;	
-	}else {
-		speed = 0;	
-	}
+	speed = 0;	
 	
 	if freeze_time > 0 {
 		freeze_time -= 1;	
@@ -464,6 +463,11 @@ state_revive = function() {
 	image_index = 0;
 	hspeed = hspeed * 0.9;
 	vspeed = 0;
+	
+	if revive_alpha > 0 {
+		revive_alpha -= 0.05;	
+	}
+	
 	if (angle != 0)	{
 		var angle_side = sign(angle);
 		angle += (rotation_speed*sign(-angle))/2;
@@ -482,6 +486,21 @@ state_revive = function() {
 		}
 	}else {
 		state = state_free;
+		revive_alpha = 1;
+	}
+}
+
+state_blink = function() {
+	speed = 0;
+	can_rotate = false;
+	can_shoot = false;
+	mask_index = spr_nothing;
+	with obj_player_mask {
+		mask_index = spr_nothing;
+	}
+	
+	if image_yscale > 0 {
+		image_yscale -= 0.1;
 	}
 }
 
@@ -515,16 +534,30 @@ bullet_index = 0; //current bullet
 
 //EQUIP WEAPONS
 num_of_weapons = 2; //number of different weapons equipped: only do 1 or 2 to start, but include functionality of 3 for "triple threat" buff
+if room = room_tutorial {
+	num_of_weapons = 0;
+}
 weapons_equipped = num_of_weapons;
-all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun]; //all guns
+all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun,yoyo_gun,javelin_gun]; //all guns
 
-if (random_weapon = true) { //choose random weapons
-	randomize();
+if (random_weapon == true) { //choose random weapons
+	//randomize();
 	//temporarily change items for playtest
 	if room = room_proc_gen_test or room = room_boss_2 {
-		gun_1 = default_gun;
-		gun_2 = choose(sniper_gun,slime_gun);
-		gun_3 = gun_1;
+		//gun_1 = default_gun;
+		//gun_2 = choose(sniper_gun,slime_gun);
+		//gun_3 = gun_1;
+		gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		if num_of_weapons > 1 {
+			gun_2 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else {
+			gun_2 = gun_1;
+		}
+		if num_of_weapons > 2 {
+			gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
+		}else if num_of_weapons != 0 {
+			gun_3 = gun_1;
+		}
 	}else {
 		gun_1 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
 		if num_of_weapons > 1 {
@@ -534,7 +567,7 @@ if (random_weapon = true) { //choose random weapons
 		}
 		if num_of_weapons > 2 {
 			gun_3 = all_guns_array[irandom_range(0,array_length(all_guns_array)-1)];
-		}else {
+		}else if num_of_weapons != 0 {
 			gun_3 = gun_1;
 		}
 	}
@@ -549,9 +582,15 @@ if (random_weapon = true) { //choose random weapons
 }else { //decide which weapons we want manually if not random. 
 	//we do this by changing gun_1_manual and gun_2_manual in the variable definitions tab. Can be changed room by room.
 	//Integers correspond to values in all_guns_array, 0 = default_gun, 1 = paintball_gun, etc.
-	gun_1 = all_guns_array[gun_1_manual_value];
-	gun_2 = all_guns_array[gun_2_manual_value];
-	gun_3 = all_guns_array[gun_3_manual_value];
+	if room != room_tutorial {
+		gun_1 = all_guns_array[gun_1_manual_value];
+		gun_2 = all_guns_array[gun_2_manual_value];
+		gun_3 = all_guns_array[gun_3_manual_value];
+	}else {
+		gun_1 = empty_gun;
+		gun_2 = empty_gun;
+		gun_3 = empty_gun;
+	}
 }
 
 //set what weapons will actually be equipped at the start
@@ -559,8 +598,10 @@ if (num_of_weapons = 1) {
 	gun_array = [gun_1, gun_1, gun_1];
 }else if (num_of_weapons = 2) {
 	gun_array = [gun_1, gun_2, gun_1];
-}else {
+}else if (num_of_weapons = 3) {
 	gun_array = [gun_1, gun_2, gun_3];
+}else if (num_of_weapons = 0) {
+	gun_array = [empty_gun, empty_gun, empty_gun];
 }
 current_gun = 0;
 gun = gun_array[current_gun];
@@ -575,16 +616,16 @@ buff_duration = 60 * 5; // buff duration timer
 //pickups
 scr_Pickups();
 
-num_of_pickups = 2; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target]; //all pickups
+num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target,pickup_emergency,pickup_blink]; //all pickups
 
-
-if (random_pickup = true) { //choose random pickups
-	randomize();
+if (random_pickup == true) { //choose random pickups
+	//randomize();
 	
 	//temporarily change items for playtest
 	if room = room_proc_gen_test or room = room_boss_2 {
-		pickup_1 = choose(pickup_frenzy,pickup_target);
+		//pickup_1 = choose(pickup_frenzy,pickup_target);
+		pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
 	}else {
 		pickup_1 = all_pickups_array[irandom_range(0,array_length(all_pickups_array)-1)];
 	}
@@ -615,7 +656,22 @@ if (num_of_pickups = 1) {
 //buffs
 scr_Buffs();
 
+all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
+				buff_max_ammo, buff_luck, buff_pickybuyer,
+				buff_bouncybullets, buff_hotshells, buff_combomaster,
+				buff_blackfriday, buff_triplethreat, buff_flamingcoins,
+				buff_combotime, buff_sharpshooter, buff_coinsup,
+				buff_sharptip, buff_experimentation, buff_aerialassassin,
+				buff_supershield, buff_revive, buff_drilltipbullets, 
+				buff_dualwielder, buff_steadyhands, buff_tightspring,
+				buff_magicianstouch];		
+
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {
 	alarm[2] = 10;
+}
+
+//destroy if not area 1
+if global.phase != 1 {
+	//instance_destroy();	
 }

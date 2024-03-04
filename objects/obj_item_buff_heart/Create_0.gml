@@ -12,3 +12,8 @@ if scr_In_Array(global.all_buffs, object_index) {
 	scr_Buff_Replace();
 }
 
+if obj_player.hp >= obj_player.max_hp {
+	sold_out = true;
+}else {
+	sold_out = false;	
+}

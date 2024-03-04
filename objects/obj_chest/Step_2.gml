@@ -11,7 +11,7 @@ with (obj_player) {
 	}else if (other.colliding and other.open = false and state != state_bouncing and state != state_chargejump) {
 		other.open = true;
 		other.alarm[0] = 2;
-		other.alarm[1] = 1;
+		other.alarm[1] = 5;
 	}
 }
 

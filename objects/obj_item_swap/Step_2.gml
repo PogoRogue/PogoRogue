@@ -60,6 +60,32 @@ if key_select and fade_away = false and centered = true {
 			global.current_total_coins += experimenting_coins;
 			alarm[2] = 1;
 		}
+		
+		if weapons_mode = true {
+			ini_open("itemsunlocked.ini");
+			if scr_In_Array(obj_player.all_guns_array,new_item) {
+				for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
+					if obj_player.all_guns_array[i] = new_item {
+						global.weapon_unlocked_array[i] = true;
+						ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
+					}
+				}
+			}
+			ini_close();
+		}
+		
+		if pickups_mode = true {
+			ini_open("itemsunlocked.ini");
+			if scr_In_Array(obj_player.all_pickups_array,new_item) {
+				for(i = 0; i < array_length(obj_player.all_pickups_array);i++) {
+					if obj_player.all_pickups_array[i] = new_item {
+						global.active_unlocked_array[i] = true;
+						ini_write_real("itemsunlocked", "active " + string(i), global.active_unlocked_array[i]);
+					}
+				}
+			}
+			ini_close();
+		}
 	}
 	//slot 2
 	if select = 2 {
@@ -90,6 +116,32 @@ if key_select and fade_away = false and centered = true {
 			global.current_total_coins += experimenting_coins;
 			alarm[2] = 1;
 		}
+		
+		if weapons_mode = true {
+			ini_open("itemsunlocked.ini");
+			if scr_In_Array(obj_player.all_guns_array,new_item) {
+				for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
+					if obj_player.all_guns_array[i] = new_item {
+						global.weapon_unlocked_array[i] = true;
+						ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
+					}
+				}
+			}
+			ini_close();
+		}
+		
+		if pickups_mode = true {
+			ini_open("itemsunlocked.ini");
+			if scr_In_Array(obj_player.all_pickups_array,new_item) {
+				for(i = 0; i < array_length(obj_player.all_pickups_array);i++) {
+					if obj_player.all_pickups_array[i] = new_item {
+						global.active_unlocked_array[i] = true;
+						ini_write_real("itemsunlocked", "active " + string(i), global.active_unlocked_array[i]);
+					}
+				}
+			}
+			ini_close();
+		}
 	}
 	//slot 3
 	if select = 3 and num_of_slots > 3 {
@@ -114,6 +166,19 @@ if key_select and fade_away = false and centered = true {
 			global.num_of_coins += experimenting_coins;
 			global.current_total_coins += experimenting_coins;
 			alarm[2] = 1;
+		}
+		
+		if weapons_mode = true {
+			ini_open("itemsunlocked.ini");
+			if scr_In_Array(obj_player.all_guns_array,new_item) {
+				for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
+					if obj_player.all_guns_array[i] = new_item {
+						global.weapon_unlocked_array[i] = true;
+						ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
+					}
+				}
+			}
+			ini_close();
 		}
 	}
 	//cancel
