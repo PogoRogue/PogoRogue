@@ -101,6 +101,15 @@ for (i = 0; i <= 1; i++) {
 	}
 }
 
+// if player has obtained Impatience passive item, reduce all cooldown times by 25%
+if(global.impatience == true){
+	var cd_multiplier = 0.75;
+	for(var i = 0; i < array_length(all_pickups_array); i++){
+		all_pickups_array[i].cooldown = all_pickups_array[i].cooldown * cd_multiplier;
+	}
+}
+
+
 #endregion
 
 //reset ground pound variables

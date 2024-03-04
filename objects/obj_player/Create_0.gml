@@ -619,11 +619,3 @@ scr_Buffs();
 if room = room_proc_gen_test || room = room_sprite_level_test {
 	alarm[2] = 10;
 }
-
-// if player has obtained Impatience passive item, reduce all cooldown times by 25%
-if(global.impatience == true){
-	var cd_multiplier = 0.75;
-	for(var i = 0; i < array_length(all_pickups_array); i++){
-		all_pickups_array[i].cooldown = all_pickups_array[i].cooldown * cd_multiplier;
-	}
-}
