@@ -112,6 +112,7 @@
     {"name":"inst_5F6EC590","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_1C74ED0F","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_37701355","path":"rooms/room_tutorial/room_tutorial.yy",},
+    {"name":"inst_7B8E1146","path":"rooms/room_tutorial/room_tutorial.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -167,7 +168,7 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"propertyId":{"name":"pickup_1_manual_value","path":"objects/obj_player/obj_player.yy",},"value":"0",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"propertyId":{"name":"pickup_2_manual_value","path":"objects/obj_player/obj_player.yy",},"value":"0",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"propertyId":{"name":"gun_1_manual_value","path":"objects/obj_player/obj_player.yy",},"value":"0",},
-          ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":400.0,"y":4384.0,},
+          ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":3120.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_BA8CAC4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_player_health","path":"objects/obj_player_health/obj_player_health.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":517.0,"y":4360.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_26126A2F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_switch_rooms","path":"objects/obj_switch_rooms/obj_switch_rooms.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":517.0,"y":4360.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1567F6EC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_combo","path":"objects/obj_combo/obj_combo.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":501.0,"y":4280.0,},
@@ -189,6 +190,7 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_chest_weapon","path":"objects/obj_chest_weapon/obj_chest_weapon.yy",},"propertyId":{"name":"random_weapon","path":"objects/obj_chest_weapon/obj_chest_weapon.yy",},"value":"False",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_chest_weapon","path":"objects/obj_chest_weapon/obj_chest_weapon.yy",},"propertyId":{"name":"custom_weapon_drop","path":"objects/obj_chest_weapon/obj_chest_weapon.yy",},"value":"obj_item_weapon_paintball",},
           ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":816.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7B8E1146","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_explode_walking305","path":"objects/obj_enemy_explode_walking305/obj_enemy_explode_walking305.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":2768.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Ground","depth":400,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5877294F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},"properties":[],"rotation":0.0,"scaleX":54.000004,"scaleY":7.0,"x":-48.0,"y":4400.0,},
