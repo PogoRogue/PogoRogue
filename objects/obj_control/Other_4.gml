@@ -7,6 +7,9 @@ if !instance_exists(obj_pause) {
 if !instance_exists(obj_pausemenu) {
 	instance_create_depth(0,0,depth-2,obj_pausemenu);	
 }
+if !instance_exists(obj_parallax_control) {
+	instance_create_depth(x,y,depth,obj_parallax_control);
+}
 
 audio_group_stop_all(audiogroup_default);
 
