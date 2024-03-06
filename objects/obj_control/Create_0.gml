@@ -77,9 +77,13 @@ global.revived = false; //once the player has used their revive, set this to tru
 global.magicianstouch = false;
 global.steadyhands = false;
 global.tightspring = false;
+global.impatience = false;
+global.laststand = false;
+global.psychicbullets = false;
 
 
 //items unlockable in the shop
+
 scr_All_Passives_Array();
 
 scr_All_Weapons_Array();
@@ -91,7 +95,7 @@ surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);
 if room = room_gameplay_video {
 	//tiling layer
 	global.ground_layer = layer_create(-1);
-	global.tilemap_ground = layer_tilemap_create(global.ground_layer,0,0,tl_ground,20000,20000);	
+	global.tilemap_ground = layer_tilemap_create(global.ground_layer,0,0,global.tileset,20000,20000);	
 }
 
 //Store the randomized seed, and print it to console

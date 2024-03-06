@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 0.131361,
   "parent": {
-    "name": "Items",
-    "path": "folders/Sounds/Items.yy",
+    "name": "Powerups",
+    "path": "folders/Sounds/Powerups.yy",
   },
   "preload": false,
   "sampleRate": 44100,

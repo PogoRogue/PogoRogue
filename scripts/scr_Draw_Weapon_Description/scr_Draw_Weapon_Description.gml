@@ -57,8 +57,25 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked) {
 		line_1 = "Bullets per bounce: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 	
 		//special conditions
+		
+		if weapon._name = "Laser Gun" {
+			line_1 = "Time per bounce: " + string(weapon.bullets_per_bounce/60) + "s" + " (Max " + string((weapon.init_bullets_per_bounce + weapon.max_added_bullets)/60) + "s)";
+		}
+		
 		if weapon._name = "Boomerangs" {
 			line_1 = "Boomerangs: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Missile Launcher" {
+			line_1 = "Missiles per bounce: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Yo-yo" {
+			line_1 = "Yo-yos: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Javelins" {
+			line_1 = "Javelins per bounce: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 	
 		//additional damage buff
@@ -75,10 +92,12 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked) {
 		line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + added_damage;
 	
 		//special conditions
-		if weapon._name = "Laser Gun" {
+		if weapon._name = "Laser Gun" or weapon._name = "Yo-yo" {
 			line_2 = "Damage per frame: " + string(weapon.ammo[0].damage) + added_damage;
 		}else if weapon._name = "Boomerangs" {
 			line_2 = "Damage per hit: " + string(weapon.ammo[0].damage) + added_damage;
+		}else if weapon._name = "Javelins" {
+			line_2 = "Damage per javelin: " + string(weapon.ammo[0].damage) + "-16" + added_damage;
 		}
 	
 		if weapon.full_auto = true {
@@ -94,7 +113,14 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked) {
 			}
 		}else {
 			line_3 = "Auto Fire: No";	
-			line_4 = "Fire Rate: On Press";
+			line_4 = "Shoot: On Press";
+			if weapon._name = "Javelins" {
+				line_4 = "Shoot: On Release";
+			}else if weapon._name = "Yo-yo" {
+				line_4 = "Shoot: Press and Hold";
+			}else if weapon._name = "Laser Gun" {
+				line_4 = "Shoot: Press and Hold";
+			}
 		}
 	}else {
 		var line_1 = "Bullets per bounce: ???"; //bullets per bounce

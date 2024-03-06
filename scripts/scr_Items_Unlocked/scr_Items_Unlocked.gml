@@ -69,7 +69,7 @@ function scr_Items_Unlocked(){
 									global.active_unlocked_13,global.active_unlocked_14,global.active_unlocked_15,global.active_unlocked_16];
 									
 	//weapons
-	global.weapon_unlocked_1 = true; //pistol
+	global.weapon_unlocked_1 = false; //pistol
 	global.weapon_unlocked_2 = false;
 	global.weapon_unlocked_3 = false;
 	global.weapon_unlocked_4 = false;

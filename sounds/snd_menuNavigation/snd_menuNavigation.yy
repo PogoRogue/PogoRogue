@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 0.444082,
   "parent": {
-    "name": "Miscellaneous",
-    "path": "folders/Sounds/Miscellaneous.yy",
+    "name": "Menu",
+    "path": "folders/Sounds/Menu.yy",
   },
   "preload": false,
   "sampleRate": 44100,

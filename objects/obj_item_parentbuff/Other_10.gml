@@ -32,6 +32,10 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 		}
 	}
 	ini_close();
+	
+	with instance_create_depth(x,y,depth-1000,obj_item_text) {
+		item_string = other.item_name;
+	}
 }else if add_sprite_to_list = true {
 	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
 		if global.all_buff_sprites[i] = sprite_index {
@@ -40,8 +44,14 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 			//update numbers
 			if global.all_buff_numbers[i] < max_uses and max_uses > 0 {
 				global.all_buff_numbers[i] += 1;
+				with instance_create_depth(x,y,depth-1000,obj_item_text) {
+					item_string = other.item_name;
+				}
 			}else if max_uses <= 0 {
 				global.all_buff_numbers[i] += 1;
+				with instance_create_depth(x,y,depth-1000,obj_item_text) {
+					item_string = other.item_name;
+				}
 			}
 		}
 	}

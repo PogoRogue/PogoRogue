@@ -25,6 +25,9 @@ with obj_player {
 	other.gun_2 = gun_2;
 	other.gun_3 = gun_3;
 	other.num_of_weapons = weapons_equipped;
+	if num_of_weapons = 0 { 
+		other.num_of_weapons = 0;
+	}
 	//pickups
 	other.pickup_1 = pickup_1;
 	other.pickup_2 = pickup_2;

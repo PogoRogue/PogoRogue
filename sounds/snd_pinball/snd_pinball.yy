@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 8.391905,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Environmental",
+    "path": "folders/Sounds/Environmental.yy",
   },
   "preload": false,
   "sampleRate": 44100,

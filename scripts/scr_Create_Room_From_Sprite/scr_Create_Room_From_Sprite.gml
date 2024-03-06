@@ -10,7 +10,7 @@ function scr_Create_Room_From_Sprite(spriteIndex, sprite_sub_image, x_offset, y_
 	var pixel_array = Read_Sprite_To_Array(spriteIndex, sprite_sub_image);
 	
 	//Create all objects corresponding to the pixel data with matching offsets
-	return Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, spriteIndex, sprite_sub_image, mirror, signature_grid)	
+	return Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, spriteIndex, sprite_sub_image, mirror)	
 }
 
 

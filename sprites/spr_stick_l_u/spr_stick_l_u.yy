@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"736a5e9a-4a3c-4517-8a43-016360c66006",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c073b7ed-d45a-4480-af55-656fb84c5e41",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7d17a383-a1fb-4527-a6df-e1796398159f",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"736a5e9a-4a3c-4517-8a43-016360c66006","path":"sprites/spr_stick_l_u/spr_stick_l_u.yy",},},},"Disabled":false,"id":"450caa28-65e8-4088-bbb7-9f04f23eb8ab","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c073b7ed-d45a-4480-af55-656fb84c5e41","path":"sprites/spr_stick_l_u/spr_stick_l_u.yy",},},},"Disabled":false,"id":"b5b84278-a648-4d97-9c01-f647550a2d3d","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7d17a383-a1fb-4527-a6df-e1796398159f","path":"sprites/spr_stick_l_u/spr_stick_l_u.yy",},},},"Disabled":false,"id":"4f50f947-5e72-47e8-a89a-0464cec69949","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

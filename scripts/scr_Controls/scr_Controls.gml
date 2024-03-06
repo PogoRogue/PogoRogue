@@ -57,10 +57,10 @@ function scr_Controls(){
 	global.item_buttons = [gp_select,-1];
 	
 	//menu
-	global.menu_right_buttons = [-10001,gp_shoulderr];
-	global.menu_left_buttons = [-10000,gp_shoulderl];
-	global.menu_down_buttons = [-10003,-1];
-	global.menu_up_buttons = [-10002,-1];
+	global.menu_right_buttons = [-10001,gp_padr];
+	global.menu_left_buttons = [-10000,gp_padl];
+	global.menu_down_buttons = [-10003,gp_padd];
+	global.menu_up_buttons = [-10002,gp_padu];
 	global.select_buttons = [gp_face1,-1];
 	global.back_buttons = [gp_face2,-1];
 

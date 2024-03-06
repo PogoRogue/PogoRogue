@@ -12,12 +12,16 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 				break;
 			case 3:
 				global.phase = 1;
-				room = obj_menu;
+				room = room_menu;
 				break;
 		}	
 	}
 	else {
+		room_persistent = false;
 		global.phase++;
 		room_goto(room_proc_gen_test)
+		if global.phase = 2 {
+			global.tileset = tl_ground2;	
+		}
 	}
 }

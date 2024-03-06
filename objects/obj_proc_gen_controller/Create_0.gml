@@ -14,7 +14,9 @@ ds_list_add(prebuilt_rooms, [3, 3, "c3"]); //3x3 Combat room, c stands for comba
 ds_list_add(prebuilt_rooms, [2, 2, "c2"]); //2x2 Combat room
 
 
-rooms_to_generate = 5; //Need: Start, Combat, Combat, Shop, Boss (room order)
+rooms_to_generate = 5; //Need: Start, Combat, Shop, Combat, Boss (room order)
+total_room_regions = 2*rooms_to_generate-1; //Regions include hallways, and there's one less number of hallways 
+//compared to rooms
 
 //Max and min heights of hallways
 min_distance_between_rooms = 2; //Go no lower than 2 for this number
@@ -70,5 +72,6 @@ generate_start_room = false;
 global.debug_wall_count = 0;
 
 //tiling layer
+
 global.ground_layer = layer_create(-1);
-global.tilemap_ground = layer_tilemap_create(global.ground_layer,-20000,-20000,tl_ground,20000,20000);
+global.tilemap_ground = layer_tilemap_create(global.ground_layer,-20000,-20000,global.tileset,20000,20000);
