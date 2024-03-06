@@ -519,6 +519,107 @@ state_blink = function() {
 	}
 }
 
+state_parachute = function() {
+	can_shoot = false;
+	can_rotate = false;
+	
+	if !instance_exists(obj_parachute) {
+		instance_create_depth(x+lengthdir_x(22,angle+90),y+lengthdir_y(22,angle+90),depth+1,obj_parachute);
+	}
+	
+	if obj_parachute.opening = false {
+		vspeed += grv; //falling
+		vsp_basicjump = -6.6;
+	
+		//horizontal drag
+		if hspeed > 0 {
+			motion_add(180,h_grv);
+		}else if hspeed < 0 {
+			motion_add(0,h_grv);
+		}	
+	}else {
+		//re-center
+		if (angle != 0)	{
+			var angle_side = sign(angle);
+			angle += (rotation_speed/2)*sign(-angle);
+			if (sign(angle) != angle_side) {
+				angle = 0;
+				current_rotation_speed = 0;
+			}
+		}	
+		
+		//slow down
+		if vspeed >= 0 {
+			vspeed += grv/5; //falling slower
+			if vspeed > 3 {
+				vspeed = 3;
+			}
+			
+			//horizontal drag
+			if hspeed > 0 {
+				motion_add(180,h_grv*10);
+			}else if hspeed < 0 {
+				motion_add(0,h_grv*10);
+			}	
+			
+		}else {
+			vspeed += grv; //falling
+			vsp_basicjump = -6.6;
+	
+			//horizontal drag
+			if hspeed > 0 {
+				motion_add(180,h_grv*2);
+			}else if hspeed < 0 {
+				motion_add(0,h_grv*2);
+			}	
+		}
+		
+		//move left and right
+		if angle = 0 {
+			if hspeed % 0.25 != 0 {
+				hspeed = round((hspeed/0.25))*0.25
+			}
+			if global.key_left_player {
+				if hspeed > -4 {
+					hspeed -= 0.25;
+				}
+				if obj_parachute.angle_add > -4 {
+					obj_parachute.angle_add -= 0.25;
+				}
+				obj_parachute.decrease_arrows_alpha = true;
+			}
+			if global.key_right_player {
+				if hspeed < 4 {
+					hspeed += 0.25;
+				}
+				if obj_parachute.angle_add < 4 {
+					obj_parachute.angle_add += 0.25;
+				}
+				obj_parachute.decrease_arrows_alpha = true;
+			}
+			if !global.key_left_player and !global.key_right_player {
+				if hspeed < 0 {
+					hspeed += 0.25;
+				}else if hspeed > 0 {
+					hspeed -= 0.25;
+				}
+				
+				if obj_parachute.angle_add < 0 {
+					obj_parachute.angle_add += 0.25;
+				}else if obj_parachute.angle_add > 0 {
+					obj_parachute.angle_add -= 0.25;
+				}
+			}
+			
+			if hspeed != 0 {
+				image_xscale = sign(hspeed);
+			}
+		}
+	}
+	
+	scr_Player_Collision();
+}
+
 state_dead = function() {
 	if y < 100000 {
 		vspeed += grv; //falling
@@ -632,7 +733,7 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target,pickup_emergency,pickup_blink]; //all pickups
+all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target,pickup_emergency,pickup_blink,pickup_parachute]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();

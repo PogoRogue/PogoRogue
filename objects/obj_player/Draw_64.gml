@@ -75,7 +75,8 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		if pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble)
 		or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
 		or pickups_array[0] = pickup_frenzy and frenzy = true 
-		or pickups_array[0] = pickup_blink and instance_exists(obj_blink_box) {
+		or pickups_array[0] = pickup_blink and instance_exists(obj_blink_box) 
+		or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute) {
 			draw_sprite_ext(spr_pickup_empty,0,32,88,1,1,0,c_black,0.5);
 		}
 	}else {
@@ -153,7 +154,8 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		if pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 		or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
 		or pickups_array[1] = pickup_frenzy and frenzy = true 
-		or pickups_array[1] = pickup_blink and instance_exists(obj_blink_box) {
+		or pickups_array[1] = pickup_blink and instance_exists(obj_blink_box) 
+		or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute) {
 			draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_black,0.5);
 		}
 	}else {
@@ -229,13 +231,15 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 //button 1
 if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
 and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
-or pickups_array[0] = pickup_frenzy and frenzy = true)  {
+or pickups_array[0] = pickup_frenzy and frenzy = true
+or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)) {
 	scr_Draw_Input_UI(32,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
 }
 //button 2
 if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing 
 and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
-or pickups_array[1] = pickup_frenzy and frenzy = true) {
+or pickups_array[1] = pickup_frenzy and frenzy = true
+or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)) {
 	scr_Draw_Input_UI(68,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
 }
 

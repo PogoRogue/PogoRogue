@@ -30,7 +30,7 @@
   "origin": 0,
   "parent": {
     "name": "Player Sprites",
-    "path": "folders/Sprites/Player/Old/Player Sprites.yy",
+    "path": "folders/Sprites/Player/Player Sprites.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

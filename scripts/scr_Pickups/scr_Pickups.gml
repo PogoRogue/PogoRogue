@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Pickups(){
 	
-	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze];
+	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute];
 
 	
 	pickup_nothing = {
@@ -503,5 +503,34 @@ function scr_Pickups(){
 				instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box);
 			}
 		}
+	};
+	
+	pickup_parachute = {
+		_name: "Parachute",
+		tagline: "Open a parachute, slowing down your momentum as you fall.",
+		gui_sprite: spr_pickup_parachute,
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: None",
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		on_call: function() {
+			if !instance_exists(obj_parachute) {
+				with obj_player {
+					if state != state_parachute {
+						state = state_parachute;
+					}
+				}
+				on_cooldown = true;
+			}
+		}                  
 	};
 }

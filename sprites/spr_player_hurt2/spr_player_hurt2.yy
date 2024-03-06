@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Hurt",
-    "path": "folders/Sprites/Player/Old/Player Sprites/Hurt.yy",
+    "path": "folders/Sprites/Player/Player Sprites/Hurt.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
