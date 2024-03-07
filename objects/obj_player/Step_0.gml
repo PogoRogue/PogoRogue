@@ -191,7 +191,9 @@ if (can_rotate) {
 }
 angle = clamp(angle,-anglemax,anglemax); //cant tilt too far
 
-image_angle = angle;
+if state != state_portal {
+	image_angle = angle;
+}
 #endregion
 
 //recentering

@@ -37,7 +37,7 @@ for (i = 0; i < 32; i++) {
 		draw_sprite(passives_array[i],(sprite_get_number(passives_array[i])-1)*(global.passive_unlocked_array[i] = false) + (global.passive_unlocked_array[i] = true),xx,yy-27);
 
 		if (i < array_length(global.all_buffs) and global.passive_unlocked_array[i]= true) {
-			scr_Draw_Text_Outlined(xx,yy-48,scr_Linebreak(all_buff_names[i],12,99),c_white);
+			scr_Draw_Text_Outlined(xx,yy-49,scr_Linebreak(all_buff_names[i],12,99),c_white);
 		}
 	}
 	

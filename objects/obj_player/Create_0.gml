@@ -28,6 +28,12 @@ can_shoot = true;
 platform_on = true;
 centering = false;
 
+//portal
+portal_object = noone;
+portal_speed = 0;
+portal_angle_speed = 0;
+portal_rot_distance = 0;
+
 //buffs
 damage_buff = 0;
 max_ammo_buff = 0;
@@ -618,6 +624,80 @@ state_parachute = function() {
 	}
 	
 	scr_Player_Collision();
+}
+
+state_portal = function() {
+	can_shoot = false;
+	can_rotate = false;
+	if instance_exists(portal_object) {
+		if portal_angle_speed < 10 {
+			portal_angle_speed += 0.5;
+		}
+			
+		move_towards_point(portal_object.x+48,portal_object.y+48,portal_speed);
+		
+		if portal_speed < 8 {
+			portal_speed += 0.1;
+		}
+		
+		image_angle += portal_angle_speed;
+		x = x + lengthdir_x(portal_rot_distance*image_yscale,image_angle);
+		y = y  + lengthdir_y(portal_rot_distance*image_yscale,image_angle);
+			
+		if portal_rot_distance < 8 {
+			portal_rot_distance += 0.25;	
+		}
+		
+		if portal_angle_speed = 10 {
+			scr_Screen_Shake(1.25,1,false);
+		}
+		
+		if image_yscale > 0 {
+			image_yscale -= 0.015;
+			image_xscale = sign(image_xscale) *image_yscale;
+			image_angle += portal_angle_speed;
+		}else { //go in portal
+			image_yscale = 1;
+			image_xscale = 1;
+			mask_index = sprite_index;
+			obj_player_mask.mask_index = obj_player_mask.sprite_index;
+			state = state_free;
+			if (room == room_proc_gen_test) {
+				room_persistent = false;
+				switch (global.phase) {
+					case 1:
+						room = room_boss_1;
+						break;
+					case 2:
+						room = room_boss_2;
+						break;
+					case 3:
+						global.phase = 1;
+						room = room_menu;
+						break;
+				}	
+			}else {
+				room_persistent = false;
+				global.phase++;
+				room_goto(room_proc_gen_test);
+				if global.phase = 2 {
+					global.tileset = tl_ground2;	
+				}
+			}
+		}
+	}
+}
+
+state_spawn = function() {
+	can_shoot = false;
+	can_rotate = false;
+	speed = 0;
+	if image_xscale < 1 {
+		image_xscale += 0.025;
+		image_yscale += 0.025;
+	}else {
+		state = state_free;	
+	}
 }
 
 state_dead = function() {
