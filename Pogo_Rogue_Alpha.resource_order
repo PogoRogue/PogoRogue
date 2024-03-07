@@ -148,6 +148,7 @@
     {"name":"obj_enemy_jump","order":15,"path":"objects/obj_enemy_jump/obj_enemy_jump.yy",},
     {"name":"obj_item_weapon_slime","order":2,"path":"objects/obj_item_weapon_slime/obj_item_weapon_slime.yy",},
     {"name":"spr_enemy_projectile","order":11,"path":"sprites/spr_enemy_projectile/spr_enemy_projectile.yy",},
+    {"name":"obj_enemy_rewards","order":26,"path":"objects/obj_enemy_rewards/obj_enemy_rewards.yy",},
     {"name":"scr_Controls","order":12,"path":"scripts/scr_Controls/scr_Controls.yy",},
     {"name":"scr_Create_Collision_Walls","order":7,"path":"scripts/scr_Create_Collision_Walls/scr_Create_Collision_Walls.yy",},
     {"name":"spr_electric_floor_off","order":8,"path":"sprites/spr_electric_floor_off/spr_electric_floor_off.yy",},
