@@ -13,6 +13,14 @@ if (pause) { //draw frozen image to screen while paused
 }
 
 if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_settings) || paused_outside {
+	
+	//Grab the chunk message so we can give that info to playtesters on the pause menu
+	if(instance_exists(obj_proc_gen_location_analysis))
+	{
+		var inst = instance_nearest(x,y,obj_proc_gen_location_analysis);
+		sprite_chunk_message = inst.player_location_string;
+	}
+	
 	if !pause { //pause now
 		pause = true;
 		

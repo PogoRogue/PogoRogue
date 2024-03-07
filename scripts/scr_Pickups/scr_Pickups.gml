@@ -3,6 +3,7 @@
 function scr_Pickups(){
 	
 	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze];
+
 	
 	pickup_nothing = {
 		_name: "",                              //item name
@@ -357,7 +358,7 @@ function scr_Pickups(){
 		tagline: "Temporarily freeze movement while mid-air, allowing the player to fire in place. Unfreeze after 3 seconds.",
 		gui_sprite: spr_pickup_freeze,
 		max_cooldown_time: -1,
-		cooldown_time: -1,
+		cooldown_time: -1 ,
 		cooldown_text: "Cooldown: Every 5 bounces",
 		on_cooldown: false,
 		states_to_call_in: [state_free],

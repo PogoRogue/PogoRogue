@@ -191,4 +191,19 @@ function scr_Buffs(){
 		global.steadyhands = true;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
+	
+	buff_impatience = function(){
+		global.impatience = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
+	
+	buff_laststand = function(){
+		global.laststand = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
+	
+	buff_psychicbullets = function(){
+		global.psychicbullets = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
 }

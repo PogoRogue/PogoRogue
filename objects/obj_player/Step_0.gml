@@ -113,6 +113,21 @@ for (i = 0; i <= 1; i++) {
 	}
 }
 
+// if player has obtained Impatience passive item, reduce all cooldown times by 25%
+if(global.impatience == true and impatience_used = false){
+	var cd_multiplier = 0.75;
+	for(var i = 0; i < array_length(all_pickups_array); i++){
+		if all_pickups_array[i].cooldown_time = all_pickups_array[i].max_cooldown_time {
+			all_pickups_array[i].cooldown_time = all_pickups_array[i].max_cooldown_time * cd_multiplier;
+			all_pickups_array[i].max_cooldown_time = all_pickups_array[i].max_cooldown_time * cd_multiplier;
+		}else {
+			all_pickups_array[i].max_cooldown_time = all_pickups_array[i].max_cooldown_time * cd_multiplier;
+		}
+	}
+	impatience_used = true;
+}
+
+
 #endregion
 
 //reset ground pound variables

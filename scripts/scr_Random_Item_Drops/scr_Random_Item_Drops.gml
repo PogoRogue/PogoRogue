@@ -1,3 +1,4 @@
+
 // @description Generates an array of random items to create as pickups for the player
 // @description CALL ONLY IN CREATE EVENT
 function scr_Random_Item_Drops(){
@@ -143,7 +144,8 @@ function scr_Get_Rand_Buff_Object()
 							obj_item_buff_sharptip, obj_item_buff_experimentation, obj_item_buff_aerialassassin,
 							obj_item_buff_supershield, obj_item_buff_revive, obj_item_buff_drilltipbullets,
 							obj_item_buff_dualwielder, obj_item_buff_steadyhands, obj_item_buff_tightspring,
-							obj_item_buff_magicianstouch];
+							obj_item_buff_magicianstouch, obj_item_buff_impatience, obj_item_buff_laststand,
+							obj_item_buff_psychicbullets];
 	random_buff_drop = list_of_possible_buffs[irandom_range(0,array_length(list_of_possible_buffs)-1)];
 	return random_buff_drop;
 }
