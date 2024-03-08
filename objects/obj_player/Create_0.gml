@@ -649,7 +649,7 @@ state_portal = function() {
 		}
 		
 		if portal_angle_speed = 10 {
-			scr_Screen_Shake(1.25,1,false);
+			//scr_Screen_Shake(1.25,1,false);
 		}
 		
 		if image_yscale > 0 {
