@@ -308,7 +308,38 @@ if gun_2 = gun_1 {
 	weapons_equipped = 3;
 }
 
-
+//juggler passive
+if global.juggler = true {
+	if weapons_equipped = 2 {
+		if gun_1.current_bullets = 0 and gun_2.current_bullets = 0 {
+			if current_gun = 0 {
+				gun_2.current_bullets = gun_2.bullets_per_bounce;
+			}else if current_gun = 1 {
+				gun_1.current_bullets = gun_1.bullets_per_bounce;
+			}
+		}
+	}else if weapons_equipped = 3 {
+		if gun_1.current_bullets = 0 and gun_2.current_bullets = 0 {
+			if current_gun = 0 {
+				gun_2.current_bullets = gun_2.bullets_per_bounce;
+			}else if current_gun = 1 {
+				gun_1.current_bullets = gun_1.bullets_per_bounce;
+			}
+		}else if gun_1.current_bullets = 0 and gun_3.current_bullets = 0 {
+			if current_gun = 0 {
+				gun_3.current_bullets = gun_3.bullets_per_bounce;
+			}else if current_gun = 2 {
+				gun_1.current_bullets = gun_1.bullets_per_bounce;
+			}
+		}if gun_2.current_bullets = 0 and gun_3.current_bullets = 0 {
+			if current_gun = 1 {
+				gun_3.current_bullets = gun_3.bullets_per_bounce;
+			}else if current_gun = 2 {
+				gun_2.current_bullets = gun_2.bullets_per_bounce;
+			}
+		}
+	}
+}
 
 // Update iframes
 current_iframes = max(current_iframes - 1, 0);

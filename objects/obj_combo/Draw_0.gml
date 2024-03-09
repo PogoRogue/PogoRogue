@@ -36,22 +36,7 @@ if global.combo > 0 {
 			}
 			draw_set_color(white);
 			draw_text_transformed(x + lengthdir_x(distance+5,angle+90),y + lengthdir_y(distance+5,angle+90),"x" + string(global.combo) + " Combo",1,1,angle);
-			scr_Draw_Coins(distance+28);
-		}else {
-			var distance = 52;
-			if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun { 
-				distance += 18;
-			}
-			scr_Draw_Coins(distance);	
 		}
-	}
-}else {
-	with obj_player {
-		var distance = 52;
-		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun { 
-			distance += 18;
-		}
-		scr_Draw_Coins(distance);
 	}
 }
 

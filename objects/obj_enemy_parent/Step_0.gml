@@ -26,6 +26,7 @@ if(is_dead) {
 					with obj_player_health {
 						heart_gain_num = other.hp;	
 					}
+					audio_play_sound(snd_heartPickup,0,false);
 				}
 			}
 		}

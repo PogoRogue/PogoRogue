@@ -48,10 +48,3 @@ if global.combo > global.best_combo { //best combo across all runs
 if global.combo > global.current_best_combo {
 	global.current_best_combo =  global.combo;	
 }
-
-if coin_alpha > 0 {
-	coin_alpha -= 0.05;
-}else {
-	coin_alpha = 0;
-	current_coins = 0;
-}

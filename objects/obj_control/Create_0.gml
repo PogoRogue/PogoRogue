@@ -54,6 +54,10 @@ global.all_buff_numbers = []; //how many of each buff you have
 global.all_buff_names = []; //names of each buff currently equipped
 global.all_buff_descriptions = []; //descriptions of each buff currently equipped
 global.all_buff_stats = []; //stats (mainly stackability) of each buff currently equipped
+global.all_buff_costs = []; //cost of each buff currently equipped
+
+global.all_pickup_costs = [0,0];
+global.all_weapon_costs = [0,0,0];
 
 global.damage_buff = 0;
 global.luck = 0;
@@ -80,7 +84,8 @@ global.tightspring = false;
 global.impatience = false;
 global.laststand = false;
 global.psychicbullets = false;
-
+global.recycling = false;
+global.juggler = false;
 
 //items unlockable in the shop
 

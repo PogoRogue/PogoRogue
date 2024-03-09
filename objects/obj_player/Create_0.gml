@@ -861,7 +861,7 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_supershield, buff_revive, buff_drilltipbullets, 
 				buff_dualwielder, buff_steadyhands, buff_tightspring,
 				buff_magicianstouch, buff_impatience, buff_laststand,
-				buff_psychicbullets];		
+				buff_psychicbullets, buff_recycling, buff_juggler];		
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

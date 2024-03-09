@@ -56,9 +56,12 @@ current_array = weapons_array;
 
 scr_All_Weapons_Array();
 
+all_weapons_costs = [];
+
 for (i = 0; i < array_length(weapons_array); i++) {
 	with instance_create_depth(x,y,depth,weapons_array[i]) {
 		other.all_weapons[other.i] = weapon;
+		other.all_weapons_costs[other.i] = item_cost;
 		instance_destroy();
 	}
 }
