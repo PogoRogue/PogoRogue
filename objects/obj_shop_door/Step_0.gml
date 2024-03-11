@@ -22,6 +22,11 @@ if (colliding and key_open_door) {
 		global.player_spawn_x_prev = x;
 		global.player_spawn_y_prev = y - 64;
 		global.shop_index = shop_index;
+		if global.shop_num <= global.current_shop_num and shop_used = false {
+			global.shop_num += 1;
+			shop_used = true;
+			instance_destroy(obj_shop);
+		}
 	}else if !instance_exists(obj_coin_spawner) {
 		if global.last_room != room_shop {
 			room = global.last_room;

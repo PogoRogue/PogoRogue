@@ -249,6 +249,14 @@ if (global.show_passives = true) {
 		var xx = 24;
 		var yy = camera_get_view_height(view_camera[0]) - 16;
 		draw_sprite(global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,xx+i*20,yy);
+		
+		//items menu
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_center);
+		draw_set_font(fnt_combo2);
+		draw_set_color(make_color_rgb(242,240,229));
+		draw_text(16,yy-16,"Passive items: ");
+
 	
 		//numbers of each buff
 		draw_set_halign(fa_center);

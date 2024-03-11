@@ -56,6 +56,13 @@ global.all_buff_descriptions = []; //descriptions of each buff currently equippe
 global.all_buff_stats = []; //stats (mainly stackability) of each buff currently equipped
 global.all_buff_costs = []; //cost of each buff currently equipped
 
+//shop
+global.shop_num = 1;
+global.current_shop_num = 1;
+global.refresh_cost = 25;
+global.refreshes_used = 0;
+global.prev_refresh_cost = 25;
+
 global.all_pickup_costs = [0,0];
 global.all_weapon_costs = [0,0,0];
 

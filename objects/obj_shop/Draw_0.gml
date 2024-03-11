@@ -120,24 +120,24 @@ yy2 = 336;
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_font(fnt_uifont2small);
-if global.num_of_coins >= refresh_cost {
-	draw_sprite(spr_item_slot_refresh,refresh_button + (((global.num_of_coins < refresh_cost or refreshes_left <= 0)*refresh_button)),xx,yy2);
+if global.num_of_coins >= global.refresh_cost {
+	draw_sprite(spr_item_slot_refresh,refresh_button + (((global.num_of_coins < global.refresh_cost or refreshes_left <= 0)*refresh_button)),xx,yy2);
 }else {
-	draw_sprite(spr_item_slot_refresh,(refresh_button + (((global.num_of_coins < refresh_cost or refreshes_left <= 0)*refresh_button)))+3,xx,yy2);
+	draw_sprite(spr_item_slot_refresh,(refresh_button + (((global.num_of_coins < global.refresh_cost or refreshes_left <= 0)*refresh_button)))+3,xx,yy2);
 }
 
 
 if refreshes_left > 0 {
 	draw_set_font(fnt_uifontsmall);
 	
-	if global.num_of_coins < refresh_cost {
-		scr_Draw_Text_Outlined(xx-6,yy2+9,refresh_cost,make_color_rgb(180,82,82));
+	if global.num_of_coins < global.refresh_cost {
+		scr_Draw_Text_Outlined(xx-6,yy2+9,global.refresh_cost,make_color_rgb(180,82,82));
 		draw_set_font(fnt_uifont2small);
 		draw_text_color(xx,yy2,"REFRESH",make_color_rgb(180,82,82),make_color_rgb(180,82,82),make_color_rgb(180,82,82),make_color_rgb(180,82,82),1);
 		draw_set_color(c_white);
 	} else {
 		draw_set_font(fnt_uifontsmall);
-		scr_Draw_Text_Outlined(xx-6,yy2+9,refresh_cost,c_white);
+		scr_Draw_Text_Outlined(xx-6,yy2+9,global.refresh_cost,c_white);
 		draw_set_font(fnt_uifont2small);
 		draw_text_color(xx,yy2,"REFRESH",make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
 	}
@@ -145,10 +145,11 @@ if refreshes_left > 0 {
 	draw_sprite(spr_coin,0,xx+10,yy2+9);
 }
 draw_set_font(fnt_uifont2small);
-if refreshes_left > 1 or refreshes_left <= 0 {
-	scr_Draw_Text_Outlined(xx,yy2+22,string(refreshes_left) + " REFRESHES LEFT",c_white);
+
+if global.refreshes_used != 1 {
+	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " REFRESHES USED",c_white);
 }else {
-	scr_Draw_Text_Outlined(xx,yy2+22,string(refreshes_left) + " REFRESH LEFT",c_white);
+	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " REFRESH USED",c_white);
 }
 
 }

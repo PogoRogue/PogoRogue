@@ -37,3 +37,6 @@ if (screenshake_button) {
 if room != room_shop {
 	global.last_room = room;	
 }
+
+show_debug_message("shop num: " + string(global.shop_num));
+show_debug_message("current shop num: " + string(global.current_shop_num));
