@@ -1,4 +1,4 @@
-/// @description Marks a sprite as Talon's
+/// @description Marks a sprite as Zehao's
 
 
 event_inherited();
