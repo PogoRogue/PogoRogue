@@ -11,7 +11,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 	return -1;
 	}
-	else if(Red == 95 && Green == 40 && Blue == 13)
+	else if(Red == 242 && Green == 101 && Blue == 34)
 	{
 		return obj_tag_Isaac;
 	}
