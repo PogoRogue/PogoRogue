@@ -3,7 +3,7 @@
 // Our prebuilt rooms and their dimensions
 // Room format: [width, height, room_id]
 prebuilt_rooms = ds_list_create();
-ds_list_add(prebuilt_rooms, [3, 3, "T"]); //First room in list is starting room T for tutorial
+ds_list_add(prebuilt_rooms, [1, 2, "T"]); //First room in list is starting room T for tutorial
 ds_list_add(prebuilt_rooms, [1, 1, "Sh"]); //Second room in list is shop room Sh for shop
 ds_list_add(prebuilt_rooms, [1, 1, "B"]); //Third room in list is boss entry room B for boss
 
@@ -14,7 +14,7 @@ ds_list_add(prebuilt_rooms, [3, 3, "c3"]); //3x3 Combat room, c stands for comba
 ds_list_add(prebuilt_rooms, [2, 2, "c2"]); //2x2 Combat room
 
 
-rooms_to_generate = 5; //Need: Start, Combat, Shop, Combat, Boss (room order)
+rooms_to_generate = 6; //Need: Start, Combat, Combat, Shop, Combat, Boss (room order)
 total_room_regions = 2*rooms_to_generate-1; //Regions include hallways, and there's one less number of hallways 
 //compared to rooms
 
@@ -64,9 +64,6 @@ if(conduct_freq_analysis)
 	max_gen_width = other.max_gen_width;
 	}
 }
-
-//We already generated a start room, so instead generate a random combat room the next time we proc gen
-generate_start_room = false;
 
 
 global.debug_wall_count = 0;

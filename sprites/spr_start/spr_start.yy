@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"testRooms",
-    "path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/testRooms.yy",
+    "name":"OtherRooms",
+    "path":"folders/Sprites/ProcGenLevelData/ProcGenOperatingSprites/OtherRooms.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
