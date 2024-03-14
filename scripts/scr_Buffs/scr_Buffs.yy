@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_Buffs",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Items",
-    "path": "folders/Scripts/Items.yy",
+  "$GMScript":"",
+  "%Name":"scr_Buffs",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Buffs",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
