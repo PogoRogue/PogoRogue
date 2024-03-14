@@ -42,6 +42,18 @@ function scr_Create_Gate_Objects_From_Grid(layout_grid){
 	
 	// Delete to prevent memory leaks
     ds_list_destroy(gate_positions);
+	
+	var obj = tag_get_assets("1"); // Get all assets with tag "2"
+	show_debug_message("testing");
+	// Iterate through all objects with the tag "2"
+	for (var i = 0; i < array_length(obj); i++) {
+	    var inst = obj[i]; // Get the instance at index i
+    
+	    // Check if the instance is an object
+	    //if (inst.object_index != noone) {
+	    show_debug_message("Object ID: " + string(inst.id) + ", Object Name: " + string(inst.object_index));
+	    //}
+	}
 }
 	
 	

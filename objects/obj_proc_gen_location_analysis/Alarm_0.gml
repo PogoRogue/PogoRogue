@@ -87,3 +87,20 @@ with(obj_generated_object_parent)
 	}
 }
 
+with(obj_enemy_parent)
+{
+    var tag_grid_location = scr_Get_Grid_Coord_From_Room_Coord(x, y);
+    var tag_object = ds_grid_get(other.signature_grid, tag_grid_location[0], tag_grid_location[1]);
+    if(instance_exists(tag_object))
+    {
+        // Get the region tag from the tag object
+        var region_tag = tag_object.proc_gen_region;
+        
+        // Assign the region tag to the instance
+        asset_add_tags(id, string(region_tag), asset_object);
+		show_debug_message("Assigned " + string(region_tag) + " to object ID: " + string(id));
+    }
+}
+
+
+
