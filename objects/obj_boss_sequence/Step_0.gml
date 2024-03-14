@@ -42,6 +42,10 @@ switch(current_state) {
 				is_active = false;
 			}
 			
+			with(obj_button) {
+				is_active = false;
+			}
+			
 			with(obj_enemy_turret_unkillable) {
 				is_active = false;
 				alarm_set(2, 0);
@@ -65,6 +69,10 @@ switch(current_state) {
 			alarm_set(4, (12 - (2 * sequence_length)) * room_speed);
 			
 			with(obj_spikeswing) {
+				is_active = true;
+			}
+			
+			with(obj_button) {
 				is_active = true;
 			}
 			
@@ -120,6 +128,10 @@ switch(current_state) {
 				is_active = false;
 			}
 			
+			with(obj_button) {
+				is_active = false;
+			}
+			
 			with(obj_enemy_turret_unkillable) {
 				is_active = false;
 				alarm_set(2, 0);
@@ -143,6 +155,10 @@ switch(current_state) {
 			}
 			
 			with(obj_electric_current) {
+				is_active = false;
+			}
+			
+			with(obj_button) {
 				is_active = false;
 			}
 			

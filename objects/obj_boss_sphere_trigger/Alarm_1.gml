@@ -12,7 +12,7 @@ instance_create_layer(336, 560, "ground", obj_ground, {image_xscale: 7, image_ys
 with(obj_player) {
 	state = state_free;
 }
+
+room_height = 600;
 		
 instance_destroy(self);
-
-

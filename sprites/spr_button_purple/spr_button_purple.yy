@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cee85f44-9f85-4601-9efa-6adcf1ebffea",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"49350f91-accd-443c-8686-975de6673a23",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"06ed6cec-6fa3-4f45-a74f-e3fd086629ac",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cee85f44-9f85-4601-9efa-6adcf1ebffea","path":"sprites/spr_button_purple/spr_button_purple.yy",},},},"Disabled":false,"id":"34da54cb-fc5d-42bd-aa4c-2586dde7c9f1","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"49350f91-accd-443c-8686-975de6673a23","path":"sprites/spr_button_purple/spr_button_purple.yy",},},},"Disabled":false,"id":"d3a4baa8-b540-4346-930a-938c2819d658","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"06ed6cec-6fa3-4f45-a74f-e3fd086629ac","path":"sprites/spr_button_purple/spr_button_purple.yy",},},},"Disabled":false,"id":"44b34da8-d865-4129-a753-75d593f1d6f3","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
