@@ -8,5 +8,13 @@ if instance_exists(parent_obj) {
 			}
 		}
 	}
-	draw_self();
+	if !place_meeting(x,y,obj_ground) {
+		draw_self();	
+	}
+}
+
+with parent_obj {
+	if image_index = 0 or used_as_closest_object = false {
+		draw_sprite_ext(sprite_index,2,x,y,1,1,obj_player.angle-90,c_white,image_alpha);
+	}
 }

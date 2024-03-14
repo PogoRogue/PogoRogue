@@ -160,6 +160,7 @@ if (gun_name = "Javelins") {
 }
 attach_to_player = 0;
 if (gun_name = "Water Gun") {
+	destroyable = false;
 	x = obj_player.x + lengthdir_x(6,obj_player.angle-90);
 	y = obj_player.y + lengthdir_y(6,obj_player.angle-90);
 	image_index = 0;
@@ -174,12 +175,17 @@ if (gun_name = "Water Gun") {
 	closest_water_object = noone;
 	angle2 = 0;
 	
+	used_as_closest_object = false;
+	first_object = false;
 	with obj_projectile {
 		if (gun_name = "Water Gun" and water_index = other.water_index) {
 			if bullet_num = other.bullet_num + 1 {
 				other.closest_water_object = id;
 				angle2 = point_direction(x,y,other.x,other.y);
+				other.angle2 = point_direction(x,y,other.x,other.y);
 				//other.image_angle = angle2;
+				used_as_closest_object = true;
+				other.first_object = true;
 			}
 		}
 	}
@@ -196,6 +202,12 @@ if (gun_name = "Water Gun") {
 				other.closest_water_object = id;
 			}
 		}
+	}
+	
+	if place_meeting(x,y,obj_ground) {
+		draw_fill = true;	
+	}else {
+		draw_fill = false;	
 	}
 }
 

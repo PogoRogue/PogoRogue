@@ -400,7 +400,7 @@ function scr_Guns(){
 		tagline: "Shoot a stream of water, which is slowly refilled when not being used. Don't ask where the water comes from.",
 		sprite: spr_gun_water,   
 		ammo: [water_bullet],
-		inaccuracy: 2,       
+		inaccuracy: 0,       
 		kick: 2,              
 		sound: snd_bubble,
 		spread_number: 1,    
