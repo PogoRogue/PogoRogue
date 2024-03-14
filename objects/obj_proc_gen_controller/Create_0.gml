@@ -18,6 +18,17 @@ rooms_to_generate = 6; //Need: Start, Combat, Combat, Shop, Combat, Boss (room o
 total_room_regions = 2*rooms_to_generate-1; //Regions include hallways, and there's one less number of hallways 
 //compared to rooms
 
+generate_proc_gen = true;
+
+if (global.phase == 1) {
+	generate_start_room = true;
+	rooms_to_generate = 6; //Need: Start, Combat, Combat, Shop, Combat, Boss (room order)
+}
+else {
+	generate_start_room = false;
+	rooms_to_generate = 5; //Need: Combat, Combat, Shop, Combat, Boss (room order)
+}
+
 //Max and min heights of hallways
 min_distance_between_rooms = 2; //Go no lower than 2 for this number
 max_distance_between_rooms = 7; //Notably, this max is only concerned with height. 
@@ -25,14 +36,7 @@ max_gen_width = 12; //This is the max width. Because of some details in the proc
 //you are much less likely to hit this max than the height max
 //Example: since max distance is 8 up 14 sideways, maximum hall length is actually 10 + 14 = 22
 
-generate_proc_gen = true;
 
-if (global.phase == 1) {
-	generate_start_room = true;
-}
-else {
-	generate_start_room = false;
-}
 // generate_start_room = true; //Since structure will be the exact same, just with or without a starter room,
 //We use this bool to remember that we have (or haven't) already seen a start room
 
