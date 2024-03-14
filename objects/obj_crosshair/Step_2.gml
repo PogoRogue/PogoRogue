@@ -1,7 +1,7 @@
 /// @description shoot enemy
 
 if image_index = 6 and fade_out = false {
-	if room != room_boss_1 and room != room_boss_2 {
+	if room != room_boss_1 and room != room_boss_2 /*and room != room_boss_3*/{
 		with enemy_to_target {
 			hp = 0;
 			with obj_player {

@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_pausemenu",
-    "path":"sprites/spr_pausemenu/spr_pausemenu.yy",
+    "name":"spr_pausemenu_polished",
+    "path":"sprites/spr_pausemenu_polished/spr_pausemenu_polished.yy",
   },
   "spriteMaskId":null,
   "visible":true,

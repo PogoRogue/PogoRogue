@@ -31,7 +31,7 @@ if key_up and selected = false {
 if key_select {
 	audio_play_sound(snd_selectOption,0,false);
 	if select = 1 - options_decrease {
-		if sprite_index = spr_menu_tutorial {
+		if sprite_index = spr_menu_tutorial2 {
 			room = room_tutorial;
 		}else {
 			room = room_gameplay_video;

@@ -6,6 +6,7 @@ pause = false;
 pause_surf = -1;
 pause_surf_buffer = -1;
 paused_outside = false; //when called from another object
+controller_disconnected = false;
 item_swap = false;
 
 //game resolution

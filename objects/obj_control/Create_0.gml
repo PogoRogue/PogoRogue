@@ -5,6 +5,7 @@ endgame_button = 0;
 //alarm[0] = 300; //set fullscreen
 window_set_cursor(spr_nothing);
 cursor_sprite = spr_nothing;
+depth = 1000;
 global.draw_collision_walls = false;
 global.allow_screenshake = true;
 global.last_room = room;
@@ -12,11 +13,13 @@ global.player_spawn_x = 0;
 global.player_spawn_y = 0;
 global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
+
 if room = room_gameplay_video {
 	global.num_of_coins = 2000;
 }else {
 	global.num_of_coins = 0;	
 }
+
 global.mute = false;
 global.shop_index = 0;
 global.num_of_ground_objects = 0;
@@ -54,6 +57,19 @@ global.all_buff_numbers = []; //how many of each buff you have
 global.all_buff_names = []; //names of each buff currently equipped
 global.all_buff_descriptions = []; //descriptions of each buff currently equipped
 global.all_buff_stats = []; //stats (mainly stackability) of each buff currently equipped
+global.all_buff_costs = []; //cost of each buff currently equipped
+
+global.water_index = 0;
+
+//shop
+global.shop_num = 1;
+global.current_shop_num = 1;
+global.refresh_cost = 25;
+global.refreshes_used = 0;
+global.prev_refresh_cost = 25;
+
+global.all_pickup_costs = [0,0];
+global.all_weapon_costs = [0,0,0];
 
 global.damage_buff = 0;
 global.luck = 0;
@@ -80,7 +96,8 @@ global.tightspring = false;
 global.impatience = false;
 global.laststand = false;
 global.psychicbullets = false;
-
+global.recycling = false;
+global.juggler = false;
 
 //items unlockable in the shop
 

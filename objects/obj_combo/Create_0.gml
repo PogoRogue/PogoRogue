@@ -9,6 +9,6 @@ combometer_scale = 1;
 increase_combometer_scale = false;
 prev_combo = 0;
 
-//show coins
-coin_alpha = 0;
-current_coins = 0;
+if !instance_exists(obj_coincounter) {
+	instance_create_depth(x,y,depth,obj_coincounter);
+}

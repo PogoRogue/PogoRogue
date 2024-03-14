@@ -54,6 +54,6 @@ for (i = 0; i < array_length(all_actives); i++) {
 			var y_offset = 0;
 		}
 			
-		scr_Draw_Pickup_Description(xx,yy+y_offset,all_actives[i],0,true);
+		scr_Draw_Pickup_Description(xx,yy+y_offset,all_actives[i],0,true,all_pickups_costs[i]);
 	}
 }
