@@ -29,3 +29,35 @@ if (gun_name = "Star Sucker") {
 		//gamepad_set_vibration(0, 1*controller_vibration, 1*controller_vibration);
 	}
 }
+
+if (gun_name = "Yo-yo") {
+	with obj_player {
+		if gun_1._name = "Yo-yo" {
+			if gun_1.current_bullets < gun_1.bullets_per_bounce+obj_player.max_ammo_buff {
+				gun_1.current_bullets += 1;
+			}
+			//add momentum
+			speed = 0;
+			motion_add(angle - 90, vsp_basicjump * gun_1.momentum_added);
+		}else if gun_2._name = "Yo-yo" {
+			if gun_2.current_bullets < gun_2.bullets_per_bounce+obj_player.max_ammo_buff {
+				gun_2.current_bullets += 1;
+			}
+			//add momentum
+			speed = 0;
+			motion_add(angle - 90, vsp_basicjump * gun_2.momentum_added);
+		}else if gun_3._name = "Yo-yo" {
+			if gun_3.current_bullets < gun_3.bullets_per_bounce+obj_player.max_ammo_buff {
+				gun_3.current_bullets += 1;
+			}
+			//add momentum
+			speed = 0;
+			motion_add(angle - 90, vsp_basicjump * gun_3.momentum_added);
+		}
+	}
+	//screen shake
+	scr_Screen_Shake(5, 8, true);
+	if (global.allow_screenshake) {
+		var controller_vibration = global.controller_vibration/100;
+	}
+}

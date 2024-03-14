@@ -13,3 +13,5 @@ image_xscale = 1;
 angle = 0;
 	
 state = state_free;
+
+alarm[2] = 10;

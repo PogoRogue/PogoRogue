@@ -15,6 +15,10 @@ if instance_exists(obj_camera) {
 		if (gun_name = "Bouncy Ball Blaster") and num_of_bounces < max_num_of_bounces {
 			damage = init_damage * (2*(max_num_of_bounces-num_of_bounces));
 			image_index = max_num_of_bounces-num_of_bounces;
+		}else if (gun_name = "Javelins") {
+			if created = true {
+				damage = init_damage + ((temp_charge/temp_charge_max)*12);	
+			}
 		}
 	}
 	
@@ -203,6 +207,93 @@ if (gun_name = "Boomerangs") {
 	}else {
 		damage = init_damage;	
 	}
+	
+	if obj_player.state = obj_player.state_blink {
+		spd = 0;
+		speed = 0;
+	}
+}
+
+if (gun_name = "Yo-yo") {
+	hspd = 0;
+	vspd = 0;
+	image_angle += 20;
+	if dist < max_dist or reached_end = true {
+		if reached_end = false {
+			speed = 0;
+			dist += 8;
+			x = obj_player.x + lengthdir_x(dist,ang-90);
+			y = obj_player.y + lengthdir_y(dist,ang-90);
+		}else if reached_end = true {
+			if dist > 16 {
+				dist -= retract_spd;
+				x = obj_player.x + lengthdir_x(dist,ang-90);
+				y = obj_player.y + lengthdir_y(dist,ang-90);
+				if retract_spd < 16 {
+					retract_spd  += 4;
+				}
+			}else {
+				//collision with player
+				instance_destroy();
+				audio_play_sound(snd_reload,0,false);
+			}
+		}
+	}else {
+		if retracted =  false {
+			dist = max_dist;
+			x = obj_player.x + lengthdir_x(dist,ang-90);
+			y = obj_player.y + lengthdir_y(dist,ang-90);
+		}else {
+			reached_end = true;
+		}
+	}
+	
+	//retract
+	with obj_player {
+		if !(key_fire_projectile) or gun != yoyo_gun {
+			other.retracted = true;
+		}
+		
+		//delete if not free
+		if (state != state_free and state != state_freeze) {
+			other.retracted = true;
+		}
+	}
+	
+	if abs(obj_player.angle - ang) > 16 {
+		var ang_max_spd = 4;
+	}else {
+		var ang_max_spd = (abs(((obj_player.angle - ang)/16) + 0.1))*4;
+	}
+	
+	//adjust with angle
+	if ang < obj_player.angle {
+		ang += ang_increase_speed;
+		ang += ang_decrease_speed;
+		if ang_increase_speed < ang_max_spd {
+			ang_increase_speed += 0.15;
+		}else {
+			ang_increase_speed = ang_max_spd;
+		}
+		if ang_decrease_speed < 0 {
+			ang_decrease_speed += 0.15;
+		}else {
+			ang_decrease_speed = 0;
+		}
+	}else if ang > obj_player.angle {
+		ang += ang_increase_speed;
+		ang += ang_decrease_speed;
+		if ang_decrease_speed > -ang_max_spd {
+			ang_decrease_speed -= 0.15;
+		}else {
+			ang_decrease_speed = -ang_max_spd;
+		}
+		if ang_increase_speed > 0 {
+			ang_increase_speed -= 0.15;
+		}else {
+			ang_increase_speed = 0;
+		}
+	}
 }
 
 if (gun_name = "Star Sucker") {
@@ -227,11 +318,21 @@ if (gun_name = "Star Sucker") {
 	if !scr_Animation_Complete() {
 		image_index += 0.5;	
 	}
+	
+	if obj_player.state = obj_player.state_blink {
+		speed = 0;
+	}
 }
 
 if (gun_name = "Slime Blaster") {
 	image_angle -= hspd*2;
 	if place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and num_of_bounces <= 0 and destroy_on_impact = true {
 		alarm[0] = 1;	
+	}
+}
+
+if (gun_name = "Javelins") {
+	if created = false {
+		instance_destroy();	
 	}
 }

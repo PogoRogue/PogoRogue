@@ -19,6 +19,7 @@ if (instance_exists(obj_player)) {
 			room = room_boss_1;
 		} else if (room = room_proc_gen_test) {
 			room = room_boss_2;
+			global.phase = 2;
 		}
 	}
 }

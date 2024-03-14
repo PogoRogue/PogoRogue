@@ -31,6 +31,5 @@ if (colliding and key_open_door) {
 		}else {
 			game_restart();	
 		}
-		
 	}
 }

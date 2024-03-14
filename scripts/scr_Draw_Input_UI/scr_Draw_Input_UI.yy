@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_Draw_Input_UI",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Draw_Input_UI",
+  "parent":{
+    "name":"Controls",
+    "path":"folders/Scripts/Controls.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

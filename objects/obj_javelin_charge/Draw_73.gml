@@ -1,0 +1,4 @@
+with obj_player {
+	draw_sprite_general(spr_chargebar_javelin,0,0,0,sprite_get_width(spr_chargebar_javelin),sprite_get_height(spr_chargebar_javelin),x+(lengthdir_x(16,image_angle)*-image_xscale),y+(lengthdir_y(16,image_angle)*-image_xscale),-image_xscale,-1,image_angle,c_white,c_white,c_white,c_white,1);
+	draw_sprite_general(spr_chargebar_javelin_color,0,0,0,sprite_get_width(spr_chargebar_javelin_color),sprite_get_height(spr_chargebar_javelin_color)*(other.charge/other.charge_max),x+(lengthdir_x(16,image_angle)*-image_xscale),y+(lengthdir_y(16,image_angle)*-image_xscale),-image_xscale,-1,image_angle,c_white,c_white,c_white,c_white,1);
+}

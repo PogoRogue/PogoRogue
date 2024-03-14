@@ -18,4 +18,6 @@ function scr_Draw_Text_Outlined(xx,yy,str,color){
 		draw_set_color(make_color_rgb(242,240,229));
 	}
 	draw_text(xx, yy, argument[2]);
+	
+	draw_set_color(c_white);
 }
