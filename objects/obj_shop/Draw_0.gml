@@ -5,9 +5,9 @@ var yy = 0;
 
 for(i = 0; i < num_of_slots; i++) {
 	if i % 2 = 0 {
-		xx = 272;
+		xx = 272+32;
 	}else {
-		xx = 336;
+		xx = 336+32;
 	}
 	yy = 104 + 64 * floor(i / 2);
 	
@@ -65,7 +65,7 @@ for(i = 0; i < num_of_slots; i++) {
 	//draw item descriptions + buy button
 	if instance_exists(slot_items_array[last_selected-1]) and !refresh_button {
 		if last_selected <= 4 { //passives
-			description_x = 440;
+			description_x = 440+32;
 			description_y = 132;
 			scr_Draw_Passive_Description(description_x,description_y,slot_items_array[last_selected-1].sprite_index,slot_items_array[last_selected-1].image_index+1,slot_items_array[last_selected-1].item_name,slot_items_array[last_selected-1].item_tagline,string(slot_items_array[last_selected-1].item_stats),true,slot_items_array[last_selected-1].item_cost);
 			if too_expensive or sold_out {
@@ -79,7 +79,7 @@ for(i = 0; i < num_of_slots; i++) {
 				draw_sprite(spr_controller_button_bottom,0,description_x,description_y+81);
 			}
 		}else if last_selected <= 6 { //weapons
-			description_x = 458;
+			description_x = 458+32;
 			description_y = 210;
 			scr_Draw_Weapon_Description(description_x,description_y,slot_items_array[last_selected-1].weapon,0,true,slot_items_array[last_selected-1].item_cost);
 			
@@ -94,7 +94,7 @@ for(i = 0; i < num_of_slots; i++) {
 				draw_sprite(spr_controller_button_bottom,0,description_x,description_y+124);
 			}
 		}else { //actives
-			description_x = 458;
+			description_x = 458+32;
 			description_y = 210;
 			scr_Draw_Pickup_Description(description_x,description_y,slot_items_array[last_selected-1].pickup,0,true,slot_items_array[last_selected-1].item_cost);
 			
@@ -112,8 +112,8 @@ for(i = 0; i < num_of_slots; i++) {
 	}
 }
 
-xx = 304;
-xx2 = 376;
+xx = 304+32;
+xx2 = 376+32;
 yy = 104;
 yy2 = 336;
 

@@ -189,6 +189,13 @@ if (gun_name = "Water Gun") {
 			}
 		}
 	}
+	
+	if place_meeting(x,y,obj_ground) {
+		draw_fill = true;
+		depth += 100;
+	}else {
+		draw_fill = false;	
+	}
 
 	
 	//outline
@@ -202,12 +209,6 @@ if (gun_name = "Water Gun") {
 				other.closest_water_object = id;
 			}
 		}
-	}
-	
-	if place_meeting(x,y,obj_ground) {
-		draw_fill = true;	
-	}else {
-		draw_fill = false;	
 	}
 }
 

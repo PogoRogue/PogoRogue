@@ -70,4 +70,9 @@ if (gun_name = "Water Gun") {
 			direction += irandom_range(-45,45);
 		}
 	}
+	with obj_water_outline {
+		if parent_obj = other or parent_obj = other.closest_water_object {
+			instance_destroy();	
+		}
+	}
 }

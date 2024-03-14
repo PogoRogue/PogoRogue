@@ -102,9 +102,9 @@ if created_items = false {
 	for (i = 0; i < array_length(slot_items_array); i++) {
 		index = i;
 		if i % 2 = 0 {
-			xx = 272;
+			xx = 272+32;
 		}else {
-			xx = 336;
+			xx = 336+32;
 		}
 		yy = 104 + 64 * floor(i / 2);
 		with instance_create_depth(xx,yy,depth-1,slot_items_array[i]) {
