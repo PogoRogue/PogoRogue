@@ -38,9 +38,13 @@ if key_select and fade_away = false and centered = true {
 		instance_activate_object(obj_player);
 		with obj_player {
 			if other.pickups_mode = true {
+				global.all_pickup_costs[0] = other.new_item_cost;
+				
 				pickup_1 = other.new_item;
 				pickups_array = [pickup_1, pickup_2];
 			}else if other.weapons_mode = true  {
+				global.all_weapon_costs[0] = other.new_item_cost;
+				
 				if weapons_equipped = 2 {
 					gun_1 = other.new_item;
 					gun_3 = gun_1;
@@ -56,9 +60,19 @@ if key_select and fade_away = false and centered = true {
 		
 		//experimentation buff
 		if global.experimentation = true {
-			global.num_of_coins += experimenting_coins;
-			global.current_total_coins += experimenting_coins;
-			alarm[2] = 1;
+			with obj_player {
+				if hp < max_hp {
+					hp += 8;	
+					audio_play_sound(snd_heartPickup,0,false);
+					instance_activate_object(obj_player_health);
+					with obj_player_health {
+						heart_gain_num = other.hp;	
+					}
+				}
+			}
+			//global.num_of_coins += experimenting_coins;
+			//global.current_total_coins += experimenting_coins;
+			//alarm[2] = 1;
 		}
 		
 		if weapons_mode = true {
@@ -101,9 +115,12 @@ if key_select and fade_away = false and centered = true {
 		instance_activate_object(obj_player);
 		with obj_player {
 			if other.pickups_mode = true {
+				global.all_pickup_costs[1] = other.new_item_cost;
+				
 				pickup_2 = other.new_item;
 				pickups_array = [pickup_1, pickup_2];
 			}else if other.weapons_mode = true  {
+				global.all_weapon_costs[1] = other.new_item_cost;
 				gun_2 = other.new_item;
 				gun_array = [gun_1, gun_2, gun_3];
 				gun = gun_array[current_gun];
@@ -112,9 +129,19 @@ if key_select and fade_away = false and centered = true {
 		
 		//experimentation buff
 		if global.experimentation = true {
-			global.num_of_coins += experimenting_coins;
-			global.current_total_coins += experimenting_coins;
-			alarm[2] = 1;
+			with obj_player {
+				if hp < max_hp {
+					hp += 8;	
+					audio_play_sound(snd_heartPickup,0,false);
+					instance_activate_object(obj_player_health);
+					with obj_player_health {
+						heart_gain_num = other.hp;	
+					}
+				}
+			}
+			//global.num_of_coins += experimenting_coins;
+			//global.current_total_coins += experimenting_coins;
+			//alarm[2] = 1;
 		}
 		
 		if weapons_mode = true {
@@ -156,6 +183,8 @@ if key_select and fade_away = false and centered = true {
 		//change gun
 		instance_activate_object(obj_player);
 		with obj_player {
+			global.all_weapon_costs[2] = other.new_item_cost;
+				
 			gun_3 = other.new_item;
 			gun_array = [gun_1, gun_2, gun_3];
 			gun = gun_array[current_gun];
@@ -163,9 +192,19 @@ if key_select and fade_away = false and centered = true {
 		
 		//experimentation buff
 		if global.experimentation = true {
-			global.num_of_coins += experimenting_coins;
-			global.current_total_coins += experimenting_coins;
-			alarm[2] = 1;
+			with obj_player {
+				if hp < max_hp {
+					hp += 8;	
+					audio_play_sound(snd_heartPickup,0,false);
+					instance_activate_object(obj_player_health);
+					with obj_player_health {
+						heart_gain_num = other.hp;	
+					}
+				}
+			}
+			//global.num_of_coins += experimenting_coins;
+			//global.current_total_coins += experimenting_coins;
+			//alarm[2] = 1;
 		}
 		
 		if weapons_mode = true {
@@ -184,6 +223,14 @@ if key_select and fade_away = false and centered = true {
 	//cancel
 	if select = num_of_slots {
 		audio_play_sound(snd_unavailable,0,false);
+		
+		//recycling buff
+		if global.recycling = true and room != room_shop {
+			global.num_of_coins += round(new_item_cost/4);
+			global.current_total_coins += round(new_item_cost/4);
+			alarm[3] = 1;
+		}
+		
 		with obj_pause {
 			item_swap = false;
 			paused_outside = true;	

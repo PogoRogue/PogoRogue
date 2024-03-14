@@ -394,4 +394,26 @@ function scr_Guns(){
 		max_added_bullets: 4,
 		max_speed: -vsp_basicjump
 	};
+	
+	water_gun = {
+		_name: "Water Gun",  
+		tagline: "Shoot a stream of water, which is slowly refilled when not being used. Don't ask where the water comes from.",
+		sprite: spr_gun_water,   
+		ammo: [water_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_bubble,
+		spread_number: 1,    
+		spread_angle: 0,    
+		full_auto: true,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 0.115, 
+		reset_momentum: false, 
+		bullets_per_bounce: 30 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 30,
+		current_bullets: 30 + obj_player.max_ammo_buff,  
+		max_added_bullets: 0,
+		max_speed: -vsp_basicjump
+	};	
 }

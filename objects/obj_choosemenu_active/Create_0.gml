@@ -53,9 +53,12 @@ current_array = actives_array;
 
 scr_All_Actives_Array();
 
+all_pickups_costs = [];
+
 for (i = 0; i < array_length(actives_array); i++) {
 	with instance_create_depth(x,y,depth,actives_array[i]) {
 		other.all_actives[other.i] = pickup;
+		other.all_pickups_costs[other.i] = item_cost;
 		instance_destroy();
 	}
 }
