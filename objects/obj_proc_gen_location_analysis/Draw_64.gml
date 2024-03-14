@@ -17,6 +17,10 @@ else
 if(display_minimap && instance_exists(current_tag_object))
 {
 	var frame = current_tag_object.proc_gen_region;
+	if(global.phase == 1 && frame >= 1)
+	{
+		frame = frame - 1; //Adjust frame for phase 1 level structure difference
+	}
 	draw_sprite(spr_minimap, frame, display_get_gui_width() - 48, display_get_gui_height()/2);
 	previous_region = frame;
 }
