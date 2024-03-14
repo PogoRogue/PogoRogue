@@ -34,6 +34,9 @@ if (destroy_on_impact and num_of_bounces <= 0) {
 		if gun_name = "Paintball Gun" {
 			alarm[0] = 1;
 			//splatter code here
+		}else if gun_name = "Water Gun" {
+			alarm[0] = 1;
+			sprite_index = spr_projectile_water_droplet;
 		}else {
 			alarm[0] = 1;	
 		}
@@ -335,4 +338,11 @@ if (gun_name = "Javelins") {
 	if created = false {
 		instance_destroy();	
 	}
+}
+
+if (gun_name = "Water Gun") {
+	if (place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) {
+		alarm[0] = 1;
+	}
+	image_xscale = 1;
 }

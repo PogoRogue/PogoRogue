@@ -23,6 +23,7 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 	
 	if !pause { //pause now
 		pause = true;
+		global.water_index += 1;
 		
 		//deactivate everything other than this surface
 		instance_deactivate_all(true);

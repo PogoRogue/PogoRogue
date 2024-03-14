@@ -158,6 +158,46 @@ if (gun_name = "Javelins") {
 		instance_deactivate_object(javelin_object);	
 	}
 }
+attach_to_player = 0;
+if (gun_name = "Water Gun") {
+	x = obj_player.x + lengthdir_x(6,obj_player.angle-90);
+	y = obj_player.y + lengthdir_y(6,obj_player.angle-90);
+	image_index = 0;
+	depth = obj_player.depth + 1;
+	attach_to_player = 2;
+	max_num_of_bounces = 0;
+	num_of_bounces = 0;
+	bullet_num = round(obj_player.water_gun.current_bullets);
+	image_xscale = 1;
+	
+	water_index = global.water_index;	
+	closest_water_object = noone;
+	angle2 = 0;
+	
+	with obj_projectile {
+		if (gun_name = "Water Gun" and water_index = other.water_index) {
+			if bullet_num = other.bullet_num + 1 {
+				other.closest_water_object = id;
+				angle2 = point_direction(x,y,other.x,other.y);
+				//other.image_angle = angle2;
+			}
+		}
+	}
+
+	
+	//outline
+	with instance_create_depth(x,y,depth+10,obj_water_outline) {
+		image_angle = other.image_angle;
+		parent_obj = other;
+		water_index = global.water_index;
+		closest_water_object = noone;
+		with scr_Instance_Nearest_Notme(x,y,obj_water_outline) {
+			if (water_index = other.water_index) {
+				other.closest_water_object = id;
+			}
+		}
+	}
+}
 
 //destroy projectile after 30 seconds if still exists
 alarm[2] = 1800;

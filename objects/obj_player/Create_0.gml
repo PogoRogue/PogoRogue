@@ -734,7 +734,7 @@ if room = room_tutorial {
 	num_of_weapons = 0;
 }
 weapons_equipped = num_of_weapons;
-all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun,yoyo_gun,javelin_gun]; //all guns
+all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun,yoyo_gun,javelin_gun,water_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();

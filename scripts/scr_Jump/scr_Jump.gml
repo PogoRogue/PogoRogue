@@ -54,6 +54,7 @@ function scr_Jump(add_to_jump){
 			}
 		}
 	}
+	
 	if pickups_array[1].reload_on_bounce = true and pickups_array[1].on_cooldown = true {
 		if pickups_array[1] != pickup_jetpack {
 			pickups_array[1].bounce_reset -= 1;
@@ -101,4 +102,5 @@ function scr_Jump(add_to_jump){
 			state = state_springing;
 		}
 	}
+	global.water_index += 1;
 }

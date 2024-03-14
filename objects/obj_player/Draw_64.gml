@@ -12,7 +12,7 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	var yy = 48 * gun_num; //add y for other weapons bullets
 	var black_alpha = 0.5 * (gun != gun_array[gun_num]); //darkening for bottom ammo
 	for(i = 0; i < gun_array[gun_num].bullets_per_bounce+max_ammo_buff; i++) {
-		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != laser_gun) {
+		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != laser_gun) and (gun_array[gun_num] != water_gun) {
 			draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),36+yy); 
 			//darkening
 			draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),36+yy,1,1,0,c_black,black_alpha);
@@ -22,8 +22,8 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 			draw_sprite_ext(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*i),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),36+yy,1,1,0,c_black,black_alpha);
 		}
 	}
-	//laser
-	if (gun_array[gun_num] = laser_gun) {
+	//laser/water
+	if (gun_array[gun_num] = laser_gun) or (gun_array[gun_num] = water_gun) {
 		value_ = gun_array[gun_num].current_bullets / (gun_array[gun_num].bullets_per_bounce+max_ammo_buff);
 		draw_sprite(ammo.gui_sprite,0,(camera_get_view_width(view_camera[0])-16),36+yy);
 		draw_sprite_part(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(camera_get_view_width(view_camera[0])-16)-sprite_get_width(ammo.gui_sprite),36+yy);
@@ -257,7 +257,7 @@ if (global.show_passives = true) {
 		draw_set_color(make_color_rgb(242,240,229));
 		draw_text(16,yy-16,"Passive items: ");
 
-	
+
 		//numbers of each buff
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);

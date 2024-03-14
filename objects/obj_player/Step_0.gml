@@ -220,6 +220,10 @@ if centering = true and can_rotate {
 
 #region shooting
 
+if global.key_fire_projectile_pressed {
+	global.water_index += 1;	
+}
+
 if can_shoot = true and room != room_shop { 
 	var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
 	if gun = laser_gun and !instance_exists(obj_laser) or gun = javelin_gun and !instance_exists(obj_javelin_charge) { //special conditions for laser gun and javelins
@@ -230,7 +234,9 @@ if can_shoot = true and room != room_shop {
 	}
 }else {
 	var shoot = 0;
+	global.water_index += 1;
 }
+
 var ammo = gun.ammo[bullet_index];
 //ammo += max_ammo_increase;// increase ammo by max ammo increase if players has collected max ammo buffs
 
@@ -261,6 +267,18 @@ if (canshoot > 0) {
 
 if !(key_fire_projectile) { //lerp back to starting firerate while not shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_start, ammo.firerate_mult);
+}
+
+//auto reload water gun
+if gun_array[current_gun] = water_gun and !global.key_fire_projectile
+or gun_array[current_gun] != water_gun and gun_1 = water_gun
+or gun_array[current_gun] != water_gun and gun_2 = water_gun
+or gun_array[current_gun] != water_gun and gun_3 = water_gun {
+	if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff {
+		water_gun.current_bullets += 1/3;
+	}else {
+		water_gun.current_bullets = water_gun.bullets_per_bounce+max_ammo_buff;
+	}
 }
 
 #endregion
