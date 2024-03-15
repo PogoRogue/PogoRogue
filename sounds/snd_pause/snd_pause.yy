@@ -12,8 +12,8 @@
   "duration":1.347642,
   "name":"snd_pause",
   "parent":{
-    "name":"Miscellaneous",
-    "path":"folders/Sounds/Miscellaneous.yy",
+    "name":"Menu",
+    "path":"folders/Sounds/Menu.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

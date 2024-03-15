@@ -12,8 +12,8 @@
   "duration":0.531521,
   "name":"snd_explosion",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Weapons",
+    "path":"folders/Sounds/Weapons.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

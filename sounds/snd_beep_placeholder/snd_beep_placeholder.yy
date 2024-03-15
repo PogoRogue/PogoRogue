@@ -12,8 +12,8 @@
   "duration":0.130594,
   "name":"snd_beep_placeholder",
   "parent":{
-    "name":"Miscellaneous",
-    "path":"folders/Sounds/Miscellaneous.yy",
+    "name":"Menu",
+    "path":"folders/Sounds/Menu.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

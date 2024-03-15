@@ -115,8 +115,102 @@ if (gun_name = "Sniper Rifle") {
 
 //slime blaster
 if (gun_name = "Slime Blaster") {
-	spd += irandom_range(-4,0); //random speed for bubbles
+	spd += irandom_range(-4,0);
 	hspd = lengthdir_x(spd,angle);
 	vspd = lengthdir_y(spd,angle);
 	image_index = irandom_range(0,sprite_get_number(sprite_index)-1);
 }
+
+//yo-yo
+if (gun_name = "Yo-yo") {
+	yoyo_num = 0;
+	with obj_projectile {
+		if (gun_name = "Yo-yo") {
+			other.yoyo_num += 1;	
+		}
+	}
+	if yoyo_num > 1 {
+		if obj_player.frenzy = false {
+			instance_destroy();
+		}	
+	}
+	dist  = 0;
+	max_dist = 160;
+	ang = obj_player.angle;
+	ang_increase_speed = 0
+	ang_decrease_speed = 0;
+	x = obj_player.x + lengthdir_x(dist,ang-90);
+	y = obj_player.y + lengthdir_y(dist,ang-90);
+	retracted = false;
+	reached_end = false;
+	depth = obj_player.depth-1;
+	retract_spd = 0;
+}
+
+//javelins
+if (gun_name = "Javelins") {
+	temp_charge = 0;
+	temp_charge_max = 9;
+	depth = obj_player.depth + 1;
+	created = false;
+	with instance_create_depth(x,y,depth,obj_javelin_charge) {
+		javelin_object = other;
+		instance_deactivate_object(javelin_object);	
+	}
+}
+attach_to_player = 0;
+if (gun_name = "Water Gun") {
+	destroyable = false;
+	x = obj_player.x + lengthdir_x(6,obj_player.angle-90);
+	y = obj_player.y + lengthdir_y(6,obj_player.angle-90);
+	image_index = 0;
+	depth = obj_player.depth + 1;
+	attach_to_player = 2;
+	max_num_of_bounces = 0;
+	num_of_bounces = 0;
+	bullet_num = round(obj_player.water_gun.current_bullets);
+	image_xscale = 1;
+	
+	water_index = global.water_index;	
+	closest_water_object = noone;
+	angle2 = 0;
+	
+	used_as_closest_object = false;
+	first_object = false;
+	with obj_projectile {
+		if (gun_name = "Water Gun" and water_index = other.water_index) {
+			if bullet_num = other.bullet_num + 1 {
+				other.closest_water_object = id;
+				angle2 = point_direction(x,y,other.x,other.y);
+				other.angle2 = point_direction(x,y,other.x,other.y);
+				//other.image_angle = angle2;
+				used_as_closest_object = true;
+				other.first_object = true;
+			}
+		}
+	}
+	
+	if place_meeting(x,y,obj_ground) {
+		draw_fill = true;
+		depth += 100;
+	}else {
+		draw_fill = false;	
+	}
+
+	
+	//outline
+	with instance_create_depth(x,y,depth+10,obj_water_outline) {
+		image_angle = other.image_angle;
+		parent_obj = other;
+		water_index = global.water_index;
+		closest_water_object = noone;
+		with scr_Instance_Nearest_Notme(x,y,obj_water_outline) {
+			if (water_index = other.water_index) {
+				other.closest_water_object = id;
+			}
+		}
+	}
+}
+
+//destroy projectile after 30 seconds if still exists
+alarm[2] = 1800;

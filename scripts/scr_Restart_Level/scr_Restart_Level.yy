@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_Restart_Level",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Restart_Level",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

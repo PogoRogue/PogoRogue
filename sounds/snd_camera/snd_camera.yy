@@ -12,8 +12,8 @@
   "duration":0.193047,
   "name":"snd_camera",
   "parent":{
-    "name":"Items",
-    "path":"folders/Sounds/Items.yy",
+    "name":"Powerups",
+    "path":"folders/Sounds/Powerups.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

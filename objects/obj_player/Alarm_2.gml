@@ -1,3 +1,6 @@
+//instance_create_depth(x,y,depth+1,obj_shop_door);
+//instance_create_depth(x+48,y-128,depth+1,obj_boss_door);
+
 /// @description create text in proc gen room
 //temporarily disabled 
 /*

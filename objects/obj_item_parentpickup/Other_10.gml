@@ -6,12 +6,16 @@ if pickup != obj_player.pickup_1 and obj_player.num_of_pickups = 1
 or pickup != obj_player.pickup_1 and pickup != obj_player.pickup_2 and obj_player.num_of_pickups = 2 
 or obj_player.num_of_pickups = 0 {
 	if obj_player.num_of_pickups = 0 {
+		global.all_pickup_costs[0] = item_cost;
+		
 		with obj_player {
 			num_of_pickups = 1;
 			pickup_1 = other.pickup;
 			pickup_2 = pickup_nothing;
 			pickups_array = [pickup_1,pickup_2];
 		}
+		
+		audio_play_sound(snd_passivePowerup,0,false);
 		
 		ini_open("itemsunlocked.ini");
 		if scr_In_Array(obj_player.all_pickups_array,pickup) {
@@ -24,11 +28,15 @@ or obj_player.num_of_pickups = 0 {
 		}
 		ini_close();
 	}else if obj_player.num_of_pickups = 1 {
+		global.all_pickup_costs[1] = item_cost;
+		
 		with obj_player {
 			num_of_pickups = 2;
 			pickup_2 = other.pickup;
 			pickups_array = [pickup_1,pickup_2];
 		}
+		
+		audio_play_sound(snd_passivePowerup,0,false);
 		
 		ini_open("itemsunlocked.ini");
 		if scr_In_Array(obj_player.all_pickups_array,pickup) {
@@ -49,6 +57,7 @@ or obj_player.num_of_pickups = 0 {
 			sprite_2 = obj_player.pickup_2.gui_sprite;
 			new_item = other.pickup;
 			item_name = other.item_name;
+			new_item_cost = other.item_cost;
 			item1_name = obj_player.pickup_1._name;
 			item2_name = obj_player.pickup_2._name;
 		}

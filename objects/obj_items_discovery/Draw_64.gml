@@ -37,7 +37,7 @@ for (i = 0; i < 32; i++) {
 		draw_sprite(passives_array[i],(sprite_get_number(passives_array[i])-1)*(global.passive_unlocked_array[i] = false) + (global.passive_unlocked_array[i] = true),xx,yy-27);
 
 		if (i < array_length(global.all_buffs) and global.passive_unlocked_array[i]= true) {
-			scr_Draw_Text_Outlined(xx,yy-48,scr_Linebreak(all_buff_names[i],12,99),c_white);
+			scr_Draw_Text_Outlined(xx,yy-49,scr_Linebreak(all_buff_names[i],12,99),c_white);
 		}
 	}
 	
@@ -87,7 +87,7 @@ for (i = 0; i < array_length(global.all_buffs); i++) {
 			}else {
 				var xx = room_width - 74;
 			}
-			scr_Draw_Passive_Description(xx,yy,all_buff_sprites[i],all_buff_sprites_index[i],all_buff_names[i],all_buff_descriptions[i],all_buff_stats[i],global.passive_unlocked_array[i]);
+			scr_Draw_Passive_Description(xx,yy,all_buff_sprites[i],all_buff_sprites_index[i],all_buff_names[i],all_buff_descriptions[i],all_buff_stats[i],global.passive_unlocked_array[i],all_buff_costs[i]);
 		}
 	}
 }
@@ -108,7 +108,7 @@ for (i = 0; i < array_length(global.all_pickups); i++) {
 				var y_offset = 0;
 			}
 			
-			scr_Draw_Pickup_Description(xx,yy+y_offset,all_pickups[i],0,global.active_unlocked_array[i]);
+			scr_Draw_Pickup_Description(xx,yy+y_offset,all_pickups[i],0,global.active_unlocked_array[i],all_pickups_costs[i]);
 		}
 	}
 }
@@ -130,7 +130,7 @@ for (i = 0; i < array_length(global.all_weapons); i++) {
 				var y_offset = 0;
 			}
 			
-			scr_Draw_Weapon_Description(xx,yy+y_offset,all_weapons[i],0,global.weapon_unlocked_array[i]);
+			scr_Draw_Weapon_Description(xx,yy+y_offset,all_weapons[i],0,global.weapon_unlocked_array[i],all_weapons_costs[i]);
 		}
 	}
 }

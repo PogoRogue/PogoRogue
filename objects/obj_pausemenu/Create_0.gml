@@ -1,5 +1,5 @@
 if instance_number(obj_pausemenu) > 1 {
-	instance_destroy();	
+	instance_destroy();
 }
 
 select = 1;

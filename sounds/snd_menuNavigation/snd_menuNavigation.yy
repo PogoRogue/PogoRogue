@@ -12,8 +12,8 @@
   "duration":0.444082,
   "name":"snd_menuNavigation",
   "parent":{
-    "name":"Miscellaneous",
-    "path":"folders/Sounds/Miscellaneous.yy",
+    "name":"Menu",
+    "path":"folders/Sounds/Menu.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

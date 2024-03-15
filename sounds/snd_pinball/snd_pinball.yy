@@ -12,8 +12,8 @@
   "duration":8.391905,
   "name":"snd_pinball",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Environmental",
+    "path":"folders/Sounds/Environmental.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

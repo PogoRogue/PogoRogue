@@ -12,8 +12,8 @@
   "duration":0.131361,
   "name":"snd_crosshair_blip",
   "parent":{
-    "name":"Items",
-    "path":"folders/Sounds/Items.yy",
+    "name":"Powerups",
+    "path":"folders/Sounds/Powerups.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

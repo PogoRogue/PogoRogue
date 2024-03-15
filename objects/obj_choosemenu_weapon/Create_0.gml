@@ -1,3 +1,9 @@
+if global.phase > 1 {
+	instance_destroy();	
+}
+
+depth -= 1000;
+
 usable = true;
 select = 1;
 select_max = 3; //max # of rows
@@ -37,7 +43,8 @@ alarm[1] = 2;
 weapons_array = [obj_item_weapon_paintball, obj_item_weapon_shotgun, obj_item_weapon_bubble, 
 				obj_item_weapon_burstfire, obj_item_weapon_grenade, obj_item_weapon_laser,
 				obj_item_weapon_bouncyball, obj_item_weapon_missile, obj_item_weapon_boomerang, 
-				obj_item_weapon_starsucker, obj_item_weapon_sniper, obj_item_weapon_slime];
+				obj_item_weapon_starsucker, obj_item_weapon_sniper, obj_item_weapon_slime,
+				obj_item_weapon_yoyo, obj_item_weapon_javelins, obj_item_weapon_water];
 				
 select_max = array_length(weapons_array);
 
@@ -49,9 +56,12 @@ current_array = weapons_array;
 
 scr_All_Weapons_Array();
 
+all_weapons_costs = [];
+
 for (i = 0; i < array_length(weapons_array); i++) {
 	with instance_create_depth(x,y,depth,weapons_array[i]) {
 		other.all_weapons[other.i] = weapon;
+		other.all_weapons_costs[other.i] = item_cost;
 		instance_destroy();
 	}
 }
