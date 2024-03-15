@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked) {
+function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost) {
 	
 	if unlocked = true {
 		var bg_spr_index = 1;
@@ -19,6 +19,17 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked) {
 	
 	//sprites
 	draw_sprite(weapon.sprite,img_index,xx-49,yy-105);
+	
+	//draw cost
+	
+	if unlocked = true {
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_center);
+		draw_set_font(fnt_itemdescription2);
+	
+		draw_sprite(spr_coin,0,xx-49+7,yy-105+15);
+		scr_Draw_Text_Outlined(xx-49-5,yy-105+15,item_cost,c_white);
+	}
 	
 	//"Weapon" text
 	draw_set_halign(fa_center);

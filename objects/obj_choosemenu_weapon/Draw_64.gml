@@ -54,6 +54,6 @@ for (i = 0; i < array_length(all_weapons); i++) {
 			var y_offset = 0;
 		}
 			
-		scr_Draw_Weapon_Description(xx,yy+y_offset,all_weapons[i],0,true);
+		scr_Draw_Weapon_Description(xx,yy+y_offset,all_weapons[i],0,true,all_weapons_costs[i]);
 	}
 }

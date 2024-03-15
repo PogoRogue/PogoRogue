@@ -2,6 +2,7 @@ key_left = global.key_left_menu;
 key_right = global.key_right_menu;
 key_up = global.key_up_menu;
 key_down = global.key_down_menu;
+
 if obj_player.pickup_1 = obj_player.pickup_blink {  
 	key_select = global.key_pickup_1_pressed;
 }else if obj_player.pickup_2 = obj_player.pickup_blink {  
