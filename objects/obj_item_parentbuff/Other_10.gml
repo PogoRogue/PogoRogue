@@ -11,11 +11,13 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 	array_resize(global.all_buff_names,array_length(global.all_buff_names)+1);
 	array_resize(global.all_buff_descriptions,array_length(global.all_buff_descriptions)+1);
 	array_resize(global.all_buff_stats,array_length(global.all_buff_stats)+1);
+	array_resize(global.all_buff_costs,array_length(global.all_buff_costs)+1);
 	global.all_buff_sprites[array_length(global.all_buff_sprites)-1] = sprite_index;
 	global.all_buff_numbers[array_length(global.all_buff_numbers)-1] = 1;
 	global.all_buff_names[array_length(global.all_buff_names)-1] = item_name;
 	global.all_buff_descriptions[array_length(global.all_buff_descriptions)-1] = item_tagline;
 	global.all_buff_stats[array_length(global.all_buff_stats)-1] = item_stats;
+	global.all_buff_costs[array_length(global.all_buff_costs)-1] = item_cost;
 	
 	if scr_In_Array(global.all_passives_used,item_name) = false {
 		array_resize(global.all_passives_used,array_length(global.all_passives_used)+1);

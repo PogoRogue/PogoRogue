@@ -206,4 +206,14 @@ function scr_Buffs(){
 		global.psychicbullets = true;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
+	
+	buff_recycling = function(){
+		global.recycling = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
+	
+	buff_juggler = function(){
+		global.juggler = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
 }

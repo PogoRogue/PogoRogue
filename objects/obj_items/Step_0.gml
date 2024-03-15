@@ -54,6 +54,22 @@ if select = 1 and select_y > 0 {
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[3] = alarm3_time;
 	}
+	
+	//change pages
+	if key_right and select_x = select_x_max and selected_x = false and page_num = 1 and array_length(global.all_buff_sprites) > 16 {
+		page_num = 2;
+		select_x = 1;
+		selected_x = true;
+		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[2] = alarm2_time;
+	}
+	if key_left and select_x = 1 and selected_x = false and page_num = 2 and array_length(global.all_buff_sprites) > 16 {
+		page_num = 1;
+		select_x = select_x_max;
+		selected_x = true;
+		audio_play_sound(snd_menuNavigation,0,false);
+		alarm[2] = alarm2_time;
+	}
 }
 
 if !key_left and !key_right {
