@@ -1,11 +1,11 @@
 {
-  "FolderOrderSettings": [
+  "FolderOrderSettings":[
+    {"name":"extra_storage","order":8,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/extra_storage.yy",},
     {"name":"phase_1T","order":4,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_1T.yy",},
     {"name":"phase_2T","order":7,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_2T.yy",},
     {"name":"phase_3T","order":5,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_3T.yy",},
-    {"name":"extra_storage","order":8,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/extra_storage.yy",},
   ],
-  "ResourceOrderSettings": [
+  "ResourceOrderSettings":[
     {"name":"spr_2x2_Combat_Talen_store_P1","order":1,"path":"sprites/spr_2x2_Combat_Talen_store_P1/spr_2x2_Combat_Talen_store_P1.yy",},
     {"name":"spr_dr_Talen_P3","order":2,"path":"sprites/spr_dr_Talen_P3/spr_dr_Talen_P3.yy",},
     {"name":"spr_2x2_Combat_Talen_store_P3","order":1,"path":"sprites/spr_2x2_Combat_Talen_store_P3/spr_2x2_Combat_Talen_store_P3.yy",},
