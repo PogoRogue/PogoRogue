@@ -95,12 +95,23 @@ with(obj_enemy_parent)
     {
         // Get the region tag from the tag object
         var region_tag = tag_object.proc_gen_region;
+		
+		if (region_tag == "2") {
+			asset_add_tags(id, "CombatRoom1", asset_object);
+			//show_debug_message("Assigned " + "CombatRoom1" + " to object ID: " + string(id));
+		}
+		else if (region_tag == "6") {
+			asset_add_tags(id, "CombatRoom2", asset_object);
+			//show_debug_message("Assigned " + "CombatRoom2" + " to object ID: " + string(id));
+		}
+			
         
         // Assign the region tag to the instance
-        asset_add_tags(id, string(region_tag), asset_object);
-		show_debug_message("Assigned " + string(region_tag) + " to object ID: " + string(id));
     }
 }
+
+
+
 
 
 

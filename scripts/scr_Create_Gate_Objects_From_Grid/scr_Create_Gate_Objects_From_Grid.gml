@@ -11,53 +11,64 @@ function scr_Create_Gate_Objects_From_Grid(layout_grid){
 	var gate_positions = ds_list_create();
 	// Scan for gate positions
 	for (var i = 0; i < grid_width; i++) {
-	    for (var j = 0; j < grid_height; j++) {
-	        var current_cell = ds_grid_get(layout_grid, i, j);
-	        if (string_count("1", current_cell) > 0) { // Is a hallway
-	            // Check cells below hallways for room IDs)
-	            var neighbours = [ds_grid_get(layout_grid, i, j-1)];
-								  
-	            for (var k = 0; k < array_length(neighbours); k++) {
-					var neighbour = neighbours[k];
-	                var n_value = string(neighbour);
+		for (var j = 0; j < grid_height; j++) {
+			var current_cell = ds_grid_get(layout_grid, i, j);
+			if (string_count("1", current_cell) > 0) 
+			{ // Is a hallway
+			    // Check cells below hallways for room IDs)
+				var below_cell = ds_grid_get(layout_grid, i, j - 1);
 					
-					// Make sure it's not spawn, shop, hallway, or a wall.
-	                if (string_count("1", n_value) == 0 && string_count("T", n_value) == 0 && 
-					string_count("S", n_value) == 0 && n_value != "w" && n_value != "0") {
-						// Store gate pos along with exit direction in the list
+				// Make sure it's not spawn, shop, hallway, or a wall.
+			    if (string_count("1", below_cell) == 0 && string_count("T", below_cell) == 0 && 
+				string_count("S", below_cell) == 0 && below_cell != "w" && below_cell != "0") 
+				{
+					var cell_left = ds_grid_get(layout_grid, i - 1, j);
+					var cell_right = ds_grid_get(layout_grid, i + 1, j);
+					show_debug_message("cell_left: " + string(cell_left) + " cell_right: " + string(cell_right));
+					if (string_count("1", cell_left) > 0) {
+						var left_left = ds_grid_get(layout_grid, i - 2, j);
+						var left_up = ds_grid_get(layout_grid, i - 1, j + 1);
+						show_debug_message("left_left: " + string(left_left) + " left_up: " + string(left_up));
+						if (string_count("1", left_left) > 0 || string_count("1", left_up) > 0) {
+							show_debug_message("something to the left");
+							ds_list_add(gate_positions, [i, j]);
+						}
+					}
+					else if (string_count("1", cell_right) > 0) {
+						var right_right = ds_grid_get(layout_grid, i + 2, j);
+						var right_up = ds_grid_get(layout_grid, i + 1, j + 1);
+						show_debug_message("right_right: " + string(right_right) + " right_up: " + string(right_up));
+						if (string_count("1", right_right) > 0 || string_count("1", right_up) > 0) {
+							show_debug_message("something to the right");
+							ds_list_add(gate_positions, [i, j]);
+						}
+					}
+					else if (string_count("1", cell_left) == 0 && string_count("1", cell_right) == 0) {
+						show_debug_message("no left or right");
 						ds_list_add(gate_positions, [i, j]);
+					}
+					
+					// Store gate pos along with exit direction in the list
 						
-	                    break; // Skip checking other neighbours since we found our gate position.
-	                }
-	            }
-	        }
-	    }
+			        // break; // Skip checking other neighbours since we found our gate position.
+			    }
+			}
+		}
 	}
 	
 	// Loop through our gate positions to create gates at the stored positions.
 	for (var i = 0; i < ds_list_size(gate_positions); i++) {
         var pos = ds_list_find_value(gate_positions, i);
-        placeGate(pos[0], pos[1], room_pixel_width);
+		var gate_tag = "Gate" + string(i+1); // Create gate tag
+        placeGate(pos[0], pos[1], room_pixel_width, gate_tag);
     }
 	
 	// Delete to prevent memory leaks
     ds_list_destroy(gate_positions);
-	
-	var obj = tag_get_assets("1"); // Get all assets with tag "2"
-	show_debug_message("testing");
-	// Iterate through all objects with the tag "2"
-	for (var i = 0; i < array_length(obj); i++) {
-	    var inst = obj[i]; // Get the instance at index i
-    
-	    // Check if the instance is an object
-	    //if (inst.object_index != noone) {
-	    show_debug_message("Object ID: " + string(inst.id) + ", Object Name: " + string(inst.object_index));
-	    //}
-	}
 }
 	
 	
-function placeGate(gate_x, gate_y, room_pixel_width) {
+function placeGate(gate_x, gate_y, room_pixel_width, gate_tag) {
     var gate_width = 448;
     var gate_height = 32;
 
@@ -67,11 +78,12 @@ function placeGate(gate_x, gate_y, room_pixel_width) {
 
     var inst = instance_create_layer(room_x, room_y, "Instances", obj_room_gate_close);
     var inst2 = instance_create_layer(room_x, room_y, "Instances", obj_room_gate_open);
+	asset_add_tags(inst, gate_tag, asset_object); // Add our tag to the Gate to number them.
 
     if (inst == noone || inst2 == noone) {
         show_debug_message("Gate instance could not be created");
     } else {
-        show_debug_message("Gate created!");
+        show_debug_message("Gate created with tag: " + string(gate_tag));
     }
 
     show_debug_message("Gate Placed at: " + string(room_x) + ", " + string(room_y));
