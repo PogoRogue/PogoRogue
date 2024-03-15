@@ -9,12 +9,13 @@ enum STATES
 	IDLE,
     ATTACKING,
     VULNERABLE,
-    DEAD,
+    INACTIVE,
 }
 
 current_state = STATES.IDLE;
 previous_state = noone;
 state_has_changed = true;
+fight_started = false;
 
 // These are the colors that sequences will be comprised of
 enum COLORS

@@ -1,6 +1,7 @@
 /// @description Create objects and despawn
 
-var _controller = instance_create_layer(496, 272, "enemies", obj_boss_sequence);
+var _controller = instance_nearest(x, y, obj_boss_sequence); // instance_create_layer(496, 272, "enemies", obj_boss_sequence);
+_controller.fight_started = true;
 instance_create_layer(560, 560, "enemies", obj_boss_sequence_slime);
 var _body = instance_create_layer(560, 464, "enemies", obj_boss_sequence_body, {image_xscale: 3, image_yscale: 3});
 _body.controller = _controller;

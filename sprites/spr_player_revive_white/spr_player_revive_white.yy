@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Player Sprites",
-    "path":"folders/Sprites/Player/Player Sprites.yy",
+    "name":"Pogo_Rogue_Alpha",
+    "path":"Pogo_Rogue_Alpha.yyp",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

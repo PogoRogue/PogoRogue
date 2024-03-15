@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Hurt",
-    "path":"folders/Sprites/Player/Player Sprites/Hurt.yy",
+    "name":"Pogo_Rogue_Alpha",
+    "path":"Pogo_Rogue_Alpha.yyp",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
