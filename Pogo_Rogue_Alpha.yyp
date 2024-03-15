@@ -106,12 +106,12 @@
     {"$GMFolder":"","%Name":"OtherRooms","folderPath":"folders/Sprites/ProcGenLevelData/ProcGenTestingSprites/OtherRooms.yy","name":"OtherRooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"RoomStoresAndOther","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther.yy","name":"RoomStoresAndOther","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sam_Rooms","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms.yy","name":"Sam_Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Sprint 8","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 8.yy","name":"Sprint 8","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Talens_sprites","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy","name":"Talens_sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"extra_storage","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/extra_storage.yy","name":"extra_storage","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"phase_1T","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_1T.yy","name":"phase_1T","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"phase_2T","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_2T.yy","name":"phase_2T","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"phase_3T","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_3T.yy","name":"phase_3T","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Sprint 8","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 8.yy","name":"Sprint 8","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"testRooms","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/testRooms.yy","name":"testRooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Zehao_Rooms","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms.yy","name":"Zehao_Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Projectiles","folderPath":"folders/Sprites/Projectiles.yy","name":"Projectiles","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -145,7 +145,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2023.11.1.129",
+    "IDEVersion":"2024.2.0.132",
   },
   "name":"Pogo_Rogue_Alpha",
   "resources":[

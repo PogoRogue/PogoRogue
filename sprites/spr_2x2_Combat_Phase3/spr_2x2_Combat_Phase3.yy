@@ -34,6 +34,8 @@
     {"$GMSpriteFrame":"","%Name":"1862782b-5a35-4fd9-a79a-c7b6032e6830","name":"1862782b-5a35-4fd9-a79a-c7b6032e6830","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"256783bc-bfa4-4ccb-b5e7-62bab2bf16a7","name":"256783bc-bfa4-4ccb-b5e7-62bab2bf16a7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"355bdd18-7dce-4a29-8efb-3eeebcbbb54b","name":"355bdd18-7dce-4a29-8efb-3eeebcbbb54b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"0a310fd4-d407-4fa5-96c3-20de5d698e43","name":"0a310fd4-d407-4fa5-96c3-20de5d698e43","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"204f0b8d-369b-49eb-a2c0-cedb13eb74b0","name":"204f0b8d-369b-49eb-a2c0-cedb13eb74b0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -70,7 +72,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":22.0,
+    "length":24.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -155,6 +157,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"355bdd18-7dce-4a29-8efb-3eeebcbbb54b","path":"sprites/spr_2x2_Combat_Phase3/spr_2x2_Combat_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7b6aa780-dafb-4963-84db-4b3f6569d036","IsCreationKey":false,"Key":21.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0a310fd4-d407-4fa5-96c3-20de5d698e43","path":"sprites/spr_2x2_Combat_Phase3/spr_2x2_Combat_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2be73b48-6e68-41d0-9762-6845e1c0240f","IsCreationKey":false,"Key":22.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"204f0b8d-369b-49eb-a2c0-cedb13eb74b0","path":"sprites/spr_2x2_Combat_Phase3/spr_2x2_Combat_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3fc9301f-5fec-45d1-88ac-f0d91309ca2a","IsCreationKey":false,"Key":23.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
