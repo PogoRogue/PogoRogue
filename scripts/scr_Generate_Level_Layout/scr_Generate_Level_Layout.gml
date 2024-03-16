@@ -15,16 +15,9 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	
 	for (var rCount = 0; rCount < room_number; rCount++) 
 	{	
-		if(rCount == 0)
+		if(rCount == 0 && generate_starting_room && total_non_random_rooms >= 1)
 		{//If we need a starting room, it goes here (stored in index 0 of prebuilt_rooms)
-			if(generate_starting_room && total_non_random_rooms >= 1)
-			{
-				room_index = 0;
-			}
-			else
-			{					
-				room_index = irandom_range(total_non_random_rooms, total_rooms - 1); // Pick a prebuilt_room from the random rooms 		
-			}
+			room_index = 0;	
 		}			
 		else if(rCount == room_number - 3 && total_non_random_rooms >= 3) //Where the shop room needs to go (stored in index 1)
 		{
@@ -125,8 +118,15 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 		//Set player starting point if this is the first room
 		if(previous_room = -1)
 		{
-			//Marks the center of the room as the starting point
-			ds_grid_set(layout_grid, currentX + floor(rWidth/2), currentY + floor(rHeight/2), "s");
+			if(generate_start_room)
+			{
+				ds_grid_set(layout_grid, currentX, currentY, "s");
+			}
+			else
+			{
+				//Marks the center of the room as the starting point
+				ds_grid_set(layout_grid, currentX + floor(rWidth/2), currentY + floor(rHeight/2), "s");
+			}
 		}
 
 		// Update the previous room
