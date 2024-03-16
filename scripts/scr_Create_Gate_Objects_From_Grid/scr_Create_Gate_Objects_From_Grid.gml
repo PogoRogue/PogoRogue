@@ -24,27 +24,22 @@ function scr_Create_Gate_Objects_From_Grid(layout_grid){
 				{
 					var cell_left = ds_grid_get(layout_grid, i - 1, j);
 					var cell_right = ds_grid_get(layout_grid, i + 1, j);
-					show_debug_message("cell_left: " + string(cell_left) + " cell_right: " + string(cell_right));
+					// Find out where our actual exit is
 					if (string_count("1", cell_left) > 0) {
 						var left_left = ds_grid_get(layout_grid, i - 2, j);
 						var left_up = ds_grid_get(layout_grid, i - 1, j + 1);
-						show_debug_message("left_left: " + string(left_left) + " left_up: " + string(left_up));
 						if (string_count("1", left_left) > 0 || string_count("1", left_up) > 0) {
-							show_debug_message("something to the left");
 							ds_list_add(gate_positions, [i, j]);
 						}
 					}
 					else if (string_count("1", cell_right) > 0) {
 						var right_right = ds_grid_get(layout_grid, i + 2, j);
 						var right_up = ds_grid_get(layout_grid, i + 1, j + 1);
-						show_debug_message("right_right: " + string(right_right) + " right_up: " + string(right_up));
 						if (string_count("1", right_right) > 0 || string_count("1", right_up) > 0) {
-							show_debug_message("something to the right");
 							ds_list_add(gate_positions, [i, j]);
 						}
 					}
 					else if (string_count("1", cell_left) == 0 && string_count("1", cell_right) == 0) {
-						show_debug_message("no left or right");
 						ds_list_add(gate_positions, [i, j]);
 					}
 					
@@ -82,9 +77,23 @@ function placeGate(gate_x, gate_y, room_pixel_width, gate_tag) {
 
     if (inst == noone || inst2 == noone) {
         show_debug_message("Gate instance could not be created");
-    } else {
-        show_debug_message("Gate created with tag: " + string(gate_tag));
-    }
+	}
+	else {
+		 show_debug_message("Gate Placed at: " + string(room_x) + ", " + string(room_y) + ". With tag: " + string(gate_tag));
+	}
+}
 
-    show_debug_message("Gate Placed at: " + string(room_x) + ", " + string(room_y));
+function enemiesRequiredCount(gate_tag)
+{
+	var count = 0;
+	with (obj_enemy_parent) {
+		if (gate_tag == "Gate1" && asset_has_tags(id, "CombatRoom1", asset_object)) {
+			count += 1;
+		}
+		else if (gate_tag == "Gate2" && asset_has_tags(id, "CombatRoom2", asset_object)) {
+			count += 1;
+		}
+	}
+	return count;
+
 }

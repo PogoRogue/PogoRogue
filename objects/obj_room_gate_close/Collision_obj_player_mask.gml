@@ -1,13 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (obj_player.enemies_killed >= obj_player.enemies_required) {
-	obj_player.room_number += 1;
-	obj_player.enemies_killed = 0;
+show_debug_message("obj_player_mask");
+if (obj_player.enemies_killed_in_room >= enemies_required) {
+	obj_player.enemies_killed_in_room = 0;
 	instance_destroy();
-}
-else if (obj_player.room_number == 0) {
-	obj_player.room_number += 1;
-	instance_destroy();	
 }
 	
