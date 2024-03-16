@@ -13,7 +13,7 @@ function scr_Choose_Test_Block_To_Generate(layout_grid, grid_x, grid_y){
 	}
 	else if(room_string == "Tc") //Player start test room
 	{
-		return spr_3x3_Starting_Room_Test;
+		return spr_start;
 	}	
 	else if(room_string == "Shc") //Shop test room
 	{
