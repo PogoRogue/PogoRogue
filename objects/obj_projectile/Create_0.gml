@@ -172,7 +172,16 @@ if (gun_name = "Water Gun") {
 	attach_to_player = 2;
 	max_num_of_bounces = 0;
 	num_of_bounces = 0;
-	bullet_num = round(obj_player.water_gun.current_bullets);
+	if obj_player.frenzy = true {
+		global.water_frenzy -= 1;
+		bullet_num = global.water_frenzy;
+		
+	}else {
+		global.water_frenzy = -(obj_player.water_gun.bullets_per_bounce + obj_player.max_ammo_buff);
+		//obj_player.water_gun.current_bullets -= 1;
+		bullet_num = round(obj_player.water_gun.current_bullets);	
+	}
+	
 	image_xscale = 1;
 	
 	water_index = global.water_index;	

@@ -233,8 +233,10 @@ if gun_array[current_gun] = water_gun and !global.key_fire_projectile
 or gun_array[current_gun] != water_gun and gun_1 = water_gun
 or gun_array[current_gun] != water_gun and gun_2 = water_gun
 or gun_array[current_gun] != water_gun and gun_3 = water_gun {
-	if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff {
+	if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff and gun_array[current_gun] = water_gun {
 		water_gun.current_bullets += 1/3;
+	}else if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff {
+		water_gun.current_bullets += 1/10;
 	}else {
 		water_gun.current_bullets = water_gun.bullets_per_bounce+max_ammo_buff;
 	}
