@@ -37,7 +37,17 @@ if (gun_name = "Bouncy Ball Blaster") {
 	}
 	
 	if image_index = 0 or used_as_closest_object = false {
-		draw_sprite_ext(sprite_index,4,x,y,1,1,angle2+180,c_white,image_alpha);
+		with obj_projectile {
+			if (gun_name = "Water Gun" and water_index = other.water_index) {
+				if bullet_num = other.bullet_num + 1 {
+					other.closest_water_object = id;
+					angle2 = point_direction(other.x,other.x,x,y);
+					other.angle2 = point_direction(x,y,other.x,other.y);
+				}
+			}
+		}
+		
+		draw_sprite_ext(sprite_index,4,x,y,1,1,angle2+180,c_white,image_alpha); //first
 	}
 	if first_object = false {
 		draw_sprite_ext(sprite_index,4,x,y,1,1,angle2,c_white,image_alpha);

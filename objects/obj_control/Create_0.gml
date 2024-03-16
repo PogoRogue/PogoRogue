@@ -60,6 +60,7 @@ global.all_buff_stats = []; //stats (mainly stackability) of each buff currently
 global.all_buff_costs = []; //cost of each buff currently equipped
 
 global.water_index = 0;
+global.water_frenzy = 0;
 
 //shop
 global.shop_num = 1;

@@ -45,14 +45,18 @@ if (gun_name = "Laser Gun") {
 	mask_index = spr_nothing;
 	image_speed = 1;
 	rotation_speed = obj_player.rotation_speed;
+	//obj_player.image_angle-90
+	image_angle = obj_player.image_angle-90
+	instance_laser = 0;
 	
 	//create rest of laser
 	for (i = 2; i < 48; i++) {
-		instance_create_depth(x+lengthdir_x(32*i,image_angle+180),y+lengthdir_y(32*i,image_angle+180),depth,obj_laser, {
-			image_angle: image_angle,
+		instance_laser = 0 = i;
+		instance_create_depth(x+lengthdir_x(32*i,image_angle),y+lengthdir_y(32*i,image_angle),depth,obj_laser, {
+			image_angle: image_angle-90,
 			damage: damage,
 			parent_obj: other,
-			i: i,
+			instance: i,
 			destroy_on_impact: destroy_on_impact,
 			full_sprite: spr_projectile_laser,
 			mask_index: spr_nothing,
@@ -168,7 +172,16 @@ if (gun_name = "Water Gun") {
 	attach_to_player = 2;
 	max_num_of_bounces = 0;
 	num_of_bounces = 0;
-	bullet_num = round(obj_player.water_gun.current_bullets);
+	if obj_player.frenzy = true {
+		global.water_frenzy -= 1;
+		bullet_num = global.water_frenzy;
+		
+	}else {
+		global.water_frenzy = -(obj_player.water_gun.bullets_per_bounce + obj_player.max_ammo_buff);
+		//obj_player.water_gun.current_bullets -= 1;
+		bullet_num = round(obj_player.water_gun.current_bullets);	
+	}
+	
 	image_xscale = 1;
 	
 	water_index = global.water_index;	
@@ -181,13 +194,23 @@ if (gun_name = "Water Gun") {
 		if (gun_name = "Water Gun" and water_index = other.water_index) {
 			if bullet_num = other.bullet_num + 1 {
 				other.closest_water_object = id;
-				angle2 = point_direction(x,y,other.x,other.y);
+				angle2 = point_direction(other.x,other.x,x,y);
 				other.angle2 = point_direction(x,y,other.x,other.y);
 				//other.image_angle = angle2;
 				used_as_closest_object = true;
 				other.first_object = true;
 			}
 		}
+	}
+	
+	with scr_Instance_Nearest_Notme(x,y,obj_water_outline) {
+		if (water_index = other.water_index) {
+			//other.closest_water_object = id;
+		}
+	}
+	
+	if instance_exists(closest_water_object) {
+		angle2 = point_direction(x,y,closest_water_object.x,closest_water_object.y)+90;
 	}
 	
 	if place_meeting(x,y,obj_ground) {

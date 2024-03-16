@@ -92,9 +92,9 @@ function scr_Jump(add_to_jump){
 		if instance_place(x,y-vspeed,obj_spring).state = instance_place(x,y-vspeed,obj_spring).state_unsprung {
 			state = state_free;
 			vspeed = 0;
-			if(global.tightspring){
+			if(global.tightspring) and vspeed = 0 {
 				motion_add(90,12*1.2);
-			}else{
+			}else if vspeed = 0 {
 				motion_add(90,12);
 			}
 		}

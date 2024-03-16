@@ -148,50 +148,7 @@ if audio_is_playing(snd_jetpack){
 }	
 
 
-#region //angling
-if (can_rotate) {
-	if (use_mouse = false) { //use WASD/Arrow Keys to angle player
-		if (angle >= -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right)
-		or (angle >= -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) {
-			current_rotation_speed = -rotation_speed;
-		}else if (angle <= anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) 
-		or (angle <= anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) {
-			current_rotation_speed = rotation_speed;
-		}else {
-			if (current_rotation_speed > 0) {
-				current_rotation_speed -= rotation_delay;
-			}else if (current_rotation_speed < 0) {
-				current_rotation_speed += rotation_delay;
-			}
-		}
-		angle += current_rotation_speed;
-	
-		if hspeed > 0.5 {
-			image_xscale = 1;
-		}else if hspeed < -0.5 {
-			image_xscale = -1;
-		}
-		
-		
-	
-	}else if (dead = false) { //use mouse to angle player
-	
-			if invert = false {
-				if (angle <= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
-					angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-				}else if (angle >= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
-					angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-				}
-			}else{
-				if (angle <= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
-					angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-				}else if (angle >= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
-					angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-				}
-			}
-	}
-}
-angle = clamp(angle,-anglemax,anglemax); //cant tilt too far
+
 
 if state != state_portal {
 	image_angle = angle;
@@ -276,8 +233,10 @@ if gun_array[current_gun] = water_gun and !global.key_fire_projectile
 or gun_array[current_gun] != water_gun and gun_1 = water_gun
 or gun_array[current_gun] != water_gun and gun_2 = water_gun
 or gun_array[current_gun] != water_gun and gun_3 = water_gun {
-	if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff {
+	if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff and gun_array[current_gun] = water_gun {
 		water_gun.current_bullets += 1/3;
+	}else if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff {
+		water_gun.current_bullets += 1/10;
 	}else {
 		water_gun.current_bullets = water_gun.bullets_per_bounce+max_ammo_buff;
 	}

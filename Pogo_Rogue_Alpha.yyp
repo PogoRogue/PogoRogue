@@ -1044,6 +1044,7 @@
     {"id":{"name":"spr_player_zekai_invincible","path":"sprites/spr_player_zekai_invincible/spr_player_zekai_invincible.yy",},},
     {"id":{"name":"spr_player_zekai_jumping","path":"sprites/spr_player_zekai_jumping/spr_player_zekai_jumping.yy",},},
     {"id":{"name":"spr_player_zekai","path":"sprites/spr_player_zekai/spr_player_zekai.yy",},},
+    {"id":{"name":"spr_player_zekai_portal","path":"sprites/spr_player_zekai_portal/spr_player_zekai_portal.yy",},},
     {"id":{"name":"spr_player_ziteng_fullanimation","path":"sprites/spr_player_ziteng_fullanimation/spr_player_ziteng_fullanimation.yy",},},
     {"id":{"name":"spr_player_ziteng","path":"sprites/spr_player_ziteng/spr_player_ziteng.yy",},},
     {"id":{"name":"spr_player_ziteng2","path":"sprites/spr_player_ziteng2/spr_player_ziteng2.yy",},},
