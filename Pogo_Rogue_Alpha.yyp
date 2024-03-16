@@ -946,6 +946,7 @@
     {"id":{"name":"spr_menu","path":"sprites/spr_menu/spr_menu.yy",},},
     {"id":{"name":"spr_menuart","path":"sprites/spr_menuart/spr_menuart.yy",},},
     {"id":{"name":"spr_miniboss_cube","path":"sprites/spr_miniboss_cube/spr_miniboss_cube.yy",},},
+    {"id":{"name":"spr_minimap_phase1","path":"sprites/spr_minimap_phase1/spr_minimap_phase1.yy",},},
     {"id":{"name":"spr_minimap","path":"sprites/spr_minimap/spr_minimap.yy",},},
     {"id":{"name":"spr_mouse_left","path":"sprites/spr_mouse_left/spr_mouse_left.yy",},},
     {"id":{"name":"spr_mouse_middle","path":"sprites/spr_mouse_middle/spr_mouse_middle.yy",},},
