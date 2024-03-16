@@ -222,6 +222,7 @@ state_bouncing = function() {
 }
 
 state_chargejump = function() {
+	can_rotate = true;
 	var end_of_charge = false;
 	if !audio_is_playing(snd_chargejump) { //sound
 		if (charge > charge_max) {
