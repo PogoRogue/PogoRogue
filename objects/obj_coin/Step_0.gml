@@ -8,10 +8,15 @@ if room != room_shop {
 	follow_object2 = obj_shopkeeper;
 }
 
-if (instance_exists(follow_object)) {
-	move_towards_point(follow_object.x,follow_object.y,spd);
-	spd = lerp(spd,max_spd,0.05);
-}
+if obj_player.state != obj_player.state_blink {
+	if (instance_exists(follow_object)) {
+		move_towards_point(follow_object.x,follow_object.y,spd);
+		spd = lerp(spd,max_spd,0.05);
+	}
+}else {
+	speed = 0;
+	spd = 0;
+}	
 
 //destroy on contact
 if (instance_exists(follow_object) and instance_exists(follow_object2)) {

@@ -6,9 +6,13 @@ signature_grid = 0; //Grid object to hold designer signatures per proc gen chunk
 layout_grid = 0;
 
 display_player_chunk = true;
+display_minimap = true;
 player_location_string = "None";
 
 current_tag_object = 0;
 
 alarm[0] = 1;
+
+previous_tag_message = ""; //Use to fill in gaps where there might not be tag objects or regions
+previous_region = 0;
 

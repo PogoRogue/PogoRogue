@@ -1,11 +1,15 @@
-if global.combo_length > 0 {
-	if global.combo > 0 {
+if global.combo_length > 0 and room != room_boss_1 and room != room_boss_2 /*and room != room_boss_3*/{
+	if global.combo > 0 and global.enemy_killed = true {
 		global.combo_length -= combo_decrease_speed;
-	}else {
+	}else if global.enemy_killed = true {
 		global.combo_length = 0;
+	}else {
+		global.combo_length = global.combo_max;
 	}
-}else {
+}else if room != room_boss_1 and room != room_boss_2 /*and room != room_boss_3*/{
 	global.combo = 0;
+}else {
+	global.combo_length = global.combo_max;
 }
 
 if global.combo_length <= global.combo_max/4 {
@@ -43,11 +47,4 @@ if global.combo > global.best_combo { //best combo across all runs
 
 if global.combo > global.current_best_combo {
 	global.current_best_combo =  global.combo;	
-}
-
-if coin_alpha > 0 {
-	coin_alpha -= 0.05;
-}else {
-	coin_alpha = 0;
-	current_coins = 0;
 }

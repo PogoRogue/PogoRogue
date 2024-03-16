@@ -69,6 +69,8 @@ if key_select and centered = true and fade_away = false {
 	//change weapon
 	instance_activate_object(obj_player);
 	with obj_player {
+		global.all_weapon_costs[0] = other.all_weapons_costs[other.select-1];
+		global.all_weapon_costs[1] = 25;
 		num_of_weapons = 2;
 		gun_1 = other.all_weapons[other.select-1];
 		gun_2 = all_guns_array[0];

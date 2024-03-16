@@ -147,3 +147,14 @@ if (gun_name = "Sniper Rifle" ) {
 		laser_boost = true;
 	}
 }
+
+if gun_name = "Water Gun" {
+	if (attach_to_player > 0) {
+		x = obj_player.x + lengthdir_x(6,obj_player.angle-90);
+		y = obj_player.y + lengthdir_y(6,obj_player.angle-90);
+		attach_to_player -= 1;
+	
+	}else {
+		image_index = 1;	
+	}
+}

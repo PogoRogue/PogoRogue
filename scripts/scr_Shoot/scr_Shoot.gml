@@ -7,23 +7,24 @@ function scr_Shoot(){
 		
 		//calculate distaence from center to tip of gun
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
-		
+		var damage_multiplier = 1;
 		//sound
 		audio_play_sound(gun.sound,0,false);
 		
 		for (var i = 0; i < gun.spread_number; i++;) {
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
 			var destroyOnImpact;
-			if(global.drilltipbullets){
-				destroyOnImpact = false;
-			}else{
-				destroyOnImpact = gun.ammo[bullet_index].destroy_on_impact
-			}
+			destroyOnImpact = gun.ammo[bullet_index].destroy_on_impact;
+
 			if(global.steadyhands){
 				imageAngle = angle_ - 90;
 			}else{
 				imageAngle = angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90;
 			}
+			if(global.laststand and hp <= 8){
+				damage_multiplier = 2;
+			}
+					
 			instance_create_depth(x,y,depth-1,obj_projectile,{
 				image_angle: imageAngle,
 				sprite_index: gun.ammo[bullet_index].sprite,
@@ -36,7 +37,7 @@ function scr_Shoot(){
 				grv: gun.ammo[bullet_index].grv,
 				num_of_bounces: gun.ammo[bullet_index].num_of_bounces + global.bouncy_bullets,
 				bounce_amount: gun.ammo[bullet_index].bounce_amount,
-				damage: gun.ammo[bullet_index].damage * (1 + ((global.sharpshooter = true and gun.current_bullets = gun.bullets_per_bounce) * 0.5)),
+				damage: gun.ammo[bullet_index].damage * (1 + ((global.sharpshooter = true and gun.current_bullets = gun.bullets_per_bounce) * 0.5)) * damage_multiplier,
 			});
 			
 			
@@ -49,7 +50,7 @@ function scr_Shoot(){
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 and frenzy = false {
+			if gun.spread_number = 1 and frenzy = false and gun._name != "Javelins" {
 				gun.current_bullets -= 1;
 			}
 			

@@ -1,3 +1,9 @@
+if global.phase > 1 {
+	instance_destroy();	
+}
+
+depth -= 1000;
+
 usable = true;
 select = 1;
 select_max = 3; //max # of rows
@@ -34,7 +40,7 @@ center_y = camera_get_view_height(view_camera[0])/2;
 
 alarm[1] = 2;
 
-scr_All_Actives_Array()
+scr_All_Actives_Array();
 actives_array = global.all_pickups;
 				
 select_max = array_length(actives_array);
@@ -47,9 +53,12 @@ current_array = actives_array;
 
 scr_All_Actives_Array();
 
+all_pickups_costs = [];
+
 for (i = 0; i < array_length(actives_array); i++) {
 	with instance_create_depth(x,y,depth,actives_array[i]) {
 		other.all_actives[other.i] = pickup;
+		other.all_pickups_costs[other.i] = item_cost;
 		instance_destroy();
 	}
 }

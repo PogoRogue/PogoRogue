@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_All_Actives_Array",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Items",
-    "path": "folders/Scripts/Items.yy",
+  "$GMScript":"",
+  "%Name":"scr_All_Actives_Array",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_All_Actives_Array",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -31,25 +31,8 @@ for (i = 0; i < array_length(actives_array); i++) {
 	var yy = 156 + floor(i / select_x_max) * y_gap;
 	
 	if (select = i + 1) {
-		if global.use_controller = true {
-			draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[18][0]),0,xx,yy+4);
-		}else {
-			var keyboard_array_value = global.keyboard_array[18][0];
-			var keyboard_text = scr_Keyboard_Get_Key_String(keyboard_array_value);
-			
-			if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
-				if is_string(keyboard_text) {
-					draw_set_font(fnt_combo2);
-					scr_Draw_Text_Outlined(xx,yy+2,keyboard_text,c_white);
-					draw_set_font(fnt_itemdescription2);
-				}else {
-					draw_sprite(keyboard_text,0,xx,yy+4);
-				}
-			}else {
-				var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
-				draw_sprite(mouse_sprite,0,xx,yy+4);	
-			}
-		}	
+		scr_Draw_Input_UI(xx,yy+4,18,0,fnt_combo2,fa_center,fa_middle);
+		draw_set_font(fnt_itemdescription2);
 	}
 }
 
@@ -71,6 +54,6 @@ for (i = 0; i < array_length(all_actives); i++) {
 			var y_offset = 0;
 		}
 			
-		scr_Draw_Pickup_Description(xx,yy+y_offset,all_actives[i],0,true);
+		scr_Draw_Pickup_Description(xx,yy+y_offset,all_actives[i],0,true,all_pickups_costs[i]);
 	}
 }
