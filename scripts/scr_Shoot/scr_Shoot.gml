@@ -91,10 +91,11 @@ function scr_Shoot(){
 		
 		//unfreeze if applicable
 		if state = state_freeze {
-			state = state_free;
-			grv = init_grv;
-			rotation_speed = original_rotation_speed;
-			rotation_delay = rotation_speed / 10;
+			speed = 0;
+			//state = state_free;
+			//grv = init_grv;
+			//rotation_speed = original_rotation_speed;
+			//rotation_delay = rotation_speed / 10;
 		}
 		
 	}

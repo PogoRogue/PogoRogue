@@ -12,6 +12,17 @@ or weapon != obj_player.gun_1 and weapon != obj_player.gun_2 and weapon != obj_p
 			gun =  obj_player.gun_array[1];
 			current_gun = 1;
 		}
+		
+		ini_open("itemsunlocked.ini");
+		if scr_In_Array(obj_player.all_guns_array,weapon) {
+			for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
+				if obj_player.all_guns_array[i] = weapon {
+					global.weapon_unlocked_array[i] = true;
+					ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
+				}
+			}
+		}
+		ini_close();
 	}else if obj_player.num_of_weapons = 2 and obj_player.weapons_equipped = 2 {
 		//create pop-up
 		with instance_create_depth(x,y,depth,obj_item_swap) {
@@ -32,6 +43,17 @@ or weapon != obj_player.gun_1 and weapon != obj_player.gun_2 and weapon != obj_p
 			gun =  obj_player.gun_array[1];
 			current_gun = 1;
 		}
+		
+		ini_open("itemsunlocked.ini");
+		if scr_In_Array(obj_player.all_guns_array,weapon) {
+			for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
+				if obj_player.all_guns_array[i] = weapon {
+					global.weapon_unlocked_array[i] = true;
+					ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
+				}
+			}
+		}
+		ini_close();
 	}else if obj_player.num_of_weapons = 3 and obj_player.weapons_equipped = 2 {
 		with obj_player {
 			num_of_weapons = 3;
@@ -40,6 +62,17 @@ or weapon != obj_player.gun_1 and weapon != obj_player.gun_2 and weapon != obj_p
 			gun =  obj_player.gun_array[2];
 			current_gun = 2;
 		}
+		
+		ini_open("itemsunlocked.ini");
+		if scr_In_Array(obj_player.all_guns_array,weapon) {
+			for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
+				if obj_player.all_guns_array[i] = weapon {
+					global.weapon_unlocked_array[i] = true;
+					ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
+				}
+			}
+		}
+		ini_close();
 	}else if obj_player.num_of_weapons = 3 and obj_player.weapons_equipped = 3 {
 		//create pop-up
 		with instance_create_depth(x,y,depth,obj_item_swap) {

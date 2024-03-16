@@ -12,7 +12,11 @@ if (follow_player = true) {
 		mask_index = sprite_index;
 	}
 }
-
 if show_debug = true {
-	show_debug_message(string(x) + " " +string(y) + " " + string(image_alpha));	
+	//show_debug_message(string(x) + " " +string(y) + " ");	
+	//show_debug_message(string(object_get_name(object_index)));	
+	if object_get_name(object_index) = "obj_item_parentbuff" {
+		alarm[0] = 1;
+	}
+	show_debug = false;
 }

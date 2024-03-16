@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c05b71ff-0941-4490-9cb4-f386bdf6146f",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d074b822-c314-4639-a9e2-47b78a2805e3",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9f4e1fcc-e81c-4d11-8a8b-7fd68b56a3bc",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c05b71ff-0941-4490-9cb4-f386bdf6146f","path":"sprites/spr_buffitem_aerialassassin_old/spr_buffitem_aerialassassin_old.yy",},},},"Disabled":false,"id":"ed92e578-276d-4bfb-ae4a-72f3049aa5e1","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d074b822-c314-4639-a9e2-47b78a2805e3","path":"sprites/spr_buffitem_aerialassassin_old/spr_buffitem_aerialassassin_old.yy",},},},"Disabled":false,"id":"495c1433-e8c8-4141-8bbb-f5060d503ca5","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9f4e1fcc-e81c-4d11-8a8b-7fd68b56a3bc","path":"sprites/spr_buffitem_aerialassassin_old/spr_buffitem_aerialassassin_old.yy",},},},"Disabled":false,"id":"47f5f7cc-c9c1-4a81-9779-a5a8c2a0a681","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

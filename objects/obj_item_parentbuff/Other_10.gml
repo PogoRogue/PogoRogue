@@ -17,10 +17,21 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 	global.all_buff_descriptions[array_length(global.all_buff_descriptions)-1] = item_tagline;
 	global.all_buff_stats[array_length(global.all_buff_stats)-1] = item_stats;
 	
-	if scr_In_Array(global.all_passives_used,sprite_index) = false {
+	if scr_In_Array(global.all_passives_used,item_name) = false {
 		array_resize(global.all_passives_used,array_length(global.all_passives_used)+1);
 		global.all_passives_used[array_length(global.all_passives_used)-1] = sprite_index;
 	}
+	
+	ini_open("itemsunlocked.ini");
+	if scr_In_Array(obj_player.all_buffs_array,buff) {
+		for(i = 0; i < array_length(obj_player.all_buffs_array);i++) {
+			if obj_player.all_buffs_array[i] = buff {
+				global.passive_unlocked_array[i] = true;
+				ini_write_real("itemsunlocked", "passive " + string(i), global.passive_unlocked_array[i]);
+			}
+		}
+	}
+	ini_close();
 }else if add_sprite_to_list = true {
 	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
 		if global.all_buff_sprites[i] = sprite_index {

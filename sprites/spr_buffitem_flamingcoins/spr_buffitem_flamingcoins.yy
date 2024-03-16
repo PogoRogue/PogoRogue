@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c05b71ff-0941-4490-9cb4-f386bdf6146f",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f0682222-7cc5-4be1-aabf-2a17ad0f2f20",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9ec2073e-a8c8-4f5b-a5fc-5545ab7fedef",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -45,7 +46,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -58,6 +59,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c05b71ff-0941-4490-9cb4-f386bdf6146f","path":"sprites/spr_buffitem_flamingcoins/spr_buffitem_flamingcoins.yy",},},},"Disabled":false,"id":"17ba2714-61c4-4102-b4dd-f5943a24065d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f0682222-7cc5-4be1-aabf-2a17ad0f2f20","path":"sprites/spr_buffitem_flamingcoins/spr_buffitem_flamingcoins.yy",},},},"Disabled":false,"id":"cf863426-bb2b-455f-ba72-442e872159b7","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9ec2073e-a8c8-4f5b-a5fc-5545ab7fedef","path":"sprites/spr_buffitem_flamingcoins/spr_buffitem_flamingcoins.yy",},},},"Disabled":false,"id":"b6a3d91b-2044-4dd2-8d45-0d88e2698797","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

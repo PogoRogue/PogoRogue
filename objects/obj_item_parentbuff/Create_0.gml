@@ -9,7 +9,7 @@ list_of_possible_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybulle
 							obj_item_buff_sharptip, obj_item_buff_experimentation, obj_item_buff_aerialassassin,
 							obj_item_buff_supershield, obj_item_buff_revive, obj_item_buff_drilltipbullets,
 							obj_item_buff_dualwielder, obj_item_buff_steadyhands, obj_item_buff_tightspring,
-              obj_item_buff_magicianstouch];
+							obj_item_buff_magicianstouch];
 random_buff_drop = list_of_possible_buffs[irandom_range(0,array_length(list_of_possible_buffs)-1)];
 
 buff = obj_player.buff_nothing;

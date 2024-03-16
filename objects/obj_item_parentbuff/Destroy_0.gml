@@ -6,3 +6,5 @@ if add_sprite_to_list = true and room != room_shop and sold_out = false {
 		item_string = other.item_name;
 	}
 }
+
+
