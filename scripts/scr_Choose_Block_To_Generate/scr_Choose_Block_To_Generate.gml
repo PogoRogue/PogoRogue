@@ -10,7 +10,7 @@ function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
 	}
 	else if(room_string == "Tc") //Marks the player starting room!
 	{
-		return spr_3x3_Starting_Room;
+		return spr_start;//spr_3x3_Starting_Room;
 	}	
 	else if(room_string == "Shc") //Shop Room
 	{
