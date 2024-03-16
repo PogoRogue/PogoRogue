@@ -1,4 +1,4 @@
-randomize()
+//randomize()
 image_angle = random_range(0,360);
 vspeed = random_range(2,3);
 hspeed = 0;

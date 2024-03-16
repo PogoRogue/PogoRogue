@@ -7,7 +7,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "ProcGen",
-    "path": "folders/Objects/Environmental/ProcGen.yy",
+    "path": "folders/Objects/ProcGen.yy",
   },
   "parentObjectId": null,
   "persistent": false,
