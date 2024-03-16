@@ -346,3 +346,11 @@ if (gun_name = "Water Gun") {
 	}
 	image_xscale = 1;
 }
+
+if (gun_name = "Laser Gun" ) {
+	
+	//image_angle = obj_player.image_angle-90;
+	//x = obj_player.x +laser_x;
+	//y = obj_player.y +laser_y;
+	
+}
