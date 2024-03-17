@@ -5,13 +5,12 @@ event_inherited();
 
 if(is_dead) {
 	spd = 0;	
-} else if (place_meeting(x + speed, y, obj_ground)) {
+} else if (place_meeting(x + hspeed, y+vspeed, obj_ground)) {
 	spd *= -1;
-	image_xscale = sign(spd);
 }
 
-x += spd;
+hspeed= spd;
 
-y += sin(y_spd);
+vspeed= sin(y_spd);
 
 y_spd += 0.05;

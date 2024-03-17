@@ -1,4 +1,4 @@
-/// @description Instantiate variables
+/// @description Recode enemy_moving as parent class
 
 // Inherit the parent event
 event_inherited();
@@ -7,3 +7,4 @@ event_inherited();
 spd = 0.5;
 at_edge = false;
 at_wall = false;
+aggro=false;
