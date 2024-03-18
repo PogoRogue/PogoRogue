@@ -8,7 +8,6 @@ with(obj_pixel_tag) //Loops through EVERY tag object to add to the signature ds_
 	var tag_grid_location = scr_Get_Grid_Coord_From_Room_Coord(x, y);
 	var room_name = ds_grid_get(other.layout_grid, tag_grid_location[0], tag_grid_location[1]);
 	chunk_type = string(room_name);
-	sprite_name = sprite_get_name(scr_Choose_Block_To_Generate(other.layout_grid, tag_grid_location[0], tag_grid_location[1]));
 	ds_grid_set(other.signature_grid, tag_grid_location[0], tag_grid_location[1], self)
 	
 	if(room_name == "c3c" || room_name == "c2c" || room_name == "Tc")

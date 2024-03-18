@@ -11,6 +11,14 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 	return -1;
 	}
+	else if(Red == 242 && Green == 101 && Blue == 34)
+	{
+		return obj_tag_Isaac;
+	}
+	else if(Red == 187 && Green == 228 && Blue == 76)
+	{
+		return obj_tag_Cam;
+	}
 	else if(Red == 34 && Green == 204 && Blue == 0)
 	{
 		return obj_tag_Sam;

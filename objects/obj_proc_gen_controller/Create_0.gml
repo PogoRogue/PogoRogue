@@ -3,7 +3,7 @@
 // Our prebuilt rooms and their dimensions
 // Room format: [width, height, room_id]
 prebuilt_rooms = ds_list_create();
-ds_list_add(prebuilt_rooms, [3, 3, "T"]); //First room in list is starting room T for tutorial
+ds_list_add(prebuilt_rooms, [1, 2, "T"]); //First room in list is starting room T for tutorial
 ds_list_add(prebuilt_rooms, [1, 1, "Sh"]); //Second room in list is shop room Sh for shop
 ds_list_add(prebuilt_rooms, [1, 1, "B"]); //Third room in list is boss entry room B for boss
 
@@ -14,9 +14,20 @@ ds_list_add(prebuilt_rooms, [3, 3, "c3"]); //3x3 Combat room, c stands for comba
 ds_list_add(prebuilt_rooms, [2, 2, "c2"]); //2x2 Combat room
 
 
-rooms_to_generate = 5; //Need: Start, Combat, Shop, Combat, Boss (room order)
+rooms_to_generate = 6; //Need: Start, Combat, Combat, Shop, Combat, Boss (room order)
 total_room_regions = 2*rooms_to_generate-1; //Regions include hallways, and there's one less number of hallways 
 //compared to rooms
+
+generate_proc_gen = true;
+
+if (global.phase == 1) {
+	generate_start_room = true;
+	rooms_to_generate = 6; //Need: Start, Combat, Combat, Shop, Combat, Boss (room order)
+}
+else {
+	generate_start_room = false;
+	rooms_to_generate = 5; //Need: Combat, Combat, Shop, Combat, Boss (room order)
+}
 
 //Max and min heights of hallways
 min_distance_between_rooms = 2; //Go no lower than 2 for this number
@@ -25,14 +36,7 @@ max_gen_width = 12; //This is the max width. Because of some details in the proc
 //you are much less likely to hit this max than the height max
 //Example: since max distance is 8 up 14 sideways, maximum hall length is actually 10 + 14 = 22
 
-generate_proc_gen = true;
 
-if (global.phase == 1) {
-	generate_start_room = true;
-}
-else {
-	generate_start_room = false;
-}
 // generate_start_room = true; //Since structure will be the exact same, just with or without a starter room,
 //We use this bool to remember that we have (or haven't) already seen a start room
 
@@ -64,9 +68,6 @@ if(conduct_freq_analysis)
 	max_gen_width = other.max_gen_width;
 	}
 }
-
-//We already generated a start room, so instead generate a random combat room the next time we proc gen
-generate_start_room = false;
 
 
 global.debug_wall_count = 0;

@@ -17,7 +17,20 @@ else
 if(display_minimap && instance_exists(current_tag_object))
 {
 	var frame = current_tag_object.proc_gen_region;
-	draw_sprite(spr_minimap, frame, display_get_gui_width() - 48, display_get_gui_height()/2);
+	if(global.phase == 1)
+	{
+		if(frame >= 1)
+		{
+		frame = frame - 1; //Adjust frame for phase 1 level structure difference
+		//Need to display both the "start room" and hallway as the same region, and then every other region 
+		//will be off by one
+		}
+		draw_sprite(spr_minimap_phase1, frame, display_get_gui_width() - 48, display_get_gui_height()/2);
+	}
+	else
+	{
+		draw_sprite(spr_minimap, frame, display_get_gui_width() - 48, display_get_gui_height()/2);
+	}
 	previous_region = frame;
 }
 else

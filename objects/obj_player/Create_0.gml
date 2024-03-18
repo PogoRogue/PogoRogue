@@ -220,6 +220,7 @@ state_bouncing = function() {
 }
 
 state_chargejump = function() {
+	can_rotate = true;
 	var end_of_charge = false;
 	if !audio_is_playing(snd_chargejump) { //sound
 		if (charge > charge_max) {
@@ -687,14 +688,19 @@ state_portal = function() {
 }
 
 state_spawn = function() {
+	sprite_index = spr_player_zekai_portal;
 	can_shoot = false;
 	can_rotate = false;
+	
 	speed = 0;
+	
 	if image_xscale < 1 {
 		image_xscale += 0.025;
 		image_yscale += 0.025;
 	}else {
-		state = state_free;	
+		state = state_free;
+		y += 22;
+		sprite_index = spr_player_zekai;
 	}
 }
 
