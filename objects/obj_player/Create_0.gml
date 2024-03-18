@@ -99,9 +99,7 @@ current_iframes = 0;
 dead = false;
 
 // Room Gate Handling
-enemies_killed = 0;
-enemies_required = 3;
-room_number = 0;
+enemies_killed_in_room = 0;
 
 //Sound Bool for preventing looping sounds
 soundPlayed = false;
