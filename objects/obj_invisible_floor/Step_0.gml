@@ -9,7 +9,7 @@ if(instance_exists(controller)) {
 		case STATES.VULNERABLE:
 			is_lowering = true;
 			break;
-		case STATES.DEAD:
+		case STATES.INACTIVE:
 			is_lowering = true;
 			break;
 	}
