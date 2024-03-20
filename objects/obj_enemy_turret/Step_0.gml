@@ -29,8 +29,9 @@ if(!is_dead && dist_to_player < range) {
 				_bullet.direction = point_direction(_xx, _yy, player.x, player.y);
 				_bullet.speed = bullet_speed;
 			} else {
-				var _bullet = instance_create_layer(_xx, _yy, "Instances", pattern);
-				_bullet.dir_central = point_direction(_xx, _yy, player.x, player.y);
+				var _pattern = instance_create_layer(_xx, _yy, "Instances", pattern);
+				_pattern.parent = self;
+				_pattern.dir_central = point_direction(_xx, _yy, player.x, player.y);
 			}
 			weapon_cooldown = cooldown_length;
 			windup = true;

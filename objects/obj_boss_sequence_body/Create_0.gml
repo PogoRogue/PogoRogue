@@ -16,4 +16,14 @@ left_border = 100;
 top_border = view_height - 20;
 right_border = view_width - 100;
 bottom_border = view_height - 15;
+segment_length = (right_border - left_border) / 3;
+left_segment = left_border + segment_length;
+right_segment = left_border + (2 * segment_length);
+
+var _x1 = left_border + ((right_border - left_border) / 3);
+var _x2 = left_border + (2 * (right_border - left_border) / 3);
+
 hp_percent = (hp / hp_max) * 100;
+
+hp_color_vulnerable = #B45252;
+hp_color_invulnerable = #4C3535;

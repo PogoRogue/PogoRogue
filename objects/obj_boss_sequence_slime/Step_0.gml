@@ -14,7 +14,7 @@ if(instance_exists(controller)) {
 			}
 			current_sprite = spr_boss2_slime_drain;
 			break;
-		case STATES.DEAD:
+		case STATES.INACTIVE:
 			if(current_sprite == spr_boss2_slime_raise) {
 				image_index = 0;
 			}

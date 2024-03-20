@@ -1,6 +1,6 @@
 /// @description Press
 
-if(!is_pressed) {
+if(!is_pressed && is_active) {
 	other.speed = 0;
 
 	is_pressed = true;

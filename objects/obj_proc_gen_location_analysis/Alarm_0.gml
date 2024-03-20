@@ -8,7 +8,6 @@ with(obj_pixel_tag) //Loops through EVERY tag object to add to the signature ds_
 	var tag_grid_location = scr_Get_Grid_Coord_From_Room_Coord(x, y);
 	var room_name = ds_grid_get(other.layout_grid, tag_grid_location[0], tag_grid_location[1]);
 	chunk_type = string(room_name);
-	sprite_name = sprite_get_name(scr_Choose_Block_To_Generate(other.layout_grid, tag_grid_location[0], tag_grid_location[1]));
 	ds_grid_set(other.signature_grid, tag_grid_location[0], tag_grid_location[1], self)
 	
 	if(room_name == "c3c" || room_name == "c2c" || room_name == "Tc")
@@ -86,4 +85,32 @@ with(obj_generated_object_parent)
 		proc_gen_tag = -1;
 	}
 }
+
+with(obj_enemy_parent)
+{
+    var tag_grid_location = scr_Get_Grid_Coord_From_Room_Coord(x, y);
+    var tag_object = ds_grid_get(other.signature_grid, tag_grid_location[0], tag_grid_location[1]);
+    if(instance_exists(tag_object))
+    {
+        // Get the region tag from the tag object
+        var region_tag = tag_object.proc_gen_region;
+		
+		if (region_tag == "2") {
+			asset_add_tags(id, "CombatRoom1", asset_object);
+			//show_debug_message("Assigned " + "CombatRoom1" + " to object ID: " + string(id));
+		}
+		else if (region_tag == "6") {
+			asset_add_tags(id, "CombatRoom2", asset_object);
+			//show_debug_message("Assigned " + "CombatRoom2" + " to object ID: " + string(id));
+		}
+			
+        
+        // Assign the region tag to the instance
+    }
+}
+
+
+
+
+
 

@@ -1,3 +1,6 @@
+/// @description Set rotation
+
+sprite_index = default_sprite;
 if!(place_meeting(x - 27, y, obj_ground_parent)) {
 	rotation = 180;
 	is_vertical = true;

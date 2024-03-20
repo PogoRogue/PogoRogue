@@ -5,6 +5,8 @@ image_alpha = 1;
 despawn = false;
 reached_max_alpha = false;
 chargejump = false;
+despawnable = false;
+alarm[1] = 2;
 
 damage = 12;
 
