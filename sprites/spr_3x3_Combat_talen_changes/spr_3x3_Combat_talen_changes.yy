@@ -32,8 +32,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Talens_sprites",
-    "path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy",
+    "name":"extra_storage",
+    "path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/extra_storage.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

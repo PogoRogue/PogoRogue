@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Talens_sprites",
-    "path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy",
+    "name":"phase_2T",
+    "path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_2T.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
