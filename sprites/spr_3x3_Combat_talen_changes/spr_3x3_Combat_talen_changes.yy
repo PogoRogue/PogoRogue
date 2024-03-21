@@ -32,8 +32,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"extra_storage",
-    "path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/extra_storage.yy",
+    "name":"Pogo_Rogue_Alpha",
+    "path":"Pogo_Rogue_Alpha.yyp",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

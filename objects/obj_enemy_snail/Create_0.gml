@@ -13,21 +13,21 @@ enum SNAIL_STATES {
 	VERTICAL_RIGHT,
 }
 
-if(place_meeting(x, y + 12, obj_ground_parent)) {
+if(place_meeting(x, y + 12, obj_ground_outer)) {
 	state = SNAIL_STATES.HORIZONTAL;
-	while(!place_meeting(x, y + 1, obj_ground_parent)) {
+	while(!place_meeting(x, y + 1, obj_ground_outer)) {
 		y++;
 	}
-} else if(place_meeting(x - 12, y, obj_ground_parent)) {
+} else if(place_meeting(x - 12, y, obj_ground_outer)) {
 	state = SNAIL_STATES.VERTICAL_LEFT;
 	image_angle -= 90;
-	while(!place_meeting(x - 1, y, obj_ground_parent)) {
+	while(!place_meeting(x - 1, y, obj_ground_outer)) {
 		x--;
 	}
-} else if(place_meeting(x + 12, y, obj_ground_parent)) {
+} else if(place_meeting(x + 12, y, obj_ground_outer)) {
 	state = SNAIL_STATES.VERTICAL_RIGHT;
 	image_angle += 90;
-	while(!place_meeting(x + 1, y, obj_ground_parent)) {
+	while(!place_meeting(x + 1, y, obj_ground_outer)) {
 		x++;
 	}
 } else {
