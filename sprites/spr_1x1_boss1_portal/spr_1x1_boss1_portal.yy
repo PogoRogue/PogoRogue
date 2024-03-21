@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"phase_1T",
-    "path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/phase_1T.yy",
+    "name":"Pogo_Rogue_Alpha",
+    "path":"Pogo_Rogue_Alpha.yyp",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
