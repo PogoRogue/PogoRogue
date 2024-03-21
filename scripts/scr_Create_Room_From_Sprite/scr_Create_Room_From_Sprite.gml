@@ -113,10 +113,16 @@ function Create_Instance_From_RGB(RGB, x_offset, y_offset, mirror)
 			inst.image_xscale = -1;
 			inst.x = inst.x + 16;
 		}
+		else if(object_to_create == obj_conveyor_belt_mirrored && mirror)
+		{
+			inst.image_xscale = 1;
+			inst.x = inst.x - 16;
+		}
 		else if((object_to_create == obj_temp_platform_off_on || object_to_create == obj_temp_platform_on_off) && mirror)
 		{
 			inst.x = inst.x - 80; //Adjust since anchor is weird, and levels are all made with that anchor already
 		}
+		
 		
 		return inst;
 	}
