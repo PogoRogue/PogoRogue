@@ -12,9 +12,9 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"658b076b-3aa7-464e-a1eb-7d3ab5e101ef","name":"658b076b-3aa7-464e-a1eb-7d3ab5e101ef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"7e43f2f4-7d0d-4700-bb79-12c801f8f642","name":"7e43f2f4-7d0d-4700-bb79-12c801f8f642","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"c56f7385-266d-4264-8b72-dbd362a4274e","name":"c56f7385-266d-4264-8b72-dbd362a4274e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f9e87637-a3f3-48c3-ad54-1bf69a8a38c7","name":"f9e87637-a3f3-48c3-ad54-1bf69a8a38c7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"1e72c6ba-254a-4876-bc2b-213971849d54","name":"1e72c6ba-254a-4876-bc2b-213971849d54","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"03c59e3e-aaaa-473b-9fb2-a9b6bba4a89f","name":"03c59e3e-aaaa-473b-9fb2-a9b6bba4a89f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -71,14 +71,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"658b076b-3aa7-464e-a1eb-7d3ab5e101ef","path":"sprites/spr_3x3_Combat_Phase3/spr_3x3_Combat_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"582ad0fa-222e-4557-b5ea-38c1e0e87cf4","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f9e87637-a3f3-48c3-ad54-1bf69a8a38c7","path":"sprites/spr_3x3_Combat_Phase3/spr_3x3_Combat_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"4b5319bb-5fc5-4157-951b-0d1c91cdbfeb","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7e43f2f4-7d0d-4700-bb79-12c801f8f642","path":"sprites/spr_3x3_Combat_Phase3/spr_3x3_Combat_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"fcbebd35-1806-46dc-8bca-a315876e02bb","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1e72c6ba-254a-4876-bc2b-213971849d54","path":"sprites/spr_3x3_Combat_Phase3/spr_3x3_Combat_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"051a89c3-d0ee-49fd-8311-2357c2434475","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c56f7385-266d-4264-8b72-dbd362a4274e","path":"sprites/spr_3x3_Combat_Phase3/spr_3x3_Combat_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"af7c7b93-a3ed-40ed-ac57-a2f7458ce0b2","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"03c59e3e-aaaa-473b-9fb2-a9b6bba4a89f","path":"sprites/spr_3x3_Combat_Phase3/spr_3x3_Combat_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"79b56020-8a2a-4970-984b-ff308336cb7e","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
