@@ -146,6 +146,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_conveyor_belt;
 		}
+		else if(Blue == 203)
+		{
+			return obj_conveyor_belt_mirrored;
+		}
 		else if(Blue == 178)
 		{
 			return obj_electric_current;

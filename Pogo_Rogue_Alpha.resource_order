@@ -3,6 +3,7 @@
     {"name":"Old","order":61,"path":"folders/Sprites/Player/Old.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_conveyor_belt_mirrored","order":1,"path":"objects/obj_conveyor_belt_mirrored/obj_conveyor_belt_mirrored.yy",},
     {"name":"Spr_1x1_boss2_portal","order":1,"path":"sprites/Spr_1x1_boss2_portal/Spr_1x1_boss2_portal.yy",},
     {"name":"spr_2x2_Combat_Talen_store","order":2,"path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},
     {"name":"spr_3x3_Combat_talen_changes","order":3,"path":"sprites/spr_3x3_Combat_talen_changes/spr_3x3_Combat_talen_changes.yy",},
