@@ -1,14 +1,28 @@
-/// @description add to enemy total
-// Room kill counter
-combat_tag = asset_get_tags(id, asset_object)
-if (array_length_1d(combat_tag) > 0) {
-	if (combat_tag[0] == "CombatRoom1" || combat_tag[0] == "CombatRoom2") {
-		show_debug_message("enemy killed! +1");
-		obj_player.enemies_killed_in_room += 1;
-	}
+/// @description Change enemies in region counter
+if(proc_gen_tag != -1 && instance_exists(obj_proc_gen_location_analysis))
+{
+		show_debug_message("Enemy killed! +1 added, region: " + string(proc_gen_tag));		
+		
+		//Decrease enemy count for region
+		var location_obj = instance_nearest(x,y,obj_proc_gen_location_analysis);
+		with(location_obj)
+		{
+			var enemies_in_region = ds_list_find_value(region_enemy_count, other.proc_gen_tag);
+			ds_list_set(region_enemy_count, other.proc_gen_tag, enemies_in_region - 1);
+			
+			//Check gate open condition
+			var gate_list_val = ds_list_find_value(region_gate_objects, other.proc_gen_tag);
+			if(gate_list_val != 0) //Do something only if there's a gate for this region
+			{
+				var enemies_in_region = ds_list_find_value(region_enemy_count, other.proc_gen_tag);
+				gate_list_val.current_enemies_in_region = enemies_in_region;							
+				show_debug_message(enemies_in_region);
+				gate_list_val.alarm[1] = 1; //Tells the gate to check it's opening condition	
+			}
+		}
 }
 else {
-	show_debug_message("no combat tag");
+	show_debug_message("Enemy killed! Couldn't change region enemy count");
 }
 
 global.current_enemies_killed += 1;

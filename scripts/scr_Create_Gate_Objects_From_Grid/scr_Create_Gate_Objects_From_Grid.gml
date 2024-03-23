@@ -9,6 +9,8 @@ function scr_Create_Gate_Objects_From_Grid(layout_grid){
 	// element in the layout_grid represents
 	
 	var gate_positions = ds_list_create();
+	
+	//LOGIC FOR GATE POSITIONING, change later TODO
 	// Scan for gate positions
 	for (var i = 0; i < grid_width; i++) {
 		for (var j = 0; j < grid_height; j++) {
@@ -54,8 +56,7 @@ function scr_Create_Gate_Objects_From_Grid(layout_grid){
 	// Loop through our gate positions to create gates at the stored positions.
 	for (var i = 0; i < ds_list_size(gate_positions); i++) {
         var pos = ds_list_find_value(gate_positions, i);
-		var gate_tag = "Gate" + string(i+1); // Create gate tag
-        placeGate(pos[0], pos[1], room_pixel_width, gate_tag);
+        placeGate(pos[0], pos[1], room_pixel_width);
     }
 	
 	// Delete to prevent memory leaks
@@ -63,8 +64,8 @@ function scr_Create_Gate_Objects_From_Grid(layout_grid){
 }
 	
 	
-function placeGate(gate_x, gate_y, room_pixel_width, gate_tag) {
-    var gate_width = 448;
+function placeGate(gate_x, gate_y, room_pixel_width) {
+    var gate_width = 448; //hardcoded... change later TODO
     var gate_height = 32;
 
     // Convert grid pos to room coords and create gate instance
@@ -72,28 +73,11 @@ function placeGate(gate_x, gate_y, room_pixel_width, gate_tag) {
     var room_y = (gate_y * room_pixel_width * -1) + (512) - (gate_height); // Make sure its negative since room "up" is negative dir.
 
     var inst = instance_create_layer(room_x, room_y, "Instances", obj_room_gate_close);
-    var inst2 = instance_create_layer(room_x, room_y, "Instances", obj_room_gate_open);
-	asset_add_tags(inst, gate_tag, asset_object); // Add our tag to the Gate to number them.
 
-    if (inst == noone || inst2 == noone) {
+    if (inst == noone) {
         show_debug_message("Gate instance could not be created");
 	}
 	else {
-		 show_debug_message("Gate Placed at: " + string(room_x) + ", " + string(room_y) + ". With tag: " + string(gate_tag));
+		 show_debug_message("Gate Placed at: " + string(room_x) + ", " + string(room_y));
 	}
-}
-
-function enemiesRequiredCount(gate_tag)
-{
-	var count = 0;
-	with (obj_enemy_parent) {
-		if (gate_tag == "Gate1" && asset_has_tags(id, "CombatRoom1", asset_object)) {
-			count += 1;
-		}
-		else if (gate_tag == "Gate2" && asset_has_tags(id, "CombatRoom2", asset_object)) {
-			count += 1;
-		}
-	}
-	return count;
-
 }
