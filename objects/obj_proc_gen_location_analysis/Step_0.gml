@@ -5,7 +5,8 @@ if(instance_exists(obj_player))
 {
 	var player = instance_nearest(x, y, obj_player);
 	currentX = player.x;
-	currentY = player.y;
+	var y_bias = 10; //Bias to prevent flickering when the player jumps on the ground bordering two different regions
+	currentY = player.y - y_bias;
 }
 
 //Convert player location to grid location
