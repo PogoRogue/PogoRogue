@@ -4,6 +4,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_conveyor_belt_mirrored","order":1,"path":"objects/obj_conveyor_belt_mirrored/obj_conveyor_belt_mirrored.yy",},
+    {"name":"obj_room_gate_open_width_fitting","order":2,"path":"objects/obj_room_gate_open_width_fitting/obj_room_gate_open_width_fitting.yy",},
     {"name":"Spr_1x1_boss2_portal","order":1,"path":"sprites/Spr_1x1_boss2_portal/Spr_1x1_boss2_portal.yy",},
     {"name":"spr_2x2_Combat_Talen_store","order":2,"path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},
     {"name":"spr_3x3_Combat_talen_changes","order":3,"path":"sprites/spr_3x3_Combat_talen_changes/spr_3x3_Combat_talen_changes.yy",},
@@ -20,6 +21,10 @@
     {"name":"spr_dash_flames","order":35,"path":"sprites/spr_dash_flames/spr_dash_flames.yy",},
     {"name":"spr_dr1_Talen","order":4,"path":"sprites/spr_dr1_Talen/spr_dr1_Talen.yy",},
     {"name":"spr_freezeanimation","order":37,"path":"sprites/spr_freezeanimation/spr_freezeanimation.yy",},
+    {"name":"spr_gate_open_beam","order":3,"path":"sprites/spr_gate_open_beam/spr_gate_open_beam.yy",},
+    {"name":"spr_gate_open_middle","order":4,"path":"sprites/spr_gate_open_middle/spr_gate_open_middle.yy",},
+    {"name":"spr_gate_open_left","order":1,"path":"sprites/spr_gate_open_left/spr_gate_open_left.yy",},
+    {"name":"spr_gate_open_right","order":2,"path":"sprites/spr_gate_open_right/spr_gate_open_right.yy",},
     {"name":"spr_jetpack_charging","order":26,"path":"sprites/spr_jetpack_charging/spr_jetpack_charging.yy",},
     {"name":"spr_jetpack_smoke","order":50,"path":"sprites/spr_jetpack_smoke/spr_jetpack_smoke.yy",},
     {"name":"spr_jetpack","order":52,"path":"sprites/spr_jetpack/spr_jetpack.yy",},
