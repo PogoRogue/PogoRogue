@@ -122,7 +122,8 @@ with(obj_room_gate_close)
         var region_tag = tag_object.proc_gen_region;
 		proc_gen_tag = region_tag;
 		
-		total_enemies_in_region = ds_list_find_value(other.region_enemy_count, region_tag)
+		total_enemies_in_region = ds_list_find_value(other.region_enemy_count, region_tag);
+		current_enemies_in_region = total_enemies_in_region;
 				
 		//Add gate to gate list
 		ds_list_set(other.region_gate_objects, region_tag, self);

@@ -19,3 +19,7 @@ previous_region = 0;
 region_enemy_count = ds_list_create(); //Keeps track of the number of enemies in each region
 region_gate_objects = ds_list_create(); //Stores references to all the gates
 //These values are later used for gate logic
+
+
+display_progress_bar = false;
+kills_left = 0;
