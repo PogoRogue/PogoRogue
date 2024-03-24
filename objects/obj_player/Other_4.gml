@@ -19,7 +19,7 @@ alarm[2] = 10;
 //create portal
 if room != room_proc_gen_test and room != room_shop and global.last_room != room_shop
 or global.phase != 1 and room != room_shop and global.last_room != room_shop {
-	instance_create_depth(x,y+6,depth+10,obj_portal);	
+	instance_create_depth(x,y+3,depth+10,obj_portal);	
 	state = state_spawn;
 	image_xscale = 0;
 	image_yscale = 0;

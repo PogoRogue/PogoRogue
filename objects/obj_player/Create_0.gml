@@ -7,9 +7,11 @@ rotation_speed = 3; //rotation speed
 original_rotation_speed = global.tilt_speed;
 current_rotation_speed = 0;
 rotation_delay = rotation_speed / 10; //0.5
+temp_rotation_speed = 2; //rotation speed
+temp_rotation_delay = temp_rotation_speed / 6; //0.5
 vsp_basicjump = -6.6; //bounce height
 angle = 0;
-anglemax = 45; //maximum degrees added on either side
+anglemax = 38; //maximum degrees added on either side
 bouncing = false; //bouncing animation when true
 bounce_sound = true; //alternating pitch
 shop_bouncing = false; //only use this var in the shop
@@ -740,7 +742,12 @@ if room = room_tutorial {
 	num_of_weapons = 0;
 }
 weapons_equipped = num_of_weapons;
-all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun,yoyo_gun,javelin_gun,water_gun]; //all guns
+all_guns_array = [default_gun,paintball_gun,shotgun_gun,
+				burstfire_gun,javelin_gun,bouncyball_gun,
+				grenade_gun, boomerang_gun,starsucker_gun,
+				water_gun, slime_gun, yoyo_gun,
+				missile_gun, sniper_gun, laser_gun,
+				bubble_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();

@@ -158,6 +158,7 @@ if state != state_portal {
 //recentering
 if key_recenter and centering = false and angle != 0 and !key_left and !key_right and can_rotate {
 	centering = true;
+	
 }
 
 if centering = true and can_rotate {

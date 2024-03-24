@@ -364,7 +364,7 @@ function scr_Guns(){
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
-		momentum_added: 1.1, 
+		momentum_added: 1, 
 		reset_momentum: true, 
 		bullets_per_bounce: 1,
 		init_bullets_per_bounce: 1,

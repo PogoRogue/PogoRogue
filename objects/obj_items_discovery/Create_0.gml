@@ -44,12 +44,12 @@ actives_array = [spr_pickup_chargejump, spr_pickup_groundpound, spr_pickup_hatgu
 				spr_pickup_target,spr_pickup_emergency,spr_pickup_blink,
 				spr_pickup_parachute];
 				
-weapons_array = [spr_gun_default, spr_gun_paintball, spr_gun_shotgun, 
-				spr_gun_bubble, spr_gun_burstfire, spr_gun_grenade, 
-				spr_gun_laser, spr_gun_bouncyball, spr_gun_missile,
-				spr_gun_boomerang, spr_gun_starsucker, spr_gun_sniper,
-				spr_gun_slime,spr_gun_yoyo,spr_gun_javelins,
-				spr_gun_water];
+weapons_array = [spr_gun_default,spr_gun_paintball,spr_gun_shotgun,
+				spr_gun_burstfire,spr_gun_javelins,spr_gun_bouncyball,
+				spr_gun_grenade, spr_gun_boomerang,spr_gun_starsucker,
+				spr_gun_water, spr_gun_slime, spr_gun_yoyo,
+				spr_gun_missile, spr_gun_sniper, spr_gun_laser,
+				spr_gun_bubble];
 				
 current_array = passives_array;
 

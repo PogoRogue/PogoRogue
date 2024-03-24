@@ -1246,8 +1246,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
+    {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
     {"roomId":{"name":"room_tutorial","path":"rooms/room_tutorial/room_tutorial.yy",},},
     {"roomId":{"name":"room_boss_1","path":"rooms/room_boss_1/room_boss_1.yy",},},
     {"roomId":{"name":"room_boss_2","path":"rooms/room_boss_2/room_boss_2.yy",},},
