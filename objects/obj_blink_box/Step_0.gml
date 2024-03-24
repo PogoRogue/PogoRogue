@@ -71,6 +71,7 @@ if draw_respawn = true {
 	}else {
 		//finish code here	
 		with obj_player {
+			audio_play_sound(snd_blink_respawn,0,false);
 			state = state_free;	
 			can_rotate = true;
 			can_shoot = true;

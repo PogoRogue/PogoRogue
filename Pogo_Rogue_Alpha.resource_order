@@ -1,4 +1,20 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"snd_bbb1","order":5,"path":"sounds/snd_bbb1/snd_bbb1.yy",},
+    {"name":"snd_bbb2","order":6,"path":"sounds/snd_bbb2/snd_bbb2.yy",},
+    {"name":"snd_bbb3","order":7,"path":"sounds/snd_bbb3/snd_bbb3.yy",},
+    {"name":"snd_bbb4","order":8,"path":"sounds/snd_bbb4/snd_bbb4.yy",},
+    {"name":"snd_blink_despawn","order":1,"path":"sounds/snd_blink_despawn/snd_blink_despawn.yy",},
+    {"name":"snd_blink_respawn","order":2,"path":"sounds/snd_blink_respawn/snd_blink_respawn.yy",},
+    {"name":"snd_hatgun","order":1,"path":"sounds/snd_hatgun/snd_hatgun.yy",},
+    {"name":"snd_music_menu","order":2,"path":"sounds/snd_music_menu/snd_music_menu.yy",},
+    {"name":"snd_music_old","order":1,"path":"sounds/snd_music_old/snd_music_old.yy",},
+    {"name":"snd_paintball1","order":2,"path":"sounds/snd_paintball1/snd_paintball1.yy",},
+    {"name":"snd_paintball2","order":3,"path":"sounds/snd_paintball2/snd_paintball2.yy",},
+    {"name":"snd_paintball3","order":4,"path":"sounds/snd_paintball3/snd_paintball3.yy",},
+    {"name":"snd_targetedassassination_end","order":4,"path":"sounds/snd_targetedassassination_end/snd_targetedassassination_end.yy",},
+    {"name":"snd_targetedassassination_start","order":3,"path":"sounds/snd_targetedassassination_start/snd_targetedassassination_start.yy",},
+    {"name":"spr_shop_background","order":1,"path":"sprites/spr_shop_background/spr_shop_background.yy",},
+  ],
 }

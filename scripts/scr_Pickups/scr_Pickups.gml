@@ -505,6 +505,7 @@ function scr_Pickups(){
 			obj_player.state = obj_player.state_blink;
 			if !instance_exists(obj_blink_box) {
 				instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box);
+				audio_play_sound(snd_blink_despawn,0,false);
 			}
 		}
 	};

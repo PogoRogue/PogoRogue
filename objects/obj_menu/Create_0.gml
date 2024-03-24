@@ -8,3 +8,5 @@ usable = true;
 room_persistent = false;
 move_spd = 0;
 alarm3_time = 30;
+
+alarm[0] = 10; //play music

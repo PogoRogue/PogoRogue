@@ -1,4 +1,4 @@
-image_speed = 0;
+spr_image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_experimentation;
 item_name = "Experimenting";

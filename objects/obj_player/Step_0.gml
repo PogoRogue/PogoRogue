@@ -213,7 +213,12 @@ if (canshoot > 0) {
 		scr_Shoot();
 	
 		var delay = gun.burst_delay;
+		
+		
 		repeat (gun.burst_number - 1) {
+			if gun._name = "Burst Fire Gun" and delay = gun.burst_delay {
+				audio_play_sound(snd_burstfire,0,false);	
+			}
 			call_later(delay,time_source_units_frames,scr_Shoot);
 			delay += gun.burst_delay;
 		}

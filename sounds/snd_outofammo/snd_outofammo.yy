@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.335057,
+  "duration":0.2,
   "name":"snd_outofammo",
   "parent":{
     "name":"Weapons",
