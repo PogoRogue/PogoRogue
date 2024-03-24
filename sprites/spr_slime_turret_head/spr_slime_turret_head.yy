@@ -3,7 +3,7 @@
   "%Name":"spr_slime_turret_head",
   "bboxMode":2,
   "bbox_bottom":38,
-  "bbox_left":0,
+  "bbox_left":1,
   "bbox_right":49,
   "bbox_top":12,
   "collisionKind":1,
