@@ -167,19 +167,34 @@ function scr_Get_Rand_Weapon_Object()
 							obj_item_weapon_water, obj_item_weapon_slime, obj_item_weapon_yoyo,
 							obj_item_weapon_missile, obj_item_weapon_sniper, obj_item_weapon_laser,
 							obj_item_weapon_bubble];
-	random_weapon_drop = list_of_possible_weapons[irandom_range(0,array_length(list_of_possible_weapons)-1)];
+	
+	if global.phase <= 1 {
+		random_weapon_drop = list_of_possible_weapons[irandom_range(0,array_length(list_of_possible_weapons)-9)];
+	}else if global.phase = 2 {
+		random_weapon_drop = list_of_possible_weapons[irandom_range(0,array_length(list_of_possible_weapons)-5)];
+	}else {
+		random_weapon_drop = list_of_possible_weapons[irandom_range(0,array_length(list_of_possible_weapons)-1)];
+	}
+	
 	return random_weapon_drop;
 }
 
 function scr_Get_Rand_Pickup_Object()
 {
-	var list_of_possible_pickups = [obj_item_pickup_chargejump,obj_item_pickup_groundpound,obj_item_pickup_hatgun,
-							obj_item_pickup_shieldbubble,obj_item_pickup_firedash,obj_item_pickup_jetpack,
-							obj_item_pickup_slowmo, obj_item_pickup_bulletblast, obj_item_pickup_reload,
-							obj_item_pickup_camera, obj_item_pickup_freeze, obj_item_pickup_frenzy,
-							obj_item_pickup_target, obj_item_pickup_emergency, obj_item_pickup_blink,
-							obj_item_pickup_parachute];
-	random_pickup_drop = list_of_possible_pickups[irandom_range(0,array_length(list_of_possible_pickups)-1)];
+	var list_of_possible_pickups = [obj_item_pickup_firedash, obj_item_pickup_groundpound, obj_item_pickup_hatgun, 
+							obj_item_pickup_chargejump, obj_item_pickup_reload, obj_item_pickup_freeze,
+							obj_item_pickup_emergency, obj_item_pickup_parachute, obj_item_pickup_shieldbubble,
+							obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
+							obj_item_pickup_camera, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
+							obj_item_pickup_slowmo];
+							
+	if global.phase <= 1 {
+		random_pickup_drop = list_of_possible_pickups[irandom_range(0,array_length(list_of_possible_pickups)-9)];
+	}else if global.phase = 2 {
+		random_pickup_drop = list_of_possible_pickups[irandom_range(0,array_length(list_of_possible_pickups)-5)];
+	}else {
+		random_pickup_drop = list_of_possible_pickups[irandom_range(0,array_length(list_of_possible_pickups)-1)];
+	}
 
 	return random_pickup_drop;
 }

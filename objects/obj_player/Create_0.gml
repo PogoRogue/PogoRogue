@@ -679,7 +679,7 @@ state_portal = function() {
 				}	
 			}else {
 				room_persistent = false;
-				global.phase++;
+				//global.phase++; //increase phase when boss is defeated instead
 				room_goto(room_proc_gen_test);
 				if global.phase = 2 {
 					global.tileset = tl_ground2;	
@@ -824,7 +824,12 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target,pickup_emergency,pickup_blink,pickup_parachute]; //all pickups
+all_pickups_array = [pickup_firedash, pickup_groundpound, pickup_hatgun, 
+					pickup_chargejump, pickup_reload, pickup_freeze,
+					pickup_emergency, pickup_parachute, pickup_shieldbubble,
+					pickup_target, pickup_blink, pickup_jetpack,
+					pickup_camera, pickup_frenzy, pickup_bulletblast,
+					pickup_slowmo]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();

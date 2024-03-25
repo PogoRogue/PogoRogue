@@ -37,3 +37,9 @@ if (screenshake_button) {
 if room != room_shop {
 	global.last_room = room;	
 }
+
+//update items list in new phases
+scr_All_Actives_Array();
+
+scr_All_Weapons_Array();
+

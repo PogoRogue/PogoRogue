@@ -6,3 +6,6 @@ with instance_create_depth(x,y,depth-1,obj_coin_spawner) {
 
 // Inherit the parent event
 event_inherited();
+
+global.phase = 3;
+//instance_create_depth(x,y,depth,obj_shop_door); //for testing purposes
