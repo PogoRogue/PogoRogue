@@ -86,6 +86,7 @@ with(obj_generated_object_parent)
 	}
 }
 
+//Loop through enemies and give them region tags for gates
 with(obj_enemy_parent)
 {
     var tag_grid_location = scr_Get_Grid_Coord_From_Room_Coord(x, y);
@@ -93,20 +94,42 @@ with(obj_enemy_parent)
     if(instance_exists(tag_object))
     {
         // Get the region tag from the tag object
-        var region_tag = tag_object.proc_gen_region;
+        var region_tag = tag_object.proc_gen_region;		
 		
-		if (region_tag == "2") {
-			asset_add_tags(id, "CombatRoom1", asset_object);
-			//show_debug_message("Assigned " + "CombatRoom1" + " to object ID: " + string(id));
+		if(ds_list_size(other.region_enemy_count) <= region_tag) //If we haven't set this region yet, initialize to zero
+		{
+			ds_list_set(other.region_enemy_count, region_tag, 0);
 		}
-		else if (region_tag == "6") {
-			asset_add_tags(id, "CombatRoom2", asset_object);
-			//show_debug_message("Assigned " + "CombatRoom2" + " to object ID: " + string(id));
-		}
-			
-        
-        // Assign the region tag to the instance
+		var enemies_in_region = ds_list_find_value(other.region_enemy_count, region_tag);
+		ds_list_set(other.region_enemy_count, region_tag, enemies_in_region + 1); //Increment region enemy count
     }
+	else
+	{
+		show_debug_message("Couldn't add enemy to region count data structure");
+		show_debug_message("Grid coord: " + string(scr_Get_Grid_Coord_From_Room_Coord(x, y)));
+	}	
+}
+
+//Loop through gate object, and give them combat room location tags
+with(obj_room_gate_close)
+{
+	//Grab the tag object below the gate, and use that for our tagging
+	var tag_grid_location = scr_Get_Grid_Coord_From_Room_Coord(x, y + 50);
+    var tag_object = ds_grid_get(other.signature_grid, tag_grid_location[0], tag_grid_location[1]);
+    if(instance_exists(tag_object))
+    {
+        // Get the region tag from the tag object
+        var region_tag = tag_object.proc_gen_region;
+		proc_gen_tag = region_tag;
+		
+		total_enemies_in_region = ds_list_find_value(other.region_enemy_count, region_tag);
+		current_enemies_in_region = total_enemies_in_region;
+				
+		//Add gate to gate list
+		ds_list_set(other.region_gate_objects, region_tag, self);
+    }
+	
+	
 }
 
 

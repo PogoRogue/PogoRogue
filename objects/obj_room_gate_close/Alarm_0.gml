@@ -1,6 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Execute after location analysis
 
-gate_tag = asset_get_tags(id, asset_object);
-enemies_required = round(enemiesRequiredCount(gate_tag[0]) / 2); // Half the enemies in the combat room
-show_debug_message(string(gate_tag[0]) + " requires " + string(enemies_required) + " enemy kills");
+enemies_required = floor(total_enemies_in_region * enemy_percent_required);
+show_debug_message("Gate " + string(proc_gen_tag) + " requires " + string(enemies_required) + " enemy kills");

@@ -100,9 +100,6 @@ num_iframes = 1.5 * room_speed;
 current_iframes = 0;
 dead = false;
 
-// Room Gate Handling
-enemies_killed_in_room = 0;
-
 //Sound Bool for preventing looping sounds
 soundPlayed = false;
 
