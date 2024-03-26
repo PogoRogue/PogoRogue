@@ -63,7 +63,7 @@ if y > 240 {
 			move_spd += 0.1;	
 		}
 	}else {
-		move_spd = (point_distance(x,y,x,224)/64)*4;
+		move_spd = (point_distance(x,y,x,240)/64)*4;
 	}
 	y -= move_spd;	
 }

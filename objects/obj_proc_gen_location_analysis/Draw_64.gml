@@ -53,12 +53,22 @@ if(display_progress_bar)
 	
 	if(kills_left != 0)
 	{
-		for(var i = 0; i < kills_left; i++)
+		if kills_left > 1 {
+			var str_kills = "Kills Remaining";
+		}else {
+			var str_kills = "Kill Remaining";
+		}
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_center);
+		draw_set_font(fnt_item_popup);
+		scr_Draw_Text_Outlined(392-(string_width("  " + str_kills)/2),64,string(kills_left),make_color_rgb(180,82,82));
+		scr_Draw_Text_Outlined(390,64,"  " + str_kills,c_white);
+		/*for(var i = 0; i < kills_left; i++)
 		{
 			var floor_term = floor(i/(symbols_per_row - 0.5))
 			var curr_x = start_x + (i * sprite_get_width(progress_sprite)) - (floor_term * sprite_get_width(progress_sprite) * symbols_per_row);
 			var curr_y = start_y + floor_term * sprite_get_height(progress_sprite);
 			draw_sprite(progress_sprite, 0, curr_x, curr_y)
-		}
+		}*/
 	}
 }
