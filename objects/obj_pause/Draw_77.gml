@@ -27,6 +27,8 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 		
 		//deactivate everything other than this surface
 		instance_deactivate_all(true);
+		instance_activate_object(obj_fade_in);	
+		instance_activate_object(obj_fade_out);	
 		instance_activate_object(obj_control);	
 		instance_activate_object(obj_controls_controller);
 		instance_activate_object(obj_controls_keyboard);

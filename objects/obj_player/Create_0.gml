@@ -170,14 +170,17 @@ state_free = function() {
 	//restart room if reached the top unless procgen room
 	if room != room_proc_gen_test && room != room_sprite_level_test && room != room_tutorial {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
-			instance_deactivate_all(false);
-			room_restart();
+			scr_Room_Restart(true);
 		}
 	}else if room = room_tutorial {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			audio_stop_all();
 			gamepad_set_vibration(0,0,0);
-			game_restart();
+			scr_Game_Restart();
+			with obj_pause {
+				item_swap = false;
+				paused_outside = true;
+			}
 		}
 	}
 	
@@ -655,29 +658,29 @@ state_portal = function() {
 			image_xscale = sign(image_xscale) *image_yscale;
 			image_angle += portal_angle_speed;
 		}else { //go in portal
-			image_yscale = 1;
-			image_xscale = 1;
-			mask_index = sprite_index;
-			obj_player_mask.mask_index = obj_player_mask.sprite_index;
-			state = state_free;
+			//image_yscale = 1;
+			//image_xscale = 1;
+			//mask_index = sprite_index;
+			//obj_player_mask.mask_index = obj_player_mask.sprite_index;
+			//state = state_free;
 			if (room == room_proc_gen_test) {
 				room_persistent = false;
 				switch (global.phase) {
 					case 1:
-						room = room_boss_1;
+						scr_Room_Transition(room_boss_1);
 						break;
 					case 2:
-						room = room_boss_2;
+						scr_Room_Transition(room_boss_2);
 						break;
 					case 3:
 						global.phase = 1;
-						room = room_menu;
+						scr_Room_Transition(room_menu);
 						break;
 				}	
 			}else {
 				room_persistent = false;
 				//global.phase++; //increase phase when boss is defeated instead
-				room_goto(room_proc_gen_test);
+				scr_Room_Transition(room_proc_gen_test);
 				if global.phase = 2 {
 					global.tileset = tl_ground2;	
 				}

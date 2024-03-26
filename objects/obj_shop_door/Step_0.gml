@@ -19,6 +19,7 @@ if (colliding and key_open_door) {
 	if room != room_shop {
 		room_persistent = true;
 		room = room_shop;
+		//scr_Room_Transition(room_shop);
 		global.player_spawn_x_prev = x;
 		global.player_spawn_y_prev = y - 64;
 		global.shop_index = shop_index;
@@ -30,11 +31,12 @@ if (colliding and key_open_door) {
 	}else if !instance_exists(obj_coin_spawner) {
 		if global.last_room != room_shop {
 			room = global.last_room;
+			//scr_Room_Transition(global.last_room);
 			room_persistent = false;
 			global.player_spawn_x = global.player_spawn_x_prev;
 			global.player_spawn_y = global.player_spawn_y_prev;
 		}else {
-			game_restart();	
+			scr_Game_Restart();
 		}
 	}
 }

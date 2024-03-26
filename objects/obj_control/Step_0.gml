@@ -5,8 +5,11 @@ itemmenu_button = global.key_item_menu;
 
 if (restart_button) {
 	room_persistent = false;
-	room_restart();
-	instance_deactivate_all(false);
+	scr_Room_Restart(true);
+	with obj_pause {
+		item_swap = false;
+		paused_outside = true;
+	}
 }
 
 if (mute_button) {
