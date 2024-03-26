@@ -76,6 +76,8 @@
     {"name":"spr_player_ziteng","order":7,"path":"sprites/spr_player_ziteng/spr_player_ziteng.yy",},
     {"name":"spr_player_ziteng2","order":43,"path":"sprites/spr_player_ziteng2/spr_player_ziteng2.yy",},
     {"name":"spr_pogo","order":13,"path":"sprites/spr_pogo/spr_pogo.yy",},
+    {"name":"spr_room_UD_1x1_Sam_Sprint9_Area2","order":1,"path":"sprites/spr_room_UD_1x1_Sam_Sprint9_Area2/spr_room_UD_1x1_Sam_Sprint9_Area2.yy",},
+    {"name":"spr_room_UD_1x2_Sam_Sprint9_Area2","order":2,"path":"sprites/spr_room_UD_1x2_Sam_Sprint9_Area2/spr_room_UD_1x2_Sam_Sprint9_Area2.yy",},
     {"name":"spr_shieldbubble_mask","order":42,"path":"sprites/spr_shieldbubble_mask/spr_shieldbubble_mask.yy",},
     {"name":"spr_shieldbubble","order":31,"path":"sprites/spr_shieldbubble/spr_shieldbubble.yy",},
     {"name":"spr_ud_length2_Phase1_Replace_Sam","order":1,"path":"sprites/spr_ud_length2_Phase1_Replace_Sam/spr_ud_length2_Phase1_Replace_Sam.yy",},
