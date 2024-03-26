@@ -12,11 +12,11 @@ function scr_All_Weapons_Array(){
 					
 	//new list
 	
-	if global.phase <= 1 {
+	if global.phase <= 1 and room != room_items {
 		global.all_weapons = [obj_item_weapon_default,obj_item_weapon_paintball,obj_item_weapon_shotgun,
 					obj_item_weapon_burstfire,obj_item_weapon_javelins,obj_item_weapon_bouncyball,
 					obj_item_weapon_grenade, obj_item_weapon_boomerang];
-	}else if global.phase = 2 {
+	}else if global.phase = 2 and room != room_items {
 		global.all_weapons = [obj_item_weapon_default,obj_item_weapon_paintball,obj_item_weapon_shotgun,
 					obj_item_weapon_burstfire,obj_item_weapon_javelins,obj_item_weapon_bouncyball,
 					obj_item_weapon_grenade, obj_item_weapon_boomerang,obj_item_weapon_starsucker,

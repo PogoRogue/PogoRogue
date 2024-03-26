@@ -1,11 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_All_Actives_Array(){
-	if global.phase <= 1 {
+	if global.phase <= 1 and room != room_items {
 		global.all_pickups = [obj_item_pickup_firedash, obj_item_pickup_groundpound, obj_item_pickup_hatgun, 
 					obj_item_pickup_chargejump, obj_item_pickup_reload, obj_item_pickup_freeze,
 					obj_item_pickup_emergency, obj_item_pickup_parachute];
-	}else if global.phase = 2 {
+	}else if global.phase = 2 and room != room_items {
 		global.all_pickups = [obj_item_pickup_firedash, obj_item_pickup_groundpound, obj_item_pickup_hatgun, 
 					obj_item_pickup_chargejump, obj_item_pickup_reload, obj_item_pickup_freeze,
 					obj_item_pickup_emergency, obj_item_pickup_parachute, obj_item_pickup_shieldbubble,

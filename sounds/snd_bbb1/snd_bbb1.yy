@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.1,
+  "duration":0.166667,
   "name":"snd_bbb1",
   "parent":{
     "name":"Weapons",

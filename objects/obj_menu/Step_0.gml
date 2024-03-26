@@ -57,8 +57,8 @@ if key_select {
 image_index = select-1;
 
 //move onto screen
-if y > 224 {
-	if point_distance(x,y,x,224) > 64 {
+if y > 240 {
+	if point_distance(x,y,x,240) > 64 {
 		if move_spd < 4 {
 			move_spd += 0.1;	
 		}
