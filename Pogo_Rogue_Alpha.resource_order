@@ -1,16 +1,4 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[
-    {"name":"obj_fade_out_restart_game","order":3,"path":"objects/obj_fade_out_restart_game/obj_fade_out_restart_game.yy",},
-    {"name":"obj_fade_out_restart_room","order":2,"path":"objects/obj_fade_out_restart_room/obj_fade_out_restart_room.yy",},
-    {"name":"obj_fade_out_restart_level","order":4,"path":"objects/obj_fade_out_restart_level/obj_fade_out_restart_level.yy",},
-    {"name":"obj_fade_out","order":1,"path":"objects/obj_fade_out/obj_fade_out.yy",},
-    {"name":"scr_Game_Restart","order":3,"path":"scripts/scr_Game_Restart/scr_Game_Restart.yy",},
-    {"name":"scr_Room_Restart","order":2,"path":"scripts/scr_Room_Restart/scr_Room_Restart.yy",},
-    {"name":"scr_Room_Transition","order":1,"path":"scripts/scr_Room_Transition/scr_Room_Transition.yy",},
-    {"name":"spr_door_transition_left","order":3,"path":"sprites/spr_door_transition_left/spr_door_transition_left.yy",},
-    {"name":"spr_door_transition_right","order":4,"path":"sprites/spr_door_transition_right/spr_door_transition_right.yy",},
-    {"name":"spr_door_transition","order":2,"path":"sprites/spr_door_transition/spr_door_transition.yy",},
-    {"name":"spr_fadeout","order":1,"path":"sprites/spr_fadeout/spr_fadeout.yy",},
-  ],
+  "ResourceOrderSettings":[],
 }
