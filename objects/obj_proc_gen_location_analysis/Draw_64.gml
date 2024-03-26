@@ -41,7 +41,7 @@ else
 if(display_progress_bar)
 {
 	var progress_sprite = spr_crosshair_cursor;
-	var display_center_x = display_get_gui_width()/2;
+	var display_center_x = display_get_gui_width()/2 - sprite_get_width(progress_sprite)/2;
 	var symbols_per_row = 5;	
 	if(kills_left > 10)
 	{
@@ -49,13 +49,13 @@ if(display_progress_bar)
 	}
 	var total_rows = 2;
 	var start_x = display_center_x - sprite_get_width(progress_sprite)*floor(symbols_per_row/2);
-	var start_y = display_get_gui_height() - sprite_get_height(progress_sprite)*(total_rows + 0.5);
+	var start_y = display_get_gui_height() - sprite_get_height(progress_sprite)*(total_rows + 1);
 	
 	if(kills_left != 0)
 	{
 		for(var i = 0; i < kills_left; i++)
 		{
-			var floor_term = floor(i/(symbols_per_row - 0.01))
+			var floor_term = floor(i/(symbols_per_row - 0.5))
 			var curr_x = start_x + (i * sprite_get_width(progress_sprite)) - (floor_term * sprite_get_width(progress_sprite) * symbols_per_row);
 			var curr_y = start_y + floor_term * sprite_get_height(progress_sprite);
 			draw_sprite(progress_sprite, 0, curr_x, curr_y)

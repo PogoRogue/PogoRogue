@@ -23,4 +23,3 @@ middle_symbol_pos_x = (left_emitter_pos_x + (right_emmiter_pos_x + sprite_get_wi
 //Adjust beam width to match :)
 
 image_xscale = (right_emmiter_pos_x - left_emitter_pos_x + 32)/sprite_width;
-x = left_emitter_pos_x;

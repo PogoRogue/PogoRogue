@@ -75,8 +75,4 @@ function scr_Convert_Layout_To_Test_Room(layout_grid){
 			}
 		}
 	}
-	
-	//After creating all of the room objects, also add gates between hallways and rooms
-	scr_Create_Gate_Objects_From_Grid(layout_grid);
-	
 }
