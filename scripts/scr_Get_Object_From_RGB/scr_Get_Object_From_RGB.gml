@@ -56,6 +56,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 				//return obj_enemy_stomp_only;
 				return obj_enemy_stomp_only_moving;
 			}
+			else if(Red > 179)
+			{
+				return obj_enemy_snail;
+			}
 			else if(Red > 177)
 			{
 				//return obj_enemy_shoot_only;
@@ -73,6 +77,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			{
 				return obj_enemy_moving;
 			}
+			else if(Red > 230)
+			{
+				return obj_miniboss_cube;
+			}
 			else if(Red > 220)
 			{
 				//return obj_enemy_explode;
@@ -81,6 +89,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			else if(Red > 200)
 			{
 				return obj_enemy_stomp_only_moving;
+			}
+			else if(Red > 179)
+			{
+				return obj_enemy_whack_a_vole;
 			}
 			else if(Red > 170)
 			{
@@ -133,6 +145,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		else if(Blue == 204)
 		{
 			return obj_conveyor_belt;
+		}
+		else if(Blue == 203)
+		{
+			return obj_conveyor_belt_mirrored;
 		}
 		else if(Blue == 178)
 		{

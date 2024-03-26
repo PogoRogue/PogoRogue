@@ -1,6 +1,6 @@
 /// @description Press and jump
 
-if(!is_pressed) {
+if(!is_pressed && is_active) {
 	if(other.state != other.state_chargejump && other.state != other.state_bouncing) {
 		other.state = other.state_bouncing;
 	}

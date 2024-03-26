@@ -34,10 +34,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_player_ziteng",
-    "path":"sprites/spr_player_ziteng/spr_player_ziteng.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

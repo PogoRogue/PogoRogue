@@ -23,7 +23,7 @@
   ],
   "name":"spr_gate_close",
   "nineSlice":null,
-  "origin":9,
+  "origin":0,
   "parent":{
     "name":"Environmental",
     "path":"folders/Sprites/Environmental.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":32,
+    "xorigin":0,
     "yorigin":0,
   },
   "swatchColours":[

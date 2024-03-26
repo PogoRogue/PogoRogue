@@ -1,8 +1,31 @@
 /// @description Handle each state
 
-// Force a dead state if the boss is dead or doesn't exist
-if(!instance_exists(body) || body.hp <= 0) {
-	current_state = STATES.DEAD;
+if(!fight_started) {
+	with(obj_spikeswing) {
+		is_active = false;
+	}
+			
+	with(obj_button) {
+		if(button_id <= 3){
+			is_active = false;
+		}
+	}
+			
+	with(obj_enemy_turret_unkillable) {
+		is_active = false;
+		alarm_set(2, 0);
+	}
+			
+	with(obj_electric_current) {
+		is_active = false;
+	}
+	image_index = 5;
+	exit;
+}
+
+// Force an inactive state if the boss is dead or doesn't exist
+if(!instance_exists(body) || body.is_dead) {
+	current_state = STATES.INACTIVE;
 }
 
 // Set current hp segment
@@ -42,6 +65,10 @@ switch(current_state) {
 				is_active = false;
 			}
 			
+			with(obj_button) {
+				is_active = false;
+			}
+			
 			with(obj_enemy_turret_unkillable) {
 				is_active = false;
 				alarm_set(2, 0);
@@ -65,6 +92,10 @@ switch(current_state) {
 			alarm_set(4, (12 - (2 * sequence_length)) * room_speed);
 			
 			with(obj_spikeswing) {
+				is_active = true;
+			}
+			
+			with(obj_button) {
 				is_active = true;
 			}
 			
@@ -104,7 +135,7 @@ switch(current_state) {
 	case STATES.VULNERABLE: // Vulnerable code goes here
 		current_frame = 5;
 
-		if(body.hp_percent < previous_hp_percent - 34) {
+		if(body.hp_percent < previous_hp_percent - 33) {
 			previous_hp_percent = body.hp_percent;
 			current_state = STATES.IDLE;
 			alarm_set(2, 0);
@@ -120,6 +151,10 @@ switch(current_state) {
 				is_active = false;
 			}
 			
+			with(obj_button) {
+				is_active = false;
+			}
+			
 			with(obj_enemy_turret_unkillable) {
 				is_active = false;
 				alarm_set(2, 0);
@@ -132,10 +167,11 @@ switch(current_state) {
 			alarm_set(2, vulnerable_duration);
 		}
 	break;
-	case STATES.DEAD: // Dead code goes here
-		image_alpha *= 0.9;
+	case STATES.INACTIVE: // Inactive code goes here
 		if(state_has_changed) {
-			instance_destroy(obj_spikeswing);
+			with(obj_spikeswing) {
+				is_active = false;
+			}
 			
 			with(obj_enemy_turret_unkillable) {
 				is_active = false;
@@ -146,7 +182,11 @@ switch(current_state) {
 				is_active = false;
 			}
 			
-			alarm_set(3, room_speed * 2);
+			with(obj_button) {
+				is_active = false;
+			}
+			
+			current_frame = 5;
 		}
 	break;
 }

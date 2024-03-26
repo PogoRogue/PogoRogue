@@ -156,6 +156,7 @@ function scr_Pickups(){
 		on_call: function() {
 			cooldown_time = max_cooldown_time;
 			obj_player.state = obj_player.state_firedash;
+			obj_player.dash_time = obj_player.max_dash_time;
 			on_cooldown = true;
 			audio_play_sound(snd_whoosh,0,false);
 		}
@@ -391,9 +392,9 @@ function scr_Pickups(){
 		_name: "Frenzy",
 		tagline: "Bullets are unlimited without reloading for 5 seconds.",
 		gui_sprite: spr_pickup_frenzy,
-		max_cooldown_time: 1800,
-		cooldown_time: 1800,
-		cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
+		max_cooldown_time: 1200,
+		cooldown_time: 1200,
+		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
