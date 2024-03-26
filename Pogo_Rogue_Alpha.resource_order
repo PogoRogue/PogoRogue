@@ -1,6 +1,9 @@
 {
   "FolderOrderSettings":[
     {"name":"Old","order":61,"path":"folders/Sprites/Player/Old.yy",},
+    {"name":"Sprint 9","order":1,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 9.yy",},
+    {"name":"New","order":4,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 9/New.yy",},
+    {"name":"Replace","order":3,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 9/Replace.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_conveyor_belt_mirrored","order":1,"path":"objects/obj_conveyor_belt_mirrored/obj_conveyor_belt_mirrored.yy",},
@@ -22,8 +25,8 @@
     {"name":"spr_dr1_Talen","order":4,"path":"sprites/spr_dr1_Talen/spr_dr1_Talen.yy",},
     {"name":"spr_freezeanimation","order":37,"path":"sprites/spr_freezeanimation/spr_freezeanimation.yy",},
     {"name":"spr_gate_open_beam","order":3,"path":"sprites/spr_gate_open_beam/spr_gate_open_beam.yy",},
-    {"name":"spr_gate_open_middle","order":4,"path":"sprites/spr_gate_open_middle/spr_gate_open_middle.yy",},
     {"name":"spr_gate_open_left","order":1,"path":"sprites/spr_gate_open_left/spr_gate_open_left.yy",},
+    {"name":"spr_gate_open_middle","order":4,"path":"sprites/spr_gate_open_middle/spr_gate_open_middle.yy",},
     {"name":"spr_gate_open_right","order":2,"path":"sprites/spr_gate_open_right/spr_gate_open_right.yy",},
     {"name":"spr_jetpack_charging","order":26,"path":"sprites/spr_jetpack_charging/spr_jetpack_charging.yy",},
     {"name":"spr_jetpack_smoke","order":50,"path":"sprites/spr_jetpack_smoke/spr_jetpack_smoke.yy",},
@@ -75,6 +78,11 @@
     {"name":"spr_pogo","order":13,"path":"sprites/spr_pogo/spr_pogo.yy",},
     {"name":"spr_shieldbubble_mask","order":42,"path":"sprites/spr_shieldbubble_mask/spr_shieldbubble_mask.yy",},
     {"name":"spr_shieldbubble","order":31,"path":"sprites/spr_shieldbubble/spr_shieldbubble.yy",},
+    {"name":"spr_ud_length2_Phase1_Replace_Sam","order":1,"path":"sprites/spr_ud_length2_Phase1_Replace_Sam/spr_ud_length2_Phase1_Replace_Sam.yy",},
+    {"name":"spr_ud_Phase1_Replace_Sam","order":2,"path":"sprites/spr_ud_Phase1_Replace_Sam/spr_ud_Phase1_Replace_Sam.yy",},
+    {"name":"spr_ud_Phase2_Replace_Sam","order":3,"path":"sprites/spr_ud_Phase2_Replace_Sam/spr_ud_Phase2_Replace_Sam.yy",},
+    {"name":"spr_ul_Phase1_Replace_Sam","order":4,"path":"sprites/spr_ul_Phase1_Replace_Sam/spr_ul_Phase1_Replace_Sam.yy",},
+    {"name":"spr_ul_Phase2_Replace_Sam","order":5,"path":"sprites/spr_ul_Phase2_Replace_Sam/spr_ul_Phase2_Replace_Sam.yy",},
     {"name":"spr_update_groundtiles","order":1,"path":"sprites/spr_update_groundtiles/spr_update_groundtiles.yy",},
   ],
 }
