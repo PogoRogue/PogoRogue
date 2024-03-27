@@ -245,7 +245,7 @@ state_chargejump = function() {
 	
 	if not_charging_1 and not_charging_2 or end_of_charge {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5,true);
-		scr_Jump(charge);
+		scr_Jump(charge-2);
 		audio_stop_sound(snd_chargejump);
 		allow_flames = true;
 		min_flames_speed = 7.2;

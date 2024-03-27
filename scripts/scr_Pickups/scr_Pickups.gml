@@ -196,7 +196,10 @@ function scr_Pickups(){
 					}
 		
 					//add momentum
-					motion_add(angle - 90, vsp_basicjump * 0.12);
+					if obj_player_mask.top = false and obj_player_mask.bottom_left_corner = false and obj_player_mask.bottom_right_corner = false 
+					and obj_player_mask.right = false and obj_player_mask.left = false {
+						motion_add(angle - 90, vsp_basicjump * 0.12);
+					}
 		
 					//set max speed
 					if (speed > 5.5) {
@@ -363,15 +366,15 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_freeze,
 		max_cooldown_time: -1,
 		cooldown_time: -1 ,
-		cooldown_text: "Cooldown: Every 5 bounces",
+		cooldown_text: "Cooldown: Every 3 bounces",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
 		reload_on_bounce: true,
 		max_uses_per_bounce: 1,
 		uses_per_bounce: 1,
-		bounce_reset: 5,
-		bounce_reset_max: 5,
+		bounce_reset: 3,
+		bounce_reset_max: 3,
 		enemies_count: 0,
 		enemies_count_max: 0,
 		on_call: function() {

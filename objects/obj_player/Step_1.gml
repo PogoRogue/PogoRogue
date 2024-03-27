@@ -72,4 +72,3 @@ if (can_rotate) {
 	}
 }
 angle = clamp(angle,-51,51); //cant tilt too far
-show_debug_message(angle);

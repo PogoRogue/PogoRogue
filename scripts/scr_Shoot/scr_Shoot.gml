@@ -49,8 +49,9 @@ function scr_Shoot(){
 			
 			
 			//screen shake
+			
 			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames,true);
-			if (global.allow_screenshake) {
+			if (global.allow_screenshake and gun._name != "Water Gun" and gun._name != "Bubble Gun" ) {
 				var controller_vibration = global.controller_vibration/100;
 				gamepad_set_vibration(0, 1*controller_vibration, 1*controller_vibration);
 			}

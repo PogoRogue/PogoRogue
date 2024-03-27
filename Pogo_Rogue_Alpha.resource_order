@@ -1,4 +1,17 @@
 {
-  "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"Menu","order":1,"path":"folders/Sprites/UI/Menu.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"obj_wallbottomleftcorner","order":1,"path":"objects/obj_wallbottomleftcorner/obj_wallbottomleftcorner.yy",},
+    {"name":"obj_wallbottomrightcorner","order":2,"path":"objects/obj_wallbottomrightcorner/obj_wallbottomrightcorner.yy",},
+    {"name":"_1selected","order":4,"path":"sprites/_1selected/_1selected.yy",},
+    {"name":"_2selected","order":3,"path":"sprites/_2selected/_2selected.yy",},
+    {"name":"_3selected","order":2,"path":"sprites/_3selected/_3selected.yy",},
+    {"name":"_4selected","order":1,"path":"sprites/_4selected/_4selected.yy",},
+    {"name":"_6selected","order":5,"path":"sprites/_6selected/_6selected.yy",},
+    {"name":"spr_menu_tutorial_old","order":2,"path":"sprites/spr_menu_tutorial_old/spr_menu_tutorial_old.yy",},
+    {"name":"spr_orangesquare2","order":2,"path":"sprites/spr_orangesquare2/spr_orangesquare2.yy",},
+    {"name":"spr_purplesquare2","order":1,"path":"sprites/spr_purplesquare2/spr_purplesquare2.yy",},
+  ],
 }
