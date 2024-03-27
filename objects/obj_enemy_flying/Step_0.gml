@@ -7,11 +7,9 @@ if(is_dead) {
 	spd = 0;	
 } else if (place_meeting(x + speed, y, obj_ground)) {
 	spd *= -1;
-	image_xscale = sign(spd);
 }
+hspeed= spd;
 
-x += spd;
-
-y += sin(y_spd);
+vspeed= sin(y_spd);
 
 y_spd += 0.05;

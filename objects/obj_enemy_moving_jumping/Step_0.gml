@@ -14,8 +14,6 @@ if (at_wall || (at_edge && is_grounded)) {
 	spd *= -1;
 	sprite_index = spr_walk_enemy_idle;
 }
-if (spd == 0.5) { image_xscale = 1;}
-if (spd == -0.5) { image_xscale = -1;}
 
 if(is_dead) {
 	spd = 0;	

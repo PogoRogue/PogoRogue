@@ -12,14 +12,12 @@ if (at_edge or at_wall) {
 	spd *= -1;
 	//sprite_index = spr_enemy_moving;
 }
-if (spd == 0.5) { image_xscale = 1;}
-if (spd == -0.5) { image_xscale = -1;}
 
 if(is_dead) {
 	spd = 0;	
 }
 
 if(sprite_index != spr_enemy_shooter_cannon) {
-	x += spd;	
+	hspeed= spd;	
 }
 
