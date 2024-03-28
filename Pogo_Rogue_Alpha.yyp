@@ -235,6 +235,7 @@
     {"id":{"name":"obj_enemy_projectile_bullet","path":"objects/obj_enemy_projectile_bullet/obj_enemy_projectile_bullet.yy",},},
     {"id":{"name":"obj_enemy_projectile_lob","path":"objects/obj_enemy_projectile_lob/obj_enemy_projectile_lob.yy",},},
     {"id":{"name":"obj_enemy_projectile_slime","path":"objects/obj_enemy_projectile_slime/obj_enemy_projectile_slime.yy",},},
+    {"id":{"name":"obj_enemy_rewards","path":"objects/obj_enemy_rewards/obj_enemy_rewards.yy",},},
     {"id":{"name":"obj_enemy_rocketoise","path":"objects/obj_enemy_rocketoise/obj_enemy_rocketoise.yy",},},
     {"id":{"name":"obj_enemy_shieldtest","path":"objects/obj_enemy_shieldtest/obj_enemy_shieldtest.yy",},},
     {"id":{"name":"obj_enemy_shoot_only_jumping","path":"objects/obj_enemy_shoot_only_jumping/obj_enemy_shoot_only_jumping.yy",},},
