@@ -1,5 +1,7 @@
 spawned = false;
 free = true;
+outside_gates = false;
+gate_object = noone;
 move_speed = 4;
 arrows_alpha = 2;
 moved = false;

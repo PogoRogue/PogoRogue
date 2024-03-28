@@ -303,15 +303,25 @@ if (gun_name = "Star Sucker") {
 	hspd = 0;
 	vspd = 0;
 	spd += 0.1;
-	move_towards_point(obj_player.x,obj_player.y,spd);
+	
+	if suck_distance > 0 {
+		suck_distance -= spd;
+	}else {
+		suck_distance = 0;
+	}
+	
+	x = obj_player.x + lengthdir_x(suck_distance,image_angle-(init_angle-obj_player.angle));
+	y = obj_player.y + lengthdir_y(suck_distance,image_angle-(init_angle-obj_player.angle));
+	
+	
+	//move_towards_point(obj_player.x,obj_player.y,spd);
 	
 	if place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask) {
 		instance_destroy();
 	}
 	
 	//damage once per enemy
-	if place_meeting(x,y,obj_enemy_parent) {
-		colliding_with_enemy = true;
+	if colliding_with_enemy = true {
 		damage = 0;
 	}else {
 		damage = init_damage;	

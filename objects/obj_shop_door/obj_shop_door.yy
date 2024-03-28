@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_shop_door2",
-    "path":"sprites/spr_shop_door2/spr_shop_door2.yy",
+    "name":"spr_portal_shop",
+    "path":"sprites/spr_portal_shop/spr_portal_shop.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -4,17 +4,47 @@ if (can_rotate) {
 		if (angle >= -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right)
 		or (angle >= -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) {
 			current_rotation_speed = -rotation_speed;
+			temp_rotation_speed = -3;
 		}else if (angle <= anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) 
 		or (angle <= anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) {
 			current_rotation_speed = rotation_speed;
+			temp_rotation_speed = 3;
 		}else {
-			if (current_rotation_speed > 0) {
-				current_rotation_speed -= rotation_delay;
-			}else if (current_rotation_speed < 0) {
-				current_rotation_speed += rotation_delay;
+			
+			if (angle < -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right)
+			or (angle < -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) {
+				
+				if (temp_rotation_speed < 0) {
+					temp_rotation_speed += temp_rotation_delay;
+				}else if (temp_rotation_speed > 0) {
+					temp_rotation_speed -= temp_rotation_delay;
+				}
+				current_rotation_speed = temp_rotation_speed;
+			}else if (angle > anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) 
+			or (angle > anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) {
+				
+				if (temp_rotation_speed > 0) {
+					temp_rotation_speed -= temp_rotation_delay;
+				}else if (temp_rotation_speed < 0) {
+					temp_rotation_speed += temp_rotation_delay;
+				}
+				current_rotation_speed = temp_rotation_speed;
+			}else {
+			
+				if (current_rotation_speed > 0) {
+					current_rotation_speed -= rotation_delay;
+				}else if (current_rotation_speed < 0) {
+					current_rotation_speed += rotation_delay;
+				}
+				
+				if current_rotation_speed <= 0.2 or current_rotation_speed >= -0.2 {
+					current_rotation_speed = 0;
+				}
+			
 			}
 		}
 		angle += current_rotation_speed;
+		
 	
 		if hspeed > 0.5 {
 			image_xscale = 1;
@@ -41,4 +71,4 @@ if (can_rotate) {
 			}
 	}
 }
-angle = clamp(angle,-anglemax,anglemax); //cant tilt too far
+angle = clamp(angle,-51,51); //cant tilt too far

@@ -4,7 +4,7 @@ item_name = "Damage Up";
 item_tagline = "Increases the player's damage.";
 item_description = item_tagline;
 add_sprite_to_list = true;
-item_cost = 10;
+item_cost = 30;
 max_uses = 0;
 item_stats = "";
 scr_Buff_Stats();

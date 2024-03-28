@@ -111,6 +111,7 @@
     {"name":"inst_5F6EC590","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_1C74ED0F","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_37701355","path":"rooms/room_tutorial/room_tutorial.yy",},
+    {"name":"inst_1C17F54B","path":"rooms/room_tutorial/room_tutorial.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -187,6 +188,7 @@
             {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_chest_weapon","path":"objects/obj_chest_weapon/obj_chest_weapon.yy",},"propertyId":{"name":"random_weapon","path":"objects/obj_chest_weapon/obj_chest_weapon.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
             {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_chest_weapon","path":"objects/obj_chest_weapon/obj_chest_weapon.yy",},"propertyId":{"name":"custom_weapon_drop","path":"objects/obj_chest_weapon/obj_chest_weapon.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_item_weapon_paintball",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":816.0,},
+        {"$GMRInstance":"","%Name":"inst_1C17F54B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1C17F54B","objectId":{"name":"obj_fade_in","path":"objects/obj_fade_in/obj_fade_in.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":-32.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Ground","depth":400,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_5877294F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5877294F","objectId":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":54.000004,"scaleY":7.0,"x":-48.0,"y":4400.0,},

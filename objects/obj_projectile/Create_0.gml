@@ -78,12 +78,14 @@ if (gun_name = "Missile Launcher") {
 
 //star sucker
 if (gun_name = "Star Sucker") {
-	x = obj_player.x + lengthdir_x(224,image_angle);
-	y = obj_player.y + lengthdir_y(224,image_angle);
-	image_angle = point_direction(x,y,obj_player.x,obj_player.y);
+	suck_distance = 224;
+	init_angle = obj_player.angle;
+	x = obj_player.x + lengthdir_x(suck_distance,image_angle);
+	y = obj_player.y + lengthdir_y(suck_distance,image_angle);
 	init_damage = damage;
 	colliding_with_enemy = false;
 	depth = obj_player.depth + 1;
+	image_index = sprite_get_number(sprite_index)-1;
 }
 
 //sniper rifle

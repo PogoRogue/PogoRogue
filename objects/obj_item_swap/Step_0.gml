@@ -13,6 +13,6 @@ if (x < target_x and moving_in = true) {
 	moving_in = false;
 }
 	
-if x >= target_x - 64 and centered = false {
+if x >= target_x - 256 and centered = false {
 	centered = true;
 }

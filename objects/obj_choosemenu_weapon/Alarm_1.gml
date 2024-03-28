@@ -4,4 +4,4 @@ with obj_pause {
 		paused_outside = true;	
 	}
 }
-instance_destroy(obj_fade_in);
+//instance_destroy(obj_fade_in);

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.475,
+  "duration":0.433333,
   "name":"snd_slime",
   "parent":{
     "name":"Weapons",

@@ -214,5 +214,5 @@ if keyboard_check_pressed(ord("Q")) || gamepad_button_check_released(0,gp_should
 
 //restart room if reached the top
 if (bbox_bottom < 0 and mask_index != spr_nothing) {
-	room_restart();
+	scr_Room_Restart(false);
 }

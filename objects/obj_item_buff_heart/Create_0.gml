@@ -4,7 +4,7 @@ item_name = "Heart";
 item_tagline = "Increase the player's health by one heart.";
 item_description = item_tagline;
 add_sprite_to_list = false;
-item_cost = 10;
+item_cost = 20;
 max_uses = 0;
 item_stats = "";
 

@@ -4,7 +4,7 @@ item_name = "Impatience";
 item_tagline =  "Reduce all cooldown times by 25%.";
 item_description = item_tagline;
 add_sprite_to_list = true;
-item_cost = 10;
+item_cost = 35;
 max_uses = 1;
 item_stats = "";
 scr_Buff_Stats();

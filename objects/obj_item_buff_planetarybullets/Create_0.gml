@@ -5,7 +5,7 @@ item_name = "Planetary Bullets";
 item_tagline = "Adds a bullet that circles the player, damaging any enemy it touches.";
 item_description = item_tagline;
 add_sprite_to_list = true;
-item_cost = 20;
+item_cost = 35;
 max_uses = 5;
 item_stats = "";
 scr_Buff_Stats();

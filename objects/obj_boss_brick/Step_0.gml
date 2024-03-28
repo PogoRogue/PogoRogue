@@ -35,4 +35,4 @@ event_inherited();
 
 draw_hp = hp < hp_max;
 
-mask_index = image_index;
+mask_index = sprite_index;

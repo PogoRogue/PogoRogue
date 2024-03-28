@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.5,
+  "duration":0.666667,
   "name":"snd_burstfire",
   "parent":{
     "name":"Weapons",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_burstfire.wav",
   "type":0,
-  "volume":0.3,
+  "volume":1.0,
 }

@@ -13,4 +13,7 @@ if obj_player.state != obj_player.state_spawn {
 		image_xscale = scale;	
 		image_yscale = scale;	
 	}
+}else {
+	x = obj_player.x;
+	y = obj_player.y + 3;
 }

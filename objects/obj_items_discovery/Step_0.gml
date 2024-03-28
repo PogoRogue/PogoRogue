@@ -113,6 +113,6 @@ if key_back {
 	if room != room_items {
 		alarm[0] = 1;
 	}else {
-		room = room_menu;
+		scr_Room_Transition(room_menu);
 	}
 }

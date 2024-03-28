@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.942381,
+  "duration":1.119625,
   "name":"snd_groundpound",
   "parent":{
     "name":"Powerups",

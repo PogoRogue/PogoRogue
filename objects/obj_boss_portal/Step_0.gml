@@ -12,8 +12,9 @@ image_index = room = room_shop;
 if (colliding and key_open_door) {
 	var nextRoom = room_next(room);
 	if (room_exists(nextRoom)) {
-		room_goto_next();
+		//room_goto_next();
+		scr_Room_Transition(nextRoom);
 	} else {
-		game_restart();
+		scr_Game_Restart();
 	}
 }

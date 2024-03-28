@@ -60,6 +60,11 @@ if (gun_name = "Laser Gun" ) {
 			//gamepad_set_vibration(0, 0.25*controller_vibration, 0.25*controller_vibration);
 			rotation_speed = other.rotation_speed * 0.75;
 			rotation_delay = rotation_speed / 7;
+			
+			if rotation_speed < 2 {
+				rotation_speed = 2;
+				rotation_delay = rotation_speed / 7;
+			}
 		}
 		
 		//retract laser if not firing

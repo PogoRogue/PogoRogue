@@ -39,7 +39,7 @@ if image_index = 6 and fade_out = false {
 	image_yscale = 1.5;
 	speed = 0;
 	scr_Screen_Shake(6,15,false);
-	audio_play_sound(snd_sniper,0,false);
+	//audio_play_sound(snd_sniper,0,false);
 }else if fade_out = true {
 	x = enemy_to_target.x;
 	y = enemy_to_target.y;	
@@ -60,8 +60,8 @@ if instance_exists(enemy_to_target) and fade_out = false {
 		image_speed = 1;
 		
 		if image_index = 2 or image_index = 4 {
-			if !audio_is_playing(snd_crosshair_blip) {
-				audio_play_sound(snd_crosshair_blip,0,false);
+			if !audio_is_playing(snd_targetedassassination_end) {
+				audio_play_sound(snd_targetedassassination_end,0,false);
 			}
 		}
 	}

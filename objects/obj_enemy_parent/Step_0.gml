@@ -69,6 +69,20 @@ if(is_dead) {
 		if pickups_array[1].enemies_count_max > 0 and pickups_array[1].enemies_count > 0 {
 			pickups_array[1].enemies_count -= 1;
 		}
+		
+		//recharge jetpack
+		if pickups_array[0] = pickup_jetpack {
+			pickups_array[0].cooldown_time += pickups_array[0].max_cooldown_time/4;
+			if pickups_array[0].cooldown_time > pickups_array[0].max_cooldown_time {
+				pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
+			}
+		}
+		if pickups_array[1] = pickup_jetpack {
+			pickups_array[1].cooldown_time += pickups_array[1].max_cooldown_time/4;
+			if pickups_array[1].cooldown_time > pickups_array[1].max_cooldown_time {
+				pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
+			}
+		}
 	}
 	
 	is_dead = true;
