@@ -19,3 +19,5 @@ if(instance_place_list(x, y, obj_boss_brick, ds_list_create(), false) >= 9) {
 
 // Inherit the parent event
 event_inherited();
+
+hp_percent = (hp / hp_max) * 100;
