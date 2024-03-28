@@ -3,4 +3,4 @@ with obj_player {
 }
 
 image_index = bullets;
-image_angle += 5;
+image_angle += 6;

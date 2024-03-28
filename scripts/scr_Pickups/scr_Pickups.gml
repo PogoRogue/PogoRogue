@@ -171,7 +171,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_jetpack,
 		max_cooldown_time: 60,
 		cooldown_time: 60,
-		cooldown_text: "Cooldown: 1/4 fuel every bounce",
+		cooldown_text: "Cooldown: 1/4 every bounce/kill",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: true,
@@ -491,9 +491,9 @@ function scr_Pickups(){
 		_name: "Blink",
 		tagline: "Disappear, then reappear from any position on screen.",
 		gui_sprite: spr_pickup_blink,
-		max_cooldown_time: 1200,
-		cooldown_time: 1200,
-		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: Every 5 enemies",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -503,13 +503,15 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 0,
+		enemies_count_max: 5,
 		on_call: function() {
 			obj_player.state = obj_player.state_blink;
 			if !instance_exists(obj_blink_box) {
 				instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box);
 				audio_play_sound(snd_blink_despawn,0,false);
 			}
+			enemies_count = enemies_count_max;
+			on_cooldown = true;
 		}
 	};
 	
