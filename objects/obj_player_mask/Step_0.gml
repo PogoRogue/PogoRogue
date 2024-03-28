@@ -40,8 +40,9 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed >
 				if _list[| i].x > parent_index.x {
 					with _list[| i] {
 						if place_meeting(bbox_left-other.parent_index.hspeed,y,other) and other.bbox_top < bbox_bottom - 4 {
-							other.parent_index.hspeed *= -0.5;
+							other.parent_index.hspeed *= -0.35;
 							other._break = true;
+							other.parent_index.dash_time = 0;
 						}
 					}
 					if _break = true {
@@ -67,8 +68,9 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed <
 				if _list[| i].x < parent_index.x {
 					with _list[| i] {
 						if place_meeting(bbox_right-other.parent_index.hspeed,y,other) and other.bbox_top < bbox_bottom - 4 {
-							other.parent_index.hspeed *= -0.5;
+							other.parent_index.hspeed *= -0.35;
 							other._break2 = true;
+							other.parent_index.dash_time = 0;
 						}
 					}
 					if _break2 = true {
@@ -97,6 +99,7 @@ if (place_meeting(x,y+parent_index.vspeed,obj_ground) and parent_index.vspeed < 
 							if other.parent_index.free = true {
 								other.parent_index.vspeed *= -0.5;
 								other._break3 = true;
+								other.parent_index.dash_time = 0;
 							}
 						}
 					}
@@ -114,12 +117,14 @@ if (place_meeting(x,y+parent_index.vspeed,obj_ground) and parent_index.vspeed < 
 //top left corner
 if (place_meeting(x,y+parent_index.vspeed,obj_walltopleftcorner) and parent_index.vspeed > 0) {
 	if (hspeed > 0) {
-		parent_index.hspeed *= -0.5;
+		parent_index.hspeed *= -0.35;
 	}else {
 		parent_index.hspeed = -2;
 	}
 	
 	parent_index.vspeed *= -0.5;
+	
+	other.parent_index.dash_time = 0;
 	
 	//prevent groundpound collision glitch
 	if parent_index.state = parent_index.state_groundpound {
@@ -131,11 +136,13 @@ if (place_meeting(x,y+parent_index.vspeed,obj_walltopleftcorner) and parent_inde
 //top right corner
 if (place_meeting(x,y+parent_index.vspeed,obj_walltoprightcorner) and parent_index.vspeed > 0) {
 	if (hspeed < 0) {
-		parent_index.hspeed *= -0.5;
+		parent_index.hspeed *= -0.35;
 	}else {
 		parent_index.hspeed = 2;
 	}
 	parent_index.vspeed *= -0.5;
+	
+	other.parent_index.dash_time = 0;
 	
 	//prevent groundpound collision glitch
 	if parent_index.state = parent_index.state_groundpound {
@@ -154,8 +161,9 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed >= 0 {
 				if _list[| i].x > parent_index.x {
 					with _list[| i] {
 						if place_meeting(bbox_left,y,other) and other.bbox_top < bbox_bottom - 4 {
-							other.parent_index.hspeed *= -0.5;
+							other.parent_index.hspeed *= -0.35;
 							other._break = true;
+							other.parent_index.dash_time = 0;
 						}
 					}
 					if _break = true {
@@ -181,8 +189,9 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed <= 0 {
 				if _list[| i].x < parent_index.x {
 					with _list[| i] {
 						if place_meeting(bbox_right,y,other) and other.bbox_top < bbox_bottom - 4 {
-							other.parent_index.hspeed *= -0.5;
+							other.parent_index.hspeed *= -0.35;
 							other._break2 = true;
+							other.parent_index.dash_time = 0;
 						}
 					}
 					if _break2 = true {
@@ -209,8 +218,9 @@ if (place_meeting(x,y,obj_wallbutton) and parent_index.vspeed < 0) {
 					with _list[| i] {
 						if place_meeting(x,bbox_bottom,other) and other.bbox_right > bbox_left+10 and other.bbox_left < bbox_right-10 {
 							if other.parent_index.free = true {
-								other.parent_index.vspeed *= -0.5;
+								other.parent_index.vspeed *= -0.35;
 								other._break3 = true;
+								other.parent_index.dash_time = 0;
 							}
 						}
 					}

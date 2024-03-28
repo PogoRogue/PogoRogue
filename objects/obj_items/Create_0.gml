@@ -4,7 +4,8 @@ select_max = 3; //max # of rows
 select_x = 1; //passives only
 select_x_max = 4; //number of columns
 select_y = 0; //passives only
-select_y_max = 5; //number of rows
+select_y_max = 4; //number of rows
+page_num = 1; //page number for passives
 
 selected_x = false;
 selected_y = false;
@@ -25,6 +26,9 @@ with obj_player {
 	other.gun_2 = gun_2;
 	other.gun_3 = gun_3;
 	other.num_of_weapons = weapons_equipped;
+	if num_of_weapons = 0 { 
+		other.num_of_weapons = 0;
+	}
 	//pickups
 	other.pickup_1 = pickup_1;
 	other.pickup_2 = pickup_2;

@@ -22,4 +22,5 @@ drop = false
 
 alarm[1]=1;
 
-drop_coins= false;
+drop_coins = false;
+created_items = true;

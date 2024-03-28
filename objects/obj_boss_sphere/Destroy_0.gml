@@ -13,9 +13,13 @@ instance_create_layer(x, y, "enemies", obj_explosion);
 
 //create coins
 with instance_create_depth(x,y,depth-1,obj_coin_spawner) {
-	num_of_coins = 100;
+	num_of_coins = 50;
 }
 // set active when destroy
 with(obj_boss_portal) {
     is_active = true; 
+}
+if (room == room_boss_1) {
+ instance_create_layer(128, 544, "hazards", obj_shop_door);
+ instance_create_layer(624, 464, "hazards", obj_boss_door);
 }

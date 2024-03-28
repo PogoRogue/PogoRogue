@@ -3,7 +3,7 @@
 function scr_Laser_Sight(){
 	//draw laser sight
 	draw_set_alpha(0.6);
-	if laser_sight = true {
+	if laser_sight = true and obj_player.state != obj_player.state_portal {
 		draw_line_width_color(x-1,y-1,x-1+lengthdir_x(1000,angle-90),y-1+lengthdir_y(1000,angle-90),1.25,make_color_rgb(180,82,82),make_color_rgb(180,82,82));
 	}
 	draw_set_alpha(1);

@@ -28,8 +28,7 @@ function scr_Replace_Hallway_Chunks(layout_grid){
 					top_y += 1;
 				}
 				//We now know how many vertical chunks are in a row. We need at least 4 to replace one
-				//With a 2 long hallway chunk. Loop through and replace as many as we can.
-				while(total_vertical_hallways >= 4)
+				while(total_vertical_hallways >= 4) //After we've started, we only need three left to add the column
 				{
 					//We have enough space to replace a hallway, so do it
 					var replace_y = top_y - 1; //start one block down from the top so we don't replace the corner hallway
@@ -40,6 +39,7 @@ function scr_Replace_Hallway_Chunks(layout_grid){
 					total_vertical_hallways -= 2; //Use this variable to count how many replaceable chunks there are left
 					//This lets us know when we could possibly generate several 2 length vertical chunks in a row
 				}
+				
 				
 				//Now count horizontal hallways in a row, from left to right since that's the direction we iterate
 				var temp_x = left_x;

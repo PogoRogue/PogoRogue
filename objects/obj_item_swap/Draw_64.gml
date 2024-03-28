@@ -21,15 +21,19 @@ draw_set_font(fnt_itemdescription2);
 
 for(i = 0; i < num_of_slots; i++) {
 	if num_of_slots = 3 {
-		draw_sprite(spr_item_slot,i=select-1,x-64+(64*i),yy);
+		draw_sprite(spr_item_slot,(i=select-1)+((i = num_of_slots-1)*2),x-64+(64*i),yy);
 	}else if num_of_slots = 4 {
-		draw_sprite(spr_item_slot,i=select-1,x-96+(64*i),yy);
+		draw_sprite(spr_item_slot,(i=select-1)+((i = num_of_slots-1)*2),x-96+(64*i),yy);
 	}
 	if i = num_of_slots-1 {
 		if num_of_slots = 3 {
+			scr_Draw_Text_Outlined(x-64+(64*i),yy-21,"Discard",make_color_rgb(180,82,82));
 			draw_sprite(spr_cancel,0,x-64+(64*i),yy);
+			draw_set_color(c_white);
 		}else if num_of_slots = 4 {
+			scr_Draw_Text_Outlined(x-96+(64*i),yy-21,"Discard",make_color_rgb(180,82,82));
 			draw_sprite(spr_cancel,0,x-96+(64*i),yy);
+			draw_set_color(c_white);
 		}
 	}else if i = 0 {
 		if num_of_slots = 3 {
@@ -82,10 +86,10 @@ for(i = 0; i < num_of_slots; i++) {
 //draw new item
 if pickups_mode = true {
 	num_of_slots = 3;
-	scr_Draw_Pickup_Description(x,yy+178,new_item,0);
+	scr_Draw_Pickup_Description(x,yy+178,new_item,0,true,new_item_cost);
 	draw_set_font(fnt_item_popup);
 }else if weapons_mode = true {
-	scr_Draw_Weapon_Description(x,yy+178,new_item,0);
+	scr_Draw_Weapon_Description(x,yy+178,new_item,0,true,new_item_cost);
 	draw_set_font(fnt_item_popup);
 }
 /*

@@ -19,7 +19,7 @@ function scr_Linebreak(str,maxLength,maxWordLength){
 	                prev += 1;
 	            }
 	            else {
-	                break;
+					break;
 	            }
 	            if prev > maxWordLength {
 	                prev = 0;

@@ -1,4 +1,4 @@
-/// @description //destroy when animation complete
+/// @description Destroy when animation complete
 if (floor(image_index) = sprite_get_number(sprite_index)-1) {
 	instance_destroy();
 }

@@ -5,12 +5,12 @@
 /// @param spriteIndex
 /// @param x_offset
 /// @param y_offset
-function scr_Create_Room_From_Sprite(spriteIndex, sprite_sub_image, x_offset, y_offset, mirror){
+function scr_Create_Room_From_Sprite(spriteIndex, sprite_sub_image, x_offset, y_offset, mirror, signature_grid){
 	//Read the sprite into an array
 	var pixel_array = Read_Sprite_To_Array(spriteIndex, sprite_sub_image);
 	
 	//Create all objects corresponding to the pixel data with matching offsets
-	return Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror)	
+	return Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, spriteIndex, sprite_sub_image, mirror)	
 }
 
 
@@ -48,7 +48,7 @@ function Read_Sprite_To_Array(spriteIndex, sprite_sub_image){
 	return pixel_data;
 }
 
-function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror)
+function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, spriteIndex, sprite_sub_image, mirror)
 {
 	var object_queue = ds_queue_create();
 	for(var i = 0; i < array_length(pixel_array); i++)
@@ -76,11 +76,19 @@ function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror
 				var object_y_offset = y_offset + grid_size * j;
 			}
 			
-			var new_object = Create_Instance_From_RGB(RGB, object_x_offset, object_y_offset)
+			var new_object = Create_Instance_From_RGB(RGB, object_x_offset, object_y_offset, mirror)
 			
 			if(new_object != -1)
 			{
 			ds_queue_enqueue(object_queue, new_object);
+			if(instance_exists(new_object) && object_is_ancestor(new_object.object_index, obj_pixel_tag))
+			{
+				with(new_object)
+				{
+					sprite_name = sprite_get_name(spriteIndex);
+					frame_number = sprite_sub_image;
+				}				
+			}
 			}
 		}
 	}
@@ -91,14 +99,32 @@ function Generate_Block_From_Pixel_Array(pixel_array, x_offset, y_offset, mirror
 
 // @description Given an RGB value, x and y position, creates the corresponding object in that location.
 // Does NOT create obj_ground_outer, this is saved for scr_Create_Walls_From_Pixel_Array
-function Create_Instance_From_RGB(RGB, x_offset, y_offset)
+function Create_Instance_From_RGB(RGB, x_offset, y_offset, mirror)
 {
 	var object_to_create = scr_Get_Object_From_RGB(RGB[0], RGB[1], RGB[2], RGB[3]);
 	
 	if(object_to_create != -1 && object_to_create != obj_ground_outer) //Optimization to minimize ground objects being created
 	//(We create ground objects in the scr_Create_Walls_From_Pixel_Array script)
 	{
-	return instance_create_layer(x_offset, y_offset, "Instances", object_to_create);
+		inst = instance_create_layer(x_offset, y_offset, "Instances", object_to_create);
+	
+		if(object_to_create == obj_conveyor_belt && mirror)
+		{
+			inst.image_xscale = -1;
+			inst.x = inst.x + 16;
+		}
+		else if(object_to_create == obj_conveyor_belt_mirrored && mirror)
+		{
+			inst.image_xscale = 1;
+			inst.x = inst.x - 16;
+		}
+		else if((object_to_create == obj_temp_platform_off_on || object_to_create == obj_temp_platform_on_off) && mirror)
+		{
+			inst.x = inst.x - 80; //Adjust since anchor is weird, and levels are all made with that anchor already
+		}
+		
+		
+		return inst;
 	}
 	else
 	{

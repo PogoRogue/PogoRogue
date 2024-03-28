@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_Random_Item_Drops",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Items",
-    "path": "folders/Scripts/Items.yy",
+  "$GMScript":"",
+  "%Name":"scr_Random_Item_Drops",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Random_Item_Drops",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

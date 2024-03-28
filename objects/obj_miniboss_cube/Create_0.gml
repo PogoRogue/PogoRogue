@@ -9,7 +9,7 @@ event_inherited();
 depth = -5;
 spd = 1;
 rotation_spd = 0.5;
-hp = 24;
+hp = 32;
 hp_max = hp;
 
 

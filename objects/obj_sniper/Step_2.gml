@@ -30,7 +30,7 @@ if instance_exists(obj_camera) {
 }
 
 with obj_player {
-	if (state != state_free or gun != sniper_gun) {
+	if (state != state_free and state != state_freeze or gun != sniper_gun) {
 		scr_Retract_Laser();
 		other.laser_boost = false;
 	}	

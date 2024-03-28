@@ -10,6 +10,7 @@ spd = 0;
 
 stomp_defense = 1; // This is a scalar that gets applied to stomp damage
 bullet_defense = 1; // This is a scalar that gets applied to bullet damage
+explosion_defense = 1; // This is a scalar that gets applied to bullet damage
 
 // State
 is_dead = false;
@@ -23,8 +24,12 @@ buff_chance = 5 + (global.luck/2); //percent
 pickup_chance = (global.luck/2); //percent
 weapon_chance = (global.luck/2); //percent
 
+created_items = false;
+
 drop_coins = true;
 
 num_of_coins = global.combo;
 //when invinsible, can't take damage
 invinsible=false;
+
+random_items = scr_Random_Item_Drops();

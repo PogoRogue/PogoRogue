@@ -13,8 +13,8 @@ if(state == SNAIL_STATES.HORIZONTAL) {
 		spd *= -1;
 	}
 
-	if (spd == 0.5) { image_xscale = 1;}
-	if (spd == -0.5) { image_xscale = -1;}
+	if (spd == 0.5) { image_xscale = -1;}
+	if (spd == -0.5) { image_xscale = 1;}
 
 	if(is_dead) {
 		spd = 0;	
@@ -29,14 +29,14 @@ if(state == SNAIL_STATES.HORIZONTAL) {
 	// Move up and down
 	if(state = SNAIL_STATES.VERTICAL_LEFT) {
 		at_edge = !collision_point(x - (sprite_height / 2), y + (sign(spd)), obj_ground_parent, false, false); 
-		if (spd == 0.5) { image_xscale = 1;}
-		if (spd == -0.5) { image_xscale = -1;}
+		if (spd == 0.5) { image_xscale = -1;}
+		if (spd == -0.5) { image_xscale = 1;}
 	}
 	
 	else if(state = SNAIL_STATES.VERTICAL_RIGHT) {
 		at_edge = !collision_point(x + (sprite_height / 2), y + (sign(spd)), obj_ground_parent, false, false); 
-		if (spd == 0.5) { image_xscale = -1;}
-		if (spd == -0.5) { image_xscale = 1;}
+		if (spd == 0.5) { image_xscale = 1;}
+		if (spd == -0.5) { image_xscale = -1;}
 	}
 
 	at_wall = place_meeting(x, y + spd, obj_ground_parent);

@@ -47,10 +47,7 @@ if centered = true {
 	
 	//selected
 	if key_select and select_x = 1 { //restart
-		room_persistent = false;
-		room_restart();
-		instance_deactivate_all(false);
-		audio_play_sound(snd_selectOption,0,false);
+		scr_Restart_Level();
 	}
 	
 	if key_select and select_x = 2 { //main menu

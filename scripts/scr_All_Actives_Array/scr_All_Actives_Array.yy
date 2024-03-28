@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_All_Actives_Array",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_All_Actives_Array",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

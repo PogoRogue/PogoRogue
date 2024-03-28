@@ -11,6 +11,30 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 	return -1;
 	}
+	else if(Red == 242 && Green == 101 && Blue == 34)
+	{
+		return obj_tag_Isaac;
+	}
+	else if(Red == 187 && Green == 228 && Blue == 76)
+	{
+		return obj_tag_Cam;
+	}
+	else if(Red == 34 && Green == 204 && Blue == 0)
+	{
+		return obj_tag_Sam;
+	}
+	else if(Red == 17 && Green == 69 && Blue == 20) //Insert Talon signature color here
+	{
+		return obj_tag_Zehao;
+	}
+	else if(Red == 250 && Green == 115 && Blue == 255)
+	{
+		return obj_tag_Talon; // Insert Talon signature color here
+	}
+	else if(Red == 213 && Green == 110 && Blue == 5)
+	{
+		return obj_pixel_tag; //Default tag color for testing purposes
+	}
 	else if(Red == 255 && Green == 255 && Blue == 255) //White = player start location
 	{
 		return obj_player_start;
@@ -32,6 +56,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 				//return obj_enemy_stomp_only;
 				return obj_enemy_stomp_only_moving;
 			}
+			else if(Red > 179)
+			{
+				return obj_enemy_snail;
+			}
 			else if(Red > 177)
 			{
 				//return obj_enemy_shoot_only;
@@ -49,6 +77,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			{
 				return obj_enemy_moving;
 			}
+			else if(Red > 230)
+			{
+				return obj_miniboss_cube;
+			}
 			else if(Red > 220)
 			{
 				//return obj_enemy_explode;
@@ -57,6 +89,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			else if(Red > 200)
 			{
 				return obj_enemy_stomp_only_moving;
+			}
+			else if(Red > 179)
+			{
+				return obj_enemy_whack_a_vole;
 			}
 			else if(Red > 170)
 			{
@@ -110,6 +146,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_conveyor_belt;
 		}
+		else if(Blue == 203)
+		{
+			return obj_conveyor_belt_mirrored;
+		}
 		else if(Blue == 178)
 		{
 			return obj_electric_current;
@@ -157,6 +197,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		else if(Red == 50 && Green == 50 && Blue == 50)
 		{
 			return obj_angled_platform_right;
+		}
+			else if(Red == 25 && Green == 25 && Blue == 25)
+		{
+			return obj_instructions;
 		}
 	}
 	

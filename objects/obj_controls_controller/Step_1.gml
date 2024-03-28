@@ -1,3 +1,12 @@
+if !gamepad_is_connected(0) and global.use_controller = true {
+	with obj_pause {
+		controller_disconnected = true;
+		instance_activate_object(obj_pausemenu);
+		global.use_keyboard = true;
+		global.use_controller = false;	
+	}
+}
+
 if scr_Gamepad_Check_Input() > 0 {
 	global.use_keyboard = false;
 	global.use_controller = true;	

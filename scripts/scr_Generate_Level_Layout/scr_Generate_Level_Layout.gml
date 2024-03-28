@@ -1,4 +1,4 @@
-function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, total_non_random_rooms, generate_starting_room, min_distance_between_rooms, max_distance_between_rooms)
+function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, total_non_random_rooms, generate_starting_room, min_height_between_rooms, max_height_between_rooms)
 {
 
 	// Create a grid to hold our layout
@@ -15,18 +15,11 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	
 	for (var rCount = 0; rCount < room_number; rCount++) 
 	{	
-		if(rCount == 0)
+		if(rCount == 0 && generate_starting_room && total_non_random_rooms >= 1)
 		{//If we need a starting room, it goes here (stored in index 0 of prebuilt_rooms)
-			if(generate_starting_room && total_non_random_rooms >= 1)
-			{
-				room_index = 0;
-			}
-			else
-			{					
-				room_index = irandom_range(total_non_random_rooms, total_rooms - 1); // Pick a prebuilt_room from the random rooms 		
-			}
+			room_index = 0;	
 		}			
-		else if(rCount == room_number - 2 && total_non_random_rooms >= 3) //Where the shop room needs to go (stored in index 1)
+		else if(rCount == room_number - 3 && total_non_random_rooms >= 3) //Where the shop room needs to go (stored in index 1)
 		{
 			room_index = 1;
 		}
@@ -36,7 +29,54 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 		}
 		else //Otherwise, we use a random combat room	
 		{			
-			room_index = irandom_range(total_non_random_rooms, total_rooms - 1); // Pick a prebuilt_room from the random rooms 		
+			//Old 50/50 to choose 2x2 or 3x3
+			//room_index = irandom_range(total_non_random_rooms, total_rooms - 1); // Pick a prebuilt_room from the random rooms 		
+			
+			//New chance of choosing a 2x2 or 3x3 is directly proportional to the amount of possible rooms
+			
+			var total_possible_room_types = total_rooms - total_non_random_rooms;
+			var room_sprite_freq = array_create(total_possible_room_types);
+			var index = 0;
+			for(room_index = total_non_random_rooms; room_index <= total_rooms - 1; room_index++)
+			{
+				var room_type = ds_list_find_value(prebuilt_rooms, room_index)[2];	//returns string such as c3 or c2
+				room_type += "c"; //Add the corner tag so we can use the following script
+				var room_sprite = Get_Combat_Room(room_type);
+				room_sprite_freq[index] = sprite_get_number(room_sprite); //Get the number of frames to use for frequency
+				index += 1;
+			}
+			
+			//Use "Cumulative share" method to randomly select an index
+			
+			// Calculate the total sum
+			var totalSum = 0;
+			for (var i = 0; i < array_length(room_sprite_freq); i++) {
+			    totalSum += room_sprite_freq[i];
+			}
+
+			// Calculate cumulative share percentages
+			var cumulativePercentage = 0;
+			var sharePercentages = [];
+			for (var i = 0; i < array_length(room_sprite_freq); i++) {
+			    var percentage = room_sprite_freq[i] / totalSum;
+			    cumulativePercentage += percentage;
+			    sharePercentages[i] = cumulativePercentage;
+			}
+
+			// Generate a random number between 0 and 1
+			var randomValue = random(1);
+
+			// Find the corresponding index based on the random value
+			var selectedIndex = -1;
+			for (var i = 0; i < array_length(sharePercentages); i++) {
+			    if (randomValue <= sharePercentages[i]) {
+			        selectedIndex = i;
+			        break;
+			    }
+			}
+			
+			room_index = total_non_random_rooms + selectedIndex;		
+		
 		}		
 		
 		//Now that a room type has been selected, use it's values to add it to the layout
@@ -78,14 +118,21 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 		//Set player starting point if this is the first room
 		if(previous_room = -1)
 		{
-			//Marks the center of the room as the starting point
-			ds_grid_set(layout_grid, currentX + floor(rWidth/2), currentY + floor(rHeight/2), "s");
+			if(generate_start_room)
+			{
+				ds_grid_set(layout_grid, currentX, currentY, "s");
+			}
+			else
+			{
+				//Marks the center of the room as the starting point
+				ds_grid_set(layout_grid, currentX + floor(rWidth/2), currentY + floor(rHeight/2), "s");
+			}
 		}
 
 		// Update the previous room
 		previous_room = [currentX, currentY, rWidth, rHeight];
 		
-		currentY += rHeight + irandom_range(min_distance_between_rooms, max_distance_between_rooms); // Move up by the height of our current room & random spacing
+		currentY += rHeight + irandom_range(min_height_between_rooms, max_height_between_rooms); // Move up by the height of our current room & random spacing
 	
 	} //End of for loop
 	
@@ -94,18 +141,18 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 	//Replace 1 block hallway chunks with 2 block chunks where possible
 	scr_Replace_Hallway_Chunks(layout_grid);
 
-	// Show the grid in the console
-	for (var i = grid_height; i >= 0; i--) {
-	    var row = "";
-	    for (var j = 0; j < grid_width + 1; j++) {
-	        row += " ";
-	        row += string(ds_grid_get(layout_grid, j, i));
-			if (string_length(ds_grid_get(layout_grid, j, i)) == 1) {
-				row += "  ";
-			}
-	    }
-	    show_debug_message(row);
-	}
+	//// Show the grid in the console
+	//for (var i = grid_height; i >= 0; i--) {
+	//    var row = "";
+	//    for (var j = 0; j < grid_width + 1; j++) {
+	//        row += " ";
+	//        row += string(ds_grid_get(layout_grid, j, i));
+	//		if (string_length(ds_grid_get(layout_grid, j, i)) == 1) {
+	//			row += "  ";
+	//		}
+	//    }
+	//    show_debug_message(row);
+	//}
 	
 	// For testing
 	/*global.debug_draw = true; // Set this to false to stop debugging rectangles.
@@ -245,6 +292,24 @@ function Remove_Useless_Tiles(layout_grid)
 				}
 			}
 	    }
+	}
+}
+
+function Show_Grid_In_Console(layout_grid)
+{
+	var grid_height = ds_grid_height(layout_grid)
+	var grid_width = ds_grid_width(layout_grid)
+		// Show the grid in the console
+	for (var i = grid_height - 1; i >= 0; i--) {
+	    var row = "";
+	    for (var j = 0; j < grid_width; j++) {
+	        row += " ";
+	        row += string(ds_grid_get(layout_grid, j, i));
+			if (string_length(ds_grid_get(layout_grid, j, i)) == 1) {
+				row += "  ";
+			}
+	    }
+	    show_debug_message(row);
 	}
 }
 		

@@ -3,6 +3,10 @@
 // Inherit the parent event
 event_inherited();
 
+if(!instance_exists(obj_slime_outline)) {
+	instance_create_layer(0, 0, "enemies", obj_slime_outline);
+}
+
 enum SNAIL_STATES {
 	HORIZONTAL,
 	VERTICAL_LEFT,
@@ -10,17 +14,8 @@ enum SNAIL_STATES {
 }
 
 
-if(image_angle == 0) {
-	state = SNAIL_STATES.HORIZONTAL;
-} else if(image_angle == -90 || image_angle == 270) {
-	state = SNAIL_STATES.VERTICAL_LEFT;
-} else if(image_angle == 90) {
-	state = SNAIL_STATES.VERTICAL_RIGHT;
-} else {
-	// Do not allow snails of any other orientation
-	instance_destroy(self);
-}
-
+state = SNAIL_STATES.HORIZONTAL;
+alarm[3] = 1;
 
 // Instantiate additional variables
 depth = 5;

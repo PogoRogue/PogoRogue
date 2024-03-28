@@ -1,4 +1,4 @@
-randomize();
+//randomize();
 shop_index = global.shop_index;
 
 if instance_number(obj_shop) > 1 {
@@ -12,8 +12,7 @@ global.player_spawn_y = obj_shop_door.y - 64;
 
 num_of_slots = 8;
 refresh_button = false;
-refresh_cost = 25;
-max_refreshes = 3;
+max_refreshes = 8;
 refreshes_left = max_refreshes;
 first_shop = true; //true if this shop hasn't been refreshed yet
 
@@ -58,3 +57,9 @@ alarm3_time = 30;
 
 //bool to prevent looping sounds
 soundPlayed = false;
+
+
+spawn = false;
+if global.shop_num > global.current_shop_num {
+	spawn = true;
+}
