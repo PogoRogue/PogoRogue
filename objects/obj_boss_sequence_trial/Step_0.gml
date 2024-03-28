@@ -17,7 +17,7 @@ if(place_meeting(x, y, obj_player_mask)) {
 */
 
 switch(current_state) {
-	case STATES.IDLE:
+	case BOSS2_STATES.IDLE:
 		// Generate new sequence and animate it
 		if(sequence_failed) {			
 			sequence_index = 0;
@@ -40,11 +40,11 @@ switch(current_state) {
 			sequence_failed = false;
 		}
 	break;
-	case STATES.VULNERABLE:
+	case BOSS2_STATES.VULNERABLE:
 		if(sequence_index >= 1 && player_sequence[sequence_index - 1] != current_sequence[sequence_index - 1]) {
 			// Create a new sequence
 			sequence_failed = true;
-			current_state = STATES.IDLE;
+			current_state = BOSS2_STATES.IDLE;
 			current_frame = 4;
 			audio_play_sound(snd_beep_placeholder, 0, false, 1, 0, 0.1);
 		} else if(sequence_index >= sequence_length) {

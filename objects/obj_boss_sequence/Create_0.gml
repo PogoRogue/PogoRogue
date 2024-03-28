@@ -4,7 +4,7 @@
 body = instance_nearest(x, y, obj_boss_sequence_body);
 
 // The complete list of states the boss can be in
-enum STATES
+enum BOSS2_STATES
 {
 	IDLE,
     ATTACKING,
@@ -12,21 +12,10 @@ enum STATES
     INACTIVE,
 }
 
-current_state = STATES.IDLE;
+current_state = BOSS2_STATES.IDLE;
 previous_state = noone;
 state_has_changed = true;
 fight_started = false;
-
-// These are the colors that sequences will be comprised of
-enum COLORS
-{
-	PURPLE = #CF8ACB,
-	ORANGE = #D3A068,
-	CYAN = #A2DCC7,
-	YELLOW = #C2D368,
-}
-
-colors = [COLORS.PURPLE, COLORS.ORANGE, COLORS.CYAN, COLORS.YELLOW];
 
 /* Handle HP threshold percentiles to both determine sequence length and
  * trigger an early end to the vulnerability state

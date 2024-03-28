@@ -23,6 +23,7 @@
   "height":32,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"adaf05b9-b0f0-4301-9ef0-7f9b3adabece","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"adaf05b9-b0f0-4301-9ef0-7f9b3adabece","opacity":75.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"896bdd52-5d06-4c3f-b947-e4607076d170","blendMode":0,"displayName":"default","isLocked":false,"name":"896bdd52-5d06-4c3f-b947-e4607076d170","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_boss2_sequence_lights_trial",

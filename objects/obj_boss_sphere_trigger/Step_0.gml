@@ -10,4 +10,5 @@ if(triggered) {
 	with(obj_player) {
 		state = state_immobile;
 	}
+	room_height = lerp(room_height, 600, 0.02);
 }

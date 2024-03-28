@@ -10,7 +10,7 @@ if(sequence_index < sequence_length) {
 	sequence_index = 0;
 	current_frame = 2;
 	sequence_failed = false;
-	current_state = STATES.VULNERABLE;
+	current_state = BOSS2_STATES.VULNERABLE;
 	
 	with(obj_button) {
 		is_active = true;

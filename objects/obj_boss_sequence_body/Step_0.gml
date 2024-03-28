@@ -3,7 +3,9 @@
 // Inherit the parent event
 event_inherited();
 
-if(controller.current_state != STATES.VULNERABLE) {
+hp_percent = (hp / hp_max) * 100;
+
+if(controller.current_state != BOSS2_STATES.VULNERABLE) {
 	stomp_defense = 0.0;
 	bullet_defense = 0.0;
 } else {

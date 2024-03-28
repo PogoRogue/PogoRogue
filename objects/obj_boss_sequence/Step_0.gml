@@ -25,7 +25,7 @@ if(!fight_started) {
 
 // Force an inactive state if the boss is dead or doesn't exist
 if(!instance_exists(body) || body.is_dead) {
-	current_state = STATES.INACTIVE;
+	current_state = BOSS2_STATES.INACTIVE;
 }
 
 // Set current hp segment
@@ -40,7 +40,7 @@ if(instance_exists(body)) {
 }
 		
 switch(current_state) {
-	case STATES.IDLE: // Idle code goes here
+	case BOSS2_STATES.IDLE: // Idle code goes here
 		
 		// Generate new sequence and animate it
 		if(state_has_changed) {
@@ -86,7 +86,7 @@ switch(current_state) {
 			alarm_set(1, idle_pause_duration);
 		}
 	break;
-	case STATES.ATTACKING: // Attacking code goes here
+	case BOSS2_STATES.ATTACKING: // Attacking code goes here
 		// Check for sequence match
 		if(state_has_changed) {
 			alarm_set(4, (12 - (2 * sequence_length)) * room_speed);
@@ -115,29 +115,29 @@ switch(current_state) {
 			sequence_failed = true;
 			current_frame = 6;
 			audio_play_sound(snd_beep_placeholder, 0, false, 1, 0, 0.1);
-			current_state = STATES.IDLE;
+			current_state = BOSS2_STATES.IDLE;
 		}
 		
 		if(sequence_index >= sequence_length) {
 			if(array_equals(player_sequence, current_sequence)) {
 				// Allow the player to attack
-				current_state = STATES.VULNERABLE;
+				current_state = BOSS2_STATES.VULNERABLE;
 				sequence_index = 0;
 			} else {
 				// Create a new sequence
 				sequence_failed = true;
 				current_frame = 6;
 				audio_play_sound(snd_beep_placeholder, 0, false, 1, 0, 0.1);
-				current_state = STATES.IDLE;
+				current_state = BOSS2_STATES.IDLE;
 			}
 		}
 	break;
-	case STATES.VULNERABLE: // Vulnerable code goes here
+	case BOSS2_STATES.VULNERABLE: // Vulnerable code goes here
 		current_frame = 5;
 
-		if(body.hp_percent < previous_hp_percent - 33) {
+		if(body.hp_percent < previous_hp_percent - 34) {
 			previous_hp_percent = body.hp_percent;
-			current_state = STATES.IDLE;
+			current_state = BOSS2_STATES.IDLE;
 			alarm_set(2, 0);
 		}
 		
@@ -167,7 +167,7 @@ switch(current_state) {
 			alarm_set(2, vulnerable_duration);
 		}
 	break;
-	case STATES.INACTIVE: // Inactive code goes here
+	case BOSS2_STATES.INACTIVE: // Inactive code goes here
 		if(state_has_changed) {
 			with(obj_spikeswing) {
 				is_active = false;

@@ -3,6 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
+boss_name = "Agro Bricks";
 depth = -5;
 spd = 0.3;
 rotation_spd = 0.5;
@@ -16,10 +17,7 @@ hspeed = spd;
 // Healthbar dimensions
 view_width = camera_get_view_width(view_camera[0]);
 view_height = camera_get_view_height(view_camera[0]);
-left_border = 100;
 top_border = view_height - 20;
-right_border = view_width - 100;
-bottom_border = view_height - 15;
 hp_percent = (hp / hp_max) * 100;
 
 // Spawn pieces
@@ -56,3 +54,5 @@ for(var _i = -3; _i < 4; _i++) {
 }
 
 drop_coins = false;
+
+instance_create_depth(x, y, -20, obj_boss_sphere_health);

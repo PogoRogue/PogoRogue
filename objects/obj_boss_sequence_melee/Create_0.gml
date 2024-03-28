@@ -4,6 +4,14 @@
 // Inherit the parent event
 event_inherited();
 
+enum SLIME_MELEE_TARGETS {
+	ABOVE,
+	BELOW,
+	ORIGIN,
+}
+
+current_target = SLIME_MELEE_TARGETS.ABOVE;
+
 player = instance_nearest(x, y, obj_player);
 y_diff = -200;
 initial_x = x;

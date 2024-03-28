@@ -1,6 +1,6 @@
 /// @description Instantiate variables and set up sequence
 
-current_state = STATES.IDLE;
+current_state = BOSS2_STATES.IDLE;
 sequence_length = 2;
 current_sequence = scr_Generate_Sequence(sequence_length);
 player_sequence = array_create(sequence_length, [-1]);
