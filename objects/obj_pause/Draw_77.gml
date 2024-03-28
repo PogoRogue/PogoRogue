@@ -12,7 +12,7 @@ if (pause) { //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_settings) || paused_outside || controller_disconnected and !instance_exists(obj_items) and !instance_exists(obj_settings) {
+if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_out) || paused_outside and !instance_exists(obj_fade_out) || controller_disconnected and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_out) {
 	
 	//Grab the chunk message so we can give that info to playtesters on the pause menu
 	if(instance_exists(obj_proc_gen_location_analysis))

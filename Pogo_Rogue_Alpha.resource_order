@@ -3,6 +3,7 @@
     {"name":"Menu","order":1,"path":"folders/Sprites/UI/Menu.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_fade_out_shop","order":1,"path":"objects/obj_fade_out_shop/obj_fade_out_shop.yy",},
     {"name":"obj_wallbottomleftcorner","order":1,"path":"objects/obj_wallbottomleftcorner/obj_wallbottomleftcorner.yy",},
     {"name":"obj_wallbottomrightcorner","order":2,"path":"objects/obj_wallbottomrightcorner/obj_wallbottomrightcorner.yy",},
     {"name":"_1selected","order":4,"path":"sprites/_1selected/_1selected.yy",},
@@ -12,6 +13,8 @@
     {"name":"_6selected","order":5,"path":"sprites/_6selected/_6selected.yy",},
     {"name":"spr_menu_tutorial_old","order":2,"path":"sprites/spr_menu_tutorial_old/spr_menu_tutorial_old.yy",},
     {"name":"spr_orangesquare2","order":2,"path":"sprites/spr_orangesquare2/spr_orangesquare2.yy",},
+    {"name":"spr_portal_shop","order":1,"path":"sprites/spr_portal_shop/spr_portal_shop.yy",},
     {"name":"spr_purplesquare2","order":1,"path":"sprites/spr_purplesquare2/spr_purplesquare2.yy",},
+    {"name":"spr_slowmo_front","order":1,"path":"sprites/spr_slowmo_front/spr_slowmo_front.yy",},
   ],
 }

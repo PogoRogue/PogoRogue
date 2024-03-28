@@ -1,4 +1,6 @@
 /// @description go to next room
+instance_destroy();
+instance_create_depth(x,y,depth,obj_fade_in);
 room = next_room;
 
 with obj_player {

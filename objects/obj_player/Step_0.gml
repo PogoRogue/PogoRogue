@@ -49,7 +49,7 @@ var condition = ground_pound_slam = false;
 scr_Enemy_Collision_Check(condition);
 
 //shop
-if (room = room_shop) {
+if (room = room_shop) and state != state_shop_portal {
 	state = state_shop;
 }
 
@@ -150,7 +150,7 @@ if audio_is_playing(snd_jetpack){
 
 
 
-if state != state_portal {
+if state != state_portal and state != state_shop_portal {
 	image_angle = angle;
 }
 #endregion
@@ -158,7 +158,6 @@ if state != state_portal {
 //recentering
 if key_recenter and centering = false and angle != 0 and !key_left and !key_right and can_rotate {
 	centering = true;
-	
 }
 
 if centering = true and can_rotate {

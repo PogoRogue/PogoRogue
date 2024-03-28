@@ -12,8 +12,20 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 	colliding = false;	
 }
 
-image_index = room = room_shop;
+//image_index = room = room_shop;
 
+if (colliding and key_open_door) {
+	if obj_player.state != obj_player.state_shop_portal {
+		obj_player.portal_object = self;
+		obj_player.portal_speed = obj_player.speed/2;
+		obj_player.portal_angle_speed = 0;
+		obj_player.portal_rot_distance = 0;
+		obj_player.state = obj_player.state_shop_portal;
+		obj_player.used_shop_portal = false;
+	}
+}
+
+/*
 //check for button press
 if (colliding and key_open_door) {
 	if room != room_shop {
@@ -31,7 +43,6 @@ if (colliding and key_open_door) {
 	}else if !instance_exists(obj_coin_spawner) {
 		if global.last_room != room_shop {
 			room = global.last_room;
-			//scr_Room_Transition(global.last_room);
 			room_persistent = false;
 			global.player_spawn_x = global.player_spawn_x_prev;
 			global.player_spawn_y = global.player_spawn_y_prev;

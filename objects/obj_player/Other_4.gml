@@ -24,3 +24,9 @@ or room != room_shop and global.last_room != room_shop {
 	image_xscale = 0;
 	image_yscale = 0;
 }
+
+if room = room_shop or global.last_room = room_shop {
+	state = state_shop;
+	image_xscale = 1;
+	image_yscale = 1;
+}
