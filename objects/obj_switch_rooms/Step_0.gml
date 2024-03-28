@@ -22,4 +22,10 @@ if (instance_exists(obj_player)) {
 			global.phase = 2;
 		}
 	}
+	
+	if (keyboard_check(vk_rcontrol))
+	{
+		global.phase = 2;
+		room = room_proc_gen_test;
+	}
 }
