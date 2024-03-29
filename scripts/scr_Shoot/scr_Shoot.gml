@@ -9,7 +9,13 @@ function scr_Shoot(){
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
 		var damage_multiplier = 1;
 		//sound
-		audio_play_sound(gun.sound,0,false);
+		if gun._name != "Paintball Gun" and gun._name != "Bouncy Ball Blaster" and gun._name != "Burst Fire Gun" {
+			audio_play_sound(gun.sound,0,false);
+		}else if gun._name = "Paintball Gun" {
+			audio_play_sound(choose(snd_paintball1,snd_paintball2,snd_paintball3),0,false,1,0,random_range(0.8,1.2));
+		}else if gun._name = "Bouncy Ball Blaster" {
+			audio_play_sound(choose(snd_bbb1,snd_bbb2,snd_bbb3,snd_bbb4),0,false,1,0,random_range(0.9,1.1));
+		}
 		
 		for (var i = 0; i < gun.spread_number; i++;) {
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
@@ -43,8 +49,9 @@ function scr_Shoot(){
 			
 			
 			//screen shake
+			
 			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames,true);
-			if (global.allow_screenshake) {
+			if (global.allow_screenshake and gun._name != "Water Gun" and gun._name != "Bubble Gun" ) {
 				var controller_vibration = global.controller_vibration/100;
 				gamepad_set_vibration(0, 1*controller_vibration, 1*controller_vibration);
 			}

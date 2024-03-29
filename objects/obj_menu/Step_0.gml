@@ -31,22 +31,22 @@ if key_up and selected = false {
 if key_select {
 	audio_play_sound(snd_selectOption,0,false);
 	if select = 1 - options_decrease {
-		if sprite_index = spr_menu_tutorial2 {
-			room = room_tutorial;
+		if sprite_index = spr_menu_tutorial {
+			scr_Room_Transition(room_tutorial);
 		}else {
-			room = room_gameplay_video;
+			scr_Room_Transition(room_gameplay_video);
 		}
 	}else if select = 2 - options_decrease {
-		room = room_proc_gen_test;
+		scr_Room_Transition(room_proc_gen_test);
 	}else if select = 3 - options_decrease {
-		room = room_items;
-		room_persistent = true;
+		scr_Room_Transition(room_items);
+		//room_persistent = true;
 	}else if select = 4 - options_decrease {
-		room = room_stats;
-		room_persistent = true;
+		scr_Room_Transition(room_stats);
+		//room_persistent = true;
 	}else if select = 5 - options_decrease {
-		room = room_settings;
-		room_persistent = true;
+		scr_Room_Transition(room_settings);
+		//room_persistent = true;
 	}else if select = 6 - options_decrease {
 		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
@@ -57,13 +57,13 @@ if key_select {
 image_index = select-1;
 
 //move onto screen
-if y > 224 {
-	if point_distance(x,y,x,224) > 64 {
+if y > 240 {
+	if point_distance(x,y,x,240) > 64 {
 		if move_spd < 4 {
 			move_spd += 0.1;	
 		}
 	}else {
-		move_spd = (point_distance(x,y,x,224)/64)*4;
+		move_spd = (point_distance(x,y,x,240)/64)*4;
 	}
 	y -= move_spd;	
 }

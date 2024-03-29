@@ -26,3 +26,6 @@ if speedup_time = true and room_speed < init_room_speed {
 if key_select and slow_time = false {
 	speedup_time = true;
 }
+
+back_frames += 0.5;
+front_frames += 1/3;

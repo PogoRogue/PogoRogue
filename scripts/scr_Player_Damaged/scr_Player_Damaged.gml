@@ -11,11 +11,13 @@ function scr_Player_Damaged(damage){
 				with obj_player_health {
 					heart_shield_lost_num = other.armor_buff+1;	
 				}
+				global.enemy_killed = true; //resume combo meter
 			}else {
 				hp -= (damage);
 				with obj_player_health {
 					heart_lost_num = other.hp;	
 				}
+				global.enemy_killed = true; //resume combo meter
 			}
 			current_iframes = num_iframes;
 			hspeed = -2 * sign(hspeed);
