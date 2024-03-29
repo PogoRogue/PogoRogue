@@ -1,42 +1,52 @@
-//top left corner
-if (place_meeting(x,y+parent_index.vspeed+1,obj_walltopleftcorner) and parent_index.vspeed >= 0 and left_corner = false and top = false) {
-	if (hspeed > 0) {
-		parent_index.hspeed *= -0.35;
+with parent_index {
+	if (place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway)) and vspeed > 0 {
+		other.player_colliding = true;
 	}else {
-		parent_index.hspeed = -2;
-	}
-	
-	parent_index.vspeed *= -0.5;
-	
-	left_corner = true;
-	alarm[0] = 5;
-	
-	other.parent_index.dash_time = 0;
-	
-	//prevent groundpound collision glitch
-	if parent_index.state = parent_index.state_groundpound or parent_index.state = parent_index.state_parachute {
-		parent_index.state = parent_index.state_free;
+		other.player_colliding = false;	
 	}
 }
 
-
-//top right corner
-if (place_meeting(x,y+parent_index.vspeed+1,obj_walltoprightcorner) and parent_index.vspeed >= 0 and right_corner = false and top = false) {
-	if (hspeed < 0) {
-		parent_index.hspeed *= -0.35;
-	}else {
-		parent_index.hspeed = 2;
+if player_colliding = false {
+	//top left corner
+	if (place_meeting(x,y+parent_index.vspeed,obj_walltopleftcorner) and parent_index.vspeed >= 0 and left_corner = false and top = false) {
+		if (hspeed > 0) {
+			parent_index.hspeed *= -0.35;
+		}else {
+			parent_index.hspeed = -2;
+		}
+	
+		parent_index.vspeed *= -0.5;
+	
+		left_corner = true;
+		alarm[0] = 5;
+	
+		other.parent_index.dash_time = 0;
+	
+		//prevent groundpound collision glitch
+		if parent_index.state = parent_index.state_groundpound or parent_index.state = parent_index.state_parachute {
+			parent_index.state = parent_index.state_free;
+		}
 	}
-	parent_index.vspeed *= -0.5;
+
+
+	//top right corner
+	if (place_meeting(x,y+parent_index.vspeed,obj_walltoprightcorner) and parent_index.vspeed >= 0 and right_corner = false and top = false) {
+		if (hspeed < 0) {
+			parent_index.hspeed *= -0.35;
+		}else {
+			parent_index.hspeed = 2;
+		}
+		parent_index.vspeed *= -0.5;
 	
-	right_corner = true;
-	alarm[0] = 5;
+		right_corner = true;
+		alarm[0] = 5;
 	
-	other.parent_index.dash_time = 0;
+		other.parent_index.dash_time = 0;
 	
-	//prevent groundpound collision glitch
-	if parent_index.state = parent_index.state_groundpound or parent_index.state = parent_index.state_parachute {
-		parent_index.state = parent_index.state_free;
+		//prevent groundpound collision glitch
+		if parent_index.state = parent_index.state_groundpound or parent_index.state = parent_index.state_parachute {
+			parent_index.state = parent_index.state_free;
+		}
 	}
 }
 

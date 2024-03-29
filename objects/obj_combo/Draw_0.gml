@@ -18,6 +18,9 @@ if global.combo > 0 {
 			if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun { 
 				distance += 18;
 			}
+			if instance_exists(obj_shieldbubble) {
+				distance += 8;
+			}
 			draw_sprite_ext(combometer_sprite,0,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,white,1);
 			var _x = -sprite_get_xoffset(combometer_sprite);
 			var _y = -sprite_get_yoffset(combometer_sprite);

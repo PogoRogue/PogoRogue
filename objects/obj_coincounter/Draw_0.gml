@@ -13,6 +13,9 @@ if global.combo > 0 {
 			if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun { 
 				distance += 18;
 			}
+			if instance_exists(obj_shieldbubble) {
+				distance += 8;
+			}
 
 			//text
 			white = make_color_rgb(242,240,229);
@@ -23,6 +26,9 @@ if global.combo > 0 {
 			if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun { 
 				distance += 18;
 			}
+			if instance_exists(obj_shieldbubble) {
+				distance += 8;
+			}
 			scr_Draw_Coins(distance);	
 		}
 	}
@@ -31,6 +37,9 @@ if global.combo > 0 {
 		var distance = 52;
 		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun { 
 			distance += 18;
+		}
+		if instance_exists(obj_shieldbubble) {
+			distance += 10;
 		}
 		scr_Draw_Coins(distance);
 	}

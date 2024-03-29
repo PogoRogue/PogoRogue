@@ -31,7 +31,7 @@ function scr_Shoot(){
 				damage_multiplier = 2;
 			}
 			
-			if gun.current_bullets > 0 {
+			if gun.current_bullets > 0 or gun._name = "Hat Gun" or gun._name = "Bullet Blast" {
 				instance_create_depth(x,y,depth-1,obj_projectile,{
 					image_angle: imageAngle,
 					sprite_index: gun.ammo[bullet_index].sprite,

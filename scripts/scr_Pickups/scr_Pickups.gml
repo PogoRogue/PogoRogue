@@ -27,11 +27,11 @@ function scr_Pickups(){
 	
 	pickup_chargejump = {
 		_name: "Charge Jump",
-		tagline: "Hold while bouncing to launch yourself to great heights.",
+		tagline: "Hold while bouncing to launch yourself to great heights. Getting a kill resets its cooldown time.",
 		gui_sprite: spr_pickup_chargejump,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
-		cooldown_text: "Cooldown: " + string(300 / 60) + "s" + " / kill",
+		cooldown_text: "Cooldown: " + string(300 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_bouncing],
 		key_held: true,
@@ -55,11 +55,11 @@ function scr_Pickups(){
 	
 	pickup_groundpound = {
 		_name: "Ground Pound",
-		tagline: "Slam to the ground with massive power.",
+		tagline: "Slam to the ground with massive power. Getting a kill resets its cooldown time.",
 		gui_sprite: spr_pickup_groundpound,
-		max_cooldown_time: 180,
-		cooldown_time: 180,
-		cooldown_text: "Cooldown: " + string(180 / 60) + "s" + " / kill",
+		max_cooldown_time: 300,
+		cooldown_time: 300,
+		cooldown_text: "Cooldown: " + string(300 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: false,
@@ -141,11 +141,11 @@ function scr_Pickups(){
 	
 	pickup_firedash = {
 		_name: "Fire Dash",
-		tagline: "Turn into a fireball and dash upwards. Cooldown resets for every dash kill you get.",
+		tagline: "Turn into a fireball and dash upwards. Each kill shortens its cooldown time by 4 seconds.",
 		gui_sprite: spr_pickup_firedash,
-		max_cooldown_time: 300,
-		cooldown_time: 300,
-		cooldown_text: "Cooldown: " + string(300 / 60) + "s" + " / kill",
+		max_cooldown_time: 480,
+		cooldown_time: 480,
+		cooldown_text: "Cooldown: " + string(480 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: false,
@@ -171,7 +171,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_jetpack,
 		max_cooldown_time: 60,
 		cooldown_time: 60,
-		cooldown_text: "Cooldown: 1/4 every bounce/kill",
+		cooldown_text: "Cooldown: 1/4 every bounce / kill",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: true,
@@ -338,11 +338,11 @@ function scr_Pickups(){
 	
 	pickup_camera = {
 		_name: "Camera",
-		tagline: "Snap a bright picture of every enemy on screen.",
+		tagline: "Snap a bright picture of every enemy on screen, dealing small amounts of damage to all of them. Each kill shortens its cooldown time by 4 seconds.",
 		gui_sprite: spr_pickup_camera,
 		max_cooldown_time: 600,
 		cooldown_time: 600,
-		cooldown_text: "Cooldown: " + string(600 / 60) + "s" + " / kill",
+		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,

@@ -41,7 +41,7 @@ function scr_Bullets(){
 	};
 	
 	hatgun_bullet = {
-		sprite: spr_projectile_default,
+		sprite: spr_projectile_hatgun,
 		gui_sprite: spr_projectile_default_gui,
 		spd: 15,                          
 		firerate_start: 1,               
