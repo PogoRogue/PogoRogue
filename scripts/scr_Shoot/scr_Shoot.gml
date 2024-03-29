@@ -30,21 +30,23 @@ function scr_Shoot(){
 			if(global.laststand and hp <= 8){
 				damage_multiplier = 2;
 			}
-					
-			instance_create_depth(x,y,depth-1,obj_projectile,{
-				image_angle: imageAngle,
-				sprite_index: gun.ammo[bullet_index].sprite,
-				spd: gun.ammo[bullet_index].spd,
-				destroy_on_impact: destroyOnImpact,
-				destroy_time: gun.ammo[bullet_index].destroy_time,
-				flash_frame: gun.ammo[bullet_index].flash_frame,
-				gun_name: gun._name,
-				grav_affected: gun.ammo[bullet_index].grav_affected,
-				grv: gun.ammo[bullet_index].grv,
-				num_of_bounces: gun.ammo[bullet_index].num_of_bounces + global.bouncy_bullets,
-				bounce_amount: gun.ammo[bullet_index].bounce_amount,
-				damage: gun.ammo[bullet_index].damage * (1 + ((global.sharpshooter = true and gun.current_bullets = gun.bullets_per_bounce) * 0.5)) * damage_multiplier,
-			});
+			
+			if gun.current_bullets > 0 {
+				instance_create_depth(x,y,depth-1,obj_projectile,{
+					image_angle: imageAngle,
+					sprite_index: gun.ammo[bullet_index].sprite,
+					spd: gun.ammo[bullet_index].spd,
+					destroy_on_impact: destroyOnImpact,
+					destroy_time: gun.ammo[bullet_index].destroy_time,
+					flash_frame: gun.ammo[bullet_index].flash_frame,
+					gun_name: gun._name,
+					grav_affected: gun.ammo[bullet_index].grav_affected,
+					grv: gun.ammo[bullet_index].grv,
+					num_of_bounces: gun.ammo[bullet_index].num_of_bounces + global.bouncy_bullets,
+					bounce_amount: gun.ammo[bullet_index].bounce_amount,
+					damage: gun.ammo[bullet_index].damage * (1 + ((global.sharpshooter = true and gun.current_bullets = gun.bullets_per_bounce) * 0.5)) * damage_multiplier,
+				});
+			}
 			
 			
 			
@@ -66,28 +68,36 @@ function scr_Shoot(){
 			min_flames_speed = gun.max_speed - 1.5;
 		}
 		
-		//check if speed slower or faster than max speed to preserve momentum
-		if (abs(speed) > gun.max_speed and vspeed < 0) {
-			slower_than_max = false;
-			current_max = speed;
+		if gun.current_bullets >= 0 {
+		
+			//check if speed slower or faster than max speed to preserve momentum
+			if (abs(speed) > gun.max_speed and vspeed < 0) {
+				slower_than_max = false;
+				current_max = speed;
+			}else {
+				slower_than_max = true;	
+				current_max = 0;
+			}
+		
+			//reset/preserve momentum
+			if (gun.reset_momentum and slower_than_max) {
+				speed = 0;
+			}else if (gun.reset_momentum) {
+				speed = current_max + (vsp_basicjump*gun.momentum_added);	
+			}
+		
+			//add momentum
+			motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
+		
+			//set max speed for auto weapons
+			if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
+				speed = max(gun.max_speed, current_max);
+			}
+		
 		}else {
-			slower_than_max = true;	
-			current_max = 0;
-		}
-		
-		//reset/preserve momentum
-		if (gun.reset_momentum and slower_than_max) {
-			speed = 0;
-		}else if (gun.reset_momentum) {
-			speed = current_max + (vsp_basicjump*gun.momentum_added);	
-		}
-		
-		//add momentum
-		motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
-		
-		//set max speed for auto weapons
-		if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
-			speed = max(gun.max_speed, current_max);
+			if audio_is_playing(snd_burstfire) {
+				audio_stop_sound(snd_burstfire);
+			}
 		}
 		
 		//iterate through ammo types
@@ -106,5 +116,14 @@ function scr_Shoot(){
 			//rotation_delay = rotation_speed / 10;
 		}
 		
+		current_burst += 1;
+		
+		if current_burst = gun.burst_number {
+			current_burst = 0;
+		}
+		
+		if gun._name = "Burst Fire Gun" and (gun.current_bullets % gun.burst_number) != 0 and current_burst = 0 {
+			gun.current_bullets = ceil(gun.current_bullets/gun.burst_number) * gun.burst_number;
+		}
 	}
 }

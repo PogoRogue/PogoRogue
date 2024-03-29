@@ -424,9 +424,9 @@ function scr_Pickups(){
 		_name: "Targeted Assassination",
 		tagline: "Instantly kills a random enemy on screen, 20% damage to bosses.",
 		gui_sprite: spr_pickup_target,
-		max_cooldown_time: 1200,
-		cooldown_time: 1200,
-		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: Every 6 enemies",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -436,10 +436,11 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 0,
+		enemies_count_max: 6,
 		on_call: function() {
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_crosshair);
 			on_cooldown = true;
+			enemies_count = enemies_count_max;
 		}
 	};
 	

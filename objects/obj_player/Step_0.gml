@@ -213,7 +213,6 @@ if (canshoot > 0) {
 	
 		var delay = gun.burst_delay;
 		
-		
 		repeat (gun.burst_number - 1) {
 			if gun._name = "Burst Fire Gun" and delay = gun.burst_delay {
 				audio_play_sound(snd_burstfire,0,false);	
@@ -223,7 +222,7 @@ if (canshoot > 0) {
 		}
 		
 		//decrease ammo count for spread weapons
-		if gun.spread_number > 1 and frenzy = false{
+		if gun.spread_number > 1 and frenzy = false {
 			gun.current_bullets -= 1;
 		}
 	}

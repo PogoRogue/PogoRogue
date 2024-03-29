@@ -1,3 +1,7 @@
+if room = room_shop {
+	created_in_room = true;	
+}
+
 if (follow_player = true and obj_player.state != obj_player.state_blink) {
 	move_towards_point(obj_player.x,obj_player.y,speed);
 	speed = lerp(speed,8,0.05);	
@@ -22,4 +26,8 @@ if show_debug = true {
 		alarm[0] = 1;
 	}
 	show_debug = false;
+}
+
+if distance_to_object(obj_player) > 200 and room != room_shop and created_in_room = false {
+	instance_destroy();	
 }
