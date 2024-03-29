@@ -12,6 +12,8 @@ if(is_dead) {
 
 x += spd;
 
-y += sin(y_spd);
+if(!place_meeting(x + speed, y + sin(y_spd), obj_ground)) {
+	y += sin(y_spd);
+}
 
 y_spd += 0.05;
