@@ -41,7 +41,12 @@ center_y = camera_get_view_height(view_camera[0])/2;
 alarm[1] = 2;
 
 scr_All_Actives_Array();
-actives_array = global.all_pickups;
+actives_array = [obj_item_pickup_firedash, obj_item_pickup_groundpound, obj_item_pickup_hatgun, 
+				obj_item_pickup_chargejump, obj_item_pickup_reload, obj_item_pickup_freeze,
+				obj_item_pickup_emergency, obj_item_pickup_parachute, obj_item_pickup_shieldbubble,
+				obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
+				obj_item_pickup_camera, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
+				obj_item_pickup_slowmo];
 				
 select_max = array_length(actives_array);
 

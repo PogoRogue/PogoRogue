@@ -1,6 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Player_Collision(){
+	var prev_x = x;
+	var prev_y = y;
+	
 	//check for collision with one way ground
 	if (place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway)) and vspeed > 0 {
 		while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
@@ -22,7 +25,7 @@ function scr_Player_Collision(){
 	}
 	
 	//check for collision with ground y axis
-	if (place_meeting(x,y+vspeed,obj_ground)) and free = true {
+	if (place_meeting(x,y+vspeed,obj_ground)) and free = true and obj_player_mask.right_corner = false and  obj_player_mask.left_corner = false {
 		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
 			y += sign(vspeed);
 		}
@@ -58,5 +61,13 @@ function scr_Player_Collision(){
 		rotation_delay = rotation_speed / 10;
 	}
 	
-	
+	if abs(x - prev_x) > 16 {
+		x  = prev_x;
+		show_debug_message("BUG FIXED X PLAYER");
+	}
+
+	if abs(y - prev_y) > 16 {
+		y  = prev_y;
+		show_debug_message("BUG FIXED Y PLAYER");
+	}
 }

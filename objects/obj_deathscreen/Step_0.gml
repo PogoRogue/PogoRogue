@@ -51,7 +51,7 @@ if centered = true {
 	}
 	
 	if key_select and select_x = 2 { //main menu
-		game_restart();
+		scr_Game_Restart();
 		audio_play_sound(snd_selectOption,0,false);
 	}
 }

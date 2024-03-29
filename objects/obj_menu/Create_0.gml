@@ -1,4 +1,4 @@
-sprite_index = spr_menu_tutorial2;
+sprite_index = spr_menu_tutorial;
 options_decrease = 0;
 
 select = 1;
@@ -8,3 +8,5 @@ usable = true;
 room_persistent = false;
 move_spd = 0;
 alarm3_time = 30;
+
+alarm[0] = 10; //play music

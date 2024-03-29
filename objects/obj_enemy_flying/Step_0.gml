@@ -10,6 +10,13 @@ if(is_dead) {
 }
 hspeed= spd;
 
+
 vspeed= sin(y_spd);
+
+
+if(!place_meeting(x + speed, y + sin(y_spd), obj_ground)) {
+	y += sin(y_spd);
+}
+
 
 y_spd += 0.05;

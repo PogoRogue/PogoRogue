@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.645656,
+  "duration":0.733333,
   "name":"snd_whoosh",
   "parent":{
     "name":"Powerups",

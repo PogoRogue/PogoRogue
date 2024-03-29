@@ -49,7 +49,7 @@ for (i = 0; i < 32; i++) {
 		}
 		draw_sprite(actives_array[i],(sprite_get_number(actives_array[i])-1)*(global.active_unlocked_array[i] = false) + (global.active_unlocked_array[i] = true),xx,yy-27);
 	
-		if (i < array_length(global.all_pickups) and global.active_unlocked_array[i]= true) {
+		if (i < 16 and global.active_unlocked_array[i]= true) {
 			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_pickups[i]._name,12,99),c_white);
 		}
 	}
@@ -61,7 +61,7 @@ for (i = 0; i < 32; i++) {
 		}
 		draw_sprite(weapons_array[i],(sprite_get_number(weapons_array[i])-1)*(global.weapon_unlocked_array[i] = false) + (global.weapon_unlocked_array[i] = true),xx,yy-27);
 	
-		if (i < array_length(global.all_weapons) and global.weapon_unlocked_array[i]= true) {
+		if (i < 16 and global.weapon_unlocked_array[i]= true) {
 			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_weapons[i]._name,12,99),c_white);
 		}
 	}
@@ -92,7 +92,7 @@ for (i = 0; i < array_length(global.all_buffs); i++) {
 	}
 }
 
-for (i = 0; i < array_length(global.all_pickups); i++) {
+for (i = 0; i < 16; i++) {
 	var yy = 226 + floor(i / select_x_max) * y_gap;
 	if (select = 2) {
 		if (i = ((select_y-1)*select_x_max)+(select_x-1)) {
@@ -113,7 +113,7 @@ for (i = 0; i < array_length(global.all_pickups); i++) {
 	}
 }
 
-for (i = 0; i < array_length(global.all_weapons); i++) {
+for (i = 0; i < 16; i++) {
 	var xx = (center_x - ((x_gap*select_x_max-x_gap)/2)) + (i % select_x_max) * x_gap;
 	var yy = 226 + floor(i / select_x_max) * y_gap;
 	if (select = 3) {

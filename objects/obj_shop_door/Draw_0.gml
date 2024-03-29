@@ -17,23 +17,23 @@ if (colliding) {
 	}
 
 	if global.use_controller = true {
-		scr_Draw_Text_Outlined(x,bbox_top+64-10,"Press         To " + enter_exit_text + " Shop",c_white);
-		draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[6][0]),0,x-20+temp_x_offset,bbox_top+64-10);
+		scr_Draw_Text_Outlined(x,bbox_top+16,"Press         To " + enter_exit_text + " Shop",c_white);
+		draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[6][0]),0,x-20+temp_x_offset,bbox_top+16);
 	}else {
 		var keyboard_array_value = global.keyboard_array[6][0];
 		var keyboard_text = scr_Keyboard_Get_Key_String(keyboard_array_value);
 			
 		if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
 			if is_string(keyboard_text) {
-				scr_Draw_Text_Outlined(x,bbox_top+64-10,"Press " + string(keyboard_text) + " To " + enter_exit_text + " Shop",c_white);
+				scr_Draw_Text_Outlined(x,bbox_top+16,"Press " + string(keyboard_text) + " To " + enter_exit_text + " Shop",c_white);
 			}else {
-				scr_Draw_Text_Outlined(x,bbox_top+64-10,"Press         To " + enter_exit_text + " Shop",c_white);
-				draw_sprite(keyboard_text,0,x-20+temp_x_offset,bbox_top+64-10);
+				scr_Draw_Text_Outlined(x,bbox_top+16,"Press         To " + enter_exit_text + " Shop",c_white);
+				draw_sprite(keyboard_text,0,x-20+temp_x_offset,bbox_top+16);
 			}
 		}else {
 			var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
-			scr_Draw_Text_Outlined(x,bbox_top+64-10,"Press         To " + enter_exit_text + " Shop",c_white);
-			draw_sprite(mouse_sprite,0,x-20+temp_x_offset,bbox_top+64-10);
+			scr_Draw_Text_Outlined(x,bbox_top+16,"Press         To " + enter_exit_text + " Shop",c_white);
+			draw_sprite(mouse_sprite,0,x-20+temp_x_offset,bbox_top+16);
 		}
 	}
 }
