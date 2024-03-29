@@ -8,6 +8,6 @@ spd = 0.5;
 at_edge = false;
 at_wall = false;
 player = instance_find(obj_player, 0);
-aggro_range = 100;
+aggro_range = 200;
 aggro=false;
 chase_spd=2;

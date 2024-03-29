@@ -14,6 +14,9 @@ if(is_dead) {
 	sprite_index = spr_enemy_stomp_only;
 }
 
+if (spd >=0) { image_xscale = -1;}
+if (spd <0) { image_xscale = 1;}
+
 if(sprite_index != spr_enemy_stomp_only_Shield) {
 	hspeed= spd;
 }

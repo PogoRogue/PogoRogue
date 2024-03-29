@@ -10,10 +10,9 @@ if(action_cd == false)
 
 	alarm_set(1, 40);
 	
+}
 	var _bullet = instance_create_layer(x, y, "Instances", obj_enemy_projectile_bullet);
 	
 	_bullet.speed=10;
 	_bullet.direction=point_direction(x, y, player.x, player.y);
-	
-}
 

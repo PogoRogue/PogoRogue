@@ -18,5 +18,5 @@ if(is_dead) {
 }
 
 if(sprite_index != spr_enemy_stomp_only_Shield) {
-	x += spd;
+	hspeed= spd;
 }
