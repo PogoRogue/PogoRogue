@@ -27,9 +27,32 @@ x = max(x,camera_get_view_x(view_camera[0])+sprite_half);
 y = min(y,camera_get_view_y(view_camera[0])+(camera_get_view_height(view_camera[0])-sprite_half));
 y = max(y,camera_get_view_y(view_camera[0])+sprite_half);
 
+//check gates
+for(i = 0; i < 1536; i+=16) {
+	if place_meeting(x+i,y,obj_room_gate_close) {
+		gate_object = instance_place(x+i,y,obj_room_gate_close);
+		outside_gates = true;
+	}else if place_meeting(x-i,y,obj_room_gate_close) {
+		gate_object = instance_place(x-i,y,obj_room_gate_close);
+		outside_gates = true;
+	}
+}
+
+if outside_gates = true {
+	if !instance_exists(gate_object) {
+		outside_gates = false;
+		gate_object = noone;
+	}else {
+		if bbox_top > gate_object.bbox_bottom {
+			outside_gates = false;
+			gate_object = noone;
+		}
+	}
+}
+
 //check if area is open
 if place_meeting(x,y,obj_ground) or place_meeting(x,y,obj_ground_tiles) or place_meeting(x,y,obj_ground_tiles_outer) 
-or place_meeting(x,y,obj_enemy_parent) or place_meeting(x,y,obj_pinballbumper) or place_meeting(x,y,obj_spike) {
+or place_meeting(x,y,obj_enemy_parent) or place_meeting(x,y,obj_pinballbumper) or place_meeting(x,y,obj_spike) or outside_gates = true {
 	free = false;	
 }else {
 	free = true;	
@@ -71,6 +94,7 @@ if draw_respawn = true {
 	}else {
 		//finish code here	
 		with obj_player {
+			audio_play_sound(snd_blink_respawn,0,false);
 			state = state_free;	
 			can_rotate = true;
 			can_shoot = true;

@@ -79,7 +79,7 @@ state_rising = function() {
 		
 	//restart room if reached the top
 	if (bbox_bottom < 0 and mask_index != spr_nothing) {
-		room_restart();
+		scr_Room_Restart(false);
 	}
 	
 	sprite_index = player_sprite; //set player sprite

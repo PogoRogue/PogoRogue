@@ -5,7 +5,7 @@ item_name = "Combo Master";
 item_tagline = "Gain a heart if your combo reaches 10.";
 item_description = item_tagline;
 add_sprite_to_list = true;
-item_cost = 10;
+item_cost = 25;
 max_uses = 1;
 item_stats = "";
 scr_Buff_Stats();
