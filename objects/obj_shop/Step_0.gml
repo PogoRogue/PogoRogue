@@ -247,9 +247,9 @@ if key_select {
 if recreated_bought_item = true {
 	audio_play_sound(snd_unavailable,0,false);
 	if (select-1) % 2 = 0 {
-		xx = 272;
+		xx = 272+32;
 	}else {
-		xx = 336;
+		xx = 336+32;
 	}
 	yy = 104 + 64 * floor((select-1) / 2);
 	with instance_create_depth(xx,yy,depth-1,last_item_created) {

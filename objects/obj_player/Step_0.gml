@@ -49,7 +49,7 @@ var condition = ground_pound_slam = false;
 scr_Enemy_Collision_Check(condition);
 
 //shop
-if (room = room_shop) {
+if (room = room_shop) and state != state_shop_portal {
 	state = state_shop;
 }
 
@@ -150,7 +150,7 @@ if audio_is_playing(snd_jetpack){
 
 
 
-if state != state_portal {
+if state != state_portal and state != state_shop_portal {
 	image_angle = angle;
 }
 #endregion
@@ -212,7 +212,12 @@ if (canshoot > 0) {
 		scr_Shoot();
 	
 		var delay = gun.burst_delay;
+		
+		
 		repeat (gun.burst_number - 1) {
+			if gun._name = "Burst Fire Gun" and delay = gun.burst_delay {
+				audio_play_sound(snd_burstfire,0,false);	
+			}
 			call_later(delay,time_source_units_frames,scr_Shoot);
 			delay += gun.burst_delay;
 		}

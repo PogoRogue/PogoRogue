@@ -1,1 +1,1 @@
-room = room_boss_1;
+scr_Room_Transition(room_boss_1);

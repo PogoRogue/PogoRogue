@@ -1,0 +1,1 @@
+active = true; //delayed so player doesnt spawn out of bounds

@@ -6,19 +6,19 @@ if (instance_exists(obj_player)) {
 		} else if(room == room_boss_1) {
 		
 		} else if (room = room_sam_movement) {
-			room = room_gym_enemy;
+			scr_Room_Transition(room_gym_enemy);
 		} else if (room = room_gym_enemy) {
-			room = room_fight_1;
+			scr_Room_Transition(room_fight_1);
 		} else if (room = room_fight_1) {
-			room = room_proc_gen_test;
+			scr_Room_Transition(room_proc_gen_test);
 		} else if (room = room_shop) {
 			//room = global.last_room;
 		} 
 		
 		if (room = room_gameplay_video) {
-			room = room_boss_1;
+			scr_Room_Transition(room_boss_1);
 		} else if (room = room_proc_gen_test) {
-			room = room_boss_3;
+			scr_Room_Transition(room_boss_2);
 			global.phase = 2;
 		}
 	}
@@ -26,6 +26,6 @@ if (instance_exists(obj_player)) {
 	if (keyboard_check(vk_rcontrol))
 	{
 		global.phase = 2;
-		room = room_proc_gen_test;
+		scr_Room_Transition(room_proc_gen_test);
 	}
 }

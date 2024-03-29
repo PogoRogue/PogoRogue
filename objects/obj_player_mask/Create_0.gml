@@ -14,3 +14,14 @@ sprite_index = spr_player_mask_zekai;
 _break = false; //left
 _break2 = false; //right
 _break3 = false; //bottom
+
+left_corner = false;
+right_corner = false;
+bottom_left_corner = false;
+bottom_right_corner = false;
+top = false;
+left = false;
+right = false;
+
+active = false; //delayed so player doesnt spawn out of bounds
+alarm[3] = 30;
