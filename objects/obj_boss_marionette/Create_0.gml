@@ -16,6 +16,11 @@ hsp = 0;
 vsp = 0;
 collision_detected = false;
 
+//When taking specific action, some normal movement
+special_action="NO";
+orig_x=x;
+orig_y=y;
+
 // HP
 draw_hp = false;
 hp = 500;
