@@ -1,9 +1,13 @@
 with parent_index {
 	if (place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway)) and vspeed > 0 {
 		other.player_colliding = true;
+	}else if (place_meeting(x,y+vspeed,obj_ground) and vspeed > 0) {
+		other.player_colliding = true;
 	}else {
 		other.player_colliding = false;	
 	}
+	
+	
 }
 
 if player_colliding = false {

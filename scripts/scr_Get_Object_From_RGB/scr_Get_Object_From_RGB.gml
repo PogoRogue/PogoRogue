@@ -198,9 +198,21 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_angled_platform_right;
 		}
-			else if(Red == 25 && Green == 25 && Blue == 25)
+		else if(Red == 25 && Green == 25 && Blue == 25)
 		{
 			return obj_instructions;
+		}
+		else if(Red == 15 && Green == 15 && Blue == 15)
+		{
+			return obj_actives_station;
+		}
+		else if(Red == 10 && Green == 10 && Blue == 10)
+		{
+			return obj_weapons_station;
+		}
+		else if(Red == 5 && Green == 5 && Blue == 5)
+		{
+			return obj_seeding_station;
 		}
 	}
 	
