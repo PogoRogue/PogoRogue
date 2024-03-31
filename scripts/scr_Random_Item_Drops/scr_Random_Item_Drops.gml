@@ -26,7 +26,7 @@ function scr_Random_Item_Drops(){
 	}
 	
 	//buff
-	if (buff_drop <= buff_chance) {
+	if (buff_drop <= buff_chance and (heart_drop > heart_chance)) {
 		var object_array = [];
 		num_of_coins = round(num_of_coins/2);
 		if created_items = false {
@@ -54,7 +54,7 @@ function scr_Random_Item_Drops(){
 	}
 	
 	//weapon
-	if (weapon_drop <= weapon_chance) {
+	if (weapon_drop <= weapon_chance and (heart_drop > heart_chance)) {
 		var object_array = [];
 		
 		var object_type = scr_Get_Rand_Weapon_Object();
@@ -70,7 +70,7 @@ function scr_Random_Item_Drops(){
 		num_of_coins = 0;
 		heart_chance = -1;
 		with obj_item_buff_heart {
-			instance_destroy();	
+			//instance_destroy();	
 		}
 		with obj_item_buff_armor {
 			instance_destroy();	
@@ -81,7 +81,7 @@ function scr_Random_Item_Drops(){
 	}
 	
 	//pickup
-	if (pickup_drop <= pickup_chance) {
+	if (pickup_drop <= pickup_chance and (heart_drop > heart_chance)) {
 		var object_array = [];
 		
 		var object_type = scr_Get_Rand_Pickup_Object();

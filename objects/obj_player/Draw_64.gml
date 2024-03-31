@@ -34,8 +34,14 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	
 	//text
 	draw_text_color(camera_get_view_width(view_camera[0])-52,32+yy,gun_array[gun_num]._name,make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
+	
 	//text darkening
 	draw_text_color(camera_get_view_width(view_camera[0])-52,32+yy,gun_array[gun_num]._name,c_black,c_black,c_black,c_black,black_alpha);
+	
+	//arrow
+	if current_gun = gun_num {
+		draw_sprite(spr_weapon_arrow,weapon_arrow_index,camera_get_view_width(view_camera[0])-56-string_width(gun_array[gun_num]._name),24+yy)
+	}
 	
 	//weapon sprites
 	draw_sprite(gun_array[gun_num].sprite,1,camera_get_view_width(view_camera[0])-32,24+yy);

@@ -396,3 +396,5 @@ if room = room_items {
 if revive_alpha > 0 {
 	revive_alpha -= 0.05;	
 }
+
+weapon_arrow_index += 0.05;

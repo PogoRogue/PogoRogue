@@ -52,7 +52,7 @@ if (skiplevel_button) {
 				scr_Room_Transition(room_menu);
 				break;
 		}	
-	}else {
+	}else if room = room_boss_1 or room = room_boss_2 /*or room = room_boss_3*/ {
 		room_persistent = false;
 		global.phase++;
 		scr_Room_Transition(room_proc_gen_test);

@@ -30,6 +30,7 @@ can_shoot = true;
 platform_on = true;
 centering = false;
 current_burst = 0;
+weapon_arrow_index = 0;
 
 //portal
 portal_object = noone;
