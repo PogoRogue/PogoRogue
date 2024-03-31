@@ -2,6 +2,7 @@ restart_button = keyboard_check_pressed(ord("R")); //press R key to restart room
 screenshake_button = keyboard_check_pressed(vk_backspace); //press escape key to restart room (temporary)
 mute_button = keyboard_check_pressed(ord("M")); //press M to mute audio (temporary)
 itemmenu_button = global.key_item_menu; 
+skiplevel_button = keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
 
 if (restart_button) {
 	room_persistent = false;
@@ -34,6 +35,28 @@ if (itemmenu_button) and obj_pause.pause = false {
 
 if (screenshake_button) {
 	global.allow_screenshake = not global.allow_screenshake;
+}
+
+if (skiplevel_button) {
+	if room = room_proc_gen_test {
+		if global.phase = 1 {
+			room = room_boss_1;
+		}else if global.phase = 2 {
+			room = room_boss_2;
+		}else if global.phase = 3 {
+			//room = room_boss_3;
+		}
+	}else {
+		if room = room_boss_1 {
+			global.phase = 2;
+			global.tileset = tl_ground2;
+			room = room_proc_gen_test;
+		}else if room = room_boss_2 {
+			global.phase = 3;
+			//global.tileset = tl_ground3;
+			room = room_proc_gen_test;
+		}
+	}
 }
 
 //last room

@@ -202,9 +202,9 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_instructions;
 		}
-		else if(Red == 15 && Green == 15 && Blue == 15)
+		else if(Red == 20 && Green == 20 && Blue == 20)
 		{
-			return obj_actives_station;
+			return obj_pickup_station;
 		}
 		else if(Red == 10 && Green == 10 && Blue == 10)
 		{

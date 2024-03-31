@@ -1,20 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_seeding_station",
+  "%Name":"obj_pickup_station",
   "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_seeding_station",
+  "name":"obj_pickup_station",
   "overriddenProperties":[],
   "parent":{
     "name":"item",
     "path":"folders/Objects/item.yy",
   },
   "parentObjectId":{
-    "name":"obj_weapons_station",
-    "path":"objects/obj_weapons_station/obj_weapons_station.yy",
+    "name":"obj_generated_object_parent",
+    "path":"objects/obj_generated_object_parent/obj_generated_object_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -36,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_seeding_station",
-    "path":"sprites/spr_seeding_station/spr_seeding_station.yy",
+    "name":"spr_actives_station",
+    "path":"sprites/spr_actives_station/spr_actives_station.yy",
   },
   "spriteMaskId":null,
   "visible":true,
