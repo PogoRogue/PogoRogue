@@ -380,3 +380,12 @@ if room = room_items {
 if revive_alpha > 0 {
 	revive_alpha -= 0.05;	
 }
+
+// In the Step Event of obj_player
+if (damage_boost_active) {
+    damage_boost_timer -= 1;
+    if (damage_boost_timer <= 0) {
+        damage_boost_active = false;
+        damage_boost_timer = 0; // Reset the timer for safety.
+    }
+}

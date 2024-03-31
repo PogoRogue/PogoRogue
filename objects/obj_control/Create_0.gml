@@ -80,6 +80,8 @@ global.tightspring = false;
 global.impatience = false;
 global.laststand = false;
 global.psychicbullets = false;
+global.righteousrevenge = false;
+global.robbery = false;
 
 
 //items unlockable in the shop

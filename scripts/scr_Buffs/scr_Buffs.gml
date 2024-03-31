@@ -206,4 +206,14 @@ function scr_Buffs(){
 		global.psychicbullets = true;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
+	
+	buff_righteousrevenge = function(){
+		global.righteousrevenge = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
+	
+	buff_robbery = function(){
+		global.robbery = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
 }
