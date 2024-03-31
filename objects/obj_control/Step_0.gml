@@ -38,23 +38,26 @@ if (screenshake_button) {
 }
 
 if (skiplevel_button) {
-	if room = room_proc_gen_test {
-		if global.phase = 1 {
-			room = room_boss_1;
-		}else if global.phase = 2 {
-			room = room_boss_2;
-		}else if global.phase = 3 {
-			//room = room_boss_3;
-		}
+	if (room == room_proc_gen_test) {
+		room_persistent = false;
+		switch (global.phase) {
+			case 1:
+				scr_Room_Transition(room_boss_1);
+				break;
+			case 2:
+				scr_Room_Transition(room_boss_2);
+				break;
+			case 3:
+				global.phase = 1;
+				scr_Room_Transition(room_menu);
+				break;
+		}	
 	}else {
-		if room = room_boss_1 {
-			global.phase = 2;
-			global.tileset = tl_ground2;
-			room = room_proc_gen_test;
-		}else if room = room_boss_2 {
-			global.phase = 3;
-			//global.tileset = tl_ground3;
-			room = room_proc_gen_test;
+		room_persistent = false;
+		global.phase++;
+		scr_Room_Transition(room_proc_gen_test);
+		if global.phase = 2 {
+			global.tileset = tl_ground2;	
 		}
 	}
 }
