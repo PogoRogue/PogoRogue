@@ -1,5 +1,5 @@
 /// @description delete
-if (parent_index.vspeed >= 0) or (parent_index.speed < parent_index.min_flames_speed) {
+if (parent_index.vspeed >= 0 and despawnable) or (parent_index.speed < parent_index.min_flames_speed and despawnable) {
 	despawn = true;
 }
 

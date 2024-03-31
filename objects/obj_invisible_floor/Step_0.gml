@@ -3,13 +3,13 @@
 
 if(instance_exists(controller)) {
 	switch(controller.current_state) {
-		case STATES.IDLE:
+		case BOSS2_STATES.IDLE:
 			is_lowering = false;
 			break;
-		case STATES.VULNERABLE:
+		case BOSS2_STATES.VULNERABLE:
 			is_lowering = true;
 			break;
-		case STATES.DEAD:
+		case BOSS2_STATES.INACTIVE:
 			is_lowering = true;
 			break;
 	}

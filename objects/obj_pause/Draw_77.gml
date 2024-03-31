@@ -12,7 +12,7 @@ if (pause) { //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_settings) || paused_outside {
+if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_out) || paused_outside and !instance_exists(obj_fade_out) || controller_disconnected and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_out) {
 	
 	//Grab the chunk message so we can give that info to playtesters on the pause menu
 	if(instance_exists(obj_proc_gen_location_analysis))
@@ -23,9 +23,12 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 	
 	if !pause { //pause now
 		pause = true;
+		global.water_index += 1;
 		
 		//deactivate everything other than this surface
 		instance_deactivate_all(true);
+		instance_activate_object(obj_fade_in);	
+		instance_activate_object(obj_fade_out);	
 		instance_activate_object(obj_control);	
 		instance_activate_object(obj_controls_controller);
 		instance_activate_object(obj_controls_keyboard);
@@ -38,6 +41,7 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 			item_swap = true;
 		}else {
 			instance_activate_object(obj_pausemenu);
+			controller_disconnected = false;
 		}
 		
 		//if we need to pause anything like animating sprites, tiles, room backgrounds, we need to do that separately
@@ -55,6 +59,7 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 		pause_surf_buffer = buffer_create(res_w * res_h * 4, buffer_fixed, 1);
 		buffer_get_surface(pause_surf_buffer, pause_surf, 0);
 		audio_play_sound(snd_pause,0,false);
+		
 	}else { //unpause now
 		if item_swap = false {
 			pause = false;

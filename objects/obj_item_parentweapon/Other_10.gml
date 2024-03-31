@@ -6,6 +6,8 @@ or weapon != obj_player.gun_1 and weapon != obj_player.gun_2 and obj_player.weap
 or weapon != obj_player.gun_1 and weapon != obj_player.gun_2 and weapon != obj_player.gun_3 and obj_player.weapons_equipped = 3 
 or obj_player.weapons_equipped = 0 {
 	if obj_player.num_of_weapons = 1 or obj_player.num_of_weapons = 2 and obj_player.weapons_equipped = 1 {
+		global.all_weapon_costs[1] = item_cost;
+		
 		with obj_player {
 			num_of_weapons = 2;
 			gun_2 = other.weapon;
@@ -33,10 +35,13 @@ or obj_player.weapons_equipped = 0 {
 			sprite_2 = obj_player.gun_2.sprite;
 			new_item = other.weapon;
 			item_name = other.item_name;
+			new_item_cost = other.item_cost;
 			item1_name = obj_player.gun_1._name;
 			item2_name = obj_player.gun_2._name;
 		}
 	}else if obj_player.num_of_weapons = 3 and obj_player.weapons_equipped = 1 {
+		global.all_weapon_costs[1] = item_cost;
+		
 		with obj_player {
 			num_of_weapons = 3;
 			gun_2 = other.weapon;
@@ -56,6 +61,8 @@ or obj_player.weapons_equipped = 0 {
 		}
 		ini_close();
 	}else if obj_player.num_of_weapons = 3 and obj_player.weapons_equipped = 2 {
+		global.all_weapon_costs[2] = item_cost;
+		
 		with obj_player {
 			num_of_weapons = 3;
 			gun_3 = other.weapon;
@@ -84,11 +91,14 @@ or obj_player.weapons_equipped = 0 {
 			sprite_3 = obj_player.gun_3.sprite;
 			new_item = other.weapon;
 			item_name = other.item_name;
+			new_item_cost = other.item_cost;
 			item1_name = obj_player.gun_1._name;
 			item2_name = obj_player.gun_2._name;
 			item3_name = obj_player.gun_3._name;
 		}
 	}else if obj_player.num_of_weapons = 0 {
+		global.all_weapon_costs[0] = item_cost;
+		
 		with obj_player {
 			num_of_weapons = 1;
 			weapons_equipped = 1;

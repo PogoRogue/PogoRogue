@@ -1,10 +1,10 @@
 follow_player = true;
 buff = obj_player.buff_pickybuyer;
 item_name = "Picky Buyer";
-item_tagline = "The first refresh in a shop is always free.";
+item_tagline = "Your next shop refresh is free.";
 item_description = item_tagline;
 add_sprite_to_list = true;
-item_cost = 10;
+item_cost = 35;
 max_uses = 1;
 item_stats = "";
 scr_Buff_Stats();

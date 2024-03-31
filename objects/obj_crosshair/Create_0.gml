@@ -21,3 +21,5 @@ if enemy_count = 0 {
 	x = enemy_to_target.x + irandom_range(-256,256);
 	y = enemy_to_target.y + irandom_range(-256,256);
 }
+
+audio_play_sound(snd_targetedassassination_start,0,false);

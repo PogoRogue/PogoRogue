@@ -16,21 +16,33 @@ if(is_dead) {
 	scr_Screen_Shake(6, 10, false);
 	
 	//combo
-	global.combo += 1;
-	global.combo_length = global.combo_max;
-	if global.combo = 10 and global.combo_master = true { //combo master powerup
+	if room != room_boss_1 and room != room_boss_2 /*and room != room_boss_3*/{ 
+		global.combo += 1;
+		global.combo_length = global.combo_max;
+		if global.combo = 10 and global.combo_master = true { //combo master powerup
+			with obj_player {
+				if hp < max_hp {
+					hp += 8;
+					with obj_player_health {
+						heart_gain_num = other.hp;	
+					}
+					audio_play_sound(snd_heartPickup,0,false);
+				}
+			}
+		}
+		global.enemy_killed = true;
+		
+		//aerial assassin buff
 		with obj_player {
-			if hp < max_hp {
-				hp += 8;
-				with obj_player_health {
-					heart_gain_num = other.hp;	
+			if global.aerial_assassin = true {
+				aerial_assassin_count += 1;	
+				if aerial_assassin_count >= 2 {
+					global.combo += 1;
+					aerial_assassin_count = 0;
 				}
 			}
 		}
 	}
-	
-	// Room kill counter
-	obj_player.enemies_killed += 1;
 	
 	//create coins and items
 	var center_x = x - sprite_get_xoffset(sprite_index) + ((sprite_width / 2)*image_xscale);
@@ -54,23 +66,26 @@ if(is_dead) {
 		created_items = true;
 	}
 	
-	//aerial assassin buff
-	with obj_player {
-		if global.aerial_assassin = true {
-			aerial_assassin_count += 1;	
-			if aerial_assassin_count >= 2 {
-				global.combo += 1;
-				aerial_assassin_count = 0;
-			}
-		}
-	}
-	
 	with obj_player {
 		if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count > 0 {
 			pickups_array[0].enemies_count -= 1;
 		}
 		if pickups_array[1].enemies_count_max > 0 and pickups_array[1].enemies_count > 0 {
 			pickups_array[1].enemies_count -= 1;
+		}
+		
+		//recharge jetpack
+		if pickups_array[0] = pickup_jetpack {
+			pickups_array[0].cooldown_time += pickups_array[0].max_cooldown_time/4;
+			if pickups_array[0].cooldown_time > pickups_array[0].max_cooldown_time {
+				pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
+			}
+		}
+		if pickups_array[1] = pickup_jetpack {
+			pickups_array[1].cooldown_time += pickups_array[1].max_cooldown_time/4;
+			if pickups_array[1].cooldown_time > pickups_array[1].max_cooldown_time {
+				pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
+			}
 		}
 	}
 	

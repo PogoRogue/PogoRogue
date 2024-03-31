@@ -61,3 +61,18 @@ if (gun_name = "Yo-yo") {
 		var controller_vibration = global.controller_vibration/100;
 	}
 }
+
+if (gun_name = "Water Gun") {
+	for(i = 0; i < 360; i += 45) {
+		with instance_create_depth(x,y,depth-1,obj_water_droplet) {
+			speed = other.spd/1.5;
+			direction = other.i;
+			direction += irandom_range(-45,45);
+		}
+	}
+	with obj_water_outline {
+		if parent_obj = other or parent_obj = other.closest_water_object {
+			instance_destroy();	
+		}
+	}
+}

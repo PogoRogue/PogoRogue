@@ -60,6 +60,11 @@ if (gun_name = "Laser Gun" ) {
 			//gamepad_set_vibration(0, 0.25*controller_vibration, 0.25*controller_vibration);
 			rotation_speed = other.rotation_speed * 0.75;
 			rotation_delay = rotation_speed / 7;
+			
+			if rotation_speed < 2 {
+				rotation_speed = 2;
+				rotation_delay = rotation_speed / 7;
+			}
 		}
 		
 		//retract laser if not firing
@@ -145,5 +150,16 @@ if (gun_name = "Sniper Rifle" ) {
 		sprite_index = full_sprite;
 		mask_index = sprite_index;
 		laser_boost = true;
+	}
+}
+
+if gun_name = "Water Gun" {
+	if (attach_to_player > 0) {
+		x = obj_player.x + lengthdir_x(6,obj_player.angle-90);
+		y = obj_player.y + lengthdir_y(6,obj_player.angle-90);
+		attach_to_player -= 1;
+	
+	}else {
+		image_index = 1;	
 	}
 }

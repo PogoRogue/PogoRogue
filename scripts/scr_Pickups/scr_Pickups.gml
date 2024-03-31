@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Pickups(){
 	
-	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze];
+	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute];
 
 	
 	pickup_nothing = {
@@ -46,6 +46,9 @@ function scr_Pickups(){
 			if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump {
 				obj_player.state = obj_player.state_chargejump;
 				obj_player.rotation_speed = obj_player.rotation_speed * 0.65;
+				if obj_player.rotation_speed < 2 {
+					obj_player.rotation_speed = 2;
+				}
 			}
 		}                  
 	};
@@ -156,6 +159,7 @@ function scr_Pickups(){
 		on_call: function() {
 			cooldown_time = max_cooldown_time;
 			obj_player.state = obj_player.state_firedash;
+			obj_player.dash_time = obj_player.max_dash_time;
 			on_cooldown = true;
 			audio_play_sound(snd_whoosh,0,false);
 		}
@@ -167,7 +171,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_jetpack,
 		max_cooldown_time: 60,
 		cooldown_time: 60,
-		cooldown_text: "Cooldown: On bounce",
+		cooldown_text: "Cooldown: 1/4 every bounce/kill",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: true,
@@ -192,7 +196,10 @@ function scr_Pickups(){
 					}
 		
 					//add momentum
-					motion_add(angle - 90, vsp_basicjump * 0.12);
+					if obj_player_mask.top = false and obj_player_mask.bottom_left_corner = false and obj_player_mask.bottom_right_corner = false 
+					and obj_player_mask.right = false and obj_player_mask.left = false {
+						motion_add(angle - 90, vsp_basicjump * 0.12);
+					}
 		
 					//set max speed
 					if (speed > 5.5) {
@@ -359,15 +366,15 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_freeze,
 		max_cooldown_time: -1,
 		cooldown_time: -1 ,
-		cooldown_text: "Cooldown: Every 5 bounces",
+		cooldown_text: "Cooldown: Every 3 bounces",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
 		reload_on_bounce: true,
 		max_uses_per_bounce: 1,
 		uses_per_bounce: 1,
-		bounce_reset: 5,
-		bounce_reset_max: 5,
+		bounce_reset: 3,
+		bounce_reset_max: 3,
 		enemies_count: 0,
 		enemies_count_max: 0,
 		on_call: function() {
@@ -380,9 +387,9 @@ function scr_Pickups(){
 				freeze_time = 180;
 				freeze_angle = angle;
 			}
-			uses_per_bounce -= 1;
+			//uses_per_bounce -= 1;
 			if uses_per_bounce <= 0 {
-				on_cooldown = true;
+				//on_cooldown = true;
 			}
 		}
 	};
@@ -391,9 +398,9 @@ function scr_Pickups(){
 		_name: "Frenzy",
 		tagline: "Bullets are unlimited without reloading for 5 seconds.",
 		gui_sprite: spr_pickup_frenzy,
-		max_cooldown_time: 1800,
-		cooldown_time: 1800,
-		cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
+		max_cooldown_time: 1200,
+		cooldown_time: 1200,
+		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -484,9 +491,37 @@ function scr_Pickups(){
 		_name: "Blink",
 		tagline: "Disappear, then reappear from any position on screen.",
 		gui_sprite: spr_pickup_blink,
-		max_cooldown_time: 1200,
-		cooldown_time: 1200,
-		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: Every 5 enemies",
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 5,
+		on_call: function() {
+			obj_player.state = obj_player.state_blink;
+			if !instance_exists(obj_blink_box) {
+				instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box);
+				audio_play_sound(snd_blink_despawn,0,false);
+			}
+			enemies_count = enemies_count_max;
+			on_cooldown = true;
+		}
+	};
+	
+	pickup_parachute = {
+		_name: "Parachute",
+		tagline: "Open a parachute, slowing down your momentum as you fall.",
+		gui_sprite: spr_pickup_parachute,
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: None",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -498,10 +533,14 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		on_call: function() {
-			obj_player.state = obj_player.state_blink;
-			if !instance_exists(obj_blink_box) {
-				instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box);
+			if !instance_exists(obj_parachute) {
+				with obj_player {
+					if state != state_parachute {
+						state = state_parachute;
+					}
+				}
+				on_cooldown = true;
 			}
-		}
+		}                  
 	};
 }

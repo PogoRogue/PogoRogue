@@ -102,9 +102,9 @@ if created_items = false {
 	for (i = 0; i < array_length(slot_items_array); i++) {
 		index = i;
 		if i % 2 = 0 {
-			xx = 272;
+			xx = 272+32;
 		}else {
-			xx = 336;
+			xx = 336+32;
 		}
 		yy = 104 + 64 * floor(i / 2);
 		with instance_create_depth(xx,yy,depth-1,slot_items_array[i]) {
@@ -216,11 +216,11 @@ if key_select {
 		}else {
 			audio_play_sound(snd_unavailable,0,false);	
 		}
-	}else if refresh_button = true and refreshes_left > 0 {
+	}else if refresh_button = true {
 		audio_play_sound(snd_refreshShop,0,false);
-		if global.num_of_coins >= refresh_cost {
+		if global.num_of_coins >= global.refresh_cost {
 			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth-1,obj_coin_spawner) {
-				num_of_coins = other.refresh_cost;
+				num_of_coins = global.refresh_cost;
 			}
 			with obj_item_parent {
 				select = other.select;
@@ -230,13 +230,14 @@ if key_select {
 			}
 			instance_destroy();
 			with instance_create_depth(x,y,depth,obj_shop) {
-				refreshes_left = other.refreshes_left - 1;
-				if other.refresh_cost != 0 {
-					refresh_cost = other.refresh_cost*2;
+				if global.refresh_cost != 0 {
+					global.refresh_cost = global.refresh_cost+25;
 				}else {
-					refresh_cost = 25;
+					global.refresh_cost = global.prev_refresh_cost;
+					global.picky_buyer = false;
 				}
 				first_shop = false;
+				global.refreshes_used += 1;
 			}
 		}
 	}
@@ -246,9 +247,9 @@ if key_select {
 if recreated_bought_item = true {
 	audio_play_sound(snd_unavailable,0,false);
 	if (select-1) % 2 = 0 {
-		xx = 272;
+		xx = 272+32;
 	}else {
-		xx = 336;
+		xx = 336+32;
 	}
 	yy = 104 + 64 * floor((select-1) / 2);
 	with instance_create_depth(xx,yy,depth-1,last_item_created) {
@@ -259,10 +260,26 @@ if recreated_bought_item = true {
 }
 
 //picky buyer item
-if global.picky_buyer = true {
-	if refreshes_left = max_refreshes {
-		refresh_cost = 0;
-	}
+if global.picky_buyer = true and global.refresh_cost != 0 {
+	global.prev_refresh_cost = global.refresh_cost;
+	global.refresh_cost = 0;
 }
 
+//refresh in new shop
+if spawn = true {
+	spawn = false;
+	with obj_item_parent {
+		select = other.select;
+		refresh_button = other.refresh_button;
+		create_coins = false;
+		instance_destroy();
+	}
+	instance_destroy();
+	with instance_create_depth(x,y,depth,obj_shop) {
+		first_shop = false;
+		if global.current_shop_num < global.shop_num {
+			global.current_shop_num += 1;
+		}
+	}
+}
 }

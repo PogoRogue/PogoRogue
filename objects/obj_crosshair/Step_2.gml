@@ -1,7 +1,7 @@
 /// @description shoot enemy
 
 if image_index = 6 and fade_out = false {
-	if room != room_boss_1 and room != room_boss_2 {
+	if room != room_boss_1 and room != room_boss_2 /*and room != room_boss_3*/{
 		with enemy_to_target {
 			hp = 0;
 			with obj_player {
@@ -12,7 +12,7 @@ if image_index = 6 and fade_out = false {
 		with enemy_to_target {
 			if object_get_name(object_index) = "obj_boss_sequence_body" or object_get_name(object_index) = "obj_boss_sphere" {
 				if object_get_name(object_index) = "obj_boss_sequence_body" {
-					if (controller.current_state = STATES.VULNERABLE) {
+					if (controller.current_state = BOSS2_STATES.VULNERABLE) {
 						hp -= hp_max/5;
 						with obj_player {
 							scr_Reload_On_Kill();	
@@ -39,7 +39,7 @@ if image_index = 6 and fade_out = false {
 	image_yscale = 1.5;
 	speed = 0;
 	scr_Screen_Shake(6,15,false);
-	audio_play_sound(snd_sniper,0,false);
+	//audio_play_sound(snd_sniper,0,false);
 }else if fade_out = true {
 	x = enemy_to_target.x;
 	y = enemy_to_target.y;	
@@ -60,8 +60,8 @@ if instance_exists(enemy_to_target) and fade_out = false {
 		image_speed = 1;
 		
 		if image_index = 2 or image_index = 4 {
-			if !audio_is_playing(snd_crosshair_blip) {
-				audio_play_sound(snd_crosshair_blip,0,false);
+			if !audio_is_playing(snd_targetedassassination_end) {
+				audio_play_sound(snd_targetedassassination_end,0,false);
 			}
 		}
 	}

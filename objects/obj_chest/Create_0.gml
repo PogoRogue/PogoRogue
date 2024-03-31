@@ -13,9 +13,9 @@ mask_index = spr_treasurechest_new_mask;
 
 //drop chances
 heart_chance = 100 + global.luck;
-buff_chance = 75 + global.luck;
-weapon_chance = 40 + global.luck;
-pickup_chance = 40 + global.luck;
+buff_chance = 90 + global.luck;
+weapon_chance = 60 + global.luck;
+pickup_chance = 60 + global.luck;
 destroy_chance = 0; //when active, change to ~80
 
 created_items = false;
@@ -33,7 +33,7 @@ destroy = irandom_range(1,100);
 if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") { 
 	instance_destroy();
 }else {
-	new_chest = choose(obj_chest,obj_chest,obj_chest,obj_chest_coin,obj_chest_weapon,obj_chest_active);
+	new_chest = choose(obj_chest,obj_chest,obj_chest,obj_chest,obj_chest_coin,obj_chest_coin,obj_chest_weapon,obj_chest_active);
 
 	if new_chest != obj_chest and object_get_name(object_index) = "obj_chest" {
 		instance_destroy();

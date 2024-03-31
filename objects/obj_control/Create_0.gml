@@ -5,6 +5,7 @@ endgame_button = 0;
 //alarm[0] = 300; //set fullscreen
 window_set_cursor(spr_nothing);
 cursor_sprite = spr_nothing;
+depth = 1000;
 global.draw_collision_walls = false;
 global.allow_screenshake = true;
 global.last_room = room;
@@ -12,17 +13,19 @@ global.player_spawn_x = 0;
 global.player_spawn_y = 0;
 global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
+
 if room = room_gameplay_video {
 	global.num_of_coins = 2000;
 }else {
 	global.num_of_coins = 0;	
 }
+
 global.mute = false;
 global.shop_index = 0;
 global.num_of_ground_objects = 0;
 global.tiles_left_to_draw = 0;
 
-global.current_music = snd_music;
+global.current_music = snd_music_level1;
 
 if !instance_exists(obj_controls_controller) {
 	instance_create_depth(x,y,depth,obj_controls_controller);
@@ -36,8 +39,8 @@ if !instance_exists(obj_runstats) {
 
 
 //music test
-if !audio_is_playing(snd_music) {
-	audio_play_sound(snd_music,0,true);
+if !audio_is_playing(snd_music_level1) {
+	audio_play_sound(snd_music_level1,0,true);
 }
 
 //combo
@@ -54,6 +57,20 @@ global.all_buff_numbers = []; //how many of each buff you have
 global.all_buff_names = []; //names of each buff currently equipped
 global.all_buff_descriptions = []; //descriptions of each buff currently equipped
 global.all_buff_stats = []; //stats (mainly stackability) of each buff currently equipped
+global.all_buff_costs = []; //cost of each buff currently equipped
+
+global.water_index = 0;
+global.water_frenzy = 0;
+
+//shop
+global.shop_num = 1;
+global.current_shop_num = 1;
+global.refresh_cost = 25;
+global.refreshes_used = 0;
+global.prev_refresh_cost = 25;
+
+global.all_pickup_costs = [0,0];
+global.all_weapon_costs = [0,0,0];
 
 global.damage_buff = 0;
 global.luck = 0;
@@ -82,7 +99,8 @@ global.laststand = false;
 global.psychicbullets = false;
 global.righteousrevenge = false;
 global.robbery = false;
-
+global.recycling = false;
+global.juggler = false;
 
 //items unlockable in the shop
 
@@ -108,3 +126,10 @@ global.seed = random_get_seed();
 
 random_set_seed(global.seed);
 show_debug_message("Random seed: " + string(global.seed));
+
+//stop music
+if audio_is_playing(snd_music_menu) 
+and room != room_menu and room != room_items 
+and room != room_settings and room != room_stats {
+	audio_stop_sound(snd_music_menu);
+}

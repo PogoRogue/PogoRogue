@@ -11,6 +11,6 @@ if room = room_shop {
 	global.num_of_coins -= 1;
 }
 
-damage = 2;
+damage = 5;
 init_damage = damage;
 colliding_with_enemies = false;

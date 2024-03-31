@@ -25,6 +25,7 @@ function scr_Reload_On_Kill(){
 					instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 					audio_play_sound(snd_reload,0,false);
 				}
+				global.water_index += 1;
 			}
 			//reload hat gun on hat gun kill
 			if object_get_name(object_index) = "obj_projectile"  {

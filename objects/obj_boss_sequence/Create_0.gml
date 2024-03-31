@@ -4,28 +4,18 @@
 body = instance_nearest(x, y, obj_boss_sequence_body);
 
 // The complete list of states the boss can be in
-enum STATES
+enum BOSS2_STATES
 {
 	IDLE,
     ATTACKING,
     VULNERABLE,
-    DEAD,
+    INACTIVE,
 }
 
-current_state = STATES.IDLE;
+current_state = BOSS2_STATES.IDLE;
 previous_state = noone;
 state_has_changed = true;
-
-// These are the colors that sequences will be comprised of
-enum COLORS
-{
-	PURPLE = #CF8ACB,
-	ORANGE = #D3A068,
-	CYAN = #A2DCC7,
-	YELLOW = #C2D368,
-}
-
-colors = [COLORS.PURPLE, COLORS.ORANGE, COLORS.CYAN, COLORS.YELLOW];
+fight_started = false;
 
 /* Handle HP threshold percentiles to both determine sequence length and
  * trigger an early end to the vulnerability state
@@ -36,6 +26,7 @@ colors = [COLORS.PURPLE, COLORS.ORANGE, COLORS.CYAN, COLORS.YELLOW];
  */
 hp_thresholds = [0, 33, 66];
 current_hp_segment = 2;
+previous_hp_segment = 2;
 previous_hp_percent = 100;
 
 sequence_length = 2;
@@ -49,7 +40,7 @@ sequence_failed = false;
 idle_pause_duration = room_speed * 1.3;
 light_duration = room_speed;
 blink_duration = room_speed / 2;
-vulnerable_duration = room_speed * 12;
+vulnerable_duration = room_speed * 16;
 current_frame = 4;
 image_speed = 0;
 
@@ -62,3 +53,4 @@ slime_melee_pos = {x: 560, y: 416};
 instance_create_layer(turret_pos_1.x, turret_pos_1.y, "enemies", obj_enemy_turret_unkillable);
 instance_create_layer(turret_pos_2.x, turret_pos_2.y, "enemies", obj_enemy_turret_unkillable);
 instance_create_layer(axe_pos.x, axe_pos.y, "enemies", obj_spikeswing, {distance: 120});
+			

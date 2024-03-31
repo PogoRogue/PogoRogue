@@ -7,9 +7,11 @@ rotation_speed = 3; //rotation speed
 original_rotation_speed = global.tilt_speed;
 current_rotation_speed = 0;
 rotation_delay = rotation_speed / 10; //0.5
+temp_rotation_speed = 2; //rotation speed
+temp_rotation_delay = temp_rotation_speed / 6; //0.5
 vsp_basicjump = -6.6; //bounce height
 angle = 0;
-anglemax = 45; //maximum degrees added on either side
+anglemax = 38; //maximum degrees added on either side
 bouncing = false; //bouncing animation when true
 bounce_sound = true; //alternating pitch
 shop_bouncing = false; //only use this var in the shop
@@ -27,6 +29,13 @@ can_rotate = true;
 can_shoot = true;
 platform_on = true;
 centering = false;
+
+//portal
+portal_object = noone;
+portal_speed = 0;
+portal_angle_speed = 0;
+portal_rot_distance = 0;
+used_shop_portal = false;
 
 //buffs
 damage_buff = 0;
@@ -94,11 +103,6 @@ stomp_damage = 8;
 num_iframes = 1.5 * room_speed;
 current_iframes = 0;
 dead = false;
-
-// Room Gate Handling
-enemies_killed = 0;
-enemies_required = 3;
-room_number = 0;
 
 //Sound Bool for preventing looping sounds
 soundPlayed = false;
@@ -170,14 +174,17 @@ state_free = function() {
 	//restart room if reached the top unless procgen room
 	if room != room_proc_gen_test && room != room_sprite_level_test && room != room_tutorial {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
-			instance_deactivate_all(false);
-			room_restart();
+			scr_Room_Restart(true);
 		}
 	}else if room = room_tutorial {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			audio_stop_all();
 			gamepad_set_vibration(0,0,0);
-			game_restart();
+			scr_Game_Restart();
+			with obj_pause {
+				item_swap = false;
+				paused_outside = true;
+			}
 		}
 	}
 	
@@ -219,6 +226,7 @@ state_bouncing = function() {
 }
 
 state_chargejump = function() {
+	can_rotate = true;
 	var end_of_charge = false;
 	if !audio_is_playing(snd_chargejump) { //sound
 		if (charge > charge_max) {
@@ -241,7 +249,7 @@ state_chargejump = function() {
 	
 	if not_charging_1 and not_charging_2 or end_of_charge {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5,true);
-		scr_Jump(charge);
+		scr_Jump(charge-2);
 		audio_stop_sound(snd_chargejump);
 		allow_flames = true;
 		min_flames_speed = 7.2;
@@ -399,16 +407,30 @@ state_bulletblast = function() {
 }
 
 state_freeze = function() {
+	
+	if pickup_1 = pickup_freeze {  
+		var key_unfreeze = global.key_pickup_1_pressed;
+	}else if pickup_2 = pickup_freeze {  
+		var key_unfreeze = global.key_pickup_2_pressed;
+	}else {
+		var key_unfreeze = 0;
+	}
+	
 	sprite_index = player_sprite;
 	speed = 0;	
 	
-	if freeze_time > 0 {
+	if freeze_time > 0 and !key_unfreeze {
 		freeze_time -= 1;	
 	}else {
 		state = state_free;
 		grv = init_grv;
 		rotation_speed = original_rotation_speed;
 		rotation_delay = rotation_speed / 10;
+		
+		pickup_freeze.uses_per_bounce -= 1;
+		if pickup_freeze.uses_per_bounce <= 0 {
+			pickup_freeze.on_cooldown = true;
+		}
 	}
 	
 	if (freeze_alpha < 1) {
@@ -508,6 +530,235 @@ state_blink = function() {
 	}
 }
 
+state_parachute = function() {
+	can_shoot = false;
+	can_rotate = false;
+	
+	if !instance_exists(obj_parachute) {
+		instance_create_depth(x+lengthdir_x(22,angle+90),y+lengthdir_y(22,angle+90),depth+1,obj_parachute);
+	}
+	
+	if obj_parachute.opening = false {
+		vspeed += grv; //falling
+		vsp_basicjump = -6.6;
+	
+		//horizontal drag
+		if hspeed > 0 {
+			motion_add(180,h_grv);
+		}else if hspeed < 0 {
+			motion_add(0,h_grv);
+		}	
+	}else {
+		//re-center
+		if (angle != 0)	{
+			var angle_side = sign(angle);
+			angle += (rotation_speed/2)*sign(-angle);
+			if (sign(angle) != angle_side) {
+				angle = 0;
+				current_rotation_speed = 0;
+			}
+		}	
+		
+		//slow down
+		if vspeed >= 0 {
+			vspeed += grv/5; //falling slower
+			if vspeed > 3 {
+				vspeed = 3;
+			}
+			
+			//horizontal drag
+			if hspeed > 0 {
+				motion_add(180,h_grv*10);
+			}else if hspeed < 0 {
+				motion_add(0,h_grv*10);
+			}	
+			
+		}else {
+			vspeed += grv; //falling
+			vsp_basicjump = -6.6;
+	
+			//horizontal drag
+			if hspeed > 0 {
+				motion_add(180,h_grv*2);
+			}else if hspeed < 0 {
+				motion_add(0,h_grv*2);
+			}	
+		}
+		
+		//move left and right
+		if angle = 0 {
+			if hspeed % 0.25 != 0 {
+				hspeed = round((hspeed/0.25))*0.25
+			}
+			if global.key_left_player {
+				if hspeed > -4 {
+					hspeed -= 0.25;
+				}
+				if obj_parachute.angle_add > -4 {
+					obj_parachute.angle_add -= 0.25;
+				}
+				obj_parachute.decrease_arrows_alpha = true;
+			}
+			if global.key_right_player {
+				if hspeed < 4 {
+					hspeed += 0.25;
+				}
+				if obj_parachute.angle_add < 4 {
+					obj_parachute.angle_add += 0.25;
+				}
+				obj_parachute.decrease_arrows_alpha = true;
+			}
+			if !global.key_left_player and !global.key_right_player {
+				if hspeed < 0 {
+					hspeed += 0.25;
+				}else if hspeed > 0 {
+					hspeed -= 0.25;
+				}
+				
+				if obj_parachute.angle_add < 0 {
+					obj_parachute.angle_add += 0.25;
+				}else if obj_parachute.angle_add > 0 {
+					obj_parachute.angle_add -= 0.25;
+				}
+			}
+			
+			if hspeed != 0 {
+				image_xscale = sign(hspeed);
+			}
+		}
+	}
+	
+	scr_Player_Collision();
+}
+
+state_portal = function() {
+	can_shoot = false;
+	can_rotate = false;
+	if instance_exists(portal_object) {
+		if portal_angle_speed < 10 {
+			portal_angle_speed += 0.5;
+		}
+			
+		move_towards_point(portal_object.x+48,portal_object.y+48,portal_speed);
+		
+		if portal_speed < 8 {
+			portal_speed += 0.1;
+		}
+		
+		image_angle += portal_angle_speed;
+		x = x + lengthdir_x(portal_rot_distance*image_yscale,image_angle);
+		y = y  + lengthdir_y(portal_rot_distance*image_yscale,image_angle);
+			
+		if portal_rot_distance < 8 {
+			portal_rot_distance += 0.25;	
+		}
+		
+		if image_yscale > 0 {
+			image_yscale -= 0.015;
+			image_xscale = sign(image_xscale) *image_yscale;
+			image_angle += portal_angle_speed;
+		}else { //go in portal
+			if (room == room_proc_gen_test) {
+				room_persistent = false;
+				switch (global.phase) {
+					case 1:
+						scr_Room_Transition(room_boss_1);
+						break;
+					case 2:
+						scr_Room_Transition(room_boss_2);
+						break;
+					case 3:
+						global.phase = 1;
+						scr_Room_Transition(room_menu);
+						break;
+				}	
+			}else {
+				room_persistent = false;
+				//global.phase++; //increase phase when boss is defeated instead
+				scr_Room_Transition(room_proc_gen_test);
+				if global.phase = 2 {
+					global.tileset = tl_ground2;	
+				}
+			}
+		}
+	}
+}
+
+state_shop_portal = function() {
+	can_shoot = false;
+	can_rotate = false;
+	if instance_exists(portal_object) {
+		if portal_angle_speed < 10 {
+			portal_angle_speed += 0.5;
+		}
+			
+		move_towards_point(portal_object.x,portal_object.y-60,portal_speed);
+		
+		if portal_speed < 8 {
+			portal_speed += 0.1;
+		}
+		
+		image_angle += portal_angle_speed;
+		x = x + lengthdir_x(portal_rot_distance*image_yscale,image_angle);
+		y = y  + lengthdir_y(portal_rot_distance*image_yscale,image_angle);
+			
+		if portal_rot_distance < 8 {
+			portal_rot_distance += 0.25;	
+		}
+		
+		if image_yscale > 0 {
+			image_yscale -= 0.015;
+			image_xscale = sign(image_xscale) *image_yscale;
+			image_angle += portal_angle_speed;
+		}else { //go in portal
+			if (room != room_shop) {
+				if used_shop_portal = false {
+					with portal_object {
+						room_persistent = true;
+						scr_Room_Transition(room_shop);
+						global.player_spawn_x_prev = x;
+						global.player_spawn_y_prev = y - 60;
+						global.shop_index = shop_index;
+						if global.shop_num <= global.current_shop_num and shop_used = false {
+							global.shop_num += 1;
+							shop_used = true;
+							instance_destroy(obj_shop);
+						}
+					}
+					used_shop_portal = true;
+				}
+			}else if !instance_exists(obj_coin_spawner) {
+				with portal_object {
+					if global.last_room != room_shop {
+						if !instance_exists(obj_fade_out_shop) {
+							instance_create_depth(x,y,-1000,obj_fade_out_shop);
+						}
+					}else {
+						scr_Game_Restart();
+					}
+				}
+			}
+		}
+	}
+}
+
+state_spawn = function() {
+	sprite_index = spr_player_zekai_portal;
+	can_shoot = false;
+	can_rotate = false;
+	
+	speed = 0;
+	
+	if image_xscale < 1 {
+		image_xscale += 0.025;
+		image_yscale += 0.025;
+	}else {
+		state = state_free;
+		y += 22;
+		sprite_index = spr_player_zekai;
+	}
+}
+
 state_dead = function() {
 	if y < 100000 {
 		vspeed += grv; //falling
@@ -542,7 +793,12 @@ if room = room_tutorial {
 	num_of_weapons = 0;
 }
 weapons_equipped = num_of_weapons;
-all_guns_array = [default_gun,paintball_gun,shotgun_gun,bubble_gun,burstfire_gun,grenade_gun,laser_gun,bouncyball_gun,missile_gun,boomerang_gun,starsucker_gun,sniper_gun,slime_gun,yoyo_gun,javelin_gun]; //all guns
+all_guns_array = [default_gun,paintball_gun,shotgun_gun,
+				burstfire_gun,javelin_gun,bouncyball_gun,
+				grenade_gun, boomerang_gun,starsucker_gun,
+				water_gun, slime_gun, yoyo_gun,
+				missile_gun, sniper_gun, laser_gun,
+				bubble_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();
@@ -621,7 +877,12 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_chargejump,pickup_groundpound,pickup_hatgun,pickup_shieldbubble,pickup_firedash,pickup_jetpack,pickup_slowmo,pickup_bulletblast,pickup_reload,pickup_camera,pickup_freeze,pickup_frenzy,pickup_target,pickup_emergency,pickup_blink]; //all pickups
+all_pickups_array = [pickup_firedash, pickup_groundpound, pickup_hatgun, 
+					pickup_chargejump, pickup_reload, pickup_freeze,
+					pickup_emergency, pickup_parachute, pickup_shieldbubble,
+					pickup_target, pickup_blink, pickup_jetpack,
+					pickup_camera, pickup_frenzy, pickup_bulletblast,
+					pickup_slowmo]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();
@@ -669,7 +930,8 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_supershield, buff_revive, buff_drilltipbullets, 
 				buff_dualwielder, buff_steadyhands, buff_tightspring,
 				buff_magicianstouch, buff_impatience, buff_laststand,
-				buff_psychicbullets, buff_righteousrevenge, buff_robbery];		
+				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
+        buff_recycling, buff_juggler];		
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

@@ -49,7 +49,7 @@ var condition = ground_pound_slam = false;
 scr_Enemy_Collision_Check(condition);
 
 //shop
-if (room = room_shop) {
+if (room = room_shop) and state != state_shop_portal {
 	state = state_shop;
 }
 
@@ -148,50 +148,11 @@ if audio_is_playing(snd_jetpack){
 }	
 
 
-#region //angling
-if (can_rotate) {
-	if (use_mouse = false) { //use WASD/Arrow Keys to angle player
-		if (angle >= -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right)
-		or (angle >= -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) {
-			current_rotation_speed = -rotation_speed;
-		}else if (angle <= anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) 
-		or (angle <= anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) {
-			current_rotation_speed = rotation_speed;
-		}else {
-			if (current_rotation_speed > 0) {
-				current_rotation_speed -= rotation_delay;
-			}else if (current_rotation_speed < 0) {
-				current_rotation_speed += rotation_delay;
-			}
-		}
-		angle += current_rotation_speed;
-	
-		if hspeed > 0.5 {
-			image_xscale = 1;
-		}else if hspeed < -0.5 {
-			image_xscale = -1;
-		}
-	
-	}else if (dead = false) { //use mouse to angle player
-	
-			if invert = false {
-				if (angle <= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
-					angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-				}else if (angle >= point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90) {
-					angle += ((point_direction(obj_camera.x,y,mouse_x,y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-				}
-			}else{
-				if (angle <= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
-					angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-				}else if (angle >= point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90) {
-					angle += ((point_direction(obj_camera.x,y,obj_camera.x - (mouse_x-obj_camera.x),y-mouse_sensitivity) - 90)-angle)/mouse_reanglespeed;
-				}
-			}
-	}
-}
-angle = clamp(angle,-anglemax,anglemax); //cant tilt too far
 
-image_angle = angle;
+
+if state != state_portal and state != state_shop_portal {
+	image_angle = angle;
+}
 #endregion
 
 //recentering
@@ -218,6 +179,10 @@ if centering = true and can_rotate {
 
 #region shooting
 
+if global.key_fire_projectile_pressed {
+	global.water_index += 1;	
+}
+
 if can_shoot = true and room != room_shop { 
 	var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
 	if gun = laser_gun and !instance_exists(obj_laser) or gun = javelin_gun and !instance_exists(obj_javelin_charge) { //special conditions for laser gun and javelins
@@ -228,7 +193,9 @@ if can_shoot = true and room != room_shop {
 	}
 }else {
 	var shoot = 0;
+	global.water_index += 1;
 }
+
 var ammo = gun.ammo[bullet_index];
 //ammo += max_ammo_increase;// increase ammo by max ammo increase if players has collected max ammo buffs
 
@@ -245,7 +212,12 @@ if (canshoot > 0) {
 		scr_Shoot();
 	
 		var delay = gun.burst_delay;
+		
+		
 		repeat (gun.burst_number - 1) {
+			if gun._name = "Burst Fire Gun" and delay = gun.burst_delay {
+				audio_play_sound(snd_burstfire,0,false);	
+			}
 			call_later(delay,time_source_units_frames,scr_Shoot);
 			delay += gun.burst_delay;
 		}
@@ -259,6 +231,20 @@ if (canshoot > 0) {
 
 if !(key_fire_projectile) { //lerp back to starting firerate while not shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_start, ammo.firerate_mult);
+}
+
+//auto reload water gun
+if gun_array[current_gun] = water_gun and !global.key_fire_projectile
+or gun_array[current_gun] != water_gun and gun_1 = water_gun
+or gun_array[current_gun] != water_gun and gun_2 = water_gun
+or gun_array[current_gun] != water_gun and gun_3 = water_gun {
+	if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff and gun_array[current_gun] = water_gun {
+		water_gun.current_bullets += 1/3;
+	}else if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff {
+		water_gun.current_bullets += 1/10;
+	}else {
+		water_gun.current_bullets = water_gun.bullets_per_bounce+max_ammo_buff;
+	}
 }
 
 #endregion
@@ -306,7 +292,38 @@ if gun_2 = gun_1 {
 	weapons_equipped = 3;
 }
 
-
+//juggler passive
+if global.juggler = true {
+	if weapons_equipped = 2 {
+		if gun_1.current_bullets = 0 and gun_2.current_bullets = 0 {
+			if current_gun = 0 {
+				gun_2.current_bullets = gun_2.bullets_per_bounce;
+			}else if current_gun = 1 {
+				gun_1.current_bullets = gun_1.bullets_per_bounce;
+			}
+		}
+	}else if weapons_equipped = 3 {
+		if gun_1.current_bullets = 0 and gun_2.current_bullets = 0 {
+			if current_gun = 0 {
+				gun_2.current_bullets = gun_2.bullets_per_bounce;
+			}else if current_gun = 1 {
+				gun_1.current_bullets = gun_1.bullets_per_bounce;
+			}
+		}else if gun_1.current_bullets = 0 and gun_3.current_bullets = 0 {
+			if current_gun = 0 {
+				gun_3.current_bullets = gun_3.bullets_per_bounce;
+			}else if current_gun = 2 {
+				gun_1.current_bullets = gun_1.bullets_per_bounce;
+			}
+		}if gun_2.current_bullets = 0 and gun_3.current_bullets = 0 {
+			if current_gun = 1 {
+				gun_3.current_bullets = gun_3.bullets_per_bounce;
+			}else if current_gun = 2 {
+				gun_2.current_bullets = gun_2.bullets_per_bounce;
+			}
+		}
+	}
+}
 
 // Update iframes
 current_iframes = max(current_iframes - 1, 0);

@@ -1,4 +1,4 @@
-/// @description Change direction
+/// @description Change direction to below player
 
-is_approaching = false;
-alarm_set(2, room_speed);
+current_target = SLIME_MELEE_TARGETS.BELOW;
+alarm_set(3, room_speed);
