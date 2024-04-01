@@ -16,6 +16,8 @@
     {"name":"Sprint 9","order":1,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 9.yy",},
     {"name":"New","order":4,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 9/New.yy",},
     {"name":"Replace","order":3,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 9/Replace.yy",},
+    {"name":"Sprint_9","order":2,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_9.yy",},
+    {"name":"Sprint_8","order":1,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_8.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_boss_attack2","order":1,"path":"objects/obj_boss_attack2/obj_boss_attack2.yy",},
@@ -78,6 +80,7 @@
     {"name":"room_boss_3","order":1,"path":"rooms/room_boss_3/room_boss_3.yy",},
     {"name":"Spr_1x1_boss2_portal","order":1,"path":"sprites/Spr_1x1_boss2_portal/Spr_1x1_boss2_portal.yy",},
     {"name":"spr_2x2_Combat_Talen_store","order":2,"path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},
+    {"name":"Sprint_9_3x3_oneRoom","order":1,"path":"sprites/Sprint_9_3x3_oneRoom/Sprint_9_3x3_oneRoom.yy",},
     {"name":"spr_3x3_Combat_talen_changes","order":3,"path":"sprites/spr_3x3_Combat_talen_changes/spr_3x3_Combat_talen_changes.yy",},
     {"name":"spr_blink_animation","order":1,"path":"sprites/spr_blink_animation/spr_blink_animation.yy",},
     {"name":"spr_blink_box_arrows","order":11,"path":"sprites/spr_blink_box_arrows/spr_blink_box_arrows.yy",},
@@ -213,5 +216,6 @@
     {"name":"spr_walk_enemy_idle","order":17,"path":"sprites/spr_walk_enemy_idle/spr_walk_enemy_idle.yy",},
     {"name":"spr_walk_enemy_jump","order":36,"path":"sprites/spr_walk_enemy_jump/spr_walk_enemy_jump.yy",},
     {"name":"spr_walk_enemy_walk","order":46,"path":"sprites/spr_walk_enemy_walk/spr_walk_enemy_walk.yy",},
+    {"name":"Sprint_8_Area2_x4","order":1,"path":"sprites/Sprint_8_Area2_x4/Sprint_8_Area2_x4.yy",},
   ],
 }
