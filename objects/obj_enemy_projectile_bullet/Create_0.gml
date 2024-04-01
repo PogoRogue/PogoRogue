@@ -16,8 +16,14 @@ accel=1;
 homing=false;
 hm_spd=0;
 hm_range=300;
-max_spd=0;
+max_spd=10;
 //If bounce, change the bounce, lifetime, and add the alarm
 bounce=false;
+bounce_mod=1;
 lifetime=room_speed;
 //alarm_set(0,lifetime);
+//boormerange
+boom=false;
+og_x=x;
+og_y=y;
+return_range=300;

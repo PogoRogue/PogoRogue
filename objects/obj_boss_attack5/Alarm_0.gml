@@ -8,8 +8,14 @@ while(cur_amt < amount) {
 	var _bullet = instance_create_depth(x, y, self.depth, obj_enemy_projectile_bullet);
 	
 	//manually set variables of the bullet here
-	_bullet.speed = spd;
-	_bullet.sprite_index=sprite;
+	_bullet.speed = 3;
+	_bullet.homing=true;
+	_bullet.hm_spd=0.07;
+	_bullet.max_spd=5;
+	_bullet.lifetime=3*room_speed;
+	_bullet.hm_range=250;
+	_bullet.explode=true;
+	_bullet.sprite_index=spr_projectile_missile;
 	if(rand) {
 		_bullet.direction = dir_central + random_range(-spread / 2, spread / 2);
 	} else {

@@ -26,3 +26,21 @@ if(homing&&dist_to_player<hm_range){
 vspeed=vspeed*accel;
 hspeed=hspeed*accel;
 
+if(boom&&distance_to_point(og_x,og_y)>return_range){
+	if(speed<max_spd){
+		if(x>og_x){
+			hspeed-=hm_spd;
+		}
+		if(x<og_x){
+			hspeed+=hm_spd;
+		}
+		if(y>og_y){
+			vspeed-=hm_spd;
+		}
+		if(y<og_y){
+			vspeed+=hm_spd;
+		}
+	}else{
+		speed=speed*0.9;
+	}
+}

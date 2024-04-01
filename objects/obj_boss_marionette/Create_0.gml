@@ -16,8 +16,11 @@ hsp = 0;
 vsp = 0;
 collision_detected = false;
 
-//When taking specific action, some normal movement
+//When taking specific action, stop normal movement
 special_action="NO";
+// "NO"= normal 
+//"ground_pound"=ground pound 
+//"return"=return to original position
 orig_x=x;
 orig_y=y;
 
