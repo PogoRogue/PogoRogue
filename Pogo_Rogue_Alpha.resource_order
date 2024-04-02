@@ -1,4 +1,7 @@
 {
-  "FolderOrderSettings":[  ],
-  "ResourceOrderSettings":[  ],
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"snd_music_level2","order":1,"path":"sounds/snd_music_level2/snd_music_level2.yy",},
+    {"name":"snd_music_boss1","order":2,"path":"sounds/snd_music_boss1/snd_music_boss1.yy",},
+  ],
 }

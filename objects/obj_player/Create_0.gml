@@ -682,16 +682,24 @@ state_portal = function() {
 						scr_Room_Transition(room_boss_2);
 						break;
 					case 3:
-						global.phase = 1;
-						scr_Room_Transition(room_menu);
+						scr_Room_Transition(room_boss_3);
 						break;
 				}	
 			}else {
-				room_persistent = false;
-				//global.phase++; //increase phase when boss is defeated instead
-				scr_Room_Transition(room_proc_gen_test);
-				if global.phase = 2 {
-					global.tileset = tl_ground2;	
+				if room != room_boss_3 {
+					room_persistent = false;
+					//global.phase++; //increase phase when boss is defeated instead
+					scr_Room_Transition(room_proc_gen_test);
+					if global.phase = 2 {
+						global.tileset = tl_ground2;	
+					}
+					if global.phase = 3 {
+						global.tileset = tl_ground2;	
+					}
+				}else {
+					room_persistent = false;
+					global.phase = 1;
+					scr_Room_Transition(room_menu);	
 				}
 			}
 		}

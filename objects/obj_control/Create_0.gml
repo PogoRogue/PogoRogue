@@ -25,7 +25,7 @@ global.shop_index = 0;
 global.num_of_ground_objects = 0;
 global.tiles_left_to_draw = 0;
 
-global.current_music = snd_music_level1;
+
 
 if !instance_exists(obj_controls_controller) {
 	instance_create_depth(x,y,depth,obj_controls_controller);
@@ -38,10 +38,7 @@ if !instance_exists(obj_runstats) {
 }
 
 
-//music test
-if !audio_is_playing(snd_music_level1) {
-	audio_play_sound(snd_music_level1,0,true);
-}
+
 
 //combo
 global.combo = 0;
@@ -137,7 +134,7 @@ global.combat_room_num = 0;
 
 //set seed in other rooms 
 if room != room_proc_gen_test and room != room_shop
-and room != room_boss_1 and room != room_boss_2 /*and room != room_boss_3*/ {
+and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 	//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######
 	randomize();
 	global.seed = random_get_seed();

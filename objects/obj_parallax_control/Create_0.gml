@@ -1,6 +1,7 @@
 background_map = ds_map_create();
 
 if global.phase = 2 {
+	global.tileset = tl_ground2;
 	back_id = layer_get_id("bg_background");
 	mid_id = layer_get_id("bg_midground");
 	fore_id = layer_get_id("bg_foreground");
@@ -10,8 +11,9 @@ if global.phase = 2 {
 	layer_background_sprite(back_background,spr_background_solid2);
 	layer_background_sprite(mid_background,spr_background_back2);
 	layer_background_sprite(fore_background,spr_background_fore2);
-}else if global.phase = 3 {
+}else if global.phase >= 3 or room = room_boss_3 {
 	//phase 3 background code here
+	global.tileset = tl_ground2;
 	back_id = layer_get_id("bg_background");
 	mid_id = layer_get_id("bg_midground");
 	fore_id = layer_get_id("bg_foreground");

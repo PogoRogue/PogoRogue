@@ -59,7 +59,7 @@ scr_All_Actives_Array();
 scr_All_Weapons_Array();
 
 instance_create_depth(x,y,depth,obj_control);
-audio_stop_sound(snd_music_level1);
+//audio_stop_sound(global.current_music);
 instance_create_depth(x,y,depth,obj_player);
 
 //get passive info

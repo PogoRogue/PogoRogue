@@ -48,15 +48,23 @@ if (skiplevel_button) {
 				scr_Room_Transition(room_boss_2);
 				break;
 			case 3:
-				global.phase = 1;
-				scr_Room_Transition(room_menu);
+				scr_Room_Transition(room_boss_3);
 				break;
 		}	
-	}else if room = room_boss_1 or room = room_boss_2 /*or room = room_boss_3*/ {
+	}else if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
 		room_persistent = false;
-		global.phase++;
-		scr_Room_Transition(room_proc_gen_test);
+		if room != room_boss_3 {
+			global.phase++;
+			scr_Room_Transition(room_proc_gen_test);
+		}else {
+			global.phase = 1;
+			room_persistent = false;
+			scr_Room_Transition(room_menu);
+		}
 		if global.phase = 2 {
+			global.tileset = tl_ground2;
+		}
+		if global.phase = 3 {
 			global.tileset = tl_ground2;
 		}
 	}
