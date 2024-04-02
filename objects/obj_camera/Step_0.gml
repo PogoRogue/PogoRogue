@@ -85,6 +85,7 @@ if (instance_exists(follow)) {
 
 //screen shake
 if (global.allow_screenshake) {
+	randomize();
 	x += random_range(-shake_remain,shake_remain);
 	y += random_range(-shake_remain,shake_remain);
 	shake_remain = max(0,(shake_remain-((1/shake_length)*shake_magnitude)));
@@ -92,6 +93,7 @@ if (global.allow_screenshake) {
 
 	//vibrate controller
 	gamepad_set_vibration(0, (shake_remain_controller/4), (shake_remain_controller/4));
+	random_set_seed(global.seed);
 
 }else {
 	//vibrate controller

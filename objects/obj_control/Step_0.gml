@@ -57,7 +57,7 @@ if (skiplevel_button) {
 		global.phase++;
 		scr_Room_Transition(room_proc_gen_test);
 		if global.phase = 2 {
-			global.tileset = tl_ground2;	
+			global.tileset = tl_ground2;
 		}
 	}
 }

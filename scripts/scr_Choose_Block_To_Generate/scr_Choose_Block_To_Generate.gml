@@ -1,6 +1,7 @@
 ///@desc Given a proc gen layout grid, and a location in it, decides what kind of block needs to go there
 ///@returns number corresponding to sprite to build, 0 corresponding to player start, or -1 for generate nothing
 function scr_Choose_Block_To_Generate(layout_grid, grid_x, grid_y){
+	random_set_seed(global.seed);
 	var room_string = ds_grid_get(layout_grid, grid_x, grid_y);
 	
 	//Set to a 3x3 room

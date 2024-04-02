@@ -28,6 +28,7 @@ if show_debug = true {
 	show_debug = false;
 }
 
-if distance_to_object(obj_player) > 200 and room != room_shop and created_in_room = false {
+if point_distance(x,y,obj_player.x,obj_player.y) > 2000 and room != room_shop and created_in_room = false {
 	instance_destroy();	
+	show_debug_message("weapon destroyed! 5 " + string(object_get_name(object_index)));
 }

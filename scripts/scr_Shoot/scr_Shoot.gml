@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Shoot(){
 	with obj_player {
+		randomize();
 		//play sound
 		//audio_play_sound(gun.sound,10,false,random_range(0.8,1),0,random_range(0.8,1)); //play shooting sound, randomize gain and pitch
 		
@@ -125,5 +126,6 @@ function scr_Shoot(){
 		if gun._name = "Burst Fire Gun" and (gun.current_bullets % gun.burst_number) != 0 and current_burst = 0 {
 			gun.current_bullets = ceil(gun.current_bullets/gun.burst_number) * gun.burst_number;
 		}
+		random_set_seed(global.seed);
 	}
 }

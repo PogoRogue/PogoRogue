@@ -1,4 +1,5 @@
 function scr_Convert_Layout_To_Rooms(layout_grid){
+	random_set_seed(global.seed);
 	var test_room_sprite = spr_u1;
 	var block_grid_size  = sprite_get_width(test_room_sprite); //assumes square blocks
 	var block_room_size = block_grid_size * 16;
@@ -118,6 +119,7 @@ function scr_Convert_Layout_To_Rooms(layout_grid){
 						}
 						else
 						{
+							random_set_seed(global.seed + global.combat_room_num);
 							var sub_image_num = sprite_get_number(block_to_generate);
 							var sub_image_to_make = irandom_range(0,sub_image_num - 1);
 							
@@ -129,6 +131,8 @@ function scr_Convert_Layout_To_Rooms(layout_grid){
 							}
 							
 							scr_Create_Room_From_Sprite(block_to_generate, sub_image_to_make, x_offset, y_offset, mirror);
+							global.combat_room_num += 1;
+							random_set_seed(global.seed);
 						}
 					}	
 				}

@@ -1,6 +1,7 @@
 /// @description create collision walls
 
 //randomize();
+random_set_seed(global.seed+global.chest_number);
 open = false;
 colliding = false; //is the player currently colliding with the chest
 create_coins = false;
@@ -44,3 +45,5 @@ if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") {
 random_items = scr_Random_Item_Drops();
 
 var test = 0;
+global.chest_number += 1;
+random_set_seed(global.seed);

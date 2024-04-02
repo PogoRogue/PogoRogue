@@ -17,9 +17,11 @@ with obj_enemy_parent {
 if enemy_count = 0 {
 	instance_destroy();	
 }else {
+	randomize();
 	enemy_to_target = enemy_array[irandom_range(0,array_length(enemy_array)-1)];
 	x = enemy_to_target.x + irandom_range(-256,256);
 	y = enemy_to_target.y + irandom_range(-256,256);
+	random_set_seed(global.seed);
 }
 
 audio_play_sound(snd_targetedassassination_start,0,false);

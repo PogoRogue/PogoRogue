@@ -16,4 +16,5 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 
 if (colliding and key_interact) {
 	//enter seeding input code here
+	instance_create_depth(x,y,depth,obj_seeding_prompt);
 }

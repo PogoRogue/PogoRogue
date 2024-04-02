@@ -257,6 +257,7 @@ if global.key_weapon_up {
 	}
 	
 	gun = gun_array[current_gun];
+	weapon_arrow_index = 0;
 }
 
 if global.key_weapon_down {
@@ -267,19 +268,23 @@ if global.key_weapon_down {
 	}
 	
 	gun = gun_array[current_gun];
+	weapon_arrow_index = 0;
 }
 
 //number keys
 if global.key_weapon_1 {
 	current_gun = 0;
 	gun = gun_array[current_gun];
+	weapon_arrow_index = 0;
 }else if global.key_weapon_2 and weapons_equipped > 1 {
 	current_gun = 1;
 	gun = gun_array[current_gun];
+	weapon_arrow_index = 0;
 }
 else if global.key_weapon_3 and weapons_equipped > 2 {
 	current_gun = 2;
 	gun = gun_array[current_gun];
+	weapon_arrow_index = 0;
 }
 
 
