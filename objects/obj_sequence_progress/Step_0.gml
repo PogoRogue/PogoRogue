@@ -11,9 +11,9 @@ if(instance_exists(controller)) {
 			current_frame = 9;
 		}
 		
-		if(controller.current_state == STATES.ATTACKING) {
+		if(controller.current_state == BOSS2_STATES.ATTACKING) {
 			current_frame += controller.sequence_index;
-		} else if(controller.current_state == STATES.VULNERABLE) {
+		} else if(controller.current_state == BOSS2_STATES.VULNERABLE) {
 			current_frame += controller.sequence_length;
 		}
 	} else {

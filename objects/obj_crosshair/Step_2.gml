@@ -12,7 +12,7 @@ if image_index = 6 and fade_out = false {
 		with enemy_to_target {
 			if object_get_name(object_index) = "obj_boss_sequence_body" or object_get_name(object_index) = "obj_boss_sphere" {
 				if object_get_name(object_index) = "obj_boss_sequence_body" {
-					if (controller.current_state = STATES.VULNERABLE) {
+					if (controller.current_state = BOSS2_STATES.VULNERABLE) {
 						hp -= hp_max/5;
 						with obj_player {
 							scr_Reload_On_Kill();	

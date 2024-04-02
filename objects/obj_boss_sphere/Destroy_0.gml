@@ -2,6 +2,7 @@
 
 // Destroy brick attached to main body
 instance_destroy(obj_boss_brick);
+instance_destroy(obj_boss_sphere_health);
 
 // Destroy all deached bricks
 instance_destroy(obj_subboss_exploding);
