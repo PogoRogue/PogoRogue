@@ -108,6 +108,7 @@ function Create_Instance_From_RGB(RGB, x_offset, y_offset, mirror)
 	{
 		inst = instance_create_layer(x_offset, y_offset, "Instances", object_to_create);
 	
+	//Object offset fixes for mirrored chunks
 		if(object_to_create == obj_conveyor_belt && mirror)
 		{
 			inst.image_xscale = -1;
@@ -121,6 +122,14 @@ function Create_Instance_From_RGB(RGB, x_offset, y_offset, mirror)
 		else if((object_to_create == obj_temp_platform_off_on || object_to_create == obj_temp_platform_on_off) && mirror)
 		{
 			inst.x = inst.x - 80; //Adjust since anchor is weird, and levels are all made with that anchor already
+		}
+		else if(object_to_create == obj_electric_current && mirror)
+		{
+			inst.x = inst.x - 80;
+		}
+		else if(object_to_create == obj_chest && mirror)
+		{
+			inst.x = inst.x - 16;
 		}
 		
 		

@@ -15,8 +15,8 @@
     {"name":"Sprint 9","order":1,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 9.yy",},
     {"name":"New","order":4,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 9/New.yy",},
     {"name":"Replace","order":3,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Sam_Rooms/Sprint 9/Replace.yy",},
-    {"name":"Sprint_9","order":2,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_9.yy",},
     {"name":"Sprint_8","order":1,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_8.yy",},
+    {"name":"Sprint_9","order":2,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_9.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_boss_brick_blue","order":7,"path":"objects/obj_boss_brick_blue/obj_boss_brick_blue.yy",},
