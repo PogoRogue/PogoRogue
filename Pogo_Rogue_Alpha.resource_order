@@ -1,9 +1,4 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[
-    {"name":"spr_minimap_boss","order":1,"path":"sprites/spr_minimap_boss/spr_minimap_boss.yy",},
-    {"name":"spr_minimap_shop","order":2,"path":"sprites/spr_minimap_shop/spr_minimap_shop.yy",},
-    {"name":"spr_portal_shop_new","order":1,"path":"sprites/spr_portal_shop_new/spr_portal_shop_new.yy",},
-    {"name":"spr_portal_shop_new2","order":2,"path":"sprites/spr_portal_shop_new2/spr_portal_shop_new2.yy",},
-  ],
+  "ResourceOrderSettings":[],
 }
