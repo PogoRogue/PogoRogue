@@ -54,6 +54,10 @@ if(is_dead) {
 			}else {
 				num_of_coins = global.combo_max_coins + global.added_coins;
 			}
+			if(global.robbery == true and obj_player.landed_on_enemy == true){
+				num_of_coins *= 2;
+				obj_player.landed_on_enemy = false;
+			}
 		}
 	}
 	

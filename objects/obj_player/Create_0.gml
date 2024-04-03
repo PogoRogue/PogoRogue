@@ -47,6 +47,9 @@ aerial_assassin_count = 0;
 revive_time = 0;
 revive_alpha = 0;
 impatience_used = false;
+damage_boost_active = false;
+damage_boost_timer = 0;
+landed_on_enemy = false; // for robbery 
 
 //pickups
 charge = 0;
@@ -927,7 +930,8 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_supershield, buff_revive, buff_drilltipbullets, 
 				buff_dualwielder, buff_steadyhands, buff_tightspring,
 				buff_magicianstouch, buff_impatience, buff_laststand,
-				buff_psychicbullets, buff_recycling, buff_juggler];		
+				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
+        buff_recycling, buff_juggler];		
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

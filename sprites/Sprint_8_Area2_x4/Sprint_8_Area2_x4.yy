@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Zehao_Rooms",
-    "path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms.yy",
+    "name":"Sprint_8",
+    "path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_8.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
