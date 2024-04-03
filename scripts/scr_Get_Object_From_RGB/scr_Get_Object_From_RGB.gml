@@ -31,6 +31,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 		return obj_tag_Talon; // Insert Talon signature color here
 	}
+	else if(Red == 102 && Green == 3 && Blue == 252)
+	{
+		return obj_tag_Ian;
+	}
 	else if(Red == 213 && Green == 110 && Blue == 5)
 	{
 		return obj_pixel_tag; //Default tag color for testing purposes
@@ -39,6 +43,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 		return obj_player_start;
 	}
+	
 	else if(Red > 150) //This space of colors is designated for enemies
 	{
 		if(Green < 50)
