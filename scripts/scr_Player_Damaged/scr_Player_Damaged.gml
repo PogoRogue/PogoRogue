@@ -22,6 +22,14 @@ function scr_Player_Damaged(damage){
 			current_iframes = num_iframes;
 			hspeed = -2 * sign(hspeed);
 			vspeed = 0;
+			
+			// righteous Revenge passive item
+			if(global.righteousrevenge == true){
+				if damage_boost_active = false {
+					damage_boost_active = true; // This variable is declared in obj_player Create Event.
+					damage_boost_timer = 180;
+				}
+			}
 		
 			//combo reset
 			//commented these out to experiement with other method

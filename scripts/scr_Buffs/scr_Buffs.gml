@@ -207,13 +207,23 @@ function scr_Buffs(){
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
+	buff_righteousrevenge = function(){
+		global.righteousrevenge = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
+	
+	buff_robbery = function(){
+		global.robbery = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
+    
 	buff_recycling = function(){
 		global.recycling = true;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_juggler = function(){
-		global.juggler = true;
+		global.juggler = true;    
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 }
