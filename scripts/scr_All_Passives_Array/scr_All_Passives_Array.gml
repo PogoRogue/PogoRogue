@@ -10,5 +10,6 @@ function scr_All_Passives_Array(){
 						obj_item_buff_supershield, obj_item_buff_revive, obj_item_buff_drilltipbullets, 
 						obj_item_buff_dualwielder, obj_item_buff_steadyhands, obj_item_buff_tightspring,
 						obj_item_buff_magicianstouch, obj_item_buff_impatience, obj_item_buff_laststand,
-						obj_item_buff_psychicbullets, obj_item_buff_recycling, obj_item_buff_juggler];					 
+						obj_item_buff_psychicbullets, obj_item_buff_righteousrevenge, obj_item_buff_robbery, 
+						obj_item_buff_recycling, obj_item_buff_juggler];
 }

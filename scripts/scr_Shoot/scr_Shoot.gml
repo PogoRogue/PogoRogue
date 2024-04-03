@@ -29,7 +29,10 @@ function scr_Shoot(){
 				imageAngle = angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90;
 			}
 			if(global.laststand and hp <= 8){
-				damage_multiplier = 2;
+				damage_multiplier *= 2;
+			}
+			if(global.righteousrevenge and obj_player.damage_boost_active){
+				damage_multiplier *= 2;
 			}
 			
 			if gun.current_bullets > 0 or gun._name = "Hat Gun" or gun._name = "Bullet Blast" {
