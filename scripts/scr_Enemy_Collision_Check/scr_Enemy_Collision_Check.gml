@@ -28,7 +28,9 @@ function scr_Enemy_Collision_Check(condition){
 							vspeed = 1;
 						}
 					}
-					other.landed_on_enemy = true; // enable for robbery 
+					if hp <= 0 {
+						other.landed_on_enemy = true; // enable for robbery 
+					}
 				}else if other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
 					if other.state != other.state_chargejump {
 						other.state = other.state_bouncing;

@@ -224,4 +224,6 @@ function scr_Buffs(){
 	
 	buff_juggler = function(){
 		global.juggler = true;    
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
 }
