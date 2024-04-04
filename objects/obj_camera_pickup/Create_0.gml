@@ -1,4 +1,4 @@
-alpha = 0.9;
+alpha = 0.5;
 decrease_alpha = false;
 alarm[0] = 5;
 damage = 5;

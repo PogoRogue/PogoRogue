@@ -5,7 +5,12 @@ if cant_move = false {
 	key_right = global.key_right_menu;
 	key_up = global.key_up_menu;
 	key_down = global.key_down_menu;
-	key_select = global.key_select;
+	if obj_player.state != obj_player.state_portal
+	and obj_player.state != obj_player.state_shop_portal {
+		key_select = global.key_select;
+	}else {
+		key_select = 0;
+	}
 }else {
 	key_left = 0;
 	key_right = 0;

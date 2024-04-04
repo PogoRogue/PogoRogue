@@ -338,10 +338,10 @@ function scr_Pickups(){
 	
 	pickup_camera = {
 		_name: "Camera",
-		tagline: "Snap a bright picture of every enemy on screen, dealing small amounts of damage to all of them. Each kill shortens its cooldown time by 4 seconds.",
+		tagline: "Snap a bright picture of every enemy on screen, dealing small amounts of damage to all of them.",
 		gui_sprite: spr_pickup_camera,
-		max_cooldown_time: 600,
-		cooldown_time: 600,
+		max_cooldown_time: -1,
+		cooldown_time: -1,
 		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
@@ -352,10 +352,12 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 0,
+		enemies_count_max: 5,
 		on_call: function() {
 			audio_play_sound(snd_camera,0,false);
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup);
+			on_cooldown = true;
+			enemies_count = enemies_count_max;
 			on_cooldown = true;
 		}
 	};
