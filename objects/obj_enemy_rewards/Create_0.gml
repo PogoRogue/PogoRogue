@@ -15,7 +15,6 @@ hp_max = hp;
 hp_percent = (hp / hp_max) * 100;
 is_moving = false
 found = false;
-reached_target = false;
 range = 200;
 distance = point_distance(x,y,obj_player.x,obj_player.y);
 target_x = 0;
