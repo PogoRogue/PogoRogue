@@ -29,6 +29,8 @@ can_rotate = true;
 can_shoot = true;
 platform_on = true;
 centering = false;
+current_burst = 0;
+weapon_arrow_index = 0;
 
 //portal
 portal_object = noone;
@@ -269,6 +271,21 @@ state_chargejump = function() {
 		}
 	}
 	
+	//cancel if not colliding
+	if !place_meeting(x,y+4,obj_ground_parent) and !place_meeting(x,y+4,obj_enemy_parent) 
+	and !place_meeting(x+4,y+4,obj_ground_parent) and !place_meeting(x+4,y+4,obj_enemy_parent) 
+	and !place_meeting(x-4,y+4,obj_ground_parent) and !place_meeting(x-4,y+4,obj_enemy_parent) {
+		state = state_free;
+		charge = 0;
+		bouncing = false;
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+		angle = round(angle / original_rotation_speed)*original_rotation_speed;
+		current_rotation_speed = 0;
+		sprite_index = falling_sprite;
+		image_index = 0; //reset animation to starting frame
+		animation_complete = false;
+	}
 }
 
 state_groundpound = function() {
@@ -668,16 +685,24 @@ state_portal = function() {
 						scr_Room_Transition(room_boss_2);
 						break;
 					case 3:
-						global.phase = 1;
-						scr_Room_Transition(room_menu);
+						scr_Room_Transition(room_boss_3);
 						break;
 				}	
 			}else {
-				room_persistent = false;
-				//global.phase++; //increase phase when boss is defeated instead
-				scr_Room_Transition(room_proc_gen_test);
-				if global.phase = 2 {
-					global.tileset = tl_ground2;	
+				if room != room_boss_3 {
+					room_persistent = false;
+					//global.phase++; //increase phase when boss is defeated instead
+					scr_Room_Transition(room_proc_gen_test);
+					if global.phase = 2 {
+						global.tileset = tl_ground2;	
+					}
+					if global.phase = 3 {
+						global.tileset = tl_ground2;	
+					}
+				}else {
+					room_persistent = false;
+					global.phase = 1;
+					scr_Room_Transition(room_menu);	
 				}
 			}
 		}

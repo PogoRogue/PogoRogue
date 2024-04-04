@@ -1,16 +1,17 @@
 /// @description shoot enemy
 
 if image_index = 6 and fade_out = false {
-	if room != room_boss_1 and room != room_boss_2 /*and room != room_boss_3*/{
+	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 		with enemy_to_target {
 			hp = 0;
 			with obj_player {
 				scr_Reload_On_Kill();	
 			}
 		}
-	}else if room = room_boss_1 or room = room_boss_2 {
+	}else if room = room_boss_1 or room = room_boss_2  or room = room_boss_3 {
 		with enemy_to_target {
-			if object_get_name(object_index) = "obj_boss_sequence_body" or object_get_name(object_index) = "obj_boss_sphere" {
+			if object_get_name(object_index) = "obj_boss_sequence_body" or object_get_name(object_index) = "obj_boss_sphere" 
+			or object_get_name(object_index) = "obj_boss_marionette" {
 				if object_get_name(object_index) = "obj_boss_sequence_body" {
 					if (controller.current_state = BOSS2_STATES.VULNERABLE) {
 						hp -= hp_max/5;

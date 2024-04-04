@@ -13,10 +13,13 @@ if other.low_combo_meter = true {
 
 if global.combo > 0 {
 	with obj_player {
-		if room != room_boss_1 and room != room_boss_2 /*and room != room_boss_3*/{
+		if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 			var distance = 48;
 			if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun { 
 				distance += 18;
+			}
+			if instance_exists(obj_shieldbubble) {
+				distance += 8;
 			}
 			draw_sprite_ext(combometer_sprite,0,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,white,1);
 			var _x = -sprite_get_xoffset(combometer_sprite);

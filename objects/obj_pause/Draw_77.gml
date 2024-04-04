@@ -38,6 +38,7 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 			instance_activate_object(obj_settings);
 			instance_activate_object(obj_choosemenu_weapon);
 			instance_activate_object(obj_choosemenu_active);
+			instance_activate_object(obj_seeding_prompt);
 			item_swap = true;
 		}else {
 			instance_activate_object(obj_pausemenu);

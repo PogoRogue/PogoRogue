@@ -13,9 +13,9 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	var black_alpha = 0.5 * (gun != gun_array[gun_num]); //darkening for bottom ammo
 	for(i = 0; i < gun_array[gun_num].bullets_per_bounce+max_ammo_buff; i++) {
 		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != laser_gun) and (gun_array[gun_num] != water_gun) {
-			draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),36+yy); 
+			draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor(i/gun_array[gun_num].burst_number)*4)),36+yy); 
 			//darkening
-			draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),36+yy,1,1,0,c_black,black_alpha);
+			draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor(i/gun_array[gun_num].burst_number)*4)),36+yy,1,1,0,c_black,black_alpha);
 		}else if (gun_array[gun_num] = paintball_gun) {
 			draw_sprite(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*i)-((i >= gun_array[gun_num].init_bullets_per_bounce and (i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce+max_ammo_buff))*10),(camera_get_view_width(view_camera[0])-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),36+yy); 
 			//darkening
@@ -34,8 +34,14 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	
 	//text
 	draw_text_color(camera_get_view_width(view_camera[0])-52,32+yy,gun_array[gun_num]._name,make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
+	
 	//text darkening
 	draw_text_color(camera_get_view_width(view_camera[0])-52,32+yy,gun_array[gun_num]._name,c_black,c_black,c_black,c_black,black_alpha);
+	
+	//arrow
+	if current_gun = gun_num {
+		draw_sprite(spr_weapon_arrow,weapon_arrow_index,camera_get_view_width(view_camera[0])-56-string_width(gun_array[gun_num]._name),24+yy)
+	}
 	
 	//weapon sprites
 	draw_sprite(gun_array[gun_num].sprite,1,camera_get_view_width(view_camera[0])-32,24+yy);

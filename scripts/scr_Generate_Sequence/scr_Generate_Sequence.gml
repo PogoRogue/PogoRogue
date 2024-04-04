@@ -9,6 +9,7 @@ function scr_Generate_Sequence(_length) {
 	right_condition = false;
 	
 	for(i = 0; i < _length; i++) {
+		random_set_seed(global.seed+global.sequence_num);
 		color_index = irandom(3);
 		
 		while(color_index == last_index) {
@@ -19,6 +20,7 @@ function scr_Generate_Sequence(_length) {
 		right_condition = right_condition || color_index >= 2;
 		
 		sequence[i] = color_index;
+		global.sequence_num += 1;
 		last_index = color_index;
 	}
 	
@@ -31,4 +33,5 @@ function scr_Generate_Sequence(_length) {
 	}
 	
 	return sequence;
+	random_set_seed(global.seed);
 }

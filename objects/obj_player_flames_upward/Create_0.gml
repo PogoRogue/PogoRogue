@@ -7,6 +7,7 @@ reached_max_alpha = false;
 chargejump = false;
 despawnable = false;
 alarm[1] = 2;
+reset = false;
 
 damage = 12;
 

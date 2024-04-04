@@ -4,3 +4,4 @@ with instance_create_depth(x,y,obj_player.depth-2,random_weapon_drop) {
 }
 
 instance_destroy();
+show_debug_message("weapon destroyed! 2 " + string(object_get_name(object_index)));

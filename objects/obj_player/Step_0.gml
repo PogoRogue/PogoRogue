@@ -213,7 +213,6 @@ if (canshoot > 0) {
 	
 		var delay = gun.burst_delay;
 		
-		
 		repeat (gun.burst_number - 1) {
 			if gun._name = "Burst Fire Gun" and delay = gun.burst_delay {
 				audio_play_sound(snd_burstfire,0,false);	
@@ -223,7 +222,7 @@ if (canshoot > 0) {
 		}
 		
 		//decrease ammo count for spread weapons
-		if gun.spread_number > 1 and frenzy = false{
+		if gun.spread_number > 1 and frenzy = false {
 			gun.current_bullets -= 1;
 		}
 	}
@@ -258,6 +257,7 @@ if global.key_weapon_up {
 	}
 	
 	gun = gun_array[current_gun];
+	weapon_arrow_index = 0;
 }
 
 if global.key_weapon_down {
@@ -268,19 +268,23 @@ if global.key_weapon_down {
 	}
 	
 	gun = gun_array[current_gun];
+	weapon_arrow_index = 0;
 }
 
 //number keys
 if global.key_weapon_1 {
 	current_gun = 0;
 	gun = gun_array[current_gun];
+	weapon_arrow_index = 0;
 }else if global.key_weapon_2 and weapons_equipped > 1 {
 	current_gun = 1;
 	gun = gun_array[current_gun];
+	weapon_arrow_index = 0;
 }
 else if global.key_weapon_3 and weapons_equipped > 2 {
 	current_gun = 2;
 	gun = gun_array[current_gun];
+	weapon_arrow_index = 0;
 }
 
 
@@ -397,6 +401,8 @@ if room = room_items {
 if revive_alpha > 0 {
 	revive_alpha -= 0.05;	
 }
+
+weapon_arrow_index += 0.05;
 
 // In the Step Event of obj_player
 if (damage_boost_active) {
