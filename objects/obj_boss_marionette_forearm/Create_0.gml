@@ -13,5 +13,5 @@ target = instance_nearest(x, y, obj_player);
 //8=Grenade
 weapon=1;
 cooldown=room_speed*3;
-//alarm_set(1,cooldown);
+alarm_set(1,cooldown);
 player = instance_find(obj_player, 0);

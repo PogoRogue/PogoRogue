@@ -44,3 +44,6 @@ if(boom&&distance_to_point(og_x,og_y)>return_range){
 		speed=speed*0.9;
 	}
 }
+if(sprite_index!=spr_enemy_projectile){
+	image_angle = point_direction (x,y, x+hspeed,y+vspeed);
+}
