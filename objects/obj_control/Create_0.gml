@@ -46,6 +46,8 @@ global.combo_length = 0;
 global.combo_max = 32;
 global.combo_max_coins = 5;
 global.init_combo_highscore = global.best_combo;
+global.init_coins_highscore = global.best_coins;
+global.init_enemies_highscore = global.best_enemies;
 
 //buffs
 global.all_buff_sprites = []; //buffs equipped in side bar

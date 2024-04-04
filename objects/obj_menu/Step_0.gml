@@ -38,6 +38,8 @@ if key_select {
 		}
 	}else if select = 2 - options_decrease {
 		scr_Room_Transition(room_proc_gen_test);
+		global.total_runs += 1;
+		scr_Save_Real("total_runs",global.total_runs);
 	}else if select = 3 - options_decrease {
 		scr_Room_Transition(room_items);
 		//room_persistent = true;

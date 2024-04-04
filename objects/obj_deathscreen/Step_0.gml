@@ -48,6 +48,8 @@ if centered = true {
 	//selected
 	if key_select and select_x = 1 { //restart
 		scr_Restart_Level();
+		global.total_runs += 1;
+		scr_Save_Real("total_runs",global.total_runs);
 	}
 	
 	if key_select and select_x = 2 { //main menu

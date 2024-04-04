@@ -6,6 +6,13 @@ function scr_Save_Load_Variables(){
 	//stats
 	global.enemies_killed = 0;
 	global.best_combo = 0;
+	global.best_coins = 0;
+	global.best_enemies = 0;
+	global.total_runs = 0;
+	global.area_2_reached = 0;
+	global.area_3_reached = 0;
+	global.num_of_wins = 0;
+	global.fastest_time = 0;
 	
 	//audio settings
 	global.sound_volume = 100;
@@ -29,6 +36,13 @@ function scr_Save_Load_Variables(){
 	ini_open("savedata.ini");
 	global.enemies_killed = ini_read_real("savegame", "enemies_killed", 0);
 	global.best_combo = ini_read_real("savegame", "best_combo", 0);
+	global.best_coins = ini_read_real("savegame", "best_coins", 0);
+	global.best_enemies = ini_read_real("savegame", "best_enemies", 0);
+	global.total_runs = ini_read_real("savegame", "total_runs", 0);
+	global.area_2_reached = ini_read_real("savegame", "area_2_reached", 0);
+	global.area_3_reached = ini_read_real("savegame", "area_3_reached", 0);
+	global.num_of_wins = ini_read_real("savegame", "num_of_wins", 0);
+	global.fastest_time = ini_read_real("savegame", "fastest_time", 0);
 	
 	global.sound_volume = ini_read_real("savegame", "sound_volume", 100);
 	global.music_volume = ini_read_real("savegame", "music_volume", 100);
