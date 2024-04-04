@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_gun_default",
+    "path":"sprites/spr_gun_default/spr_gun_default.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

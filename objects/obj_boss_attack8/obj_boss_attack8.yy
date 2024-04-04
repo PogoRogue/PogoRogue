@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_gun_grenade",
+    "path":"sprites/spr_gun_grenade/spr_gun_grenade.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

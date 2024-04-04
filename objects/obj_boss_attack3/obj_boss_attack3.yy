@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_gun_javelins",
+    "path":"sprites/spr_gun_javelins/spr_gun_javelins.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

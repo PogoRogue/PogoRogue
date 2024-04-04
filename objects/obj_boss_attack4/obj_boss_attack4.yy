@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_gun_bouncyball",
+    "path":"sprites/spr_gun_bouncyball/spr_gun_bouncyball.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

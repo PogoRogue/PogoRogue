@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_gun_missile",
+    "path":"sprites/spr_gun_missile/spr_gun_missile.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

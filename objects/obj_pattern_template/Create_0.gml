@@ -25,3 +25,4 @@ sprite=spr_enemy_projectile;
 if(cur_rep < repeats) {
 	alarm_set(0, 1);
 }
+parent=noone;

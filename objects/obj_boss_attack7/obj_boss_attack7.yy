@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_gun_boomerang",
+    "path":"sprites/spr_gun_boomerang/spr_gun_boomerang.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

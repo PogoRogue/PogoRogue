@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_gun_bubble",
+    "path":"sprites/spr_gun_bubble/spr_gun_bubble.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
