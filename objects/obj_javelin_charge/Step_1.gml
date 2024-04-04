@@ -15,7 +15,7 @@ if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true or obj_pla
 			speed = 0;
 			motion_add(angle - 90, vsp_basicjump * (0.8 + ((other.temp_charge/other.temp_charge_max)*0.7)));
 			
-			if frenzy = false {
+			if frenzy = false and aerial_assassin_frenzy = false {
 				gun.current_bullets -= 1;
 			}else {
 				gun.current_bullets = gun.bullets_per_bounce + max_ammo_buff;

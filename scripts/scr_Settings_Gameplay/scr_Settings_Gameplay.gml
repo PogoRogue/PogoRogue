@@ -81,7 +81,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_showcoins = {
-		_text: "Show Coin UI: ",
+		_text: "Show Coin Counter: ",
 		_type: "checkbox",
 		default_mode: global.show_coins,
 		current_mode: global.show_coins,

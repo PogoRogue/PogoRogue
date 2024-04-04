@@ -32,12 +32,17 @@ if(is_dead) {
 		}
 		global.enemy_killed = true;
 		
-		//aerial assassin buff
+		//aerial assassin buff (old version)
 		with obj_player {
 			if global.aerial_assassin = true {
 				aerial_assassin_count += 1;	
-				if aerial_assassin_count >= 2 {
-					global.combo += 1;
+				if aerial_assassin_count >= 3 {
+					//global.combo += 1; (old version)
+					gun_1.current_bullets = gun_1.bullets_per_bounce + max_ammo_buff;
+					gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
+					gun_3.current_bullets = gun_3.bullets_per_bounce + max_ammo_buff;
+					aerial_assassin_frenzy = true;
+					alarm[4] = 120;
 					aerial_assassin_count = 0;
 				}
 			}

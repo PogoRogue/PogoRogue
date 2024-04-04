@@ -1,4 +1,7 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"spr_player_zekai_portal_jetpack","order":1,"path":"sprites/spr_player_zekai_portal_jetpack/spr_player_zekai_portal_jetpack.yy",},
+    {"name":"spr_player_zekai_portal_hatgun","order":2,"path":"sprites/spr_player_zekai_portal_hatgun/spr_player_zekai_portal_hatgun.yy",},
+  ],
 }

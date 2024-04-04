@@ -63,7 +63,7 @@ function scr_Shoot(){
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 and frenzy = false and gun._name != "Javelins" {
+			if gun.spread_number = 1 and frenzy = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
 				gun.current_bullets -= 1;
 			}
 			

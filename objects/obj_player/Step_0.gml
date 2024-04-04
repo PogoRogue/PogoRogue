@@ -222,7 +222,7 @@ if (canshoot > 0) {
 		}
 		
 		//decrease ammo count for spread weapons
-		if gun.spread_number > 1 and frenzy = false {
+		if gun.spread_number > 1 and frenzy = false and aerial_assassin_frenzy = false {
 			gun.current_bullets -= 1;
 		}
 	}
@@ -249,7 +249,7 @@ or gun_array[current_gun] != water_gun and gun_3 = water_gun {
 #endregion
 
 //switch between weapons
-if global.key_weapon_up {
+if global.key_weapon_up and current_burst = 0 {
 	if (current_gun) < weapons_equipped-1 {
 		current_gun += 1;
 	}else {
@@ -260,7 +260,7 @@ if global.key_weapon_up {
 	weapon_arrow_index = 0;
 }
 
-if global.key_weapon_down {
+if global.key_weapon_down and current_burst = 0 {
 	if (current_gun) > 0 {
 		current_gun -= 1;
 	}else {
@@ -272,16 +272,16 @@ if global.key_weapon_down {
 }
 
 //number keys
-if global.key_weapon_1 {
+if global.key_weapon_1 and current_burst = 0 {
 	current_gun = 0;
 	gun = gun_array[current_gun];
 	weapon_arrow_index = 0;
-}else if global.key_weapon_2 and weapons_equipped > 1 {
+}else if global.key_weapon_2 and weapons_equipped > 1 and current_burst = 0 {
 	current_gun = 1;
 	gun = gun_array[current_gun];
 	weapon_arrow_index = 0;
 }
-else if global.key_weapon_3 and weapons_equipped > 2 {
+else if global.key_weapon_3 and weapons_equipped > 2 and current_burst = 0 {
 	current_gun = 2;
 	gun = gun_array[current_gun];
 	weapon_arrow_index = 0;

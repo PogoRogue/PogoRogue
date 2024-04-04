@@ -39,7 +39,7 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	draw_text_color(camera_get_view_width(view_camera[0])-52,32+yy,gun_array[gun_num]._name,c_black,c_black,c_black,c_black,black_alpha);
 	
 	//arrow
-	if current_gun = gun_num {
+	if current_gun = gun_num and num_of_weapons > 0 {
 		draw_sprite(spr_weapon_arrow,weapon_arrow_index,camera_get_view_width(view_camera[0])-56-string_width(gun_array[gun_num]._name),24+yy)
 	}
 	

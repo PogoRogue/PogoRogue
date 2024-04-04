@@ -415,7 +415,9 @@ function scr_Pickups(){
 			with obj_player {
 				frenzy = true;
 				alarm[3] = 300;
-				gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff;
+				gun_1.current_bullets = gun_1.bullets_per_bounce + max_ammo_buff;
+				gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
+				gun_3.current_bullets = gun_3.bullets_per_bounce + max_ammo_buff;
 			}
 		}
 	};

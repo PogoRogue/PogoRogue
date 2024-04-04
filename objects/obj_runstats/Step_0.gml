@@ -1,7 +1,7 @@
 //increase time
 if instance_exists(obj_player) {
 	with obj_pause {
-		if pause = false and obj_player.dead = false {
+		if pause = false and obj_player.dead = false and room != room_shop {
 			global.current_time_elapsed += 1;
 		}
 	}

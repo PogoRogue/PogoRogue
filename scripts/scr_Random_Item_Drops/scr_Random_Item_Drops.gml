@@ -28,7 +28,6 @@ function scr_Random_Item_Drops(){
 	//buff
 	if (buff_drop <= buff_chance and (heart_drop > heart_chance)) {
 		var object_array = [];
-		num_of_coins = round(num_of_coins/2);
 		if created_items = false {
 			var object_type = scr_Get_Rand_Buff_Object();
 		

@@ -127,7 +127,7 @@ function scr_Guns(){
 		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
-		max_added_bullets: 2,
+		max_added_bullets: 5,
 		max_speed: -vsp_basicjump          
 	};
 
@@ -193,7 +193,7 @@ function scr_Guns(){
 		bullets_per_bounce: 3 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 3,
 		current_bullets: 3 + obj_player.max_ammo_buff,  
-		max_added_bullets: 3,
+		max_added_bullets: 5,
 		max_speed: -vsp_basicjump*0.9
 	};	
 	
@@ -259,7 +259,7 @@ function scr_Guns(){
 		bullets_per_bounce: 1 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 1,
 		current_bullets: 1 + obj_player.max_ammo_buff,  
-		max_added_bullets: 1,
+		max_added_bullets: 5,
 		max_speed: 8
 	};
 	
@@ -281,7 +281,7 @@ function scr_Guns(){
 		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
-		max_added_bullets: 1,
+		max_added_bullets: 5,
 		max_speed: 8
 	};
 	
@@ -303,7 +303,7 @@ function scr_Guns(){
 		bullets_per_bounce: 4 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 4,
 		current_bullets: 4 + obj_player.max_ammo_buff,  
-		max_added_bullets: 4,
+		max_added_bullets: 5,
 		max_speed: -vsp_basicjump          
 	};
 	
@@ -325,7 +325,7 @@ function scr_Guns(){
 		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
-		max_added_bullets: 2,
+		max_added_bullets: 5,
 		max_speed: 9
 	};	
 	
@@ -347,7 +347,7 @@ function scr_Guns(){
 		bullets_per_bounce: 3 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 3,
 		current_bullets: 3 + obj_player.max_ammo_buff,  
-		max_added_bullets: 3,
+		max_added_bullets: 5,
 		max_speed: -vsp_basicjump          
 	};
 	
@@ -391,7 +391,7 @@ function scr_Guns(){
 		bullets_per_bounce: 4 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 4,
 		current_bullets: 4 + obj_player.max_ammo_buff,
-		max_added_bullets: 4,
+		max_added_bullets: 5,
 		max_speed: -vsp_basicjump
 	};
 	

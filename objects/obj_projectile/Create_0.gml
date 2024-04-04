@@ -143,7 +143,7 @@ if (gun_name = "Yo-yo") {
 		}
 	}
 	if yoyo_num > 1 {
-		if obj_player.frenzy = false {
+		if obj_player.frenzy = false and obj_player.aerial_assassin_frenzy = false {
 			instance_destroy();
 		}	
 	}
@@ -181,7 +181,7 @@ if (gun_name = "Water Gun") {
 	attach_to_player = 2;
 	max_num_of_bounces = 0;
 	num_of_bounces = 0;
-	if obj_player.frenzy = true {
+	if obj_player.frenzy = true or obj_player.aerial_assassin_frenzy = true {
 		global.water_frenzy -= 1;
 		bullet_num = global.water_frenzy;
 		
@@ -223,8 +223,12 @@ if (gun_name = "Water Gun") {
 	}
 	
 	if place_meeting(x,y,obj_ground) {
-		draw_fill = true;
-		depth += 100;
+		if global.drilltipbullets = false {
+			draw_fill = true;
+			depth += 100;
+		}else {
+			draw_fill = true;	
+		}
 	}else {
 		draw_fill = false;	
 	}

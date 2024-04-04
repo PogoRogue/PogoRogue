@@ -45,6 +45,8 @@ if room = room_proc_gen_test {
 	global.current_music = snd_music_boss1;
 }else if room = room_tutorial {
 	global.current_music = snd_music_level1;
+}else {
+	global.current_music = snd_music_level1;
 }
 
 //music test

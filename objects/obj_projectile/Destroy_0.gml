@@ -19,8 +19,10 @@ if (gun_name = "Grenade Launcher") or (gun_name = "Missile Launcher") {
 //give player a boost
 if (gun_name = "Star Sucker") {
 	with obj_player {
-		speed = 0;
-		motion_add(angle - 90, vsp_basicjump*1.1);
+		if state != state_freeze {
+			speed = 0;
+			motion_add(angle - 90, vsp_basicjump*1.1);
+		}
 	}
 	//screen shake
 	scr_Screen_Shake(5, 10, true);
@@ -37,22 +39,28 @@ if (gun_name = "Yo-yo") {
 				gun_1.current_bullets += 1;
 			}
 			//add momentum
-			speed = 0;
-			motion_add(angle - 90, vsp_basicjump * gun_1.momentum_added);
+			if state != state_freeze {
+				speed = 0;
+				motion_add(angle - 90, vsp_basicjump * gun_1.momentum_added);
+			}
 		}else if gun_2._name = "Yo-yo" {
 			if gun_2.current_bullets < gun_2.bullets_per_bounce+obj_player.max_ammo_buff {
 				gun_2.current_bullets += 1;
 			}
 			//add momentum
-			speed = 0;
-			motion_add(angle - 90, vsp_basicjump * gun_2.momentum_added);
+			if state != state_freeze {
+				speed = 0;
+				motion_add(angle - 90, vsp_basicjump * gun_2.momentum_added);
+			}
 		}else if gun_3._name = "Yo-yo" {
 			if gun_3.current_bullets < gun_3.bullets_per_bounce+obj_player.max_ammo_buff {
 				gun_3.current_bullets += 1;
 			}
 			//add momentum
-			speed = 0;
-			motion_add(angle - 90, vsp_basicjump * gun_3.momentum_added);
+			if state != state_freeze {
+				speed = 0;
+				motion_add(angle - 90, vsp_basicjump * gun_3.momentum_added);
+			}
 		}
 	}
 	//screen shake

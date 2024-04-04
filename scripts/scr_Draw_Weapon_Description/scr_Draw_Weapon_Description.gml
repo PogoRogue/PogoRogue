@@ -65,28 +65,28 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	
 	if unlocked = true {
 		
-		line_1 = "Bullets per bounce: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		line_1 = "Bullets per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 	
 		//special conditions
 		
 		if weapon._name = "Laser Gun" {
-			line_1 = "Time per bounce: " + string(weapon.bullets_per_bounce/60) + "s" + " (Max " + string((weapon.init_bullets_per_bounce + weapon.max_added_bullets)/60) + "s)";
+			line_1 = "Time per bounce: " + string(weapon.bullets_per_bounce/60) + "s";// + " (Max " + string((weapon.init_bullets_per_bounce + weapon.max_added_bullets)/60) + "s)";
 		}
 		
 		if weapon._name = "Boomerangs" {
-			line_1 = "Boomerangs: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+			line_1 = "Boomerangs: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 		
 		if weapon._name = "Missile Launcher" {
-			line_1 = "Missiles per bounce: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+			line_1 = "Missiles per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 		
 		if weapon._name = "Yo-yo" {
-			line_1 = "Yo-yos: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+			line_1 = "Yo-yos: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 		
 		if weapon._name = "Javelins" {
-			line_1 = "Javelins per bounce: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+			line_1 = "Javelins per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 	
 		//additional damage buff
@@ -120,7 +120,11 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 			}else if weapon.ammo[0].firerate_start < 15 {
 				line_4 = "Fire Rate: Medium";
 			}else {
-				line_4 = "Fire Rate: Low";
+				if weapon._name != "Burst Fire Gun" {
+					line_4 = "Fire Rate: Low";
+				}else {
+					line_4 = "Fire Rate: High";
+				}
 			}
 		}else {
 			line_3 = "Auto Fire: No";	
