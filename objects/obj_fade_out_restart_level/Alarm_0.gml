@@ -1,8 +1,10 @@
 /// @description go to next room
-if room = room_boss_1 or room = room_boss_2 {
+if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
 	room_persistent = false;
 	instance_activate_all();
 	room = room_proc_gen_test;
+	global.current_music = snd_music_level1;
+	global.phase = 1;
 	with instance_create_depth(x,y,depth,obj_restart_game2) {
 		alarm[0] = 1;	
 	}

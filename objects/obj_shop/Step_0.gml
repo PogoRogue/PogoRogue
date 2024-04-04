@@ -77,6 +77,8 @@ var yy = 0;
 if created_items = false {
 	//choose random items
 	//randomize();
+	var shop_seed = global.seed+global.refreshes_used;
+	random_set_seed(shop_seed);
 
 	buff_1 = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
 	buff_2 = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
@@ -155,8 +157,9 @@ if created_items = false {
 		
 	}
 	created_items = true;
+	random_set_seed(global.seed);
 }
-
+random_set_seed(global.seed);
 //get item info
 if select != 0 {
 	if instance_exists(slot_items_array[select-1]) {
@@ -283,3 +286,4 @@ if spawn = true {
 	}
 }
 }
+

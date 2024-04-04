@@ -1,6 +1,6 @@
 function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, total_non_random_rooms, generate_starting_room, min_height_between_rooms, max_height_between_rooms)
 {
-
+	random_set_seed(global.seed);
 	// Create a grid to hold our layout
 	var grid_height = 10;
 	var grid_width = max_gen_width;

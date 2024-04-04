@@ -5,7 +5,10 @@ if instance_number(obj_controls_keyboard) > 1 {
 	instance_destroy();	
 }
 
-scr_Controls_Array_Keyboard();
+if global.use_keyboard = true {
+	//global.use_controller = true;
+	scr_Controls_Array_Keyboard();
+}
 
 //ACTUAL VARIABLES TO CHECK INPUTS
 //player controls

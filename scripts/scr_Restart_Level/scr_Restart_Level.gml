@@ -5,6 +5,20 @@ function scr_Restart_Level() {
 		deactivate_all = true;
 		alarm[1] = 1;
 	}
+	
+	//Store the randomized seed, and print it to console
+
+	//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######
+	if global.seed_switched = false {
+		randomize();
+		global.seed = random_get_seed();
+
+		random_set_seed(global.seed);
+		show_debug_message("Random seed: " + string(global.seed));
+	}else {
+		global.seed_switched = false;
+	}
+	
 	/*if room = room_boss_1 or room = room_boss_2 {
 		room_persistent = false;
 		instance_activate_all();

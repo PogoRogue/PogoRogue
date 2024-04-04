@@ -1,6 +1,7 @@
 /// @description create collision walls
 
 //randomize();
+random_set_seed(global.seed+global.chest_number);
 open = false;
 colliding = false; //is the player currently colliding with the chest
 create_coins = false;
@@ -12,8 +13,8 @@ image_speed = 0;
 mask_index = spr_treasurechest_new_mask;
 
 //drop chances
-heart_chance = 100 + global.luck;
-buff_chance = 90 + global.luck;
+heart_chance = 50 - global.luck;
+buff_chance = 90 - global.luck;
 weapon_chance = 60 + global.luck;
 pickup_chance = 60 + global.luck;
 destroy_chance = 0; //when active, change to ~80
