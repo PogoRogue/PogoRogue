@@ -302,28 +302,36 @@ if global.juggler = true {
 		if gun_1.current_bullets = 0 and gun_2.current_bullets = 0 {
 			if current_gun = 0 {
 				gun_2.current_bullets = gun_2.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}else if current_gun = 1 {
 				gun_1.current_bullets = gun_1.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}
 		}
 	}else if weapons_equipped = 3 {
 		if gun_1.current_bullets = 0 and gun_2.current_bullets = 0 {
 			if current_gun = 0 {
 				gun_2.current_bullets = gun_2.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}else if current_gun = 1 {
 				gun_1.current_bullets = gun_1.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}
 		}else if gun_1.current_bullets = 0 and gun_3.current_bullets = 0 {
 			if current_gun = 0 {
 				gun_3.current_bullets = gun_3.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}else if current_gun = 2 {
 				gun_1.current_bullets = gun_1.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}
 		}if gun_2.current_bullets = 0 and gun_3.current_bullets = 0 {
 			if current_gun = 1 {
 				gun_3.current_bullets = gun_3.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}else if current_gun = 2 {
 				gun_2.current_bullets = gun_2.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}
 		}
 	}

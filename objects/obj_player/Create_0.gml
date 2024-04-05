@@ -657,7 +657,7 @@ state_portal = function() {
 			portal_angle_speed += 0.5;
 		}
 			
-		move_towards_point(portal_object.x+48,portal_object.y+48,portal_speed);
+		move_towards_point(portal_object.x+48,portal_object.y+52,portal_speed);
 		
 		if portal_speed < 8 {
 			portal_speed += 0.1;

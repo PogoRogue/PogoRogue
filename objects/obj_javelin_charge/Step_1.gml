@@ -27,6 +27,8 @@ if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true or obj_pla
 		scr_Screen_Shake(3 + ((temp_charge/temp_charge_max)*4), 6 + ((temp_charge/temp_charge_max)*10), true);
 		hspd = lengthdir_x(spd+((temp_charge/temp_charge_max)*6),angle);
 		vspd = lengthdir_y(spd+((temp_charge/temp_charge_max)*6),angle);
+		
+		scr_Projectile_Bounce("");
 	}
 	instance_destroy();
 }else {

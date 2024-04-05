@@ -3,8 +3,8 @@
   "%Name":"spr_projectile_javelin",
   "bboxMode":2,
   "bbox_bottom":3,
-  "bbox_left":0,
-  "bbox_right":47,
+  "bbox_left":37,
+  "bbox_right":46,
   "bbox_top":1,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -23,7 +23,7 @@
   ],
   "name":"spr_projectile_javelin",
   "nineSlice":null,
-  "origin":9,
+  "origin":4,
   "parent":{
     "name":"Projectiles",
     "path":"folders/Sprites/Projectiles.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":8,
+    "xorigin":24,
     "yorigin":2,
   },
   "swatchColours":[

@@ -8,14 +8,14 @@ if usable = true {
 	key_select = 0;
 }
 
-if key_up and selected = false {
+if key_up and !key_down and selected = false {
 	if select > 1 {
 		select -= 1;
 		audio_play_sound(snd_menuNavigation,0,false);
 	}
 	selected = true;
 	alarm[3] = alarm3_time;
-}else if key_down and selected = false {
+}else if key_down and !key_up and selected = false {
 	if select < num_of_options {
 		select += 1;
 		audio_play_sound(snd_menuNavigation,0,false);

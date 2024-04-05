@@ -1,7 +1,7 @@
 alpha = 0.5;
 decrease_alpha = false;
 alarm[0] = 5;
-damage = 5;
+damage = 6;
 reset = false;
 
 with obj_enemy_parent {

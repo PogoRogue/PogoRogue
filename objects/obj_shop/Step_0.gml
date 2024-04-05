@@ -21,7 +21,7 @@ if cant_move = false {
 
 
 if selected_x = false {
-	if key_left and select % 2 = 0 {
+	if key_left and !key_right and select % 2 = 0 {
 		audio_play_sound(snd_menuNavigation,0,false);
 		if select != 0 {
 			if refresh_button = false {
@@ -31,7 +31,8 @@ if selected_x = false {
 			select = last_select;	
 		}
 		selected_x = true;
-	}else if key_right and select % 2 != 0 {
+	}
+	if key_right and !key_left and select % 2 != 0 {
 		
 		audio_play_sound(snd_menuNavigation,0,false);
 		if refresh_button = false {
@@ -40,14 +41,15 @@ if selected_x = false {
 		selected_x = true;
 	}
 }else {
-	if !key_left and !key_right {
+	if !key_left and !key_right 
+	or key_left and key_right {
 		selected_x = false;
 		alarm2_time = 30;
 	}
 }
 
 if selected_y = false {
-	if key_up and select > 2 {
+	if key_up and !key_down and select > 2 {
 		audio_play_sound(snd_menuNavigation,0,false);
 		selected_y = true;
 		if refresh_button = true {
@@ -56,12 +58,13 @@ if selected_y = false {
 			select -= 2;	
 		}
 		alarm[3] = alarm3_time;
-	}else if key_down and select < 7 {
+	}
+	if key_down and !key_up and select < 7 {
 		audio_play_sound(snd_menuNavigation,0,false);
 		select += 2;	
 		selected_y = true;
 		alarm[3] = alarm3_time;
-	}else if key_down {
+	}else if key_down and !key_up {
 		if refresh_button = false {
 			audio_play_sound(snd_menuNavigation,0,false);
 			refresh_button = true;	
@@ -237,15 +240,17 @@ if key_select {
 				instance_destroy();
 			}
 			instance_destroy();
+			global.refreshes_used += 1;
 			with instance_create_depth(x,y,depth,obj_shop) {
 				if global.refresh_cost != 0 {
 					global.refresh_cost = global.refresh_cost+25;
 				}else {
 					global.refresh_cost = global.prev_refresh_cost;
-					global.picky_buyer = false;
+					if global.picky_buyer > 0 {
+						global.picky_buyer -= 1;
+					}
 				}
 				first_shop = false;
-				global.refreshes_used += 1;
 			}
 		}
 	}
@@ -268,7 +273,7 @@ if recreated_bought_item = true {
 }
 
 //picky buyer item
-if global.picky_buyer = true and global.refresh_cost != 0 {
+if global.picky_buyer > 0 and global.refresh_cost != 0 {
 	global.prev_refresh_cost = global.refresh_cost;
 	global.refresh_cost = 0;
 }

@@ -16,28 +16,28 @@ if usable = true {
 
 //move around
 if fade_away = false {
-	if key_left and (select%select_x_max) != 1 and selected_x = false {
+	if key_left and !key_right and (select%select_x_max) != 1 and selected_x = false {
 		select -= 1;
 		select_x -= 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[2] = alarm2_time;
 	}
-	if key_right and (select%select_x_max) != 0 and select < select_max and selected_x = false {
+	if key_right and !key_left and (select%select_x_max) != 0 and select < select_max and selected_x = false {
 		select += 1;
 		select_x += 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[2] = alarm2_time;
 	}
-	if key_up and select > select_x_max and selected_y = false {
+	if key_up and !key_down and select > select_x_max and selected_y = false {
 		select -= select_x_max;
 		select_y -= 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[3] = alarm3_time;
 	}
-	if key_down and select <= select_max-select_x_max and selected_y = false {
+	if key_down and !key_up and select <= select_max-select_x_max and selected_y = false {
 		select += select_x_max;
 		select_y += 1;
 		selected_y = true;

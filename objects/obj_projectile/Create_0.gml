@@ -250,3 +250,5 @@ if (gun_name = "Water Gun") {
 
 //destroy projectile after 30 seconds if still exists
 alarm[2] = 1800;
+
+scr_Projectile_Bounce("Javelins");

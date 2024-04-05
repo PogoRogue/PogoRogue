@@ -88,7 +88,7 @@ function scr_Buffs(){
 	}
 	
 	buff_pickybuyer = function(){
-		global.picky_buyer = true;	
+		global.picky_buyer += 1;	
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	

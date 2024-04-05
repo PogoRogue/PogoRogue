@@ -1,7 +1,11 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
-    {"name":"spr_player_zekai_portal_jetpack","order":1,"path":"sprites/spr_player_zekai_portal_jetpack/spr_player_zekai_portal_jetpack.yy",},
+    {"name":"scr_Projectile_Bounce","order":1,"path":"scripts/scr_Projectile_Bounce/scr_Projectile_Bounce.yy",},
     {"name":"spr_player_zekai_portal_hatgun","order":2,"path":"sprites/spr_player_zekai_portal_hatgun/spr_player_zekai_portal_hatgun.yy",},
+    {"name":"spr_player_zekai_portal_jetpack","order":1,"path":"sprites/spr_player_zekai_portal_jetpack/spr_player_zekai_portal_jetpack.yy",},
+    {"name":"spr_portal_boss","order":2,"path":"sprites/spr_portal_boss/spr_portal_boss.yy",},
+    {"name":"spr_portal_new","order":1,"path":"sprites/spr_portal_new/spr_portal_new.yy",},
+    {"name":"spr_portal_new2","order":3,"path":"sprites/spr_portal_new2/spr_portal_new2.yy",},
   ],
 }

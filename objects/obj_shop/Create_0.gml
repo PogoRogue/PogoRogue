@@ -17,7 +17,10 @@ refreshes_left = max_refreshes;
 first_shop = true; //true if this shop hasn't been refreshed yet
 
 default_item_1 = obj_item_buff_heart;
-default_item_2 = choose(obj_item_buff_max_hp,obj_item_buff_armor);
+var shop_seed = global.seed+global.refreshes_used;
+random_set_seed(shop_seed);
+default_item_2 = choose(obj_item_buff_max_hp,obj_item_buff_armor,obj_item_buff_armor);
+random_set_seed(global.seed);
 buff_1 = obj_item_buff_lasersight;
 buff_2 = obj_item_buff_planetarybullets;
 buff_3 = obj_item_buff_armor;

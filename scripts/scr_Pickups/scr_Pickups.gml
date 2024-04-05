@@ -342,7 +342,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_camera,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
+		cooldown_text: "Cooldown: Every 4 enemies",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -352,7 +352,7 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 5,
+		enemies_count_max: 4,
 		on_call: function() {
 			audio_play_sound(snd_camera,0,false);
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup);

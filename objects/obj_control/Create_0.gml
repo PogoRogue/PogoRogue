@@ -73,7 +73,7 @@ global.all_weapon_costs = [0,0,0];
 
 global.damage_buff = 0;
 global.luck = 0;
-global.picky_buyer = false;
+global.picky_buyer = 0;
 global.bouncy_bullets = 0;
 global.hot_shells = false;
 global.combo_master = false;
