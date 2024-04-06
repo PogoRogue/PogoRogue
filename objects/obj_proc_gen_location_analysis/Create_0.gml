@@ -15,10 +15,15 @@ alarm[0] = 1;
 
 previous_tag_message = ""; //Use to fill in gaps where there might not be tag objects or regions
 previous_region = 0;
+highest_region = 0; //Keep track of the furthest region for load/unloading objects
 
 region_enemy_count = ds_list_create(); //Keeps track of the number of enemies in each region
 region_gate_objects = ds_list_create(); //Stores references to all the gates
 //These values are later used for gate logic
+
+//This list keeps region_structs which track coordinates of an entire region. We later use this to load
+//And unload objects to reduce the amount of logic running at once
+region_loading_list = ds_list_create();
 
 
 display_progress_bar = false;

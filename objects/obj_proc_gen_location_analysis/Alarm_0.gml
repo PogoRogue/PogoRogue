@@ -48,6 +48,8 @@ with(obj_pixel_tag) //Loops through EVERY tag object to add to the signature ds_
 //Given both the layout and tag grids, add labels to the tags corresponding to their region
 var current_region = 0;
 var prev_region_was_hallway = false;
+
+var hallway_region_struct = create_region_struct(0,0,0,0); //Initialize hallway region struct variable before loop
 for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to top, left to right
 {
 	for(var j = 0; j < ds_grid_width(layout_grid); j++)
@@ -59,18 +61,68 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 			{
 				current_region += 1;
 				prev_region_was_hallway = false;
+				
+				//Since we've finished updating the size of the hallway region, we can add it to the list
+				ds_list_add(region_loading_list, hallway_region_struct);
 			}
 			var tag_object = ds_grid_get(signature_grid, j, i);
 			if(instance_exists(tag_object))
+			{
 				tag_object.proc_gen_region = current_region; //Set the region of the tag object
+				highest_region = current_region;
+			}
 			current_region += 1; //increment the region number since there's only one tag per room
+			
+			//Create region struct for combat room for loading and unloading
+			var room_coord = scr_Get_Room_Coord_From_Grid_Coord(j, i)
+			var rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH;
+			var rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH;
+			if(room_name == "c3c")
+			{
+				rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH * 3;
+				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 3;
+			}
+			else if(room_name == "c2c")
+			{
+				rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH * 2;
+				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2;
+			}
+			else if(room_name == "Tc")
+			{
+				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2;
+			}
+			var region_struct = create_region_struct(room_coord[0], room_coord[1], rm_width, rm_height);
+			//Add region struct to load list
+			ds_list_add(region_loading_list, region_struct);
 		}
 		else if(room_name == "1" || room_name == "1f" || room_name == "1vc" || room_name == "1vcf" || room_name == "1hc" || room_name == "1hcf")
 		{
+			//Check if this block starts a hallway region. If so, make a new region struct
+			if(!prev_region_was_hallway)
+			{
+				var room_coord = scr_Get_Room_Coord_From_Grid_Coord(j, i)
+				var rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH;
+				var rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH;
+				hallway_region_struct = create_region_struct(room_coord[0], room_coord[1], rm_width, rm_height);
+			}
+			else //Otherwise, update the current region with this room's coordinates
+			{
+				var room_coord = scr_Get_Room_Coord_From_Grid_Coord(j, i)
+				var rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH;
+				var rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH;
+				hallway_region_struct = update_region_struct_x(hallway_region_struct, room_coord[0]);
+				hallway_region_struct = update_region_struct_y(hallway_region_struct, room_coord[1]);
+				hallway_region_struct = update_region_struct_width(hallway_region_struct, room_coord[0] + rm_width);
+				hallway_region_struct = update_region_struct_height(hallway_region_struct, room_coord[1] + rm_height);
+			}
+			
 			prev_region_was_hallway = true;
 			var tag_object = ds_grid_get(signature_grid, j, i);
 			if(instance_exists(tag_object))
+			{
 				tag_object.proc_gen_region = current_region;
+				highest_region = current_region;
+			}
 			//notably DON'T increment the region count in a hallway, since all connected hallways are the same region
 		}
 	}
@@ -132,9 +184,14 @@ with(obj_room_gate_close)
 				
 		//Add gate to gate list
 		ds_list_set(other.region_gate_objects, region_tag, self);
-    }
-	
-	
+    }	
+}
+
+//Player starts in region zero, so deactivate regions 2+
+for(var i = 2; i < ds_list_size(region_loading_list); i++)
+{
+	var region_to_unload = region_loading_list[| i];
+	scr_Unload_Region(region_to_unload);
 }
 
 
