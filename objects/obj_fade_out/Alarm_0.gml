@@ -1,7 +1,7 @@
 /// @description go to next room
 instance_destroy();
 instance_create_depth(x,y,depth,obj_fade_in);
-room_goto(next_room);
+room = next_room;
 
 with obj_player {
 	image_yscale = 1;
@@ -11,6 +11,6 @@ with obj_player {
 	state = state_free;	
 }
 
-if next_room == room_menu {
+if next_room = room_menu {
 	instance_deactivate_all(false);	
 }
