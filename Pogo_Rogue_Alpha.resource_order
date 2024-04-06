@@ -1,4 +1,9 @@
 {
-  "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"Talens_Edited_sprites_","order":1,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites/Talens_Edited_sprites_.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"spr_2x2_Combat_Phase3_Talen","order":2,"path":"sprites/spr_2x2_Combat_Phase3_Talen/spr_2x2_Combat_Phase3_Talen.yy",},
+    {"name":"spr_dr1_Phase3_Talen","order":1,"path":"sprites/spr_dr1_Phase3_Talen/spr_dr1_Phase3_Talen.yy",},
+  ],
 }
