@@ -1,4 +1,12 @@
 {
-  "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"Area1 Fixed","order":2,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Area1 Fixed.yy",},
+    {"name":"Area2_fixed","order":4,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Area2_fixed.yy",},
+    {"name":"Area3_Fixed","order":5,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Area3_Fixed.yy",},
+    {"name":"Sprint_9","order":1,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_9.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"phase1_Ul1","order":1,"path":"sprites/phase1_Ul1/phase1_Ul1.yy",},
+    {"name":"Phase3_3x3","order":1,"path":"sprites/Phase3_3x3/Phase3_3x3.yy",},
+  ],
 }
