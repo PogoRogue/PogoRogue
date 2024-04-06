@@ -34,9 +34,14 @@ with(obj_pixel_tag) //Loops through EVERY tag object to add to the signature ds_
 	{
 		ds_grid_set(other.signature_grid, tag_grid_location[0], tag_grid_location[1] - 1, self);
 	}
-	else if(room_name == "1hc" || room_name == "1hcf")
+	else if(room_name == "1hc")
 	{
 		ds_grid_set(other.signature_grid, tag_grid_location[0] + 1, tag_grid_location[1], self);
+	}
+	else if(room_name == "1hf") //This is a flipped room of length 2. Tag object will appear in right half instead of left half,
+	//so set the grid left of this to be tagged with the same object
+	{
+		ds_grid_set(other.signature_grid, tag_grid_location[0] - 1, tag_grid_location[1], self);
 	}
 }
 
@@ -91,7 +96,7 @@ with(obj_enemy_parent)
 {
     var tag_grid_location = scr_Get_Grid_Coord_From_Room_Coord(x, y);
     var tag_object = ds_grid_get(other.signature_grid, tag_grid_location[0], tag_grid_location[1]);
-    if(instance_exists(tag_object))
+    if(instance_exists(tag_object) && tag_object.proc_gen_region != -1)
     {
         // Get the region tag from the tag object
         var region_tag = tag_object.proc_gen_region;		
