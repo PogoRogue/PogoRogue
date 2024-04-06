@@ -3,16 +3,26 @@
   "%Name":"spr_2x2_Combat_Test",
   "bboxMode":0,
   "bbox_bottom":60,
+<<<<<<< Updated upstream
   "bbox_left":8,
   "bbox_right":59,
   "bbox_top":13,
+=======
+  "bbox_left":0,
+  "bbox_right":63,
+  "bbox_top":1,
+>>>>>>> Stashed changes
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
+<<<<<<< Updated upstream
     {"$GMSpriteFrame":"","%Name":"d0084744-eb78-4fba-8bfd-0fd79e38d3cd","name":"d0084744-eb78-4fba-8bfd-0fd79e38d3cd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+=======
+    {"$GMSpriteFrame":"","%Name":"caf26ea9-e4aa-44f0-9dd7-1bb0c9b1f0f9","name":"caf26ea9-e4aa-44f0-9dd7-1bb0c9b1f0f9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+>>>>>>> Stashed changes
   ],
   "gridX":0,
   "gridY":0,
@@ -69,8 +79,13 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+<<<<<<< Updated upstream
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d0084744-eb78-4fba-8bfd-0fd79e38d3cd","path":"sprites/spr_2x2_Combat_Test/spr_2x2_Combat_Test.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"d1fd7ba3-5d30-49d0-9664-078dfa0a5208","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+=======
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"caf26ea9-e4aa-44f0-9dd7-1bb0c9b1f0f9","path":"sprites/spr_2x2_Combat_Test/spr_2x2_Combat_Test.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"18ba31fb-1b01-4902-b76f-c0fdabd906b3","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+>>>>>>> Stashed changes
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

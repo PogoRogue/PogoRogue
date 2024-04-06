@@ -118,11 +118,17 @@
     {"$GMFolder":"","%Name":"Talens_sprites","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Talens_sprites.yy","name":"Talens_sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"testRooms","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/testRooms.yy","name":"testRooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Zehao_Rooms","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms.yy","name":"Zehao_Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
+<<<<<<< Updated upstream
     {"$GMFolder":"","%Name":"Area1 Fixed","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Area1 Fixed.yy","name":"Area1 Fixed","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Area2_fixed","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Area2_fixed.yy","name":"Area2_fixed","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Area3_Fixed","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Area3_Fixed.yy","name":"Area3_Fixed","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprint_8","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_8.yy","name":"Sprint_8","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprint_9","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_9.yy","name":"Sprint_9","resourceType":"GMFolder","resourceVersion":"2.0",},
+=======
+    {"$GMFolder":"","%Name":"Phase1","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Phase1.yy","name":"Phase1","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Phase2","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Phase2.yy","name":"Phase2","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Phase3","folderPath":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Phase3.yy","name":"Phase3","resourceType":"GMFolder","resourceVersion":"2.0",},
+>>>>>>> Stashed changes
     {"$GMFolder":"","%Name":"Projectiles","folderPath":"folders/Sprites/Projectiles.yy","name":"Projectiles","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sliders","folderPath":"folders/Sprites/Sliders.yy","name":"Sliders","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"UI","folderPath":"folders/Sprites/UI.yy","name":"UI","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -702,9 +708,14 @@
     {"id":{"name":"_6selected","path":"sprites/_6selected/_6selected.yy",},},
     {"id":{"name":"B1_Tar_Attached","path":"sprites/B1_Tar_Attached/B1_Tar_Attached.yy",},},
     {"id":{"name":"B1_Tar_Drop","path":"sprites/B1_Tar_Drop/B1_Tar_Drop.yy",},},
+<<<<<<< Updated upstream
     {"id":{"name":"combatroom_2by2","path":"sprites/combatroom_2by2/combatroom_2by2.yy",},},
     {"id":{"name":"phase1_Ul1","path":"sprites/phase1_Ul1/phase1_Ul1.yy",},},
     {"id":{"name":"Phase3fix_2x2","path":"sprites/Phase3fix_2x2/Phase3fix_2x2.yy",},},
+=======
+    {"id":{"name":"combat_2x2_phase2","path":"sprites/combat_2x2_phase2/combat_2x2_phase2.yy",},},
+    {"id":{"name":"combat_2x2","path":"sprites/combat_2x2/combat_2x2.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"spr_1x1_boss_portal_Phase1","path":"sprites/spr_1x1_boss_portal_Phase1/spr_1x1_boss_portal_Phase1.yy",},},
     {"id":{"name":"spr_1x1_boss_portal_Phase2","path":"sprites/spr_1x1_boss_portal_Phase2/spr_1x1_boss_portal_Phase2.yy",},},
     {"id":{"name":"spr_1x1_boss_portal_Phase3","path":"sprites/spr_1x1_boss_portal_Phase3/spr_1x1_boss_portal_Phase3.yy",},},
@@ -724,6 +735,7 @@
     {"id":{"name":"spr_2x2_Combat_Phase2","path":"sprites/spr_2x2_Combat_Phase2/spr_2x2_Combat_Phase2.yy",},},
     {"id":{"name":"combat_2x2_fixed","path":"sprites/combat_2x2_fixed/combat_2x2_fixed.yy",},},
     {"id":{"name":"spr_2x2_Combat_Phase3","path":"sprites/spr_2x2_Combat_Phase3/spr_2x2_Combat_Phase3.yy",},},
+    {"id":{"name":"combat_2x2_zehao_phase","path":"sprites/combat_2x2_zehao_phase/combat_2x2_zehao_phase.yy",},},
     {"id":{"name":"spr_2x2_Combat_Talen_store","path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},},
     {"id":{"name":"spr_2x2_Combat_Test","path":"sprites/spr_2x2_Combat_Test/spr_2x2_Combat_Test.yy",},},
     {"id":{"name":"spr_2x2_Combat","path":"sprites/spr_2x2_Combat/spr_2x2_Combat.yy",},},
@@ -1345,6 +1357,7 @@
     {"id":{"name":"spr_ud1_Phase3","path":"sprites/spr_ud1_Phase3/spr_ud1_Phase3.yy",},},
     {"id":{"name":"spr_ud1","path":"sprites/spr_ud1/spr_ud1.yy",},},
     {"id":{"name":"spr_ul_Cam","path":"sprites/spr_ul_Cam/spr_ul_Cam.yy",},},
+    {"id":{"name":"spr_ul_Fixed","path":"sprites/spr_ul_Fixed/spr_ul_Fixed.yy",},},
     {"id":{"name":"spr_ul_Isaac","path":"sprites/spr_ul_Isaac/spr_ul_Isaac.yy",},},
     {"id":{"name":"spr_ul_NewDesigner","path":"sprites/spr_ul_NewDesigner/spr_ul_NewDesigner.yy",},},
     {"id":{"name":"spr_ul_Phase1_Replace_Sam","path":"sprites/spr_ul_Phase1_Replace_Sam/spr_ul_Phase1_Replace_Sam.yy",},},
@@ -1382,19 +1395,23 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"roomId":{"name":"room_sam_movement","path":"rooms/room_sam_movement/room_sam_movement.yy",},},
+    {"roomId":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},
+    {"roomId":{"name":"room_test_env","path":"rooms/room_test_env/room_test_env.yy",},},
+    {"roomId":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
+    {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
+>>>>>>> Stashed changes
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
     {"roomId":{"name":"room_boss_3","path":"rooms/room_boss_3/room_boss_3.yy",},},
     {"roomId":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
     {"roomId":{"name":"room_tutorial","path":"rooms/room_tutorial/room_tutorial.yy",},},
     {"roomId":{"name":"room_boss_1","path":"rooms/room_boss_1/room_boss_1.yy",},},
     {"roomId":{"name":"room_boss_2","path":"rooms/room_boss_2/room_boss_2.yy",},},
-    {"roomId":{"name":"room_proc_gen_test","path":"rooms/room_proc_gen_test/room_proc_gen_test.yy",},},
     {"roomId":{"name":"room_large","path":"rooms/room_large/room_large.yy",},},
-    {"roomId":{"name":"room_test_env","path":"rooms/room_test_env/room_test_env.yy",},},
-    {"roomId":{"name":"room_gym_enemy","path":"rooms/room_gym_enemy/room_gym_enemy.yy",},},
     {"roomId":{"name":"room_gym_enemy12","path":"rooms/room_gym_enemy12/room_gym_enemy12.yy",},},
     {"roomId":{"name":"room_fight_1","path":"rooms/room_fight_1/room_fight_1.yy",},},
-    {"roomId":{"name":"room_sam_movement","path":"rooms/room_sam_movement/room_sam_movement.yy",},},
     {"roomId":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
     {"roomId":{"name":"room_settings","path":"rooms/room_settings/room_settings.yy",},},
     {"roomId":{"name":"room_items","path":"rooms/room_items/room_items.yy",},},
