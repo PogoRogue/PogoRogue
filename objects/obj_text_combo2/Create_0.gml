@@ -1,3 +1,3 @@
 /// @description Initialize strings by column
 
-height_text = "Great work!";
+height_text = "Higher combos = more coins!";
