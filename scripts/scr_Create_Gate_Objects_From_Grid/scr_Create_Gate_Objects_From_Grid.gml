@@ -91,7 +91,7 @@ function Connects_To_Combat_Room_Below(layout_grid, grid_x, grid_y)
 	  // Check cells below hallways for room IDs)
 		var below_cell = ds_grid_get(layout_grid, grid_x, grid_y - 1);
 			
-		if(string_count("c3", below_cell) > 0 || string_count("c2", below_cell) > 0) //Make sure below is a combat room
+		if(string_count("c3", below_cell) > 0 || string_count("c2", below_cell) > 0 || below_cell == "s") //Make sure below is a combat room
 		{
 			//Now only need to check that the hallway has an opening on the bottom
 			if(current_cell == "1v" || current_cell == "1vf")
