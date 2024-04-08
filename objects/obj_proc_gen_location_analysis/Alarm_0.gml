@@ -91,7 +91,7 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 			{
 				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2;
 			}
-			var region_struct = create_region_struct(room_coord[0], room_coord[1], rm_width - 1, rm_height - 1);
+			var region_struct = create_region_struct(room_coord[0] + 1, room_coord[1] + 1, rm_width - 2, rm_height - 3);
 			//Add region struct to load list
 			ds_list_add(region_loading_list, region_struct);
 		}
@@ -103,7 +103,7 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 				var room_coord = scr_Get_Room_Coord_From_Grid_Coord(j, i)
 				var rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH;
 				var rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH;
-				hallway_region_struct = create_region_struct(room_coord[0], room_coord[1], rm_width - 1, rm_height -1);
+				hallway_region_struct = create_region_struct(room_coord[0], room_coord[1], rm_width - 1, rm_height - 1);
 			}
 			else //Otherwise, update the current region with this room's coordinates
 			{
@@ -201,7 +201,7 @@ with(obj_room_gate_close)
 }
 
 //Player starts in region zero, so deactivate regions 2+
-for(var i = 1; i < ds_list_size(region_loading_list); i++)
+for(var i = 2; i < ds_list_size(region_loading_list); i++)
 {
 	var region_to_unload = region_loading_list[| i];
 	scr_Unload_Region(region_to_unload);
