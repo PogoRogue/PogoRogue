@@ -39,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_marionette",
-    "path":"sprites/spr_boss_marionette/spr_boss_marionette.yy",
+    "name":"spr_marionette3_Idle",
+    "path":"sprites/spr_marionette3_Idle/spr_marionette3_Idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
