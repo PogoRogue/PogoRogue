@@ -25,6 +25,9 @@
     {"name":"Zehao_Rooms","order":8,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms.yy",},
     {"name":"Sprint_8","order":1,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_8.yy",},
     {"name":"Sprint_9","order":2,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_9.yy",},
+    {"name":"Area1 Fixed","order":2,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Area1 Fixed.yy",},
+    {"name":"Area2_fixed","order":4,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Area2_fixed.yy",},
+    {"name":"Area3_Fixed","order":5,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Area3_Fixed.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_boss_brick_blue","order":7,"path":"objects/obj_boss_brick_blue/obj_boss_brick_blue.yy",},
@@ -79,6 +82,8 @@
     {"name":"obj_softshield","order":10,"path":"objects/obj_softshield/obj_softshield.yy",},
     {"name":"obj_tag_Ian","order":1,"path":"objects/obj_tag_Ian/obj_tag_Ian.yy",},
     {"name":"obj_wallbutton","order":3,"path":"objects/obj_wallbutton/obj_wallbutton.yy",},
+    {"name":"phase1_Ul1","order":1,"path":"sprites/phase1_Ul1/phase1_Ul1.yy",},
+    {"name":"Phase3_3x3","order":1,"path":"sprites/Phase3_3x3/Phase3_3x3.yy",},
     {"name":"room_boss_3","order":1,"path":"rooms/room_boss_3/room_boss_3.yy",},
     {"name":"Spr_1x1_boss2_portal","order":1,"path":"sprites/Spr_1x1_boss2_portal/Spr_1x1_boss2_portal.yy",},
     {"name":"spr_2x2_Combat_Talen_store","order":2,"path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},
