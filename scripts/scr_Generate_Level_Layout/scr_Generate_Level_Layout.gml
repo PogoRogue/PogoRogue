@@ -116,7 +116,7 @@ function scr_Generate_Level_Layout(room_number, max_gen_width, prebuilt_rooms, t
 		}
 		
 		//Set player starting point if this is the first room
-		if(previous_room = -1)
+		if(previous_room == -1)
 		{
 			if(generate_start_room)
 			{

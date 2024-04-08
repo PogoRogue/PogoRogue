@@ -6,7 +6,7 @@ chunk_type = "N";
 sprite_name = "Default_Sprite_Name";
 frame_number = -1;
 
-proc_gen_region = 0; //Stores an integer corresponding to which "region" of the room
+proc_gen_region = -1; //Stores an integer corresponding to which "region" of the room
 //The player is in. The regions are divided up between hallways and combat rooms,
 //labeled consecutively from 0 to n, where n is the boss room
 
