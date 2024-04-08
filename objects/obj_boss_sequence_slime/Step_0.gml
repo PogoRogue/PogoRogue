@@ -17,6 +17,7 @@ if(instance_exists(controller)) {
 		case BOSS2_STATES.INACTIVE:
 			if(current_sprite == spr_boss2_slime_raise) {
 				image_index = 0;
+				alarm_set(0, room_speed);
 			}
 			current_sprite = spr_boss2_slime_drain;
 			break;

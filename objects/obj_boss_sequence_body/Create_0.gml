@@ -8,7 +8,7 @@ controller = instance_nearest(x, y, obj_boss_sequence);
 
 // Health
 draw_hp = false;
-hp = 300;
+hp = 30 // 0;
 hp_max = hp;
 boss_name = "Slime Cooler";
 hp_percent = (hp / hp_max) * 100;
