@@ -1,8 +1,10 @@
 /// @description Player collision + button pressed
 if room != room_shop {
 	key_open_door = global.key_interact;
+	sprite_index = spr_portal_shop_new;
 }else {
 	key_open_door = global.key_interact;
+	sprite_index = spr_portal_shop_new2;
 }
 
 //check for player coliision

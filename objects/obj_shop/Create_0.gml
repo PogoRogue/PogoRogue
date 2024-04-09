@@ -63,3 +63,4 @@ spawn = false;
 if global.shop_num > global.current_shop_num {
 	spawn = true;
 }
+random_set_seed(global.seed);

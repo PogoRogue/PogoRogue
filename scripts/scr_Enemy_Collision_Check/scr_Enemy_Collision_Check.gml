@@ -6,6 +6,7 @@ function scr_Enemy_Collision_Check(condition){
 			while !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) and (place_meeting(x,y+vspeed,obj_enemy_parent)) {
 				y += sign(vspeed);
 			}
+			
 			free = false;
 			with instance_place(x,y+1,obj_enemy_parent) {
 				if (!is_dead && current_iframes <= 0) and other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
@@ -26,6 +27,9 @@ function scr_Enemy_Collision_Check(condition){
 						if(x_diff <= y_diff) {
 							vspeed = 1;
 						}
+					}
+					if hp <= 0 {
+						other.landed_on_enemy = true; // enable for robbery 
 					}
 				}else if other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
 					if other.state != other.state_chargejump {

@@ -33,7 +33,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"","%Name":"distance","filters":[],"listItems":[],"multiselect":false,"name":"distance","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"160","varType":1,},
-    {"$GMObjectProperty":"","%Name":"swingspeed","filters":[],"listItems":[],"multiselect":false,"name":"swingspeed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-0.05","varType":0,},
+    {"$GMObjectProperty":"","%Name":"swingspeed","filters":[],"listItems":[],"multiselect":false,"name":"swingspeed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-0.02","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

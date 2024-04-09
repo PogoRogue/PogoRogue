@@ -6,3 +6,4 @@ bounces_left = 3;
 bounced = false;
 init_speed = speed;
 damaged = false;
+alarm[1] = 120;

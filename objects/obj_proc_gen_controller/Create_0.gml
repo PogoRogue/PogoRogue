@@ -2,6 +2,7 @@
 
 // Our prebuilt rooms and their dimensions
 // Room format: [width, height, room_id]
+random_set_seed(global.seed);
 prebuilt_rooms = ds_list_create();
 ds_list_add(prebuilt_rooms, [1, 2, "T"]); //First room in list is starting room T for tutorial
 ds_list_add(prebuilt_rooms, [1, 1, "Sh"]); //Second room in list is shop room Sh for shop

@@ -16,7 +16,7 @@ if(is_dead) {
 	scr_Screen_Shake(6, 10, false);
 	
 	//combo
-	if room != room_boss_1 and room != room_boss_2 /*and room != room_boss_3*/{ 
+	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 { 
 		global.combo += 1;
 		global.combo_length = global.combo_max;
 		if global.combo = 10 and global.combo_master = true { //combo master powerup
@@ -53,6 +53,10 @@ if(is_dead) {
 				num_of_coins = global.combo + global.added_coins;
 			}else {
 				num_of_coins = global.combo_max_coins + global.added_coins;
+			}
+			if(global.robbery == true and obj_player.landed_on_enemy == true){
+				num_of_coins *= 2;
+				obj_player.landed_on_enemy = false;
 			}
 		}
 	}

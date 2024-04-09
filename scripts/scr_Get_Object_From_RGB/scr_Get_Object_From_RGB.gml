@@ -31,6 +31,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 		return obj_tag_Talon; // Insert Talon signature color here
 	}
+	else if(Red == 102 && Green == 3 && Blue == 252)
+	{
+		return obj_tag_Ian;
+	}
 	else if(Red == 213 && Green == 110 && Blue == 5)
 	{
 		return obj_pixel_tag; //Default tag color for testing purposes
@@ -39,6 +43,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 	{
 		return obj_player_start;
 	}
+	
 	else if(Red > 150) //This space of colors is designated for enemies
 	{
 		if(Green < 50)
@@ -198,9 +203,21 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_angled_platform_right;
 		}
-			else if(Red == 25 && Green == 25 && Blue == 25)
+		else if(Red == 25 && Green == 25 && Blue == 25)
 		{
 			return obj_instructions;
+		}
+		else if(Red == 20 && Green == 20 && Blue == 20)
+		{
+			return obj_pickup_station;
+		}
+		else if(Red == 10 && Green == 10 && Blue == 10)
+		{
+			return obj_weapons_station;
+		}
+		else if(Red == 5 && Green == 5 && Blue == 5)
+		{
+			return obj_seeding_station;
 		}
 	}
 	

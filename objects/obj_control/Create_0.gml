@@ -25,7 +25,7 @@ global.shop_index = 0;
 global.num_of_ground_objects = 0;
 global.tiles_left_to_draw = 0;
 
-global.current_music = snd_music_level1;
+
 
 if !instance_exists(obj_controls_controller) {
 	instance_create_depth(x,y,depth,obj_controls_controller);
@@ -38,10 +38,7 @@ if !instance_exists(obj_runstats) {
 }
 
 
-//music test
-if !audio_is_playing(snd_music_level1) {
-	audio_play_sound(snd_music_level1,0,true);
-}
+
 
 //combo
 global.combo = 0;
@@ -97,6 +94,8 @@ global.tightspring = false;
 global.impatience = false;
 global.laststand = false;
 global.psychicbullets = false;
+global.righteousrevenge = false;
+global.robbery = false;
 global.recycling = false;
 global.juggler = false;
 
@@ -116,18 +115,33 @@ if room = room_gameplay_video {
 	global.tilemap_ground = layer_tilemap_create(global.ground_layer,0,0,global.tileset,20000,20000);	
 }
 
-//Store the randomized seed, and print it to console
 
-//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######
-randomize()
-global.seed = random_get_seed();
-
-random_set_seed(global.seed);
-show_debug_message("Random seed: " + string(global.seed));
 
 //stop music
 if audio_is_playing(snd_music_menu) 
 and room != room_menu and room != room_items 
 and room != room_settings and room != room_stats {
 	audio_stop_sound(snd_music_menu);
+}
+
+//global variables for random things 
+global.chest_num = 0;
+global.weapon_chest_num = 0;
+global.active_chest_num = 0;
+global.weapon_chest_num2 = 0;
+global.sequence_num = 0;
+global.chest_number = 0;
+global.coin_chest_num = 0;
+global.combat_room_num = 0;
+
+//set seed in other rooms 
+if room != room_proc_gen_test and room != room_shop
+and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+	//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######
+	randomize();
+	global.seed = random_get_seed();
+
+	random_set_seed(global.seed);
+	show_debug_message("Random seed: " + string(global.seed));
+	global.seed_switched = false;
 }
