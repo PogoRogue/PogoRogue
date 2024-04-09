@@ -91,6 +91,7 @@ if (gun_name = "Star Sucker") {
 	colliding_with_enemy = false;
 	depth = obj_player.depth + 1;
 	image_index = sprite_get_number(sprite_index)-1;
+	num_of_bounces = 0;
 }
 
 //sniper rifle

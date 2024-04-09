@@ -31,7 +31,7 @@ if object_get_name(object_index) = "obj_chest" { //dont move special chests
 
 destroy = irandom_range(1,100);
 
-if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") { 
+if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") {
 	instance_destroy();
 }else {
 	new_chest = choose(obj_chest,obj_chest,obj_chest,obj_chest,obj_chest,obj_chest_coin,obj_chest_coin,obj_chest_weapon,obj_chest_active);

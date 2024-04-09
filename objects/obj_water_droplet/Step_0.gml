@@ -7,3 +7,5 @@ if place_meeting(x,y,obj_ground) or (place_meeting(x,y+vspeed,obj_ground_oneway)
 if scr_Animation_Complete() {
 	instance_destroy();	
 }
+
+image_alpha -= 0.03;

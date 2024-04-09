@@ -30,6 +30,7 @@ if scr_Animation_Complete() and opened = false {
 if !key_select and retract = false and opened = true or obj_player.state != obj_player.state_parachute and retract = false and opened = true {
 	retract = true;
 	image_index = sprite_get_number(sprite_index)-1;
+	audio_play_sound(snd_parachute_close,0,false);
 }
 
 if retract = true {

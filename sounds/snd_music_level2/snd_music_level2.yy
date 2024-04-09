@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":65.641045,
+  "duration":64.00002,
   "name":"snd_music_level2",
   "parent":{
     "name":"Music",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_music_level2.wav",
   "type":1,
-  "volume":1.0,
+  "volume":0.7,
 }

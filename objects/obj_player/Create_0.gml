@@ -294,7 +294,7 @@ state_groundpound = function() {
 		sprite_index = player_sprite;
 	}
 	
-	hspeed = hspeed * 0.9;
+	hspeed = hspeed * 0.8;
 	can_shoot = false;
 	if slam_speed < 15.9 { //15.9 because dont wanna glitch through 16px platforms
 		slam_speed += 0.1;
@@ -333,7 +333,7 @@ state_groundpound = function() {
 	if ground_pound_slam = true {
 		vspeed = slam_speed;
 		can_rotate = true; //allow rotation again
-		vsp_basicjump = -8;
+		vsp_basicjump = -9;
 		stomp_damage = 40;
 		//switch states
 		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {

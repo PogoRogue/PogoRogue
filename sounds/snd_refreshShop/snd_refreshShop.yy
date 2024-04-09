@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.625011,
+  "duration":1.533333,
   "name":"snd_refreshShop",
   "parent":{
     "name":"Environmental",

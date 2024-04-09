@@ -228,8 +228,9 @@ if key_select {
 			audio_play_sound(snd_unavailable,0,false);	
 		}
 	}else if refresh_button = true {
-		audio_play_sound(snd_refreshShop,0,false);
+		
 		if global.num_of_coins >= global.refresh_cost {
+			audio_play_sound(snd_refreshShop,0,false);
 			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth-1,obj_coin_spawner) {
 				num_of_coins = global.refresh_cost;
 			}
@@ -252,6 +253,8 @@ if key_select {
 				}
 				first_shop = false;
 			}
+		}else {
+			audio_play_sound(snd_unavailable,0,false);	
 		}
 	}
 }

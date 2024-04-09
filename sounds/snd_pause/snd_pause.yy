@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.347642,
+  "duration":0.666667,
   "name":"snd_pause",
   "parent":{
     "name":"Menu",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_pause.wav",
   "type":1,
-  "volume":0.57,
+  "volume":1.0,
 }
