@@ -21,6 +21,10 @@ special_action="NO";
 // "NO"= normal 
 //"ground_pound"=ground pound 
 //"return"=return to original position
+//phases
+phase=0;
+//phase 0 = begin, 0.5=first chase,1=midway,
+//1.5=final chase 2=final fight, where most abilities are enhanced
 orig_x=x;
 orig_y=y;
 

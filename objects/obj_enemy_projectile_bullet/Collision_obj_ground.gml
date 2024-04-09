@@ -5,7 +5,7 @@ if(bounce) {
 	 } if (place_meeting(x, y+vspeed, obj_ground)) {
 		 vspeed=-vspeed*bounce_mod;
 	 }
-} else {	
+} else {
     instance_destroy(self);
 }
 

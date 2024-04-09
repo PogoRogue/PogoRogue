@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gun_boomerang",
-    "path":"sprites/spr_gun_boomerang/spr_gun_boomerang.yy",
+    "name":"spr_gun_yoyo",
+    "path":"sprites/spr_gun_yoyo/spr_gun_yoyo.yy",
   },
   "spriteMaskId":null,
   "visible":true,

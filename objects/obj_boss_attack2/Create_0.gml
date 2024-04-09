@@ -1,9 +1,11 @@
-/// @description Slime
+/// @description Shotgun
 // You can write your code in this editor
 
 // Inherit the parent event
 event_inherited();
-amount=30;
-spread=150;
-delay=room_speed/8;
-sprite=spr_projectile_slime;
+amount=5;
+spread=75;
+repeats=2
+delay=room_speed;
+sprite=spr_projectile_nerfdart;
+spd=10;

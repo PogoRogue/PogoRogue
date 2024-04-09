@@ -3,6 +3,7 @@
   "%Name":"obj_boss_attack2",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_boss_attack2",
@@ -33,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gun_slime",
-    "path":"sprites/spr_gun_slime/spr_gun_slime.yy",
+    "name":"spr_gun_shotgun",
+    "path":"sprites/spr_gun_shotgun/spr_gun_shotgun.yy",
   },
   "spriteMaskId":null,
   "visible":true,

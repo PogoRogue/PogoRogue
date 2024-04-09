@@ -1,5 +1,12 @@
 /// @description Change movement
 // You can write your code in this editor
+//handle lifetime
+if(timed==false){
+	timed=true;
+	if(lifetime>0){
+		alarm_set(0,lifetime);
+	}
+}
 //handles gravity
 vspeed=vspeed+grav;
 //handle homing
@@ -46,4 +53,5 @@ if(boom&&distance_to_point(og_x,og_y)>return_range){
 }
 if(sprite_index!=spr_enemy_projectile){
 	image_angle = point_direction (x,y, x+hspeed,y+vspeed);
+	image_speed=0;
 }

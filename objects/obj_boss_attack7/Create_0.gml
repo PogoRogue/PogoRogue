@@ -20,7 +20,7 @@ rand = false;
 
 spd=3;
 //sprite
-sprite=spr_projectile_boomerang;
+sprite=spr_projectile_yoyo;
 
 if(cur_rep < repeats) {
 	alarm_set(0, 1);

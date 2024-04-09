@@ -1,4 +1,4 @@
-/// @description bounce ball
+/// @description Repeat fires
 // You can write your code in this editor
 
 cur_amt = 0;
@@ -9,9 +9,13 @@ while(cur_amt < amount) {
 	
 	//manually set variables of the bullet here
 	_bullet.speed = 3;
+	_bullet.homing=true;
+	_bullet.hm_spd=0.2;
+	_bullet.max_spd=7.5;
 	_bullet.lifetime=3*room_speed;
-    _bullet.bounce=true;
-	_bullet.sprite_index=spr_projectile_bouncyball;
+	_bullet.hm_range=250;
+	_bullet.explode=true;
+	_bullet.sprite_index=spr_projectile_missile;
 	if(rand) {
 		_bullet.direction = dir_central + random_range(-spread / 2, spread / 2);
 	} else {

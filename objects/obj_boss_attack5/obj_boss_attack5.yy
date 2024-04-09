@@ -3,7 +3,6 @@
   "%Name":"obj_boss_attack5",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_boss_attack5",
@@ -13,8 +12,8 @@
     "path":"folders/Objects/Enemy/Hitbox/Projectile/Boss  Template.yy",
   },
   "parentObjectId":{
-    "name":"obj_missles_pattern",
-    "path":"objects/obj_missles_pattern/obj_missles_pattern.yy",
+    "name":"obj_pattern_template",
+    "path":"objects/obj_pattern_template/obj_pattern_template.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gun_missile",
-    "path":"sprites/spr_gun_missile/spr_gun_missile.yy",
+    "name":"spr_gun_javelins",
+    "path":"sprites/spr_gun_javelins/spr_gun_javelins.yy",
   },
   "spriteMaskId":null,
   "visible":true,

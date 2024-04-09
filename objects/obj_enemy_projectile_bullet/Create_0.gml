@@ -20,8 +20,8 @@ max_spd=10;
 //If bounce, change the bounce, lifetime, and add the alarm
 bounce=false;
 bounce_mod=1;
-lifetime=room_speed;
-//alarm_set(0,lifetime);
+lifetime=0;
+timed=false;
 //boormerange
 boom=false;
 og_x=x;
