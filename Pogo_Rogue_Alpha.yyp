@@ -1299,8 +1299,6 @@
     {"id":{"name":"spr_slider_button","path":"sprites/spr_slider_button/spr_slider_button.yy",},},
     {"id":{"name":"spr_slider_switch_outline","path":"sprites/spr_slider_switch_outline/spr_slider_switch_outline.yy",},},
     {"id":{"name":"spr_slider_switch","path":"sprites/spr_slider_switch/spr_slider_switch.yy",},},
-    {"id":{"name":"spr_slime_cutin_nowords","path":"sprites/spr_slime_cutin_nowords/spr_slime_cutin_nowords.yy",},},
-    {"id":{"name":"spr_slime_cutin","path":"sprites/spr_slime_cutin/spr_slime_cutin.yy",},},
     {"id":{"name":"spr_slime_turret_body_inactive","path":"sprites/spr_slime_turret_body_inactive/spr_slime_turret_body_inactive.yy",},},
     {"id":{"name":"spr_slime_turret_body","path":"sprites/spr_slime_turret_body/spr_slime_turret_body.yy",},},
     {"id":{"name":"spr_slime_turret_head_inactive","path":"sprites/spr_slime_turret_head_inactive/spr_slime_turret_head_inactive.yy",},},
