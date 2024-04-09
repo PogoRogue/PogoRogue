@@ -1,4 +1,7 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"spr_minimap_combatroom","order":1,"path":"sprites/spr_minimap_combatroom/spr_minimap_combatroom.yy",},
+    {"name":"spr_minimap_arrow","order":2,"path":"sprites/spr_minimap_arrow/spr_minimap_arrow.yy",},
+  ],
 }

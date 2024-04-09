@@ -135,6 +135,7 @@ global.sequence_num = 0;
 global.chest_number = 0;
 global.coin_chest_num = 0;
 global.combat_room_num = 0;
+global.shop_number = 0;
 
 //set seed in other rooms 
 if room != room_proc_gen_test and room != room_shop

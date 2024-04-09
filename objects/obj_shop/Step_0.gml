@@ -85,7 +85,7 @@ var yy = 0;
 if created_items = false {
 	//choose random items
 	//randomize();
-	var shop_seed = global.seed+global.refreshes_used;
+	var shop_seed = global.seed+global.refreshes_used+global.shop_number;
 	random_set_seed(shop_seed);
 
 	buff_1 = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
