@@ -251,7 +251,9 @@ if !key_up and !key_down {
 if key_back {
 	if room != room_settings {
 		alarm[0] = 1;
+		audio_play_sound(snd_unavailable,0,false);
 	}else {
 		scr_Room_Transition(room_menu);
+		audio_play_sound(snd_unavailable,0,false);
 	}
 }

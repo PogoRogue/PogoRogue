@@ -22,5 +22,6 @@ if key_back {
 		alarm[0] = 1;
 	}else {
 		scr_Room_Transition(room_menu);
+		audio_play_sound(snd_unavailable,0,false);
 	}
 }

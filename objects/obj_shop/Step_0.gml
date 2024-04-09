@@ -21,7 +21,7 @@ if cant_move = false {
 
 
 if selected_x = false {
-	if key_left and !key_right and select % 2 = 0 {
+	if key_left and !key_right and select % 2 = 0 and refresh_button = false {
 		audio_play_sound(snd_menuNavigation,0,false);
 		if select != 0 {
 			if refresh_button = false {
@@ -32,7 +32,7 @@ if selected_x = false {
 		}
 		selected_x = true;
 	}
-	if key_right and !key_left and select % 2 != 0 {
+	if key_right and !key_left and select % 2 != 0 and refresh_button = false {
 		
 		audio_play_sound(snd_menuNavigation,0,false);
 		if refresh_button = false {
@@ -59,12 +59,12 @@ if selected_y = false {
 		}
 		alarm[3] = alarm3_time;
 	}
-	if key_down and !key_up and select < 7 {
+	if key_down and !key_up and select < 7 and select != 0 {
 		audio_play_sound(snd_menuNavigation,0,false);
 		select += 2;	
 		selected_y = true;
 		alarm[3] = alarm3_time;
-	}else if key_down and !key_up {
+	}else if key_down and !key_up and select != 0{
 		if refresh_button = false {
 			audio_play_sound(snd_menuNavigation,0,false);
 			refresh_button = true;	
@@ -123,8 +123,8 @@ if created_items = false {
 			ii = other.i;
 		}
 		//replace weapon with new weapon if player already has it
-		if i = 4 
-		or i = 5 {
+		if i = 4 and instance_exists(slot_items_array[i])
+		or i = 5 and instance_exists(slot_items_array[i]) {
 			while (obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon or obj_player.gun_array[2] = slot_items_array[i].weapon) {
 				if obj_player.gun_array[0] = slot_items_array[i].weapon or obj_player.gun_array[1] = slot_items_array[i].weapon or obj_player.gun_array[2] = slot_items_array[i].weapon {
 					//destroy old item
@@ -143,8 +143,8 @@ if created_items = false {
 			}
 		}
 		//replace pickup with new pickup if player already has it
-		if i = 6 
-		or i = 7 {
+		if i = 6 and instance_exists(slot_items_array[i])
+		or i = 7 and instance_exists(slot_items_array[i]) {
 			while (obj_player.pickups_array[0] = slot_items_array[i].pickup or obj_player.pickups_array[1] = slot_items_array[i].pickup) {
 				if obj_player.pickups_array[0] = slot_items_array[i].pickup or obj_player.pickups_array[1] = slot_items_array[i].pickup {
 					//destroy old item
@@ -204,16 +204,16 @@ if select != 0 {
 //select item 
 if key_select {
 	if select != 0 and instance_exists(slot_items_array[select-1]) and refresh_button = false {
-		if slot_items_array[select-1].sold_out = false {
+		if slot_items_array[select-1].sold_out = false and global.num_of_coins >= round(slot_items_array[select-1].item_cost * global.sale) {
 			audio_play_sound(snd_selectOption,0,false);
 		}else {
 			audio_play_sound(snd_unavailable,0,false);
 		}
 		last_select = select;
 		select = 0;
-	}else if select = 0 and refresh_button = false {
+	}else if select = 0 and refresh_button = false and instance_exists(slot_items_array[last_select-1]) {
 		select = last_select;
-		if global.num_of_coins >= round(slot_items_array[last_select-1].item_cost * global.sale) and slot_items_array[select-1].sold_out = false {
+		if global.num_of_coins >= round(slot_items_array[last_select-1].item_cost * global.sale) and slot_items_array[last_select-1].sold_out = false {
 			//item follow player
 			last_item_created = slot_items_array[select-1];
 			audio_play_sound(snd_chaching,0,false);
@@ -233,6 +233,7 @@ if key_select {
 			audio_play_sound(snd_refreshShop,0,false);
 			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth-1,obj_coin_spawner) {
 				num_of_coins = global.refresh_cost;
+				init_num_of_coins = num_of_coins;
 			}
 			with obj_item_parent {
 				select = other.select;
