@@ -34,11 +34,11 @@ if(special_action=="ground_pound"){
         vspeed=0;
         special_action="return";
 		if(phase=2){
-        var _shock1 = instance_create_layer(x, y, "Instances", obj_shockwave);
-        var _shock2 = instance_create_layer(x, y, "Instances", obj_shockwave);
-        _shock2.image_xscale=-1;
-        _shock1.hspeed=-3;
-        _shock2.hspeed=3;
+          var _shock1 = instance_create_layer(x, y, "Instances", obj_shockwave);
+          var _shock2 = instance_create_layer(x, y, "Instances", obj_shockwave);
+          _shock2.image_xscale=-1;
+          _shock1.hspeed=-3;
+          _shock2.hspeed=3;
 		}
     }
 }

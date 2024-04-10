@@ -1,7 +1,7 @@
 /// @description Fire
 // You can write your code in this editor
 if(boss.special_action=="NO"){
-weapon=3;
+weapon=1;
 _xx = x + lengthdir_x(48, image_angle);
 _yy = y + lengthdir_y(48, image_angle);
 //Pistol implemented

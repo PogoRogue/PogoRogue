@@ -218,7 +218,6 @@
     {"name":"spr_shield_small","order":38,"path":"sprites/spr_shield_small/spr_shield_small.yy",},
     {"name":"spr_shield","order":33,"path":"sprites/spr_shield/spr_shield.yy",},
     {"name":"spr_shieldbubble_BOSS","order":63,"path":"sprites/spr_shieldbubble_BOSS/spr_shieldbubble_BOSS.yy",},
-    {"name":"spr_shieldbubble_BOSS2","order":64,"path":"sprites/spr_shieldbubble_BOSS2/spr_shieldbubble_BOSS2.yy",},
     {"name":"spr_shieldbubble_mask","order":42,"path":"sprites/spr_shieldbubble_mask/spr_shieldbubble_mask.yy",},
     {"name":"spr_shieldbubble","order":31,"path":"sprites/spr_shieldbubble/spr_shieldbubble.yy",},
     {"name":"spr_shockwave","order":54,"path":"sprites/spr_shockwave/spr_shockwave.yy",},
