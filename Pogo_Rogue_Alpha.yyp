@@ -809,7 +809,6 @@
     {"id":{"name":"spr_boss_health_segment","path":"sprites/spr_boss_health_segment/spr_boss_health_segment.yy",},},
     {"id":{"name":"spr_boss_marionette_arm","path":"sprites/spr_boss_marionette_arm/spr_boss_marionette_arm.yy",},},
     {"id":{"name":"spr_boss_marionette_forearm","path":"sprites/spr_boss_marionette_forearm/spr_boss_marionette_forearm.yy",},},
-    {"id":{"name":"spr_boss_marionette","path":"sprites/spr_boss_marionette/spr_boss_marionette.yy",},},
     {"id":{"name":"spr_boss_name_slime","path":"sprites/spr_boss_name_slime/spr_boss_name_slime.yy",},},
     {"id":{"name":"spr_boss_name_marionette","path":"sprites/spr_boss_name_marionette/spr_boss_name_marionette.yy",},},
     {"id":{"name":"spr_boss_name_sphere","path":"sprites/spr_boss_name_sphere/spr_boss_name_sphere.yy",},},
