@@ -85,6 +85,7 @@
     {"name":"obj_wallbutton","order":3,"path":"objects/obj_wallbutton/obj_wallbutton.yy",},
     {"name":"room_boss_3","order":1,"path":"rooms/room_boss_3/room_boss_3.yy",},
     {"name":"phase1_Ul1","order":1,"path":"sprites/phase1_Ul1/phase1_Ul1.yy",},
+    {"name":"Phase3_3x3","order":1,"path":"sprites/Phase3_3x3/Phase3_3x3.yy",},
     {"name":"Spr_1x1_boss2_portal","order":1,"path":"sprites/Spr_1x1_boss2_portal/Spr_1x1_boss2_portal.yy",},
     {"name":"spr_2x2_Combat_Phase3_Talen","order":2,"path":"sprites/spr_2x2_Combat_Phase3_Talen/spr_2x2_Combat_Phase3_Talen.yy",},
     {"name":"spr_2x2_Combat_Talen_store","order":2,"path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},
@@ -156,6 +157,7 @@
     {"name":"spr_lr_Ian","order":3,"path":"sprites/spr_lr_Ian/spr_lr_Ian.yy",},
     {"name":"spr_lr_length2_Ian","order":4,"path":"sprites/spr_lr_length2_Ian/spr_lr_length2_Ian.yy",},
     {"name":"spr_lr_length2_Talen","order":5,"path":"sprites/spr_lr_length2_Talen/spr_lr_length2_Talen.yy",},
+    {"name":"spr_boss_marionette_idle","order":3,"path":"sprites/spr_boss_marionette_idle/spr_boss_marionette_idle.yy",},
     {"name":"spr_miniboss_cube","order":53,"path":"sprites/spr_miniboss_cube/spr_miniboss_cube.yy",},
     {"name":"spr_parachute_animation","order":41,"path":"sprites/spr_parachute_animation/spr_parachute_animation.yy",},
     {"name":"spr_parachute_arrows","order":47,"path":"sprites/spr_parachute_arrows/spr_parachute_arrows.yy",},
@@ -235,6 +237,5 @@
     {"name":"spr_walk_enemy_walk","order":46,"path":"sprites/spr_walk_enemy_walk/spr_walk_enemy_walk.yy",},
     {"name":"Sprint_8_Area2_x4","order":1,"path":"sprites/Sprint_8_Area2_x4/Sprint_8_Area2_x4.yy",},
     {"name":"Sprint_9_3x3_oneRoom","order":1,"path":"sprites/Sprint_9_3x3_oneRoom/Sprint_9_3x3_oneRoom.yy",},
-    {"name":"Phase3_3x3","order":1,"path":"sprites/Phase3_3x3/Phase3_3x3.yy",},
   ],
 }

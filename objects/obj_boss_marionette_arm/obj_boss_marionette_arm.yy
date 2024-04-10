@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_marionette_Arm",
-    "path":"sprites/spr_marionette_Arm/spr_marionette_Arm.yy",
+    "name":"spr_boss_marionette_arm",
+    "path":"sprites/spr_boss_marionette_arm/spr_boss_marionette_arm.yy",
   },
   "spriteMaskId":null,
   "visible":true,
