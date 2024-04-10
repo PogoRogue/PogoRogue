@@ -22,12 +22,22 @@ function scr_Enemy_Collision_Check(condition){
 					
 					// For Sphere boss, change its direction when you hit it from above
 					if(object_index == obj_boss_sphere) {
-						x_diff = x - other.x;
-						y_diff = y - other.y;
-						if(x_diff <= y_diff) {
+						var _angle_to_player = point_direction(x, y, other.x, other.y)
+						if(_angle_to_player >= 35 && _angle_to_player <= 145) {
 							vspeed = 1;
 						}
 					}
+					
+					// Do the same for any bricks attached to the sphere boss
+					if(object_get_parent(object_index) == obj_boss_brick) {
+						var _angle_to_player = point_direction(boss.x, boss.y, other.x, other.y)
+						if(_angle_to_player >= 35 && _angle_to_player <= 145) {
+							with(obj_boss_sphere) {
+								vspeed = 1;
+							}
+						}
+					}
+					
 					if hp <= 0 {
 						other.landed_on_enemy = true; // enable for robbery 
 					}

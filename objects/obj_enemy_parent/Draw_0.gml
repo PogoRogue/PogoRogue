@@ -11,7 +11,7 @@ if(!is_dead) {
 draw_self();
 shader_reset();
 
-if(draw_hp && hp < hp_max) {
+if(draw_hp && hp < hp_max && hp > 0) {
 	scr_Draw_Enemy_Health();
 }
 

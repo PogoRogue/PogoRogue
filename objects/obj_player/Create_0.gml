@@ -685,7 +685,7 @@ state_portal = function() {
 						scr_Room_Transition(room_boss_2);
 						break;
 					case 3:
-						scr_Room_Transition(room_boss_3);
+						scr_Room_Transition(room_boss_2);
 						break;
 				}	
 			}else {
