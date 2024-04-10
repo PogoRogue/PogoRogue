@@ -30,6 +30,7 @@
   "height":289,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"e2d70b8b-3f06-4f5d-a64f-91cd4dfa1271","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"e2d70b8b-3f06-4f5d-a64f-91cd4dfa1271","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"771d0c4d-0305-4c2a-8fc3-89160f5bb657","blendMode":0,"displayName":"default","isLocked":false,"name":"771d0c4d-0305-4c2a-8fc3-89160f5bb657","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_boss2_slime_raise",

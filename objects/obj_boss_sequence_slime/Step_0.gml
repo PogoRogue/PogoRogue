@@ -18,6 +18,7 @@ if(instance_exists(controller)) {
 			if(current_sprite == spr_boss2_slime_raise) {
 				image_index = 0;
 			}
+			image_index = sprite_get_number(spr_boss2_slime_drain) - 1
 			current_sprite = spr_boss2_slime_drain;
 			break;
 	}

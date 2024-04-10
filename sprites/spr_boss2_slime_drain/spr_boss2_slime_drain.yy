@@ -32,7 +32,7 @@
   "height":289,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"d446edb9-a461-41e7-8170-d74fc199aeff","blendMode":0,"displayName":"default","isLocked":false,"name":"d446edb9-a461-41e7-8170-d74fc199aeff","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"50af4e47-ba38-4e90-9524-bfad33d98013","blendMode":0,"displayName":"default","isLocked":false,"name":"50af4e47-ba38-4e90-9524-bfad33d98013","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_boss2_slime_drain",
   "nineSlice":null,
