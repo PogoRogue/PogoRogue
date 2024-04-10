@@ -126,16 +126,16 @@ for(i = 0; i < num_of_slots; i++) {
 	//draw item types
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_item_popup);
+	draw_set_font(fnt_combo2);
 	
 	if i < 2 {
-		scr_Draw_Text_Outlined(304+32,yy-31,"Health",c_white);
+		scr_Draw_Text_Outlined(304+32,yy-32,"Health",c_white);
 	}else if i < 4 {
-		scr_Draw_Text_Outlined(304+32,yy-31,"Passive Items",c_white);
+		scr_Draw_Text_Outlined(304+32,yy-32,"Passive Items",c_white);
 	}else if i < 6 {
-		scr_Draw_Text_Outlined(304+32,yy-31,"Weapons",c_white);
+		scr_Draw_Text_Outlined(304+32,yy-32,"Weapons",c_white);
 	}else {
-		scr_Draw_Text_Outlined(304+32,yy-31,"Active Items",c_white);
+		scr_Draw_Text_Outlined(304+32,yy-32,"Active Items",c_white);
 	}
 }
 
