@@ -1,9 +1,6 @@
-// Initiate Jump
+/// @description Initiate Jump
 
-sprite_index = spr_enemy_shoot_only;
+h_spd = 2 * sign(player.x - x);
 vspeed = jump_height;
-hspeed = spd;
-is_jumping = true;
 
-
-
+sprite_index = spr_enemy_shoot_only

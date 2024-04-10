@@ -12,7 +12,7 @@ if(is_dead) {
 
 switch(current_target) {
 	case SLIME_MELEE_TARGETS.ABOVE:
-		x = lerp(x, player.x - (player_direction * 30), 0.02);
+		x = lerp(x, player.x - (player_direction * 60), 0.02);
 		y = lerp(y, player.y + y_diff, 0.02);
 		break;
 	case SLIME_MELEE_TARGETS.BELOW:
