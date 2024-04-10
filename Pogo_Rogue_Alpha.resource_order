@@ -29,6 +29,7 @@
     {"name":"Area3_Fixed","order":5,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Area3_Fixed.yy",},
     {"name":"Sprint_8","order":1,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_8.yy",},
     {"name":"Sprint_9","order":2,"path":"folders/Sprites/ProcGenLevelData/RoomStoresAndOther/Zehao_Rooms/Sprint_9.yy",},
+    {"name":"Boss: Robot","order":1,"path":"folders/Sprites/UI/Boss Cut-In/Boss: Robot.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_boss_brick_blue","order":7,"path":"objects/obj_boss_brick_blue/obj_boss_brick_blue.yy",},
@@ -103,6 +104,7 @@
     {"name":"spr_boss_health_segment","order":2,"path":"sprites/spr_boss_health_segment/spr_boss_health_segment.yy",},
     {"name":"spr_boss_marionette_arm","order":1,"path":"sprites/spr_boss_marionette_arm/spr_boss_marionette_arm.yy",},
     {"name":"spr_boss_marionette_forearm","order":2,"path":"sprites/spr_boss_marionette_forearm/spr_boss_marionette_forearm.yy",},
+    {"name":"spr_boss_marionette_idle","order":3,"path":"sprites/spr_boss_marionette_idle/spr_boss_marionette_idle.yy",},
     {"name":"spr_buffitem_righteousrevenge","order":2,"path":"sprites/spr_buffitem_righteousrevenge/spr_buffitem_righteousrevenge.yy",},
     {"name":"spr_buffitem_robbery","order":1,"path":"sprites/spr_buffitem_robbery/spr_buffitem_robbery.yy",},
     {"name":"spr_bulletcasing","order":49,"path":"sprites/spr_bulletcasing/spr_bulletcasing.yy",},
@@ -157,7 +159,6 @@
     {"name":"spr_lr_Ian","order":3,"path":"sprites/spr_lr_Ian/spr_lr_Ian.yy",},
     {"name":"spr_lr_length2_Ian","order":4,"path":"sprites/spr_lr_length2_Ian/spr_lr_length2_Ian.yy",},
     {"name":"spr_lr_length2_Talen","order":5,"path":"sprites/spr_lr_length2_Talen/spr_lr_length2_Talen.yy",},
-    {"name":"spr_boss_marionette_idle","order":3,"path":"sprites/spr_boss_marionette_idle/spr_boss_marionette_idle.yy",},
     {"name":"spr_miniboss_cube","order":53,"path":"sprites/spr_miniboss_cube/spr_miniboss_cube.yy",},
     {"name":"spr_parachute_animation","order":41,"path":"sprites/spr_parachute_animation/spr_parachute_animation.yy",},
     {"name":"spr_parachute_arrows","order":47,"path":"sprites/spr_parachute_arrows/spr_parachute_arrows.yy",},
@@ -237,5 +238,6 @@
     {"name":"spr_walk_enemy_walk","order":46,"path":"sprites/spr_walk_enemy_walk/spr_walk_enemy_walk.yy",},
     {"name":"Sprint_8_Area2_x4","order":1,"path":"sprites/Sprint_8_Area2_x4/Sprint_8_Area2_x4.yy",},
     {"name":"Sprint_9_3x3_oneRoom","order":1,"path":"sprites/Sprint_9_3x3_oneRoom/Sprint_9_3x3_oneRoom.yy",},
+    {"name":"spr_boss3_nowords","order":1,"path":"sprites/spr_boss3_nowords/spr_boss3_nowords.yy",},
   ],
 }
