@@ -29,3 +29,26 @@ for (i=0;i<array_length(all_sounds);i++) {
 }
 
 global.enemy_killed = false; //resume combo meter when set to true after killing 1st enemy in room
+
+//set music
+if room = room_proc_gen_test {
+	switch (global.phase) {
+		case 1: global.current_music = snd_music_level1; break;
+		case 2: global.current_music = snd_music_level2; break;	
+		case 3: global.current_music = snd_music_level2; break;	
+	}
+}else if room = room_boss_1 {
+	global.current_music = snd_music_boss1
+}else if room = room_boss_2 {
+	global.current_music = snd_music_boss1;
+}else if room = room_boss_3 {
+	global.current_music = snd_music_boss1;
+}else if room = room_tutorial {
+	global.current_music = snd_music_level1;
+}
+
+//music test
+if !audio_is_playing(global.current_music) {
+	audio_stop_all();
+	audio_play_sound(global.current_music,0,true);
+}

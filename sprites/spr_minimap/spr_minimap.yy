@@ -27,6 +27,7 @@
   "height":195,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"ec1ecfb2-5901-458a-b23e-0c353d7d87cb","blendMode":0,"displayName":"Icons","isLocked":false,"name":"ec1ecfb2-5901-458a-b23e-0c353d7d87cb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"cff94159-ae9a-442a-b5a8-cde1b0092ecc","blendMode":0,"displayName":"default","isLocked":false,"name":"cff94159-ae9a-442a-b5a8-cde1b0092ecc","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_minimap",

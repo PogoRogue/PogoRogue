@@ -24,11 +24,16 @@ if destroy_time != 0 {
 }
 
 //specific conditions
+
 if (gun_name = "Bubble Gun") {
+	randomize();
 	spd += irandom_range(-4,0); //random speed for bubbles
+	random_set_seed(global.seed);
 	hspd = lengthdir_x(spd,angle);
 	vspd = lengthdir_y(spd,angle);
+	
 }
+
 if (gun_name = "Paintball Gun") {
 	with obj_player {
 		other.image_index = ((gun.bullets_per_bounce + max_ammo_buff) - gun.current_bullets);
@@ -121,10 +126,12 @@ if (gun_name = "Sniper Rifle") {
 
 //slime blaster
 if (gun_name = "Slime Blaster") {
+	randomize();
 	spd += irandom_range(-4,0);
 	hspd = lengthdir_x(spd,angle);
 	vspd = lengthdir_y(spd,angle);
 	image_index = irandom_range(0,sprite_get_number(sprite_index)-1);
+	random_set_seed(global.seed);
 }
 
 //yo-yo

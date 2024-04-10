@@ -135,7 +135,7 @@ if select = 2 { //video
 						alarm[2] = alarm2_time;
 					}
 					//select
-					if (key_select and !window_get_fullscreen()) {
+					if (key_select /*and !window_get_fullscreen()*/) {
 						window_set_size(menu_video.options_array[i].list_of_options[menu_video.options_array[i].current_selection][0],menu_video.options_array[i].list_of_options[menu_video.options_array[i].current_selection][1]);
 						alarm[1] = 10;
 						global.resolution_x = menu_video.options_array[i].list_of_options[menu_video.options_array[i].current_selection][0];

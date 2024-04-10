@@ -72,6 +72,10 @@ function scr_Jump(add_to_jump){
 		}
 	}
 	
+	//hat gun
+	pickup_hatgun.uses_per_bounce = pickup_hatgun.max_uses_per_bounce;
+	pickup_hatgun.on_cooldown = false;
+	
 	//flames
 	allow_flames = false;
 	min_flames_speed = 5.6;

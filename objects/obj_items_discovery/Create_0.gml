@@ -34,8 +34,8 @@ passives_array = [spr_buffitem_lasersight, spr_buffitem_planetarybullets,spr_buf
 				spr_buffitem_supershield, spr_buffitem_revive, spr_buffitem_drilltipbullets, 
 				spr_buffitem_dualwielder, spr_buffitem_steadyhands, spr_buffitem_tightspring,
 				spr_buffitem_magicianstouch,spr_buffitem_impatience,spr_buffitem_laststand,
-				spr_buffitem_psychicbullets,spr_buffitem_recycling,spr_buffitem_juggler,
-				spr_nothing,spr_nothing];
+				spr_buffitem_psychicbullets,spr_buffitem_righteousrevenge, spr_buffitem_robbery,
+				spr_buffitem_recycling,spr_buffitem_juggler]
 				
 actives_array = [spr_pickup_firedash, spr_pickup_groundpound, spr_pickup_hatgun, 
 				spr_pickup_chargejump, spr_pickup_reload, spr_pickup_freeze,
@@ -59,7 +59,7 @@ scr_All_Actives_Array();
 scr_All_Weapons_Array();
 
 instance_create_depth(x,y,depth,obj_control);
-audio_stop_sound(snd_music_level1);
+//audio_stop_sound(global.current_music);
 instance_create_depth(x,y,depth,obj_player);
 
 //get passive info

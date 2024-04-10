@@ -50,18 +50,18 @@ function scr_Buffs(){
 	buff_max_ammo = function(){
 		with obj_player {
 			if gun_1.bullets_per_bounce < gun_1.init_bullets_per_bounce + gun_1.max_added_bullets {
-				gun_1.bullets_per_bounce += 1;
-				gun_1.current_bullets += 1;
+				gun_1.bullets_per_bounce += gun_1.burst_number;
+				gun_1.current_bullets += gun_1.burst_number;
 				audio_play_sound(snd_passivePowerup,0,false);
 			}
 			if gun_2.bullets_per_bounce < gun_2.init_bullets_per_bounce + gun_2.max_added_bullets and gun_2 != gun_1 {
-				gun_2.bullets_per_bounce += 1;
-				gun_2.current_bullets += 1;
+				gun_2.bullets_per_bounce += gun_2.burst_number;
+				gun_2.current_bullets += gun_2.burst_number;
 				audio_play_sound(snd_passivePowerup,0,false);
 			}
 			if gun_3.bullets_per_bounce < gun_3.init_bullets_per_bounce + gun_3.max_added_bullets and gun_3 != gun_1 and gun_3 != gun_2 {
-				gun_3.bullets_per_bounce += 1;
-				gun_3.current_bullets += 1;
+				gun_3.bullets_per_bounce += gun_3.burst_number;
+				gun_3.current_bullets += gun_3.burst_number;
 				audio_play_sound(snd_passivePowerup,0,false);
 			}
 		}
@@ -207,13 +207,23 @@ function scr_Buffs(){
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
+	buff_righteousrevenge = function(){
+		global.righteousrevenge = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
+	
+	buff_robbery = function(){
+		global.robbery = true;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
+    
 	buff_recycling = function(){
 		global.recycling = true;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_juggler = function(){
-		global.juggler = true;
+		global.juggler = true;    
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 }

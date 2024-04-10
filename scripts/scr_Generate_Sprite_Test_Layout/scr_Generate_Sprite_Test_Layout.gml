@@ -101,7 +101,7 @@ function scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_starting_room,
 		}
 		
 		//Set player starting point if this is the first room
-		if(previous_room = -1)
+		if(previous_room == -1)
 		{
 			//Marks the center of the room as the starting point
 			ds_grid_set(layout_grid, currentX + floor(rWidth/2), currentY + floor(rHeight/2), "s");

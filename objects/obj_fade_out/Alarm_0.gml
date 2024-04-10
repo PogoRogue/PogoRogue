@@ -10,3 +10,7 @@ with obj_player {
 	obj_player_mask.mask_index = obj_player_mask.sprite_index;
 	state = state_free;	
 }
+
+if next_room = room_menu {
+	instance_deactivate_all(false);	
+}

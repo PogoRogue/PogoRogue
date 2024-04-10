@@ -7,7 +7,19 @@ if(!other.is_dead && !array_contains(damaged_list, other)) {
 		if chargejump = true {
 			obj_player.pickup_chargejump.cooldown_time = 0;	
 		}else {
-			obj_player.pickup_firedash.cooldown_time = 0;	
+			with obj_player {
+				pickup_firedash.on_cooldown = true;
+				if obj_player_flames_upward.reset = false {
+					pickup_firedash.cooldown_time = pickup_firedash.max_cooldown_time - 240;
+					obj_player_flames_upward.reset = true;
+				}else {
+					if pickup_firedash.cooldown_time > 0 {
+						pickup_firedash.cooldown_time -= 240;
+					}else {
+						pickup_firedash.cooldown_time = 0;	
+					}
+				}
+			}
 		}
 	}
 	scr_Reload_On_Kill();

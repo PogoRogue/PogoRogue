@@ -259,7 +259,7 @@ function scr_Guns(){
 		bullets_per_bounce: 1 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 1,
 		current_bullets: 1 + obj_player.max_ammo_buff,  
-		max_added_bullets: 0,
+		max_added_bullets: 1,
 		max_speed: 8
 	};
 	

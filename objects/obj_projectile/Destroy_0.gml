@@ -67,7 +67,9 @@ if (gun_name = "Water Gun") {
 		with instance_create_depth(x,y,depth-1,obj_water_droplet) {
 			speed = other.spd/1.5;
 			direction = other.i;
+			randomize();
 			direction += irandom_range(-45,45);
+			random_set_seed(global.seed);
 		}
 	}
 	with obj_water_outline {
