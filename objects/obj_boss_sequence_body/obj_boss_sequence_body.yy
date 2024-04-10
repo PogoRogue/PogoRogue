@@ -39,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss2_idle",
-    "path":"sprites/spr_boss2_idle/spr_boss2_idle.yy",
+    "name":"spr_sequence_idle",
+    "path":"sprites/spr_sequence_idle/spr_sequence_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

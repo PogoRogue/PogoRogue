@@ -168,6 +168,7 @@
     {"name":"spr_lr_Ian","order":3,"path":"sprites/spr_lr_Ian/spr_lr_Ian.yy",},
     {"name":"spr_lr_length2_Ian","order":4,"path":"sprites/spr_lr_length2_Ian/spr_lr_length2_Ian.yy",},
     {"name":"spr_lr_length2_Talen","order":5,"path":"sprites/spr_lr_length2_Talen/spr_lr_length2_Talen.yy",},
+    {"name":"spr_boss_marionette_idle","order":3,"path":"sprites/spr_boss_marionette_idle/spr_boss_marionette_idle.yy",},
     {"name":"spr_miniboss_cube","order":53,"path":"sprites/spr_miniboss_cube/spr_miniboss_cube.yy",},
     {"name":"spr_parachute_animation","order":41,"path":"sprites/spr_parachute_animation/spr_parachute_animation.yy",},
     {"name":"spr_parachute_arrows","order":47,"path":"sprites/spr_parachute_arrows/spr_parachute_arrows.yy",},
