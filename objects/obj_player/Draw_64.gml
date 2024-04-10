@@ -50,6 +50,18 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	
 }
 
+//draw frenzy meter
+if frenzy_time > 0 {
+	draw_set_color(make_color_rgb(242,240,229));
+	draw_set_font(fnt_combo2);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_bottom);
+	draw_text(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy");
+	draw_set_color(c_white);
+	draw_sprite(spr_frenzymeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
+	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(frenzy_time / 300),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
+}
+
 //coins
 coin_x = 32;
 coin_y = 66;

@@ -74,6 +74,7 @@ freeze_time = 0;
 freeze_alpha = 0;
 freeze_angle = 0;
 frenzy = false;
+frenzy_time = 0;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -143,6 +144,7 @@ state_free = function() {
 	bouncing = false;
 	can_rotate = true;
 	can_shoot = true;
+	soundPlayed = false;
 	
 	vspeed += grv; //falling
 	vsp_basicjump = -6.6;
@@ -295,7 +297,11 @@ state_groundpound = function() {
 	}
 	
 	hspeed = hspeed * 0.8;
-	can_shoot = false;
+	
+	if !global.key_fire_projectile {
+		can_shoot = true;
+	}
+	
 	if slam_speed < 15.9 { //15.9 because dont wanna glitch through 16px platforms
 		slam_speed += 0.1;
 	}
@@ -549,8 +555,12 @@ state_blink = function() {
 }
 
 state_parachute = function() {
-	can_shoot = false;
+	//can_shoot = false;
 	can_rotate = false;
+	
+	if !global.key_fire_projectile {
+		can_shoot = true;
+	}
 	
 	if !instance_exists(obj_parachute) {
 		instance_create_depth(x+lengthdir_x(22,angle+90),y+lengthdir_y(22,angle+90),depth+1,obj_parachute);
@@ -575,7 +585,7 @@ state_parachute = function() {
 				angle = 0;
 				current_rotation_speed = 0;
 			}
-		}	
+		}
 		
 		//slow down
 		if vspeed >= 0 {

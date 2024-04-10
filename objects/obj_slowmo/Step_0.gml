@@ -29,3 +29,7 @@ if key_select and slow_time = false {
 
 back_frames += 0.5;
 front_frames += 1/3;
+
+if time_left > 0 {
+	time_left -= 1;	
+}

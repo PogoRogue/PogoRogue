@@ -24,7 +24,7 @@ combo_decrease_speed = global.combo_max/(600+global.combo_time_added); //# of fr
 if increase_combometer_scale = false and global.combo > prev_combo {
 	prev_combo = global.combo;
 	increase_combometer_scale = true;
-	combometer_scale = 1.6;
+	combometer_scale = 1.8;
 }
 
 if combometer_scale > 1 {

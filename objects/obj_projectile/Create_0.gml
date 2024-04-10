@@ -94,6 +94,9 @@ if (gun_name = "Star Sucker") {
 	num_of_bounces = 0;
 }
 
+sniped = false;
+sniped_array = [];
+
 //sniper rifle
 if (gun_name = "Sniper Rifle") {
 	laser_x = obj_player.x - x;

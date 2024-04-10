@@ -21,15 +21,15 @@ if global.combo > 0 {
 			if instance_exists(obj_shieldbubble) {
 				distance += 8;
 			}
-			draw_sprite_ext(combometer_sprite,0,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,white,1);
-			var _x = -sprite_get_xoffset(combometer_sprite);
+			draw_sprite_ext(combometer_sprite,0,x + lengthdir_x(distance+2,angle+90),y + lengthdir_y(distance+2,angle+90),1+(global.combo_time_added/600),1,angle,white,1);
+			var _x = -sprite_get_xoffset(combometer_sprite)*(1+(global.combo_time_added/600));
 			var _y = -sprite_get_yoffset(combometer_sprite);
 			var _c = dcos(angle);
 			var _s = dsin(angle);
-			draw_sprite_general(combometer_sprite,1,0,0,global.combo_length,4,x  + lengthdir_x(distance,angle+90)+_c*_x+_s*_y,y + lengthdir_y(distance,angle+90)-_s*_x+_c*_y,1,1,angle,c_white,c_white,c_white,c_white,1);
+			draw_sprite_general(combometer_sprite,1,0,0,global.combo_length,4,x  + lengthdir_x(distance+2,angle+90)+_c*_x+_s*_y,y + lengthdir_y(distance+2,angle+90)-_s*_x+_c*_y,1+(global.combo_time_added/600),1,angle,c_white,c_white,c_white,c_white,1);
 		
 			if (other.combometer_scale > 1) { //increase combo effect
-				draw_sprite_ext(combometer_sprite,1,x  + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),other.combometer_scale,other.combometer_scale,angle,c_white,1);
+				draw_sprite_ext(combometer_sprite,1,x  + lengthdir_x(distance+2,angle+90),y + lengthdir_y(distance+2,angle+90),other.combometer_scale+(global.combo_time_added/600),other.combometer_scale+0.4,angle,c_white,1);
 			}
 
 			//text

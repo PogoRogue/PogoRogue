@@ -123,6 +123,24 @@ if(global.impatience == true and impatience_used = false){
 		}else {
 			all_pickups_array[i].max_cooldown_time = all_pickups_array[i].max_cooldown_time * cd_multiplier;
 		}
+		
+		if all_pickups_array[i].bounce_reset = all_pickups_array[i].bounce_reset_max 
+		and all_pickups_array[i].bounce_reset_max > 1 {
+			all_pickups_array[i].bounce_reset -= 1;
+			all_pickups_array[i].bounce_reset_max -= 1;
+		}else if all_pickups_array[i].bounce_reset_max > 1 {
+			all_pickups_array[i].bounce_reset_max -= 1;
+		}
+		
+		if all_pickups_array[i].enemies_count = all_pickups_array[i].enemies_count_max 
+		and all_pickups_array[i].enemies_count_max > 1 {
+			all_pickups_array[i].enemies_count -= 1;
+			all_pickups_array[i].enemies_count_max -= 1;
+		}else if all_pickups_array[i].enemies_count_max > 1 {
+			all_pickups_array[i].enemies_count_max -= 1;
+		}
+		
+		
 	}
 	impatience_used = true;
 }
@@ -226,6 +244,10 @@ if (canshoot > 0) {
 			gun.current_bullets -= 1;
 		}
 	}
+}
+
+if frenzy_time > 0 {
+	frenzy_time -= 1;	
 }
 
 if !(key_fire_projectile) { //lerp back to starting firerate while not shooting

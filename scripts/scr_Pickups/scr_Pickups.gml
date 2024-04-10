@@ -75,6 +75,7 @@ function scr_Pickups(){
 			obj_player.ground_pound_rise = true;
 			obj_player.ground_pound_slam = false;
 			obj_player.ground_pound_distance_risen = 0;
+			obj_player.can_shoot = false;
 		}
 	};
 	
@@ -290,11 +291,11 @@ function scr_Pickups(){
 	
 	pickup_reload = {
 		_name: "Quick Reload",
-		tagline: "Automatically reloads both of your weapons.",
+		tagline: "Automatically reloads all of your weapons.",
 		gui_sprite: spr_pickup_reload,
-		max_cooldown_time: 300,
-		cooldown_time: 300,
-		cooldown_text: "Cooldown: " + string(300 / 60) + "s",
+		max_cooldown_time: 420,
+		cooldown_time: 420,
+		cooldown_text: "Cooldown: " + string(420 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -416,6 +417,7 @@ function scr_Pickups(){
 		on_call: function() {
 			with obj_player {
 				frenzy = true;
+				frenzy_time = 300;
 				alarm[3] = 300;
 				gun_1.current_bullets = gun_1.bullets_per_bounce + max_ammo_buff;
 				gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
@@ -542,6 +544,7 @@ function scr_Pickups(){
 				with obj_player {
 					if state != state_parachute {
 						state = state_parachute;
+						can_shoot = false;
 					}
 				}
 				on_cooldown = true;
