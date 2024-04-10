@@ -498,7 +498,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_blink,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 5 enemies",
+		cooldown_text: "Cooldown: Every 8 enemies",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -508,7 +508,7 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 5,
+		enemies_count_max: 8,
 		on_call: function() {
 			obj_player.state = obj_player.state_blink;
 			if !instance_exists(obj_blink_box) {

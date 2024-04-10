@@ -1,8 +1,6 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
-    {"name":"spr_minimap_combatroom","order":1,"path":"sprites/spr_minimap_combatroom/spr_minimap_combatroom.yy",},
-    {"name":"spr_minimap_arrow","order":2,"path":"sprites/spr_minimap_arrow/spr_minimap_arrow.yy",},
     {"name":"obj_boss_brick_blue","order":7,"path":"objects/obj_boss_brick_blue/obj_boss_brick_blue.yy",},
     {"name":"obj_boss_brick_gap","order":1,"path":"objects/obj_boss_brick_gap/obj_boss_brick_gap.yy",},
     {"name":"obj_boss_brick_red","order":2,"path":"objects/obj_boss_brick_red/obj_boss_brick_red.yy",},
@@ -131,6 +129,7 @@
     {"name":"spr_lr_length2_Talen","order":5,"path":"sprites/spr_lr_length2_Talen/spr_lr_length2_Talen.yy",},
     {"name":"spr_boss_marionette_idle","order":3,"path":"sprites/spr_boss_marionette_idle/spr_boss_marionette_idle.yy",},
     {"name":"spr_miniboss_cube","order":53,"path":"sprites/spr_miniboss_cube/spr_miniboss_cube.yy",},
+    {"name":"spr_minimap_combatroom","order":1,"path":"sprites/spr_minimap_combatroom/spr_minimap_combatroom.yy",},
     {"name":"spr_parachute_animation","order":41,"path":"sprites/spr_parachute_animation/spr_parachute_animation.yy",},
     {"name":"spr_parachute_arrows","order":47,"path":"sprites/spr_parachute_arrows/spr_parachute_arrows.yy",},
     {"name":"spr_parachute","order":48,"path":"sprites/spr_parachute/spr_parachute.yy",},
@@ -207,6 +206,7 @@
     {"name":"spr_walk_enemy_idle","order":17,"path":"sprites/spr_walk_enemy_idle/spr_walk_enemy_idle.yy",},
     {"name":"spr_walk_enemy_jump","order":36,"path":"sprites/spr_walk_enemy_jump/spr_walk_enemy_jump.yy",},
     {"name":"spr_walk_enemy_walk","order":46,"path":"sprites/spr_walk_enemy_walk/spr_walk_enemy_walk.yy",},
+    {"name":"spr_minimap_arrow","order":2,"path":"sprites/spr_minimap_arrow/spr_minimap_arrow.yy",},
     {"name":"Sprint_8_Area2_x4","order":1,"path":"sprites/Sprint_8_Area2_x4/Sprint_8_Area2_x4.yy",},
     {"name":"Sprint_9_3x3_oneRoom","order":1,"path":"sprites/Sprint_9_3x3_oneRoom/Sprint_9_3x3_oneRoom.yy",},
   ],

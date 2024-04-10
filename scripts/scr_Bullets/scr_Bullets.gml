@@ -144,7 +144,7 @@ function scr_Bullets(){
 		firerate_mult: 0,              
 		firerate: 30,                 
 		destroy_on_impact: true,
-		screen_shake: {magnitude: 3, frames: 6},
+		screen_shake: {magnitude: 5.5, frames: 6},
 		destroy_time: 0,
 		flash_frame: 1,
 		grav_affected: false,

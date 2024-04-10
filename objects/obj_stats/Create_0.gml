@@ -36,5 +36,5 @@ stat_5 = ["Fastest Completion Time: ", scr_Convert_Frames_To_Time(global.fastest
 stat_6 = ["Highest Combo: ", string(global.best_combo)];
 stat_7 = ["Most Enemies Killed: ", string(global.best_enemies)];
 stat_8 = ["Most Coins Collected: ", string(global.best_coins)];
-stat_9 = ["Items Unlocked: ", string(total_items_unlocked) + "/" + string(array_length(global.all_buffs) + array_length(global.all_weapons_list) + array_length(global.all_pickups_list))];
+stat_9 = ["Items Found: ", string(total_items_unlocked) + "/" + string(array_length(global.all_buffs) + array_length(global.all_weapons_list) + array_length(global.all_pickups_list))];
 stats_array = [stat_1,stat_2,stat_3,stat_4,stat_5,stat_6,stat_7,stat_8,stat_9];

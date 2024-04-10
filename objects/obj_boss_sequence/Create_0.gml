@@ -54,3 +54,6 @@ instance_create_layer(turret_pos_1.x, turret_pos_1.y, "enemies", obj_enemy_turre
 instance_create_layer(turret_pos_2.x, turret_pos_2.y, "enemies", obj_enemy_turret_unkillable);
 instance_create_layer(axe_pos.x, axe_pos.y, "enemies", obj_spikeswing, {distance: 120});
 			
+if instance_exists(obj_player) {
+	depth = obj_player.depth - 10;	
+}
