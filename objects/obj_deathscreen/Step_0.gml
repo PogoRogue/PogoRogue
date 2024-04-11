@@ -34,8 +34,7 @@ if centered = true {
 		select_x -= 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
-	}
-	if key_right and select_x < select_x_max and selected_x = false {
+	}else if key_right and select_x < select_x_max and selected_x = false {
 		select_x += 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
@@ -61,4 +60,20 @@ if centered = true {
 //darken screen
 if (alpha < 0.75) {
 	alpha += 0.01;	
+}
+
+if win = true {
+	with obj_player {
+		state = state_immobile;
+	}
+	if win_stat_added = false {
+		//check if time is new best
+		if global.current_time_elapsed < global.fastest_time
+		or global.fastest_time = 0 { //fastest time across all runs
+			global.fastest_time = global.current_time_elapsed;
+			scr_Save_Real("fastest_time",global.fastest_time);
+			best_time = true;
+		}
+		win_stat_added = true;
+	}
 }

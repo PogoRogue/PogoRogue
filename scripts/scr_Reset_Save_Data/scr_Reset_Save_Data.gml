@@ -13,6 +13,7 @@ function scr_Reset_Save_Data(){
 	ini_key_delete("savegame", "area_3_reached");
 	ini_key_delete("savegame", "num_of_wins");
 	ini_key_delete("savegame", "fastest_time");
+	ini_key_delete("savegame", "tutorial_completed");
 	
 	ini_close();
 	

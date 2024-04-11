@@ -39,14 +39,19 @@ function scr_Death_Screen(win){
 		scr_Draw_Text_Outlined(x-78,y-59,"(New Best!)",make_color_rgb(237,225,158));
 	}
 	
+	if (global.current_enemies_killed > global.init_enemies_highscore) { //enemies
+		draw_set_font(fnt_itemdescription2);
+		scr_Draw_Text_Outlined(x-78,y-14,"(New Best!)",make_color_rgb(237,225,158));
+	}
+	
 	if (global.current_total_coins > global.init_coins_highscore) { //coins
 		draw_set_font(fnt_itemdescription2);
 		scr_Draw_Text_Outlined(x-78,y+31,"(New Best!)",make_color_rgb(237,225,158));
 	}
 	
-	if (global.current_enemies_killed > global.init_enemies_highscore) { //enemies
+	if best_time = true { //time
 		draw_set_font(fnt_itemdescription2);
-		scr_Draw_Text_Outlined(x-78,y-14,"(New Best!)",make_color_rgb(237,225,158));
+		scr_Draw_Text_Outlined(x-78,y+76,"(New Best!)",make_color_rgb(237,225,158));
 	}
 }
 

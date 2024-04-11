@@ -233,6 +233,7 @@ if (canshoot > 0) {
 		
 		repeat (gun.burst_number - 1) {
 			if gun._name = "Burst Fire Gun" and delay = gun.burst_delay {
+				current_burst = 1;
 				audio_play_sound(snd_burstfire,0,false);	
 			}
 			call_later(delay,time_source_units_frames,scr_Shoot);

@@ -6,4 +6,5 @@ time_left = 500;
 init_room_speed = room_speed; //initial room speed
 back_frames = 0;
 front_frames = 0;
+gear_angle = 0;
 depth += 200;

@@ -14,6 +14,8 @@ function scr_Save_Load_Variables(){
 	global.num_of_wins = 0;
 	global.fastest_time = 0;
 	
+	global.tutorial_completed = false;
+	
 	//audio settings
 	global.sound_volume = 100;
 	global.music_volume = 100;
@@ -43,6 +45,8 @@ function scr_Save_Load_Variables(){
 	global.area_3_reached = ini_read_real("savegame", "area_3_reached", 0);
 	global.num_of_wins = ini_read_real("savegame", "num_of_wins", 0);
 	global.fastest_time = ini_read_real("savegame", "fastest_time", 0);
+	
+	global.tutorial_completed = ini_read_real("savegame", "tutorial_completed", false);
 	
 	global.sound_volume = ini_read_real("savegame", "sound_volume", 100);
 	global.music_volume = ini_read_real("savegame", "music_volume", 100);

@@ -29,17 +29,30 @@ if key_up and !key_down and selected = false {
 }
 
 if key_select {
-	audio_play_sound(snd_selectOption,0,false);
+	if !(select = 1 - options_decrease and global.tutorial_completed = false) {
+		audio_play_sound(snd_selectOption,0,false);
+	}
+	
 	if select = 1 - options_decrease {
+		if global.tutorial_completed = true {
+			scr_Room_Transition(room_proc_gen_test);
+			global.total_runs += 1;
+			scr_Save_Real("total_runs",global.total_runs);
+		}else {
+			//complete tutorial before playing
+			audio_play_sound(snd_unavailable,0,false);
+			if !instance_exists(obj_tutorial_required_text) {
+				instance_create_depth(x,bbox_top-8,depth-1,obj_tutorial_required_text);
+			}else {
+				obj_tutorial_required_text.alpha = 1.25;
+			}
+		}
+	}else if select = 2 - options_decrease {
 		if sprite_index = spr_menu_tutorial {
 			scr_Room_Transition(room_tutorial);
 		}else {
 			scr_Room_Transition(room_gameplay_video);
 		}
-	}else if select = 2 - options_decrease {
-		scr_Room_Transition(room_proc_gen_test);
-		global.total_runs += 1;
-		scr_Save_Real("total_runs",global.total_runs);
 	}else if select = 3 - options_decrease {
 		scr_Room_Transition(room_items);
 		//room_persistent = true;

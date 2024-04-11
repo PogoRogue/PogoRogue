@@ -33,3 +33,5 @@ front_frames += 1/3;
 if time_left > 0 {
 	time_left -= 1;	
 }
+
+gear_angle += 2;

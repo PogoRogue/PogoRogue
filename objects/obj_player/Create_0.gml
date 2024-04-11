@@ -183,6 +183,8 @@ state_free = function() {
 		}
 	}else if room = room_tutorial {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			global.tutorial_completed = true;
+			scr_Save_Real("tutorial_completed",global.tutorial_completed);
 			audio_stop_all();
 			gamepad_set_vibration(0,0,0);
 			scr_Game_Restart();
@@ -696,7 +698,7 @@ state_portal = function() {
 						scr_Room_Transition(room_boss_2);
 						break;
 					case 3:
-						scr_Room_Transition(room_boss_2);
+						scr_Room_Transition(room_boss_3);
 						break;
 				}	
 			}else {
