@@ -10,6 +10,7 @@ if(is_dead) {
 	}
 } else if (hp <= 0) {
 	alarm_set(0, room_speed);
+	alarm_set(11, 10);
 	audio_play_sound(snd_enemyhurt,0,false);
 	
 	//screen shake
@@ -66,9 +67,9 @@ if(is_dead) {
 		}
 	}
 	
-	if (created_items = false) {
-		scr_Random_Item_Drops();
-		created_items = true;
+	if (created_items2 = false and heart_drop > heart_chance) {
+		Create_Item_Drops(random_items);
+		created_items2 = true;
 	}
 	
 	with obj_player {

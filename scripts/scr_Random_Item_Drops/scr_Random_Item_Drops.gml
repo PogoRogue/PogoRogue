@@ -23,10 +23,12 @@ function scr_Random_Item_Drops(){
 		var object_values = [object_type, location]
 		
 		array_push(object_array, object_values);
+		
+		buff_chance = -1;
 	}
 	
 	//buff
-	if (buff_drop <= buff_chance and (heart_drop > heart_chance)) {
+	if (buff_drop <= buff_chance) {
 		var object_array = [];
 		if created_items = false {
 			var object_type = scr_Get_Rand_Buff_Object();
@@ -135,6 +137,8 @@ function Create_Item_Drops(object_array)
 
 function scr_Get_Rand_Buff_Object()
 {
+	random_set_seed(global.seed+global.passive_number);
+	global.passive_number += 1;
 	var list_of_possible_buffs = [obj_item_buff_lasersight, obj_item_buff_planetarybullets, obj_item_buff_dmg, 
 							obj_item_buff_max_ammo, obj_item_buff_luck, obj_item_buff_pickybuyer, 
 							obj_item_buff_rubberbullets, obj_item_buff_hotshells, obj_item_buff_combomaster, 
@@ -148,6 +152,7 @@ function scr_Get_Rand_Buff_Object()
 							obj_item_buff_recycling, obj_item_buff_juggler];
 	random_buff_drop = list_of_possible_buffs[irandom_range(0,array_length(list_of_possible_buffs)-1)];
 	return random_buff_drop;
+	random_set_seed(global.seed);
 }
 
 function scr_Get_Rand_Weapon_Object()
