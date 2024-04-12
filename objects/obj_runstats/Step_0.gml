@@ -14,7 +14,7 @@ if global.phase = 2 {
 	global.tileset = tl_ground2;	
 }
 if global.phase = 3 {
-	global.tileset = tl_ground2;	
+	global.tileset = tl_ground3;
 }
 
 //update best stats

@@ -710,7 +710,7 @@ state_portal = function() {
 						global.tileset = tl_ground2;	
 					}
 					if global.phase = 3 {
-						global.tileset = tl_ground2;	
+						global.tileset = tl_ground3;	
 					}
 				}else {
 					room_persistent = false;
