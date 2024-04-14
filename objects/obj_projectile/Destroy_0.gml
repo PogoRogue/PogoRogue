@@ -86,3 +86,14 @@ if (gun_name = "Water Gun") {
 		}
 	}
 }
+
+if (gun_name = "Javelins") {
+	if place_meeting(x,y,obj_ground) {
+		with instance_create_depth(x,y,depth,obj_javelin_animation)	{
+			other_depth = other.depth;
+			depth = 100;
+			image_angle = other.image_angle;
+			damage = other.damage;
+		}
+	}
+}

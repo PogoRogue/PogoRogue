@@ -361,6 +361,18 @@ if (gun_name = "Javelins") {
 	if created = false {
 		instance_destroy();	
 	}
+	vspd += obj_player.grv;
+	image_angle = point_direction(x,y,x+hspd,y+vspd);
+	
+	if instance_exists(obj_ground) {
+		if place_meeting(x,y,obj_ground) {
+			depth = instance_nearest(x,y,obj_ground).depth + 1;	
+		}else {
+			depth = obj_player.depth + 1;	
+		}
+	}else {
+		depth = obj_player.depth + 1;	
+	}
 }
 
 if (gun_name = "Water Gun") {

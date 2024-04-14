@@ -168,7 +168,17 @@ if (gun_name = "Yo-yo") {
 if (gun_name = "Javelins") {
 	temp_charge = 0;
 	temp_charge_max = 9;
-	depth = obj_player.depth + 1;
+	
+	if instance_exists(obj_ground) {
+		if place_meeting(x,y,obj_ground) {
+			depth = instance_nearest(x,y,obj_ground).depth + 1;	
+		}else {
+			depth = obj_player.depth + 1;	
+		}
+	}else {
+		depth = obj_player.depth + 1;	
+	}
+	
 	created = false;
 	with instance_create_depth(x,y,depth,obj_javelin_charge) {
 		javelin_object = other;
