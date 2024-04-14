@@ -64,6 +64,8 @@ if key_select {
 		//room_persistent = true;
 	}else if select = 6 - options_decrease {
 		audio_play_sound(snd_selectOption,0,false);
+	}else if select = 7 - options_decrease {
+		audio_play_sound(snd_selectOption,0,false);
 		usable = false;
 		instance_create_depth(x,y,depth-1,obj_popup_exit);
 	}
@@ -72,13 +74,13 @@ if key_select {
 image_index = select-1;
 
 //move onto screen
-if y > 240 {
-	if point_distance(x,y,x,240) > 64 {
+if y > 248 {
+	if point_distance(x,y,x,248) > 64 {
 		if move_spd < 4 {
 			move_spd += 0.1;	
 		}
 	}else {
-		move_spd = (point_distance(x,y,x,240)/64)*4;
+		move_spd = (point_distance(x,y,x,248)/64)*4;
 	}
 	y -= move_spd;	
 }

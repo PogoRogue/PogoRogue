@@ -251,6 +251,10 @@ if frenzy_time > 0 {
 	frenzy_time -= 1;	
 }
 
+if aerial_assassin_frenzy_count > 0 {
+	aerial_assassin_frenzy_count -= 1;
+}
+
 if !(key_fire_projectile) { //lerp back to starting firerate while not shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_start, ammo.firerate_mult);
 }

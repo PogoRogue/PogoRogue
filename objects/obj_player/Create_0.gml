@@ -53,6 +53,7 @@ damage_boost_active = false;
 damage_boost_timer = 0;
 landed_on_enemy = false; // for robbery 
 aerial_assassin_frenzy = false;
+aerial_assassin_frenzy_count = 0;
 
 //pickups
 charge = 0;

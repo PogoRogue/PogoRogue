@@ -3,7 +3,7 @@
 function scr_Guns(){
 	default_gun = {
 		_name: "Pistol",  //name of gun
-		tagline: "The starting weapon.", //short description of weapon
+		tagline: "Your starting weapon. It's pretty decent.", //short description of weapon
 		sprite: spr_gun_default,   //gun sprite
 		ammo: [default_bullet],//array of ammo
 		inaccuracy: 0,        //random bullet angle inaccuracy
@@ -89,7 +89,7 @@ function scr_Guns(){
 
 	paintball_gun = {
 		_name: "Paintball Gun",  
-		tagline: "Fires colorful paintballs at a high speed.",
+		tagline: "Fire colorful paintballs at a high speed with high control.",
 		sprite: spr_gun_paintball,   
 		ammo: [paintball_bullet],     
 		inaccuracy: 5,     
@@ -111,7 +111,7 @@ function scr_Guns(){
 
 	shotgun_gun = {
 		_name: "Shotgun",  
-		tagline: "Powerful, short-range blast spread.",
+		tagline: "Powerful, short-range blast spread of 5 shots.",
 		sprite: spr_gun_shotgun,  
 		ammo: [shotgun_bullet],
 		inaccuracy: 0,       
@@ -133,7 +133,7 @@ function scr_Guns(){
 
 	bubble_gun = {
 		_name: "Bubble Gun",  
-		tagline: "Extremely fast, high-control bubble shooter.",
+		tagline: "Extremely fast, high-control bubble shooter. Bubbles pop after a short time.",
 		sprite: spr_gun_bubble,   
 		ammo: [bubble_bullet],
 		inaccuracy: 35,       
@@ -177,7 +177,7 @@ function scr_Guns(){
 	
 	grenade_gun = {
 		_name: "Grenade Launcher",  
-		tagline: "Fire grenades that explode after one bounce.",
+		tagline: "Fire oddly elastic grenades that explode after one bounce.",
 		sprite: spr_gun_grenade,   
 		ammo: [grenade_bullet],
 		inaccuracy: 0,       
@@ -199,7 +199,7 @@ function scr_Guns(){
 	
 	laser_gun = {
 		_name: "Laser Gun",  
-		tagline: "A massive, powerful laser that can cut through walls.",
+		tagline: "Create a massive, powerful laser that can cut through walls.",
 		sprite: spr_gun_laser,   
 		ammo: [laser_bullet],
 		inaccuracy: 0,       
@@ -243,7 +243,7 @@ function scr_Guns(){
 	
 	missile_gun = {
 		_name: "Missile Launcher",  
-		tagline: "Fire a heat seeking missile that locks onto nearby enemies.",
+		tagline: "Fire a heat-seeking missile that locks onto nearby enemies.",
 		sprite: spr_gun_missile,   
 		ammo: [missile_bullet],
 		inaccuracy: 0,       
@@ -265,7 +265,7 @@ function scr_Guns(){
 	
 	boomerang_gun = {
 		_name: "Boomerangs",  
-		tagline: "Don't worry, they always come back.",
+		tagline: "Can be immediately used again once they return to you, but won't reload on bounce/kills. Don't worry, they always come back.",
 		sprite: spr_gun_boomerang,   
 		ammo: [boomerang_bullet],
 		inaccuracy: 0,       
@@ -287,7 +287,7 @@ function scr_Guns(){
 	
 	starsucker_gun = {
 		_name: "Star Sucker",  
-		tagline: "Sucks in stars from afar, giving you a bounce when they reach you.",
+		tagline: "Suck in a wide arc of 10 stars from afar. Stars give you a boost once when they make contact with you.",
 		sprite: spr_gun_starsucker,  
 		ammo: [starsucker_bullet],
 		inaccuracy: 0,       
@@ -331,7 +331,7 @@ function scr_Guns(){
 	
 	slime_gun = {
 		_name: "Slime Blaster",  
-		tagline: "Unleash massive blasts of slime onto enemies below.",
+		tagline: "Unleash a wide blast of slime chunks onto enemies below.",
 		sprite: spr_gun_slime,  
 		ammo: [slime_bullet],
 		inaccuracy: 15,       
@@ -353,7 +353,7 @@ function scr_Guns(){
 	
 	yoyo_gun = {
 		_name: "Yo-yo",  
-		tagline: "Swings from below the player, causing damage to enemies in its path. Releasing the shoot button makes it come back sooner.",
+		tagline: "Throw and hold a yo-yo that swings from below you, causing damage to enemies in its path. It can be reused when it retracts, giving you an additional boost when it makes contact.",
 		sprite: spr_gun_yoyo,   
 		ammo: [yoyo_bullet],
 		inaccuracy: 0,       
@@ -397,7 +397,7 @@ function scr_Guns(){
 	
 	water_gun = {
 		_name: "Water Gun",  
-		tagline: "Shoot a stream of water, which is slowly refilled when not being used. Don't ask where the water comes from.",
+		tagline: "Shoot a stream of water that is slowly refilled when not being used. Don't ask where the water comes from.",
 		sprite: spr_gun_water,   
 		ammo: [water_bullet],
 		inaccuracy: 0,       

@@ -208,7 +208,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 3,
 		bounce_amount: 1,
-		damage: 7
+		damage: 4
 	};
 	
 	missile_bullet = {

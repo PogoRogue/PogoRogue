@@ -134,7 +134,7 @@ if (gun_name = "Missile Launcher") {
 	}
 	
 	//lock on to enemy
-	if collision_circle(x,y,196,obj_enemy_parent,false,true) != noone {
+	if collision_circle(x,y,128,obj_enemy_parent,false,true) != noone {
 		closest_enemy = instance_nearest(x,y,obj_enemy_parent);
 	}else {
 		closest_enemy = noone;
