@@ -189,7 +189,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 0,
 		bounce_amount: 1,
-		damage: 0.18 //per frame
+		damage: 0.2 //per frame
 	};
 	
 	bouncyball_bullet = {

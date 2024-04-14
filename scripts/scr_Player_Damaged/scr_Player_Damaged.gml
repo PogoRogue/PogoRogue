@@ -28,6 +28,8 @@ function scr_Player_Damaged(damage){
 				if damage_boost_active = false {
 					damage_boost_active = true; // This variable is declared in obj_player Create Event.
 					damage_boost_timer = 180;
+				}else {
+					damage_boost_timer = 180;	
 				}
 			}
 		

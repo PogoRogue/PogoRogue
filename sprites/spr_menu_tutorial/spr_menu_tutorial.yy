@@ -26,7 +26,7 @@
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"52c84896-dbd2-4ff9-a613-0c77764b4797","blendMode":0,"displayName":"Text","isLocked":false,"name":"52c84896-dbd2-4ff9-a613-0c77764b4797","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"500a33ca-bb34-498c-a2d6-82f645d634a6","blendMode":0,"displayName":"Body","isLocked":false,"name":"500a33ca-bb34-498c-a2d6-82f645d634a6","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
+    {"$GMImageLayer":"","%Name":"500a33ca-bb34-498c-a2d6-82f645d634a6","blendMode":0,"displayName":"Body","isLocked":false,"name":"500a33ca-bb34-498c-a2d6-82f645d634a6","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_menu_tutorial",
   "nineSlice":null,

@@ -60,6 +60,13 @@ if frenzy_time > 0 {
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
 	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(frenzy_time / 300),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
+	
+	//2x damage buffs
+	if (global.laststand and hp <= 8 and hp > 0) {
+		scr_2x_Damage_Meter(36+(48 * gun_num)+48,false);
+	}else if global.righteousrevenge = true and damage_boost_active and damage_boost_timer > 0 and hp > 0 {
+		scr_2x_Damage_Meter(36+(48 * gun_num)+48,true);
+	}
 }else if aerial_assassin_frenzy_count > 0 {
 	draw_set_color(make_color_rgb(242,240,229));
 	draw_set_font(fnt_combo2);
@@ -69,6 +76,20 @@ if frenzy_time > 0 {
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
 	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(aerial_assassin_frenzy_count / 120),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
+	
+	//2x damage buffs
+	if (global.laststand and hp <= 8 and hp > 0) {
+		scr_2x_Damage_Meter(36+(48 * gun_num)+48,false);
+	}else if global.righteousrevenge = true and damage_boost_active and damage_boost_timer > 0 and hp > 0 {
+		scr_2x_Damage_Meter(36+(48 * gun_num)+48,true);
+	}
+}else {
+	//2x damage buffs
+	if (global.laststand and hp <= 8 and hp > 0) {
+		scr_2x_Damage_Meter(36+(48 * gun_num),false);
+	}else if global.righteousrevenge = true and damage_boost_active and damage_boost_timer > 0 and hp > 0 {
+		scr_2x_Damage_Meter(36+(48 * gun_num),true);
+	}
 }
 
 //coins

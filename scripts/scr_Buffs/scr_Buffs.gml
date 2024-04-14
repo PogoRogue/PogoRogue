@@ -141,7 +141,7 @@ function scr_Buffs(){
 	}
 	
 	buff_sharptip = function(){
-		obj_player.stomp_damage *= 2;
+		obj_player.stomp_damage += 12;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	

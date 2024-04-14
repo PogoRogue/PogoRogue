@@ -9,7 +9,7 @@ if damage > 13 {
 }
 
 if scr_Animation_Complete() {
-	image_speed = 0;	
+	image_speed = 0;
 }
 if floor(image_index) = sprite_get_number(sprite_index)-2 {
 	image_speed = 0;

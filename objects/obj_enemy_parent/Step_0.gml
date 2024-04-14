@@ -20,7 +20,7 @@ if(is_dead) {
 	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 { 
 		global.combo += 1;
 		global.combo_length = global.combo_max;
-		if global.combo = 10 and global.combo_master = true { //combo master powerup
+		if global.combo > 0 and global.combo % 10 = 0 and global.combo_master = true { //combo master powerup
 			with obj_player {
 				if hp < max_hp {
 					hp += 8;
