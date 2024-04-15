@@ -23,6 +23,7 @@ if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true or obj_pla
 		}
 		
 		created = true;	
+		audio_stop_sound(snd_javelin_charge);
 		audio_play_sound(snd_javelin,0,false);
 		scr_Screen_Shake(3 + ((temp_charge/temp_charge_max)*4), 6 + ((temp_charge/temp_charge_max)*10), true);
 		hspd = lengthdir_x(spd+((temp_charge/temp_charge_max)*6),angle);

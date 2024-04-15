@@ -259,6 +259,9 @@ state_chargejump = function() {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5,true);
 		scr_Jump(charge-2);
 		audio_stop_sound(snd_chargejump);
+		audio_stop_sound(snd_bounce);
+		audio_stop_sound(snd_bounce2);
+		audio_play_sound(snd_chargejump_launch,0,false);
 		allow_flames = true;
 		min_flames_speed = 7.2;
 		pickup_chargejump.on_cooldown = true;
