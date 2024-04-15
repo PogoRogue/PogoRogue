@@ -19,6 +19,25 @@ if(!other.invinsible) {
 				}
 			}
 		}
+	}else if gun_name = "Yo-yo" {
+		if !scr_In_Array(yoyo_array,other) and retracted = false {
+			if(!other.is_dead) {
+				other.hp -= (damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "Laser Gun" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "Slime Blaster" and global.damage_buff > 0))) * other.bullet_defense;
+				other.red_frames = 10;
+	
+				scr_Reload_On_Kill();
+			}
+			yoyo_array[array_length(yoyo_array)] = other;
+		}
+		if !scr_In_Array(yoyo_array2,other) and retracted = true {
+			if(!other.is_dead) {
+				other.hp -= (damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "Laser Gun" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "Slime Blaster" and global.damage_buff > 0))) * other.bullet_defense;
+				other.red_frames = 10;
+	
+				scr_Reload_On_Kill();
+			}
+			yoyo_array2[array_length(yoyo_array2)] = other;
+		}
 	}else {
 		if(!other.is_dead) {
 			other.hp -= (damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "Laser Gun" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "Slime Blaster" and global.damage_buff > 0))) * other.bullet_defense;
@@ -33,6 +52,7 @@ if(!other.invinsible) {
 	}
 
 	colliding_with_enemy = true;
+	
 	
 	
 }

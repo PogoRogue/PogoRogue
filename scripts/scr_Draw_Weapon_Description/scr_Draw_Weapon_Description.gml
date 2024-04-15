@@ -103,9 +103,9 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + added_damage;
 	
 		//special conditions
-		if weapon._name = "Laser Gun" or weapon._name = "Yo-yo" {
+		if weapon._name = "Laser Gun" {
 			line_2 = "Damage per second: " + string(weapon.ammo[0].damage * 60) + added_damage;
-		}else if weapon._name = "Boomerangs" {
+		}else if weapon._name = "Boomerangs" or weapon._name = "Yo-yo" {
 			line_2 = "Damage per hit: " + string(weapon.ammo[0].damage) + added_damage;
 		}else if weapon._name = "Javelins" {
 			line_2 = "Damage per javelin: " + string(weapon.ammo[0].damage) + "-16" + added_damage;

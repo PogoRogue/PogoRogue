@@ -12,7 +12,7 @@ function scr_Random_Item_Drops(){
 	pickup_drop = irandom_range(1,100);
 	
 	//heart
-	if (heart_drop <= heart_chance) {
+	if (heart_drop <= heart_chance) and room != room_boss_1 and room != room_boss_2 and room != room_boss_3  {
 		//randomize();
 		var heart_type = choose(obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_max_hp);
 				
@@ -28,7 +28,7 @@ function scr_Random_Item_Drops(){
 	}
 	
 	//buff
-	if (buff_drop <= buff_chance) {
+	if (buff_drop <= buff_chance) and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 		var object_array = [];
 		if created_items = false {
 			var object_type = scr_Get_Rand_Buff_Object();
@@ -55,7 +55,7 @@ function scr_Random_Item_Drops(){
 	}
 	
 	//weapon
-	if (weapon_drop <= weapon_chance and (heart_drop > heart_chance)) {
+	if (weapon_drop <= weapon_chance and (heart_drop > heart_chance)) and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 		var object_array = [];
 		
 		var object_type = scr_Get_Rand_Weapon_Object();
@@ -82,7 +82,7 @@ function scr_Random_Item_Drops(){
 	}
 	
 	//pickup
-	if (pickup_drop <= pickup_chance and (heart_drop > heart_chance)) {
+	if (pickup_drop <= pickup_chance and (heart_drop > heart_chance)) and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 		var object_array = [];
 		
 		var object_type = scr_Get_Rand_Pickup_Object();
@@ -128,9 +128,12 @@ function Create_Item_Drops(object_array)
 		
 		var inst = instance_create_depth(object_x, object_y, object_depth, object_to_create)
 		
-		with (inst)
+		if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 
 		{
-			follow_player = true;
+			with (inst)
+			{
+				follow_player = true;
+			}
 		}
 	}	
 }

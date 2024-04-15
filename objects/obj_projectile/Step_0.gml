@@ -231,6 +231,16 @@ if (gun_name = "Boomerangs") {
 }
 
 if (gun_name = "Yo-yo") {
+	for(i = 0; i < array_length(yoyo_array); i++) {
+		if !place_meeting(x,y,yoyo_array[i]) {
+			array_delete(yoyo_array,i,1);
+		}
+	}
+	for(i = 0; i < array_length(yoyo_array2); i++) {
+		if !place_meeting(x,y,yoyo_array2[i]) {
+			array_delete(yoyo_array2,i,1);
+		}
+	}
 	hspd = 0;
 	vspd = 0;
 	image_angle += 20;

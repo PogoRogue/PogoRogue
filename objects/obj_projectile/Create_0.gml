@@ -138,6 +138,9 @@ if (gun_name = "Slime Blaster") {
 	random_set_seed(global.seed);
 }
 
+yoyo_array = [];
+yoyo_array2 = []; //retract array
+
 //yo-yo
 if (gun_name = "Yo-yo") {
 	yoyo_num = 0;

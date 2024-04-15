@@ -322,7 +322,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 0,
 		bounce_amount: 1,
-		damage: 2
+		damage: 8
 	};
 	
 	javelin_bullet = {
