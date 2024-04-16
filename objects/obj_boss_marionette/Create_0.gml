@@ -16,21 +16,34 @@ hsp = 0;
 vsp = 0;
 collision_detected = false;
 
-//When taking specific action, stop normal movement
-special_action="NO";
-// "NO"= normal 
-//"ground_pound"=ground pound 
-//"return"=return to original position
-//phases
-phase=2;
-//phase 0 = begin, 0.5=first chase,1=midway,
-//1.5=final chase 2=final fight, where most abilities are enhanced
-orig_x=x;
-orig_y=y;
+
+enum BOSS3_ABILITIES {
+	NONE,
+	GROUND_POUND,
+	GROUND_POUND_SHOCKWAVE,
+	SHIELD,
+	BULLET_BLAST,
+}
+
+enum BOSS3_WEAPONS {
+	NONE,
+	PISTOL,
+	SHOTGUN,
+	MISSILE,
+	BOUNCY,		// TODO
+	JAVALIN,	// TODO
+	BUBBLE,		// TODO
+	BOOMERANG,	// TODO
+	GRENADE,	// TODO
+}
+
+ability = BOSS3_ABILITIES.NONE;
+weapon = BOSS3_WEAPONS.PISTOL;
+ability_cooldown =  8 * room_speed;
 
 // HP
 draw_hp = false;
-hp = 500;
+hp = 50//0;
 previous_hp = hp;
 is_hurt = false;
 hp_max = hp;
@@ -43,7 +56,9 @@ top_border = view_height - 20;
 boss_name = "Rogo Marionette";
 
 // Limbs
-instance_create_depth(x + 40, y, depth - 1, obj_boss_marionette_arm, {length_diff: 40, angle_diff: 42});
-instance_create_depth(x - 40, y, depth - 1, obj_boss_marionette_arm, {length_diff: 40, angle_diff: 138});
+instance_create_depth(x + 40, y, depth - 1, obj_boss_marionette_arm, {arm_num: 1, length_diff: 40, angle_diff: 42});
+instance_create_depth(x - 40, y, depth - 1, obj_boss_marionette_arm, {arm_num: 2, length_diff: 40, angle_diff: 138});
 
 instance_create_depth(x, y, -20, obj_boss_marionette_health);
+
+alarm_set(2, ability_cooldown);

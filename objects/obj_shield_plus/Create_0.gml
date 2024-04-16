@@ -1,18 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Instantiate variables
 
-
-
-
-//////
 parent = noone;
 is_active = true;
-restore_duration = 2.5 * room_speed;
-lifetime=5*room_speed;
-alarm_set(1,lifetime);
-boss=instance_nearest(x,y,obj_boss_marionette);
-//not working need fix
-if(boss.phase==2){
-	image_blend=c_red;
-}
-image_speed=0;
+restore_duration = 8 * room_speed;
+image_speed = 0;
+image_alpha = 0;

@@ -8,6 +8,6 @@ if(is_active) {
 		x += hspeed;
 		y += vspeed;
 	}
+	image_alpha = 0.5;
 	is_active = false;
-	alarm_set(0, 10);
 }

@@ -11,6 +11,11 @@ switch(current_state) {
 		// Do nothing
 		break;
 	case BOSS3_STATES.ATTACK_1:
+		if(state_has_changed) {
+			body.weapon = BOSS3_WEAPONS.PISTOL;
+			body.ability = BOSS3_ABILITIES.NONE;
+		}
+		
 		body.anchor_y = lerp(body.anchor_y, attack_1_pos, 0.03);
 		
 		if(body.hp_percent <= 75) {
@@ -25,6 +30,8 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.CHASE_1:
 		if(state_has_changed) {
+			body.weapon = BOSS3_WEAPONS.NONE;
+			body.ability = BOSS3_ABILITIES.NONE;
 			instance_destroy(gate_1);
 		}
 		
@@ -43,6 +50,8 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.ATTACK_2:
 		if(state_has_changed) {
+			body.weapon = BOSS3_WEAPONS.SHOTGUN;
+			body.ability = BOSS3_ABILITIES.GROUND_POUND;
 			body.anchor_y = attack_2_pos;
 		}
 		
@@ -58,6 +67,8 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.CHASE_2:
 		if(state_has_changed) {
+			body.weapon = BOSS3_WEAPONS.NONE;
+			body.ability = BOSS3_ABILITIES.NONE;
 			instance_destroy(gate_2);
 		}
 		
@@ -76,6 +87,8 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.ATTACK_3:
 		if(state_has_changed) {
+			body.weapon = BOSS3_WEAPONS.MISSILE;
+			body.ability = BOSS3_ABILITIES.SHIELD;
 			body.anchor_y = attack_3_pos;
 		}
 		
@@ -91,6 +104,9 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.CHASE_3:
 		if(state_has_changed) {
+			body.weapon = BOSS3_WEAPONS.NONE;
+			body.ability = BOSS3_ABILITIES.NONE;
+			instance_destroy(obj_shield_plus);
 			instance_destroy(gate_3);
 		}
 		
@@ -109,6 +125,8 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.ATTACK_4:
 		if(state_has_changed) {
+			body.weapon = BOSS3_WEAPONS.PISTOL;
+			body.ability = BOSS3_ABILITIES.BULLET_BLAST;
 			body.anchor_y = attack_4_pos;
 		}
 		

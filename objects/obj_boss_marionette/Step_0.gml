@@ -4,28 +4,28 @@ event_inherited();
 
 hp_percent = (hp / hp_max) * 100;
 is_hurt = previous_hp != hp;
-if(special_action=="NO"){
-    angle_accelerration = swingspeed * dcos(angle);
-    angle_velocity += angle_accelerration;
-    angle += angle_velocity;
 
-    hsp = anchor_x + lengthdir_x(distance, angle) - x;
-    vsp = anchor_y + lengthdir_y(distance, angle) - y;
-}
+angle_accelerration = swingspeed * dcos(angle);
+angle_velocity += angle_accelerration;
+angle += angle_velocity;
+
+hsp = anchor_x + lengthdir_x(distance, angle) - x;
+vsp = anchor_y + lengthdir_y(distance, angle) - y;
+
 if(is_hurt) {
 	spring_force = 25;
 	oscillation = 0;
 }
-if(special_action=="NO"){
-	vsp += spring_force * sin(oscillation);
-    spring_force *= damping;
-    oscillation += 0.08;
 
-    x += hsp;
-    y += vsp;
+vsp += spring_force * sin(oscillation);
+spring_force *= damping;
+oscillation += 0.08;
 
-image_angle = angle + 90;
-}
+x += hsp;
+y += vsp;
+
+
+/*
 //Code for abilities here
 //Ground Pound
 if(special_action=="ground_pound"){
@@ -42,8 +42,9 @@ if(special_action=="ground_pound"){
 		}
     }
 }
+
 //after taking certain action, return to OG position
-if(special_action=="return"){
+if(special_action=="return") {
 	direction=point_direction(x,y,orig_x,orig_y);
 	speed=5;
 	if(distance_to_point(orig_x,orig_y)<=5){
@@ -55,4 +56,7 @@ if(special_action=="return"){
 		special_action="NO";
 	}
 }
+*/
+
+image_angle = angle + 90;
 previous_hp = hp;

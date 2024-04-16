@@ -4,8 +4,11 @@
 // Inherit the parent event
 event_inherited();
 amount=5;
-spread=75;
-repeats=2
+spread=40;
+repeats=0;
 delay=room_speed;
 sprite=spr_projectile_nerfdart;
-spd=10;
+spd=7;
+
+player=instance_nearest(x,y,obj_player);
+dir_central = point_direction(x, y, player.x, player.y);
