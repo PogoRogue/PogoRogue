@@ -168,7 +168,7 @@ switch(current_state) {
 		}
 	break;
 	case BOSS2_STATES.INACTIVE: // Inactive code goes here
-		if(state_has_changed) {
+		if(state_has_changed) {			
 			with(obj_spikeswing) {
 				is_active = false;
 			}

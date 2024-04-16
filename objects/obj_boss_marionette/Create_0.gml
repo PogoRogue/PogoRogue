@@ -53,11 +53,11 @@ hp_percent = (hp / hp_max) * 100;
 view_width = camera_get_view_width(view_camera[0]);
 view_height = camera_get_view_height(view_camera[0]);
 top_border = view_height - 20;
-boss_name = "Rogo Marionette";
+boss_name = "Rogo Puppet";
 
 // Limbs
-instance_create_depth(x + 40, y, depth - 1, obj_boss_marionette_arm, {arm_num: 1, length_diff: 40, angle_diff: 42});
-instance_create_depth(x - 40, y, depth - 1, obj_boss_marionette_arm, {arm_num: 2, length_diff: 40, angle_diff: 138});
+instance_create_depth(x + 40, y, depth - 1, obj_boss_marionette_arm, {arm_num: 1, length_diff: 35, angle_diff: 40});
+instance_create_depth(x - 40, y, depth - 1, obj_boss_marionette_arm, {arm_num: 2, length_diff: 35, angle_diff: 140});
 
 instance_create_depth(x, y, -20, obj_boss_marionette_health);
 

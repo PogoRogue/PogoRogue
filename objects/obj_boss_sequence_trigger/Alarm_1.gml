@@ -3,7 +3,7 @@
 var _controller = instance_nearest(x, y, obj_boss_sequence); // instance_create_layer(496, 272, "enemies", obj_boss_sequence);
 _controller.fight_started = true;
 instance_create_layer(560, 560, "enemies", obj_boss_sequence_slime);
-var _body = instance_create_layer(560, 464, "enemies", obj_boss_sequence_body, {image_xscale: 3, image_yscale: 3});
+var _body = instance_create_layer(560, 473, "enemies", obj_boss_sequence_body);
 _body.controller = _controller;
 _controller.body = _body;
 instance_create_layer(560, 560, "enemies", obj_invisible_floor, {image_xscale: 4, image_yscale: 9});

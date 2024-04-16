@@ -16,8 +16,8 @@
   "name":"obj_boss_marionette",
   "overriddenProperties":[],
   "parent":{
-    "name":"Boss Meionette",
-    "path":"folders/Objects/Enemy/Boss Meionette.yy",
+    "name":"Boss Marionette",
+    "path":"folders/Objects/Enemy/Boss Marionette.yy",
   },
   "parentObjectId":{
     "name":"obj_enemy_generic",
@@ -41,8 +41,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_marionette",
-    "path":"sprites/spr_boss_marionette/spr_boss_marionette.yy",
+    "name":"spr_boss_marionette_idle",
+    "path":"sprites/spr_boss_marionette_idle/spr_boss_marionette_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
