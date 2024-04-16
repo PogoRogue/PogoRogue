@@ -54,7 +54,7 @@ if key_select {
 	}
 }
 
-if instance_number(obj_pausemenu) > 1 {
+if instance_number(obj_pausemenu) > 1 or instance_exists(obj_fade_out){
 	instance_destroy();	
 }
 

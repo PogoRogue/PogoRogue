@@ -42,6 +42,10 @@ if (gun_name = "Paintball Gun") {
 
 
 if (gun_name = "Laser Gun") {
+	if audio_is_playing(snd_laser) {
+		audio_stop_sound(snd_laser);
+	}
+	audio_play_sound(snd_laser,0,false);
 	laser_x = obj_player.x - x;
 	laser_y = obj_player.y - y;
 	full_sprite = spr_projectile_laser_start;
@@ -74,7 +78,7 @@ if (gun_name = "Laser Gun") {
 if (gun_name = "Missile Launcher") {
 	sound = audio_play_sound(snd_rocketwhoosh,0,false);
 	temp_angle = image_angle;
-	if collision_circle(x,y,128,obj_enemy_parent,false,true) != noone {
+	if collision_circle(x,y,160,obj_enemy_parent,false,true) != noone {
 		closest_enemy = instance_nearest(x,y,obj_enemy_parent);
 	}else {
 		closest_enemy = noone;

@@ -5,7 +5,7 @@ if global.credits_watched = true {
 }
 instance_create_depth(x,y,depth,obj_mastercontroller);
 
-yy = 464;
+yy = 440;
 y_offset = 0;
 string_separation = 32;
 

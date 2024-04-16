@@ -80,3 +80,14 @@ scr_All_Actives_Array();
 
 scr_All_Weapons_Array();
 
+if instance_exists(obj_pause) {
+	if audio_is_playing(snd_laser) and !instance_exists(obj_laser) and obj_pause.pause = false {
+		audio_stop_sound(snd_laser);
+	}else if audio_is_playing(snd_laser) and !instance_exists(obj_laser) {
+		audio_pause_sound(snd_laser);
+	}else if obj_pause.pause = false {
+		if audio_is_paused(snd_laser) = true {
+			audio_resume_sound(snd_laser);
+		}
+	}
+}
