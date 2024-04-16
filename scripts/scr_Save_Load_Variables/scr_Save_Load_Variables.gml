@@ -14,6 +14,7 @@ function scr_Save_Load_Variables(){
 	global.num_of_wins = 0;
 	global.fastest_time = 0;
 	
+	global.credits_watched = false; //credits are required once
 	global.tutorial_completed = false;
 	
 	//audio settings
@@ -46,6 +47,7 @@ function scr_Save_Load_Variables(){
 	global.num_of_wins = ini_read_real("savegame", "num_of_wins", 0);
 	global.fastest_time = ini_read_real("savegame", "fastest_time", 0);
 	
+	global.credits_watched = ini_read_real("savegame", "credits_watched", false);
 	global.tutorial_completed = ini_read_real("savegame", "tutorial_completed", false);
 	
 	global.sound_volume = ini_read_real("savegame", "sound_volume", 100);

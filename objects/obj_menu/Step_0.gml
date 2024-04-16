@@ -63,7 +63,7 @@ if key_select {
 		scr_Room_Transition(room_settings);
 		//room_persistent = true;
 	}else if select = 6 - options_decrease {
-		audio_play_sound(snd_selectOption,0,false);
+		scr_Room_Transition(room_credits_scrolling);
 	}else if select = 7 - options_decrease {
 		audio_play_sound(snd_selectOption,0,false);
 		usable = false;

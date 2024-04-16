@@ -29,31 +29,41 @@ if centered = true {
 		select_x = 1;	
 	}
 	
-	//left/right
-	if key_left and select_x > 1 and selected_x = false {
-		select_x -= 1;
-		selected_x = true;
-		audio_play_sound(snd_menuNavigation,0,false);
-	}else if key_right and select_x < select_x_max and selected_x = false {
-		select_x += 1;
-		selected_x = true;
-		audio_play_sound(snd_menuNavigation,0,false);
+	if win = false {
+		//left/right
+		if key_left and select_x > 1 and selected_x = false {
+			select_x -= 1;
+			selected_x = true;
+			audio_play_sound(snd_menuNavigation,0,false);
+		}else if key_right and select_x < select_x_max and selected_x = false {
+			select_x += 1;
+			selected_x = true;
+			audio_play_sound(snd_menuNavigation,0,false);
+		}
+	
+		if !key_left and !key_right {
+			selected_x = false;
+		}
 	}
 	
-	if !key_left and !key_right {
-		selected_x = false;
-	}
 	
 	//selected
-	if key_select and select_x = 1 { //restart
-		scr_Restart_Level();
-		global.total_runs += 1;
-		scr_Save_Real("total_runs",global.total_runs);
-	}
+	if win = false {
+		if key_select and select_x = 1 { //restart
+			scr_Restart_Level();
+			global.total_runs += 1;
+			scr_Save_Real("total_runs",global.total_runs);
+		}
 	
-	if key_select and select_x = 2 { //main menu
-		scr_Game_Restart();
-		audio_play_sound(snd_selectOption,0,false);
+		if key_select and select_x = 2 { //main menu
+			scr_Game_Restart();
+			audio_play_sound(snd_selectOption,0,false);
+		}
+	}else {
+		if key_select {
+			scr_Room_Transition(room_credits_scrolling);
+			audio_play_sound(snd_selectOption,0,false);
+		}
 	}
 }
 

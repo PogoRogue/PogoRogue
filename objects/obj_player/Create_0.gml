@@ -193,6 +193,7 @@ state_free = function() {
 				item_swap = false;
 				paused_outside = true;
 			}
+			state = state_immobile;
 		}
 	}
 	

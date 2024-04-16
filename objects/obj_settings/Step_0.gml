@@ -248,7 +248,7 @@ if !key_up and !key_down {
 	alarm[3] = alarm3_time;
 }
 
-if key_back {
+if key_back and !instance_exists(obj_fade_in) {
 	if room != room_settings {
 		alarm[0] = 1;
 		audio_play_sound(snd_unavailable,0,false);
