@@ -4,5 +4,5 @@
 
 parent = noone;
 is_active = true;
-restore_duration = 12 * room_speed;
+restore_duration =12* room_speed;
 
