@@ -39,7 +39,7 @@ ability_cooldown =  8 * room_speed;
 
 // HP
 draw_hp = false;
-hp = 50//0;
+hp = 500;
 previous_hp = hp;
 is_hurt = false;
 hp_max = hp;
