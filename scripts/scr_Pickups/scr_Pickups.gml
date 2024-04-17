@@ -87,7 +87,7 @@ function scr_Pickups(){
 		cooldown_time: -1,
 		cooldown_text: "Cooldown: On bounce" + " / kill",
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze],
+		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze,state_parachute],
 		key_held: false,
 		reload_on_bounce: true,
 		max_uses_per_bounce: 3,

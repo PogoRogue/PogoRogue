@@ -87,6 +87,19 @@ if (gun_name = "Water Gun") {
 	}
 }
 
+if (gun_name = "Paintball Gun") {
+	for(i = 0; i < 360; i += 45) {
+		with instance_create_depth(x,y,depth-1,obj_paintball_droplet) {
+			speed = other.spd/3;
+			direction = other.i;
+			randomize();
+			direction += irandom_range(-45,45);
+			random_set_seed(global.seed);
+			color_index = other.image_index;
+		}
+	}
+}
+
 if (gun_name = "Javelins") {
 	if place_meeting(x,y,obj_ground) {
 		with instance_create_depth(x,y,depth,obj_javelin_animation)	{

@@ -36,6 +36,14 @@ for(i = 0; i < 1536; i+=16) {
 		gate_object = instance_place(x-i,y,obj_room_gate_close);
 		outside_gates = true;
 	}
+	//boss gates
+	if place_meeting(x+i,y,obj_boss_gate_close) {
+		gate_object = instance_place(x+i,y,obj_boss_gate_close);
+		outside_gates = true;
+	}else if place_meeting(x-i,y,obj_boss_gate_close) {
+		gate_object = instance_place(x-i,y,obj_boss_gate_close);
+		outside_gates = true;
+	}
 }
 
 if outside_gates = true {

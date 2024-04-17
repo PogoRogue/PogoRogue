@@ -20,3 +20,6 @@ credits_text4 = "Producers:\n\nRogo Jones\nRogo Jones\nRogo Jones\nRogo Jones\nR
 total_string_height = string_height(credits_text1) + string_height(credits_text2) + string_height(credits_text3) + string_height(credits_text4);
 
 credits_text_array = [credits_text1,credits_text2,credits_text3,credits_text4];
+
+audio_group_stop_all(audiogroup_music);
+audio_play_sound(snd_music_credits,0,false);
