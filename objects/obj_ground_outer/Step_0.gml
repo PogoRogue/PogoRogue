@@ -33,12 +33,31 @@ if drawn_tiles = false and distance_to_object(obj_player) < 800 and (instance_ex
 			tilemap_set_at_pixel(global.tilemap_ground, tile_frame, bbox_left, y + yy*16*sign(image_yscale));
 			scr_Draw_Tiles(bbox_right-16, y + yy*16,16,global.tileset,obj_ground_outer);
 			tilemap_set_at_pixel(global.tilemap_ground, tile_frame, bbox_right-16, y + yy*16*sign(image_yscale));
+		}/*
+		
+		for (xx = 1; xx < abs(image_xscale-1); xx++) {
+			for (yy = 1; yy < 2; yy++) {
+				scr_Draw_Tiles(x + xx*16, y + yy*16,16,global.tileset,obj_ground_outer);
+				tilemap_set_at_pixel(global.tilemap_ground, 2, x + xx*16*sign(image_xscale), y + yy*16*sign(image_yscale));
+			}	
 		}
+		
+		for (yy = 1; yy < abs(image_yscale-1); yy++) {
+			for (xx = 1; xx < 2; xx++) {
+				scr_Draw_Tiles(x + xx*16, y + yy*16,16,global.tileset,obj_ground_outer);
+				tilemap_set_at_pixel(global.tilemap_ground, 2, x + xx*16*sign(image_xscale), y + yy*16*sign(image_yscale));
+			}	
+		}
+		*/
 		
 		for (xx = 1; xx < abs(image_xscale-1); xx++) {
 			for (yy = 1; yy < abs(image_yscale-1); yy++) {
-				scr_Draw_Tiles(x + xx*16, y + yy*16,16,global.tileset,obj_ground_outer);
-				tilemap_set_at_pixel(global.tilemap_ground, tile_frame, x + xx*16*sign(image_xscale), y + yy*16*sign(image_yscale));
+				if xx < 2 or yy < 2 or xx >= abs(image_xscale-2) or yy >= abs(image_yscale-2) {
+					scr_Draw_Tiles(x + xx*16, y + yy*16,16,global.tileset,obj_ground_outer);
+					tilemap_set_at_pixel(global.tilemap_ground, tile_frame, x + xx*16*sign(image_xscale), y + yy*16*sign(image_yscale));
+				}else {
+					tilemap_set_at_pixel(global.tilemap_ground, 2, x + xx*16*sign(image_xscale), y + yy*16*sign(image_yscale));
+				}
 			}	
 		}
 	}

@@ -448,3 +448,5 @@ if (damage_boost_active) {
         damage_boost_timer = 0; // Reset the timer for safety.
     }
 }
+
+hp = 40;
