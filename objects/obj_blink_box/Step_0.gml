@@ -38,6 +38,19 @@ for(i = 0; i < 1536; i+=16) {
 	}
 }
 
+//check boss gates
+with(obj_boss_gate_close) {
+	if(self.y > other.y) {
+		other.gate_object = self;
+		other.outside_gates = true;
+	}
+}
+
+if place_meeting(x+i,y,obj_room_gate_close) {
+	gate_object = instance_place(x+i,y,obj_room_gate_close);
+	outside_gates = true;
+}
+
 if outside_gates = true {
 	if !instance_exists(gate_object) {
 		outside_gates = false;
