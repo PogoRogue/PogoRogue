@@ -9,8 +9,8 @@ at_wall = place_meeting(x + spd, y, obj_ground_parent);
 if (at_edge or at_wall) {
 	spd *= -1;
 }
-if (spd == 0.5) { image_xscale = -1;}
-if (spd == -0.5) { image_xscale = 1;}
+if (spd > 0) { image_xscale = -1;}
+if (spd < 0) { image_xscale = 1;}
 
 if(is_dead) {
 	spd = 0;

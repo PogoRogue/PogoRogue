@@ -10,8 +10,8 @@
   "name":"obj_boss_gate_close",
   "overriddenProperties":[],
   "parent":{
-    "name":"Boss Meionette",
-    "path":"folders/Objects/Enemy/Boss Meionette.yy",
+    "name":"Boss Marionette",
+    "path":"folders/Objects/Enemy/Boss Marionette.yy",
   },
   "parentObjectId":{
     "name":"obj_ground",

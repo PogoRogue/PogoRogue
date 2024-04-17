@@ -28,7 +28,7 @@
   ],
   "name":"spr_shieldbubble",
   "nineSlice":null,
-  "origin":9,
+  "origin":4,
   "parent":{
     "name":"Player",
     "path":"folders/Sprites/Player.yy",
@@ -96,7 +96,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":32,
-    "yorigin":33,
+    "yorigin":32,
   },
   "swatchColours":[
     4278190335,4293259506,4290360760,4287136134,4284834660,4283384901,4283971642,4280492321,4282526517,4285154115,

@@ -5,7 +5,7 @@ hole_position_2 = {x: x + 41, y: y - 14}; // Top right
 hole_position_3 = {x: x, y: y + 32}; // Bottom center
 
 vole_is_dead = false;
-vole_hp = 24;
+vole_hp = 40;
 current_position = hole_position_1;
 
 // Start spawning vole

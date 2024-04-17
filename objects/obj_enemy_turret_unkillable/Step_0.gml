@@ -19,6 +19,10 @@ if(is_active) {
 	body_sprite = spr_slime_turret_body_inactive;
 }
 
-hp = hp_max; // Don't allow death
+damage = is_active ? 8 : 0;
+
+if(hp <= 0) {
+	hp = hp_max; // Don't allow death
+}
 red_frames = 0;
 current_iframes = 0;

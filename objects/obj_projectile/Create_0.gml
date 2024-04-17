@@ -1,4 +1,8 @@
 /// @description initialize variables
+//for final boss
+boss_projectile=false;
+
+
 image_index = 0;
 image_speed = 0;
 angle = image_angle;
@@ -75,7 +79,11 @@ if (gun_name = "Missile Launcher") {
 	sound = audio_play_sound(snd_rocketwhoosh,0,false);
 	temp_angle = image_angle;
 	if collision_circle(x,y,256,obj_enemy_parent,false,true) != noone {
-		closest_enemy = instance_nearest(x,y,obj_enemy_parent);
+		if(!boss_projectile){
+		    closest_enemy = instance_nearest(x,y,obj_enemy_parent);
+		}else{
+			closest_enemy = instance_nearest(x,y,obj_player);
+		}
 	}else {
 		closest_enemy = noone;
 	}

@@ -14,5 +14,6 @@ boss_dir = point_direction(x, y, boss.x, boss.y);
 boss_dir = degtorad(boss_dir);
 dist = point_distance(x, y, boss.x, boss.y);
 rad = degtorad(image_angle);
+wobble = 0;
 
 drop_coins = false;

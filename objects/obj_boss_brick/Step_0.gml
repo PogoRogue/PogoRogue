@@ -5,7 +5,8 @@ image_angle = boss.image_angle;
 rad = degtorad(image_angle);
 
 if(is_dead) {
-	image_angle += random(15) - 7.5;
+	wobble++;
+	image_angle += 8 * sin(wobble);
 }
 
 x = boss.x + (cos(rad - boss_dir) * dist);
