@@ -3,6 +3,7 @@
   "%Name":"obj_boss_attack4",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_boss_attack4",
@@ -33,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gun_bouncyball",
-    "path":"sprites/spr_gun_bouncyball/spr_gun_bouncyball.yy",
+    "name":"spr_gun_laser",
+    "path":"sprites/spr_gun_laser/spr_gun_laser.yy",
   },
   "spriteMaskId":null,
   "visible":true,

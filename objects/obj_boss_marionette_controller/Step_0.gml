@@ -13,7 +13,7 @@ switch(current_state) {
 	case BOSS3_STATES.ATTACK_1:
 		if(state_has_changed) {
 			body.weapon = BOSS3_WEAPONS.PISTOL;
-			body.ability = BOSS3_ABILITIES.NONE;
+			body.ability = BOSS3_ABILITIES.GROUND_POUND;
 		}
 		
 		body.anchor_y = lerp(body.anchor_y, attack_1_pos, 0.03);
@@ -24,8 +24,6 @@ switch(current_state) {
 			}
 			current_state = BOSS3_STATES.CHASE_1;
 		}
-		
-		/* Handle phase-specific attack scheduling here */
 		
 		break;
 	case BOSS3_STATES.CHASE_1:
@@ -45,13 +43,11 @@ switch(current_state) {
 		body.anchor_y += 9 * sign(attack_2_pos - body.anchor_y);
 		body.hp = body.hp_max * 0.75;
 		
-		/* Handle phase-specific attack scheduling here */
-		
 		break;
 	case BOSS3_STATES.ATTACK_2:
 		if(state_has_changed) {
 			body.weapon = BOSS3_WEAPONS.SHOTGUN;
-			body.ability = BOSS3_ABILITIES.GROUND_POUND;
+			body.ability = BOSS3_ABILITIES.BULLET_BLAST;
 			body.anchor_y = attack_2_pos;
 		}
 		
@@ -61,8 +57,6 @@ switch(current_state) {
 			}
 			current_state = BOSS3_STATES.CHASE_2;
 		}
-		
-		/* Handle phase-specific attack scheduling here */
 		
 		break;
 	case BOSS3_STATES.CHASE_2:
@@ -82,8 +76,6 @@ switch(current_state) {
 		body.anchor_y += 9 * sign(attack_3_pos - body.anchor_y);
 		body.hp = body.hp_max * 0.5;
 		
-		/* Handle phase-specific attack scheduling here */
-		
 		break;
 	case BOSS3_STATES.ATTACK_3:
 		if(state_has_changed) {
@@ -98,8 +90,6 @@ switch(current_state) {
 			}
 			current_state = BOSS3_STATES.CHASE_3;
 		}
-		
-		/* Handle phase-specific attack scheduling here */
 		
 		break;
 	case BOSS3_STATES.CHASE_3:
@@ -120,21 +110,17 @@ switch(current_state) {
 		body.anchor_y += 9 * sign(attack_4_pos - body.anchor_y);
 		body.hp = body.hp_max * 0.25;
 		
-		/* Handle phase-specific attack scheduling here */
-		
 		break;
 	case BOSS3_STATES.ATTACK_4:
 		if(state_has_changed) {
-			body.weapon = BOSS3_WEAPONS.PISTOL;
-			body.ability = BOSS3_ABILITIES.BULLET_BLAST;
+			body.weapon = BOSS3_WEAPONS.PISTOL; // TODO: Laser
+			body.ability = BOSS3_ABILITIES.NONE; // TODO: All abilities (enhanced)
 			body.anchor_y = attack_4_pos;
 		}
 		
 		if(body.hp_percent <= 0) {
 			current_state = BOSS3_STATES.DEAD;
 		}
-		
-		/* Handle phase-specific attack scheduling here */
 		
 		break;
 	case BOSS3_STATES.DEAD:

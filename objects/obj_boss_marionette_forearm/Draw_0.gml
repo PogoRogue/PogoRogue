@@ -16,14 +16,7 @@ switch(boss.weapon) {
 	case BOSS3_WEAPONS.MISSILE:
 		draw_sprite_ext(spr_gun_missile, 0, weapon_x, weapon_y, 1, sign(weapon_x - x), image_angle, c_white, 1);
 		break;
-	case BOSS3_WEAPONS.BOUNCY:
-		break;
-	case BOSS3_WEAPONS.JAVALIN:
-		break;
-	case BOSS3_WEAPONS.BUBBLE:
-		break;
-	case BOSS3_WEAPONS.BOOMERANG:
-		break;
-	case BOSS3_WEAPONS.GRENADE:
+	case BOSS3_WEAPONS.LASER:
+		draw_sprite_ext(spr_gun_laser, 0, weapon_x, weapon_y, 1, sign(weapon_x - x), image_angle, c_white, 1);
 		break;
 }

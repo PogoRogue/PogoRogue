@@ -30,13 +30,15 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"","%Name":"enhanced","filters":[],"listItems":[],"multiselect":false,"name":"enhanced","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_shieldbubble_BOSS",
-    "path":"sprites/spr_shieldbubble_BOSS/spr_shieldbubble_BOSS.yy",
+    "name":"spr_shieldbubble_boss",
+    "path":"sprites/spr_shieldbubble_boss/spr_shieldbubble_boss.yy",
   },
   "spriteMaskId":null,
   "visible":true,

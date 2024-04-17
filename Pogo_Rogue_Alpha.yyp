@@ -1290,7 +1290,7 @@
     {"id":{"name":"spr_shield_break","path":"sprites/spr_shield_break/spr_shield_break.yy",},},
     {"id":{"name":"spr_shield_small","path":"sprites/spr_shield_small/spr_shield_small.yy",},},
     {"id":{"name":"spr_shield","path":"sprites/spr_shield/spr_shield.yy",},},
-    {"id":{"name":"spr_shieldbubble_BOSS","path":"sprites/spr_shieldbubble_BOSS/spr_shieldbubble_BOSS.yy",},},
+    {"id":{"name":"spr_shieldbubble_boss","path":"sprites/spr_shieldbubble_boss/spr_shieldbubble_boss.yy",},},
     {"id":{"name":"spr_shieldbubble_mask","path":"sprites/spr_shieldbubble_mask/spr_shieldbubble_mask.yy",},},
     {"id":{"name":"spr_shieldbubble","path":"sprites/spr_shieldbubble/spr_shieldbubble.yy",},},
     {"id":{"name":"spr_shockwave","path":"sprites/spr_shockwave/spr_shockwave.yy",},},
