@@ -3,7 +3,7 @@
   "%Name":"spr_env_air_effect2",
   "bboxMode":2,
   "bbox_bottom":43,
-  "bbox_left":-16,
+  "bbox_left":0,
   "bbox_right":93,
   "bbox_top":18,
   "collisionKind":1,
