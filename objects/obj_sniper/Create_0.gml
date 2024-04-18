@@ -14,3 +14,4 @@ image_angle = obj_player.image_angle-90;
 attach_to_player = 0;
 
 sniped_array = [];
+boss_projectile=false;
