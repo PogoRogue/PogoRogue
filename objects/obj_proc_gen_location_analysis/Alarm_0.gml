@@ -73,23 +73,26 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 			}
 			current_region += 1; //increment the region number since there's only one tag per room
 			
+			var region_Load_Width = PROC_GEN_BLOCK_PIXEL_WIDTH - 2; //We need to load/unload a smaller area
+			//Than the exact width of a region, or we accidentally unload things bordering that region.
+			
 			//Create region struct for combat room for loading and unloading
 			var room_coord = scr_Get_Room_Coord_From_Grid_Coord(j, i)
-			var rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH;
-			var rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH;
+			var rm_width = region_Load_Width;
+			var rm_height = region_Load_Width;
 			if(room_name == "c3c")
 			{
-				rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH * 3;
-				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 3;
+				rm_width = region_Load_Width * 3;
+				rm_height = region_Load_Width * 3;
 			}
 			else if(room_name == "c2c")
 			{
-				rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH * 2;
-				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2;
+				rm_width = region_Load_Width * 2;
+				rm_height = region_Load_Width * 2;
 			}
 			else if(room_name == "Tc")
 			{
-				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2;
+				rm_height = region_Load_Width * 2;
 			}
 			var region_struct = create_region_struct(room_coord[0] + 1, room_coord[1] + 1, rm_width - 2, rm_height - 3);
 			//Add region struct to load list
@@ -101,8 +104,8 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 			if(!prev_region_was_hallway)
 			{
 				var room_coord = scr_Get_Room_Coord_From_Grid_Coord(j, i)
-				var rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH;
-				var rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH;
+				var rm_width = region_Load_Width;
+				var rm_height = region_Load_Width;
 				hallway_region_struct = create_region_struct(room_coord[0], room_coord[1], rm_width - 1, rm_height - 1);
 			}
 			else //Otherwise, update the current region with this room's coordinates
@@ -110,18 +113,18 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 				var room_coord = scr_Get_Room_Coord_From_Grid_Coord(j, i)
 				if(room_name == "1" || room_name == "1f")
 				{
-					var rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH;
-					var rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH;
+					var rm_width = region_Load_Width;
+					var rm_height = region_Load_Width;
 				}
 				else if(room_name == "1vc" || room_name == "1vcf")
 				{
-					var rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH;
-					var rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2;
+					var rm_width = region_Load_Width;
+					var rm_height = region_Load_Width * 2;
 				}
 				else if(room_name == "1hc" || room_name == "1hcf")
 				{
-					var rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH * 2;
-					var rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH;
+					var rm_width = region_Load_Width * 2;
+					var rm_height = region_Load_Width;
 				}
 				hallway_region_struct = update_region_struct_x(hallway_region_struct, room_coord[0]);
 				hallway_region_struct = update_region_struct_y(hallway_region_struct, room_coord[1]);

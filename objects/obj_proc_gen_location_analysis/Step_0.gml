@@ -74,6 +74,16 @@ if(instance_exists(current_tag_object))
 			
 		}
 	}
+	/*
+	//Temp load/unload current player chunk for testing purposes
+	if(keyboard_check(ord("L")))
+	{
+		scr_Load_Grid(grid_location[0], grid_location[1] + 1);
+	}
+	else if(keyboard_check(ord("K")))
+	{
+		scr_Unload_Grid(grid_location[0], grid_location[1] + 1);
+	}*/
 }
 else
 {
