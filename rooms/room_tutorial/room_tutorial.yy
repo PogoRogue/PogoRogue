@@ -107,9 +107,10 @@
     {"name":"inst_1C74ED0F","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_37701355","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_1C17F54B","path":"rooms/room_tutorial/room_tutorial.yy",},
-    {"name":"inst_558FE91","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_58725593","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_751B70C9","path":"rooms/room_tutorial/room_tutorial.yy",},
+    {"name":"inst_762D60D7","path":"rooms/room_tutorial/room_tutorial.yy",},
+    {"name":"inst_C2185A8","path":"rooms/room_tutorial/room_tutorial.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -187,7 +188,8 @@
             {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_chest_weapon","path":"objects/obj_chest_weapon/obj_chest_weapon.yy",},"propertyId":{"name":"custom_weapon_drop","path":"objects/obj_chest_weapon/obj_chest_weapon.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_item_weapon_paintball",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":816.0,},
         {"$GMRInstance":"","%Name":"inst_1C17F54B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1C17F54B","objectId":{"name":"obj_fade_in","path":"objects/obj_fade_in/obj_fade_in.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":-32.0,},
-        {"$GMRInstance":"","%Name":"inst_558FE91","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_558FE91","objectId":{"name":"obj_boss_marionette","path":"objects/obj_boss_marionette/obj_boss_marionette.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":2848.0,},
+        {"$GMRInstance":"","%Name":"inst_762D60D7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_762D60D7","objectId":{"name":"obj_ground_oneway","path":"objects/obj_ground_oneway/obj_ground_oneway.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":6.0,"scaleY":1.0,"x":208.0,"y":3072.0,},
+        {"$GMRInstance":"","%Name":"inst_C2185A8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_C2185A8","objectId":{"name":"obj_enemy_flying","path":"objects/obj_enemy_flying/obj_enemy_flying.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":336.0,"y":3072.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"enemies","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"enemies","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Ground","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

@@ -7,26 +7,24 @@
 // Inherit the parent event
 event_inherited();
 
-at_edge = (!collision_point(x + (sprite_width / 2), y + (sprite_height / 2), obj_ground_parent, false, false))or (!collision_point(x - (sprite_width / 2), y + (sprite_height / 2), obj_ground_parent, false, false)); 
-at_wall = (collision_point(x + (sprite_width / 2), y , obj_ground_parent, false, false))or (collision_point(x - (sprite_width / 2), y , obj_ground_parent, false, false)); 
 on_ground = instance_place(x,y+1,obj_ground);
 end_chasing = false;
 edge_side = 0; //left is 0,right is 1; left has wall is 2,right has wall is 3
 
 //left edge
-if(at_edge and collision_point(x + sprite_width / 2, y + (sprite_height / 2), obj_ground_parent, false, false)){
+if(at_edge and collision_point(x + sprite_width / 2, y + (sprite_height / 2), obj_ground_enemy_collision, false, false)){
 	edge_side = 0;
 }	
 //right edge
-else if(at_edge and collision_point(x - sprite_width / 2, y + (sprite_height / 2), obj_ground_parent, false, false)){
+else if(at_edge and collision_point(x - sprite_width / 2, y + (sprite_height / 2), obj_ground_enemy_collision, false, false)){
 	edge_side = 1;
 }
 
 //left has wall
-else if(at_wall and collision_point(x - sprite_width / 2, y - (sprite_height / 2), obj_ground_parent, false, false)){
+else if(at_wall and collision_point(x - sprite_width / 2, y - (sprite_height / 2), obj_ground_enemy_collision, false, false)){
 	edge_side = 2;
 }
-else if(at_wall and collision_point(x + sprite_width / 2, y - (sprite_height / 2), obj_ground_parent, false, false)){
+else if(at_wall and collision_point(x + sprite_width / 2, y - (sprite_height / 2), obj_ground_enemy_collision, false, false)){
 	edge_side = 3;
 }
 

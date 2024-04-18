@@ -11,12 +11,12 @@
   "name":"obj_enemy_rocketoise",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemy",
-    "path":"folders/Objects/Enemy.yy",
+    "name":"Ready Enemies",
+    "path":"folders/Objects/Enemy/Ready Enemies.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy_shoot_only",
-    "path":"objects/obj_enemy_shoot_only/obj_enemy_shoot_only.yy",
+    "name":"obj_enemy_shooter",
+    "path":"objects/obj_enemy_shooter/obj_enemy_shooter.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

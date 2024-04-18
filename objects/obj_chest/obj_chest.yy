@@ -17,8 +17,8 @@
     "path":"folders/Objects/item.yy",
   },
   "parentObjectId":{
-    "name":"obj_ground_oneway",
-    "path":"objects/obj_ground_oneway/obj_ground_oneway.yy",
+    "name":"obj_ground_no_enemy_collision",
+    "path":"objects/obj_ground_no_enemy_collision/obj_ground_no_enemy_collision.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

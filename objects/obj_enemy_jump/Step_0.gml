@@ -5,10 +5,10 @@
 
 // Inherit the parent event
 event_inherited();
-is_grounded = instance_place(x, y, [obj_ground_parent]);
+is_grounded = instance_place(x, y, [obj_ground_enemy_collision]);
 if (is_grounded <= 0) {
 	vspeed = vspeed+grav;
-	is_falling = instance_place(x, y+vspeed, [obj_ground_parent]);
+	is_falling = instance_place(x, y+vspeed, [obj_ground_enemy_collision]);
 	if (is_falling > 0) {
 		vspeed=0;
 	}

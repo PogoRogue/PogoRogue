@@ -11,8 +11,8 @@
   "name":"obj_enemy_rewards",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemy",
-    "path":"folders/Objects/Enemy.yy",
+    "name":"Ready Enemies",
+    "path":"folders/Objects/Enemy/Ready Enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"obj_ground_oneway",
+  "%Name":"obj_ground_no_enemy_collision",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -8,15 +8,15 @@
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_ground_oneway",
+  "name":"obj_ground_no_enemy_collision",
   "overriddenProperties":[],
   "parent":{
     "name":"Ground",
     "path":"folders/Objects/Ground.yy",
   },
   "parentObjectId":{
-    "name":"obj_ground_enemy_collision",
-    "path":"objects/obj_ground_enemy_collision/obj_ground_enemy_collision.yy",
+    "name":"obj_ground_parent",
+    "path":"objects/obj_ground_parent/obj_ground_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

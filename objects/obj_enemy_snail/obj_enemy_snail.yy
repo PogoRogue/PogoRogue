@@ -12,8 +12,8 @@
   "name":"obj_enemy_snail",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemy",
-    "path":"folders/Objects/Enemy.yy",
+    "name":"Ready Enemies",
+    "path":"folders/Objects/Enemy/Ready Enemies.yy",
   },
   "parentObjectId":{
     "name":"obj_enemy_generic",

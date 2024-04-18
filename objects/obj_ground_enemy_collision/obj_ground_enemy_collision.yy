@@ -1,19 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy_generic",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_ground_enemy_collision",
+  "eventList":[],
   "managed":true,
-  "name":"obj_enemy_generic",
+  "name":"obj_ground_enemy_collision",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemy",
-    "path":"folders/Objects/Enemy.yy",
+    "name":"Ground",
+    "path":"folders/Objects/Ground.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy_parent",
-    "path":"objects/obj_enemy_parent/obj_enemy_parent.yy",
+    "name":"obj_ground_parent",
+    "path":"objects/obj_ground_parent/obj_ground_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -32,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_enemy_generic",
-    "path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

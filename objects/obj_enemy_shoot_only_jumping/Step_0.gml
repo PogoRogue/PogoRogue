@@ -4,11 +4,10 @@
 event_inherited();
 
 
-is_grounded = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_ground_oneway);
-at_wall = place_meeting(x + h_spd, y, obj_ground);
+is_grounded = place_meeting(x, y + 1, obj_ground_enemy_collision);
 
-if(place_meeting(x + h_spd, y, obj_ground)) {
-	while(!place_meeting(x + sign(h_spd), y, obj_ground)) {
+if(place_meeting(x + h_spd, y, obj_ground_enemy_collision)) {
+	while(!place_meeting(x + sign(h_spd), y, obj_ground_enemy_collision)) {
 		x += sign(h_spd);
 	}
 	h_spd *= -0.5;
