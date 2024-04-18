@@ -82,17 +82,17 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 			var rm_height = region_Load_Width;
 			if(room_name == "c3c")
 			{
-				rm_width = region_Load_Width * 3;
-				rm_height = region_Load_Width * 3;
+				rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH * 3 - 2;
+				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 3 - 2;
 			}
 			else if(room_name == "c2c")
 			{
-				rm_width = region_Load_Width * 2;
-				rm_height = region_Load_Width * 2;
+				rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH * 2 - 2;
+				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2 - 2;
 			}
 			else if(room_name == "Tc")
 			{
-				rm_height = region_Load_Width * 2;
+				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2 - 2;
 			}
 			var region_struct = create_region_struct(room_coord[0] + 1, room_coord[1] + 1, rm_width - 2, rm_height - 3);
 			//Add region struct to load list
@@ -119,11 +119,11 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 				else if(room_name == "1vc" || room_name == "1vcf")
 				{
 					var rm_width = region_Load_Width;
-					var rm_height = region_Load_Width * 2;
+					var rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2 - 2;
 				}
 				else if(room_name == "1hc" || room_name == "1hcf")
 				{
-					var rm_width = region_Load_Width * 2;
+					var rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH * 2 - 2;
 					var rm_height = region_Load_Width;
 				}
 				hallway_region_struct = update_region_struct_x(hallway_region_struct, room_coord[0]);
@@ -203,11 +203,17 @@ with(obj_room_gate_close)
     }	
 }
 
+
+//Set regions 0 and 1 to loaded in region_loaded
+region_loaded[|0] = true;
+region_loaded[|1] = true;
+
 //Player starts in region zero, so deactivate regions 2+
 for(var i = 2; i < ds_list_size(region_loading_list); i++)
 {
 	var region_to_unload = region_loading_list[| i];
 	scr_Unload_Region(region_to_unload);
+	region_loaded[|i] = false;
 	show_debug_message("Region " + string(i) + " unloaded. X: " + string(region_to_unload.left_x) + ", Y: "
 	+ string(region_to_unload.top_y) + ", Width: " + string(region_to_unload.r_width) + ", Height: " + string(region_to_unload.r_height));
 }

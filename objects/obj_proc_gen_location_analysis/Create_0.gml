@@ -24,8 +24,8 @@ region_gate_objects = ds_list_create(); //Stores references to all the gates
 //This list keeps region_structs which track coordinates of an entire region. We later use this to load
 //And unload objects to reduce the amount of logic running at once
 region_loading_list = ds_list_create();
+region_loaded = ds_list_create(); //Holds bools to keep track of which regions are loaded
 player_max_region = 0;
-new_max_region = false;
 
 
 display_progress_bar = false;

@@ -74,3 +74,19 @@ function scr_Unload_Grid(grid_x, grid_y){
 	
 	instance_deactivate_region(world_left_x, world_top_y, width_height, width_height, true, true);
 }
+
+//Load only regions near the player if that information is available. Otherwise just load all objects
+function scr_Unload_Inactive_Region_List(){
+	if(instance_exists(obj_proc_gen_location_analysis))
+	{		
+		var loc_obj = instance_nearest(0,0,obj_proc_gen_location_analysis);
+		
+		for(var i = 0; i < ds_list_size(loc_obj.region_loaded); i++)
+		{
+			if(loc_obj.region_loaded[|i] == false)
+			{
+				scr_Unload_Region(loc_obj.region_loading_list[|i]);
+			}
+		}
+	}
+}

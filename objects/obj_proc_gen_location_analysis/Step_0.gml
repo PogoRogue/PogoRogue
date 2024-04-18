@@ -57,7 +57,8 @@ if(instance_exists(current_tag_object))
 		{
 			//Load region + 1 from the current player
 			var region_to_load = region_loading_list[| currentRegion + 1]
-			scr_Load_Region(region_to_load);			
+			scr_Load_Region(region_to_load);
+			region_loaded[|currentRegion + 1] = true;
 			
 			show_debug_message("Region " + string(currentRegion + 1) + " loaded. X: " + string(region_to_load.left_x) + ", Y: "
 			+ string(region_to_load.top_y) + ", Width: " + string(region_to_load.r_width) + ", Height: " + string(region_to_load.r_height));
@@ -67,7 +68,8 @@ if(instance_exists(current_tag_object))
 		{
 			//Unload region -2 from current player
 			var region_to_unload = region_loading_list[| currentRegion - 2]
-			scr_Unload_Region(region_to_unload);			
+			scr_Unload_Region(region_to_unload);
+			region_loaded[|currentRegion - 2] = false;
 			
 			show_debug_message("Region " + string(currentRegion - 2) + " unloaded. X: " + string(region_to_unload.left_x) + ", Y: "
 			+ string(region_to_unload.top_y) + ", Width: " + string(region_to_unload.r_width) + ", Height: " + string(region_to_unload.r_height));
