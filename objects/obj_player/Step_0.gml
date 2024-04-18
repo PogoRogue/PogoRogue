@@ -450,4 +450,4 @@ if (damage_boost_active) {
 }
 
 //for testing
-hp = 40;
+//hp = 40;
