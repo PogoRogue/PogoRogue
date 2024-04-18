@@ -1,5 +1,5 @@
 if global.hot_shells = true  {
-	if exploding_chance <= 25 and exploded = false {
+	if exploding_chance <= 50 and exploded = false {
 		exploded = true;
 		instance_destroy();		
 	}

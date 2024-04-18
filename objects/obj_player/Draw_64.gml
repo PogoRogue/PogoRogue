@@ -204,35 +204,35 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 
 if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_max = 0 {
 	if !(pickups_array[1].on_cooldown) {
-		draw_sprite(pickups_array[1].gui_sprite,1,68,88);
+		draw_sprite(pickups_array[1].gui_sprite,1,82,88);
 		//shield bubble / slow mo darkening
 		if pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 		or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
 		or pickups_array[1] = pickup_frenzy and frenzy = true 
 		or pickups_array[1] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute) {
-			draw_sprite_ext(spr_pickup_empty,1,68,88,1,1,0,c_black,0.5);
+			draw_sprite_ext(spr_pickup_empty,1,82,88,1,1,0,c_black,0.5);
 		}
 	}else {
-		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,1);
+		draw_sprite_ext(spr_pickup_empty,0,82,88,1,1,0,c_white,1);
 		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(1-(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time)),sprite_get_height(spr_pickup_empty),52,72);
 		//darkening
 		
 		draw_sprite_general(spr_pickup_empty,1,0,0,sprite_get_width(spr_pickup_empty)*(1-(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time)),sprite_get_height(spr_pickup_empty),52,72,1,1,0,c_white,c_white,c_white,c_white,0.5);
-		//draw_sprite_ext(spr_pickup_empty,1,68,88,1,1,0,c_black,0.5);
+		//draw_sprite_ext(spr_pickup_empty,1,82,88,1,1,0,c_black,0.5);
 	
 		if pickups_array[1] != pickup_nothing {
 			//draw seconds left
 			draw_set_font(fnt_item_popup);
-			scr_Draw_Text_Outlined(68,104,string(ceil((pickups_array[1].cooldown_time+6)/60)-1) + "." + string(ceil(pickups_array[1].cooldown_time/6)%10),c_white); 
+			scr_Draw_Text_Outlined(82,104,string(ceil((pickups_array[1].cooldown_time+6)/60)-1) + "." + string(ceil(pickups_array[1].cooldown_time/6)%10),c_white); 
 		}
 	}
 }else if pickups_array[1].enemies_count_max = 0 {
 	if !(pickups_array[1].on_cooldown) and pickups_array[1].max_cooldown_time < 0 {
-		draw_sprite(pickups_array[1].gui_sprite,1,68,88);
+		draw_sprite(pickups_array[1].gui_sprite,1,82,88);
 	}else if pickups_array[1].max_cooldown_time < 0 and pickups_array[1].bounce_reset_max <= 1 {
-		draw_sprite(pickups_array[1].gui_sprite,1,68,88);
-		draw_sprite_ext(spr_pickup_empty,1,68,88,1,1,0,c_black,0.5);
+		draw_sprite(pickups_array[1].gui_sprite,1,82,88);
+		draw_sprite_ext(spr_pickup_empty,1,82,88,1,1,0,c_black,0.5);
 	}
 	if pickups_array[1].max_uses_per_bounce > 1 {
 		//draw uses_left
@@ -240,54 +240,54 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		scr_Draw_Text_Outlined(82,104,pickups_array[1].uses_per_bounce,c_white); 
 	}else if pickups_array[1].max_cooldown_time > 0 { //jetpack
 		//darkening
-		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,1);
+		draw_sprite_ext(spr_pickup_empty,0,82,88,1,1,0,c_white,1);
 		
 		draw_sprite_general(spr_pickup_empty,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time),sprite_get_height(spr_pickup_empty),52,72,1,1,0,c_white,c_white,c_white,c_white,0.5);
-		//draw_sprite_ext(spr_pickup_empty,1,68,88,1,1,0,c_black,0.5);
+		//draw_sprite_ext(spr_pickup_empty,1,82,88,1,1,0,c_black,0.5);
 		//show fuel left
 		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time),sprite_get_height(spr_pickup_empty),52,72);
 		//draw controls
 		if (pickups_array[1].cooldown_time > 0) {
-			scr_Draw_Input_UI(68,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
+			scr_Draw_Input_UI(82,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
 		}
 	}
 	
 	if pickups_array[1].bounce_reset_max > 1 { //freeze
 		if pickups_array[1].on_cooldown = true {
 			//darkening
-			draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,1);
+			draw_sprite_ext(spr_pickup_empty,0,82,88,1,1,0,c_white,1);
 			//show fuel left
 			draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[1].bounce_reset_max-pickups_array[1].bounce_reset)/pickups_array[1].bounce_reset_max),sprite_get_height(spr_pickup_empty),52,72);
 			
 			draw_sprite_general(spr_pickup_empty,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[1].bounce_reset_max-pickups_array[1].bounce_reset)/pickups_array[1].bounce_reset_max),sprite_get_height(spr_pickup_empty),52,72,1,1,0,c_white,c_white,c_white,c_white,0.5);
-			//draw_sprite_ext(spr_pickup_empty,1,68,88,1,1,0,c_black,0.5);
+			//draw_sprite_ext(spr_pickup_empty,1,82,88,1,1,0,c_black,0.5);
 			//draw bounces left
 			draw_set_font(fnt_item_popup);
-			scr_Draw_Text_Outlined(68,104,string(pickups_array[1].bounce_reset),make_color_rgb(207,138,203));
+			scr_Draw_Text_Outlined(82,104,string(pickups_array[1].bounce_reset),make_color_rgb(207,138,203));
 		}else if state = state_freeze {
 			//darkening
-			draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,0.5);
-			draw_sprite_ext(spr_pickup_empty,1,68,88,1,1,0,c_black,0.5);
+			draw_sprite_ext(spr_pickup_empty,0,82,88,1,1,0,c_white,0.5);
+			draw_sprite_ext(spr_pickup_empty,1,82,88,1,1,0,c_black,0.5);
 		}
 	}
 }else {
 	if !(pickups_array[1].on_cooldown) and pickups_array[1].max_cooldown_time < 0 {
-		draw_sprite(pickups_array[1].gui_sprite,1,68,88);
+		draw_sprite(pickups_array[1].gui_sprite,1,82,88);
 	}else if pickups_array[1].max_cooldown_time < 0 and pickups_array[1].enemies_count_max <= 1 {
-		draw_sprite(pickups_array[1].gui_sprite,1,68,88);
-		draw_sprite_ext(spr_pickup_empty,1,68,88,1,1,0,c_black,0.5);
+		draw_sprite(pickups_array[1].gui_sprite,1,82,88);
+		draw_sprite_ext(spr_pickup_empty,1,82,88,1,1,0,c_black,0.5);
 	}
 	if pickups_array[1].on_cooldown = true {
 		//darkening
-		draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,1);
+		draw_sprite_ext(spr_pickup_empty,0,82,88,1,1,0,c_white,1);
 		//show fuel left
 		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[1].enemies_count_max-pickups_array[1].enemies_count)/pickups_array[1].enemies_count_max),sprite_get_height(spr_pickup_empty),52,72);
 		
 		draw_sprite_general(spr_pickup_empty,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[1].enemies_count_max-pickups_array[1].enemies_count)/pickups_array[1].enemies_count_max),sprite_get_height(spr_pickup_empty),52,72,1,1,0,c_white,c_white,c_white,c_white,0.5);
-		//draw_sprite_ext(spr_pickup_empty,1,68,88,1,1,0,c_black,0.5);
+		//draw_sprite_ext(spr_pickup_empty,1,82,88,1,1,0,c_black,0.5);
 		//draw bounces left
 		draw_set_font(fnt_item_popup);
-		scr_Draw_Text_Outlined(68,104,string(pickups_array[1].enemies_count),make_color_rgb(180,82,82));
+		scr_Draw_Text_Outlined(82,104,string(pickups_array[1].enemies_count),make_color_rgb(180,82,82));
 	}
 }
 
@@ -296,8 +296,19 @@ if pickups_array[0] = pickup_nothing {
 }
 
 if pickups_array[1] = pickup_nothing {
-	draw_sprite_ext(spr_pickup_empty,0,68,88,1,1,0,c_white,1);
+	draw_sprite_ext(spr_pickup_empty,0,82,88,1,1,0,c_white,1);
 }
+
+if pickups_array[0] != pickup_nothing {
+	draw_set_font(fnt_itemdescription2);
+	scr_Draw_Text_Outlined(32,88-13,scr_Linebreak(pickups_array[0]._name,12,99),c_white);
+}
+
+if pickups_array[1] != pickup_nothing {
+	draw_set_font(fnt_itemdescription2);
+	scr_Draw_Text_Outlined(82,88-13,scr_Linebreak(pickups_array[1]._name,12,99),c_white);
+}
+
 
 //button 1
 if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
@@ -311,7 +322,7 @@ if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing
 and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 or pickups_array[1] = pickup_frenzy and frenzy = true
 or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)) {
-	scr_Draw_Input_UI(68,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
+	scr_Draw_Input_UI(82,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
 }
 
 //all buffs

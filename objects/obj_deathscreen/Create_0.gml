@@ -14,3 +14,5 @@ alpha = 0;
 win = false;
 win_stat_added = false;
 best_time = false;
+
+current_seed = global.seed;

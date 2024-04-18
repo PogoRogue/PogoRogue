@@ -74,7 +74,9 @@ if (alpha < 0.75) {
 
 if win = true {
 	with obj_player {
-		state = state_immobile;
+		if bbox_top > obj_camera.y + (obj_camera.view_h_half) {
+			state = state_immobile;
+		}
 	}
 	if win_stat_added = false {
 		//check if time is new best

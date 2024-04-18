@@ -373,7 +373,6 @@ if (dead = true and global.revive = false and state != state_revive) {
 	if !instance_exists(obj_deathscreen) {
 		instance_create_depth(x,y,depth-1000,obj_deathscreen);
 		speed /= 2;
-		state = state_immobile();
 	}
 	
 	//fall through ground on death
@@ -381,6 +380,10 @@ if (dead = true and global.revive = false and state != state_revive) {
 	state = state_dead;
 	with obj_player_mask {
 		mask_index = spr_nothing;
+	}
+	
+	if bbox_top > obj_camera.y + (obj_camera.view_h_half) {
+		state = state_immobile;
 	}
 }
 

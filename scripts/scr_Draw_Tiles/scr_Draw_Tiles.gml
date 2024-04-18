@@ -219,6 +219,18 @@ function scr_Draw_Tiles(xx,yy,tile_size,tileset,object){
 			if top_long and !bottom_long and left_long and !top_right_corner_long2 and top_right_corner_long3 {
 				tile_frame = 105;
 			}
+			
+			if left_long and top_long and !bottom_long and !right_long  
+			and !top_left_corner_long and top_left_corner_long2 and top_left_corner_long3 and top_right_corner_long3
+			or right_long and top_long and !bottom_long and !left_long  
+			and !top_right_corner_long and top_right_corner_long2 and top_right_corner_long3 and top_left_corner_long3 {
+				tile_frame = 34;
+			}
+			
+			if !bottom_long and left_long and !right_long and top_long and !bottom_left_corner_long2 and !bottom_left_corner_long and top_right_corner_long3 
+			or !bottom_long and !left_long and right_long and top_long and !bottom_right_corner_long2 and !bottom_right_corner_long and top_left_corner_long3 {
+				tile_frame = 34;
+			}
 		}
 		
 	}
