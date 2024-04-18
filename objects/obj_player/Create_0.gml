@@ -76,6 +76,7 @@ freeze_alpha = 0;
 freeze_angle = 0;
 frenzy = false;
 frenzy_time = 0;
+tutorialDash = false; // Tutorial ground handler
 
 //upward flames
 min_flames_speed = 5.6;
@@ -146,6 +147,7 @@ state_free = function() {
 	can_rotate = true;
 	can_shoot = true;
 	soundPlayed = false;
+	tutorialDash = false; // Used for tutorial ground tile state
 	
 	vspeed += grv; //falling
 	vsp_basicjump = -6.6;
@@ -371,6 +373,7 @@ state_groundpound = function() {
 }
 
 state_firedash = function() {
+	tutorialDash = true;
 	can_rotate = false;
 	can_shoot = false;
 	if dash_time > 0 {
