@@ -20,8 +20,3 @@ else
 		other.parent_index.vspeed += air_strength * affect_vspeed;
 	}
 }
-
-
-
-
-

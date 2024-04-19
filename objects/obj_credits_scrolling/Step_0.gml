@@ -12,7 +12,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
 //if text is offscreen
-if (yy + total_string_height + (string_separation*(array_length(credits_text_array)-1)) + string_height(credits_text_array[array_length(credits_text_array)-1])) < 0 {
+if (yy + total_string_height + (string_separation*(array_length(credits_text_array)-1))) < -32 {
 	scr_Room_Transition(room_menu);
 	global.credits_watched = true;
 	scr_Save_Real("credits_watched",global.credits_watched);
