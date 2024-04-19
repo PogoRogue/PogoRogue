@@ -392,6 +392,12 @@ if (gun_name = "Water Gun") {
 	image_xscale = 1;
 }
 
+if (gun_name = "Paintball Gun") {
+	if (place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and global.drilltipbullets = false) {
+		alarm[0] = 1;
+	}
+}
+
 if (gun_name = "Laser Gun" ) {
 	
 	//image_angle = obj_player.image_angle-90;
