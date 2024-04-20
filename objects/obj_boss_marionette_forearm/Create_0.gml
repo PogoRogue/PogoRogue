@@ -8,11 +8,12 @@ weapon_x = x + lengthdir_x(48, image_angle);
 weapon_y = y + lengthdir_y(48, image_angle);
 
 cooldown = room_speed * 5;
-alarm_set(1, cooldown);
+alarm_set(1, cooldown * 3);
+draw_laser = false;
 
 // If this is the second arm, offset the cooldown
 if(arm_num == 1) {
-	alarm_set(1, cooldown + (cooldown / 2));
+	alarm_set(1, cooldown * 3.5);
 }
 
 player = instance_find(obj_player, 0);

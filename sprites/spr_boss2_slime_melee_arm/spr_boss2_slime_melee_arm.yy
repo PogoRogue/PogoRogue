@@ -34,7 +34,7 @@
   "origin":3,
   "parent":{
     "name":"Boss Sequence",
-    "path":"folders/Sprites/Enemy/Boss Sequence.yy",
+    "path":"folders/Scripts/Boss Sequence.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

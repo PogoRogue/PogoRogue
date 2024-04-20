@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"buttons",
-    "path":"folders/Sprites/Enemy/Boss Sequence/buttons.yy",
+    "path":"folders/Scripts/Boss Sequence/buttons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

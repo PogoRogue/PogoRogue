@@ -18,8 +18,9 @@ if(is_grounded) {
 	h_spd *= 0.8;
 }
 
-x += h_spd;
-
+if(!place_meeting(x + h_spd, y, obj_ground)) {
+	x += h_spd;
+}
 
 // When in range, jump towards the player
 if(!is_dead && distance_to_object(player) <= jump_range) {

@@ -33,7 +33,9 @@ if sprite_index = spr_enemy_walking_explosion {
 
 image_alpha = 1.0;
 
-x += spd;
+if(!place_meeting(x + spd, y, obj_ground_parent)) {
+	x += spd;
+}
 
 // Move to top of surface if stuck in floor
 while(place_meeting(x, y, obj_ground_parent)) {

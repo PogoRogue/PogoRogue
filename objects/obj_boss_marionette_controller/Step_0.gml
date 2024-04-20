@@ -31,6 +31,7 @@ switch(current_state) {
 			body.weapon = BOSS3_WEAPONS.NONE;
 			body.ability = BOSS3_ABILITIES.NONE;
 			instance_destroy(gate_1);
+			instance_create_layer(0, 0, "enemies", obj_chase_projectile_spawner);
 		}
 		
 		if(obj_player.y <= gate_pos_2 + 700) {
@@ -49,6 +50,7 @@ switch(current_state) {
 			body.weapon = BOSS3_WEAPONS.SHOTGUN;
 			body.ability = BOSS3_ABILITIES.BULLET_BLAST;
 			body.anchor_y = attack_2_pos;
+			instance_destroy(obj_chase_projectile_spawner);
 		}
 		
 		if(body.hp_percent <= 50) {
@@ -64,6 +66,7 @@ switch(current_state) {
 			body.weapon = BOSS3_WEAPONS.NONE;
 			body.ability = BOSS3_ABILITIES.NONE;
 			instance_destroy(gate_2);
+			instance_create_layer(0, 0, "enemies", obj_chase_projectile_spawner);
 		}
 		
 		if(obj_player.y <= gate_pos_3 + 700) {
@@ -82,6 +85,7 @@ switch(current_state) {
 			body.weapon = BOSS3_WEAPONS.MISSILE;
 			body.ability = BOSS3_ABILITIES.SHIELD;
 			body.anchor_y = attack_3_pos;
+			instance_destroy(obj_chase_projectile_spawner);
 		}
 		
 		if(body.hp_percent <= 25) {
@@ -98,6 +102,7 @@ switch(current_state) {
 			body.ability = BOSS3_ABILITIES.NONE;
 			instance_destroy(obj_shield_plus);
 			instance_destroy(gate_3);
+			instance_create_layer(0, 0, "enemies", obj_chase_projectile_spawner);
 		}
 		
 		if(obj_player.y <= 1072) {
@@ -113,9 +118,10 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.ATTACK_4:
 		if(state_has_changed) {
-			body.weapon = BOSS3_WEAPONS.PISTOL; // TODO: Laser
-			body.ability = BOSS3_ABILITIES.NONE; // TODO: All abilities (enhanced)
+			body.weapon = BOSS3_WEAPONS.LASER;
+			body.ability = BOSS3_ABILITIES.SHIELD;
 			body.anchor_y = attack_4_pos;
+			instance_destroy(obj_chase_projectile_spawner);
 		}
 		
 		if(body.hp_percent <= 0) {
@@ -125,6 +131,8 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.DEAD:
 		// TODO: handle transition to credits
+		body.weapon = BOSS3_WEAPONS.NONE;
+		body.ability = BOSS3_ABILITIES.NONE;
 		break;
 }
 
