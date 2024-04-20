@@ -28,5 +28,5 @@ if alpha > 0 and alpha_up = false {
 
 if splash_num > max_splash_num {
 	scr_Room_Transition(room_menu);
-	
+	//instance_create_depth(x,y,depth-10000,obj_darkscreen_transition);
 }
