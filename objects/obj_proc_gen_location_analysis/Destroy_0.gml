@@ -12,7 +12,14 @@ if(ds_exists(region_gate_objects, ds_type_list))
 {
 	ds_list_destroy(region_gate_objects);
 }
-
+if(ds_exists(region_loading_list, ds_type_list))
+{
+	ds_list_destroy(region_loading_list);
+}
+if(ds_exists(region_loaded, ds_type_list))
+{
+	ds_list_destroy(region_loaded);
+}
 
 
 

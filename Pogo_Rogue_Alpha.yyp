@@ -649,6 +649,7 @@
     {"id":{"name":"scr_Shoot","path":"scripts/scr_Shoot/scr_Shoot.yy",},},
     {"id":{"name":"scr_Trial_Button_Press","path":"scripts/scr_Trial_Button_Press/scr_Trial_Button_Press.yy",},},
     {"id":{"name":"scr_Weapon_Stats","path":"scripts/scr_Weapon_Stats/scr_Weapon_Stats.yy",},},
+    {"id":{"name":"scr_Load_Unload_Objects","path":"scripts/scr_Load_Unload_Objects/scr_Load_Unload_Objects.yy",},},
     {"id":{"name":"sh_outline","path":"shaders/sh_outline/sh_outline.yy",},},
     {"id":{"name":"sh_tint_red","path":"shaders/sh_tint_red/sh_tint_red.yy",},},
     {"id":{"name":"sh_white","path":"shaders/sh_white/sh_white.yy",},},
