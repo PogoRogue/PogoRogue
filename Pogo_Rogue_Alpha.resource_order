@@ -127,6 +127,7 @@
     {"name":"obj_text_combo4","order":2,"path":"objects/obj_text_combo4/obj_text_combo4.yy",},
     {"name":"obj_text_tutorialend3","order":3,"path":"objects/obj_text_tutorialend3/obj_text_tutorialend3.yy",},
     {"name":"obj_wallbutton","order":3,"path":"objects/obj_wallbutton/obj_wallbutton.yy",},
+    {"name":"obj_enemy_projectile_missile","order":3,"path":"objects/obj_enemy_projectile_missile/obj_enemy_projectile_missile.yy",},
     {"name":"room_boss_1","order":13,"path":"rooms/room_boss_1/room_boss_1.yy",},
     {"name":"room_boss_2","order":5,"path":"rooms/room_boss_2/room_boss_2.yy",},
     {"name":"room_boss_3","order":15,"path":"rooms/room_boss_3/room_boss_3.yy",},

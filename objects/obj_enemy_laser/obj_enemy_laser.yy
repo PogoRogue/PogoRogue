@@ -32,6 +32,7 @@
     {"$GMObjectProperty":"","%Name":"start_angle","filters":[],"listItems":[],"multiselect":false,"name":"start_angle","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"45","varType":0,},
     {"$GMObjectProperty":"","%Name":"end_angle","filters":[],"listItems":[],"multiselect":false,"name":"end_angle","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-45","varType":0,},
     {"$GMObjectProperty":"","%Name":"duration","filters":[],"listItems":[],"multiselect":false,"name":"duration","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"2","varType":4,},
+    {"$GMObjectProperty":"","%Name":"collide_with_walls","filters":[],"listItems":[],"multiselect":false,"name":"collide_with_walls","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

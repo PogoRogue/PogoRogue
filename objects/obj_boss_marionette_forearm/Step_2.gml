@@ -18,3 +18,19 @@ var _half_second = room_speed * 0.5;
 draw_laser =  alarm[1] < _half_second
 		  || (alarm[1] > _half_second + 4 && alarm[1] < _half_second + 8)
 		  || (alarm[1] > _half_second + 12 && alarm[1] < _half_second + 16);
+		  
+if(arm_num == 1) {
+	// Right arm
+	if(target.x < x) {
+		depth = initial_depth - 1;
+	} else {
+		depth = initial_depth;
+	}
+} else if (arm_num == 2) {
+	// Left arm
+	if(target.x > x) {
+		depth = initial_depth - 1;
+	} else {
+		depth = initial_depth;
+	}
+}

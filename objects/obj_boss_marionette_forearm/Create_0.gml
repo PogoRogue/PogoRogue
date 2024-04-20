@@ -17,3 +17,5 @@ if(arm_num == 1) {
 }
 
 player = instance_find(obj_player, 0);
+
+initial_depth = depth;

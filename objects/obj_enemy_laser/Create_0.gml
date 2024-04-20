@@ -6,6 +6,7 @@ draw_range = 0;
 angle_increment = (end_angle - start_angle) / (duration * room_speed);
 damage = 8;
 parent = noone;
+width_percent = 0;
 
 end_x = x;
 end_y = y;

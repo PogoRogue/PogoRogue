@@ -39,7 +39,7 @@ controller = instance_nearest(x, y, obj_boss_marionette_controller);
 
 // HP
 draw_hp = false;
-hp = 50//0;
+hp = 500;
 previous_hp = hp;
 is_hurt = false;
 hp_max = hp;
@@ -53,7 +53,7 @@ boss_name = "Rogo Puppet";
 
 // Limbs
 instance_create_depth(x + 40, y, depth - 5, obj_boss_marionette_arm, {arm_num: 1, length_diff: 35, angle_diff: 40});
-instance_create_depth(x - 40, y, depth - 10, obj_boss_marionette_arm, {arm_num: 2, length_diff: 35, angle_diff: 140});
+instance_create_depth(x - 40, y, depth - 5, obj_boss_marionette_arm, {arm_num: 2, length_diff: 35, angle_diff: 140});
 
 instance_create_depth(x, y, -20, obj_boss_marionette_health);
 

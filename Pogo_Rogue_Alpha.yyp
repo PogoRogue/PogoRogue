@@ -542,6 +542,7 @@
     {"id":{"name":"obj_weaponheight6","path":"objects/obj_weaponheight6/obj_weaponheight6.yy",},},
     {"id":{"name":"obj_weaponheightfun","path":"objects/obj_weaponheightfun/obj_weaponheightfun.yy",},},
     {"id":{"name":"obj_weapons_station","path":"objects/obj_weapons_station/obj_weapons_station.yy",},},
+    {"id":{"name":"obj_enemy_projectile_missile","path":"objects/obj_enemy_projectile_missile/obj_enemy_projectile_missile.yy",},},
     {"id":{"name":"room_boss_1","path":"rooms/room_boss_1/room_boss_1.yy",},},
     {"id":{"name":"room_boss_2","path":"rooms/room_boss_2/room_boss_2.yy",},},
     {"id":{"name":"room_boss_3","path":"rooms/room_boss_3/room_boss_3.yy",},},

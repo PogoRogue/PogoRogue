@@ -15,7 +15,7 @@ switch(controller.current_state) {
 	case BOSS3_STATES.CHASE_3:
 		var _start_angle = spawn_x > view_width / 2 ? -85 : -95;
 		var _end_angle = spawn_x > view_width / 2 ? -95 : -85;
-		instance_create_layer(spawn_x, camera_get_view_y(view_camera[0]) - 900, "enemies", obj_enemy_laser, {start_angle: _start_angle, end_angle: _end_angle});
+		instance_create_layer(spawn_x, camera_get_view_y(view_camera[0]) - 900, "enemies", obj_enemy_laser, {start_angle: _start_angle, end_angle: _end_angle, collide_with_walls: false});
 		break;
 }
 
