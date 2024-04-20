@@ -102,6 +102,9 @@ function scr_Jump(add_to_jump){
 	//spring
 	if place_meeting(x,y-vspeed,obj_spring) {
 		if instance_place(x,y-vspeed,obj_spring).state = instance_place(x,y-vspeed,obj_spring).state_unsprung {
+			with instance_place(x,y-vspeed,obj_spring) {
+				state = state_springing;
+			}
 			state = state_free;
 			vspeed = 0;
 			if(global.tightspring) and vspeed = 0 {
@@ -110,8 +113,19 @@ function scr_Jump(add_to_jump){
 				motion_add(90,(12+abs(add_to_jump/1.5)));
 			}
 		}
-		with instance_place(x,y-vspeed,obj_spring) {
-			state = state_springing;
+	}
+	if place_meeting(x,y+vspeed,obj_spring) {
+		if instance_place(x,y+vspeed,obj_spring).state = instance_place(x,y+vspeed,obj_spring).state_unsprung {
+			with instance_place(x,y+vspeed,obj_spring) {
+				state = state_springing;
+			}
+			state = state_free;
+			vspeed = 0;
+			if(global.tightspring) and vspeed = 0 {
+				motion_add(90,(12+abs(add_to_jump/1.5))*1.2);
+			}else if vspeed = 0 {
+				motion_add(90,(12+abs(add_to_jump/1.5)));
+			}
 		}
 	}
 	global.water_index += 1;

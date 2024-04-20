@@ -988,3 +988,7 @@ if room = room_proc_gen_test || room = room_sprite_level_test {
 if global.phase != 1 {
 	//instance_destroy();	
 }
+
+if room = room_tutorial {
+	alarm[5] = 10;
+}
