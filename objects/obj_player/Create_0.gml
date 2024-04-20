@@ -437,6 +437,7 @@ state_bulletblast = function() {
 		gun = old_gun;
 		state = state_free;
 		x = init_x;
+		pickup_bulletblast.on_cooldown = true;
 	}
 }
 

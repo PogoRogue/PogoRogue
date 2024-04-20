@@ -61,7 +61,7 @@ function scr_Save_Load_Variables(){
 	global.tilt_speed = ini_read_real("savegame", "tilt_speed", 3);
 	global.screenshake = ini_read_real("savegame", "screenshake", 80);
 	global.controller_vibration = ini_read_real("savegame", "controller_vibration", 80);
-	global.show_timer = ini_read_real("savegame", "show_timer", false);
+	global.show_timer = ini_read_real("savegame", "show_timer", true);
 	global.show_coins = ini_read_real("savegame", "show_coins", true);
 	global.show_passives = ini_read_real("savegame", "show_passives", true);
 	ini_close();
