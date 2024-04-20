@@ -94,6 +94,14 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 			{
 				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2 - 2;
 			}
+			else if(room_name == "Shc")
+			{
+				//Need to load a larger region for the shop so that tiling issues don't occur
+				rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH * 3 - 2;
+				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 3 - 2;
+				room_coord[0] = room_coord[0] - PROC_GEN_BLOCK_PIXEL_WIDTH;
+				room_coord[1] = room_coord[1] - PROC_GEN_BLOCK_PIXEL_WIDTH;
+			}
 			var region_struct = create_region_struct(room_coord[0] + 1, room_coord[1] + 1, rm_width - 2, rm_height - 3);
 			//Add region struct to load list
 			ds_list_add(region_loading_list, region_struct);
