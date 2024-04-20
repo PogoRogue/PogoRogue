@@ -1,5 +1,3 @@
 /// @description Initialize strings by column
 
-tutorial_text =   "A and D\n" +
-				  "or Joystick\n" +
-				  "to tilt!"
+height_text = "Use the arrow keys, WASD, or joystick to tilt the player!";
