@@ -53,7 +53,7 @@ if(instance_exists(current_tag_object))
 	{
 		player_max_region = currentRegion;
 		
-		if(currentRegion < ds_list_size(region_loading_list) - 2)
+		if(currentRegion < ds_list_size(region_loading_list) - 1)
 		{
 			//Load region + 1 from the current player
 			var region_to_load = region_loading_list[| currentRegion + 1]
