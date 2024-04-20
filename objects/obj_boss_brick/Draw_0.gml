@@ -5,4 +5,5 @@ if(is_dead) {
 }
 
 draw_self();
+
 shader_reset();

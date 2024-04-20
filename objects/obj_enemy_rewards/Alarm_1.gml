@@ -5,8 +5,8 @@ is_moving = true;
 
 // Custom the path we want
 while (!found) {
-	target_x = irandom(room_width - 1); 
-	target_y = irandom(room_height - 1); 
+	target_x = irandom(room_width - 1);  
+	target_y = irandom(room_height - 1);
 
 	// not on wall
 	if (instance_position(target_x, target_y, obj_ground) == noone) {
@@ -16,6 +16,7 @@ while (!found) {
 		}
 	}
 }
+
 
 mp_grid_path(obj_setup_pathway.grid_follow, follow_path, x, y, target_x, target_y, true);
 

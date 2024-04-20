@@ -73,6 +73,7 @@ freeze_time = 0;
 freeze_alpha = 0;
 freeze_angle = 0;
 frenzy = false;
+tutorialDash = false; // Tutorial ground handler
 
 //upward flames
 min_flames_speed = 5.6;
@@ -142,6 +143,7 @@ state_free = function() {
 	bouncing = false;
 	can_rotate = true;
 	can_shoot = true;
+	tutorialDash = false; // Used for tutorial ground tile state
 	
 	vspeed += grv; //falling
 	vsp_basicjump = -6.6;
@@ -357,6 +359,7 @@ state_groundpound = function() {
 }
 
 state_firedash = function() {
+	tutorialDash = true;
 	can_rotate = false;
 	can_shoot = false;
 	if dash_time > 0 {
@@ -685,7 +688,7 @@ state_portal = function() {
 						scr_Room_Transition(room_boss_2);
 						break;
 					case 3:
-						scr_Room_Transition(room_boss_3);
+						scr_Room_Transition(room_boss_2);
 						break;
 				}	
 			}else {

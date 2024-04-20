@@ -11,6 +11,7 @@ if(distance < range && is_moving == false) {
     alarm[1] = 1;
 }
 
+
 if(x == target_x && y == target_y && !reached_target) {
 	image_index = 0;
 	sprite_index = spr_enemy_fairy_vanish;

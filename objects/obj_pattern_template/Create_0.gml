@@ -18,6 +18,11 @@ delay = room_speed / 4;
 spread = 60;
 rand = false;
 
+spd=3;
+//sprite
+sprite=spr_enemy_projectile;
+gun_name="enemy_projectile";
 if(cur_rep < repeats) {
 	alarm_set(0, 1);
 }
+parent=noone;
