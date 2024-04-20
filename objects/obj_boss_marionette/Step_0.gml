@@ -17,8 +17,8 @@ if(ability != BOSS3_ABILITIES.SHIELD && (alarm[2] < room_speed * 0.5 || alarm[2]
 hsp = anchor_x + lengthdir_x(distance, angle) - x;
 vsp = anchor_y + lengthdir_y(distance, angle) - y;
 
-if(is_hurt) {
-	spring_force = max(spring_force, 25);
+if(is_hurt && spring_force == 0) {
+	spring_force = 25;
 	oscillation = 0;
 }
 
