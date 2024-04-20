@@ -382,8 +382,13 @@ if (dead = true and global.revive = false and state != state_revive) {
 		mask_index = spr_nothing;
 	}
 	
-	if bbox_top > obj_camera.y + (obj_camera.view_h_half) {
+	if bbox_top > obj_camera.y + (obj_camera.view_h_half) and room != room_boss_3{
 		state = state_immobile;
+	}else if room = room_boss_3 {
+		mask_index = spr_nothing;
+		with obj_player_mask {
+			mask_index = spr_nothing;
+		}
 	}
 }
 
