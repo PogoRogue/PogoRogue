@@ -39,3 +39,8 @@ if(is_dead) {
 		image_alpha = other.image_alpha;
 	}
 }
+
+if(is_dead) {
+	weapon = BOSS3_WEAPONS.NONE;
+	ability = BOSS3_ABILITIES.NONE;
+}

@@ -39,7 +39,7 @@ controller = instance_nearest(x, y, obj_boss_marionette_controller);
 
 // HP
 draw_hp = false;
-hp = 500;
+hp = 50//0;
 previous_hp = hp;
 is_hurt = false;
 hp_max = hp;

@@ -1,4 +1,4 @@
-if drawn_tiles = false and room = room_gameplay_video {
+if room = room_gameplay_video && drawn_tiles = false {
 	drawn_tiles = true;
 	//set tiles
 	if image_xscale != 1 or image_yscale != 1 {

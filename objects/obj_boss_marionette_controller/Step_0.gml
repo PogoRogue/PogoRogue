@@ -131,8 +131,6 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.DEAD:
 		// TODO: handle transition to credits
-		body.weapon = BOSS3_WEAPONS.NONE;
-		body.ability = BOSS3_ABILITIES.NONE;
 		break;
 }
 
