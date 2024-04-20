@@ -13,8 +13,8 @@
   "name":"obj_boss_marionette_trigger",
   "overriddenProperties":[],
   "parent":{
-    "name":"Boss Meionette",
-    "path":"folders/Objects/Enemy/Boss Meionette.yy",
+    "name":"Boss Marionette",
+    "path":"folders/Objects/Enemy/Boss Marionette.yy",
   },
   "parentObjectId":null,
   "persistent":false,

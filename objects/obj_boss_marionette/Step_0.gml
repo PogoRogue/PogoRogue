@@ -25,5 +25,4 @@ x += hsp;
 y += vsp;
 
 image_angle = angle + 90;
-
 previous_hp = hp;
