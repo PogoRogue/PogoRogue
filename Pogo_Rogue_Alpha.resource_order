@@ -54,6 +54,8 @@
     {"name":"Weapons","order":33,"path":"folders/Sprites/Weapons.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fnt_tutorial_small","order":2,"path":"fonts/fnt_tutorial_small/fnt_tutorial_small.yy",},
+    {"name":"fnt_tutorial","order":1,"path":"fonts/fnt_tutorial/fnt_tutorial.yy",},
     {"name":"obj_boss_attack2","order":1,"path":"objects/obj_boss_attack2/obj_boss_attack2.yy",},
     {"name":"obj_boss_attack3","order":4,"path":"objects/obj_boss_attack3/obj_boss_attack3.yy",},
     {"name":"obj_boss_attack4","order":8,"path":"objects/obj_boss_attack4/obj_boss_attack4.yy",},
@@ -119,6 +121,9 @@
     {"name":"obj_shockwave","order":1,"path":"objects/obj_shockwave/obj_shockwave.yy",},
     {"name":"obj_softshield","order":10,"path":"objects/obj_softshield/obj_softshield.yy",},
     {"name":"obj_tag_Ian","order":1,"path":"objects/obj_tag_Ian/obj_tag_Ian.yy",},
+    {"name":"obj_text_combo3","order":1,"path":"objects/obj_text_combo3/obj_text_combo3.yy",},
+    {"name":"obj_text_combo4","order":2,"path":"objects/obj_text_combo4/obj_text_combo4.yy",},
+    {"name":"obj_text_tutorialend3","order":3,"path":"objects/obj_text_tutorialend3/obj_text_tutorialend3.yy",},
     {"name":"obj_wallbutton","order":3,"path":"objects/obj_wallbutton/obj_wallbutton.yy",},
     {"name":"room_boss_1","order":13,"path":"rooms/room_boss_1/room_boss_1.yy",},
     {"name":"room_boss_2","order":5,"path":"rooms/room_boss_2/room_boss_2.yy",},
