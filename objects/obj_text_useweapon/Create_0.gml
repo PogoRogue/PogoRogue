@@ -1,5 +1,3 @@
 /// @description Initialize strings by column
 
-height_text =   "Spacebar\n" +
-				"Right Trigger\n" +
-				"to shoot!";
+height_text = "Use spacebar or right trigger to shoot and propel yourself!";

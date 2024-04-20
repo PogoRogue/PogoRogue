@@ -1,5 +1,3 @@
 /// @description Initialize strings by column
 
-height_text = "Switch weapons!\n" +
-				"Bumpers\n" +
-				"Q and E";
+height_text = "Use the bumpers or number keys to switch weapons, and get up there!";
