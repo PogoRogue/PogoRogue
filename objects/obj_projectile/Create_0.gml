@@ -200,6 +200,11 @@ if (gun_name = "Javelins") {
 		instance_deactivate_object(javelin_object);	
 	}
 }
+
+if gun_name = "Boomerangs" {
+	sound = audio_play_sound(snd_boomerangs,0,false);
+}
+
 attach_to_player = 0;
 if (gun_name = "Water Gun") {
 	destroyable = false;

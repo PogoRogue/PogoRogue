@@ -435,7 +435,7 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 //One Heart Stresser
 if (hp <= 8 and hp > 0) {
 	if !audio_is_playing(snd_oneHeart) {
-		audio_play_sound(snd_oneHeart,0,false);
+		//audio_play_sound(snd_oneHeart,0,false);
 	}	
 }
 

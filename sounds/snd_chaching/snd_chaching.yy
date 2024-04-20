@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.733333,
+  "duration":2.666667,
   "name":"snd_chaching",
   "parent":{
     "name":"Environmental",

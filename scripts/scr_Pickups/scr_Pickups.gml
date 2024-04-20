@@ -384,6 +384,7 @@ function scr_Pickups(){
 		enemies_count_max: 0,
 		on_call: function() {
 			with obj_player {
+				audio_play_sound(snd_freeze,0,false);
 				state = state_freeze;
 				rotation_speed = 0;
 				current_rotation_speed = 0;

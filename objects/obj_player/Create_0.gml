@@ -460,6 +460,9 @@ state_freeze = function() {
 	if freeze_time > 0 and !key_unfreeze {
 		freeze_time -= 1;	
 	}else {
+		if audio_is_playing(snd_freeze) and freeze_time > 0 {
+			audio_stop_sound(snd_freeze);
+		}
 		state = state_free;
 		grv = init_grv;
 		rotation_speed = original_rotation_speed;

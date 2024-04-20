@@ -110,3 +110,9 @@ if (gun_name = "Javelins") {
 		}
 	}
 }
+
+if gun_name = "Boomerangs" {
+	if audio_is_playing(sound) {
+		audio_stop_sound(sound);
+	}
+}

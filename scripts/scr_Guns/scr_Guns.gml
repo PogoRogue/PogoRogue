@@ -270,7 +270,7 @@ function scr_Guns(){
 		ammo: [boomerang_bullet],
 		inaccuracy: 0,       
 		kick: 2,              
-		sound: snd_grenade,
+		sound: snd_nothing,
 		spread_number: 1,    
 		spread_angle: 0,    
 		full_auto: false,     
