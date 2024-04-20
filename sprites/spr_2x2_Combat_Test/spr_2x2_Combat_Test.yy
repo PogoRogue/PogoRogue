@@ -2,10 +2,10 @@
   "$GMSprite":"",
   "%Name":"spr_2x2_Combat_Test",
   "bboxMode":0,
-  "bbox_bottom":63,
+  "bbox_bottom":62,
   "bbox_left":0,
   "bbox_right":63,
-  "bbox_top":46,
+  "bbox_top":3,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -14,8 +14,8 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"e23c6cd9-a038-4f25-b20a-376da616a6d0","name":"e23c6cd9-a038-4f25-b20a-376da616a6d0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
-  "gridX":0,
-  "gridY":0,
+  "gridX":4,
+  "gridY":4,
   "height":64,
   "HTile":false,
   "layers":[
