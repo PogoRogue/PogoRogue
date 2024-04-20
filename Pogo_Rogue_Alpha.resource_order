@@ -1,4 +1,6 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_room_gate_close_tutorial","order":1,"path":"objects/obj_room_gate_close_tutorial/obj_room_gate_close_tutorial.yy",},
+  ],
 }
