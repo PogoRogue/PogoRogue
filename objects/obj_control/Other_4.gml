@@ -35,7 +35,7 @@ if room = room_proc_gen_test {
 	switch (global.phase) {
 		case 1: global.current_music = snd_music_level1; break;
 		case 2: global.current_music = snd_music_level2; global.area_2_reached += 1; scr_Save_Real("area_2_reached",global.area_2_reached); break;	
-		case 3: global.current_music = snd_music_level2; global.area_3_reached += 1; scr_Save_Real("area_3_reached",global.area_3_reached); break;	
+		case 3: global.current_music = snd_music_level3; global.area_3_reached += 1; scr_Save_Real("area_3_reached",global.area_3_reached); break;	
 	}
 }else if room = room_boss_1 {
 	global.current_music = snd_music_boss1

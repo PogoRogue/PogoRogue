@@ -72,7 +72,7 @@ function scr_Guns(){
 		ammo: [bulletblast_bullet],
 		inaccuracy: 0,
 		kick: 2,
-		sound: snd_shotgun,
+		sound: snd_nothing,
 		spread_number: 45,
 		spread_angle: 8,
 		full_auto: false,

@@ -19,12 +19,16 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	//slot
 	draw_sprite(spr_itemmenu_pickup_slot,bg_spr_index,xx,yy);
 	
+	if img_index = 1 {
+		img_index = 0;	
+	}
+	
 	//sprites
 	draw_sprite(pickup.gui_sprite,img_index,xx-49,yy-97);
 	
 	//draw cost
 	
-	if unlocked = true {
+	if unlocked = true and !instance_exists(obj_item_swap) or instance_exists(obj_item_swap) and global.recycling = true {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_itemdescription2);

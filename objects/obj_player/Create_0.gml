@@ -399,6 +399,9 @@ state_firedash = function() {
 temp_x = 0.5;
 init_x = x;
 state_bulletblast = function() {
+	if !audio_is_playing(snd_bulletblast) {
+		audio_play_sound(snd_bulletblast,0,false);
+	}
 	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
 		sprite_index = player_sprite;
 	}

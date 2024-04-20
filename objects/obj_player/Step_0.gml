@@ -465,5 +465,9 @@ if (damage_boost_active) {
     }
 }
 
+if audio_is_playing(snd_bulletblast) and state = state_bouncing or dead = true {
+	audio_stop_sound(snd_bulletblast);
+}
+
 //for testing
 //hp = 40;

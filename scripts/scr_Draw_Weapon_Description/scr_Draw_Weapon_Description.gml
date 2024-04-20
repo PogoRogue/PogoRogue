@@ -17,12 +17,16 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	//slot
 	draw_sprite(spr_itemmenu_weapon_slot,bg_spr_index,xx,yy);
 	
+	if img_index = 1 {
+		img_index = 0;	
+	}
+	
 	//sprites
 	draw_sprite(weapon.sprite,img_index,xx-49,yy-105);
 	
 	//draw cost
 	
-	if unlocked = true {
+	if unlocked = true and !instance_exists(obj_item_swap) or instance_exists(obj_item_swap) and global.recycling = true {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_itemdescription2);

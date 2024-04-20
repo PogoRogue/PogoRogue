@@ -17,7 +17,7 @@ for (i = 0; i < array_length(weapons_array); i++) {
 	if i < array_length(weapons_array) {
 		
 		draw_sprite(select_sprite,2 + (select = i + 1),xx,yy-27);
-		draw_sprite(all_weapons[i].sprite,1,xx,yy-27);
+		draw_sprite(all_weapons[i].sprite,0,xx,yy-27);
 	
 		if (i < array_length(all_weapons)) {
 			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_weapons[i]._name,12,99),c_white);
