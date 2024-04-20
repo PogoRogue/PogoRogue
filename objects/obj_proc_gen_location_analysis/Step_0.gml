@@ -8,11 +8,6 @@ if(instance_exists(obj_player))
 	currentX = player.x;
 	var y_bias = 10; //Bias to prevent flickering when the player jumps on the ground bordering two different regions
 	currentY = player.y - y_bias;
-	
-	if(keyboard_check(vk_shift))
-	{
-		show_debug_message("Player Coords: " + string(player.x) + ", " + string(player.y));
-	}
 }
 
 
