@@ -306,6 +306,7 @@
     {"id":{"name":"obj_generated_object_parent","path":"objects/obj_generated_object_parent/obj_generated_object_parent.yy",},},
     {"id":{"name":"obj_gobacktomenu","path":"objects/obj_gobacktomenu/obj_gobacktomenu.yy",},},
     {"id":{"name":"obj_ground_oneway","path":"objects/obj_ground_oneway/obj_ground_oneway.yy",},},
+    {"id":{"name":"obj_ground_tutorial_oneway","path":"objects/obj_ground_tutorial_oneway/obj_ground_tutorial_oneway.yy",},},
     {"id":{"name":"obj_ground_outer","path":"objects/obj_ground_outer/obj_ground_outer.yy",},},
     {"id":{"name":"obj_ground_parent","path":"objects/obj_ground_parent/obj_ground_parent.yy",},},
     {"id":{"name":"obj_ground_tiles_outer","path":"objects/obj_ground_tiles_outer/obj_ground_tiles_outer.yy",},},

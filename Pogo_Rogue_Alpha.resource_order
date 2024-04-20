@@ -105,6 +105,7 @@
     {"name":"obj_enemy_test","order":21,"path":"objects/obj_enemy_test/obj_enemy_test.yy",},
     {"name":"obj_enemy_tutorial","order":5,"path":"objects/obj_enemy_tutorial/obj_enemy_tutorial.yy",},
     {"name":"obj_enemy_vole","order":7,"path":"objects/obj_enemy_vole/obj_enemy_vole.yy",},
+    {"name":"obj_ground_tutorial_oneway","order":1,"path":"objects/obj_ground_tutorial_oneway/obj_ground_tutorial_oneway.yy",},
     {"name":"obj_hardshield","order":18,"path":"objects/obj_hardshield/obj_hardshield.yy",},
     {"name":"obj_invisible_floor","order":4,"path":"objects/obj_invisible_floor/obj_invisible_floor.yy",},
     {"name":"obj_item_buff_righteousrevenge","order":2,"path":"objects/obj_item_buff_righteousrevenge/obj_item_buff_righteousrevenge.yy",},
