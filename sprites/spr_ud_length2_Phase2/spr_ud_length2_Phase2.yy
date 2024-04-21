@@ -18,8 +18,8 @@
     {"$GMSpriteFrame":"","%Name":"fee64195-1a3c-48fc-9e4b-e2d3d38bfbe9","name":"fee64195-1a3c-48fc-9e4b-e2d3d38bfbe9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"7f7a585a-578d-4c8e-9017-28b3f4bd5603","name":"7f7a585a-578d-4c8e-9017-28b3f4bd5603","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
-  "gridX":0,
-  "gridY":0,
+  "gridX":4,
+  "gridY":4,
   "height":64,
   "HTile":false,
   "layers":[
