@@ -21,3 +21,7 @@ melee_arm = instance_create_depth(x, y, depth + 1, obj_boss_sequence_melee_arm);
 is_approaching = true;
 
 alarm_set(1, 2.5 * room_speed);
+
+if instance_exists(obj_player) {
+	depth = obj_player.depth - 12;	
+}

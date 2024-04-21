@@ -6,6 +6,16 @@ function scr_Save_Load_Variables(){
 	//stats
 	global.enemies_killed = 0;
 	global.best_combo = 0;
+	global.best_coins = 0;
+	global.best_enemies = 0;
+	global.total_runs = 0;
+	global.area_2_reached = 0;
+	global.area_3_reached = 0;
+	global.num_of_wins = 0;
+	global.fastest_time = 0;
+	
+	global.credits_watched = false; //credits are required once
+	global.tutorial_completed = false;
 	
 	//audio settings
 	global.sound_volume = 100;
@@ -29,6 +39,16 @@ function scr_Save_Load_Variables(){
 	ini_open("savedata.ini");
 	global.enemies_killed = ini_read_real("savegame", "enemies_killed", 0);
 	global.best_combo = ini_read_real("savegame", "best_combo", 0);
+	global.best_coins = ini_read_real("savegame", "best_coins", 0);
+	global.best_enemies = ini_read_real("savegame", "best_enemies", 0);
+	global.total_runs = ini_read_real("savegame", "total_runs", 0);
+	global.area_2_reached = ini_read_real("savegame", "area_2_reached", 0);
+	global.area_3_reached = ini_read_real("savegame", "area_3_reached", 0);
+	global.num_of_wins = ini_read_real("savegame", "num_of_wins", 0);
+	global.fastest_time = ini_read_real("savegame", "fastest_time", 0);
+	
+	global.credits_watched = ini_read_real("savegame", "credits_watched", false);
+	global.tutorial_completed = ini_read_real("savegame", "tutorial_completed", false);
 	
 	global.sound_volume = ini_read_real("savegame", "sound_volume", 100);
 	global.music_volume = ini_read_real("savegame", "music_volume", 100);
@@ -39,9 +59,9 @@ function scr_Save_Load_Variables(){
 	global.resolution_y = ini_read_real("savegame", "resolution_y", 1080);
 	
 	global.tilt_speed = ini_read_real("savegame", "tilt_speed", 3);
-	global.screenshake = ini_read_real("savegame", "screenshake", 60);
-	global.controller_vibration = ini_read_real("savegame", "controller_vibration", 60);
-	global.show_timer = ini_read_real("savegame", "show_timer", false);
+	global.screenshake = ini_read_real("savegame", "screenshake", 80);
+	global.controller_vibration = ini_read_real("savegame", "controller_vibration", 80);
+	global.show_timer = ini_read_real("savegame", "show_timer", true);
 	global.show_coins = ini_read_real("savegame", "show_coins", true);
 	global.show_passives = ini_read_real("savegame", "show_passives", true);
 	ini_close();

@@ -8,7 +8,7 @@ follow_object = obj_player;
 follow_object2 = obj_player_mask;
 
 if room = room_shop {
-	global.num_of_coins -= 1;
+	//global.num_of_coins -= 1;
 }
 
 damage = 5;

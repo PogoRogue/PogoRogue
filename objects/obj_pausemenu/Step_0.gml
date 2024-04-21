@@ -8,14 +8,14 @@ if usable = true {
 	key_select = 0;
 }
 
-if key_up and selected = false {
+if key_up and !key_down and selected = false {
 	if select > 1 {
 		audio_play_sound(snd_menuNavigation,0,false);
 		select -= 1;
 	}
 	selected = true;
 	alarm[3] = alarm3_time;
-}else if key_down and selected = false {
+}else if key_down and !key_up and selected = false {
 	if select < num_of_options {
 		audio_play_sound(snd_menuNavigation,0,false);
 		select += 1;
@@ -54,7 +54,7 @@ if key_select {
 	}
 }
 
-if instance_number(obj_pausemenu) > 1 {
+if instance_number(obj_pausemenu) > 1 or instance_exists(obj_fade_out){
 	instance_destroy();	
 }
 

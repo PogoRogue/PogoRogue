@@ -48,7 +48,11 @@ function scr_Jump(add_to_jump){
 				pickups_array[0].bounce_reset = pickups_array[0].bounce_reset_max;
 			}
 		}else {
-			pickups_array[0].cooldown_time += pickups_array[0].max_cooldown_time/4;
+			if global.impatience = false {
+				pickups_array[0].cooldown_time += pickups_array[0].max_cooldown_time/4;
+			}else {
+				pickups_array[0].cooldown_time += pickups_array[0].max_cooldown_time/3;
+			}
 			if pickups_array[0].cooldown_time > pickups_array[0].max_cooldown_time {
 				pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
 			}
@@ -65,7 +69,11 @@ function scr_Jump(add_to_jump){
 				pickups_array[1].bounce_reset = pickups_array[1].bounce_reset_max;
 			}
 		}else {
-			pickups_array[1].cooldown_time += pickups_array[1].max_cooldown_time/4;
+			if global.impatience = false {
+				pickups_array[1].cooldown_time += pickups_array[1].max_cooldown_time/4;
+			}else {
+				pickups_array[1].cooldown_time += pickups_array[1].max_cooldown_time/3;
+			}
 			if pickups_array[1].cooldown_time > pickups_array[1].max_cooldown_time {
 				pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
 			}
@@ -94,16 +102,30 @@ function scr_Jump(add_to_jump){
 	//spring
 	if place_meeting(x,y-vspeed,obj_spring) {
 		if instance_place(x,y-vspeed,obj_spring).state = instance_place(x,y-vspeed,obj_spring).state_unsprung {
+			with instance_place(x,y-vspeed,obj_spring) {
+				state = state_springing;
+			}
 			state = state_free;
 			vspeed = 0;
 			if(global.tightspring) and vspeed = 0 {
-				motion_add(90,12*1.2);
+				motion_add(90,(12+abs(add_to_jump/1.5))*1.2);
 			}else if vspeed = 0 {
-				motion_add(90,12);
+				motion_add(90,(12+abs(add_to_jump/1.5)));
 			}
 		}
-		with instance_place(x,y-vspeed,obj_spring) {
-			state = state_springing;
+	}
+	if place_meeting(x,y+vspeed,obj_spring) {
+		if instance_place(x,y+vspeed,obj_spring).state = instance_place(x,y+vspeed,obj_spring).state_unsprung {
+			with instance_place(x,y+vspeed,obj_spring) {
+				state = state_springing;
+			}
+			state = state_free;
+			vspeed = 0;
+			if(global.tightspring) and vspeed = 0 {
+				motion_add(90,(12+abs(add_to_jump/1.5))*1.2);
+			}else if vspeed = 0 {
+				motion_add(90,(12+abs(add_to_jump/1.5)));
+			}
 		}
 	}
 	global.water_index += 1;

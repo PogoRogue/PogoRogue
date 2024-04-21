@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.531521,
+  "duration":1.066667,
   "name":"snd_explosion",
   "parent":{
     "name":"Weapons",

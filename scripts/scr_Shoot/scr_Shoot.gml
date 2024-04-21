@@ -63,7 +63,7 @@ function scr_Shoot(){
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 and frenzy = false and gun._name != "Javelins" {
+			if gun.spread_number = 1 and frenzy = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
 				gun.current_bullets -= 1;
 			}
 			
@@ -73,6 +73,23 @@ function scr_Shoot(){
 		}
 		
 		if gun.current_bullets >= 0 {
+			
+			//cancel ground pound
+			if state = state_groundpound {
+				vsp_basicjump = -6.6;
+				state = state_free;
+				ground_pound_rise = true;
+				ground_pound_slam = false;
+				ground_pound_distance_risen = 0;
+				soundPlayed = false;
+				pickup_groundpound.on_cooldown = true;
+			}
+			
+			if state = state_parachute {
+				with obj_parachute {
+					retract = true;	
+				}
+			}
 		
 			//check if speed slower or faster than max speed to preserve momentum
 			if (abs(speed) > gun.max_speed and vspeed < 0) {

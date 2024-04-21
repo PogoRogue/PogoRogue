@@ -14,12 +14,24 @@ for(i = 0; i < num_of_slots; i++) {
 	if refresh_button = false {
 		if instance_exists(slot_items_array[i]) {
 			if global.num_of_coins < round(slot_items_array[i].item_cost * global.sale) or (slot_items_array[i].sold_out = true) {
-				draw_sprite(spr_item_slot_shop,i=select-1,xx,yy);
+				if cant_move = false {
+					draw_sprite(spr_item_slot_shop,(i=select-1),xx,yy);
+				}else {
+					draw_sprite(spr_item_slot_shop,0,xx,yy);
+				}
 			}else {
-				draw_sprite(spr_item_slot_shop,(i=select-1)+2,xx,yy);
+				if cant_move = false {
+					draw_sprite(spr_item_slot_shop,(i=select-1)+2,xx,yy);
+				}else {
+					draw_sprite(spr_item_slot_shop,2,xx,yy);
+				}
 			}
 		}else {
-			draw_sprite(spr_item_slot_shop,i=select-1,xx,yy);
+			if cant_move = false {
+				draw_sprite(spr_item_slot_shop,i=select-1,xx,yy);
+			}else {
+				draw_sprite(spr_item_slot_shop,0,xx,yy);
+			}
 		}
 		//draw_sprite(spr_item_slot_shop,i=select-1,xx,yy);
 	}else {
@@ -109,6 +121,21 @@ for(i = 0; i < num_of_slots; i++) {
 				draw_sprite(spr_controller_button_bottom,0,description_x,description_y+52);
 			}
 		}
+	}
+	
+	//draw item types
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_center);
+	draw_set_font(fnt_combo2);
+	
+	if i < 2 {
+		scr_Draw_Text_Outlined(304+32,yy-32,"Health",c_white);
+	}else if i < 4 {
+		scr_Draw_Text_Outlined(304+32,yy-32,"Passive Items",c_white);
+	}else if i < 6 {
+		scr_Draw_Text_Outlined(304+32,yy-32,"Weapons",c_white);
+	}else {
+		scr_Draw_Text_Outlined(304+32,yy-32,"Active Items",c_white);
 	}
 }
 
