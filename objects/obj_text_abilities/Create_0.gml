@@ -1,5 +1,3 @@
 /// @description Initialize strings by column
 
-height_text = "Use abilities!\n" +
-				  "Left Click\n" +
-				  "Left Button"
+height_text = "Left-click or press A button to use abilities!";
