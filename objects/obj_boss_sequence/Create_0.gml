@@ -57,3 +57,6 @@ instance_create_layer(axe_pos.x, axe_pos.y, "enemies", obj_spikeswing, {distance
 if instance_exists(obj_player) {
 	depth = obj_player.depth - 10;	
 }
+
+spawned = false;
+white_alpha = 0;

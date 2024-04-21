@@ -23,3 +23,6 @@ shield.parent = self;
 
 drop_coins = false;
 created_items = true;
+
+explode = false;
+red_alpha = 0;

@@ -64,3 +64,12 @@ for(var _i = -3; _i < 4; _i++) {
 drop_coins = false;
 
 instance_create_depth(x, y, -20, obj_boss_sphere_health);
+
+explode = false;
+red_alpha = 0;
+
+spawned = false;
+white_alpha = 0;
+
+init_x = x;
+init_y = y;

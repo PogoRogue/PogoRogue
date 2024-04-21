@@ -426,6 +426,7 @@ function scr_Pickups(){
 					gun_1.current_bullets = gun_1.bullets_per_bounce + max_ammo_buff;
 					gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
 					gun_3.current_bullets = gun_3.bullets_per_bounce + max_ammo_buff;
+					audio_play_sound(snd_frenzy,0,false);
 				}
 			}
 		}

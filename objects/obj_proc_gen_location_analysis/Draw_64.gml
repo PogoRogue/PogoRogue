@@ -6,12 +6,12 @@ draw_set_font(fnt_combo2);
 
 if(display_player_chunk && instance_exists(current_tag_object))
 {
-	draw_text(display_get_gui_width()/2 - 20, 20, player_location_string);
+	//draw_text(display_get_gui_width()/2 - 20, 20, player_location_string);
 	previous_tag_message = player_location_string;
 }
 else
 {
-	draw_text(display_get_gui_width()/2 - 20, 20, previous_tag_message);
+	//draw_text(display_get_gui_width()/2 - 20, 20, previous_tag_message);
 }
 
 if(display_minimap && instance_exists(current_tag_object))

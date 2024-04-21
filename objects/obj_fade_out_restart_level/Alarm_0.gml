@@ -39,3 +39,5 @@ if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
 	scr_Room_Restart(true);
 	audio_play_sound(snd_selectOption,0,false);
 }
+
+global.door_color = "purple";

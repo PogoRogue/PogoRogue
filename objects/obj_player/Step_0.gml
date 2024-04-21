@@ -244,6 +244,14 @@ if (canshoot > 0) {
 		if gun.spread_number > 1 and frenzy = false and aerial_assassin_frenzy = false {
 			gun.current_bullets -= 1;
 		}
+	}else {
+		if (audio_is_playing(snd_watergun)) {
+			audio_stop_sound(snd_watergun);
+		}
+	}	
+}else {
+	if (audio_is_playing(snd_watergun)) {
+		audio_stop_sound(snd_watergun);
 	}
 }
 

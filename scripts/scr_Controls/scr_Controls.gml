@@ -22,7 +22,7 @@ function scr_Controls(){
 	global.weapon1_keys = [ord("1"),-1];
 	global.weapon2_keys = [ord("2"),-1];
 	global.weapon3_keys = [ord("3"),-1];
-	global.nextweapon_keys = [-1,-1];
+	global.nextweapon_keys = [ord("Q"),-1];
 	global.prevweapon_keys = [-1,-1];
 	global.pause_keys = [vk_escape,ord("P")];
 	global.item_keys = [vk_tab,-1];
