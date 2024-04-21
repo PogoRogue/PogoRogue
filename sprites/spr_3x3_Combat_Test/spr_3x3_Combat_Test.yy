@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_3x3_Combat_Test",
   "bboxMode":0,
-  "bbox_bottom":93,
+  "bbox_bottom":90,
   "bbox_left":0,
   "bbox_right":95,
   "bbox_top":7,
