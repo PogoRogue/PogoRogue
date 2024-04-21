@@ -41,8 +41,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_marionette_idle",
-    "path":"sprites/spr_boss_marionette_idle/spr_boss_marionette_idle.yy",
+    "name":"Spr_Boss_Marionette_Phase1",
+    "path":"sprites/Spr_Boss_Marionette_Phase1/Spr_Boss_Marionette_Phase1.yy",
   },
   "spriteMaskId":null,
   "visible":true,
