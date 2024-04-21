@@ -3,7 +3,7 @@
   "%Name":"spr_projectile_missile",
   "bboxMode":2,
   "bbox_bottom":10,
-  "bbox_left":3,
+  "bbox_left":25,
   "bbox_right":28,
   "bbox_top":4,
   "collisionKind":1,

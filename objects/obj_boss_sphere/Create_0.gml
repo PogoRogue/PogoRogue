@@ -3,6 +3,11 @@
 // Inherit the parent event
 event_inherited();
 
+heart_chance = 0; //percent
+buff_chance = 0; //percent
+pickup_chance = 0; //percent
+weapon_chance = 0; //percent
+
 boss_name = "Agro Bricks";
 depth = -5;
 spd = 0.3;
@@ -47,8 +52,11 @@ for(var _i = -3; _i < 4; _i++) {
 				type_index = obj_boss_brick_gap;
 			}
 			
+			//instance_create_depth(x + (_i * 32), y + (_j * 32), depth-1, type_index);
 			instance_create_layer(x + (_i * 32), y + (_j * 32), "enemies", type_index, {parent: obj_boss_sphere});
+			randomize();
 			type = irandom(3);
+			random_set_seed(global.seed);
 		}
 	}
 }

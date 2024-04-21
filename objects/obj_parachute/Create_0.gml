@@ -7,3 +7,5 @@ retract = false;
 arrows_alpha = 1;
 decrease_arrows_alpha = false;
 angle_add = 0;
+
+audio_play_sound(snd_parachute_open,0,false);

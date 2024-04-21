@@ -123,6 +123,24 @@ if(global.impatience == true and impatience_used = false){
 		}else {
 			all_pickups_array[i].max_cooldown_time = all_pickups_array[i].max_cooldown_time * cd_multiplier;
 		}
+		
+		if all_pickups_array[i].bounce_reset = all_pickups_array[i].bounce_reset_max 
+		and all_pickups_array[i].bounce_reset_max > 1 {
+			all_pickups_array[i].bounce_reset -= 1;
+			all_pickups_array[i].bounce_reset_max -= 1;
+		}else if all_pickups_array[i].bounce_reset_max > 1 {
+			all_pickups_array[i].bounce_reset_max -= 1;
+		}
+		
+		if all_pickups_array[i].enemies_count = all_pickups_array[i].enemies_count_max 
+		and all_pickups_array[i].enemies_count_max > 1 {
+			all_pickups_array[i].enemies_count -= 1;
+			all_pickups_array[i].enemies_count_max -= 1;
+		}else if all_pickups_array[i].enemies_count_max > 1 {
+			all_pickups_array[i].enemies_count_max -= 1;
+		}
+		
+		
 	}
 	impatience_used = true;
 }
@@ -215,6 +233,7 @@ if (canshoot > 0) {
 		
 		repeat (gun.burst_number - 1) {
 			if gun._name = "Burst Fire Gun" and delay = gun.burst_delay {
+				current_burst = 1;
 				audio_play_sound(snd_burstfire,0,false);	
 			}
 			call_later(delay,time_source_units_frames,scr_Shoot);
@@ -222,10 +241,18 @@ if (canshoot > 0) {
 		}
 		
 		//decrease ammo count for spread weapons
-		if gun.spread_number > 1 and frenzy = false {
+		if gun.spread_number > 1 and frenzy = false and aerial_assassin_frenzy = false {
 			gun.current_bullets -= 1;
 		}
 	}
+}
+
+if frenzy_time > 0 {
+	frenzy_time -= 1;	
+}
+
+if aerial_assassin_frenzy_count > 0 {
+	aerial_assassin_frenzy_count -= 1;
 }
 
 if !(key_fire_projectile) { //lerp back to starting firerate while not shooting
@@ -249,7 +276,7 @@ or gun_array[current_gun] != water_gun and gun_3 = water_gun {
 #endregion
 
 //switch between weapons
-if global.key_weapon_up {
+if global.key_weapon_up and current_burst = 0 {
 	if (current_gun) < weapons_equipped-1 {
 		current_gun += 1;
 	}else {
@@ -260,7 +287,7 @@ if global.key_weapon_up {
 	weapon_arrow_index = 0;
 }
 
-if global.key_weapon_down {
+if global.key_weapon_down and current_burst = 0 {
 	if (current_gun) > 0 {
 		current_gun -= 1;
 	}else {
@@ -272,16 +299,16 @@ if global.key_weapon_down {
 }
 
 //number keys
-if global.key_weapon_1 {
+if global.key_weapon_1 and current_burst = 0 {
 	current_gun = 0;
 	gun = gun_array[current_gun];
 	weapon_arrow_index = 0;
-}else if global.key_weapon_2 and weapons_equipped > 1 {
+}else if global.key_weapon_2 and weapons_equipped > 1 and current_burst = 0 {
 	current_gun = 1;
 	gun = gun_array[current_gun];
 	weapon_arrow_index = 0;
 }
-else if global.key_weapon_3 and weapons_equipped > 2 {
+else if global.key_weapon_3 and weapons_equipped > 2 and current_burst = 0 {
 	current_gun = 2;
 	gun = gun_array[current_gun];
 	weapon_arrow_index = 0;
@@ -302,28 +329,36 @@ if global.juggler = true {
 		if gun_1.current_bullets = 0 and gun_2.current_bullets = 0 {
 			if current_gun = 0 {
 				gun_2.current_bullets = gun_2.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}else if current_gun = 1 {
 				gun_1.current_bullets = gun_1.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}
 		}
 	}else if weapons_equipped = 3 {
 		if gun_1.current_bullets = 0 and gun_2.current_bullets = 0 {
 			if current_gun = 0 {
 				gun_2.current_bullets = gun_2.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}else if current_gun = 1 {
 				gun_1.current_bullets = gun_1.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}
 		}else if gun_1.current_bullets = 0 and gun_3.current_bullets = 0 {
 			if current_gun = 0 {
 				gun_3.current_bullets = gun_3.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}else if current_gun = 2 {
 				gun_1.current_bullets = gun_1.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}
 		}if gun_2.current_bullets = 0 and gun_3.current_bullets = 0 {
 			if current_gun = 1 {
 				gun_3.current_bullets = gun_3.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}else if current_gun = 2 {
 				gun_2.current_bullets = gun_2.bullets_per_bounce;
+				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 			}
 		}
 	}
@@ -346,6 +381,15 @@ if (dead = true and global.revive = false and state != state_revive) {
 	with obj_player_mask {
 		mask_index = spr_nothing;
 	}
+	
+	if y > obj_camera.y + (obj_camera.view_h_half) + 48 {
+		state = state_immobile;
+	}else if room = room_boss_3 {
+		mask_index = spr_nothing;
+		with obj_player_mask {
+			mask_index = spr_nothing;
+		}
+	}
 }
 
 // Handle death
@@ -358,24 +402,27 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 }else if (dead && current_iframes <= 0 and global.revived = false) {
 	//Revive
 	global.revived = true;
-	global.revive = false;
+	if room != room_tutorial {
+		global.revive = false;
+	}
 	hp = floor((max_hp/8)/2) * 8;
 	state = state_revive;
 	revive_alpha = 1;
 	current_iframes = max(current_iframes - 1, 0);
 	
-	//change revive item sprite
-	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
-		if global.all_buff_sprites[i] = spr_buffitem_revive {
-			//update image index
-			global.all_buff_sprites_index[i] += 2;
+	if room != room_tutorial {
+		//change revive item sprite
+		for (i = 0; i < array_length(global.all_buff_sprites); i++) {
+			if global.all_buff_sprites[i] = spr_buffitem_revive {
+				//update image index
+				global.all_buff_sprites_index[i] += 2;
+			}
 		}
-	}
-	
-	//change revive item name
-	for (i = 0; i < array_length(global.all_buff_names); i++) {
-		if global.all_buff_names[i] = "Revive" {
-			global.all_buff_names[i] = "Revive (Used)";
+		//change revive item name
+		for (i = 0; i < array_length(global.all_buff_names); i++) {
+			if global.all_buff_names[i] = "Revive" {
+				global.all_buff_names[i] = "Revive (Used)";
+			}
 		}
 	}
 }else if (dead && current_iframes <= 0) {
@@ -388,8 +435,13 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 //One Heart Stresser
 if (hp <= 8 and hp > 0) {
 	if !audio_is_playing(snd_oneHeart) {
-		audio_play_sound(snd_oneHeart,0,false);
+		//audio_play_sound(snd_oneHeart,0,false);
 	}	
+}
+
+if !dead and state != state_revive {
+	global.revived = false;
+	revive_time = 0;
 }
 
 if room = room_items {
@@ -412,3 +464,10 @@ if (damage_boost_active) {
         damage_boost_timer = 0; // Reset the timer for safety.
     }
 }
+
+if audio_is_playing(snd_bulletblast) and state = state_bouncing or dead = true {
+	audio_stop_sound(snd_bulletblast);
+}
+
+//for testing
+//hp = 40;

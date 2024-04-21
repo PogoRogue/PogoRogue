@@ -27,15 +27,37 @@ function scr_Death_Screen(win){
 	draw_set_valign(fa_center);
 	
 	scr_Draw_Text_Outlined(x-78,y-74,"Best Combo:  " + string(global.current_best_combo),c_white);
-	scr_Draw_Text_Outlined(x-78,y-29,"Enemies Killed:  " + string(global.current_enemies_killed),c_white);
-	scr_Draw_Text_Outlined(x-78,y+16,"Coins Collected:  " + string(global.current_total_coins),c_white);
-	scr_Draw_Text_Outlined(x-78,y+61,"Area Reached:  " + string(global.current_area_reached),c_white);
-	scr_Draw_Text_Outlined(x-78,y+106,"Time:  " + scr_Convert_Frames_To_Time(global.current_time_elapsed),c_white);
+	scr_Draw_Text_Outlined(x-78,y-36,"Enemies Killed:  " + string(global.current_enemies_killed),c_white);
+	scr_Draw_Text_Outlined(x-78,y-2,"Coins Collected:  " + string(global.current_total_coins),c_white);
+	scr_Draw_Text_Outlined(x-78,y+34,"Time:  " + scr_Convert_Frames_To_Time(global.current_time_elapsed),c_white);
+	scr_Draw_Text_Outlined(x-78,y+70,"Area Reached:  " + string(global.current_area_reached),c_white);
+	scr_Draw_Text_Outlined(x-78,y+106,"Seed:  " + string(current_seed),c_white);
+	
 	
 	//new best
-	if (global.current_best_combo > global.init_combo_highscore) {
+	if (global.current_best_combo > global.init_combo_highscore) { //combo
 		draw_set_font(fnt_itemdescription2);
-		scr_Draw_Text_Outlined(x-78,y-59,"(New Best!)",make_color_rgb(237,225,158));
+		scr_Draw_Text_Outlined(x-78,y-59,"(New Best!)",make_color_rgb(237,225,158));//+15
+	}
+	
+	if (global.current_enemies_killed > global.init_enemies_highscore) { //enemies
+		draw_set_font(fnt_itemdescription2);
+		scr_Draw_Text_Outlined(x-78,y-21,"(New Best!)",make_color_rgb(237,225,158));
+	}
+	
+	if (global.current_total_coins > global.init_coins_highscore) { //coins
+		draw_set_font(fnt_itemdescription2);
+		scr_Draw_Text_Outlined(x-78,y+13,"(New Best!)",make_color_rgb(237,225,158));
+	}
+	
+	if best_time = true { //time
+		draw_set_font(fnt_itemdescription2);
+		scr_Draw_Text_Outlined(x-78,y+49,"(New Best!)",make_color_rgb(237,225,158));
+	}
+	
+	if global.area_2_reached = 1 or global.area_3_reached = 1 { //area
+		draw_set_font(fnt_itemdescription2);
+		scr_Draw_Text_Outlined(x-78,y+85,"(New Best!)",make_color_rgb(237,225,158));
 	}
 }
 

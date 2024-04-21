@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":210,
   "bbox_left":0,
-  "bbox_right":31,
+  "bbox_right":39,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -33,7 +33,7 @@
   ],
   "name":"spr_minimap_phase1",
   "nineSlice":null,
-  "origin":0,
+  "origin":9,
   "parent":{
     "name":"UI",
     "path":"folders/Sprites/UI.yy",
@@ -112,7 +112,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
+    "xorigin":8,
     "yorigin":0,
   },
   "swatchColours":[
@@ -132,5 +132,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":32,
+  "width":40,
 }

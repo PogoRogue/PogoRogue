@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_lasersight;
 item_name = "Laser Sight";
-item_tagline = "A laser is drawn from the bottom of the player to assist with aiming.";
+item_tagline = "A laser is drawn from the bottom of your pogo stick to assist with aiming.";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 20;

@@ -16,20 +16,20 @@ if usable = true {
 
 if select_y = 0 { //top row, change between item types
 	select_x = 1;
-	if key_left and select > 1 and selected_x = false {
+	if key_left and !key_right and select > 1 and selected_x = false {
 		select -= 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[2] = alarm2_time;
 	}
-	if key_right and select < select_max and selected_x = false {
+	if key_right and !key_left and select < select_max and selected_x = false {
 		select += 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[2] = alarm2_time;
 	}
 	//down
-	if key_down and select_y < select_y_max and selected_y = false {
+	if key_down and !key_up and select_y < select_y_max and selected_y = false {
 		select_y += 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
@@ -39,25 +39,25 @@ if select_y = 0 { //top row, change between item types
 
 //move around
 if select_y > 0 {
-	if key_left and select_x > 1 and selected_x = false {
+	if key_left and !key_right and select_x > 1 and selected_x = false {
 		select_x -= 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[2] = alarm2_time;
 	}
-	if key_right and select_x < select_x_max and selected_x = false {
+	if key_right and !key_left and select_x < select_x_max and selected_x = false {
 		select_x += 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[2] = alarm2_time;
 	}
-	if key_up and select_y > 0 and selected_y = false {
+	if key_up and !key_down and select_y > 0 and selected_y = false {
 		select_y -= 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[3] = alarm3_time;
 	}
-	if key_down and select_y < select_y_max and selected_y = false {
+	if key_down and !key_up and select_y < select_y_max and selected_y = false {
 		select_y += 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
@@ -109,10 +109,11 @@ if !key_up and !key_down {
 	alarm[3] = alarm3_time;
 }
 
-if key_back {
+if key_back and !instance_exists(obj_fade_in) {
 	if room != room_items {
 		alarm[0] = 1;
 	}else {
 		scr_Room_Transition(room_menu);
+		audio_play_sound(snd_unavailable,0,false);
 	}
 }

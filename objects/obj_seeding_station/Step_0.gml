@@ -14,7 +14,7 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 
 //image_index = room = room_shop;
 
-if (colliding and key_interact) {
+if (colliding and key_interact and !instance_exists(obj_fade_in)) {
 	//enter seeding input code here
 	instance_create_depth(x,y,depth,obj_seeding_prompt);
 }

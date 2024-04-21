@@ -19,12 +19,20 @@ current_iframes = 0;
 red_frames = 0;
 
 //drop chances
-heart_chance = 10 + (global.luck/2); //percent
-buff_chance = 5 + (global.luck/2); //percent
-pickup_chance = (global.luck/2); //percent
-weapon_chance = (global.luck/2); //percent
+if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and room != room_tutorial {
+	heart_chance = 6 + (global.luck/2); //percent
+	buff_chance = 3 + (global.luck/2); //percent
+	pickup_chance = (global.luck/2); //percent
+	weapon_chance = (global.luck/2); //percent
+}else {
+	heart_chance = 0;
+	buff_chance = 0;
+	pickup_chance = 0;
+	weapon_chance = 0;
+}
 
 created_items = false;
+created_items2 = false;
 
 drop_coins = true;
 
@@ -32,4 +40,7 @@ num_of_coins = global.combo;
 //when invinsible, can't take damage
 invinsible=false;
 
+random_set_seed(global.seed+global.enemy_number);
 random_items = scr_Random_Item_Drops();
+global.enemy_number += 1;
+random_set_seed(global.seed);

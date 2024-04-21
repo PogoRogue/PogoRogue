@@ -2,9 +2,9 @@
 if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
 	room_persistent = false;
 	instance_activate_all();
+	global.phase = 1;
 	room = room_proc_gen_test;
 	global.current_music = snd_music_level1;
-	global.phase = 1;
 	with instance_create_depth(x,y,depth,obj_restart_game2) {
 		alarm[0] = 1;	
 	}
@@ -21,6 +21,7 @@ if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
 	if global.last_room = room_proc_gen_test {
 		room_persistent = false;
 		instance_activate_all();
+		global.phase = 1;
 		room = room_proc_gen_test;
 		with instance_create_depth(x,y,depth,obj_restart_game2) {
 			alarm[0] = 1;	
