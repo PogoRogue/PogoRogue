@@ -19,8 +19,10 @@ if (gun_name = "Grenade Launcher") or (gun_name = "Missile Launcher") {
 //give player a boost
 if (gun_name = "Star Sucker") {
 	with obj_player {
-		speed = 0;
-		motion_add(angle - 90, vsp_basicjump*1.1);
+		if state != state_freeze {
+			speed = 0;
+			motion_add(angle - 90, vsp_basicjump*1.1);
+		}
 	}
 	//screen shake
 	scr_Screen_Shake(5, 10, true);
@@ -37,22 +39,28 @@ if (gun_name = "Yo-yo") {
 				gun_1.current_bullets += 1;
 			}
 			//add momentum
-			speed = 0;
-			motion_add(angle - 90, vsp_basicjump * gun_1.momentum_added);
+			if state != state_freeze {
+				speed = 0;
+				motion_add(angle - 90, vsp_basicjump * gun_1.momentum_added);
+			}
 		}else if gun_2._name = "Yo-yo" {
 			if gun_2.current_bullets < gun_2.bullets_per_bounce+obj_player.max_ammo_buff {
 				gun_2.current_bullets += 1;
 			}
 			//add momentum
-			speed = 0;
-			motion_add(angle - 90, vsp_basicjump * gun_2.momentum_added);
+			if state != state_freeze {
+				speed = 0;
+				motion_add(angle - 90, vsp_basicjump * gun_2.momentum_added);
+			}
 		}else if gun_3._name = "Yo-yo" {
 			if gun_3.current_bullets < gun_3.bullets_per_bounce+obj_player.max_ammo_buff {
 				gun_3.current_bullets += 1;
 			}
 			//add momentum
-			speed = 0;
-			motion_add(angle - 90, vsp_basicjump * gun_3.momentum_added);
+			if state != state_freeze {
+				speed = 0;
+				motion_add(angle - 90, vsp_basicjump * gun_3.momentum_added);
+			}
 		}
 	}
 	//screen shake
@@ -76,5 +84,35 @@ if (gun_name = "Water Gun") {
 		if parent_obj = other or parent_obj = other.closest_water_object {
 			instance_destroy();	
 		}
+	}
+}
+
+if (gun_name = "Paintball Gun") {
+	for(i = 0; i < 360; i += 45) {
+		with instance_create_depth(x,y,depth-1,obj_paintball_droplet) {
+			speed = other.spd/3;
+			direction = other.i;
+			randomize();
+			direction += irandom_range(-45,45);
+			random_set_seed(global.seed);
+			color_index = other.image_index;
+		}
+	}
+}
+
+if (gun_name = "Javelins") {
+	if place_meeting(x,y,obj_ground) {
+		with instance_create_depth(x,y,depth,obj_javelin_animation)	{
+			other_depth = other.depth;
+			depth = 100;
+			image_angle = other.image_angle;
+			damage = other.damage;
+		}
+	}
+}
+
+if gun_name = "Boomerangs" {
+	if audio_is_playing(sound) {
+		audio_stop_sound(sound);
 	}
 }

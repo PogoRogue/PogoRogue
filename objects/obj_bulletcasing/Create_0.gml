@@ -7,3 +7,8 @@ bounced = false;
 init_speed = speed;
 damaged = false;
 alarm[1] = 120;
+exploded = false;
+
+randomize();
+exploding_chance = irandom_range(1,100);
+random_set_seed(global.seed);

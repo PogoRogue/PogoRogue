@@ -21,3 +21,5 @@ drop_coins = false;
 draw_hp = false;
 
 y_spd = 0;
+
+init_add_to_combo = add_to_combo;

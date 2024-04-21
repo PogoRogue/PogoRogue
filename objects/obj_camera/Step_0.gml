@@ -4,7 +4,7 @@
 if (instance_exists(follow)) {
 	//update destination
 	xTo = follow.x;
-	yTo = follow.y - 32;
+	yTo = follow.y - 48;
 	
 	if room = room_gameplay_video or room = room_boss_1 {
 		var hallway_w_half = 280;

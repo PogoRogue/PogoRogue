@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.115011,
+  "duration":0.433333,
   "name":"snd_grenade_bounce",
   "parent":{
     "name":"Weapons",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_grenade_bounce.wav",
   "type":0,
-  "volume":0.5,
+  "volume":1.0,
 }

@@ -24,7 +24,7 @@
   ],
   "name":"spr_combometer_red",
   "nineSlice":null,
-  "origin":9,
+  "origin":4,
   "parent":{
     "name":"UI",
     "path":"folders/Sprites/UI.yy",
@@ -80,7 +80,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":16,
-    "yorigin":4,
+    "yorigin":2,
   },
   "swatchColours":[
     4278190335,4293259506,4290360760,4287136134,4284834660,4283384901,4283971642,4280492321,4282526517,4285154115,

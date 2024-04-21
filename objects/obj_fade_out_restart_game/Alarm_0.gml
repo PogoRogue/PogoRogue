@@ -1,2 +1,3 @@
 /// @description go to next room
-game_restart();
+instance_deactivate_all(false);
+room = room_menu;

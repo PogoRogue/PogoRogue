@@ -16,20 +16,20 @@ if usable = true {
 
 if select_y = 0 { //top row, change between setting types
 	select_x = 1;
-	if key_left and select > 1 and selected_x = false {
+	if key_left and !key_right and select > 1 and selected_x = false {
 		select -= 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[2] = alarm2_time;
 	}
-	if key_right and select < select_max and selected_x = false {
+	if key_right and !key_left and select < select_max and selected_x = false {
 		select += 1;
 		selected_x = true;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[2] = alarm2_time;
 	}
 	//down
-	if key_down and select_y < select_y_max and selected_y = false {
+	if key_down and !key_up and select_y < select_y_max and selected_y = false {
 		select_y += 1;
 		selected_y = true;
 		audio_play_sound(snd_menuNavigation,0,false);
@@ -37,14 +37,14 @@ if select_y = 0 { //top row, change between setting types
 	}
 }else {
 	//navigate up and down
-	if key_up and select_y > 0 and selected_y = false {
+	if key_up and !key_down and select_y > 0 and selected_y = false {
 		select_y -= 1;
 		selected_y = true;
 		alarm2_time = 30;
 		audio_play_sound(snd_menuNavigation,0,false);
 		alarm[3] = alarm3_time;
 	}
-	if key_down and select_y < select_y_max and selected_y = false {
+	if key_down and !key_up and select_y < select_y_max and selected_y = false {
 		select_y += 1;
 		selected_y = true;
 		alarm2_time = 30;
@@ -63,13 +63,13 @@ if select = 1 { //video
 			if menu_audio.options_array[i]._type = "slider" {
 				if i = select_y-1 {
 					//navigate left and right
-					if key_left and menu_audio.options_array[i].current_value > menu_audio.options_array[i].lowest_value and selected_x = false {
+					if key_left and !key_right and menu_audio.options_array[i].current_value > menu_audio.options_array[i].lowest_value and selected_x = false {
 						menu_audio.options_array[i].current_value -= menu_audio.options_array[i].increment;
 						selected_x = true;
 						menu_audio.options_array[i].on_select();
 						alarm[2] = alarm2_time;
 					}
-					if key_right and menu_audio.options_array[i].current_value < menu_audio.options_array[i].highest_value and selected_x = false {
+					if key_right and !key_left and menu_audio.options_array[i].current_value < menu_audio.options_array[i].highest_value and selected_x = false {
 						menu_audio.options_array[i].current_value += menu_audio.options_array[i].increment;
 						selected_x = true;
 						menu_audio.options_array[i].on_select();
@@ -111,7 +111,7 @@ if select = 2 { //video
 				menu_video.options_array[i].current_selection = global.resolution_num;
 				if i = select_y-1 {
 					//navigate left and right
-					if key_left and menu_video.options_array[i].current_selection > 0 and selected_x = false {
+					if key_left and !key_right and menu_video.options_array[i].current_selection > 0 and selected_x = false {
 						global.resolution_num -= 1;
 						scr_Save_Real("resolution_num",global.resolution_num);
 						
@@ -123,7 +123,7 @@ if select = 2 { //video
 						audio_play_sound(snd_menuNavigation,0,false);
 						alarm[2] = alarm2_time;
 					}
-					if key_right and menu_video.options_array[i].current_selection < menu_video.options_array[i].num_of_values - 1 and selected_x = false {
+					if key_right and !key_left and menu_video.options_array[i].current_selection < menu_video.options_array[i].num_of_values - 1 and selected_x = false {
 						global.resolution_num += 1;
 						scr_Save_Real("resolution_num",global.resolution_num);
 						selected_x = true;
@@ -161,13 +161,13 @@ if select = 3 { //video
 			if menu_gameplay.options_array[i]._type = "slider" {
 				if i = select_y-1 {
 					//navigate left and right
-					if key_left and menu_gameplay.options_array[i].current_value > menu_gameplay.options_array[i].lowest_value and selected_x = false {
+					if key_left and !key_right and menu_gameplay.options_array[i].current_value > menu_gameplay.options_array[i].lowest_value and selected_x = false {
 						menu_gameplay.options_array[i].current_value -= menu_gameplay.options_array[i].increment;
 						selected_x = true;
 						menu_gameplay.options_array[i].on_select();
 						alarm[2] = alarm2_time;
 					}
-					if key_right and menu_gameplay.options_array[i].current_value < menu_gameplay.options_array[i].highest_value and selected_x = false {
+					if key_right and !key_left and menu_gameplay.options_array[i].current_value < menu_gameplay.options_array[i].highest_value and selected_x = false {
 						menu_gameplay.options_array[i].current_value += menu_gameplay.options_array[i].increment;
 						selected_x = true;
 						menu_gameplay.options_array[i].on_select();
@@ -209,13 +209,13 @@ if select = 4 { //bindings
 			}
 			//change slot (1st or 2nd binding)
 			if (i > 0) {
-				if key_left and bindings_x > 1 and selected_x = false {
+				if key_left and !key_right and bindings_x > 1 and selected_x = false {
 					bindings_x -= 1;
 					selected_x = true;
 					audio_play_sound(snd_menuNavigation,0,false);
 					alarm[2] = alarm2_time;
 				}
-				if key_right and bindings_x < 2 and selected_x = false {
+				if key_right and !key_left and bindings_x < 2 and selected_x = false {
 					bindings_x += 1;
 					selected_x = true;
 					audio_play_sound(snd_menuNavigation,0,false);
@@ -248,10 +248,12 @@ if !key_up and !key_down {
 	alarm[3] = alarm3_time;
 }
 
-if key_back {
+if key_back and !instance_exists(obj_fade_in) {
 	if room != room_settings {
 		alarm[0] = 1;
+		audio_play_sound(snd_unavailable,0,false);
 	}else {
 		scr_Room_Transition(room_menu);
+		audio_play_sound(snd_unavailable,0,false);
 	}
 }

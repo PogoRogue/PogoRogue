@@ -97,6 +97,7 @@ or obj_player.weapons_equipped = 0 {
 			item3_name = obj_player.gun_3._name;
 		}
 	}else if obj_player.num_of_weapons = 0 {
+		
 		global.all_weapon_costs[0] = item_cost;
 		
 		with obj_player {
@@ -121,4 +122,5 @@ or obj_player.weapons_equipped = 0 {
 		}
 		ini_close();
 	}
+	audio_play_sound(snd_weaponPowerup,0,false);
 }

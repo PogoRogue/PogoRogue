@@ -20,10 +20,12 @@ if key_left and selected = false {
 }
 
 if key_select {
-	audio_play_sound(snd_selectOption,0,false);
+	
 	if select = 1 {
+		audio_play_sound(snd_unavailable,0,false);
 		alarm[0] = 1;
 	}else if select = 2 {
+		audio_play_sound(snd_selectOption,0,false);
 		game_end();
 	}
 }
