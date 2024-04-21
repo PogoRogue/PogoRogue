@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_armor;
 item_name = "Armored Heart";
-item_tagline = "Adds an armored heart to the end of the player's healthbar.";
+item_tagline = "Adds 1 armored heart to the end of the player's healthbar up to a max of 5.";
 item_description = item_tagline;
 add_sprite_to_list = false;
 item_cost = 15;

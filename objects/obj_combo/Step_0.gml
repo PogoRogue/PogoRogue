@@ -24,7 +24,7 @@ combo_decrease_speed = global.combo_max/(600+global.combo_time_added); //# of fr
 if increase_combometer_scale = false and global.combo > prev_combo {
 	prev_combo = global.combo;
 	increase_combometer_scale = true;
-	combometer_scale = 1.6;
+	combometer_scale = 1.8;
 }
 
 if combometer_scale > 1 {
@@ -37,6 +37,17 @@ if combometer_scale > 1 {
 
 if global.combo = 0 {
 	prev_combo = global.combo;
+	if room = room_tutorial {
+		with obj_enemy_tutorial {
+			if image_index = 1 and init_add_to_combo = true {
+				instance_destroy();
+				with instance_create_layer(self.x,self.y,"Instances",obj_enemy_tutorial) {
+					add_to_combo = other.init_add_to_combo;
+					init_add_to_combo = other.init_add_to_combo;
+				}	
+			}
+		}
+	}
 }
 
 //check if combo is new best
@@ -47,4 +58,12 @@ if global.combo > global.best_combo { //best combo across all runs
 
 if global.combo > global.current_best_combo {
 	global.current_best_combo =  global.combo;	
+}
+
+//tutorial unlock gate
+if room = room_tutorial and global.combo >= 5 {
+	with obj_room_gate_close_tutorial {
+		instance_create_depth(x,y,depth,obj_room_gate_open);
+		instance_destroy(self);	
+	}
 }

@@ -1,7 +1,7 @@
 //increase time
 if instance_exists(obj_player) {
 	with obj_pause {
-		if pause = false and obj_player.dead = false {
+		if pause = false and obj_player.dead = false and room != room_shop and !instance_exists(obj_deathscreen) {
 			global.current_time_elapsed += 1;
 		}
 	}
@@ -14,7 +14,21 @@ if global.phase = 2 {
 	global.tileset = tl_ground2;	
 }
 if global.phase = 3 {
-	global.tileset = tl_ground2;	
+	global.tileset = tl_ground3;
+}
+
+//update best stats
+
+//check if coins is new best
+if global.current_total_coins > global.best_coins { //best coins across all runs
+	global.best_coins = global.current_total_coins;
+	scr_Save_Real("best_coins",global.best_coins);
+}
+
+//check if enemy killed is new best
+if global.current_enemies_killed > global.best_enemies { //best enemies killed across all runs
+	global.best_enemies = global.current_enemies_killed;
+	scr_Save_Real("best_enemies",global.best_enemies);
 }
 
 //add items

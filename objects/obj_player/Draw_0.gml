@@ -23,6 +23,8 @@ if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {
 		draw_sprite_ext(spr_jetpack,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}else if sprite_index = charging_sprite {
 		draw_sprite_ext(spr_jetpack_charging,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = spr_player_zekai_portal {
+		draw_sprite_ext(spr_player_zekai_portal_jetpack,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}
 }
 
@@ -46,6 +48,8 @@ if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
 		draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}else if sprite_index = charging_sprite {
 		draw_sprite_ext(spr_player_zekai_hat_charging,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = spr_player_zekai_portal {
+		draw_sprite_ext(spr_player_zekai_portal_hatgun,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}
 }
 

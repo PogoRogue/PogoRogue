@@ -27,11 +27,11 @@ function scr_Pickups(){
 	
 	pickup_chargejump = {
 		_name: "Charge Jump",
-		tagline: "Hold while bouncing to launch yourself to great heights. Getting a kill resets its cooldown time.",
+		tagline: "Hold while bouncing to launch yourself to great heights, damaging enemies in your path. Getting a kill with a charge jump resets its cooldown time.",
 		gui_sprite: spr_pickup_chargejump,
-		max_cooldown_time: 300,
-		cooldown_time: 300,
-		cooldown_text: "Cooldown: " + string(300 / 60) + "s",
+		max_cooldown_time: 600,
+		cooldown_time: 600,
+		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_bouncing],
 		key_held: true,
@@ -55,7 +55,7 @@ function scr_Pickups(){
 	
 	pickup_groundpound = {
 		_name: "Ground Pound",
-		tagline: "Slam to the ground with massive power. Getting a kill resets its cooldown time.",
+		tagline: "Slam to the ground with massive power. Getting a kill with a ground pound resets its cooldown time.",
 		gui_sprite: spr_pickup_groundpound,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
@@ -75,18 +75,19 @@ function scr_Pickups(){
 			obj_player.ground_pound_rise = true;
 			obj_player.ground_pound_slam = false;
 			obj_player.ground_pound_distance_risen = 0;
+			obj_player.can_shoot = false;
 		}
 	};
 	
 	pickup_hatgun = {
 		_name: "Hat Gun",
-		tagline: "Shoot 3 bullets from your head per bounce.",
+		tagline: "Shoot 3 pistol bullets from your head per bounce.",
 		gui_sprite: spr_pickup_hatgun,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
 		cooldown_text: "Cooldown: On bounce" + " / kill",
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze],
+		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze,state_parachute],
 		key_held: false,
 		reload_on_bounce: true,
 		max_uses_per_bounce: 3,
@@ -117,7 +118,7 @@ function scr_Pickups(){
 	
 	pickup_shieldbubble = {
 		_name: "Shield Bubble",
-		tagline: "Creates a shield around the player. Lasts for 5s or until it is destroyed.",
+		tagline: "Create a shield around you. Lasts for 5s or until it is destroyed.",
 		gui_sprite: spr_pickup_shieldbubble,
 		max_cooldown_time: 600,
 		cooldown_time: 600,
@@ -141,7 +142,7 @@ function scr_Pickups(){
 	
 	pickup_firedash = {
 		_name: "Fire Dash",
-		tagline: "Turn into a fireball and dash upwards. Each kill shortens its cooldown time by 4 seconds.",
+		tagline: "Turn into a fireball and dash upwards, damaging enemies in your path. Each dash kill shortens its cooldown time by 4s.",
 		gui_sprite: spr_pickup_firedash,
 		max_cooldown_time: 480,
 		cooldown_time: 480,
@@ -157,6 +158,9 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		on_call: function() {
+			if obj_player.state = obj_player.state_freeze {
+				obj_player.pickup_freeze.on_cooldown = true;
+			}
 			cooldown_time = max_cooldown_time;
 			obj_player.state = obj_player.state_firedash;
 			obj_player.dash_time = obj_player.max_dash_time;
@@ -167,7 +171,7 @@ function scr_Pickups(){
 	
 	pickup_jetpack = {
 		_name: "Jetpack",
-		tagline: "A jetpack that gives you additional momentum when used.",
+		tagline: "A jetpack that gives you additional momentum when used. It has limited fuel, but can be easily refueled.",
 		gui_sprite: spr_pickup_jetpack,
 		max_cooldown_time: 60,
 		cooldown_time: 60,
@@ -236,7 +240,7 @@ function scr_Pickups(){
 	
 	pickup_slowmo = {
 		_name: "Magic Stopwatch",
-		tagline: "Slows down time temporarily.",
+		tagline: "Slow down time for 10 seconds, allowing high-precision movement. Slow mo be canceled on re-press.",
 		gui_sprite: spr_pickup_slowmo,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
@@ -260,11 +264,11 @@ function scr_Pickups(){
 	
 	pickup_bulletblast = {
 		_name: "Bullet Blast",
-		tagline: "Creates a massive blast of bullets in all directions.",
+		tagline: "Create a massive circular blast of bullets in all directions.",
 		gui_sprite: spr_pickup_bulletblast,
-		max_cooldown_time: 900,
-		cooldown_time: 900,
-		cooldown_text: "Cooldown: " + string(900 / 60) + "s",
+		max_cooldown_time: 1200,
+		cooldown_time: 1200,
+		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: false,
@@ -284,17 +288,16 @@ function scr_Pickups(){
 			obj_player.sprite_index = obj_player.player_sprite;
 			obj_player.image_index = 0;
 			obj_player.state = obj_player.state_bulletblast;
-			on_cooldown = true;
 		}
 	};
 	
 	pickup_reload = {
 		_name: "Quick Reload",
-		tagline: "Automatically reloads both of your weapons.",
+		tagline: "Instantly reload all of your weapons.",
 		gui_sprite: spr_pickup_reload,
-		max_cooldown_time: 300,
-		cooldown_time: 300,
-		cooldown_text: "Cooldown: " + string(300 / 60) + "s",
+		max_cooldown_time: 420,
+		cooldown_time: 420,
+		cooldown_text: "Cooldown: " + string(420 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -338,11 +341,11 @@ function scr_Pickups(){
 	
 	pickup_camera = {
 		_name: "Camera",
-		tagline: "Snap a bright picture of every enemy on screen, dealing small amounts of damage to all of them. Each kill shortens its cooldown time by 4 seconds.",
+		tagline: "Snap a bright picture of every enemy on screen, dealing small amounts of damage to each of them.",
 		gui_sprite: spr_pickup_camera,
-		max_cooldown_time: 600,
-		cooldown_time: 600,
-		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: Every 4 kills",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -352,17 +355,19 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 0,
+		enemies_count_max: 4,
 		on_call: function() {
 			audio_play_sound(snd_camera,0,false);
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup);
+			on_cooldown = true;
+			enemies_count = enemies_count_max;
 			on_cooldown = true;
 		}
 	};
 	
 	pickup_freeze = {
 		_name: "Freeze",
-		tagline: "Temporarily freeze movement while mid-air, allowing the player to fire in place. Unfreeze after 3 seconds.",
+		tagline: "Instantly freeze movement while mid-air, allowing you to fire in place on enemies below. Unfreeze after 3s or on re-press.",
 		gui_sprite: spr_pickup_freeze,
 		max_cooldown_time: -1,
 		cooldown_time: -1 ,
@@ -379,6 +384,7 @@ function scr_Pickups(){
 		enemies_count_max: 0,
 		on_call: function() {
 			with obj_player {
+				audio_play_sound(snd_freeze,0,false);
 				state = state_freeze;
 				rotation_speed = 0;
 				current_rotation_speed = 0;
@@ -396,7 +402,7 @@ function scr_Pickups(){
 	
 	pickup_frenzy = {
 		_name: "Frenzy",
-		tagline: "Bullets are unlimited without reloading for 5 seconds.",
+		tagline: "All weapons are instantly reloaded, and bullets are unlimited without reloading for 5s.",
 		gui_sprite: spr_pickup_frenzy,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
@@ -413,20 +419,25 @@ function scr_Pickups(){
 		enemies_count_max: 0,
 		on_call: function() {
 			with obj_player {
-				frenzy = true;
-				alarm[3] = 300;
-				gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff;
+				if frenzy = false {
+					frenzy = true;
+					frenzy_time = 300;
+					alarm[3] = 300;
+					gun_1.current_bullets = gun_1.bullets_per_bounce + max_ammo_buff;
+					gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
+					gun_3.current_bullets = gun_3.bullets_per_bounce + max_ammo_buff;
+				}
 			}
 		}
 	};
 	
 	pickup_target = {
 		_name: "Targeted Assassination",
-		tagline: "Instantly kills a random enemy on screen, 20% damage to bosses.",
+		tagline: "Summon a giant crosshair that kills a random enemy on screen, or deals 20% damage to bosses.",
 		gui_sprite: spr_pickup_target,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 6 enemies",
+		cooldown_text: "Cooldown: Every 6 kills",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -446,11 +457,11 @@ function scr_Pickups(){
 	
 	pickup_emergency = {
 		_name: "Emergency Treatment",
-		tagline: "Instantly restores 1 HP and generates an armored heart.",
+		tagline: "Instantly restore 1 HP and generates an armored heart.",
 		gui_sprite: spr_pickup_emergency,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 15 enemies",
+		cooldown_text: "Cooldown: Every 15 kills",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -490,11 +501,11 @@ function scr_Pickups(){
 	
 	pickup_blink = {
 		_name: "Blink",
-		tagline: "Disappear, then reappear from any position on screen.",
+		tagline: "Disappear, then reappear from any position on screen after 3s or on re-press. Return to your original position if your final location is off limits.",
 		gui_sprite: spr_pickup_blink,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 5 enemies",
+		cooldown_text: "Cooldown: Every 8 kills",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -504,7 +515,7 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 5,
+		enemies_count_max: 8,
 		on_call: function() {
 			obj_player.state = obj_player.state_blink;
 			if !instance_exists(obj_blink_box) {
@@ -538,6 +549,7 @@ function scr_Pickups(){
 				with obj_player {
 					if state != state_parachute {
 						state = state_parachute;
+						can_shoot = false;
 					}
 				}
 				on_cooldown = true;

@@ -46,6 +46,10 @@ if (gun_name = "Paintball Gun") {
 
 
 if (gun_name = "Laser Gun") {
+	if audio_is_playing(snd_laser) {
+		audio_stop_sound(snd_laser);
+	}
+	audio_play_sound(snd_laser,0,false);
 	laser_x = obj_player.x - x;
 	laser_y = obj_player.y - y;
 	full_sprite = spr_projectile_laser_start;
@@ -78,7 +82,7 @@ if (gun_name = "Laser Gun") {
 if (gun_name = "Missile Launcher") {
 	sound = audio_play_sound(snd_rocketwhoosh,0,false);
 	temp_angle = image_angle;
-	if collision_circle(x,y,256,obj_enemy_parent,false,true) != noone {
+	if collision_circle(x,y,160,obj_enemy_parent,false,true) != noone {
 		if(!boss_projectile){
 		    closest_enemy = instance_nearest(x,y,obj_enemy_parent);
 		}else{
@@ -99,7 +103,11 @@ if (gun_name = "Star Sucker") {
 	colliding_with_enemy = false;
 	depth = obj_player.depth + 1;
 	image_index = sprite_get_number(sprite_index)-1;
+	num_of_bounces = 0;
 }
+
+sniped = false;
+sniped_array = [];
 
 //sniper rifle
 if (gun_name = "Sniper Rifle") {
@@ -142,6 +150,9 @@ if (gun_name = "Slime Blaster") {
 	random_set_seed(global.seed);
 }
 
+yoyo_array = [];
+yoyo_array2 = []; //retract array
+
 //yo-yo
 if (gun_name = "Yo-yo") {
 	yoyo_num = 0;
@@ -151,7 +162,7 @@ if (gun_name = "Yo-yo") {
 		}
 	}
 	if yoyo_num > 1 {
-		if obj_player.frenzy = false {
+		if obj_player.frenzy = false and obj_player.aerial_assassin_frenzy = false {
 			instance_destroy();
 		}	
 	}
@@ -172,13 +183,28 @@ if (gun_name = "Yo-yo") {
 if (gun_name = "Javelins") {
 	temp_charge = 0;
 	temp_charge_max = 9;
-	depth = obj_player.depth + 1;
+	
+	if instance_exists(obj_ground) {
+		if place_meeting(x,y,obj_ground) {
+			depth = instance_nearest(x,y,obj_ground).depth + 1;	
+		}else {
+			depth = obj_player.depth + 1;	
+		}
+	}else {
+		depth = obj_player.depth + 1;	
+	}
+	
 	created = false;
 	with instance_create_depth(x,y,depth,obj_javelin_charge) {
 		javelin_object = other;
 		instance_deactivate_object(javelin_object);	
 	}
 }
+
+if gun_name = "Boomerangs" {
+	sound = audio_play_sound(snd_boomerangs,0,false);
+}
+
 attach_to_player = 0;
 if (gun_name = "Water Gun") {
 	destroyable = false;
@@ -189,7 +215,7 @@ if (gun_name = "Water Gun") {
 	attach_to_player = 2;
 	max_num_of_bounces = 0;
 	num_of_bounces = 0;
-	if obj_player.frenzy = true {
+	if obj_player.frenzy = true or obj_player.aerial_assassin_frenzy = true {
 		global.water_frenzy -= 1;
 		bullet_num = global.water_frenzy;
 		
@@ -231,8 +257,12 @@ if (gun_name = "Water Gun") {
 	}
 	
 	if place_meeting(x,y,obj_ground) {
-		draw_fill = true;
-		depth += 100;
+		if global.drilltipbullets = false {
+			draw_fill = true;
+			depth += 100;
+		}else {
+			draw_fill = true;	
+		}
 	}else {
 		draw_fill = false;	
 	}
@@ -254,3 +284,5 @@ if (gun_name = "Water Gun") {
 
 //destroy projectile after 30 seconds if still exists
 alarm[2] = 1800;
+
+scr_Projectile_Bounce("Javelins");

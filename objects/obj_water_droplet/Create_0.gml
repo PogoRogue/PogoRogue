@@ -1,5 +1,6 @@
 //image_speed = 0;
 image_index = 0;//irandom_range(0,sprite_get_number(sprite_index)-1);
+image_alpha = 1.25;
 
 distance_to_ground = 0;
 
@@ -14,3 +15,15 @@ if global.drilltipbullets = false {
 }
 
 alarm[0] = 1;
+
+randomize();
+is_white = choose("normal","normal","normal","normal","normal","white","white","white","normal","blue");
+if is_white = "blue" {
+	sprite_index = spr_projectile_water_droplet_blue;	
+	depth += 2;
+}
+if is_white = "white" {
+	sprite_index = spr_projectile_water_droplet_white;
+	depth += 1;
+}
+random_set_seed(global.seed);

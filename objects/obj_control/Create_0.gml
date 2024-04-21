@@ -46,6 +46,8 @@ global.combo_length = 0;
 global.combo_max = 32;
 global.combo_max_coins = 5;
 global.init_combo_highscore = global.best_combo;
+global.init_coins_highscore = global.best_coins;
+global.init_enemies_highscore = global.best_enemies;
 
 //buffs
 global.all_buff_sprites = []; //buffs equipped in side bar
@@ -71,7 +73,7 @@ global.all_weapon_costs = [0,0,0];
 
 global.damage_buff = 0;
 global.luck = 0;
-global.picky_buyer = false;
+global.picky_buyer = 0;
 global.bouncy_bullets = 0;
 global.hot_shells = false;
 global.combo_master = false;
@@ -107,7 +109,7 @@ scr_All_Weapons_Array();
 
 scr_All_Actives_Array();
 
-surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);
+//surface_resize(application_surface,view_wport[0]*2,view_hport[0]*2);
 
 if room = room_gameplay_video {
 	//tiling layer
@@ -133,6 +135,9 @@ global.sequence_num = 0;
 global.chest_number = 0;
 global.coin_chest_num = 0;
 global.combat_room_num = 0;
+global.shop_number = 0;
+global.enemy_number = 0;
+global.passive_number = 0;
 
 //set seed in other rooms 
 if room != room_proc_gen_test and room != room_shop

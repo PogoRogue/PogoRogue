@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.444082,
+  "duration":0.166667,
   "name":"snd_menuNavigation",
   "parent":{
     "name":"Menu",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_menuNavigation.mp3",
+  "soundFile":"snd_menuNavigation.wav",
   "type":0,
   "volume":1.0,
 }

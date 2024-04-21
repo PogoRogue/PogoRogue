@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.175329,
+  "duration":2.033333,
   "name":"snd_rocketwhoosh",
   "parent":{
     "name":"Weapons",

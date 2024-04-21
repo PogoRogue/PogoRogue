@@ -10,6 +10,7 @@ if(is_dead) {
 	}
 } else if (hp <= 0) {
 	alarm_set(0, room_speed);
+	alarm_set(11, 10);
 	audio_play_sound(snd_enemyhurt,0,false);
 	
 	//screen shake
@@ -19,7 +20,7 @@ if(is_dead) {
 	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 { 
 		global.combo += 1;
 		global.combo_length = global.combo_max;
-		if global.combo = 10 and global.combo_master = true { //combo master powerup
+		if global.combo > 0 and global.combo % 10 = 0 and global.combo_master = true { //combo master powerup
 			with obj_player {
 				if hp < max_hp {
 					hp += 8;
@@ -32,12 +33,18 @@ if(is_dead) {
 		}
 		global.enemy_killed = true;
 		
-		//aerial assassin buff
+		//aerial assassin buff (old version)
 		with obj_player {
 			if global.aerial_assassin = true {
 				aerial_assassin_count += 1;	
-				if aerial_assassin_count >= 2 {
-					global.combo += 1;
+				if aerial_assassin_count >= 3 {
+					//global.combo += 1; (old version)
+					gun_1.current_bullets = gun_1.bullets_per_bounce + max_ammo_buff;
+					gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
+					gun_3.current_bullets = gun_3.bullets_per_bounce + max_ammo_buff;
+					aerial_assassin_frenzy = true;
+					alarm[4] = 120;
+					aerial_assassin_frenzy_count = 120;
 					aerial_assassin_count = 0;
 				}
 			}
@@ -61,9 +68,9 @@ if(is_dead) {
 		}
 	}
 	
-	if (created_items = false) {
-		scr_Random_Item_Drops();
-		created_items = true;
+	if (created_items2 = false and heart_drop > heart_chance) {
+		Create_Item_Drops(random_items);
+		created_items2 = true;
 	}
 	
 	with obj_player {
