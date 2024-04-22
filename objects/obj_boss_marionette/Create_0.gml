@@ -20,7 +20,6 @@ collision_detected = false;
 enum BOSS3_ABILITIES {
 	NONE,
 	GROUND_POUND,
-	GROUND_POUND_SHOCKWAVE,
 	SHIELD,
 	BULLET_BLAST,
 }
@@ -36,6 +35,7 @@ enum BOSS3_WEAPONS {
 ability = BOSS3_ABILITIES.NONE;
 weapon = BOSS3_WEAPONS.PISTOL;
 ability_cooldown =  8 * room_speed;
+controller = instance_nearest(x, y, obj_boss_marionette_controller);
 
 // HP
 draw_hp = false;
@@ -52,8 +52,8 @@ top_border = view_height - 20;
 boss_name = "Rogo Puppet";
 
 // Limbs
-instance_create_depth(x + 40, y, depth - 1, obj_boss_marionette_arm, {arm_num: 1, length_diff: 35, angle_diff: 40});
-instance_create_depth(x - 40, y, depth - 1, obj_boss_marionette_arm, {arm_num: 2, length_diff: 35, angle_diff: 140});
+instance_create_depth(x + 40, y, depth - 5, obj_boss_marionette_arm, {arm_num: 1, length_diff: 35, angle_diff: 40});
+instance_create_depth(x - 40, y, depth - 5, obj_boss_marionette_arm, {arm_num: 2, length_diff: 35, angle_diff: 140});
 
 instance_create_depth(x, y, -20, obj_boss_marionette_health);
 
