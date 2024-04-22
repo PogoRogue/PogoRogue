@@ -329,8 +329,8 @@ or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)) {
 if (global.show_passives = true) {
 	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
 		var xx = 24;
-		var yy = camera_get_view_height(view_camera[0]) - 16;
-		draw_sprite(global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,xx+i*20,yy);
+		var yy = 186;//camera_get_view_height(view_camera[0]) - 16;
+		draw_sprite(global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,xx+(i%4)*20,yy+(18*(floor(i/4))));
 		
 		//items menu
 		draw_set_halign(fa_left);
@@ -345,7 +345,7 @@ if (global.show_passives = true) {
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_itemdescription2);
 		if global.all_buff_numbers[i] > 1 {
-			scr_Draw_Text_Outlined(xx+i*20-6,yy+4,global.all_buff_numbers[i],c_white);
+			scr_Draw_Text_Outlined(xx+(i%4)*20-6,yy+4+(18*(floor(i/4))),global.all_buff_numbers[i],c_white);
 		}
 	}
 }

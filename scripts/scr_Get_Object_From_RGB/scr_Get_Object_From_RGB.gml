@@ -205,7 +205,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}
 		else if(Red == 25 && Green == 25 && Blue == 25)
 		{
-			return obj_instructions;
+			//return obj_instructions;
 		}
 		else if(Red == 20 && Green == 20 && Blue == 20)
 		{
