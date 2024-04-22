@@ -25,6 +25,14 @@ if(is_dead) {
 		global.combo_length = global.combo_max;	
 		global.enemy_killed = true;
 		add_to_combo = false;
+		
+		with instance_create_depth(x+sprite_width/2,y+sprite_height/2,depth-1,obj_coin_spawner) {
+			if global.combo < 5 {
+				num_of_coins = global.combo;
+			}else {
+				num_of_coins = 5;
+			}
+		}
 	}else if init_add_to_combo = false {
 		alarm_set(0, room_speed);
 	}

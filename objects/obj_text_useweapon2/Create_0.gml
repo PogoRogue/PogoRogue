@@ -1,5 +1,5 @@
 /// @description Initialize strings by column
 
 height_text = "Switch weapons!\n" +
-				"Bumpers\n" +
-				"Q and E";
+				"Bumpers or\n" +
+				"Q or 1/2";

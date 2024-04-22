@@ -54,10 +54,14 @@ switch(current_state) {
 				current_frame = 3;
 				is_done = true;
 				is_done = true;
-				instance_destroy(wall);
+				//instance_destroy(wall);
 			}
 		}
 	break;
 }
 
 image_index = current_frame;
+
+if image_index = 3 {
+	mask_index = spr_nothing;	
+}

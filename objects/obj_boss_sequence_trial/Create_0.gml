@@ -15,7 +15,7 @@ blink_duration = room_speed / 2;
 current_frame = 2;
 image_speed = 0;
 
-wall = instance_create_layer(498, 880, "ground", obj_ground, {image_xscale: 7.75, image_yscale: 1});
+//wall = instance_create_layer(498, 880, "ground", obj_ground, {image_xscale: 7.75, image_yscale: 1});
 
 with(obj_electric_current) {
 	is_active = false;

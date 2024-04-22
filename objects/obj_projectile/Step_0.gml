@@ -30,7 +30,8 @@ if instance_exists(obj_camera) {
 
 //destroy when touching ground
 if (destroy_on_impact and num_of_bounces <= 0 and destroyable = true) {
-	if (place_meeting(x,y,obj_ground)) and global.drilltipbullets = false {
+	if (place_meeting(x,y,obj_ground)) and global.drilltipbullets = false
+	or (place_meeting(x,y,obj_boss_sequence)) and global.drilltipbullets = false and instance_place(x,y,obj_boss_sequence).image_index = 5 {
 		if gun_name = "Paintball Gun" {
 			alarm[0] = 1;
 			//splatter code here

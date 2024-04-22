@@ -209,7 +209,7 @@ if gun_name = "Boomerangs" {
 attach_to_player = 0;
 if (gun_name = "Water Gun") {
 	if !audio_is_playing(snd_watergun) {
-		audio_play_sound(snd_watergun,0,false);	
+		//audio_play_sound(snd_watergun,0,false);	
 	}
 	destroyable = false;
 	x = obj_player.x + lengthdir_x(6,obj_player.angle-90);

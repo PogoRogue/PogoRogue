@@ -187,6 +187,7 @@
     {"name":"spr_buffitem_righteousrevenge","order":2,"path":"sprites/spr_buffitem_righteousrevenge/spr_buffitem_righteousrevenge.yy",},
     {"name":"spr_buffitem_robbery","order":1,"path":"sprites/spr_buffitem_robbery/spr_buffitem_robbery.yy",},
     {"name":"spr_bulletcasing","order":49,"path":"sprites/spr_bulletcasing/spr_bulletcasing.yy",},
+    {"name":"spr_button_d_large","order":1,"path":"sprites/spr_button_d_large/spr_button_d_large.yy",},
     {"name":"spr_button_icon_5","order":1,"path":"sprites/spr_button_icon_5/spr_button_icon_5.yy",},
     {"name":"spr_button_icon_6","order":2,"path":"sprites/spr_button_icon_6/spr_button_icon_6.yy",},
     {"name":"spr_chargebar_color","order":6,"path":"sprites/spr_chargebar_color/spr_chargebar_color.yy",},

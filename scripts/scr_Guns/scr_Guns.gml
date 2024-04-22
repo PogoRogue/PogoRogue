@@ -402,7 +402,7 @@ function scr_Guns(){
 		ammo: [water_bullet],
 		inaccuracy: 0,       
 		kick: 2,              
-		sound: snd_nothing,
+		sound: snd_bubble,
 		spread_number: 1,    
 		spread_angle: 0,    
 		full_auto: true,     

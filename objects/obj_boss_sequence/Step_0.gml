@@ -206,3 +206,9 @@ if spawned = true {
 		spawned = true;
 	}
 }
+
+if instance_exists(obj_boss_sequence_slime) and image_index != 5 {
+	depth = obj_boss_sequence_slime.depth - 1;
+}else if image_index = 5 {
+	depth = obj_player.depth + 10;
+}
