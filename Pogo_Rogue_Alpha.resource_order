@@ -133,6 +133,7 @@
     {"name":"Spr_1x1_boss2_portal","order":1,"path":"sprites/Spr_1x1_boss2_portal/Spr_1x1_boss2_portal.yy",},
     {"name":"spr_2x2_Combat_Phase3_Talen","order":2,"path":"sprites/spr_2x2_Combat_Phase3_Talen/spr_2x2_Combat_Phase3_Talen.yy",},
     {"name":"spr_2x2_Combat_Talen_store","order":2,"path":"sprites/spr_2x2_Combat_Talen_store/spr_2x2_Combat_Talen_store.yy",},
+    {"name":"spr_2x2_Combat_Test","order":1,"path":"sprites/spr_2x2_Combat_Test/spr_2x2_Combat_Test.yy",},
     {"name":"spr_3x3_Combat_Ian","order":1,"path":"sprites/spr_3x3_Combat_Ian/spr_3x3_Combat_Ian.yy",},
     {"name":"spr_3x3_Combat_store","order":1,"path":"sprites/spr_3x3_Combat_store/spr_3x3_Combat_store.yy",},
     {"name":"spr_3x3_Combat_talen_changes","order":3,"path":"sprites/spr_3x3_Combat_talen_changes/spr_3x3_Combat_talen_changes.yy",},
