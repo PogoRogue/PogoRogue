@@ -283,7 +283,7 @@ if (gun_name = "Yo-yo") {
 		if !(key_fire_projectile) or gun != yoyo_gun {
 			if other.retracted = false {
 				other.retracted = true;
-				if !audio_is_playing(snd_yoyo2) {
+				if !audio_is_playing(snd_yoyo2) and other.reached_end = true {
 					audio_play_sound(snd_yoyo2,0,false);
 				}
 			}
@@ -293,7 +293,7 @@ if (gun_name = "Yo-yo") {
 		if (state != state_free and state != state_freeze) {
 			if other.retracted = false {
 				other.retracted = true;
-				if !audio_is_playing(snd_yoyo2) {
+				if !audio_is_playing(snd_yoyo2) and other.reached_end = true {
 					audio_play_sound(snd_yoyo2,0,false);
 				}
 			}

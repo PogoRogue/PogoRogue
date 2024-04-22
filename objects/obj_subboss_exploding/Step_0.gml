@@ -51,3 +51,7 @@ current_iframes = max(current_iframes - 1, 0);
 
 // Update red shader frames
 red_frames = max(red_frames - 1, 0);
+
+if instance_exists(obj_boss_sphere) {
+	depth = obj_boss_sphere.depth + 10;
+}	
