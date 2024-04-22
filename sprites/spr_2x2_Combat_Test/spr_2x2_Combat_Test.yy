@@ -5,7 +5,11 @@
   "bbox_bottom":58,
   "bbox_left":0,
   "bbox_right":63,
+<<<<<<< Updated upstream
   "bbox_top":7,
+=======
+  "bbox_top":3,
+>>>>>>> Stashed changes
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
