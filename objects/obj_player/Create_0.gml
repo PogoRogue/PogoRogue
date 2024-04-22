@@ -399,6 +399,9 @@ state_firedash = function() {
 temp_x = 0.5;
 init_x = x;
 state_bulletblast = function() {
+	if !audio_is_playing(snd_bulletblast) {
+		audio_play_sound(snd_bulletblast,0,false);
+	}
 	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
 		sprite_index = player_sprite;
 	}
@@ -437,6 +440,7 @@ state_bulletblast = function() {
 		gun = old_gun;
 		state = state_free;
 		x = init_x;
+		pickup_bulletblast.on_cooldown = true;
 	}
 }
 
@@ -456,6 +460,9 @@ state_freeze = function() {
 	if freeze_time > 0 and !key_unfreeze {
 		freeze_time -= 1;	
 	}else {
+		if audio_is_playing(snd_freeze) and freeze_time > 0 {
+			audio_stop_sound(snd_freeze);
+		}
 		state = state_free;
 		grv = init_grv;
 		rotation_speed = original_rotation_speed;
@@ -987,4 +994,8 @@ if room = room_proc_gen_test || room = room_sprite_level_test {
 //destroy if not area 1
 if global.phase != 1 {
 	//instance_destroy();	
+}
+
+if room = room_tutorial {
+	alarm[5] = 10;
 }

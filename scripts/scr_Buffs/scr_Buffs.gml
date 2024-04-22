@@ -163,7 +163,9 @@ function scr_Buffs(){
 	buff_revive = function(){
 		if global.revived = false {
 			global.revive = true;
-			audio_play_sound(snd_passivePowerup,0,false);
+			if room != room_tutorial {
+				audio_play_sound(snd_passivePowerup,0,false);
+			}
 		}
 	}
 	

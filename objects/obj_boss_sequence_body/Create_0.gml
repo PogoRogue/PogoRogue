@@ -17,3 +17,9 @@ view_height = camera_get_view_height(view_camera[0]);
 top_border = view_height - 20;
 
 instance_create_depth(x, y, -20, obj_boss_sequence_health);
+
+spawned = false;
+white_alpha = 0;
+
+explode = false;
+red_alpha = 0;

@@ -11,3 +11,5 @@ spd = 0;
 shield = instance_create_layer(x, y, "enemies", obj_shield_respawning);
 shield.parent = self;
 
+explode = false;
+red_alpha = 0;

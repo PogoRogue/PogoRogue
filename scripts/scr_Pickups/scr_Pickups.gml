@@ -158,6 +158,9 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		on_call: function() {
+			if obj_player.state = obj_player.state_freeze {
+				obj_player.pickup_freeze.on_cooldown = true;
+			}
 			cooldown_time = max_cooldown_time;
 			obj_player.state = obj_player.state_firedash;
 			obj_player.dash_time = obj_player.max_dash_time;
@@ -285,7 +288,6 @@ function scr_Pickups(){
 			obj_player.sprite_index = obj_player.player_sprite;
 			obj_player.image_index = 0;
 			obj_player.state = obj_player.state_bulletblast;
-			on_cooldown = true;
 		}
 	};
 	
@@ -382,6 +384,7 @@ function scr_Pickups(){
 		enemies_count_max: 0,
 		on_call: function() {
 			with obj_player {
+				audio_play_sound(snd_freeze,0,false);
 				state = state_freeze;
 				rotation_speed = 0;
 				current_rotation_speed = 0;
@@ -423,6 +426,7 @@ function scr_Pickups(){
 					gun_1.current_bullets = gun_1.bullets_per_bounce + max_ammo_buff;
 					gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
 					gun_3.current_bullets = gun_3.bullets_per_bounce + max_ammo_buff;
+					audio_play_sound(snd_frenzy,0,false);
 				}
 			}
 		}

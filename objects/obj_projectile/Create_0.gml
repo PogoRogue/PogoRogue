@@ -155,6 +155,7 @@ yoyo_array2 = []; //retract array
 
 //yo-yo
 if (gun_name = "Yo-yo") {
+	audio_play_sound(snd_yoyo1,0,false);
 	yoyo_num = 0;
 	with obj_projectile {
 		if (gun_name = "Yo-yo") {
@@ -200,8 +201,16 @@ if (gun_name = "Javelins") {
 		instance_deactivate_object(javelin_object);	
 	}
 }
+
+if gun_name = "Boomerangs" {
+	sound = audio_play_sound(snd_boomerangs,0,false);
+}
+
 attach_to_player = 0;
 if (gun_name = "Water Gun") {
+	if !audio_is_playing(snd_watergun) {
+		//audio_play_sound(snd_watergun,0,false);	
+	}
 	destroyable = false;
 	x = obj_player.x + lengthdir_x(6,obj_player.angle-90);
 	y = obj_player.y + lengthdir_y(6,obj_player.angle-90);

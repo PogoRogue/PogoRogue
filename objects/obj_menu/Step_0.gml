@@ -63,7 +63,7 @@ if key_select {
 		scr_Room_Transition(room_settings);
 		//room_persistent = true;
 	}else if select = 6 - options_decrease {
-		scr_Room_Transition(room_credits_scrolling);
+		scr_Room_Transition(room_credits);
 	}else if select = 7 - options_decrease {
 		usable = false;
 		instance_create_depth(x,y,depth-1,obj_popup_exit);

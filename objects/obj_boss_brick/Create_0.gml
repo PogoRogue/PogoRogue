@@ -23,3 +23,9 @@ rad = degtorad(image_angle);
 wobble = 0;
 
 drop_coins = false;
+
+explode = false;
+red_alpha = 0;
+
+spawned = false;
+white_alpha = 0;

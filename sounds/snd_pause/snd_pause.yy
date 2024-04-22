@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.666667,
+  "duration":0.633333,
   "name":"snd_pause",
   "parent":{
     "name":"Menu",

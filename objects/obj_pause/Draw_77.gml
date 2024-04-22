@@ -67,6 +67,10 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 		if item_swap = false {
 			pause = false;
 			instance_activate_all();
+			//Deactivate all objects far from the player for performance reasons using the 
+			//obj_proc_gen_location_analysis object. Do this in an alarm because that object
+			//won't be loaded until after this event.			
+			alarm[0] = 1;
 			with obj_pausemenu {
 				usable = true;
 			}

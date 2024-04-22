@@ -5,13 +5,16 @@ function scr_Player_Collision(){
 	var prev_y = y;
 	
 	//check for collision with one way ground
-	if (place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway)) and vspeed > 0 {
-		while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
-			y += sign(vspeed);
+	if place_meeting(x,y+vspeed,obj_ground_oneway) and vspeed > 0 {
+		var oneway_ground = instance_place(x,y+vspeed,obj_ground_oneway);
+		if !place_meeting(x,y-1,oneway_ground) {
+			while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
+				y += sign(vspeed);
+			}
+			state = state_bouncing;
+			speed = 0; //stop player movement while bouncing
+			aerial_assassin_count = 0;
 		}
-		state = state_bouncing;
-		speed = 0; //stop player movement while bouncing
-		aerial_assassin_count = 0;
 	}
 	
 	//check for collision with ground x axis

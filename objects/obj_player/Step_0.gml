@@ -244,6 +244,14 @@ if (canshoot > 0) {
 		if gun.spread_number > 1 and frenzy = false and aerial_assassin_frenzy = false {
 			gun.current_bullets -= 1;
 		}
+	}else {
+		if (audio_is_playing(snd_watergun)) {
+			audio_stop_sound(snd_watergun);
+		}
+	}	
+}else {
+	if (audio_is_playing(snd_watergun)) {
+		audio_stop_sound(snd_watergun);
 	}
 }
 
@@ -382,8 +390,13 @@ if (dead = true and global.revive = false and state != state_revive) {
 		mask_index = spr_nothing;
 	}
 	
-	if bbox_top > obj_camera.y + (obj_camera.view_h_half) {
+	if y > obj_camera.y + (obj_camera.view_h_half) + 48 {
 		state = state_immobile;
+	}else if room = room_boss_3 {
+		mask_index = spr_nothing;
+		with obj_player_mask {
+			mask_index = spr_nothing;
+		}
 	}
 }
 
@@ -397,24 +410,27 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 }else if (dead && current_iframes <= 0 and global.revived = false) {
 	//Revive
 	global.revived = true;
-	global.revive = false;
+	if room != room_tutorial {
+		global.revive = false;
+	}
 	hp = floor((max_hp/8)/2) * 8;
 	state = state_revive;
 	revive_alpha = 1;
 	current_iframes = max(current_iframes - 1, 0);
 	
-	//change revive item sprite
-	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
-		if global.all_buff_sprites[i] = spr_buffitem_revive {
-			//update image index
-			global.all_buff_sprites_index[i] += 2;
+	if room != room_tutorial {
+		//change revive item sprite
+		for (i = 0; i < array_length(global.all_buff_sprites); i++) {
+			if global.all_buff_sprites[i] = spr_buffitem_revive {
+				//update image index
+				global.all_buff_sprites_index[i] += 2;
+			}
 		}
-	}
-	
-	//change revive item name
-	for (i = 0; i < array_length(global.all_buff_names); i++) {
-		if global.all_buff_names[i] = "Revive" {
-			global.all_buff_names[i] = "Revive (Used)";
+		//change revive item name
+		for (i = 0; i < array_length(global.all_buff_names); i++) {
+			if global.all_buff_names[i] = "Revive" {
+				global.all_buff_names[i] = "Revive (Used)";
+			}
 		}
 	}
 }else if (dead && current_iframes <= 0) {
@@ -427,8 +443,13 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 //One Heart Stresser
 if (hp <= 8 and hp > 0) {
 	if !audio_is_playing(snd_oneHeart) {
-		audio_play_sound(snd_oneHeart,0,false);
+		//audio_play_sound(snd_oneHeart,0,false);
 	}	
+}
+
+if !dead and state != state_revive {
+	global.revived = false;
+	revive_time = 0;
 }
 
 if room = room_items {
@@ -450,6 +471,10 @@ if (damage_boost_active) {
         damage_boost_active = false;
         damage_boost_timer = 0; // Reset the timer for safety.
     }
+}
+
+if audio_is_playing(snd_bulletblast) and state = state_bouncing or dead = true {
+	audio_stop_sound(snd_bulletblast);
 }
 
 //for testing

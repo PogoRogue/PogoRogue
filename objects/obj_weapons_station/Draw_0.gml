@@ -13,7 +13,7 @@ if (colliding) {
 		enter_exit_text = "Exit";
 		temp_x_offset = 4;
 	}else {
-		enter_exit_text = "Enter";	
+		enter_exit_text = "Enter";
 		temp_x_offset = 0;
 	}
 

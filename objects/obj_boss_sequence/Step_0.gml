@@ -194,3 +194,21 @@ switch(current_state) {
 state_has_changed = previous_state != current_state;
 previous_state = current_state;
 image_index = current_frame;
+
+if spawned = true {
+	if white_alpha > 0 {
+		white_alpha -= 0.05;
+	}
+}else {
+	if white_alpha < 1 {
+		white_alpha += 0.05;
+	}else {
+		spawned = true;
+	}
+}
+
+if instance_exists(obj_boss_sequence_slime) and image_index != 5 {
+	depth = obj_boss_sequence_slime.depth - 1;
+}else if image_index = 5 {
+	depth = obj_player.depth + 10;
+}

@@ -3,8 +3,8 @@
 #macro PROC_GEN_BLOCK_PIXEL_WIDTH 512
 
 function scr_Get_Room_Coord_From_Grid_Coord(grid_x, grid_y){
-    var room_x = (grid_x * PROC_GEN_BLOCK_PIXEL_WIDTH);
-    var room_y = (grid_y * PROC_GEN_BLOCK_PIXEL_WIDTH * -1);
+    var room_x = ((grid_x) * PROC_GEN_BLOCK_PIXEL_WIDTH);
+    var room_y = ((grid_y) * PROC_GEN_BLOCK_PIXEL_WIDTH * -1) + 1; //y zero should return 1 since that's the top left corner
 	
 	return [room_x, room_y];
 }
