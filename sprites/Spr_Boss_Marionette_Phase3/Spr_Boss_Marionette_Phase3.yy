@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"Spr_Boss_Marionette_Phase3",
+  "%Name":"spr_boss_marionette_phase3",
   "bboxMode":0,
   "bbox_bottom":159,
   "bbox_left":0,
@@ -30,7 +30,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"2fa41ba6-27dc-4415-ae89-9b49c1f41474","blendMode":0,"displayName":"default","isLocked":false,"name":"2fa41ba6-27dc-4415-ae89-9b49c1f41474","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"Spr_Boss_Marionette_Phase3",
+  "name":"spr_boss_marionette_phase3",
   "nineSlice":null,
   "origin":4,
   "parent":{
@@ -42,7 +42,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"Spr_Boss_Marionette_Phase3",
+    "%Name":"spr_boss_marionette_phase3",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -66,7 +66,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"Spr_Boss_Marionette_Phase3",
+    "name":"spr_boss_marionette_phase3",
     "playback":1,
     "playbackSpeed":10.0,
     "playbackSpeedType":0,
@@ -78,34 +78,34 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"557e3b6a-150a-40f7-a19c-418076a8292b","path":"sprites/Spr_Boss_Marionette_Phase3/Spr_Boss_Marionette_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"557e3b6a-150a-40f7-a19c-418076a8292b","path":"sprites/spr_boss_marionette_phase3/spr_boss_marionette_phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"c746195a-723b-4ca5-993e-a2631642a10e","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1f2bd9ce-09dd-4b0d-bc00-e18646ea3553","path":"sprites/Spr_Boss_Marionette_Phase3/Spr_Boss_Marionette_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1f2bd9ce-09dd-4b0d-bc00-e18646ea3553","path":"sprites/spr_boss_marionette_phase3/spr_boss_marionette_phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"35b82e20-b721-4f29-b7de-5472db5185b3","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4d822a91-40ea-4249-8ce2-055c999f6f0a","path":"sprites/Spr_Boss_Marionette_Phase3/Spr_Boss_Marionette_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4d822a91-40ea-4249-8ce2-055c999f6f0a","path":"sprites/spr_boss_marionette_phase3/spr_boss_marionette_phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"ae8b07b8-d557-4ce8-b1e6-f2b996f08a6c","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2413a61a-5694-47d7-888e-19dd8d8dbecf","path":"sprites/Spr_Boss_Marionette_Phase3/Spr_Boss_Marionette_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2413a61a-5694-47d7-888e-19dd8d8dbecf","path":"sprites/spr_boss_marionette_phase3/spr_boss_marionette_phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"df8ef909-8c5f-4d55-a8f6-3d9936208bce","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"12971538-170d-4c64-9cda-31cc4abdc71b","path":"sprites/Spr_Boss_Marionette_Phase3/Spr_Boss_Marionette_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"12971538-170d-4c64-9cda-31cc4abdc71b","path":"sprites/spr_boss_marionette_phase3/spr_boss_marionette_phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"c7b6a1fe-bd3b-4c52-9228-6e3b607cab5c","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c994f6da-7169-4d70-9d2e-a8a9538dac30","path":"sprites/Spr_Boss_Marionette_Phase3/Spr_Boss_Marionette_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c994f6da-7169-4d70-9d2e-a8a9538dac30","path":"sprites/spr_boss_marionette_phase3/spr_boss_marionette_phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"3558d975-855c-4aa9-ae42-a9f74ecf0a8d","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3bcfe929-756e-4f2b-85a0-d75bd4551b05","path":"sprites/Spr_Boss_Marionette_Phase3/Spr_Boss_Marionette_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3bcfe929-756e-4f2b-85a0-d75bd4551b05","path":"sprites/spr_boss_marionette_phase3/spr_boss_marionette_phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"bb3733ef-313c-4a2e-9af1-57b7e452854f","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0d27ffc8-b43f-412a-97f1-48fa3bdc240a","path":"sprites/Spr_Boss_Marionette_Phase3/Spr_Boss_Marionette_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0d27ffc8-b43f-412a-97f1-48fa3bdc240a","path":"sprites/spr_boss_marionette_phase3/spr_boss_marionette_phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"31fcbac2-6723-4bed-8e9b-cc1e4324cb3a","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7297877e-087e-4872-a5b0-8d38f75f9b3e","path":"sprites/Spr_Boss_Marionette_Phase3/Spr_Boss_Marionette_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7297877e-087e-4872-a5b0-8d38f75f9b3e","path":"sprites/spr_boss_marionette_phase3/spr_boss_marionette_phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"99973e0d-4986-44d2-9f3f-d148581904a2","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"32d4e828-ea7c-4d11-adfe-55214316d967","path":"sprites/Spr_Boss_Marionette_Phase3/Spr_Boss_Marionette_Phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"32d4e828-ea7c-4d11-adfe-55214316d967","path":"sprites/spr_boss_marionette_phase3/spr_boss_marionette_phase3.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"769671f2-1f01-4146-925b-2de63f163680","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
