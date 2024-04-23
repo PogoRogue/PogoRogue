@@ -11,7 +11,7 @@ while(cur_amt < amount) {
 	
 	//manually set variables of the bullet here
 	_bullet.speed = spd;
-	_bullet.lifetime=25;
+	_bullet.lifetime = lifetime;
 	_bullet.sprite_index=sprite;
 	_bullet.collide_with_walls = false;
 	if(rand) {

@@ -1,6 +1,8 @@
 /// @description Draw self
 
-draw_line_width_color(boss.anchor_x, boss.anchor_y, x + lengthdir_x(32, image_angle), y + lengthdir_y(32, image_angle), 1, #ff0546, #ff0546);
+if(!boss.is_dead) {
+	draw_line_width_color(boss.anchor_x, boss.anchor_y, x + lengthdir_x(32, image_angle), y + lengthdir_y(32, image_angle), 1, #ff0546, #ff0546);
+}
 
 if(boss.weapon != BOSS3_WEAPONS.NONE && draw_laser) {
 	draw_line_width_color(weapon_x, weapon_y, weapon_x + lengthdir_x(room_width * 2, image_angle), weapon_y + lengthdir_y(room_width * 2, image_angle), 2, #B45252, #B45252);

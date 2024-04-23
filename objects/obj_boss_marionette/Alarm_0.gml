@@ -3,6 +3,8 @@
 
 instance_destroy(obj_boss_marionette_arm);
 instance_destroy(obj_boss_marionette_forearm);
+instance_destroy(obj_boss_marionette_thigh);
+instance_destroy(obj_boss_marionette_leg);
 instance_destroy(obj_chase_projectile_spawner);
 instance_destroy(obj_boss_gate_close);
 instance_destroy(obj_boss_marionette_health);

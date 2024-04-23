@@ -7,6 +7,7 @@ switch(controller.current_state) {
 		_projectile.dir_central = -90;
 		_projectile.spread = 30;
 		_projectile.spd = 10;
+		_projectile.lifetime = 27;
 		break;
 	case BOSS3_STATES.CHASE_2:
 		var _gun = instance_create_layer(spawn_x, camera_get_view_y(view_camera[0]) - 20, "enemies", obj_boss_attack3);
