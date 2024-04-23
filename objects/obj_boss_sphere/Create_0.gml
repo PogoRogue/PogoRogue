@@ -72,3 +72,5 @@ white_alpha = 0;
 
 init_x = x;
 init_y = y;
+
+num_of_bounces = 0;

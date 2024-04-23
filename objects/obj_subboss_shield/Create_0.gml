@@ -3,7 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
-depth = -7;
+depth = -9;
 
 drop = false
 
