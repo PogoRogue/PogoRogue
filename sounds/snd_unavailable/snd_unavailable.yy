@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.712948,
+  "duration":0.4,
   "name":"snd_unavailable",
   "parent":{
     "name":"Menu",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_unavailable.mp3",
+  "soundFile":"snd_unavailable.wav",
   "type":1,
   "volume":1.0,
 }

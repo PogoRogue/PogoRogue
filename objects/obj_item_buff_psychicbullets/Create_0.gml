@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_psychicbullets;
 item_name = "Psychic Bullets";
-item_tagline = "Reload all weapons after killing an enemy.";
+item_tagline = "Reloads all weapons after killing an enemy.";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 40;

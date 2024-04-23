@@ -19,7 +19,17 @@ if(is_dead) {
 		audio_play_sound(snd_enemyhurt,0,false);
 		scr_Screen_Shake(2, 2, false);
 	}
-	alarm_set(0, room_speed);
+	
+	if add_to_combo = true {
+		global.combo += 1;
+		global.combo_length = global.combo_max;	
+		global.enemy_killed = true;
+		add_to_combo = false;
+	}else if init_add_to_combo = false {
+		alarm_set(0, room_speed);
+	}
+}else {
+	red_frames = 0;
 }
 
 if (respawn) {

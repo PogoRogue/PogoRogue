@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_impatience;
 item_name = "Impatience";
-item_tagline =  "Reduce all cooldown times by 25%.";
+item_tagline =  "Reduces all active item cooldown times by 25%. Reduces bounce/kill cooldowns by 1.";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 35;

@@ -12,7 +12,9 @@ if (pause) { //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_out) || paused_outside and !instance_exists(obj_fade_out) || controller_disconnected and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_out) {
+if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_out) and !instance_exists(obj_fade_in)
+|| paused_outside and !instance_exists(obj_fade_out) and !instance_exists(obj_fade_in)
+|| controller_disconnected and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_in) and !instance_exists(obj_fade_out) {
 	
 	//Grab the chunk message so we can give that info to playtesters on the pause menu
 	if(instance_exists(obj_proc_gen_location_analysis))
@@ -65,6 +67,10 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 		if item_swap = false {
 			pause = false;
 			instance_activate_all();
+			//Deactivate all objects far from the player for performance reasons using the 
+			//obj_proc_gen_location_analysis object. Do this in an alarm because that object
+			//won't be loaded until after this event.			
+			alarm[0] = 1;
 			with obj_pausemenu {
 				usable = true;
 			}

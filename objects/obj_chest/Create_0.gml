@@ -14,22 +14,18 @@ mask_index = spr_treasurechest_new_mask;
 
 //drop chances
 heart_chance = 50 - global.luck;
-buff_chance = 90 - global.luck;
+buff_chance = 90;
 weapon_chance = 60 + global.luck;
 pickup_chance = 60 + global.luck;
 destroy_chance = 0; //when active, change to ~80
 
 created_items = false;
 
-if object_get_name(object_index) = "obj_chest" { //dont move special chests
-	if !position_meeting(bbox_left+1,y+33,obj_ground_parent) and !position_meeting(bbox_left+1,y+33,obj_ground_oneway) {
-		x += 16;
-	}else if !position_meeting(bbox_right-1,y+33,obj_ground_parent) and !position_meeting(bbox_right-1,y+33,obj_ground_oneway) {
-		x -= 16;	
-	}
-}
-
 destroy = irandom_range(1,100);
+
+global.chest_number += 1;
 
 //Alarm here to allow repositioning of chests. Chest type replacement code moved to alarm 2
 alarm[2] = 1;
+
+random_set_seed(global.seed);

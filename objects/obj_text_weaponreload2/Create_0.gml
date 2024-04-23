@@ -1,3 +1,4 @@
 /// @description Initialize strings by column
 
-height_text = "Wall jumps also reload your weapon!";
+height_text = "Wall pogo\n" +
+				"to reload!";

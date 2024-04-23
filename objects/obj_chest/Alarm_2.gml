@@ -1,4 +1,22 @@
 /// @description Randomly replace chests with other types
+random_set_seed(global.seed+global.chest_number);
+
+if object_get_name(object_index) = "obj_chest" { //dont move special chests
+	while !position_meeting(bbox_left+1,y+33,obj_ground_parent) and !position_meeting(bbox_left+1,y+33,obj_ground_oneway) {
+		x += 16;
+	}
+	while !position_meeting(bbox_right-1,y+33,obj_ground_parent) and !position_meeting(bbox_right-1,y+33,obj_ground_oneway) {
+		x -= 16;	
+	}
+	while position_meeting(bbox_left+1,y,obj_ground) {
+		x += 16;	
+	}
+	while position_meeting(bbox_right-2,y,obj_ground) {
+		x -= 16;	
+	}
+}
+
+global.chest_number += 1;
 
 if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") { 
 	instance_destroy();
@@ -12,3 +30,5 @@ if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") {
 }
 
 random_items = scr_Random_Item_Drops();
+
+random_set_seed(global.seed);

@@ -17,12 +17,16 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	//slot
 	draw_sprite(spr_itemmenu_weapon_slot,bg_spr_index,xx,yy);
 	
+	if img_index = 1 {
+		img_index = 0;	
+	}
+	
 	//sprites
 	draw_sprite(weapon.sprite,img_index,xx-49,yy-105);
 	
 	//draw cost
 	
-	if unlocked = true {
+	if unlocked = true and !instance_exists(obj_item_swap) or instance_exists(obj_item_swap) and global.recycling = true {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_itemdescription2);
@@ -65,28 +69,28 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	
 	if unlocked = true {
 		
-		line_1 = "Bullets per bounce: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		line_1 = "Bullets per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 	
 		//special conditions
 		
 		if weapon._name = "Laser Gun" {
-			line_1 = "Time per bounce: " + string(weapon.bullets_per_bounce/60) + "s" + " (Max " + string((weapon.init_bullets_per_bounce + weapon.max_added_bullets)/60) + "s)";
+			line_1 = "Time per bounce: " + string(weapon.bullets_per_bounce/60) + "s";// + " (Max " + string((weapon.init_bullets_per_bounce + weapon.max_added_bullets)/60) + "s)";
 		}
 		
 		if weapon._name = "Boomerangs" {
-			line_1 = "Boomerangs: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+			line_1 = "Boomerangs: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 		
 		if weapon._name = "Missile Launcher" {
-			line_1 = "Missiles per bounce: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+			line_1 = "Missiles per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 		
 		if weapon._name = "Yo-yo" {
-			line_1 = "Yo-yos: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+			line_1 = "Yo-yos: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 		
 		if weapon._name = "Javelins" {
-			line_1 = "Javelins per bounce: " + string(weapon.bullets_per_bounce) + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+			line_1 = "Javelins per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 	
 		//additional damage buff
@@ -103,12 +107,14 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + added_damage;
 	
 		//special conditions
-		if weapon._name = "Laser Gun" or weapon._name = "Yo-yo" {
-			line_2 = "Damage per frame: " + string(weapon.ammo[0].damage) + added_damage;
-		}else if weapon._name = "Boomerangs" {
+		if weapon._name = "Laser Gun" {
+			line_2 = "Damage per second: " + string(weapon.ammo[0].damage * 60) + added_damage;
+		}else if weapon._name = "Boomerangs" or weapon._name = "Yo-yo" {
 			line_2 = "Damage per hit: " + string(weapon.ammo[0].damage) + added_damage;
 		}else if weapon._name = "Javelins" {
 			line_2 = "Damage per javelin: " + string(weapon.ammo[0].damage) + "-16" + added_damage;
+		}else if weapon._name = "Bouncy Ball Blaster" {
+			line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + "-" + string(weapon.ammo[0].damage*8) + added_damage;
 		}
 	
 		if weapon.full_auto = true {
@@ -120,7 +126,11 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 			}else if weapon.ammo[0].firerate_start < 15 {
 				line_4 = "Fire Rate: Medium";
 			}else {
-				line_4 = "Fire Rate: Low";
+				if weapon._name != "Burst Fire Gun" {
+					line_4 = "Fire Rate: Low";
+				}else {
+					line_4 = "Fire Rate: High";
+				}
 			}
 		}else {
 			line_3 = "Auto Fire: No";	

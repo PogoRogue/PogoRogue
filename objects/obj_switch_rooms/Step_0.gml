@@ -17,9 +17,9 @@ if (instance_exists(obj_player)) {
 		
 		if (room == room_gameplay_video) {
 			scr_Room_Transition(room_boss_1);
-		} else if (room == room_proc_gen_test) {
-			scr_Room_Transition(room_boss_3);
-			global.phase = 2;
+		} else if (room = room_proc_gen_test) {
+			//scr_Room_Transition(room_boss_2);
+			//global.phase = 2;
 		}
 	}
 	

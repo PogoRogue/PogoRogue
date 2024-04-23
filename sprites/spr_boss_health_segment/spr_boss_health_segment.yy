@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_boss_health_segment",
   "bboxMode":0,
-  "bbox_bottom":5,
+  "bbox_bottom":9,
   "bbox_left":0,
   "bbox_right":0,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":6,
+  "height":10,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"883fa7bc-a07d-4ed7-83b9-3199615c737c","blendMode":0,"displayName":"default","isLocked":false,"name":"883fa7bc-a07d-4ed7-83b9-3199615c737c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

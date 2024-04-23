@@ -1,6 +1,6 @@
 /// @description Initialize variables
 
-air_strength = 0.4;
+air_strength = 0.3;
 
 power_weakens_on_distance = true;
 

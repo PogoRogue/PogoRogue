@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_door",
-    "path":"sprites/spr_boss_door/spr_boss_door.yy",
+    "name":"spr_portal_boss",
+    "path":"sprites/spr_portal_boss/spr_portal_boss.yy",
   },
   "spriteMaskId":null,
   "visible":true,

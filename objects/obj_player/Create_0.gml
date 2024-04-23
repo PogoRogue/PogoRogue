@@ -52,6 +52,8 @@ impatience_used = false;
 damage_boost_active = false;
 damage_boost_timer = 0;
 landed_on_enemy = false; // for robbery 
+aerial_assassin_frenzy = false;
+aerial_assassin_frenzy_count = 0;
 
 //pickups
 charge = 0;
@@ -73,6 +75,8 @@ freeze_time = 0;
 freeze_alpha = 0;
 freeze_angle = 0;
 frenzy = false;
+frenzy_time = 0;
+tutorialDash = false; // Tutorial ground handler
 
 //upward flames
 min_flames_speed = 5.6;
@@ -142,6 +146,8 @@ state_free = function() {
 	bouncing = false;
 	can_rotate = true;
 	can_shoot = true;
+	soundPlayed = false;
+	tutorialDash = false; // Used for tutorial ground tile state
 	
 	vspeed += grv; //falling
 	vsp_basicjump = -6.6;
@@ -180,6 +186,8 @@ state_free = function() {
 		}
 	}else if room = room_tutorial {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			global.tutorial_completed = true;
+			scr_Save_Real("tutorial_completed",global.tutorial_completed);
 			audio_stop_all();
 			gamepad_set_vibration(0,0,0);
 			scr_Game_Restart();
@@ -187,6 +195,7 @@ state_free = function() {
 				item_swap = false;
 				paused_outside = true;
 			}
+			state = state_immobile;
 		}
 	}
 	
@@ -253,6 +262,9 @@ state_chargejump = function() {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5,true);
 		scr_Jump(charge-2);
 		audio_stop_sound(snd_chargejump);
+		audio_stop_sound(snd_bounce);
+		audio_stop_sound(snd_bounce2);
+		audio_play_sound(snd_chargejump_launch,0,false);
 		allow_flames = true;
 		min_flames_speed = 7.2;
 		pickup_chargejump.on_cooldown = true;
@@ -293,8 +305,12 @@ state_groundpound = function() {
 		sprite_index = player_sprite;
 	}
 	
-	hspeed = hspeed * 0.9;
-	can_shoot = false;
+	hspeed = hspeed * 0.8;
+	
+	if !global.key_fire_projectile {
+		can_shoot = true;
+	}
+	
 	if slam_speed < 15.9 { //15.9 because dont wanna glitch through 16px platforms
 		slam_speed += 0.1;
 	}
@@ -332,7 +348,7 @@ state_groundpound = function() {
 	if ground_pound_slam = true {
 		vspeed = slam_speed;
 		can_rotate = true; //allow rotation again
-		vsp_basicjump = -8;
+		vsp_basicjump = -9;
 		stomp_damage = 40;
 		//switch states
 		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
@@ -357,6 +373,7 @@ state_groundpound = function() {
 }
 
 state_firedash = function() {
+	tutorialDash = true;
 	can_rotate = false;
 	can_shoot = false;
 	if dash_time > 0 {
@@ -382,6 +399,9 @@ state_firedash = function() {
 temp_x = 0.5;
 init_x = x;
 state_bulletblast = function() {
+	if !audio_is_playing(snd_bulletblast) {
+		audio_play_sound(snd_bulletblast,0,false);
+	}
 	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
 		sprite_index = player_sprite;
 	}
@@ -420,6 +440,7 @@ state_bulletblast = function() {
 		gun = old_gun;
 		state = state_free;
 		x = init_x;
+		pickup_bulletblast.on_cooldown = true;
 	}
 }
 
@@ -439,6 +460,9 @@ state_freeze = function() {
 	if freeze_time > 0 and !key_unfreeze {
 		freeze_time -= 1;	
 	}else {
+		if audio_is_playing(snd_freeze) and freeze_time > 0 {
+			audio_stop_sound(snd_freeze);
+		}
 		state = state_free;
 		grv = init_grv;
 		rotation_speed = original_rotation_speed;
@@ -548,8 +572,12 @@ state_blink = function() {
 }
 
 state_parachute = function() {
-	can_shoot = false;
+	//can_shoot = false;
 	can_rotate = false;
+	
+	if !global.key_fire_projectile {
+		can_shoot = true;
+	}
 	
 	if !instance_exists(obj_parachute) {
 		instance_create_depth(x+lengthdir_x(22,angle+90),y+lengthdir_y(22,angle+90),depth+1,obj_parachute);
@@ -574,7 +602,7 @@ state_parachute = function() {
 				angle = 0;
 				current_rotation_speed = 0;
 			}
-		}	
+		}
 		
 		//slow down
 		if vspeed >= 0 {
@@ -656,7 +684,7 @@ state_portal = function() {
 			portal_angle_speed += 0.5;
 		}
 			
-		move_towards_point(portal_object.x+48,portal_object.y+48,portal_speed);
+		move_towards_point(portal_object.x+48,portal_object.y+52,portal_speed);
 		
 		if portal_speed < 8 {
 			portal_speed += 0.1;
@@ -685,7 +713,7 @@ state_portal = function() {
 						scr_Room_Transition(room_boss_2);
 						break;
 					case 3:
-						scr_Room_Transition(room_boss_2);
+						scr_Room_Transition(room_boss_3);
 						break;
 				}	
 			}else {
@@ -697,7 +725,7 @@ state_portal = function() {
 						global.tileset = tl_ground2;	
 					}
 					if global.phase = 3 {
-						global.tileset = tl_ground2;	
+						global.tileset = tl_ground3;	
 					}
 				}else {
 					room_persistent = false;
@@ -966,4 +994,8 @@ if room = room_proc_gen_test || room = room_sprite_level_test {
 //destroy if not area 1
 if global.phase != 1 {
 	//instance_destroy();	
+}
+
+if room = room_tutorial {
+	alarm[5] = 10;
 }

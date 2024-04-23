@@ -15,7 +15,7 @@ if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true or obj_pla
 			speed = 0;
 			motion_add(angle - 90, vsp_basicjump * (0.8 + ((other.temp_charge/other.temp_charge_max)*0.7)));
 			
-			if frenzy = false {
+			if frenzy = false and aerial_assassin_frenzy = false {
 				gun.current_bullets -= 1;
 			}else {
 				gun.current_bullets = gun.bullets_per_bounce + max_ammo_buff;
@@ -23,10 +23,13 @@ if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true or obj_pla
 		}
 		
 		created = true;	
-		audio_play_sound(snd_grenade,0,false);
+		audio_stop_sound(snd_javelin_charge);
+		audio_play_sound(snd_javelin,0,false);
 		scr_Screen_Shake(3 + ((temp_charge/temp_charge_max)*4), 6 + ((temp_charge/temp_charge_max)*10), true);
 		hspd = lengthdir_x(spd+((temp_charge/temp_charge_max)*6),angle);
 		vspd = lengthdir_y(spd+((temp_charge/temp_charge_max)*6),angle);
+		
+		scr_Projectile_Bounce("");
 	}
 	instance_destroy();
 }else {

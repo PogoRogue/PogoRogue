@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":194,
   "bbox_left":0,
-  "bbox_right":31,
+  "bbox_right":39,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -22,8 +22,8 @@
     {"$GMSpriteFrame":"","%Name":"913e455b-8d48-4e35-93a9-16900dacc531","name":"913e455b-8d48-4e35-93a9-16900dacc531","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"e80f2cf2-a689-4a26-93aa-f544c45cb699","name":"e80f2cf2-a689-4a26-93aa-f544c45cb699","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
-  "gridX":1,
-  "gridY":1,
+  "gridX":16,
+  "gridY":16,
   "height":195,
   "HTile":false,
   "layers":[
@@ -32,7 +32,7 @@
   ],
   "name":"spr_minimap",
   "nineSlice":null,
-  "origin":0,
+  "origin":9,
   "parent":{
     "name":"UI",
     "path":"folders/Sprites/UI.yy",
@@ -108,7 +108,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
+    "xorigin":8,
     "yorigin":0,
   },
   "swatchColours":[
@@ -128,5 +128,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":32,
+  "width":40,
 }

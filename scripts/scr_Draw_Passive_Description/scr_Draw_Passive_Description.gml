@@ -20,6 +20,9 @@ function scr_Draw_Passive_Description(xx,yy,item_sprite,item_image_index,item_na
 	draw_sprite(spr_itemmenu_passive_slot,bg_spr_index,xx,yy);
 			
 	//sprite
+	if item_image_index = 1 {
+		item_image_index = 0;	
+	}
 	draw_sprite(item_sprite,item_image_index,xx-42,yy-27);
 	
 	//draw cost

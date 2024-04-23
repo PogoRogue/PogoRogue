@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_Collision_Line_Point",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Collision_Line_Point",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

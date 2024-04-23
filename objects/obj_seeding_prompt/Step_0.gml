@@ -85,7 +85,7 @@ or keyboard_check_pressed(vk_enter) and centered = true and fade_away = false {
 }
 
 //back
-if key_back and centered = true and fade_away = false {
+if key_back and centered = true and fade_away = false and !instance_exists(obj_fade_in) {
 	audio_play_sound(snd_unavailable,0,false);
 	alarm[0] = 1;
 	fade_away = true;

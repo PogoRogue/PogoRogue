@@ -34,7 +34,7 @@ for (i = 0; i < 32; i++) {
 		if global.passive_unlocked_array[i] = true {
 			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27);
 		}
-		draw_sprite(passives_array[i],(sprite_get_number(passives_array[i])-1)*(global.passive_unlocked_array[i] = false) + (global.passive_unlocked_array[i] = true),xx,yy-27);
+		draw_sprite(passives_array[i],(sprite_get_number(passives_array[i])-1)*(global.passive_unlocked_array[i] = false) /*+ (global.passive_unlocked_array[i] = true)*/,xx,yy-27);
 
 		if (i < array_length(global.all_buffs) and global.passive_unlocked_array[i]= true) {
 			scr_Draw_Text_Outlined(xx,yy-49,scr_Linebreak(all_buff_names[i],12,99),c_white);
@@ -47,7 +47,7 @@ for (i = 0; i < 32; i++) {
 		if global.active_unlocked_array[i] = true {
 			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27);
 		}
-		draw_sprite(actives_array[i],(sprite_get_number(actives_array[i])-1)*(global.active_unlocked_array[i] = false) + (global.active_unlocked_array[i] = true),xx,yy-27);
+		draw_sprite(actives_array[i],(sprite_get_number(actives_array[i])-1)*(global.active_unlocked_array[i] = false) /*+ (global.active_unlocked_array[i] = true)*/,xx,yy-27);
 	
 		if (i < 16 and global.active_unlocked_array[i]= true) {
 			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_pickups[i]._name,12,99),c_white);
@@ -59,7 +59,7 @@ for (i = 0; i < 32; i++) {
 		if global.weapon_unlocked_array[i] = true {
 			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27);
 		}
-		draw_sprite(weapons_array[i],(sprite_get_number(weapons_array[i])-1)*(global.weapon_unlocked_array[i] = false) + (global.weapon_unlocked_array[i] = true),xx,yy-27);
+		draw_sprite(weapons_array[i],(sprite_get_number(weapons_array[i])-1)*(global.weapon_unlocked_array[i] = false) /*+ (global.weapon_unlocked_array[i] = true)*/,xx,yy-27);
 	
 		if (i < 16 and global.weapon_unlocked_array[i]= true) {
 			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_weapons[i]._name,12,99),c_white);

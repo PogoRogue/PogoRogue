@@ -27,10 +27,10 @@ if key_left and selected = false {
 }
 
 if key_select {
-	audio_play_sound(snd_selectOption,0,false);
 	if select = 1 {
 		alarm[0] = 1;
 	}else if select = 2 {
+		audio_play_sound(snd_selectOption,0,false);
 		scr_Reset_Settings_Data();
 		deleted = true;
 		with obj_settings {

@@ -12,14 +12,15 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b2f8ad13-8885-4f8c-82b8-7a4288c7fcee","name":"b2f8ad13-8885-4f8c-82b8-7a4288c7fcee","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"76c64ee9-ec71-456f-94c0-a2f9a484e8d0","name":"76c64ee9-ec71-456f-94c0-a2f9a484e8d0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"818c26b9-79f9-46ff-b83c-df49d270a875","name":"818c26b9-79f9-46ff-b83c-df49d270a875","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":64,
+  "height":65,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"af31979a-7682-4c4e-8339-1548165a3715","blendMode":0,"displayName":"default","isLocked":false,"name":"af31979a-7682-4c4e-8339-1548165a3715","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"983db447-ed59-4555-b403-0b5fccd616df","blendMode":0,"displayName":"default","isLocked":false,"name":"983db447-ed59-4555-b403-0b5fccd616df","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_weapons_station",
   "nineSlice":null,
@@ -49,7 +50,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -59,7 +60,7 @@
     },
     "name":"spr_weapons_station",
     "playback":1,
-    "playbackSpeed":30.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -69,13 +70,16 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b2f8ad13-8885-4f8c-82b8-7a4288c7fcee","path":"sprites/spr_weapons_station/spr_weapons_station.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e820446d-8f73-4e63-802b-7382ccb1fd89","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"76c64ee9-ec71-456f-94c0-a2f9a484e8d0","path":"sprites/spr_weapons_station/spr_weapons_station.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"4c7a86dd-b527-44fe-9c5f-cc073a9ed197","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"818c26b9-79f9-46ff-b83c-df49d270a875","path":"sprites/spr_weapons_station/spr_weapons_station.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2181c1b7-7bb9-47f9-af34-fdba2bc41230","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":64,
+    "xorigin":65,
     "yorigin":32,
   },
   "swatchColours":[
@@ -95,5 +99,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":128,
+  "width":130,
 }

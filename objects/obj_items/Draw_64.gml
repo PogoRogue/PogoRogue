@@ -52,7 +52,7 @@ if select = 1 {
 			scr_Draw_Text_Outlined(xx,yy-49,scr_Linebreak(global.all_buff_names[i],12,99),c_white);
 		
 			//sprite
-			draw_sprite(global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,xx,yy-27);
+			draw_sprite(global.all_buff_sprites[i],global.all_buff_sprites_index[i],xx,yy-27);
 	
 			//numbers of each buff
 			draw_set_halign(fa_center);

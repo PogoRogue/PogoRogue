@@ -81,7 +81,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_showcoins = {
-		_text: "Show Coin UI: ",
+		_text: "Show Coin Counter: ",
 		_type: "checkbox",
 		default_mode: global.show_coins,
 		current_mode: global.show_coins,
@@ -119,9 +119,11 @@ function scr_Settings_Gameplay(){
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
-				audio_play_sound(snd_selectOption,0,false);
-				usable = false;
-				instance_create_depth(x,y,depth-1,obj_popup_savedata);
+				if !instance_exists(obj_popup_savedata) {
+					audio_play_sound(snd_selectOption,0,false);
+					usable = false;
+					instance_create_depth(x,y,depth-1,obj_popup_savedata);
+				}
 			}
 		}
 	};
@@ -131,9 +133,11 @@ function scr_Settings_Gameplay(){
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
-				audio_play_sound(snd_selectOption,0,false);
-				usable = false;
-				instance_create_depth(x,y,depth-1,obj_popup_resetdefaults);
+				if !instance_exists(obj_popup_resetdefaults) {
+					audio_play_sound(snd_selectOption,0,false);
+					usable = false;
+					instance_create_depth(x,y,depth-1,obj_popup_resetdefaults);
+				}
 			}
 		}
 	};

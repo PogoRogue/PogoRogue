@@ -1,5 +1,5 @@
 if room != room_proc_gen_test {
-	sprite_index = spr_portal2;
+	sprite_index = spr_portal_new;
 }
 
 depth += 1;

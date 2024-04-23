@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_Projectile_Bounce",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Projectile_Bounce",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

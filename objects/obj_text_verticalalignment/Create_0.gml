@@ -1,3 +1,4 @@
 /// @description Initialize strings by column
 
-height_text = "Press up to re-center the player!";
+tutorial_text =   "Hold W or Up\n" +
+				  "to straighten out!"
