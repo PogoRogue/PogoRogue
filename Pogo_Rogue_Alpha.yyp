@@ -1413,7 +1413,7 @@
     {"id":{"name":"Sprint_8_Area2_x4","path":"sprites/Sprint_8_Area2_x4/Sprint_8_Area2_x4.yy",},},
     {"id":{"name":"Sprint_9_2x2_5rooms","path":"sprites/Sprint_9_2x2_5rooms/Sprint_9_2x2_5rooms.yy",},},
     {"id":{"name":"Sprint_9_3x3_oneRoom","path":"sprites/Sprint_9_3x3_oneRoom/Sprint_9_3x3_oneRoom.yy",},},
-    {"id":{"name":"Sprite284","path":"sprites/Sprite284/Sprite284.yy",},},
+    {"id":{"name":"spr_enemy_spawner","path":"sprites/spr_enemy_spawner/spr_enemy_spawner.yy",},},
     {"id":{"name":"Syke_Cube","path":"sprites/Syke_Cube/Syke_Cube.yy",},},
     {"id":{"name":"Syke_Tree","path":"sprites/Syke_Tree/Syke_Tree.yy",},},
     {"id":{"name":"TOB_Monster","path":"sprites/TOB_Monster/TOB_Monster.yy",},},

@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite284",
-    "path":"sprites/Sprite284/Sprite284.yy",
+    "name":"spr_enemy_spawner",
+    "path":"sprites/spr_enemy_spawner/spr_enemy_spawner.yy",
   },
   "spriteMaskId":null,
   "visible":true,
