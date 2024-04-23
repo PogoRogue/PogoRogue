@@ -7,7 +7,12 @@ function scr_Draw_Enemy_Health(){
 	
 	draw_sprite(spr_enemy_health_outline, 0, _x, _y);
 	
-	for(var _i = _x; _i < _x + _num_segments; _i++) {
+	var _i = _x;
+	for(; _i < _x + _num_segments; _i++) {
 		draw_sprite(spr_enemy_health_segment, 0, _i, _y);
+	}
+	
+	if(_num_segments > 0 && hp < hp_max) {
+		draw_sprite(spr_enemy_health_segment_end, 0, _i, _y);
 	}
 }

@@ -1,23 +1,38 @@
-/// @description Move left and right
+/// @description Insert description here
+// You can write your code in this editor
 
 // Inherit the parent event
 event_inherited();
 
-// Move left and right
-at_edge = !collision_point(x + (sign(spd)), y + (sprite_height / 2), obj_ground_parent, false, false); 
-at_wall = place_meeting(x + spd, y, obj_ground_parent);
+switch(current_state) {
+	case ROBOT_STATES.IDLE:
+		if(state_has_changed) {
+			sprite_index = spr_walk_enemy_idle;
+			alarm_set(2, room_speed / 2);
+		}
+		
+		break;
+	case ROBOT_STATES.WALKING:
+		if(state_has_changed) {
+			sprite_index = spr_walk_enemy_walk;
+		}
+		
+		at_edge = collision_point(x_dir > 0 ? bbox_right : bbox_left, bbox_bottom + 2, obj_ground_parent, true, true) != noone;
 
-sprite_index = spr_walk_enemy_walk;
-
-if (at_edge or at_wall) {
-	spd *= -1;
-	sprite_index = spr_walk_enemy_idle;
+		if(at_edge && !place_meeting(x + (walk_speed * x_dir), y + vspeed, obj_ground_parent)) {
+			x += walk_speed * x_dir;
+		} else {
+			while(at_edge && !place_meeting(x + sign(walk_speed * x_dir), y, obj_ground_parent)) {
+				x += sign(walk_speed * x_dir);
+			}
+			x_dir *= -1;
+			current_state = ROBOT_STATES.IDLE;
+		}
+		
+		break;
 }
-if (spd == 0.5) { image_xscale = 1;}
-if (spd == -0.5) { image_xscale = -1;}
 
-if(is_dead) {
-	spd = 0;	
-}
+image_xscale = x_dir > 0 ? 1 : -1;
 
-x += spd;
+state_has_changed = previous_state != current_state;
+previous_state = current_state;

@@ -20,6 +20,7 @@
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"2f9d397a-2519-48a5-bf05-a2e2d06dc29e","blendMode":0,"displayName":"default","isLocked":false,"name":"2f9d397a-2519-48a5-bf05-a2e2d06dc29e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"979c883f-ea17-4e57-88dd-e08c2d3de4ba","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"979c883f-ea17-4e57-88dd-e08c2d3de4ba","opacity":70.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_enemy_health_outline",
   "nineSlice":null,
