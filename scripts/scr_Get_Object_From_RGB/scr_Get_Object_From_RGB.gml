@@ -203,6 +203,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_angled_platform_right;
 		}
+		else if(Red == 30 && Green == 30 && Blue == 30)
+		{
+			return obj_room_gate_open_shop;
+		}
 		else if(Red == 25 && Green == 25 && Blue == 25)
 		{
 			//return obj_instructions;
@@ -214,6 +218,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		else if(Red == 15 && Green == 15 && Blue == 15)
 		{
 			return obj_ground_shopcoverup;
+		}
+		else if(Red == 12 && Green == 12 && Blue == 12)
+		{
+			return obj_ground_bosscoverup;
 		}
 		else if(Red == 10 && Green == 10 && Blue == 10)
 		{

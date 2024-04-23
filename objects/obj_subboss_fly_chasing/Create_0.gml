@@ -1,7 +1,7 @@
 
 // Inherit the parent event
 event_inherited();
-depth = -7;
+depth = -9;
 
 // Select target
 target_x = obj_player.x;

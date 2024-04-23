@@ -1,4 +1,10 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_ground_bosscoverup","order":1,"path":"objects/obj_ground_bosscoverup/obj_ground_bosscoverup.yy",},
+    {"name":"obj_room_gate_open_shop","order":1,"path":"objects/obj_room_gate_open_shop/obj_room_gate_open_shop.yy",},
+    {"name":"obj_text_enemy3","order":1,"path":"objects/obj_text_enemy3/obj_text_enemy3.yy",},
+    {"name":"spr_gate_open_shop","order":1,"path":"sprites/spr_gate_open_shop/spr_gate_open_shop.yy",},
+    {"name":"spr_ground_bosscoverup","order":1,"path":"sprites/spr_ground_bosscoverup/spr_ground_bosscoverup.yy",},
+  ],
 }
