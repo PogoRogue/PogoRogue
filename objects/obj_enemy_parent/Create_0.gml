@@ -7,6 +7,7 @@ hp_percent = (hp / hp_max) * 100;
 draw_hp = true;
 damage = 8;
 spd = 0;
+despawn_timer = room_speed;
 
 stomp_defense = 1; // This is a scalar that gets applied to stomp damage
 bullet_defense = 1; // This is a scalar that gets applied to bullet damage

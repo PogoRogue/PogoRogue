@@ -1,11 +1,12 @@
 /// @description Handle movement
 // Inherit the parent event
 event_inherited();
+image_alpha = 1.0;
 
 hp_percent = (hp / hp_max) * 100;
 is_hurt = previous_hp != hp;
 
-if(ability != BOSS3_ABILITIES.SHIELD && (alarm[2] < room_speed * 0.5 || alarm[2] > ability_cooldown - (room_speed * 0.5))) {
+if(is_dead || (ability != BOSS3_ABILITIES.SHIELD && (alarm[2] < room_speed * 0.5 || alarm[2] > ability_cooldown - (room_speed * 0.5)))) {
 	image_angle = lerp(image_angle, 0, 0.1);
 } else {
 	angle_accelerration = swingspeed * dcos(angle);
@@ -32,17 +33,18 @@ y += vsp;
 previous_hp = hp;
 
 if(is_dead) {
+	limb_alpha *= 0.9;
 	with(obj_boss_marionette_arm) {
-		image_alpha = other.image_alpha;
+		image_alpha = other.limb_alpha;
 	}
 	with(obj_boss_marionette_forearm) {
-		image_alpha = other.image_alpha;
+		image_alpha = other.limb_alpha;
 	}
 	with(obj_boss_marionette_leg) {
-		image_alpha = other.image_alpha;
+		image_alpha = other.limb_alpha;
 	}
 	with(obj_boss_marionette_thigh) {
-		image_alpha = other.image_alpha;
+		image_alpha = other.limb_alpha;
 	}
 }
 

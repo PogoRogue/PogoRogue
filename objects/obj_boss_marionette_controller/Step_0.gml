@@ -133,7 +133,13 @@ switch(current_state) {
 		
 		break;
 	case BOSS3_STATES.DEAD:
-		// TODO: handle transition to credits
+		if(state_has_changed) {
+			with(obj_boss_marionette) {
+				sprite_index = spr_boss_marionette_death;
+				image_index = 0;
+				damage = 0;
+			}
+		}
 		break;
 }
 

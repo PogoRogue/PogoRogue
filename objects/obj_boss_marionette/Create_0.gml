@@ -2,6 +2,7 @@
 // Inherit the parent event
 event_inherited();
 
+// Stats
 distance = 700;
 angle_accelerration = 0;
 angle_velocity = 0;
@@ -15,6 +16,8 @@ damping = 0.99;
 hsp = 0;
 vsp = 0;
 collision_detected = false;
+despawn_timer = 2 * room_speed;
+limb_alpha = 1.0;
 
 
 enum BOSS3_ABILITIES {
