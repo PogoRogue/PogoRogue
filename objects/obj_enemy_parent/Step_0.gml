@@ -9,7 +9,7 @@ if(is_dead) {
 		instance_destroy();	
 	}
 } else if (hp <= 0) {
-	alarm_set(0, room_speed);
+	alarm_set(0, despawn_timer);
 	alarm_set(11, 10);
 	audio_play_sound(snd_enemyhurt,0,false);
 	
