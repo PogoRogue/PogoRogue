@@ -4,7 +4,7 @@
 // Track the player
 dir_central = point_direction(x, y, player.x, player.y);
 
-if(parent != noone){
+if(parent != noone) {
     x = parent.x + lengthdir_x(48, parent.image_angle);
     y = parent.y + lengthdir_y(48, parent.image_angle);
 	image_angle = parent.image_angle;

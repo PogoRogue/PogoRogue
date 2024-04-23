@@ -42,7 +42,7 @@
   ],
   "name":"spr_enemy_walking_explosion",
   "nineSlice":null,
-  "origin":9,
+  "origin":4,
   "parent":{
     "name":"Enemy",
     "path":"folders/Sprites/Enemy.yy",
@@ -151,7 +151,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":30,
+    "xorigin":32,
     "yorigin":32,
   },
   "swatchColours":null,
