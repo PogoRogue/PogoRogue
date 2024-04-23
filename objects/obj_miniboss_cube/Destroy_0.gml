@@ -7,3 +7,5 @@ instance_destroy(obj_boss_brick);
 with instance_create_depth(x,y,depth-1,obj_coin_spawner) {
 	num_of_coins = global.combo + (global.added_coins * 2);
 }
+
+event_inherited();
