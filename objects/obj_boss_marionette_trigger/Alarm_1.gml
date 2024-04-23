@@ -8,4 +8,6 @@ with(obj_player) {
 	state = state_free;
 }
 
+instance_create_depth(x, y, -20, obj_boss_marionette_health);
+
 instance_destroy(self);

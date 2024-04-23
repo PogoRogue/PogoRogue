@@ -20,6 +20,7 @@ switch(current_state) {
 		
 		if(body.hp_percent <= 75) {
 			with(obj_boss_marionette) {
+				sprite_index = spr_boss_marionette_phase2;
 				damage = 0;
 			}
 			current_state = BOSS3_STATES.CHASE_1;
@@ -55,6 +56,7 @@ switch(current_state) {
 		
 		if(body.hp_percent <= 50) {
 			with(obj_boss_marionette) {
+				sprite_index = spr_boss_marionette_phase3;
 				damage = 0;
 			}
 			current_state = BOSS3_STATES.CHASE_2;
@@ -90,6 +92,7 @@ switch(current_state) {
 		
 		if(body.hp_percent <= 25) {
 			with(obj_boss_marionette) {
+				sprite_index = spr_boss_marionette_phase4;
 				damage = 0;
 			}
 			current_state = BOSS3_STATES.CHASE_3;

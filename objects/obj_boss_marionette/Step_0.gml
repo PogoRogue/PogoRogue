@@ -38,6 +38,12 @@ if(is_dead) {
 	with(obj_boss_marionette_forearm) {
 		image_alpha = other.image_alpha;
 	}
+	with(obj_boss_marionette_leg) {
+		image_alpha = other.image_alpha;
+	}
+	with(obj_boss_marionette_thigh) {
+		image_alpha = other.image_alpha;
+	}
 }
 
 if(is_dead) {

@@ -55,6 +55,7 @@ boss_name = "Rogo Puppet";
 instance_create_depth(x + 40, y, depth - 5, obj_boss_marionette_arm, {arm_num: 1, length_diff: 35, angle_diff: 40});
 instance_create_depth(x - 40, y, depth - 5, obj_boss_marionette_arm, {arm_num: 2, length_diff: 35, angle_diff: 140});
 
-instance_create_depth(x, y, -20, obj_boss_marionette_health);
+instance_create_depth(x + 40, y, depth - 5, obj_boss_marionette_thigh, {leg_num: 1, length_diff: 80, angle_diff: -77});
+instance_create_depth(x - 40, y, depth - 5, obj_boss_marionette_thigh, {leg_num: 2, length_diff: 80, angle_diff: -103});
 
 alarm_set(2, ability_cooldown);

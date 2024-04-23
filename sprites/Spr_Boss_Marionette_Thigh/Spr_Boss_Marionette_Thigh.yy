@@ -28,7 +28,7 @@
   ],
   "name":"spr_boss_marionette_thigh",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Boss Marionette",
     "path":"folders/Sprites/Enemy/Boss Marionette.yy",
@@ -96,7 +96,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":8,
-    "yorigin":24,
+    "yorigin":8,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
