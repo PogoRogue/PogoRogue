@@ -1,7 +1,9 @@
-/// @description Jump
+/// @description Initiate jump
 
 vspeed = jump_height;
-image_index = 0;
-sprite_index = spr_walk_enemy_idle;
-is_jumping = true;
-jump_cooldown = cooldown_length;
+if(!place_meeting(x, y - 2, obj_ground_parent)) {
+	y -= 2;	
+}
+
+has_jumped = true;
+jump_cooldown = room_speed * 3;

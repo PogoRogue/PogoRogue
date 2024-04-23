@@ -5,7 +5,7 @@ event_inherited();
 
 depth = -7;
 
-drop = false
+drop = false;
 
 boss = instance_nearest(x, y, parent);
 
