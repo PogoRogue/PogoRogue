@@ -119,7 +119,6 @@
     {"name":"obj_item_buff_righteousrevenge","order":2,"path":"objects/obj_item_buff_righteousrevenge/obj_item_buff_righteousrevenge.yy",},
     {"name":"obj_item_buff_robbery","order":1,"path":"objects/obj_item_buff_robbery/obj_item_buff_robbery.yy",},
     {"name":"obj_projectile_warning","order":9,"path":"objects/obj_projectile_warning/obj_projectile_warning.yy",},
-    {"name":"obj_robot_new","order":1,"path":"objects/obj_robot_new/obj_robot_new.yy",},
     {"name":"obj_room_gate_close_tutorial","order":1,"path":"objects/obj_room_gate_close_tutorial/obj_room_gate_close_tutorial.yy",},
     {"name":"obj_room_gate_open_width_fitting","order":2,"path":"objects/obj_room_gate_open_width_fitting/obj_room_gate_open_width_fitting.yy",},
     {"name":"obj_sequence_progress","order":6,"path":"objects/obj_sequence_progress/obj_sequence_progress.yy",},

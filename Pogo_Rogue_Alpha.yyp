@@ -439,7 +439,6 @@
     {"id":{"name":"obj_projectile","path":"objects/obj_projectile/obj_projectile.yy",},},
     {"id":{"name":"obj_restart_game","path":"objects/obj_restart_game/obj_restart_game.yy",},},
     {"id":{"name":"obj_restart_game2","path":"objects/obj_restart_game2/obj_restart_game2.yy",},},
-    {"id":{"name":"obj_robot_new","path":"objects/obj_robot_new/obj_robot_new.yy",},},
     {"id":{"name":"obj_room_gate_close_tutorial","path":"objects/obj_room_gate_close_tutorial/obj_room_gate_close_tutorial.yy",},},
     {"id":{"name":"obj_room_gate_close","path":"objects/obj_room_gate_close/obj_room_gate_close.yy",},},
     {"id":{"name":"obj_room_gate_open_width_fitting","path":"objects/obj_room_gate_open_width_fitting/obj_room_gate_open_width_fitting.yy",},},
