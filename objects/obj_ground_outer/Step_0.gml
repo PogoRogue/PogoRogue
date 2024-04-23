@@ -11,7 +11,7 @@ if (distance_to_object(obj_player) < 96) {
 	created_walls = false;
 }
 
-if drawn_tiles = false and distance_to_object(obj_player) < 500 and (instance_exists(obj_proc_gen_controller) || instance_exists(obj_sprite_test_room_generator)) {
+if drawn_tiles = false and distance_to_object(obj_player) < 500 and (instance_exists(obj_proc_gen_controller) || instance_exists(obj_sprite_test_room_generator) || room = room_boss_3) {
 	drawn_tiles = true;
 	//set tiles
 	if image_xscale = 1 and image_yscale = 1 {
