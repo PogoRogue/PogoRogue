@@ -18,17 +18,24 @@ switch(current_state) {
 		
 		body.anchor_y = lerp(body.anchor_y, attack_1_pos, 0.03);
 		
-		if(body.hp_percent <= 75) {
-			with(obj_boss_marionette) {
-				sprite_index = spr_boss_marionette_phase2;
-				damage = 0;
-			}
+		if(body.hp_percent <= 75) {			
 			current_state = BOSS3_STATES.CHASE_1;
 		}
 		
 		break;
 	case BOSS3_STATES.CHASE_1:
 		if(state_has_changed) {
+			with(obj_boss_marionette) {
+				sprite_index = spr_boss_marionette_phase2;
+				damage = 0;
+			}
+			
+			with(obj_boss_marionette_leg) {
+				if(leg_num == 2) {
+					instance_destroy(self);
+				}
+			}
+			
 			body.weapon = BOSS3_WEAPONS.NONE;
 			body.ability = BOSS3_ABILITIES.NONE;
 			instance_destroy(gate_1);
@@ -36,9 +43,6 @@ switch(current_state) {
 		}
 		
 		if(obj_player.y <= gate_pos_2 + 700) {
-			with(obj_boss_marionette) {
-				damage = 8;
-			}
 			current_state = BOSS3_STATES.ATTACK_2;
 		}
 		
@@ -48,6 +52,10 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.ATTACK_2:
 		if(state_has_changed) {
+			with(obj_boss_marionette) {
+				damage = 8;
+			}
+			
 			body.weapon = BOSS3_WEAPONS.SHOTGUN;
 			body.ability = BOSS3_ABILITIES.BULLET_BLAST;
 			body.anchor_y = attack_2_pos;
@@ -55,16 +63,27 @@ switch(current_state) {
 		}
 		
 		if(body.hp_percent <= 50) {
-			with(obj_boss_marionette) {
-				sprite_index = spr_boss_marionette_phase3;
-				damage = 0;
-			}
 			current_state = BOSS3_STATES.CHASE_2;
 		}
 		
 		break;
 	case BOSS3_STATES.CHASE_2:
 		if(state_has_changed) {
+			with(obj_boss_marionette) {
+				sprite_index = spr_boss_marionette_phase3;
+				damage = 0;
+			}
+			
+			with(obj_boss_marionette_leg) {
+				instance_destroy(self);
+			}
+			
+			with(obj_boss_marionette_thigh) {
+				if(leg_num == 1) {
+					instance_destroy(self);
+				}
+			}
+			
 			body.weapon = BOSS3_WEAPONS.NONE;
 			body.ability = BOSS3_ABILITIES.NONE;
 			instance_destroy(gate_2);
@@ -72,9 +91,6 @@ switch(current_state) {
 		}
 		
 		if(obj_player.y <= gate_pos_3 + 700) {
-			with(obj_boss_marionette) {
-				damage = 8;
-			}
 			current_state = BOSS3_STATES.ATTACK_3;
 		}
 		
@@ -84,6 +100,10 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.ATTACK_3:
 		if(state_has_changed) {
+			with(obj_boss_marionette) {
+				damage = 8;
+			}
+			
 			body.weapon = BOSS3_WEAPONS.MISSILE;
 			body.ability = BOSS3_ABILITIES.SHIELD;
 			body.anchor_y = attack_3_pos;
@@ -91,16 +111,22 @@ switch(current_state) {
 		}
 		
 		if(body.hp_percent <= 25) {
-			with(obj_boss_marionette) {
-				sprite_index = spr_boss_marionette_phase4;
-				damage = 0;
-			}
 			current_state = BOSS3_STATES.CHASE_3;
 		}
 		
 		break;
 	case BOSS3_STATES.CHASE_3:
 		if(state_has_changed) {
+			with(obj_boss_marionette) {
+				sprite_index = spr_boss_marionette_phase4;
+				damage = 0;
+			}
+			
+			with(obj_boss_marionette_thigh) {
+				instance_destroy(self);
+			}
+			
+		
 			body.weapon = BOSS3_WEAPONS.NONE;
 			body.ability = BOSS3_ABILITIES.NONE;
 			instance_destroy(obj_shield_plus);
@@ -109,9 +135,6 @@ switch(current_state) {
 		}
 		
 		if(obj_player.y <= 1072) {
-			with(obj_boss_marionette) {
-				damage = 8;
-			}
 			current_state = BOSS3_STATES.ATTACK_4;
 		}
 		
@@ -121,6 +144,13 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.ATTACK_4:
 		if(state_has_changed) {
+			with(obj_boss_marionette) {
+				stomp_defense = 0.8;
+				bullet_defense = 0.8;
+				explosion_defense = 0.8;
+				damage = 8;
+			}
+			
 			body.weapon = BOSS3_WEAPONS.LASER;
 			body.ability = BOSS3_ABILITIES.SHIELD;
 			body.anchor_y = attack_4_pos;
