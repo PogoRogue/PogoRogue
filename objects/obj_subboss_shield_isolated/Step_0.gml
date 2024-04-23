@@ -1,5 +1,11 @@
 /// @description Rotate around boss
 
+if immune = true {
+	mask_index = spr_nothing;
+}else {
+	mask_index = sprite_index;	
+}
+
 // Inherit the parent event
 event_inherited();
 
@@ -24,3 +30,13 @@ current_iframes = max(current_iframes - 1, 0);
 
 // Update red shader frames
 red_frames = max(red_frames - 1, 0);
+
+if instance_exists(shield) {
+	if shield.is_active = true {
+		shield.image_alpha = image_alpha;	
+	}
+}
+
+if is_dead = true {
+	speed = 0;	
+}

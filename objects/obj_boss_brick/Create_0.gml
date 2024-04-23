@@ -10,7 +10,7 @@ pickup_chance = 0; //percent
 weapon_chance = 0; //percent
 
 // Layer in front of boss (-5)
-depth = -6;
+depth = -8;
 
 boss = instance_nearest(x, y, parent);
 draw_hp = false;

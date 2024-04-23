@@ -2,11 +2,12 @@
 // You can write your code in this editor
 
 //lets enemy drop before it moves
-is_grounded = instance_place(x, y, [obj_ground_parent]);
+is_grounded = place_meeting(x, y+1, obj_ground)
+or place_meeting(x, y+1, obj_ground_oneway) and !place_meeting(x, y-1, obj_ground_oneway);
 if (is_grounded <= 0) {
 	vspeed = vspeed + obj_player.grv;
 	mask_index = sprite_index;
-	is_falling = instance_place(x, y+vspeed, [obj_ground_parent]);
+	is_falling = place_meeting(x, y+vspeed, [obj_ground]) or place_meeting(x, y+vspeed, [obj_ground_oneway]) and !place_meeting(x, y-1, obj_ground_oneway);
 	if (is_falling > 0)
 	{
 		image_speed = 1;
@@ -55,3 +56,7 @@ red_frames = max(red_frames - 1, 0);
 if instance_exists(obj_boss_sphere) {
 	depth = obj_boss_sphere.depth + 10;
 }	
+
+if is_dead = true {
+	speed = 0;	
+}

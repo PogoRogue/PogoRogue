@@ -1,6 +1,6 @@
 /// @description Damage enemy
 if(boss_projectile==false){
-if(!other.invinsible) {
+if(!other.invinsible) and damage != 0 {
     var laser_damage = 0.9; //apply damage buff differently for laser
 	var slime_damage = 0.7; //apply damage buff differently for slime
 	

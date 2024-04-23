@@ -27,3 +27,4 @@ boom=false;
 og_x=x;
 og_y=y;
 return_range=300;
+collide_with_walls = true;

@@ -53,7 +53,7 @@ design_producer_text = ["Design Producers", "Ian Vokt\nIsaac White"];
 engineer_producers_text = ["Engineering Producers", "John Richard\nRegie Topham"];
 general_producers_text = ["General Producers", "Cleveland Parker\nIan Vokt\nIsaac White\nJohn Richard\nRegie Topham"];
 
-special_thanks_text = ["Special Thanks", "Protostar777 for his help in finding so many bugs\nAbby M\nAlex M\nArchie and Betty\nBrendan L\nBrenna V\nChristina V\nColin V\nDan V\nDraik04\nDylan B\nEddieTheYeti\nEric V\nErik R \nEvan A\nFrancis W\nJess B\nJesse H\nJi-hoon T\nJon R\nJordon M\nJoshua R\nJulie V\nKalistapie\nKarifu\nKimball B\nLuke C\nMakaveli\nMatt T\nMistakeSenpai\nMr. Orange Cat President Natsu\nNessie\nOwen T\nPayton H\nQuinn\nRay\nRichiachu\nRogo Jones\nRonnie F\nRuby M\nScott W\nSora R\nStacey W\nStephen H\nSusan V\nTerry D\nTerry W\nThe Suchils\nThomas W\nTylerintn\nUsagi M\nWill T\n\nThe IGDA - Utah Chapter for letting us display our game!"];
+special_thanks_text = ["Special Thanks", "Protostar777 for his help in finding so many bugs\nAbby M\nAlex M\nArchie and Betty\nBrendan L\nBrenna V\nChristina V\nColin V\nDan V\nDraik04\nDylan B\nEddieTheYeti\nEric V\nErik R \nEvan A\nFergus and Gracie\nFrancis W\nJess B\nJess R\nJesse H\nJi-hoon T\nJon R\nJordon M\nJoshua R\nJulie V\nKalistapie\nKarifu\nKimball B\nLauren A\nLuke C\nMakaveli\nMarshmallow & Tanuki\nMatt T\nMistakeSenpai\nMr. Orange Cat President Natsu\nNessie\nOwen T\nPayton H\nPriscillia S\nQuinn\nRay P\nRichiachu\nRick S\nRogo Jones\nRonnie F\nRuby M\nScott W\nSora R\nStacey W\nStephen H\nSusan V\nTerry D\nTerry W\nThomas W\nTylerintn\nUsagi M\nWill T\n\nThe IGDA - Utah Chapter for letting us display our game!"];
 
 capstone_text = ["Our Fellow Capstone Studios at the University of Utah",""];
 

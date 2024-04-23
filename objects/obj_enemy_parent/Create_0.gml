@@ -20,8 +20,8 @@ red_frames = 0;
 
 //drop chances
 if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and room != room_tutorial {
-	heart_chance = 6 + (global.luck/2); //percent
-	buff_chance = 3 + (global.luck/2); //percent
+	heart_chance = 5 + (global.luck/2); //percent
+	buff_chance = 2 + (global.luck/2); //percent
 	pickup_chance = (global.luck/2); //percent
 	weapon_chance = (global.luck/2); //percent
 }else {

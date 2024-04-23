@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_enemy_stomp_only_melee",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":63,
-  "bbox_left":3,
-  "bbox_right":56,
+  "bbox_left":19,
+  "bbox_right":41,
   "bbox_top":11,
   "collisionKind":1,
   "collisionTolerance":0,

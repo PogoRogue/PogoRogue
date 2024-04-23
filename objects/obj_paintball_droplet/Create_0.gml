@@ -10,12 +10,12 @@ if place_meeting(x,y,obj_ground) {
 }else {
 	free = true;
 }
-
+/*
 if global.drilltipbullets = false {
 	while (!place_meeting(x,y+distance_to_ground,obj_ground) and !place_meeting(x,y+distance_to_ground,obj_ground_oneway) and !place_meeting(x,y+distance_to_ground,obj_enemy_parent)) {
 		distance_to_ground += 1;
 	}
-}
+}*/
 
 alarm[0] = 1;
 alarm[1] = 10;

@@ -80,6 +80,8 @@ if white_alpha > 0 {
 	white_alpha -= 0.05;
 }
 
+image_speed = 1;
+
 }else {
 	speed = 0;
 	image_speed = 0;

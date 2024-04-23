@@ -13,7 +13,7 @@ if (drop == false)
 	{
 		image_index=1
 		sprite_index=spr_B1_Fly_Move
-		follow_path = path_add();
+		//follow_path = path_add();
 		alarm[1]=1;
 		drop=true
 	}
@@ -44,4 +44,8 @@ if explode = true {
 		instance_destroy();
 		instance_create_layer(x, y, "enemies", obj_explosion);
 	}
+}
+
+if is_dead = true {
+	speed = 0;	
 }

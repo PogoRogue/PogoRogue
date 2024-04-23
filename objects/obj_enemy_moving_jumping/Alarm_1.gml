@@ -2,6 +2,6 @@
 
 vspeed = jump_height;
 image_index = 0;
-sprite_index = spr_walk_enemy_idle;
+sprite_index = spr_walk_enemy_idle_dark;
 is_jumping = true;
 jump_cooldown = cooldown_length;

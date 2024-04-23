@@ -205,11 +205,15 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}
 		else if(Red == 25 && Green == 25 && Blue == 25)
 		{
-			return obj_instructions;
+			//return obj_instructions;
 		}
 		else if(Red == 20 && Green == 20 && Blue == 20)
 		{
 			return obj_pickup_station;
+		}
+		else if(Red == 15 && Green == 15 && Blue == 15)
+		{
+			return obj_ground_shopcoverup;
 		}
 		else if(Red == 10 && Green == 10 && Blue == 10)
 		{

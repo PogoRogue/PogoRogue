@@ -8,11 +8,11 @@ at_edge = !collision_point(x + (sign(spd)), y + (sprite_height / 2), obj_ground_
 at_wall = place_meeting(x + spd, y, obj_ground_parent);
 is_grounded = place_meeting(x, y + 1, obj_ground_parent);
 
-if (is_jumping == false) {sprite_index = spr_walk_enemy_walk;}
+if (is_jumping == false) {sprite_index = spr_walk_enemy_walk_dark;}
 
 if (at_wall || (at_edge && is_grounded)) {
 	spd *= -1;
-	sprite_index = spr_walk_enemy_idle;
+	sprite_index = spr_walk_enemy_idle_dark;
 }
 if (spd == 0.5) { image_xscale = 1;}
 if (spd == -0.5) { image_xscale = -1;}

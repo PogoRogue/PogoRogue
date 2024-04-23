@@ -9,7 +9,7 @@ pickup_chance = 0; //percent
 weapon_chance = 0; //percent
 
 boss_name = "Agro Bricks";
-depth = -5;
+depth = -7;
 spd = 0.3;
 rotation_spd = 0.5;
 hp = 128;

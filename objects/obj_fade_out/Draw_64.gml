@@ -9,9 +9,9 @@ if global.door_color = "purple" {
 	draw_sprite(spr_door_transition_left,0,384-x_offset,0);
 	draw_sprite(spr_door_transition_right,0,384+x_offset,0);
 }else if global.door_color = "blue" {
-	draw_sprite(spr_door_transition_left_blue,0,384-x_offset,0);
-	draw_sprite(spr_door_transition_right_blue,0,384+x_offset,0);
+	draw_sprite(spr_door_transition_left,0,384-x_offset,0);
+	draw_sprite(spr_door_transition_right,0,384+x_offset,0);
 }else if global.door_color = "grey" {
-	draw_sprite(spr_door_transition_left_grey,0,384-x_offset,0);
-	draw_sprite(spr_door_transition_right_grey,0,384+x_offset,0);
+	draw_sprite(spr_door_transition_left,0,384-x_offset,0);
+	draw_sprite(spr_door_transition_right,0,384+x_offset,0);
 }
