@@ -48,12 +48,6 @@ is_hurt = false;
 hp_max = hp;
 hp_percent = (hp / hp_max) * 100;
 
-// Healthbar dimensions
-view_width = camera_get_view_width(view_camera[0]);
-view_height = camera_get_view_height(view_camera[0]);
-top_border = view_height - 20;
-boss_name = "Rogo Puppet";
-
 // Limbs
 instance_create_depth(x + 40, y, depth - 5, obj_boss_marionette_arm, {arm_num: 1, length_diff: 35, angle_diff: 40});
 instance_create_depth(x - 40, y, depth - 5, obj_boss_marionette_arm, {arm_num: 2, length_diff: 35, angle_diff: 140});
