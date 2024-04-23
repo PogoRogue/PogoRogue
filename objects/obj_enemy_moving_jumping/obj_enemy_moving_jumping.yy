@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_walk_enemy_idle",
-    "path":"sprites/spr_walk_enemy_idle/spr_walk_enemy_idle.yy",
+    "name":"spr_walk_enemy_idle_dark",
+    "path":"sprites/spr_walk_enemy_idle_dark/spr_walk_enemy_idle_dark.yy",
   },
   "spriteMaskId":null,
   "visible":true,

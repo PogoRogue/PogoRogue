@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_Mouse_Get_Button_Sprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Mouse_Get_Button_Sprite",
+  "parent":{
+    "name":"Controls",
+    "path":"folders/Scripts/Controls.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

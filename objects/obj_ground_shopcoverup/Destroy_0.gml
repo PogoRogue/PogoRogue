@@ -1,0 +1,1 @@
+scrshow_debug_message("DESTROYED!");

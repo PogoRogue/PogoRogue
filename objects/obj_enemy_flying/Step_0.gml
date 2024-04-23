@@ -19,7 +19,7 @@ if(!place_meeting(x + speed, y + sin(y_spd), obj_ground)) {
 y_spd += 0.05;
 
 if place_meeting(x,y,obj_ground_oneway) {
-	depth = instance_place(x,y,obj_ground_oneway).depth-10;	
+	depth = -1; //instance_place(x,y,obj_ground_oneway).depth-10;	
 }
 if place_meeting(x,y,obj_chest) {
 	depth = instance_place(x,y,obj_chest).depth-10;	

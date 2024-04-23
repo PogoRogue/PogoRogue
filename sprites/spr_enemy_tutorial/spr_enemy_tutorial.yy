@@ -12,15 +12,15 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b8237e60-7f6f-4c6c-8e34-174a2e8c1edf","name":"b8237e60-7f6f-4c6c-8e34-174a2e8c1edf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d9d6c0b1-fa96-4e31-8452-d42f3e53fd38","name":"d9d6c0b1-fa96-4e31-8452-d42f3e53fd38","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"421b3359-5e01-4b7d-b8f2-96198ec494fa","name":"421b3359-5e01-4b7d-b8f2-96198ec494fa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"c77d59bc-5c7f-438d-8982-857fe0abd68d","name":"c77d59bc-5c7f-438d-8982-857fe0abd68d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"bfb0c536-692f-47e2-989d-5ace0287cb01","blendMode":0,"displayName":"default","isLocked":false,"name":"bfb0c536-692f-47e2-989d-5ace0287cb01","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"1f9015c5-c3d2-4be2-b395-71e62cf900da","blendMode":0,"displayName":"default","isLocked":false,"name":"1f9015c5-c3d2-4be2-b395-71e62cf900da","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_enemy_tutorial",
   "nineSlice":null,
@@ -70,11 +70,11 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b8237e60-7f6f-4c6c-8e34-174a2e8c1edf","path":"sprites/spr_enemy_tutorial/spr_enemy_tutorial.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8aa0c0bd-eb96-4ed7-b6af-6ebba1fea048","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"421b3359-5e01-4b7d-b8f2-96198ec494fa","path":"sprites/spr_enemy_tutorial/spr_enemy_tutorial.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"830a5936-473c-486d-b169-0d0668e5c4ae","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d9d6c0b1-fa96-4e31-8452-d42f3e53fd38","path":"sprites/spr_enemy_tutorial/spr_enemy_tutorial.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"9388d34b-ae7c-4641-8b7a-e0504c0e4458","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c77d59bc-5c7f-438d-8982-857fe0abd68d","path":"sprites/spr_enemy_tutorial/spr_enemy_tutorial.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"41f2ebdd-c59f-4b1d-8544-2d212bf69b66","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -82,7 +82,16 @@
     "xorigin":0,
     "yorigin":0,
   },
-  "swatchColours":null,
+  "swatchColours":[
+    4278190335,4293259506,4290360760,4287136134,4284834660,4283384901,4283971642,4280492321,4282526517,4285154115,
+    4291461195,4292067944,4291288226,4288602605,4285046995,4283585204,4285420394,4283973963,4282009984,4284185511,
+    4290039525,4285060034,4284526730,4286151510,4283062350,4282610299,4286493874,4291086573,4291529423,4285158751,
+    4280492321,4280492321,4280492321,4280492321,4280492321,4280492321,4280492321,4280492321,4280492321,4280492321,
+    4280492321,4280492321,4280492321,4280492321,4280492321,4285781164,4285973884,4286101564,4290034460,4294164224,
+    4291529796,4289289312,4289290373,4289291432,4289359601,4286410226,4280556782,4280444402,4280128760,4278252287,
+    4282369933,4283086137,4283540992,4288522496,4293963264,4290540032,4289423360,4289090560,4287770926,4287704422,
+    4287571858,4287365357,4284159214,4279176094,4279058848,4278870691,4278231211,4281367321,
+  ],
   "swfPrecision":2.525,
   "textureGroupId":{
     "name":"Default",

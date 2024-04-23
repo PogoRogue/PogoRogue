@@ -211,6 +211,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_pickup_station;
 		}
+		else if(Red == 15 && Green == 15 && Blue == 15)
+		{
+			return obj_ground_shopcoverup;
+		}
 		else if(Red == 10 && Green == 10 && Blue == 10)
 		{
 			return obj_weapons_station;
