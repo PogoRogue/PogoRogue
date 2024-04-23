@@ -10,6 +10,7 @@ delay=room_speed;
 sprite=spr_projectile_nerfdart;
 spd=7;
 track_player = true;
+lifetime = 25;
 
 player = instance_nearest(x,y,obj_player);
 dir_central = point_direction(x, y, player.x, player.y);
