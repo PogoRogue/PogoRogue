@@ -21,6 +21,7 @@ destroy_chance = 0; //when active, change to ~80
 
 created_items = false;
 
+random_set_seed(global.seed+global.chest_number);
 destroy = irandom_range(1,100);
 
 global.chest_number += 1;

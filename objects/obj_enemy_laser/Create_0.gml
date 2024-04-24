@@ -18,3 +18,5 @@ color_4 = #A2DCC7;
 color_5 = #F2F0E5;
 
 alarm_set(0, duration * room_speed);
+
+audio_play_sound(snd_laser_enemy,0,false);

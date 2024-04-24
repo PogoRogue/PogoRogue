@@ -1,6 +1,6 @@
 /// @description Fire
 // You can write your code in this editor
-
+alarm_set(1,cooldown);
 
 var _player_dir = point_direction(weapon_x, weapon_y, target.x, target.y);
 switch(boss.weapon) {
@@ -27,4 +27,4 @@ switch(boss.weapon) {
 		break;
 }
 
-alarm_set(1,cooldown);
+

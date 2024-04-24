@@ -9,3 +9,5 @@ if(enhanced) {
 }
 image_speed = 0;
 image_alpha = 0;
+
+audio_play_sound(snd_shieldBubble_enemy,0,false);

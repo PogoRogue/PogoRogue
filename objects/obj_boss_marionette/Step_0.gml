@@ -15,6 +15,10 @@ if(is_dead || (ability != BOSS3_ABILITIES.SHIELD && (alarm[2] < room_speed * 0.5
 	image_angle = lerp(image_angle, angle + 90, 0.1);
 }
 
+if(alarm[2] < room_speed*0.5 && ability == BOSS3_ABILITIES.GROUND_POUND) and !audio_is_playing(snd_slamCharge_enemy) {
+	audio_play_sound(snd_slamCharge_enemy,0,false);
+}
+
 hsp = anchor_x + lengthdir_x(distance, angle) - x;
 vsp = anchor_y + lengthdir_y(distance, angle) - y;
 

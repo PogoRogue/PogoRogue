@@ -10,4 +10,6 @@ with(obj_player) {
 
 instance_create_depth(x, y, -20, obj_boss_marionette_health);
 
-instance_destroy(self);
+with obj_boss_marionette_trigger {
+	instance_destroy();	
+}

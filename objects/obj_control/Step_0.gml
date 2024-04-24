@@ -90,4 +90,13 @@ if instance_exists(obj_pause) {
 			audio_resume_sound(snd_laser);
 		}
 	}
+	if audio_is_playing(snd_laser_enemy) and !instance_exists(obj_enemy_laser) and obj_pause.pause = false {
+		audio_stop_sound(snd_laser_enemy);
+	}else if audio_is_playing(snd_laser_enemy) and !instance_exists(obj_enemy_laser) {
+		audio_pause_sound(snd_laser_enemy);
+	}else if obj_pause.pause = false {
+		if audio_is_paused(snd_laser_enemy) = true {
+			audio_resume_sound(snd_laser_enemy);
+		}
+	}
 }
