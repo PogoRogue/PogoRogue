@@ -7,7 +7,7 @@ function scr_Reload_On_Kill() {
 	
 	if other.hp <= 0 {
 		with other {
-			if (created_items = false) {
+			if (created_items = false and heart_drop <= heart_chance) {
 				Create_Item_Drops(random_items);
 				created_items = true;
 			}

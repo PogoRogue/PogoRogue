@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.733333,
+  "duration":0.766667,
   "name":"snd_enemy_death2",
   "parent":{
     "name":"Enemies",

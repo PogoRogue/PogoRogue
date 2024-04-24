@@ -83,7 +83,7 @@ function scr_Buffs(){
 	}
 	
 	buff_luck = function(){
-		global.luck += 10;
+		global.luck += 5;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	

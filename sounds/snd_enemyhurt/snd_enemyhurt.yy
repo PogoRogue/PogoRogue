@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.307875,
+  "duration":0.5,
   "name":"snd_enemyhurt",
   "parent":{
     "name":"Enemies",
