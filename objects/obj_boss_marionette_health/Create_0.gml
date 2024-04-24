@@ -9,4 +9,4 @@ total_spaces = 512;
 num_segments = 0;
 
 name_x = camera_get_view_width(view_camera[0]) / 2;
-name_y = view_height - 48;
+name_y = view_height - 44;
