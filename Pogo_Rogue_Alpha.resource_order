@@ -1,4 +1,6 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_chest_combat","order":1,"path":"objects/obj_chest_combat/obj_chest_combat.yy",},
+  ],
 }
