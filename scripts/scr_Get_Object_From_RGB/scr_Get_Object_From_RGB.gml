@@ -120,7 +120,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			return obj_chest;
 		}
 		else if Green > 239 {
-			//return obj_chest_combat;
+			return obj_chest_combat;
 		}
 		else if(Green > 228)
 		{

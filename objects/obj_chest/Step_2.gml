@@ -12,6 +12,7 @@ with (obj_player) {
 		other.open = true;
 		other.alarm[0] = 2;
 		other.alarm[1] = 5;
+		audio_play_sound(snd_chest_open,0,false);
 	}
 }
 
@@ -22,6 +23,7 @@ with (obj_projectile) {
 		other.image_index = 2;
 		other.alarm[0] = 1;
 		instance_destroy();
+		audio_play_sound(snd_chest_open,0,false);
 	}
 }
 

@@ -1,6 +1,6 @@
 /// @description Randomly replace chests with other types
 random_set_seed(global.seed+global.chest_number);
-
+destroy = irandom_range(1,100);
 if object_get_name(object_index) = "obj_chest" { //dont move special chests
 	while !position_meeting(bbox_left+1,y+33,obj_ground_parent) and !position_meeting(bbox_left+1,y+33,obj_ground_oneway) {
 		x += 16;

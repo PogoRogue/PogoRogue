@@ -11,8 +11,11 @@ if(is_dead) {
 } else if (hp <= 0) {
 	alarm_set(0, despawn_timer);
 	alarm_set(11, 10);
-	if !audio_is_playing(snd_enemyhurt) {
-		audio_play_sound(snd_enemyhurt,0,false);
+	randomize();
+	var random_death_sound = choose(snd_enemy_death,snd_enemy_death2,snd_enemy_death3);
+	random_set_seed(global.seed);
+	if !audio_is_playing(random_death_sound) {
+		audio_play_sound(random_death_sound,0,false);
 	}
 	
 	//screen shake

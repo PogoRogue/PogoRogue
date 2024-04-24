@@ -90,13 +90,16 @@ function scr_Jump(add_to_jump){
 	
 	//bounce sound
 	if !audio_is_playing(snd_groundpound) {
-		if bounce_sound = true {
+		randomize();
+		audio_play_sound(choose(snd_bounce,snd_bounce2,snd_bounce3),0,false);
+		random_set_seed(global.seed);
+		/*if bounce_sound = true {
 			audio_play_sound(snd_bounce,0,false);
 			bounce_sound = not bounce_sound;
 		}else {
 			audio_play_sound(snd_bounce2,0,false);
 			bounce_sound = not bounce_sound;
-		}
+		}*/
 	}
 	
 	//spring
@@ -104,6 +107,7 @@ function scr_Jump(add_to_jump){
 		if instance_place(x,y-vspeed,obj_spring).state = instance_place(x,y-vspeed,obj_spring).state_unsprung {
 			with instance_place(x,y-vspeed,obj_spring) {
 				state = state_springing;
+				audio_play_sound(snd_springboard,0,false);
 			}
 			state = state_free;
 			vspeed = 0;
@@ -118,6 +122,7 @@ function scr_Jump(add_to_jump){
 		if instance_place(x,y+vspeed,obj_spring).state = instance_place(x,y+vspeed,obj_spring).state_unsprung {
 			with instance_place(x,y+vspeed,obj_spring) {
 				state = state_springing;
+				audio_play_sound(snd_springboard,0,false);
 			}
 			state = state_free;
 			vspeed = 0;

@@ -15,7 +15,7 @@ if(!vole_is_dead) {
 	}
 	random_set_seed(global.seed);
 	
-	var _vole = instance_create_layer(current_position.x, current_position.y, "enemies", obj_enemy_vole);
+	var _vole = instance_create_depth(current_position.x, current_position.y, depth-1, obj_enemy_vole);
 	_vole.parent = self;
 	_vole.hp = vole_hp;
 	

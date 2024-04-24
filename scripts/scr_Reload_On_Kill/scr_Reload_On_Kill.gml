@@ -39,5 +39,12 @@ function scr_Reload_On_Kill() {
 				}
 			//}
 		}
+		randomize();
+		audio_play_sound(choose(snd_enemyhurt,snd_enemyhurt2,snd_enemyhurt3),0,false);
+		random_set_seed(global.seed);
+	}else {
+		randomize();
+		audio_play_sound(choose(snd_enemyhurt,snd_enemyhurt2,snd_enemyhurt3),0,false);
+		random_set_seed(global.seed);
 	}
 }

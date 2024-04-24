@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_shieldBubble_enemy.wav",
   "type":1,
-  "volume":0.75,
+  "volume":0.0,
 }

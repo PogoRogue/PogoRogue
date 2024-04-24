@@ -20,6 +20,10 @@ function scr_Enemy_Collision_Check(condition){
 					hp -= other.stomp_damage * stomp_defense;
 					red_frames = 10;
 					
+					randomize();
+					audio_play_sound(choose(snd_enemyhurt,snd_enemyhurt2,snd_enemyhurt3),0,false);
+					random_set_seed(global.seed);
+					
 					// For Sphere boss, change its direction when you hit it from above
 					if(object_index == obj_boss_sphere) {
 						var _angle_to_player = point_direction(x, y, other.x, other.y)

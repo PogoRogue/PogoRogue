@@ -412,6 +412,8 @@
     {"name":"inst_4944F79D","path":"rooms/room_boss_3/room_boss_3.yy",},
     {"name":"inst_64C33A73","path":"rooms/room_boss_3/room_boss_3.yy",},
     {"name":"inst_2F7BF435","path":"rooms/room_boss_3/room_boss_3.yy",},
+    {"name":"inst_1EDD2FD","path":"rooms/room_boss_3/room_boss_3.yy",},
+    {"name":"inst_2CD62276","path":"rooms/room_boss_3/room_boss_3.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -550,6 +552,8 @@
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"enemies","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_50A84DC6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_50A84DC6","objectId":{"name":"obj_boss_marionette_trigger","path":"objects/obj_boss_marionette_trigger/obj_boss_marionette_trigger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":45.0,"scaleY":29.0,"x":384.0,"y":10856.0,},
+        {"$GMRInstance":"","%Name":"inst_1EDD2FD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1EDD2FD","objectId":{"name":"obj_boss_marionette_trigger","path":"objects/obj_boss_marionette_trigger/obj_boss_marionette_trigger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":21.0,"scaleY":5.0,"x":576.0,"y":11136.0,},
+        {"$GMRInstance":"","%Name":"inst_2CD62276","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2CD62276","objectId":{"name":"obj_boss_marionette_trigger","path":"objects/obj_boss_marionette_trigger/obj_boss_marionette_trigger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":21.0,"scaleY":5.0,"x":192.0,"y":11136.0,},
       ],"layers":[],"name":"enemies","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"hazards","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_59FA736A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_59FA736A","objectId":{"name":"obj_electric_current","path":"objects/obj_electric_current/obj_electric_current.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.3333334,"scaleY":1.0,"x":320.0,"y":5792.0,},

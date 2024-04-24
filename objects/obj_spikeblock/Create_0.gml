@@ -65,7 +65,14 @@ state_slamming = function() {
 			if on_screen = true {
 				scr_Screen_Shake(8,15,false);
 			}	
-			state = state_slammed;	
+			state = state_slammed;
+			//check if in view before making slam noise
+			if bbox_right > obj_camera.x - obj_camera.view_w_half and bbox_left < obj_camera.x + obj_camera.view_w_half
+			and bbox_bottom > obj_camera.y - obj_camera.view_h_half and bbox_top < obj_camera.y + obj_camera.view_h_half {
+				if !audio_is_playing(snd_spikeblock_slam) {
+					audio_play_sound(snd_spikeblock_slam,0,false);
+				}
+			}
 		}
 	}else {
 		//x collision
@@ -78,6 +85,13 @@ state_slamming = function() {
 				scr_Screen_Shake(8,15,false);
 			}
 			state = state_slammed;
+			//check if in view before making slam noise
+			if bbox_right > obj_camera.x - obj_camera.view_w_half and bbox_left < obj_camera.x + obj_camera.view_w_half
+			and bbox_bottom > obj_camera.y - obj_camera.view_h_half and bbox_top < obj_camera.y + obj_camera.view_h_half {
+				if !audio_is_playing(snd_spikeblock_slam) {
+					audio_play_sound(snd_spikeblock_slam,0,false);
+				}
+			}
 		}
 	}
 }

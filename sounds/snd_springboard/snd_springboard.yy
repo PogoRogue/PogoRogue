@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_springboard",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.533333,
+  "name":"snd_springboard",
+  "parent":{
+    "name":"Environmental",
+    "path":"folders/Sounds/Environmental.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_springboard.wav",
+  "type":0,
+  "volume":1.0,
+}

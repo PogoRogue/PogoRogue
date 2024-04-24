@@ -2,5 +2,18 @@
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
     {"name":"obj_chest_combat","order":1,"path":"objects/obj_chest_combat/obj_chest_combat.yy",},
+    {"name":"snd_bounce3","order":1,"path":"sounds/snd_bounce3/snd_bounce3.yy",},
+    {"name":"snd_chest_open","order":1,"path":"sounds/snd_chest_open/snd_chest_open.yy",},
+    {"name":"snd_enemy_death","order":2,"path":"sounds/snd_enemy_death/snd_enemy_death.yy",},
+    {"name":"snd_enemy_death2","order":3,"path":"sounds/snd_enemy_death2/snd_enemy_death2.yy",},
+    {"name":"snd_enemy_death3","order":4,"path":"sounds/snd_enemy_death3/snd_enemy_death3.yy",},
+    {"name":"snd_enemyhurt2","order":5,"path":"sounds/snd_enemyhurt2/snd_enemyhurt2.yy",},
+    {"name":"snd_enemyhurt3","order":6,"path":"sounds/snd_enemyhurt3/snd_enemyhurt3.yy",},
+    {"name":"snd_hurt2","order":2,"path":"sounds/snd_hurt2/snd_hurt2.yy",},
+    {"name":"snd_hurt3","order":3,"path":"sounds/snd_hurt3/snd_hurt3.yy",},
+    {"name":"snd_player_death","order":4,"path":"sounds/snd_player_death/snd_player_death.yy",},
+    {"name":"snd_showdown","order":1,"path":"sounds/snd_showdown/snd_showdown.yy",},
+    {"name":"snd_spikeblock_slam","order":2,"path":"sounds/snd_spikeblock_slam/snd_spikeblock_slam.yy",},
+    {"name":"snd_springboard","order":1,"path":"sounds/snd_springboard/snd_springboard.yy",},
   ],
 }

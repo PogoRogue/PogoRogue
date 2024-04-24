@@ -20,3 +20,5 @@ x += hsp;
 y += vsp;
 
 image_angle = angle + 90;
+
+depth = -2;

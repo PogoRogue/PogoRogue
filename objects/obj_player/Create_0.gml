@@ -264,6 +264,7 @@ state_chargejump = function() {
 		audio_stop_sound(snd_chargejump);
 		audio_stop_sound(snd_bounce);
 		audio_stop_sound(snd_bounce2);
+		audio_stop_sound(snd_bounce3);
 		audio_play_sound(snd_chargejump_launch,0,false);
 		allow_flames = true;
 		min_flames_speed = 7.2;

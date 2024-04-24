@@ -20,7 +20,7 @@ switch(ability) {
 		if(!instance_exists(obj_shield_plus)) {
 			var _shield = instance_create_layer(x, y, "Instances", obj_shield_plus);
 			_shield.parent = self;
-			_shield.depth = depth + 1;
+			_shield.depth = depth - 8;
 		}
 		break;
 }

@@ -17,7 +17,7 @@ heart_chance = 50 - global.luck;
 buff_chance = 90;
 weapon_chance = 60 + global.luck;
 pickup_chance = 60 + global.luck;
-destroy_chance = 0; //when active, change to ~80
+destroy_chance = 0;
 
 created_items = false;
 
