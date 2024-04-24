@@ -22,3 +22,7 @@ depth = 5;
 spd = 0.5;
 at_edge = false;
 at_wall = false;
+
+hp_max = 16;
+hp = hp_max;
+stomp_defense = 0.9;

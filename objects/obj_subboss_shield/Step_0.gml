@@ -27,6 +27,11 @@ if (drop == true) {
 
 		direction = point_direction(x, y, new_x, new_y);
 		speed = min(4.0, distance_to_point(new_x, new_y));
+	} else {
+		image_angle = lerp(image_angle, 0, 0.01);
+		hspeed = lerp(image_angle, 0, 0.01);
+		vspeed = 1.2 * sin(spd);
+		spd += 0.05;
 	}
 }
 

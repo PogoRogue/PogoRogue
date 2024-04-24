@@ -1,18 +1,4 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[
-    {"name":"obj_ground_bosscoverup","order":1,"path":"objects/obj_ground_bosscoverup/obj_ground_bosscoverup.yy",},
-    {"name":"obj_room_gate_open_shop","order":1,"path":"objects/obj_room_gate_open_shop/obj_room_gate_open_shop.yy",},
-    {"name":"obj_text_enemy3","order":1,"path":"objects/obj_text_enemy3/obj_text_enemy3.yy",},
-    {"name":"snd_bulletblast_enemy","order":2,"path":"sounds/snd_bulletblast_enemy/snd_bulletblast_enemy.yy",},
-    {"name":"snd_defaultgun_enemy","order":2,"path":"sounds/snd_defaultgun_enemy/snd_defaultgun_enemy.yy",},
-    {"name":"snd_groundpound_enemy","order":4,"path":"sounds/snd_groundpound_enemy/snd_groundpound_enemy.yy",},
-    {"name":"snd_laser_enemy","order":1,"path":"sounds/snd_laser_enemy/snd_laser_enemy.yy",},
-    {"name":"snd_rocketwhoosh_enemy","order":4,"path":"sounds/snd_rocketwhoosh_enemy/snd_rocketwhoosh_enemy.yy",},
-    {"name":"snd_shieldBubble_enemy","order":1,"path":"sounds/snd_shieldBubble_enemy/snd_shieldBubble_enemy.yy",},
-    {"name":"snd_shotgun_enemy","order":3,"path":"sounds/snd_shotgun_enemy/snd_shotgun_enemy.yy",},
-    {"name":"snd_slamCharge_enemy","order":3,"path":"sounds/snd_slamCharge_enemy/snd_slamCharge_enemy.yy",},
-    {"name":"spr_gate_open_shop","order":1,"path":"sprites/spr_gate_open_shop/spr_gate_open_shop.yy",},
-    {"name":"spr_ground_bosscoverup","order":1,"path":"sprites/spr_ground_bosscoverup/spr_ground_bosscoverup.yy",},
-  ],
+  "ResourceOrderSettings":[],
 }

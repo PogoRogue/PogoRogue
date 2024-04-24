@@ -19,7 +19,7 @@
   "height":16,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"2f9d397a-2519-48a5-bf05-a2e2d06dc29e","blendMode":0,"displayName":"default","isLocked":false,"name":"2f9d397a-2519-48a5-bf05-a2e2d06dc29e","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"2f9d397a-2519-48a5-bf05-a2e2d06dc29e","blendMode":0,"displayName":"default","isLocked":false,"name":"2f9d397a-2519-48a5-bf05-a2e2d06dc29e","opacity":70.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_boss_health_back",
   "nineSlice":null,

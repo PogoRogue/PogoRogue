@@ -1,20 +1,28 @@
-/// @description Instantiate variables
+/// @description Insert description here
+// You can write your code in this editor
 
 // Inherit the parent event
 event_inherited();
 
-// Instantiate additional variables
-spd = 0.5;
-at_edge = false;
-at_wall = false;
-is_grounded = false;
+// Stats
 player = instance_nearest(x, y, obj_player);
-jump_range = 100;
-jump_cooldown = 0;
-cooldown_length = 2 * room_speed;
-is_jumping = false;
-jump_anim_cd = false
+range = 125;
+on_ground = place_meeting(x, y + 1, obj_ground_parent);
+walk_speed = 0.75;
+x_dir = 1;
+jump_speed = 2;
+jump_height = -7;
+jump_cooldown = room_speed;
+at_edge = false;
 
-// Add jump
-jump_height = -5;
+enum ROBOT_STATES {
+	IDLE,
+	WALKING,
+	JUMPING,
+}
 
+// State info
+current_state = ROBOT_STATES.WALKING;
+previous_state = current_state;
+state_has_changed = false;
+has_jumped = false;

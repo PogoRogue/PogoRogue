@@ -1055,6 +1055,7 @@
     {"id":{"name":"spr_enemy_generic","path":"sprites/spr_enemy_generic/spr_enemy_generic.yy",},},
     {"id":{"name":"spr_enemy_health_outline","path":"sprites/spr_enemy_health_outline/spr_enemy_health_outline.yy",},},
     {"id":{"name":"spr_enemy_health_segment","path":"sprites/spr_enemy_health_segment/spr_enemy_health_segment.yy",},},
+    {"id":{"name":"spr_enemy_health_segment_end","path":"sprites/spr_enemy_health_segment_end/spr_enemy_health_segment_end.yy",},},
     {"id":{"name":"spr_enemy_jack_body","path":"sprites/spr_enemy_jack_body/spr_enemy_jack_body.yy",},},
     {"id":{"name":"spr_enemy_jack_closed","path":"sprites/spr_enemy_jack_closed/spr_enemy_jack_closed.yy",},},
     {"id":{"name":"spr_enemy_jack_open","path":"sprites/spr_enemy_jack_open/spr_enemy_jack_open.yy",},},

@@ -10,8 +10,8 @@ x_spd = 1;
 y_spd = 1;
 spd = 2;
 
-hp = 16;
-hp_max = hp;
+hp_max = 8;
+hp = hp_max;
 hp_percent = (hp / hp_max) * 100;
 is_moving = false
 found = false;
