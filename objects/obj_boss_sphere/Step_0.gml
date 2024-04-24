@@ -93,3 +93,21 @@ image_speed = 1;
 		hspeed = spd;
 	}
 }
+
+//new collision
+
+if(place_meeting(x + hspeed+sign(hspeed), y, obj_ground)) {
+	while !place_meeting(x+sign(hspeed),y,obj_ground) {
+		x += sign(hspeed)	
+	}
+	hspeed *= -1;
+	num_of_bounces += 1;
+	//show_debug_message(num_of_bounces);
+}else if(place_meeting(x, y + vspeed+sign(vspeed), obj_ground)) {
+	while !place_meeting(x,y+sign(vspeed),obj_ground) {
+		y += sign(vspeed)	
+	}
+	vspeed *= -1;
+	num_of_bounces += 1;
+	//show_debug_message(num_of_bounces);
+}

@@ -16,7 +16,12 @@ if(is_dead) {
 	if (doOnce) {
 		image_index = 1;
 		doOnce = false;
-		audio_play_sound(snd_enemyhurt,0,false);
+		randomize();
+		var random_death_sound = choose(snd_enemy_death,snd_enemy_death2,snd_enemy_death3);
+		random_set_seed(global.seed);
+		if !audio_is_playing(random_death_sound) {
+			audio_play_sound(random_death_sound,0,false);
+		}
 		scr_Screen_Shake(2, 2, false);
 	}
 	

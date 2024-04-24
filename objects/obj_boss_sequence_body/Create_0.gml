@@ -10,7 +10,6 @@ controller = instance_nearest(x, y, obj_boss_sequence);
 draw_hp = false;
 hp = 300;
 hp_max = hp;
-boss_name = "Slime Cooler";
 hp_percent = (hp / hp_max) * 100;
 view_width = camera_get_view_width(view_camera[0]);
 view_height = camera_get_view_height(view_camera[0]);

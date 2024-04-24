@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_shieldBubble_enemy",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":5.833333,
+  "name":"snd_shieldBubble_enemy",
+  "parent":{
+    "name":"Powerups",
+    "path":"folders/Sounds/Powerups.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_shieldBubble_enemy.wav",
+  "type":1,
+  "volume":0.0,
+}

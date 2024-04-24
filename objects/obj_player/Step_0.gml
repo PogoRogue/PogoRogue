@@ -381,6 +381,7 @@ if (dead = true and global.revive = false and state != state_revive) {
 	if !instance_exists(obj_deathscreen) {
 		instance_create_depth(x,y,depth-1000,obj_deathscreen);
 		speed /= 2;
+		audio_play_sound(snd_player_death,0,false);
 	}
 	
 	//fall through ground on death

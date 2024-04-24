@@ -8,7 +8,6 @@ buff_chance = 0; //percent
 pickup_chance = 0; //percent
 weapon_chance = 0; //percent
 
-boss_name = "Agro Bricks";
 depth = -7;
 spd = 0.3;
 rotation_spd = 0.5;
@@ -73,3 +72,5 @@ white_alpha = 0;
 
 init_x = x;
 init_y = y;
+
+num_of_bounces = 0;

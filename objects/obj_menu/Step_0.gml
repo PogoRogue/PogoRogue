@@ -28,7 +28,7 @@ if key_up and !key_down and selected = false {
 	alarm[3] = alarm3_time;
 }
 
-if key_select {
+if key_select and !instance_exists(obj_fade_in) {
 	if !(select = 1 - options_decrease and global.tutorial_completed = false) {
 		audio_play_sound(snd_selectOption,0,false);
 	}

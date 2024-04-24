@@ -17,10 +17,11 @@ heart_chance = 50 - global.luck;
 buff_chance = 90;
 weapon_chance = 60 + global.luck;
 pickup_chance = 60 + global.luck;
-destroy_chance = 0; //when active, change to ~80
+destroy_chance = 80; //when active, change to ~80
 
 created_items = false;
 
+random_set_seed(global.seed+global.chest_number);
 destroy = irandom_range(1,100);
 
 global.chest_number += 1;

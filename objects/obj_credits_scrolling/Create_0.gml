@@ -30,7 +30,8 @@ ft2_player_producers_text = ["Enemies Team Producer", "John Richard"];
 
 ft3_artists_text = ["Level Team Artists", "Daming Li\nHyeongkyu Kim"];
 ft3_designers_text = ["Level Team Designers", "Ian Vokt\nSam Klopstad\nTalen Stephens\nZehao Chen"];
-ft3_engineers_text = ["Level Team / Proc Gen Engineers", "Cam Knight\nCayden Jensen\nRegie Topham"];
+ft3_engineers_text = ["Level Team Engineers", "Cam Knight\nCayden Jensen\nRegie Topham"];
+ft3_procgen_text = ["Proc Gen Engineers", "Cam Knight\nCayden Jensen"];
 ft3_player_producers_text = ["Level Team Producer", "Regie Topham"];
 
 ui_artists_text = ["UI Artists", "Hannah Suchil\nHyeongkyu Kim\nIsaac White\nZekai Lu\nZiteng Zhao"];
@@ -53,7 +54,7 @@ design_producer_text = ["Design Producers", "Ian Vokt\nIsaac White"];
 engineer_producers_text = ["Engineering Producers", "John Richard\nRegie Topham"];
 general_producers_text = ["General Producers", "Cleveland Parker\nIan Vokt\nIsaac White\nJohn Richard\nRegie Topham"];
 
-special_thanks_text = ["Special Thanks", "Protostar777 for his help in finding so many bugs\nAbby M\nAlex M\nArchie and Betty\nBrendan L\nBrenna V\nChristina V\nColin V\nDan V\nDraik04\nDylan B\nEddieTheYeti\nEric V\nErik R \nEvan A\nFergus and Gracie\nFrancis W\nJess B\nJess R\nJesse H\nJi-hoon T\nJon R\nJordon M\nJoshua R\nJulie V\nKalistapie\nKarifu\nKimball B\nLauren A\nLuke C\nMakaveli\nMarshmallow & Tanuki\nMatt T\nMistakeSenpai\nMr. Orange Cat President Natsu\nNessie\nOwen T\nPayton H\nPriscillia S\nQuinn\nRay P\nRichiachu\nRick S\nRogo Jones\nRonnie F\nRuby M\nScott W\nSora R\nStacey W\nStephen H\nSusan V\nTerry D\nTerry W\nThomas W\nTylerintn\nUsagi M\nWill T\n\nThe IGDA - Utah Chapter for letting us display our game!"];
+special_thanks_text = ["Special Thanks", "Protostar777 for his help in finding so many bugs\nAbby M\nAlex M\nArchie and Betty\nBrendan L\nBrenna V\nBritt T\nChristina V\nColin V\nDan V\nDraik04\nDylan B\nEddieTheYeti\nEric V\nErik R \nEvan A\nFergus and Gracie\nFrancis W\nGabe F\nJack S\nJess B\nJess R\nJesse H\nJi-hoon T\nJon R\nJordon M\nJoshua R\nJulie V\nKalistapie\nKarifu\nKimball B\nLauren A\nLuke C\nMakaveli\nMarshmallow and Tanuki\nMatt T\nMistakeSenpai\nMr. Orange Cat President Natsu\nNessie\nOwen T\nPayton H\nPriscillia S\nQuinn\nRay P\nRichiachu\nRick S\nRogo Jones\nRuby M\nScott W\nSora R\nStacey W\nStephen H\nStrawbs\nSusan V\nTerry D\nTerry W\nThomas W\nTylerintn\nUsagi M\nWill T\nZorpy\n\nThe IGDA - Utah Chapter for letting us display our game!\n\nBerklee College of Music for our partnership!"];
 
 capstone_text = ["Our Fellow Capstone Studios at the University of Utah",""];
 
@@ -91,7 +92,7 @@ if room = room_credits_scrolling {
 }else {
 	credits_text_array = [ft1_artists_text,ft1_designers_text,ft1_engineers_text,ft1_player_engineer_text,ft1_player_producers_text,
 					ft2_artists_text,ft2_designers_text,ft2_engineers_text,ft2_player_producers_text,
-					ft3_artists_text,ft3_designers_text,ft3_engineers_text,ft3_player_producers_text,
+					ft3_artists_text,ft3_designers_text,ft3_engineers_text,ft3_procgen_text,ft3_player_producers_text,
 					ui_artists_text,ui_designers_text,ui_engineers_text,
 					bg_artists_text,cg_artists_text,promotional_artists_text,art_polish_text,
 					music_text,sound_text,audio_dir_text,

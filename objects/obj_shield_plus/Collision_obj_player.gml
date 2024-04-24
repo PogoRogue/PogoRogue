@@ -15,4 +15,8 @@ if(is_active){
 			alarm_set(1, room_speed);
 		}
 	}
+	
+	if audio_is_playing(snd_shieldBubble_enemy) {
+		audio_stop_sound(snd_shieldBubble_enemy);
+	}
 }

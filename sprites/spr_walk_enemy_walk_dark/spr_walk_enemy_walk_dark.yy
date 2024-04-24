@@ -3,7 +3,7 @@
   "%Name":"spr_walk_enemy_walk_dark",
   "bboxMode":2,
   "bbox_bottom":62,
-  "bbox_left":21,
+  "bbox_left":22,
   "bbox_right":41,
   "bbox_top":5,
   "collisionKind":1,

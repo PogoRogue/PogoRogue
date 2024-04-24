@@ -33,3 +33,4 @@ if(cur_rep < repeats){
 	instance_destroy(self);
 }
 
+audio_play_sound(snd_rocketwhoosh_enemy,0,false);

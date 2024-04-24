@@ -8,7 +8,9 @@ vole_is_dead = false;
 vole_hp = 40;
 current_position = hole_position_1;
 
+spawn_count = 0; // for generating random positions
+
 // Start spawning vole
 alarm_set(0, room_speed);
 
-depth = 10;
+depth = 202;

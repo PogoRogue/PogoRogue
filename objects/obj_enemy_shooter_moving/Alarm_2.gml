@@ -1,3 +1,3 @@
 /// @description Reset animation
-sprite_index = spr_enemy_shooter_walking;
 
+sprite_index = spr_enemy_shooter_walking;

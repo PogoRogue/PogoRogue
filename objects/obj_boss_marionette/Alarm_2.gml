@@ -6,18 +6,21 @@ switch(ability) {
 		spring_force = 175;
 		oscillation = 0;
 		alarm_set(3, room_speed / 4);
+		//audio_play_sound(snd_slamCharge_enemy,0,false);
 		break;
 	case BOSS3_ABILITIES.BULLET_BLAST:
 		var _burst = instance_create_layer(x, y, "Instances", obj_pattern_template);
 		_burst.spread = 360;
 		_burst.repeats = 0;
-		_burst.amount = 18;
+		_burst.amount = 12;
+		_burst.spd = 2;
+		audio_play_sound(snd_bulletblast_enemy,0,false);
 		break;
 	case BOSS3_ABILITIES.SHIELD:
 		if(!instance_exists(obj_shield_plus)) {
 			var _shield = instance_create_layer(x, y, "Instances", obj_shield_plus);
 			_shield.parent = self;
-			_shield.depth = depth + 1;
+			_shield.depth = depth - 8;
 		}
 		break;
 }
