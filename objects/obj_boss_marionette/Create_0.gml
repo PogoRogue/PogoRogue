@@ -56,3 +56,5 @@ instance_create_depth(x + 40, y, depth - 5, obj_boss_marionette_thigh, {leg_num:
 instance_create_depth(x - 40, y, depth - 5, obj_boss_marionette_thigh, {leg_num: 2, length_diff: 80, angle_diff: -103});
 
 alarm_set(2, ability_cooldown*2); 
+
+explosion_sound = false;

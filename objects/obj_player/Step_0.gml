@@ -283,6 +283,10 @@ or gun_array[current_gun] != water_gun and gun_3 = water_gun {
 
 #endregion
 
+if gun_1._name != "Burst Fire Gun" and gun_2._name != "Burst Fire Gun" and gun_3._name != "Burst Fire Gun" {
+	current_burst = 0;
+}
+
 //switch between weapons
 if global.key_weapon_up and current_burst = 0 {
 	if (current_gun) < weapons_equipped-1 {

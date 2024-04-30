@@ -1,5 +1,6 @@
 /// @description Change directions
 
+/*
 if(!collision_detected) {
 	angle_velocity *= -1;
 	collision_detected = true;

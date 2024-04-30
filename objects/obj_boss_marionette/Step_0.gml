@@ -56,3 +56,17 @@ if(is_dead) {
 	weapon = BOSS3_WEAPONS.NONE;
 	ability = BOSS3_ABILITIES.NONE;
 }
+
+if place_meeting(x,y,obj_player) {
+	if(!collision_detected) {
+		angle_velocity *= -1;
+		collision_detected = true;
+		alarm_set(1, room_speed);
+	}	
+}
+
+//explosion sound 
+if sprite_index = spr_boss_marionette_death and floor(image_index) = 21 and explosion_sound = false {
+	audio_play_sound(snd_explosion,0,false);
+	explosion_sound = true;
+}

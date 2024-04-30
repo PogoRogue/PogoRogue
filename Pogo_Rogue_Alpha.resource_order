@@ -1,4 +1,8 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_text_combo1","order":1,"path":"objects/obj_text_combo1/obj_text_combo1.yy",},
+    {"name":"obj_text_combo2","order":2,"path":"objects/obj_text_combo2/obj_text_combo2.yy",},
+    {"name":"obj_text_tutorialend2","order":3,"path":"objects/obj_text_tutorialend2/obj_text_tutorialend2.yy",},
+  ],
 }
