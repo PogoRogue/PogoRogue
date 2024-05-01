@@ -1,4 +1,6 @@
-select_x = 1;
+select_x = 0;
+select_x2 = 1;
+selected_x = false;
 select_y = 1;
 alpha = 1.25;
 usable = true;
@@ -21,3 +23,5 @@ center_x = -(camera_get_view_width(view_camera[0])/2);
 center_y = camera_get_view_height(view_camera[0])/2;
 
 alarm[1] = 2;
+
+controller = global.use_controller;

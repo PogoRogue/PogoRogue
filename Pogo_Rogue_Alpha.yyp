@@ -1011,6 +1011,8 @@
     {"id":{"name":"spr_button_icon_5","path":"sprites/spr_button_icon_5/spr_button_icon_5.yy",},},
     {"id":{"name":"spr_button_icon_6","path":"sprites/spr_button_icon_6/spr_button_icon_6.yy",},},
     {"id":{"name":"spr_button_l","path":"sprites/spr_button_l/spr_button_l.yy",},},
+    {"id":{"name":"spr_button_number","path":"sprites/spr_button_number/spr_button_number.yy",},},
+    {"id":{"name":"spr_button_number_selected","path":"sprites/spr_button_number_selected/spr_button_number_selected.yy",},},
     {"id":{"name":"spr_button_orange","path":"sprites/spr_button_orange/spr_button_orange.yy",},},
     {"id":{"name":"spr_button_prompt","path":"sprites/spr_button_prompt/spr_button_prompt.yy",},},
     {"id":{"name":"spr_button_purple","path":"sprites/spr_button_purple/spr_button_purple.yy",},},
