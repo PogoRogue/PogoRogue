@@ -94,7 +94,7 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 			{
 				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2 - 2;
 			}			
-			var region_struct = create_region_struct(room_coord[0] + 1, room_coord[1] + 1, rm_width - 2, rm_height - 3);
+			var region_struct = create_region_struct(room_coord[0] + 1, room_coord[1] + 2, rm_width - 2, rm_height - 3);
 			//Add region struct to load list
 			ds_list_add(region_loading_list, region_struct);
 		}
@@ -211,19 +211,22 @@ with(obj_room_gate_close)
     }	
 }
 
+//load/unload
+if(perform_region_load_unload)
+	{
+	//Set regions 0 and 1 to loaded in region_loaded
+	region_loaded[|0] = true;
+	region_loaded[|1] = true;
 
-//Set regions 0 and 1 to loaded in region_loaded
-region_loaded[|0] = true;
-region_loaded[|1] = true;
-
-//Player starts in region zero, so deactivate regions 2+
-for(var i = 2; i < ds_list_size(region_loading_list); i++)
-{
-	var region_to_unload = region_loading_list[| i];
-	scr_Unload_Region(region_to_unload);
-	region_loaded[|i] = false;
-	show_debug_message("Region " + string(i) + " unloaded. X: " + string(region_to_unload.left_x) + ", Y: "
-	+ string(region_to_unload.top_y) + ", Width: " + string(region_to_unload.r_width) + ", Height: " + string(region_to_unload.r_height));
+	//Player starts in region zero, so deactivate regions 2+
+	for(var i = 2; i < ds_list_size(region_loading_list); i++)
+	{
+		var region_to_unload = region_loading_list[| i];
+		scr_Unload_Region(region_to_unload);
+		region_loaded[|i] = false;
+		show_debug_message("Region " + string(i) + " unloaded. X: " + string(region_to_unload.left_x) + ", Y: "
+		+ string(region_to_unload.top_y) + ", Width: " + string(region_to_unload.r_width) + ", Height: " + string(region_to_unload.r_height));
+	}
 }
 
 
