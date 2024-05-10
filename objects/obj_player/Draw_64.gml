@@ -149,7 +149,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 	if pickups_array[0].max_uses_per_bounce > 1 {
 		//draw uses_left
 		draw_set_font(fnt_combo);
-		scr_Draw_Text_Outlined(46,104,pickups_array[0].uses_per_bounce,c_white);
+		scr_Draw_Text_Outlined(46+16,104,pickups_array[0].uses_per_bounce,c_white);
 	}else if pickups_array[0].max_cooldown_time > 0 { //jetpack
 		//darkening
 		draw_sprite_ext(spr_pickup_empty,0,48,88,1,1,0,c_white,1);
@@ -237,7 +237,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 	if pickups_array[1].max_uses_per_bounce > 1 {
 		//draw uses_left
 		draw_set_font(fnt_combo);
-		scr_Draw_Text_Outlined(103,104,pickups_array[1].uses_per_bounce,c_white); 
+		scr_Draw_Text_Outlined(103+16,104,pickups_array[1].uses_per_bounce,c_white); 
 	}else if pickups_array[1].max_cooldown_time > 0 { //jetpack
 		//darkening
 		draw_sprite_ext(spr_pickup_empty,0,103,88,1,1,0,c_white,1);
@@ -355,22 +355,22 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_center);
 draw_set_font(fnt_combo2);
 draw_set_color(make_color_rgb(242,240,229));
-draw_text(17,124,"Items menu: ");
+draw_text(17,124,"Items info: ");
 if global.use_controller = true {
-	draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[13][0]),2,91,124);
+	draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[13][0]),2,83,124);
 }else {
 	var keyboard_array_value = global.keyboard_array[13][0];
 	var keyboard_text = scr_Keyboard_Get_Key_String(keyboard_array_value);
 			
 	if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
 		if is_string(keyboard_text) {
-			draw_text(85,124,keyboard_text);
+			draw_text(78,124,keyboard_text);
 		}else {
-			draw_sprite(keyboard_text,0,91,124);
+			draw_sprite(keyboard_text,0,79,124);
 		}
 	}else {
 		var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
-		draw_sprite(mouse_sprite,0,91,124);	
+		draw_sprite(mouse_sprite,0,83,124);	
 	}
 }
 

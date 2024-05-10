@@ -367,7 +367,7 @@ function scr_Pickups(){
 	
 	pickup_freeze = {
 		_name: "Freeze",
-		tagline: "Instantly freeze movement while mid-air, allowing you to fire in place on enemies below. Unfreeze after 3s or on re-press.",
+		tagline: "Reload your current weapon and instantly freeze your movement, allowing you to fire on enemies below. Unfreeze after 3s or on re-press.",
 		gui_sprite: spr_pickup_freeze,
 		max_cooldown_time: -1,
 		cooldown_time: -1 ,
@@ -392,6 +392,10 @@ function scr_Pickups(){
 				rotation_delay = rotation_speed / 10;
 				freeze_time = 180;
 				freeze_angle = angle;
+				//reload current weapon
+				if gun_array[current_gun]._name != "Boomerangs" {
+					gun_array[current_gun].current_bullets = gun_array[current_gun].bullets_per_bounce + max_ammo_buff;
+				}
 			}
 			//uses_per_bounce -= 1;
 			if uses_per_bounce <= 0 {
