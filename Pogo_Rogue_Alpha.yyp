@@ -143,14 +143,10 @@
     {"$GMFolder":"","%Name":"Input buttons","folderPath":"folders/Sprites/UI/Input buttons.yy","name":"Input buttons","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Menu","folderPath":"folders/Sprites/UI/Menu.yy","name":"Menu","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Weapons","folderPath":"folders/Sprites/Weapons.yy","name":"Weapons","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Steamworks","folderPath":"folders/Steamworks.yy","name":"Steamworks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":"GMEXT-Steamwork Unix Docs.html","CopyToMask":-1,"filePath":"datafiles","name":"GMEXT-Steamwork Unix Docs.html","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"GMEXT-Steamwork Win Docs","CopyToMask":0,"filePath":"datafiles","name":"GMEXT-Steamwork Win Docs","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-  ],
+  "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
@@ -158,7 +154,6 @@
   },
   "name":"Pogo_Rogue_Alpha",
   "resources":[
-    {"id":{"name":"Steamworks","path":"extensions/Steamworks/Steamworks.yy",},},
     {"id":{"name":"fnt_combo","path":"fonts/fnt_combo/fnt_combo.yy",},},
     {"id":{"name":"fnt_combo2","path":"fonts/fnt_combo2/fnt_combo2.yy",},},
     {"id":{"name":"fnt_gm_15","path":"fonts/fnt_gm_15/fnt_gm_15.yy",},},
