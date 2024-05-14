@@ -20,6 +20,9 @@ or obj_player.weapons_equipped = 0 {
 		if scr_In_Array(obj_player.all_guns_array,weapon) {
 			for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
 				if obj_player.all_guns_array[i] = weapon {
+					if global.weapon_unlocked_array[i] = false {
+						instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+					}
 					global.weapon_unlocked_array[i] = true;
 					ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
 				}
@@ -54,6 +57,9 @@ or obj_player.weapons_equipped = 0 {
 		if scr_In_Array(obj_player.all_guns_array,weapon) {
 			for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
 				if obj_player.all_guns_array[i] = weapon {
+					if global.weapon_unlocked_array[i] = false {
+						instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+					}
 					global.weapon_unlocked_array[i] = true;
 					ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
 				}
@@ -75,6 +81,9 @@ or obj_player.weapons_equipped = 0 {
 		if scr_In_Array(obj_player.all_guns_array,weapon) {
 			for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
 				if obj_player.all_guns_array[i] = weapon {
+					if global.weapon_unlocked_array[i] = false {
+						instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+					}
 					global.weapon_unlocked_array[i] = true;
 					ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
 				}
@@ -115,6 +124,9 @@ or obj_player.weapons_equipped = 0 {
 		if scr_In_Array(obj_player.all_guns_array,weapon) {
 			for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
 				if obj_player.all_guns_array[i] = weapon {
+					if global.weapon_unlocked_array[i] = false {
+						instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+					}
 					global.weapon_unlocked_array[i] = true;
 					ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
 				}

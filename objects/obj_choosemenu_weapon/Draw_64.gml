@@ -2,7 +2,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
 draw_set_font(fnt_item_popup);
 draw_set_alpha(1); //alpha
-scr_Draw_Text_Outlined(center_x,center_y-140,"Choose your starting weapon:", c_white); //center_y - 140 //center_y-56
+scr_Draw_Text_Outlined(center_x,center_y-56,"Choose your starting weapon:", c_white); //center_y - 140 //center_y-56
 
 draw_set_font(fnt_itemdescription2);
 draw_set_halign(fa_center);
@@ -11,7 +11,7 @@ draw_set_valign(fa_center);
 //item sprites
 for (i = 0; i < array_length(weapons_array); i++) {
 	var xx = (center_x - ((x_gap*select_x_max-x_gap)/2)) + (i % select_x_max) * x_gap;
-	var yy = (156) + floor(i / select_x_max) * y_gap; //156 + floor //center_y+8+floor
+	var yy = (center_y+8) + floor(i / select_x_max) * y_gap; //156 + floor //center_y+8+floor
 
 	//WEAPONS
 	if i < array_length(weapons_array) {
@@ -28,7 +28,7 @@ for (i = 0; i < array_length(weapons_array); i++) {
 //buttons
 for (i = 0; i < array_length(weapons_array); i++) {
 	var xx = (center_x - ((x_gap*select_x_max-x_gap)/2)) + (i % select_x_max) * x_gap;
-	var yy = (156) + floor(i / select_x_max) * y_gap; //156 + floor //center_y+8+floor
+	var yy = (center_y+8) + floor(i / select_x_max) * y_gap; //156 + floor //center_y+8+floor
 	
 	if (select = i + 1) {
 		scr_Draw_Input_UI(xx,yy+4,18,0,fnt_combo2,fa_center,fa_middle);
@@ -39,7 +39,7 @@ for (i = 0; i < array_length(weapons_array); i++) {
 //descriptions
 for (i = 0; i < array_length(all_weapons); i++) {
 	var xx = (center_x - ((x_gap*select_x_max-x_gap)/2)) + (i % select_x_max) * x_gap;
-	var yy = 226 + floor(i / select_x_max) * y_gap; //226 //295
+	var yy = 295 + floor(i / select_x_max) * y_gap; //226 //295
 	if (i = select-1) {
 		var x_offset = 154 + (((select_x_max-4)*(-x_gap))/2);
 		if select_x <= select_x_max/2 {

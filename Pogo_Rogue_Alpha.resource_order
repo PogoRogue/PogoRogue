@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"obj_item_text_newdiscovery","order":1,"path":"objects/obj_item_text_newdiscovery/obj_item_text_newdiscovery.yy",},
     {"name":"obj_text_combo1","order":1,"path":"objects/obj_text_combo1/obj_text_combo1.yy",},
     {"name":"obj_text_combo2","order":2,"path":"objects/obj_text_combo2/obj_text_combo2.yy",},
     {"name":"obj_text_tutorialend2","order":3,"path":"objects/obj_text_tutorialend2/obj_text_tutorialend2.yy",},
@@ -8,5 +9,6 @@
     {"name":"spr_button_number_selected","order":2,"path":"sprites/spr_button_number_selected/spr_button_number_selected.yy",},
     {"name":"spr_button_number","order":1,"path":"sprites/spr_button_number/spr_button_number.yy",},
     {"name":"spr_item_menu_areas","order":3,"path":"sprites/spr_item_menu_areas/spr_item_menu_areas.yy",},
+    {"name":"spr_shieldbubblemeter","order":4,"path":"sprites/spr_shieldbubblemeter/spr_shieldbubblemeter.yy",},
   ],
 }

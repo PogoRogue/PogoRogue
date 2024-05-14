@@ -108,3 +108,26 @@ for (i = 0; i < array_length(global.all_weapons); i++) {
 instance_destroy(obj_control);
 instance_destroy(obj_player_mask);
 instance_destroy(obj_player);
+
+//copied from obj_stats
+passives_unlocked = 0;
+actives_unlocked = 0;
+weapons_unlocked = 0;
+
+for(i = 0; i < array_length(global.passive_unlocked_array); i++) { //passives
+	if global.passive_unlocked_array[i] = true {
+		passives_unlocked++;
+	}
+}
+for(i = 0; i < array_length(global.active_unlocked_array); i++) { //actives
+	if global.active_unlocked_array[i] = true {
+		actives_unlocked++;
+	}
+}
+for(i = 0; i < array_length(global.weapon_unlocked_array); i++) { //weapons
+	if global.weapon_unlocked_array[i] = true {
+		weapons_unlocked++;
+	}
+}
+
+total_items_unlocked = passives_unlocked + actives_unlocked + weapons_unlocked;

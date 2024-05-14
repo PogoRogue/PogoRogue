@@ -15,3 +15,7 @@ if fade_out = true {
 		obj_player.shield_bubble = false;
 	}
 }
+
+if destroy_time_live > 0 {
+	destroy_time_live -= 1;	
+}

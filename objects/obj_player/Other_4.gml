@@ -29,4 +29,6 @@ if room = room_shop or global.last_room = room_shop {
 	state = state_shop;
 	image_xscale = 1;
 	image_yscale = 1;
+	hspeed = 0;
+	vspeed = 0;
 }

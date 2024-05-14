@@ -19,8 +19,18 @@ function scr_Death_Screen(win){
 	for(i = 0; i < array_length(global.all_passives_used); i++) {
 		if (i < 21) {
 			draw_sprite(global.all_passives_used[i],0,x+18+(20*(i%7)),y+75+(floor(i/7)*17));
+			
+			//numbers of each passive
+			draw_set_halign(fa_center);
+			draw_set_valign(fa_center);
+			draw_set_font(fnt_itemdescription2);
+			if global.all_buff_numbers[i] > 1 {
+				scr_Draw_Text_Outlined(x+18+(20*(i%7))-6,y+75+4+(floor(i/7)*17),global.all_buff_numbers[i],c_white);
+			}
 		}
 	}
+	
+	
 	
 	draw_set_font(fnt_combo2);
 	draw_set_halign(fa_center);

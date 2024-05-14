@@ -21,6 +21,9 @@ or obj_player.num_of_pickups = 0 {
 		if scr_In_Array(obj_player.all_pickups_array,pickup) {
 			for(i = 0; i < array_length(obj_player.all_pickups_array);i++) {
 				if obj_player.all_pickups_array[i] = pickup {
+					if global.active_unlocked_array[i] = false {
+						instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+					}
 					global.active_unlocked_array[i] = true;
 					ini_write_real("itemsunlocked", "active " + string(i), global.active_unlocked_array[i]);
 				}
@@ -42,6 +45,9 @@ or obj_player.num_of_pickups = 0 {
 		if scr_In_Array(obj_player.all_pickups_array,pickup) {
 			for(i = 0; i < array_length(obj_player.all_pickups_array);i++) {
 				if obj_player.all_pickups_array[i] = pickup {
+					if global.active_unlocked_array[i] = false {
+						instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+					}
 					global.active_unlocked_array[i] = true;
 					ini_write_real("itemsunlocked", "active " + string(i), global.active_unlocked_array[i]);
 				}

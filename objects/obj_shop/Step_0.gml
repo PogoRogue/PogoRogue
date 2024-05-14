@@ -122,6 +122,28 @@ if created_items = false {
 			index = other.index;
 			ii = other.i;
 		}
+		//replace passive with new passive if player already has it
+		if i = 2 and instance_exists(slot_items_array[i])
+		or i = 3 and instance_exists(slot_items_array[i]) {
+			if slot_items_array[i].max_uses = 1 or slot_items_array[i].sold_out {
+				while scr_In_Array(global.all_buff_sprites, slot_items_array[i].sprite_index) and (slot_items_array[i].max_uses = 1 or slot_items_array[i].sold_out) {
+					if scr_In_Array(global.all_buff_sprites, slot_items_array[i].sprite_index) and (slot_items_array[i].max_uses = 1 or slot_items_array[i].sold_out) {
+						//destroy old item
+						slot_items_array[i].item_cost = 0;
+						instance_destroy(slot_items_array[i]);
+					}
+				
+					slot_items_array[i] = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
+					while slot_items_array[2] = slot_items_array[3] { //change if 2 of same item
+						slot_items_array[i] = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
+					}
+					with instance_create_depth(xx,yy,depth-1,slot_items_array[i]) {
+						follow_player = false;
+						index = other.index;
+					}
+				}
+			}
+		}
 		//replace weapon with new weapon if player already has it
 		if i = 4 and instance_exists(slot_items_array[i])
 		or i = 5 and instance_exists(slot_items_array[i]) {
