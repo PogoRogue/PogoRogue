@@ -30,7 +30,8 @@ if instance_exists(obj_camera) {
 
 //destroy when touching ground
 if (destroy_on_impact and num_of_bounces <= 0 and destroyable = true) {
-	if (place_meeting(x,y,obj_ground)) and global.drilltipbullets = false {
+	if (place_meeting(x,y,obj_ground)) and global.drilltipbullets = false
+	or (place_meeting(x,y,obj_boss_sequence)) and global.drilltipbullets = false and instance_place(x,y,obj_boss_sequence).image_index != 5 {
 		if gun_name = "Paintball Gun" {
 			alarm[0] = 1;
 			//splatter code here
@@ -271,18 +272,31 @@ if (gun_name = "Yo-yo") {
 			y = obj_player.y + lengthdir_y(dist,ang-90);
 		}else {
 			reached_end = true;
+			if !audio_is_playing(snd_yoyo2) {
+				audio_play_sound(snd_yoyo2,0,false);
+			}
 		}
 	}
 	
 	//retract
 	with obj_player {
 		if !(key_fire_projectile) or gun != yoyo_gun {
-			other.retracted = true;
+			if other.retracted = false {
+				other.retracted = true;
+				if !audio_is_playing(snd_yoyo2) and other.reached_end = true {
+					audio_play_sound(snd_yoyo2,0,false);
+				}
+			}
 		}
 		
 		//delete if not free
 		if (state != state_free and state != state_freeze) {
-			other.retracted = true;
+			if other.retracted = false {
+				other.retracted = true;
+				if !audio_is_playing(snd_yoyo2) and other.reached_end = true {
+					audio_play_sound(snd_yoyo2,0,false);
+				}
+			}
 		}
 	}
 	

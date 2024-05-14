@@ -1,4 +1,5 @@
 /// @description Change enemies in region counter
+/* moved to step event to be more instantaneous
 if(proc_gen_tag != -1 && instance_exists(obj_proc_gen_location_analysis))
 {
 		show_debug_message("Enemy killed! +1 added, region: " + string(proc_gen_tag));		

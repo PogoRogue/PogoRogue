@@ -19,4 +19,20 @@ function scr_Conveyor_Belt(){
 	}else {
 		speed = 0;	
 	}
+	
+	if place_meeting(x+conveyor_speed,y-4,obj_ground) and conveyor_speed > 0 {
+		x -= conveyor_speed;
+	}
+	if place_meeting(x+conveyor_speed,y-4,obj_ground) and conveyor_speed < 0 {
+		x -= conveyor_speed;
+	}
+	
+	with obj_player_mask {
+		if place_meeting(x+other.conveyor_speed,y,obj_ground) and other.conveyor_speed > 0 {
+		other.x -= other.conveyor_speed;
+		}
+		if place_meeting(x+other.conveyor_speed,y,obj_ground) and other.conveyor_speed < 0 {
+			other.x -= other.conveyor_speed;
+		}	
+	}
 }

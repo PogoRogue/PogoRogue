@@ -26,3 +26,11 @@ if(instance_exists(controller)) {
 
 sprite_index = current_sprite;
 image_index = min(image_index, sprite_get_number(current_sprite) - 1);
+
+if place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask) {
+	depth = obj_player.depth - 5;	
+}else {
+	if instance_exists(obj_boss_sequence_body) {
+		depth = obj_boss_sequence_body.depth - 1;
+	}
+}

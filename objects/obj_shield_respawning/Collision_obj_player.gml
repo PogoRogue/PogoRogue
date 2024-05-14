@@ -1,5 +1,6 @@
 /// @description Deactivate shield
 
+/* disabled collision because of issues. Can maybe rework it later
 if(is_active){
 	obj_player.state = obj_player.state_bouncing;
 	obj_player.speed = 0;

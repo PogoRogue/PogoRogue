@@ -264,6 +264,7 @@ state_chargejump = function() {
 		audio_stop_sound(snd_chargejump);
 		audio_stop_sound(snd_bounce);
 		audio_stop_sound(snd_bounce2);
+		audio_stop_sound(snd_bounce3);
 		audio_play_sound(snd_chargejump_launch,0,false);
 		allow_flames = true;
 		min_flames_speed = 7.2;
@@ -849,9 +850,9 @@ weapons_equipped = num_of_weapons;
 all_guns_array = [default_gun,paintball_gun,shotgun_gun,
 				burstfire_gun,javelin_gun,bouncyball_gun,
 				grenade_gun, boomerang_gun,starsucker_gun,
-				water_gun, slime_gun, yoyo_gun,
+				water_gun, bubble_gun, yoyo_gun,
 				missile_gun, sniper_gun, laser_gun,
-				bubble_gun]; //all guns
+				slime_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();
@@ -930,9 +931,9 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_firedash, pickup_groundpound, pickup_hatgun, 
-					pickup_chargejump, pickup_reload, pickup_freeze,
-					pickup_emergency, pickup_parachute, pickup_shieldbubble,
+all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency, 
+					pickup_parachute, pickup_firedash, pickup_groundpound, 
+					pickup_hatgun, pickup_chargejump, pickup_shieldbubble,
 					pickup_target, pickup_blink, pickup_jetpack,
 					pickup_camera, pickup_frenzy, pickup_bulletblast,
 					pickup_slowmo]; //all pickups

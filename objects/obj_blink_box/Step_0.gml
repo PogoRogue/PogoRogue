@@ -46,6 +46,21 @@ for(i = 0; i < 1536; i+=16) {
 	}
 }
 
+for(j = 0; j < 512; j+=16) {
+	//shop gates
+	if place_meeting(x+j,y,obj_room_gate_open_shop) {
+		if init_y < instance_place(x+j,y,obj_room_gate_open_shop).y {
+			gate_object = instance_place(x+j,y,obj_room_gate_open_shop);
+			outside_gates = true;
+		}
+	}else if place_meeting(x-j,y,obj_room_gate_open_shop) {
+		if init_y < instance_place(x-j,y,obj_room_gate_open_shop).y {
+			gate_object = instance_place(x-j,y,obj_room_gate_open_shop);
+			outside_gates = true;
+		}
+	}
+}
+
 //check boss gates
 with(obj_boss_gate_close) {
 	if(self.y > other.y) {
@@ -63,8 +78,13 @@ if outside_gates = true {
 	if !instance_exists(gate_object) {
 		outside_gates = false;
 		gate_object = noone;
-	}else {
+	}else if gate_object.object_index != obj_room_gate_open_shop {
 		if bbox_top > gate_object.bbox_bottom {
+			outside_gates = false;
+			gate_object = noone;
+		}
+	}else {
+		if bbox_bottom < gate_object.bbox_top {
 			outside_gates = false;
 			gate_object = noone;
 		}

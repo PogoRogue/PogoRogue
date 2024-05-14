@@ -23,9 +23,9 @@ if (instance_exists(obj_player)) {
 		}
 	}
 	
-	if (keyboard_check(vk_rcontrol))
+	/*if (keyboard_check(vk_rcontrol))
 	{
 		global.phase = 2;
 		scr_Room_Transition(room_proc_gen_test);
-	}
+	}*/
 }

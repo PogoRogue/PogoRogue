@@ -13,4 +13,4 @@ spawn_count = 0; // for generating random positions
 // Start spawning vole
 alarm_set(0, room_speed);
 
-depth = 10;
+depth = 202;

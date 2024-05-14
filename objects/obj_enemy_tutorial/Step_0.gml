@@ -16,7 +16,12 @@ if(is_dead) {
 	if (doOnce) {
 		image_index = 1;
 		doOnce = false;
-		audio_play_sound(snd_enemyhurt,0,false);
+		randomize();
+		var random_death_sound = choose(snd_enemy_death,snd_enemy_death2,snd_enemy_death3);
+		random_set_seed(global.seed);
+		if !audio_is_playing(random_death_sound) {
+			audio_play_sound(random_death_sound,0,false);
+		}
 		scr_Screen_Shake(2, 2, false);
 	}
 	
@@ -25,6 +30,14 @@ if(is_dead) {
 		global.combo_length = global.combo_max;	
 		global.enemy_killed = true;
 		add_to_combo = false;
+		
+		with instance_create_depth(x+sprite_width/2,y+sprite_height/2,depth-1,obj_coin_spawner) {
+			if global.combo < 5 {
+				num_of_coins = global.combo;
+			}else {
+				num_of_coins = 5;
+			}
+		}
 	}else if init_add_to_combo = false {
 		alarm_set(0, room_speed);
 	}

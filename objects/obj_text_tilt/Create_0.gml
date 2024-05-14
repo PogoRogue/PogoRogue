@@ -1,5 +1,5 @@
 /// @description Initialize strings by column
 
-tutorial_text =   "A and D\n" +
-				  "or Joystick\n" +
+tutorial_text =   "Joystick\n" +
+				  "or A and D\n" +
 				  "to tilt!"

@@ -6,10 +6,11 @@ event_inherited();
 
 on_ground = place_meeting(x, y + 1, obj_ground_parent);
 
+
 switch(current_state) {
 	case ROBOT_STATES.IDLE:
 		if(state_has_changed) {
-			sprite_index = spr_walk_enemy_idle;
+			sprite_index = spr_walk_enemy_idle_dark;
 			alarm_set(2, room_speed / 2);
 		}
 		
@@ -20,7 +21,7 @@ switch(current_state) {
 		break;
 	case ROBOT_STATES.WALKING:
 		if(state_has_changed) {
-			sprite_index = spr_walk_enemy_walk;
+			sprite_index = spr_walk_enemy_walk_dark;
 		}
 		
 		if(jump_cooldown <= 0 && distance_to_object(player) < range) {

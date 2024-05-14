@@ -19,3 +19,8 @@ if(is_despawning) {
 	image_alpha *= 0.9;
 }
 
+if place_meeting(x,y,obj_player) {
+	depth = obj_player.depth - 10;
+}else {
+	depth = 10;	
+}

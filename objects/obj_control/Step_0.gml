@@ -1,8 +1,8 @@
-restart_button = keyboard_check_pressed(ord("R")); //press R key to restart room (temporary)
-screenshake_button = keyboard_check_pressed(vk_backspace); //press escape key to restart room (temporary)
-mute_button = keyboard_check_pressed(ord("M")); //press M to mute audio (temporary)
+restart_button = 0;//keyboard_check_pressed(ord("R")); //press R key to restart room (temporary)
+screenshake_button = 0;//keyboard_check_pressed(vk_backspace); //press escape key to restart room (temporary)
+mute_button = 0;//keyboard_check_pressed(ord("M")); //press M to mute audio (temporary)
 itemmenu_button = global.key_item_menu; 
-skiplevel_button = keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
+skiplevel_button = 0;//keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
 
 if (restart_button) {
 	room_persistent = false;
@@ -88,6 +88,15 @@ if instance_exists(obj_pause) {
 	}else if obj_pause.pause = false {
 		if audio_is_paused(snd_laser) = true {
 			audio_resume_sound(snd_laser);
+		}
+	}
+	if audio_is_playing(snd_laser_enemy) and !instance_exists(obj_enemy_laser) and obj_pause.pause = false {
+		audio_stop_sound(snd_laser_enemy);
+	}else if audio_is_playing(snd_laser_enemy) and !instance_exists(obj_enemy_laser) {
+		audio_pause_sound(snd_laser_enemy);
+	}else if obj_pause.pause = false {
+		if audio_is_paused(snd_laser_enemy) = true {
+			audio_resume_sound(snd_laser_enemy);
 		}
 	}
 }

@@ -1,7 +1,7 @@
 
 // Inherit the parent event
 event_inherited();
-depth = -7;
+depth = -9;
 
 // Select target
 target_x = obj_player.x;
@@ -24,3 +24,6 @@ alarm[1]=1;
 
 drop_coins = false;
 created_items = true;
+
+explode = false;
+red_alpha = 0;

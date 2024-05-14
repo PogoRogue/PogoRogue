@@ -78,6 +78,9 @@ if key_select and centered = true and fade_away = false {
 	if scr_In_Array(obj_player.all_pickups_array,all_actives[select-1]) {
 		for(i = 0; i < array_length(obj_player.all_pickups_array);i++) {
 			if obj_player.all_pickups_array[i] = all_actives[select-1] {
+				if global.active_unlocked_array[i] = false {
+					instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+				}
 				global.active_unlocked_array[i] = true;
 				ini_write_real("itemsunlocked", "active " + string(i), global.active_unlocked_array[i]);
 			}

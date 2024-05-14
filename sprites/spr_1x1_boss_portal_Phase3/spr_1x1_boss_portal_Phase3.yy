@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_1x1_boss_portal_Phase3",
   "bboxMode":0,
-  "bbox_bottom":30,
+  "bbox_bottom":31,
   "bbox_left":0,
   "bbox_right":31,
   "bbox_top":0,

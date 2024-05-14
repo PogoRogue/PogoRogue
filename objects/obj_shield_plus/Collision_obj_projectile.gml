@@ -14,5 +14,8 @@ if other.destroy_on_impact = true {
 			_bullet.speed=7;
 			_bullet.sprite_index = other.sprite_index;
 		}
+		if audio_is_playing(snd_shieldBubble_enemy) {
+			audio_stop_sound(snd_shieldBubble_enemy);
+		}
 	}
 }

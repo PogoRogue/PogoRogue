@@ -16,13 +16,13 @@ function scr_Controls(){
 	global.player_left_keys = [ord("A"),vk_left];
 	global.shoot_keys = [vk_space,-1];
 	global.recenter_keys = [ord("W"),vk_up];
-	global.pickup1_keys = [mb_left,-1];
-	global.pickup2_keys = [mb_right,-1];
+	global.pickup1_keys = [mb_left,vk_shift];
+	global.pickup2_keys = [mb_right,vk_lcontrol];
 	global.interact_keys = [ord("E"),-1];
 	global.weapon1_keys = [ord("1"),-1];
 	global.weapon2_keys = [ord("2"),-1];
 	global.weapon3_keys = [ord("3"),-1];
-	global.nextweapon_keys = [-1,-1];
+	global.nextweapon_keys = [ord("Q"),-1];
 	global.prevweapon_keys = [-1,-1];
 	global.pause_keys = [vk_escape,ord("P")];
 	global.item_keys = [vk_tab,-1];

@@ -84,6 +84,9 @@ if key_select and centered = true and fade_away = false {
 	if scr_In_Array(obj_player.all_guns_array,all_weapons[select-1]) {
 		for(i = 0; i < array_length(obj_player.all_guns_array);i++) {
 			if obj_player.all_guns_array[i] = all_weapons[select-1] {
+				if global.weapon_unlocked_array[i] = false {
+					instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+				}
 				global.weapon_unlocked_array[i] = true;
 				ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
 			}

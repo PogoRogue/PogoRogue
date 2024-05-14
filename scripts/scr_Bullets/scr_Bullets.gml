@@ -126,7 +126,7 @@ function scr_Bullets(){
 		firerate: 3,                     
 		destroy_on_impact: true,
 		screen_shake: {magnitude: 0, frames: 0},
-		destroy_time: 20,
+		destroy_time: 25,
 		flash_frame: 12,
 		grav_affected: false,
 		grv: obj_player.grv,

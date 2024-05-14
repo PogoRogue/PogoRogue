@@ -244,6 +244,14 @@ if (canshoot > 0) {
 		if gun.spread_number > 1 and frenzy = false and aerial_assassin_frenzy = false {
 			gun.current_bullets -= 1;
 		}
+	}else {
+		if (audio_is_playing(snd_watergun)) {
+			audio_stop_sound(snd_watergun);
+		}
+	}	
+}else {
+	if (audio_is_playing(snd_watergun)) {
+		audio_stop_sound(snd_watergun);
 	}
 }
 
@@ -274,6 +282,10 @@ or gun_array[current_gun] != water_gun and gun_3 = water_gun {
 }
 
 #endregion
+
+if gun_1._name != "Burst Fire Gun" and gun_2._name != "Burst Fire Gun" and gun_3._name != "Burst Fire Gun" {
+	current_burst = 0;
+}
 
 //switch between weapons
 if global.key_weapon_up and current_burst = 0 {
@@ -373,6 +385,7 @@ if (dead = true and global.revive = false and state != state_revive) {
 	if !instance_exists(obj_deathscreen) {
 		instance_create_depth(x,y,depth-1000,obj_deathscreen);
 		speed /= 2;
+		audio_play_sound(snd_player_death,0,false);
 	}
 	
 	//fall through ground on death

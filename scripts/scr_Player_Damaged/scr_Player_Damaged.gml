@@ -45,7 +45,9 @@ function scr_Player_Damaged(damage){
 			//screen shake
 			scr_Screen_Shake(8, 15, false);
 			
-			audio_play_sound(snd_hurt,0,false);
+			randomize();
+			audio_play_sound(choose(snd_hurt,snd_hurt2,snd_hurt3),0,false);
+			random_set_seed(global.seed);
 		}else if invincible = false {
 			current_iframes = num_iframes;
 			hspeed = -2 * sign(hspeed);

@@ -8,7 +8,7 @@ buff_chance = 0; //percent
 pickup_chance = 0; //percent
 weapon_chance = 0; //percent
 
-depth = -5;
+depth = -7;
 spd = 0.3;
 rotation_spd = 0.5;
 hp = 128;
@@ -63,3 +63,14 @@ for(var _i = -3; _i < 4; _i++) {
 drop_coins = false;
 
 instance_create_depth(x, y, -20, obj_boss_sphere_health);
+
+explode = false;
+red_alpha = 0;
+
+spawned = false;
+white_alpha = 0;
+
+init_x = x;
+init_y = y;
+
+num_of_bounces = 0;

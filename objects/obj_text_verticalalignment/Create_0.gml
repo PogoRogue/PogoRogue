@@ -1,4 +1,4 @@
 /// @description Initialize strings by column
 
-tutorial_text =   "Hold W or Up\n" +
+tutorial_text =   "Hold Up or W\n" +
 				  "to straighten out!"

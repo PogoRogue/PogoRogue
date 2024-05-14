@@ -14,7 +14,7 @@ if pause = true {
 	//Draw location info to top of screen
 	if(draw_chunk_message)
 	{
-		draw_text(camera_get_view_width(view_camera[0])/2 - 20, 20, sprite_chunk_message);
+		//draw_text(camera_get_view_width(view_camera[0])/2 - 20, 20, sprite_chunk_message);
 	}
 	
 	//darken screen

@@ -37,9 +37,9 @@ passives_array = [spr_buffitem_lasersight, spr_buffitem_planetarybullets,spr_buf
 				spr_buffitem_psychicbullets,spr_buffitem_righteousrevenge, spr_buffitem_robbery,
 				spr_buffitem_recycling,spr_buffitem_juggler]
 				
-actives_array = [spr_pickup_firedash, spr_pickup_groundpound, spr_pickup_hatgun, 
-				spr_pickup_chargejump, spr_pickup_reload, spr_pickup_freeze,
-				spr_pickup_emergency, spr_pickup_parachute, spr_pickup_shieldbubble,
+actives_array = [spr_pickup_reload, spr_pickup_freeze, spr_pickup_emergency, 
+				spr_pickup_parachute, spr_pickup_firedash, spr_pickup_groundpound, 
+				spr_pickup_hatgun, spr_pickup_chargejump, spr_pickup_shieldbubble,
 				spr_pickup_target, spr_pickup_blink, spr_pickup_jetpack,
 				spr_pickup_camera, spr_pickup_frenzy, spr_pickup_bulletblast,
 				spr_pickup_slowmo];
@@ -47,9 +47,9 @@ actives_array = [spr_pickup_firedash, spr_pickup_groundpound, spr_pickup_hatgun,
 weapons_array = [spr_gun_default,spr_gun_paintball,spr_gun_shotgun,
 				spr_gun_burstfire,spr_gun_javelins,spr_gun_bouncyball,
 				spr_gun_grenade, spr_gun_boomerang,spr_gun_starsucker,
-				spr_gun_water, spr_gun_slime, spr_gun_yoyo,
+				spr_gun_water, spr_gun_bubble, spr_gun_yoyo,
 				spr_gun_missile, spr_gun_sniper, spr_gun_laser,
-				spr_gun_bubble];
+				spr_gun_slime];
 				
 current_array = passives_array;
 
@@ -108,3 +108,26 @@ for (i = 0; i < array_length(global.all_weapons); i++) {
 instance_destroy(obj_control);
 instance_destroy(obj_player_mask);
 instance_destroy(obj_player);
+
+//copied from obj_stats
+passives_unlocked = 0;
+actives_unlocked = 0;
+weapons_unlocked = 0;
+
+for(i = 0; i < array_length(global.passive_unlocked_array); i++) { //passives
+	if global.passive_unlocked_array[i] = true {
+		passives_unlocked++;
+	}
+}
+for(i = 0; i < array_length(global.active_unlocked_array); i++) { //actives
+	if global.active_unlocked_array[i] = true {
+		actives_unlocked++;
+	}
+}
+for(i = 0; i < array_length(global.weapon_unlocked_array); i++) { //weapons
+	if global.weapon_unlocked_array[i] = true {
+		weapons_unlocked++;
+	}
+}
+
+total_items_unlocked = passives_unlocked + actives_unlocked + weapons_unlocked;

@@ -28,6 +28,9 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 	if scr_In_Array(obj_player.all_buffs_array,buff) {
 		for(i = 0; i < array_length(obj_player.all_buffs_array);i++) {
 			if obj_player.all_buffs_array[i] = buff {
+				if global.passive_unlocked_array[i] = false and room != room_tutorial {
+					instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+				}
 				global.passive_unlocked_array[i] = true;
 				ini_write_real("itemsunlocked", "passive " + string(i), global.passive_unlocked_array[i]);
 			}

@@ -31,3 +31,5 @@ if(cur_rep < repeats){
 }else{
 	instance_destroy(self);
 }
+
+audio_play_sound(snd_shotgun,0,false);

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.1,
+  "duration":5.832494,
   "name":"snd_laser",
   "parent":{
     "name":"Weapons",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_laser.wav",
+  "soundFile":"snd_laser.ogg",
   "type":1,
   "volume":1.0,
 }

@@ -93,7 +93,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			}
 			else if(Red > 200)
 			{
-				return obj_enemy_stomp_only_moving;
+				return obj_enemy_shooter_moving;
 			}
 			else if(Red > 179)
 			{
@@ -118,6 +118,9 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		if(Green == 255)
 		{
 			return obj_chest;
+		}
+		else if Green > 239 {
+			return obj_chest_combat;
 		}
 		else if(Green > 228)
 		{
@@ -203,13 +206,25 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_angled_platform_right;
 		}
+		else if(Red == 30 && Green == 30 && Blue == 30)
+		{
+			return obj_room_gate_open_shop;
+		}
 		else if(Red == 25 && Green == 25 && Blue == 25)
 		{
-			return obj_instructions;
+			//return obj_instructions;
 		}
 		else if(Red == 20 && Green == 20 && Blue == 20)
 		{
 			return obj_pickup_station;
+		}
+		else if(Red == 15 && Green == 15 && Blue == 15)
+		{
+			return obj_ground_shopcoverup;
+		}
+		else if(Red == 12 && Green == 12 && Blue == 12)
+		{
+			return obj_ground_bosscoverup;
 		}
 		else if(Red == 10 && Green == 10 && Blue == 10)
 		{

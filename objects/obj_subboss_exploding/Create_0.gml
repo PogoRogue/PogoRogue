@@ -12,4 +12,7 @@ drop = false
 
 reset = false
 
-image_speed = 0
+//image_speed = 0;
+
+explode = false;
+red_alpha = 0;

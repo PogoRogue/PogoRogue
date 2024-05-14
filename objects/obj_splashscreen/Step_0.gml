@@ -17,9 +17,9 @@ if alpha < 3 and alpha_up = true {
 	alpha = 3;
 }
 
-if alpha > 0 and alpha_up = false {
+if alpha > -0.5 and alpha_up = false {
 	alpha -= 0.025;
-}else if alpha <= 0 and alpha_up = false {
+}else if alpha <= -0.5 and alpha_up = false {
 	if splash_num < max_splash_num {
 		alpha_up = true;
 	}
