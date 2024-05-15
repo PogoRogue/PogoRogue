@@ -39,17 +39,20 @@ center_x = -(camera_get_view_width(view_camera[0])/2);
 center_y = camera_get_view_height(view_camera[0])/2;
 
 alarm[1] = 2;
-				
 
-/*weapons_array = [obj_item_weapon_default,obj_item_weapon_paintball,obj_item_weapon_shotgun,
+test_mode = true; //set false for builds
+
+if test_mode = false {
+	weapons_array = [obj_item_weapon_paintball,obj_item_weapon_shotgun,obj_item_weapon_burstfire];	
+}else {
+	weapons_array = [obj_item_weapon_default,obj_item_weapon_paintball,obj_item_weapon_shotgun,
 					obj_item_weapon_burstfire,obj_item_weapon_javelins,obj_item_weapon_bouncyball,
 					obj_item_weapon_grenade, obj_item_weapon_boomerang, obj_item_weapon_starsucker,
 					obj_item_weapon_water, obj_item_weapon_bubble, obj_item_weapon_yoyo,
 					obj_item_weapon_missile, obj_item_weapon_sniper, obj_item_weapon_laser,
-					obj_item_weapon_slime];*/
-					
-weapons_array = [obj_item_weapon_paintball,obj_item_weapon_shotgun,obj_item_weapon_burstfire];				
-				
+					obj_item_weapon_slime];
+}
+			
 select_max = array_length(weapons_array);
 
 if select_max < select_x_max { 

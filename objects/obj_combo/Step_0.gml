@@ -12,19 +12,27 @@ if global.combo_length > 0 and room != room_boss_1 and room != room_boss_2 and r
 	global.combo_length = global.combo_max;
 }
 
-if global.combo_length <= global.combo_max/4 {
-	low_combo_meter = true;
-}else {
-	low_combo_meter = false;
-}
-
 combo_decrease_speed = global.combo_max/(600+global.combo_time_added); //# of frames for each combo to last
 
 //increase combo meter size
 if increase_combometer_scale = false and global.combo > prev_combo {
 	prev_combo = global.combo;
 	increase_combometer_scale = true;
-	combometer_scale = 1.8;
+	var temp_combo = global.combo;
+	if temp_combo > 10 {
+		temp_combo = 10;	
+	}
+	temp_combo /= 10;
+	temp_combo -= 0.7;
+	combometer_scale = 1.8 + temp_combo;
+	/*
+	red = 237;
+	green = 225;
+	blue = 158;
+	red2 = 237;
+	green2 = 225;
+	blue2 = 158;
+	*/
 }
 
 if combometer_scale > 1 {
@@ -67,3 +75,44 @@ if room = room_tutorial and global.combo >= 5 {
 		instance_destroy(self);	
 	}
 }
+
+//reset meter color back to white
+if red < 255 {
+	red += 2;	
+}else {
+	red = 255;	
+}
+
+if green < 255 {
+	green += 2;	
+}else {
+	green = 255;	
+}
+
+if blue < 255 {
+	blue += 4;	
+}else {
+	blue = 255;	
+}
+
+if red2 < 242 {
+	red2 += 2;	
+}else {
+	red2 = 242;	
+}
+
+if green2 < 240 {
+	green2 += 2;	
+}else {
+	green2 = 240;	
+}
+
+if blue2 < 229 {
+	blue2 += 4;	
+}else {
+	blue2 = 229;	
+}
+
+
+meter_color = make_color_rgb(red,green,blue);
+text_color = make_color_rgb(red2,green2,blue2);

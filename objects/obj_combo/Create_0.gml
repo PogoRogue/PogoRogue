@@ -12,3 +12,12 @@ prev_combo = 0;
 if !instance_exists(obj_coincounter) {
 	instance_create_depth(x,y,depth,obj_coincounter);
 }
+
+red = 255;
+green = 255;
+blue = 255;
+red2 = 255;
+green2 = 255;
+blue2 = 255;
+meter_color = make_color_rgb(red,green,blue);
+text_color = make_color_rgb(red2,green2,blue2);
