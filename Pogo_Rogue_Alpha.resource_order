@@ -4,6 +4,8 @@
     {"name":"obj_item_text_newdiscovery","order":1,"path":"objects/obj_item_text_newdiscovery/obj_item_text_newdiscovery.yy",},
     {"name":"obj_text_combo1","order":1,"path":"objects/obj_text_combo1/obj_text_combo1.yy",},
     {"name":"obj_text_combo2","order":2,"path":"objects/obj_text_combo2/obj_text_combo2.yy",},
+    {"name":"obj_text_tilt2","order":4,"path":"objects/obj_text_tilt2/obj_text_tilt2.yy",},
+    {"name":"obj_text_abilities2","order":5,"path":"objects/obj_text_abilities2/obj_text_abilities2.yy",},
     {"name":"obj_text_tutorialend2","order":3,"path":"objects/obj_text_tutorialend2/obj_text_tutorialend2.yy",},
     {"name":"snd_music_shop","order":1,"path":"sounds/snd_music_shop/snd_music_shop.yy",},
     {"name":"spr_button_number_selected","order":2,"path":"sprites/spr_button_number_selected/spr_button_number_selected.yy",},
