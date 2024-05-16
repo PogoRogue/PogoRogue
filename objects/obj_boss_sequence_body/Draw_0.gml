@@ -11,5 +11,5 @@ if spawned = true {
 	shader_reset();
 }
 
-draw_sprite_ext(spr_sequence_idle_white,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,white_alpha);
-draw_sprite_ext(spr_sequence_idle_red,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,red_alpha);
+draw_sprite_ext(spr_sequence_entrance_white,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,white_alpha);
+draw_sprite_ext(spr_sequence_defeated_red,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,red_alpha);

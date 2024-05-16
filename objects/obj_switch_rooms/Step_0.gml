@@ -19,7 +19,7 @@ if (instance_exists(obj_player)) {
 			scr_Room_Transition(room_boss_1);
 		} else if (room = room_proc_gen_test) {
 			// scr_Room_Transition(room_boss_2);
-			//global.phase = 2;
+			// global.phase = 2;
 		}
 	}
 	
