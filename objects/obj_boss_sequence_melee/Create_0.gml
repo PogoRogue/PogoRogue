@@ -19,6 +19,7 @@ initial_y = y;
 player_direction = sign(player.x - initial_x = x);
 melee_arm = instance_create_depth(x, y, depth + 1, obj_boss_sequence_melee_arm);
 is_approaching = true;
+draw_hp = false;
 
 alarm_set(1, 2.5 * room_speed);
 

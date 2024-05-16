@@ -4,29 +4,19 @@ if(is_done) {
 	exit;
 }
 
-// Collide with player
-/*
-if(place_meeting(x, y, obj_player_mask)) {
-	with(obj_player) {
-		while(place_meeting(x, y, obj_boss_sequence_trial)) {
-			y++;
-		}
-		speed = 0;
-	}
-}
-*/
-
 switch(current_state) {
 	case BOSS2_STATES.IDLE:
 		// Generate new sequence and animate it
 		if(sequence_failed) {			
 			sequence_index = 0;
-			if(irandom(1) == 0) {
+			if(sequence_toggle) {
 				current_sequence[0] = 4;
 				current_sequence[1] = 5;
+				sequence_toggle = !sequence_toggle;
 			} else {
 				current_sequence[0] = 5;
 				current_sequence[1] = 4;
+				sequence_toggle = !sequence_toggle;
 			}
 			player_sequence = array_create(sequence_length, [-1]);
 			
@@ -52,9 +42,8 @@ switch(current_state) {
 				// Allow the player through
 				sequence_index = 0;
 				current_frame = 3;
+				audio_play_sound(snd_door, 0, false);
 				is_done = true;
-				is_done = true;
-				//instance_destroy(wall);
 			}
 		}
 	break;

@@ -139,9 +139,13 @@ switch(current_state) {
 			previous_hp_percent = body.hp_percent;
 			current_state = BOSS2_STATES.IDLE;
 			alarm_set(2, 0);
+			alarm_set(5, idle_pause_duration);
+			body.sprite_index = spr_sequence_open_door;
 		}
 		
 		if(state_has_changed) {
+			audio_play_sound(snd_door, 0, false);
+			
 			with(obj_boss_sequence_melee) {
 				hp = 0;
 				is_dead = true;
@@ -165,6 +169,8 @@ switch(current_state) {
 			}
 			
 			alarm_set(2, vulnerable_duration);
+			
+			body.sprite_index = spr_sequence_close_door;
 		}
 	break;
 	case BOSS2_STATES.INACTIVE: // Inactive code goes here
@@ -187,6 +193,8 @@ switch(current_state) {
 			}
 			
 			current_frame = 5;
+			
+			body.sprite_index = spr_sequence_defeated;
 		}
 	break;
 }

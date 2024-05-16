@@ -22,3 +22,4 @@ white_alpha = 0;
 
 explode = false;
 red_alpha = 0;
+despawn_timer = 2 * room_speed;
