@@ -55,7 +55,7 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 	for(var j = 0; j < ds_grid_width(layout_grid); j++)
 	{
 		var room_name = ds_grid_get(layout_grid, j, i);
-		if(room_name == "c3c" || room_name == "c2c" || room_name == "Tc" || room_name == "Shc" || room_name == "Bc")
+		if(room_name == "c3c" || room_name == "c2c" || room_name == "Tc" || room_name == "Bc")
 		{
 			if(prev_region_was_hallway) //Increment region before setting if we were in a hallway previously
 			{
@@ -93,20 +93,12 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 			else if(room_name == "Tc")
 			{
 				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 2 - 2;
-			}
-			else if(room_name == "Shc")
-			{
-				//Need to load a larger region for the shop so that tiling issues don't occur
-				rm_width = PROC_GEN_BLOCK_PIXEL_WIDTH * 4 - 2;
-				rm_height = PROC_GEN_BLOCK_PIXEL_WIDTH * 4 - 2;
-				room_coord[0] = room_coord[0] - (PROC_GEN_BLOCK_PIXEL_WIDTH * 1.5);
-				room_coord[1] = room_coord[1] - (PROC_GEN_BLOCK_PIXEL_WIDTH * 1.5);
-			}
-			var region_struct = create_region_struct(room_coord[0] + 1, room_coord[1] + 1, rm_width - 2, rm_height - 3);
+			}			
+			var region_struct = create_region_struct(room_coord[0] + 1, room_coord[1] + 2, rm_width - 2, rm_height - 3);
 			//Add region struct to load list
 			ds_list_add(region_loading_list, region_struct);
 		}
-		else if(room_name == "1" || room_name == "1f" || room_name == "1vc" || room_name == "1vcf" || room_name == "1hc" || room_name == "1hcf")
+		else if(room_name == "1" || room_name == "1f" || room_name == "1vc" || room_name == "1vcf" || room_name == "1hc" || room_name == "1hcf" || room_name =="Shc")
 		{
 			//Check if this block starts a hallway region. If so, make a new region struct
 			if(!prev_region_was_hallway)
@@ -119,7 +111,7 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 			else //Otherwise, update the current region with this room's coordinates
 			{
 				var room_coord = scr_Get_Room_Coord_From_Grid_Coord(j, i)
-				if(room_name == "1" || room_name == "1f")
+				if(room_name == "1" || room_name == "1f" || room_name == "Shc")
 				{
 					var rm_width = region_Load_Width;
 					var rm_height = region_Load_Width;
@@ -148,6 +140,14 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 				highest_region = current_region;
 			}
 			//notably DON'T increment the region count in a hallway, since all connected hallways are the same region
+			//UNLESS this is a shop block. Then we need to end the current region here, so that the hallway
+			//after the shop is a new loaded region
+			if(room_name == "Shc")
+			{
+				prev_region_was_hallway = false;
+				current_region += 1;
+			}
+					
 		}
 	}
 }
@@ -211,19 +211,22 @@ with(obj_room_gate_close)
     }	
 }
 
+//load/unload
+if(perform_region_load_unload)
+	{
+	//Set regions 0 and 1 to loaded in region_loaded
+	region_loaded[|0] = true;
+	region_loaded[|1] = true;
 
-//Set regions 0 and 1 to loaded in region_loaded
-region_loaded[|0] = true;
-region_loaded[|1] = true;
-
-//Player starts in region zero, so deactivate regions 2+
-for(var i = 2; i < ds_list_size(region_loading_list); i++)
-{
-	var region_to_unload = region_loading_list[| i];
-	scr_Unload_Region(region_to_unload);
-	region_loaded[|i] = false;
-	show_debug_message("Region " + string(i) + " unloaded. X: " + string(region_to_unload.left_x) + ", Y: "
-	+ string(region_to_unload.top_y) + ", Width: " + string(region_to_unload.r_width) + ", Height: " + string(region_to_unload.r_height));
+	//Player starts in region zero, so deactivate regions 2+
+	for(var i = 2; i < ds_list_size(region_loading_list); i++)
+	{
+		var region_to_unload = region_loading_list[| i];
+		scr_Unload_Region(region_to_unload);
+		region_loaded[|i] = false;
+		show_debug_message("Region " + string(i) + " unloaded. X: " + string(region_to_unload.left_x) + ", Y: "
+		+ string(region_to_unload.top_y) + ", Width: " + string(region_to_unload.r_width) + ", Height: " + string(region_to_unload.r_height));
+	}
 }
 
 
