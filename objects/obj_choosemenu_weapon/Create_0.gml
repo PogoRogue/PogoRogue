@@ -40,7 +40,7 @@ center_y = camera_get_view_height(view_camera[0])/2;
 
 alarm[1] = 2;
 
-test_mode = true; //set false for builds
+test_mode = false; //set false for builds
 
 if test_mode = false {
 	weapons_array = [obj_item_weapon_paintball,obj_item_weapon_shotgun,obj_item_weapon_burstfire];	

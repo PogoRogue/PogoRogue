@@ -484,3 +484,7 @@ if audio_is_playing(snd_bulletblast) and state = state_bouncing or dead = true {
 
 //for testing
 //hp = 40;
+
+//speed cap for player
+vspeed = min(16,vspeed);
+show_debug_message(vspeed);
