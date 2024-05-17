@@ -70,6 +70,7 @@ if(is_dead) {
 				num_of_coins *= 2;
 				obj_player.landed_on_enemy = false;
 			}
+			num_of_coins += other.enemy_coin_bonus;
 		}
 	}
 	

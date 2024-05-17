@@ -23,6 +23,23 @@ if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") {
 }else {
 	new_chest = choose(obj_chest,obj_chest,obj_chest,obj_chest,obj_chest_coin,obj_chest_coin,obj_chest_weapon,obj_chest_active);
 
+	// For one in 30 chests, create a jack in the box
+	if(irandom(29) == 0) {
+		switch(new_chest) {
+			case obj_chest_coin:
+				new_chest = obj_enemy_jack_coin;
+				break;
+			case obj_chest_weapon:
+				new_chest = obj_enemy_jack_weapon;
+				break;
+			case obj_chest_active:
+				new_chest = obj_enemy_jack_active;
+				break;
+			default:
+				new_chest = obj_enemy_jack;
+		}
+	}
+	
 	if new_chest != obj_chest and object_get_name(object_index) = "obj_chest" {
 		instance_destroy();
 		instance_create_depth(x,y,depth,new_chest);
