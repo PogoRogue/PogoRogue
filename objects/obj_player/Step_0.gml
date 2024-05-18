@@ -487,4 +487,11 @@ if audio_is_playing(snd_bulletblast) and state = state_bouncing or dead = true {
 
 //speed cap for player
 vspeed = min(16,vspeed);
-show_debug_message(vspeed);
+
+//snail slime collision
+if(place_meeting(x, y, obj_enemy_snail_slime)) {
+	snail_slime_object = instance_place(x, y, obj_enemy_snail_slime);
+	vsp_basicjump = snail_slime_object.diminished_player_jump;
+	snail_slime_object.is_touching_player = true;
+	snail_slime_object.wobble = 0.4;
+}

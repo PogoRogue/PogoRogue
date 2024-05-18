@@ -24,6 +24,7 @@ if scr_Gamepad_Check_Input() > 0 {
 //get all possible controls
 if global.use_controller = true {
 	global.use_keyboard = false;
+	
 	scr_Controls_Array_Controller();
 	//player controls
 	global.key_right_player = array_key_right_player[0] || array_key_right_player[1];

@@ -23,7 +23,7 @@ if(state == SNAIL_STATES.HORIZONTAL) {
 	x += spd;
 
 	if (alarm[1] < 0) {
-		alarm[1] = room_speed * 0.05 ;
+		alarm[1] = room_speed * 0.15;
 	}
 } else if(state == SNAIL_STATES.VERTICAL_LEFT || state == SNAIL_STATES.VERTICAL_RIGHT) {
 	// Move up and down
@@ -53,6 +53,6 @@ if(state == SNAIL_STATES.HORIZONTAL) {
 
 
 	if(alarm[2] < 0) {
-		alarm[2] = room_speed * 0.05 ;
+		alarm[2] = room_speed * 0.15;
 	}
 }
