@@ -3,6 +3,10 @@
 // Inherit the parent event
 event_inherited();
 
+if(is_dead) {
+	current_state = CAR_STATES.IDLE;
+}
+
 switch(current_state) {
 	case CAR_STATES.IDLE:
 		if(state_has_changed) {

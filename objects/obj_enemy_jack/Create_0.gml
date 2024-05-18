@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Instantiate variables
 
 // Inherit the parent event
 event_inherited();
@@ -19,7 +18,7 @@ body_pos_x = 0;
 body_pos_y = 0;
 body_subimg = 0;
 
-random_set_seed(global.seed+global.enemy_number);
+random_set_seed(global.seed + global.enemy_number);
 heart_chance = 50 - global.luck;
 buff_chance = 90;
 weapon_chance = 60 + global.luck;

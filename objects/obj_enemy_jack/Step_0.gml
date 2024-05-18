@@ -1,5 +1,8 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Handle different states
+
+if(hp <= 0 && !is_dead && !audio_is_playing(snd_chest_open)) {
+	audio_play_sound(snd_chest_open, 0, false);
+}
 
 // Inherit the parent event
 event_inherited();
@@ -12,6 +15,7 @@ if(!is_open && hp < hp_max) {
 	is_open = true;
 	body_subimg = 0;
 }
+
 
 if(!is_open) {
 	image_index = 0;
