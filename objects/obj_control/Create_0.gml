@@ -114,7 +114,7 @@ scr_All_Actives_Array();
 if room = room_gameplay_video {
 	//tiling layer
 	global.ground_layer = layer_create(-1);
-	global.tilemap_ground = layer_tilemap_create(global.ground_layer,0,0,global.tileset,20000,20000);	
+	global.tilemap_ground = layer_tilemap_create(global.ground_layer,-30000,-30000,global.tileset,30000,30000);
 }
 
 

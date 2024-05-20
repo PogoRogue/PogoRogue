@@ -9,6 +9,7 @@ if (distance_to_object(obj_player) < 96) {
 	created_walls = false;
 }
 
+
 /*
 if drawn_tiles = false and room = room_gameplay_video {
 	drawn_tiles = true;

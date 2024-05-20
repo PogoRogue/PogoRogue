@@ -23,7 +23,7 @@ region_gate_objects = ds_list_create(); //Stores references to all the gates
 
 
 
-perform_region_load_unload = true;
+perform_region_load_unload = false;
 load_counter = 0;
 load_counter_max = 100;
 load_counter_region_previous = -1;

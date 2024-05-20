@@ -11,21 +11,21 @@ if (distance_to_object(obj_player) < 96) {
 	created_walls = false;
 }
 
-if drawn_tiles = false and distance_to_object(obj_camera) < 500 and (instance_exists(obj_proc_gen_controller) || instance_exists(obj_sprite_test_room_generator) || room = room_boss_3) 
-or drawn_tiles = false and distance_to_object(obj_blink_box) < 500 and (instance_exists(obj_proc_gen_controller) || instance_exists(obj_sprite_test_room_generator) || room = room_boss_3){
+if drawn_tiles = false and distance_to_object(obj_camera) < 500 or room = room_boss_3 and (instance_exists(obj_proc_gen_controller) || instance_exists(obj_sprite_test_room_generator) || room = room_boss_3)
+or drawn_tiles = false and distance_to_object(obj_blink_box) < 500 or room = room_boss_3 and (instance_exists(obj_proc_gen_controller) || instance_exists(obj_sprite_test_room_generator) || room = room_boss_3) {
 	drawn_tiles = true;
 	//set tiles
 	if image_xscale = 1 and image_yscale = 1 {
-		scr_Draw_Tiles(x, y, 16,global.tileset,obj_ground_outer);
+		scr_Draw_Tiles(x, y, 16,global.tileset,obj_ground);
 		tilemap_set_at_pixel(global.tilemap_ground, tile_frame, x, y);
 	}else {
 		sprite_index = spr_groundInnerColor;
 		image_index = global.phase - 1;
 		//only do edges
 		for (xx = 0; xx < abs(image_xscale); xx++) {
-			scr_Draw_Tiles(x + xx*16, bbox_top,16,global.tileset,obj_ground_outer);
+			scr_Draw_Tiles(x + xx*16, bbox_top,16,global.tileset,obj_ground_outer); 
 			tilemap_set_at_pixel(global.tilemap_ground, tile_frame, x + xx*16*sign(image_xscale), bbox_top);
-			scr_Draw_Tiles(x + xx*16, bbox_bottom-16,16,global.tileset,obj_ground_outer);
+			scr_Draw_Tiles(x + xx*16, bbox_bottom-16,16,global.tileset,obj_ground_outer)
 			tilemap_set_at_pixel(global.tilemap_ground, tile_frame, x + xx*16*sign(image_xscale), bbox_bottom-16);
 		}
 		

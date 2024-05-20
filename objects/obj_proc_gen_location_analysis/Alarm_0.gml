@@ -146,8 +146,7 @@ for(var i = 0; i < ds_grid_height(layout_grid); i++) //Iterate from bottom to to
 			{
 				prev_region_was_hallway = false;
 				current_region += 1;
-			}
-					
+			}	
 		}
 	}
 }
@@ -228,9 +227,4 @@ if(perform_region_load_unload)
 		+ string(region_to_unload.top_y) + ", Width: " + string(region_to_unload.r_width) + ", Height: " + string(region_to_unload.r_height));
 	}
 }
-
-
-
-
-
 
