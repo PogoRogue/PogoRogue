@@ -1,5 +1,5 @@
 //draw tiles (proc gen)
-if distance_to_object(obj_player) < 768 {
+if distance_to_object(obj_player) < 768 and room != room_tutorial {
 	//if (instance_exists(obj_proc_gen_controller) || instance_exists(obj_sprite_test_room_generator)) and object_get_name(object_index) = "obj_ground_oneway" {
 	if object_get_name(object_index) = "obj_ground_oneway" {
 		if drawn_tiles = false and distance_to_object(obj_camera) < 768 
