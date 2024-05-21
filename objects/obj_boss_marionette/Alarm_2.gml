@@ -6,7 +6,6 @@ switch(ability) {
 		spring_force = 175;
 		oscillation = 0;
 		alarm_set(3, room_speed / 4);
-		//audio_play_sound(snd_slamCharge_enemy,0,false);
 		break;
 	case BOSS3_ABILITIES.BULLET_BLAST:
 		var _burst = instance_create_layer(x, y, "Instances", obj_pattern_template);
@@ -18,7 +17,7 @@ switch(ability) {
 		break;
 	case BOSS3_ABILITIES.SHIELD:
 		if(!instance_exists(obj_shield_plus)) {
-			var _shield = instance_create_layer(x, y, "Instances", obj_shield_plus);
+			var _shield = instance_create_depth(x, y, depth - 15, obj_shield_plus);
 			_shield.parent = self;
 			_shield.depth = depth - 8;
 		}

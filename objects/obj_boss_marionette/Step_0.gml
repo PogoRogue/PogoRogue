@@ -1,6 +1,8 @@
 /// @description Handle movement
+
 // Inherit the parent event
 event_inherited();
+
 image_alpha = 1.0;
 
 hp_percent = (hp / hp_max) * 100;
