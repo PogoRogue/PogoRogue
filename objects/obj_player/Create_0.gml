@@ -122,6 +122,7 @@ if global.player_spawn_x = 0 and global.player_spawn_y = 0 {
 image_speed = 0;
 
 depth = -10;
+init_depth = depth;
 
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {

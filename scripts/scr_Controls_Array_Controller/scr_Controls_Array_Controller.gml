@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Controls_Array_Controller(){
 	
-	if scr_Gamepad_Check_Input() > 0 {
+	//if scr_Gamepad_Check_Input() > 0 {
 		//ARRAY VALUES
 		//player controls
 		array_key_right_player = [scr_Gamepad_Get_Action(global.player_right_buttons[0],"check"),scr_Gamepad_Get_Action(global.player_right_buttons[1],"check")];
@@ -37,7 +37,8 @@ function scr_Controls_Array_Controller(){
 		array_key_back = [scr_Gamepad_Get_Action(global.back_buttons[0],"pressed"),scr_Gamepad_Get_Action(global.back_buttons[1],"pressed")];
 		array_key_pause = [scr_Gamepad_Get_Action(global.pause_buttons[0],"pressed"),scr_Gamepad_Get_Action(global.pause_buttons[1],"pressed")];
 		array_key_item_menu = [scr_Gamepad_Get_Action(global.item_buttons[0],"pressed"),scr_Gamepad_Get_Action(global.item_buttons[1],"pressed")];
-	}else { //no controller button is being used
+	//}else { //no controller button is being used
+		/*
 		//ARRAY VALUES
 		//player controls
 		array_key_right_player = [0,0];
@@ -72,6 +73,7 @@ function scr_Controls_Array_Controller(){
 		array_key_back = [0,0];
 		array_key_pause = [0,0];
 		array_key_item_menu = [0,0];
-	}
+		*/
+	//}
 	
 }

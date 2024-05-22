@@ -205,7 +205,7 @@ function scr_Get_Rand_Pickup_Object()
 	if global.phase <= 1 {
 		random_pickup_drop = list_of_possible_pickups[irandom_range(0,array_length(list_of_possible_pickups)-9)];
 	}else if global.phase = 2 {
-		random_pickup_drop = list_of_possible_pickups[irandom_range(0,array_length(list_of_possible_pickups)-5)];
+		random_pickup_drop = list_of_possible_pickups[irandom_range(4,array_length(list_of_possible_pickups)-5)];
 	}else {
 		random_pickup_drop = list_of_possible_pickups[irandom_range(8,array_length(list_of_possible_pickups)-1)];
 	}
