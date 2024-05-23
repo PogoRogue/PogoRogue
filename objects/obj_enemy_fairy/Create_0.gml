@@ -1,6 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Only spawn 1 in 25 fairies (4%)
+random_set_seed(global.seed + global.enemy_number);
+if(irandom(24) > 0) {
+	instance_destroy(self);
+}
+random_set_seed(global.seed);
+
 // Inherit the parent event
 event_inherited();
 
