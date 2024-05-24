@@ -15,7 +15,6 @@ if (dead = false) {
 	key_left_pressed = global.key_left_pressed_player;
 	
 	key_recenter = global.key_recenter;
-	
 	if use_mouse {
 		key_fire_projectile_pressed = global.key_fire_projectile_pressed;
 		key_fire_projectile_released = global.key_fire_projectile_released;
@@ -497,4 +496,16 @@ if(place_meeting(x, y, obj_enemy_snail_slime)) {
 	depth = snail_slime_object.depth + 5;
 }else if depth != init_depth {
 	depth = init_depth;	
+}
+
+//delete grappling hook
+var not_grappling_1 = !(key_pickup_1 and pickups_array[0] = pickup_grappling);
+var not_grappling_2 = !(key_pickup_2 and pickups_array[1] = pickup_grappling);
+if not_grappling_1 and not_grappling_2 {
+	with obj_projectile {
+		if gun_name = "Grappling Helmet" {
+			retract = true;
+			spd = 0;
+		}
+	}
 }

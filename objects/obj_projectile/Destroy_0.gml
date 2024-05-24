@@ -116,3 +116,7 @@ if gun_name = "Boomerangs" {
 		audio_stop_sound(sound);
 	}
 }
+
+if gun_name = "Grappling Helmet" {
+	obj_player.grappling_hook = noone;	
+}

@@ -286,6 +286,29 @@ if (gun_name = "Water Gun") {
 	}
 }
 
+//Grappling Helmet
+if (gun_name = "Grappling Helmet") {
+	init_angle = obj_player.angle;
+	distance_traveled = 0;
+	damage = 0;
+	init_damage = damage;
+	colliding_with_enemy = false;
+	depth = obj_player.depth + 1;
+	image_index = 0;
+	num_of_bounces = 0;
+	image_angle = obj_player.angle+90;
+	init_angle = image_angle;
+	init_x = x;
+	init_y = y;
+	image_yscale = obj_player.image_xscale;
+	collided = false;
+	retract = false;
+	retract_spd = 0;
+	collision_x = x;
+	collision_y = y;
+	retracted = false;
+}
+
 //destroy projectile after 30 seconds if still exists
 alarm[2] = 1800;
 

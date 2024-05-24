@@ -7,9 +7,16 @@ if (gun_name = "Bouncy Ball Blaster") {
 		image_alpha = 0.95;
 	}
 }else if (gun_name = "Yo-yo") {
+	//draw string
 	var yscale = (point_distance(x,y,obj_player.x,obj_player.y) / sprite_get_height(spr_projectile_yoyo_string));
 	var dir = point_direction(x,y,obj_player.x,obj_player.y) - 90;
 	draw_sprite_ext(spr_projectile_yoyo_string,0,x,y,sign(obj_player.image_xscale),yscale,dir,c_white,1);
+	draw_self();
+}else if (gun_name = "Grappling Helmet") {
+	//draw rope
+	var xscale = (point_distance(x,y,obj_player.x - lengthdir_x(56,obj_player.image_angle-90),obj_player.y - lengthdir_y(56,obj_player.image_angle-90)) / sprite_get_width(spr_grapplinghook_rope));
+	var dir = point_direction(x,y,obj_player.x - lengthdir_x(56,obj_player.image_angle-90),obj_player.y - lengthdir_y(56,obj_player.image_angle-90)) - 180;
+	draw_sprite_ext(spr_grapplinghook_rope,0,x,y,xscale,sign(obj_player.image_yscale),dir,c_white,1);
 	draw_self();
 }else if (gun_name = "Water Gun") {
 	if image_index = 0 {

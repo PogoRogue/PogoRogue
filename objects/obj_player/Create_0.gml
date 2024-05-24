@@ -77,6 +77,7 @@ freeze_angle = 0;
 frenzy = false;
 frenzy_time = 0;
 tutorialDash = false; // Tutorial ground handler
+grappling_hook = noone;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -234,6 +235,12 @@ state_bouncing = function() {
 	if (animation_complete and not_charging_1 and not_charging_2) {
 		scr_Jump(0);
 		platform_on = !platform_on;
+	}
+	
+	with obj_projectile {
+		if gun_name = "Grappling Helmet" {
+			retract = true;
+		}
 	}
 }
 
@@ -678,9 +685,41 @@ state_parachute = function() {
 	scr_Player_Collision();
 }
 
+state_grappling = function() {
+	
+	can_shoot = false;
+	
+	var not_grappling_1 = !(global.key_pickup_1) and pickups_array[0] = pickup_grappling;
+	var not_grappling_2 = !(global.key_pickup_2) and pickups_array[1] = pickup_grappling;
+	
+	if speed <= 10 {
+		speed += 1;
+	}
+	
+	with obj_projectile {
+		if gun_name = "Grappling Helmet" {
+			other.grappling_hook = self;	
+		}
+	}
+
+	if instance_exists(grappling_hook) {
+		if grappling_hook.retract = false {
+			grappling_hook.distance_traveled -= speed;
+		}
+		grappling_hook.x = grappling_hook.collision_x;
+		grappling_hook.y = grappling_hook.collision_y;
+		move_towards_point(grappling_hook.x,grappling_hook.y,speed);
+		if distance_to_point(grappling_hook.x,grappling_hook.y) <= 8 {
+			state = state_free;
+			instance_destroy(grappling_hook);
+		}
+	}
+	
+	scr_Player_Collision();
+}
+
 state_portal = function() {
 	can_shoot = false;
-	can_rotate = false;
 	if instance_exists(portal_object) {
 		if portal_angle_speed < 10 {
 			portal_angle_speed += 0.5;
@@ -937,7 +976,7 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_hatgun, pickup_chargejump, pickup_shieldbubble,
 					pickup_target, pickup_blink, pickup_jetpack,
 					pickup_camera, pickup_frenzy, pickup_bulletblast,
-					pickup_slowmo]; //all pickups
+					pickup_slowmo,pickup_grappling]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();
@@ -986,7 +1025,7 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_dualwielder, buff_steadyhands, buff_tightspring,
 				buff_magicianstouch, buff_impatience, buff_laststand,
 				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
-        buff_recycling, buff_juggler];		
+				buff_recycling, buff_juggler];		
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

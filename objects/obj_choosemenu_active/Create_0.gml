@@ -8,7 +8,7 @@ usable = true;
 select = 1;
 select_max = 3; //max # of rows
 select_x = 1; //passives only
-select_x_max = 4; //number of columns
+select_x_max = 5; //number of columns
 select_y = 1;
 select_y_max = 4; //number of rows
 select_y_added = 0; //bindings menu scrolling
@@ -46,7 +46,7 @@ actives_array = [obj_item_pickup_reload, obj_item_pickup_freeze, obj_item_pickup
 				obj_item_pickup_hatgun, obj_item_pickup_chargejump, obj_item_pickup_shieldbubble,
 				obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
 				obj_item_pickup_camera, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
-				obj_item_pickup_slowmo];
+				obj_item_pickup_slowmo, obj_item_pickup_grappling];
 				
 select_max = array_length(actives_array);
 

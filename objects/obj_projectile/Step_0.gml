@@ -431,3 +431,4 @@ if destroyable = false and num_of_bounces <= 0 and !place_meeting(x,y,obj_ground
 if gun_name = "Grenade Launcher" {
 	destroyable = true;	
 }
+

@@ -561,4 +561,41 @@ function scr_Pickups(){
 			}
 		}                  
 	};
+	
+	pickup_grappling = {
+		_name: "Grappling Helmet",
+		tagline: "Press and hold to shoot a grappling hook from the top of your head, pulling you towards the wall it attaches to.",
+		gui_sprite: spr_pickup_grappling,
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: On bounce",
+		on_cooldown: false,
+		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze,state_parachute],
+		key_held: false,
+		reload_on_bounce: true,
+		max_uses_per_bounce: 1,
+		uses_per_bounce: 1,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		on_call: function() {
+			with obj_player {
+				old_gun = gun;
+				gun = grappling_gun;
+				image_angle += 180;
+				x -= lengthdir_x(68,image_angle+90);
+				y -= lengthdir_y(68,image_angle+90);
+				scr_Shoot();
+				x += lengthdir_x(68,image_angle+90);
+				y += lengthdir_y(68,image_angle+90);
+				image_angle -= 180;
+				gun = old_gun;
+			}
+			uses_per_bounce -= 1;
+			if uses_per_bounce <= 0 {
+				on_cooldown = true;
+			}
+		}
+	};
 }

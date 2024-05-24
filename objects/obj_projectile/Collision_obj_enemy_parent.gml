@@ -53,6 +53,5 @@ if(!other.invinsible) and damage != 0 {
 	}
 
 	colliding_with_enemy = true;
-	
 }
 }

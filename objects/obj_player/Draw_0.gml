@@ -53,6 +53,19 @@ if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
 	}
 }
 
+//draw grappling helmet
+if pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling {
+	if sprite_index = player_sprite or sprite_index = spr_player_revive_animation {
+		draw_sprite_ext(spr_player_zekai_hat2,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = falling_sprite {
+		draw_sprite_ext(spr_player_zekai_hat_falling2,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = charging_sprite or sprite_index = spr_player_zekai_charging_red {
+		draw_sprite_ext(spr_player_zekai_hat_charging2,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = spr_player_zekai_portal {
+		draw_sprite_ext(spr_player_zekai_portal_grappling,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}
+}
+
 //revive
 if (state = state_revive) {
 	draw_sprite_ext(spr_player_revive,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);	
@@ -82,6 +95,10 @@ if ground_pound_slam = true {
 		//draw hat during slam
 		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
 			draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
+		//draw helmet during slam
+		if pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling {
+			draw_sprite_ext(spr_player_zekai_hat_falling2,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
 		}
 		//draw jetpack during slam
 		if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {

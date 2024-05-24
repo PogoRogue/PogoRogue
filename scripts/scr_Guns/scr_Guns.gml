@@ -416,4 +416,25 @@ function scr_Guns(){
 		max_added_bullets: 0,
 		max_speed: -vsp_basicjump
 	};	
+	
+	grappling_gun = {
+		_name: "Grappling Helmet",
+		sprite: spr_nothing,
+		ammo: [grappling_bullet],
+		inaccuracy: 0,
+		kick: 2,
+		sound: snd_grappling,
+		spread_number: 1,
+		spread_angle: 0,
+		full_auto: false,
+		burst_number: 1,
+		burst_delay: 0,
+		momentum_added: 0,
+		reset_momentum: false,
+		bullets_per_bounce: 1,
+		init_bullets_per_bounce: 1,
+		current_bullets: 1,
+		max_added_bullets: 0,
+		max_speed: -vsp_basicjump
+	}
 }

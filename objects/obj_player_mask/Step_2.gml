@@ -51,6 +51,12 @@ if (place_meeting(x,y+parent_index.vspeed,obj_ground) and parent_index.vspeed < 
 								other.parent_index.dash_time = 0;
 								other.top = true;
 								other.alarm[1] = 3;
+								if other.parent_index.state = other.parent_index.state_grappling {
+									if instance_exists(other.parent_index.grappling_hook) {
+										other.parent_index.grappling_hook.retract = true;
+									}
+									other.parent_index.state = other.parent_index.state_free;
+								}
 							}
 						}
 					}
@@ -90,6 +96,12 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed >
 							other.parent_index.dash_time = 0;
 							other.right = true;
 							other.alarm[2] = 3;
+							if other.parent_index.state = other.parent_index.state_grappling {
+								if instance_exists(other.parent_index.grappling_hook) {
+									other.parent_index.grappling_hook.retract = true;
+								}
+								other.parent_index.state = other.parent_index.state_free;
+							}
 						}
 					}
 					if right_corner = false and left_corner = false and bottom_right_corner = false and bottom_left_corner = false and top = false and active = true
@@ -127,6 +139,12 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed <
 							other.parent_index.dash_time = 0;
 							other.left = true;
 							other.alarm[2] = 3;
+							if other.parent_index.state = other.parent_index.state_grappling {
+								if instance_exists(other.parent_index.grappling_hook) {
+									other.parent_index.grappling_hook.retract = true;
+								}
+								other.parent_index.state = other.parent_index.state_free;
+							}
 						}
 					}
 					if right_corner = false and left_corner = false and bottom_right_corner = false and bottom_left_corner = false and top = false and active = true
@@ -177,6 +195,12 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed >= 0 {
 							other.parent_index.hspeed *= -0.35;
 							other._break = true;
 							other.parent_index.dash_time = 0;
+							if other.parent_index.state = other.parent_index.state_grappling {
+								if instance_exists(other.parent_index.grappling_hook) {
+									other.parent_index.grappling_hook.retract = true;
+								}
+								other.parent_index.state = other.parent_index.state_free;
+							}
 						}
 					}
 					if _break = true {
@@ -205,6 +229,12 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed <= 0 {
 							other.parent_index.hspeed *= -0.35;
 							other._break2 = true;
 							other.parent_index.dash_time = 0;
+							if other.parent_index.state = other.parent_index.state_grappling {
+								if instance_exists(other.parent_index.grappling_hook) {
+									other.parent_index.grappling_hook.retract = true;
+								}
+								other.parent_index.state = other.parent_index.state_free;
+							}
 						}
 					}
 					if _break2 = true {
@@ -234,6 +264,12 @@ if (place_meeting(x,y,obj_wallbutton) and parent_index.vspeed < 0) {
 								other.parent_index.vspeed *= -0.35;
 								other._break3 = true;
 								other.parent_index.dash_time = 0;
+								if other.parent_index.state = other.parent_index.state_grappling {
+									if instance_exists(other.parent_index.grappling_hook) {
+										other.parent_index.grappling_hook.retract = true;
+									}
+									other.parent_index.state = other.parent_index.state_free;
+								}
 							}
 						}
 					}

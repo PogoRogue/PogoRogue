@@ -84,6 +84,12 @@ function scr_Jump(add_to_jump){
 	pickup_hatgun.uses_per_bounce = pickup_hatgun.max_uses_per_bounce;
 	pickup_hatgun.on_cooldown = false;
 	
+	//grappling helmet
+	pickup_grappling.uses_per_bounce = pickup_grappling.max_uses_per_bounce;
+	pickup_grappling.on_cooldown = false;
+	
+	grappling_gun.current_bullets = 1;
+	
 	//flames
 	allow_flames = false;
 	min_flames_speed = 5.6;
