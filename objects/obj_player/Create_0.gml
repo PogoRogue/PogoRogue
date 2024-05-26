@@ -54,6 +54,7 @@ damage_boost_timer = 0;
 landed_on_enemy = false; // for robbery 
 aerial_assassin_frenzy = false;
 aerial_assassin_frenzy_count = 0;
+iframes_add = 0;
 
 //pickups
 charge = 0;
@@ -107,7 +108,7 @@ max_max_hp = 80; //10 hearts
 armor_buff = 0;
 max_armor_buff = 5;
 stomp_damage = 8;
-num_iframes = 1.5 * room_speed;
+num_iframes = (1.5 + iframes_add) * room_speed;
 current_iframes = 0;
 dead = false;
 
@@ -1025,7 +1026,7 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_dualwielder, buff_steadyhands, buff_tightspring,
 				buff_magicianstouch, buff_impatience, buff_laststand,
 				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
-				buff_recycling, buff_juggler];		
+				buff_recycling, buff_juggler, buff_invincibilityup];		
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"obj_item_buff_invincibilityup","order":1,"path":"objects/obj_item_buff_invincibilityup/obj_item_buff_invincibilityup.yy",},
     {"name":"obj_item_pickup_grappling","order":1,"path":"objects/obj_item_pickup_grappling/obj_item_pickup_grappling.yy",},
     {"name":"obj_item_text_newdiscovery","order":1,"path":"objects/obj_item_text_newdiscovery/obj_item_text_newdiscovery.yy",},
     {"name":"obj_spikeblock_down","order":2,"path":"objects/obj_spikeblock_down/obj_spikeblock_down.yy",},
@@ -12,10 +13,12 @@
     {"name":"obj_text_combo2","order":2,"path":"objects/obj_text_combo2/obj_text_combo2.yy",},
     {"name":"obj_text_tilt2","order":4,"path":"objects/obj_text_tilt2/obj_text_tilt2.yy",},
     {"name":"obj_text_tutorialend2","order":3,"path":"objects/obj_text_tutorialend2/obj_text_tutorialend2.yy",},
-    {"name":"snd_music_shop","order":1,"path":"sounds/snd_music_shop/snd_music_shop.yy",},
     {"name":"snd_grappling","order":1,"path":"sounds/snd_grappling/snd_grappling.yy",},
+    {"name":"snd_music_shop","order":1,"path":"sounds/snd_music_shop/snd_music_shop.yy",},
     {"name":"spr_boss1_outerlayer","order":1,"path":"sprites/spr_boss1_outerlayer/spr_boss1_outerlayer.yy",},
     {"name":"spr_boss2_outerlayer","order":2,"path":"sprites/spr_boss2_outerlayer/spr_boss2_outerlayer.yy",},
+    {"name":"spr_buffitem_invincibilityup","order":1,"path":"sprites/spr_buffitem_invincibilityup/spr_buffitem_invincibilityup.yy",},
+    {"name":"spr_buffitem_doublekill","order":2,"path":"sprites/spr_buffitem_doublekill/spr_buffitem_doublekill.yy",},
     {"name":"spr_button_number_selected","order":2,"path":"sprites/spr_button_number_selected/spr_button_number_selected.yy",},
     {"name":"spr_button_number","order":1,"path":"sprites/spr_button_number/spr_button_number.yy",},
     {"name":"spr_enemy_projectile_slime_outline","order":2,"path":"sprites/spr_enemy_projectile_slime_outline/spr_enemy_projectile_slime_outline.yy",},

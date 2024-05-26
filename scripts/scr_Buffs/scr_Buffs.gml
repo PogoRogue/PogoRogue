@@ -228,4 +228,9 @@ function scr_Buffs(){
 		global.juggler = true;    
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
+	
+	buff_invincibilityup = function(){
+		obj_player.iframes_add += 0.75;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
 }
