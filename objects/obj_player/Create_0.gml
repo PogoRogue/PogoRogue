@@ -55,6 +55,7 @@ landed_on_enemy = false; // for robbery
 aerial_assassin_frenzy = false;
 aerial_assassin_frenzy_count = 0;
 iframes_add = 0;
+double_kill = 0;
 
 //pickups
 charge = 0;
@@ -1026,7 +1027,8 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_dualwielder, buff_steadyhands, buff_tightspring,
 				buff_magicianstouch, buff_impatience, buff_laststand,
 				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
-				buff_recycling, buff_juggler, buff_invincibilityup];		
+				buff_recycling, buff_juggler, buff_invincibilityup,
+				buff_doublekill];
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_item_buff_planetarybullets",
+  "%Name":"obj_item_buff_doublekill",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_item_buff_planetarybullets",
+  "name":"obj_item_buff_doublekill",
   "overriddenProperties":[],
   "parent":{
     "name":"Buffs",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_buffitem_planetarybullets",
-    "path":"sprites/spr_buffitem_planetarybullets/spr_buffitem_planetarybullets.yy",
+    "name":"spr_buffitem_doublekill",
+    "path":"sprites/spr_buffitem_doublekill/spr_buffitem_doublekill.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -233,4 +233,11 @@ function scr_Buffs(){
 		obj_player.iframes_add += 0.75;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
+	
+	buff_doublekill = function() { 
+		if double_kill < 3 {
+			double_kill += 1;
+			audio_play_sound(snd_passivePowerup,0,false);
+		}
+	}
 }

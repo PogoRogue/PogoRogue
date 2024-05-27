@@ -36,7 +36,7 @@ passives_array = [spr_buffitem_lasersight, spr_buffitem_planetarybullets,spr_buf
 				spr_buffitem_magicianstouch,spr_buffitem_impatience,spr_buffitem_laststand,
 				spr_buffitem_psychicbullets,spr_buffitem_righteousrevenge, spr_buffitem_robbery,
 				spr_buffitem_recycling,spr_buffitem_juggler,spr_buffitem_invincibilityup,
-				spr_nothing,spr_nothing,spr_nothing,
+				spr_buffitem_doublekill,spr_nothing,spr_nothing,
 				spr_nothing,spr_nothing,spr_nothing,
 				spr_nothing]
 				
