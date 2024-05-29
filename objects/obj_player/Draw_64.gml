@@ -43,7 +43,7 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	}
 	
 	//text
-	draw_text_color(camera_get_view_width(view_camera[0])-52,32+yy,gun_array[gun_num]._name,make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-52,32+yy,gun_array[gun_num]._name,c_white);
 	
 	//text darkening
 	draw_text_color(camera_get_view_width(view_camera[0])-52,32+yy,gun_array[gun_num]._name,c_black,c_black,c_black,c_black,black_alpha);
@@ -66,7 +66,7 @@ if frenzy_time > 0 {
 	draw_set_font(fnt_combo2);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	draw_text(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy");
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",make_color_rgb(242,240,229));
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
 	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(frenzy_time / 300),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
@@ -82,7 +82,7 @@ if frenzy_time > 0 {
 	draw_set_font(fnt_combo2);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	draw_text(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy");
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",c_white);
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
 	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(aerial_assassin_frenzy_count / 120),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
@@ -108,7 +108,7 @@ coin_y = 66;
 draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
 draw_sprite(spr_coingui,0,coin_x,coin_y);
-draw_text_color(coin_x+1,coin_y+1,"x"+string(global.num_of_coins),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
+scr_Draw_Text_Outlined(coin_x+1,coin_y+1,"x"+string(global.num_of_coins),c_white);
 
 //coins
 timer_x = 123;
@@ -117,7 +117,7 @@ draw_set_valign(fa_bottom);
 
 if global.show_timer = true {
 	draw_sprite(spr_timergui,0,timer_x,coin_y);
-	draw_text_color(timer_x-1,coin_y+1,scr_Convert_Frames_To_Time(global.current_time_elapsed),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
+	scr_Draw_Text_Outlined(timer_x-1,coin_y+1,scr_Convert_Frames_To_Time(global.current_time_elapsed),c_white);
 }
 
 //PICKUPS
@@ -347,7 +347,7 @@ if (global.show_passives = true) {
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_combo2);
 		draw_set_color(make_color_rgb(242,240,229));
-		draw_text(16,yy-16,"Passive items: ");
+		scr_Draw_Text_Outlined(16,yy-16,"Passive items: ",c_white);
 
 
 		//numbers of each buff
@@ -365,7 +365,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_center);
 draw_set_font(fnt_combo2);
 draw_set_color(make_color_rgb(242,240,229));
-draw_text(17,124,"Items info: ");
+scr_Draw_Text_Outlined(17,124,"Items info: ",c_white);
 if global.use_controller = true {
 	draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[13][0]),2,83,124);
 }else {
@@ -393,7 +393,7 @@ if instance_exists(obj_shieldbubble) {
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_bottom);
 	if obj_shieldbubble.destroy_time_live > 0 {
-		draw_text(17,156-7,"Shield Bubble");
+		scr_Draw_Text_Outlined(17,156-7,"Shield Bubble",c_white);
 		draw_set_color(c_white);
 		draw_sprite(spr_shieldbubblemeter,0,17,156);
 		draw_sprite_part(spr_shieldbubblemeter,1,0,0,sprite_get_width(spr_shieldbubblemeter)*(obj_shieldbubble.destroy_time_live / obj_shieldbubble.destroy_time),sprite_get_height(spr_shieldbubblemeter),17,156-4);
