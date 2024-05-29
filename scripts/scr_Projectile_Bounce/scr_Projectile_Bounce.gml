@@ -21,7 +21,7 @@ function scr_Projectile_Bounce(name_string){
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 5;
-				}else {
+				}else if (gun_name != "The Portal") {
 					image_angle = point_direction(x,y,x+hspd,y+vspd);
 				}
 			}else if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0 )
@@ -35,7 +35,7 @@ function scr_Projectile_Bounce(name_string){
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 5;
-				}else {
+				}else if (gun_name != "The Portal") {
 					image_angle = point_direction(x,y,x+hspd,y+vspd);
 				}
 			}
@@ -53,7 +53,7 @@ function scr_Projectile_Bounce(name_string){
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 3;
-				}else {
+				}else if (gun_name != "The Portal") {
 					image_angle = point_direction(x,y,x+hspd,y+vspd);
 				}
 	
@@ -69,7 +69,7 @@ function scr_Projectile_Bounce(name_string){
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 5;
-				}else {
+				}else if (gun_name != "The Portal") {
 					image_angle = point_direction(x,y,x+hspd,y+vspd);	
 				}
 	

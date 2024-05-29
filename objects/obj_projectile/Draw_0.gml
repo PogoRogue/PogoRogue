@@ -60,6 +60,8 @@ if (gun_name = "Bouncy Ball Blaster") {
 		draw_sprite_ext(sprite_index,4,x,y,1,1,angle2,c_white,image_alpha);
 	}
 	
+}else if (gun_name = "The Portal") {
+	draw_sprite_ext(sprite_index,image_index,x,y,1,1,spr_angle,c_white,image_alpha);
 }else {
 	draw_self();
 }

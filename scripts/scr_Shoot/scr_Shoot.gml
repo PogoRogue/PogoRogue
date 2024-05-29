@@ -26,7 +26,7 @@ function scr_Shoot(){
 			if(global.steadyhands){
 				imageAngle = angle_ - 90;
 			}else{
-				imageAngle = angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90;
+				imageAngle = angle_ + (random_range(-gun.inaccuracy,gun.inaccuracy)*(gun.ammo[bullet_index].firerate_end/gun.ammo[bullet_index].firerate))  - 90;
 			}
 			if(global.laststand and hp <= 8){
 				damage_multiplier *= 2;

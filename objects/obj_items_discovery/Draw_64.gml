@@ -120,7 +120,7 @@ for (i = 0; i < 20; i++) {
 	}
 }
 
-for (i = 0; i < 16; i++) {
+for (i = 0; i < 20; i++) {
 	var xx = (center_x - ((x_gap*select_x_max-x_gap)/2)) + (i % select_x_max) * x_gap;
 	var yy = 226 + floor(i / select_x_max) * y_gap;
 	if (select = 3) {

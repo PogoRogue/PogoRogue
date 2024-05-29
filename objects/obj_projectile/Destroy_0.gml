@@ -120,3 +120,7 @@ if gun_name = "Boomerangs" {
 if gun_name = "Grappling Helmet" {
 	obj_player.grappling_hook = noone;	
 }
+
+if (gun_name = "The Portal") {
+	obj_player.portal_gun.current_bullets = 1;
+}

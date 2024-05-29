@@ -66,7 +66,7 @@ if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) {
 		audio_play_sound(snd_grenade_bounce, 0, false);
 		image_index = 1;
 		alarm[1] = 5;
-	}else {
+	}else if (gun_name != "The Portal") {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 	
@@ -81,7 +81,7 @@ or (place_meeting(x,y+vspd,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_gro
 		audio_play_sound(snd_grenade_bounce, 0, false);
 		image_index = 1;
 		alarm[1] = 5;
-	}else {
+	}else if (gun_name != "The Portal") {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 
@@ -103,7 +103,7 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) {
 		audio_play_sound(snd_grenade_bounce, 0, false);
 		image_index = 1;
 		alarm[1] = 3;
-	}else {
+	}else if (gun_name != "The Portal") {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 
@@ -119,7 +119,7 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0 ) {
 		audio_play_sound(snd_grenade_bounce, 0, false);
 		image_index = 1;
 		alarm[1] = 5;
-	}else {
+	}else if (gun_name != "The Portal") {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);	
 	}
 	
@@ -428,7 +428,20 @@ if destroyable = false and num_of_bounces <= 0 and !place_meeting(x,y,obj_ground
 	}
 }
 
-if gun_name = "Grenade Launcher" {
+if gun_name = "Grenade Launcher" or (gun_name = "The Portal") {
 	destroyable = true;	
 }
 
+//rotate
+if (gun_name = "The Portal") {
+	spr_angle -= hspd*2;
+	image_speed = 1;
+	if global.key_fire_projectile_pressed and obj_player.gun_array[obj_player.current_gun] = obj_player.portal_gun {
+		obj_player.x = x;
+		obj_player.y = y;
+		obj_player.hspeed = 0;
+		obj_player.vspeed = 0;
+		obj_player.gun_array[obj_player.current_gun].current_bullets = 1;
+		instance_destroy();
+	}
+}

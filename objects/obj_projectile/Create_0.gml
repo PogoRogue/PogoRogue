@@ -309,6 +309,12 @@ if (gun_name = "Grappling Helmet") {
 	retracted = false;
 }
 
+if (gun_name = "The Portal") {
+	image_angle += 90;
+	spr_angle = image_angle;	
+	image_angle = 0;
+}
+
 //destroy projectile after 30 seconds if still exists
 alarm[2] = 1800;
 

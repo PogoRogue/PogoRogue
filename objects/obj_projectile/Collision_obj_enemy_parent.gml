@@ -48,6 +48,12 @@ if(!other.invinsible) and damage != 0 {
 		}
 	}
 	
+	if (gun_name = "The Portal") {
+		if obj_player.gun_array[obj_player.current_gun] = obj_player.portal_gun {
+			obj_player.gun_array[obj_player.current_gun].current_bullets = 1;
+		}
+	}
+	
 	if (destroy_on_impact) or (gun_name = "Missile Launcher") or (gun_name = "Bullet Blast") or (gun_name = "Javelins") {
 		instance_destroy();
 	}
