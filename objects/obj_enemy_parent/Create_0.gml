@@ -38,6 +38,7 @@ created_items2 = false;
 drop_coins = true;
 
 num_of_coins = global.combo;
+enemy_coin_bonus = 0;
 //when invinsible, can't take damage
 invinsible=false;
 
