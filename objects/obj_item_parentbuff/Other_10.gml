@@ -46,6 +46,10 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 		if global.all_buff_sprites[i] = sprite_index {
 			//update image index
 			global.all_buff_sprites_index[i] = image_index;
+			//update name
+			global.all_buff_names[i] = item_name;
+			//update text
+			global.all_buff_descriptions[i] = item_tagline;
 			//update numbers
 			if global.all_buff_numbers[i] < max_uses and max_uses > 0 {
 				global.all_buff_numbers[i] += 1;

@@ -28,7 +28,7 @@ layout_grid = scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_start_roo
 
 //tiling layer
 global.ground_layer = layer_create(-1);
-global.tilemap_ground = layer_tilemap_create(global.ground_layer,-20000,-20000,global.tileset,20000,20000);
+global.tilemap_ground = layer_tilemap_create(global.ground_layer,-30000,-30000,global.tileset,30000,30000);
 
 
 conduct_location_analysis = true;

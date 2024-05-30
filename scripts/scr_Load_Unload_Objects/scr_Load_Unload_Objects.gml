@@ -80,12 +80,14 @@ function scr_Unload_Inactive_Region_List(){
 	if(instance_exists(obj_proc_gen_location_analysis))
 	{		
 		var loc_obj = instance_nearest(0,0,obj_proc_gen_location_analysis);
-		
-		for(var i = 0; i < ds_list_size(loc_obj.region_loaded); i++)
-		{
-			if(loc_obj.region_loaded[|i] == false)
+		if(loc_obj.perform_region_load_unload)
+		{		
+			for(var i = 0; i < ds_list_size(loc_obj.region_loaded); i++)
 			{
-				scr_Unload_Region(loc_obj.region_loading_list[|i]);
+				if(loc_obj.region_loaded[|i] == false)
+				{
+					scr_Unload_Region(loc_obj.region_loading_list[|i]);
+				}
 			}
 		}
 	}

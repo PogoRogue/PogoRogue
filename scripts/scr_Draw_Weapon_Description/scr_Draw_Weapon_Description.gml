@@ -119,11 +119,11 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	
 		if weapon.full_auto = true {
 			line_3 = "Auto Fire: Yes";
-			if weapon.ammo[0].firerate_start < 5 {
+			if weapon.ammo[0].firerate_end < 5 {
 				line_4 = "Fire Rate: Very High";
-			}else if weapon.ammo[0].firerate_start < 8 {
+			}else if weapon.ammo[0].firerate_end < 8 {
 				line_4 = "Fire Rate: High";
-			}else if weapon.ammo[0].firerate_start < 15 {
+			}else if weapon.ammo[0].firerate_end < 15 {
 				line_4 = "Fire Rate: Medium";
 			}else {
 				if weapon._name != "Burst Fire Gun" {

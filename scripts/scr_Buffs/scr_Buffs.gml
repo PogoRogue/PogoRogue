@@ -11,6 +11,14 @@ function scr_Buffs(){
 				with obj_player_health {
 					heart_gain_num = other.hp;	
 				}
+			}else if global.iron_proficiency = true {
+				if armor_buff < max_armor_buff {
+					armor_buff += 1;
+					audio_play_sound(snd_ArmorHeart,0,false);
+					with obj_player_health {
+						heart_shield_gain_num = other.armor_buff;	
+					}
+				}
 			}
 		}
 	}
@@ -72,6 +80,14 @@ function scr_Buffs(){
 			if max_hp < max_max_hp {
 				max_hp += 8;
 				audio_play_sound(snd_passivePowerup,0,false);
+			}else if global.iron_proficiency = true {
+				if armor_buff < max_armor_buff {
+					armor_buff += 1;
+					audio_play_sound(snd_ArmorHeart,0,false);
+					with obj_player_health {
+						heart_shield_gain_num = other.armor_buff;	
+					}
+				}
 			}
 			if hp < max_hp {
 				hp += 8;
@@ -226,6 +242,23 @@ function scr_Buffs(){
 	
 	buff_juggler = function(){
 		global.juggler = true;    
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
+	
+	buff_invincibilityup = function(){
+		obj_player.iframes_add += 0.75;
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
+	
+	buff_doublekill = function() { 
+		if double_kill < 3 {
+			double_kill += 1;
+			audio_play_sound(snd_passivePowerup,0,false);
+		}
+	}
+	
+	buff_ironproficiency = function(){
+		global.iron_proficiency = true;    
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 }

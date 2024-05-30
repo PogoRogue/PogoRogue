@@ -26,7 +26,7 @@ function scr_Shoot(){
 			if(global.steadyhands){
 				imageAngle = angle_ - 90;
 			}else{
-				imageAngle = angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90;
+				imageAngle = angle_ + (random_range(-gun.inaccuracy,gun.inaccuracy)*(gun.ammo[bullet_index].firerate_end/gun.ammo[bullet_index].firerate))  - 90;
 			}
 			if(global.laststand and hp <= 8){
 				damage_multiplier *= 2;
@@ -36,7 +36,7 @@ function scr_Shoot(){
 			}
 			
 			if gun.current_bullets > 0 or gun._name = "Hat Gun" or gun._name = "Bullet Blast" {
-				instance_create_depth(x,y,depth-1,obj_projectile,{
+				instance_create_depth(x,y,init_depth-1,obj_projectile,{
 					image_angle: imageAngle,
 					sprite_index: gun.ammo[bullet_index].sprite,
 					spd: gun.ammo[bullet_index].spd,

@@ -30,6 +30,10 @@ if player_colliding = false {
 		if parent_index.state = parent_index.state_groundpound or parent_index.state = parent_index.state_parachute {
 			parent_index.state = parent_index.state_free;
 		}
+		
+		if parent_index.state = parent_index.state_grappling {
+			parent_index.state = parent_index.state_free;
+		}
 	}
 
 
@@ -51,6 +55,10 @@ if player_colliding = false {
 		if parent_index.state = parent_index.state_groundpound or parent_index.state = parent_index.state_parachute {
 			parent_index.state = parent_index.state_free;
 		}
+		
+		if parent_index.state = parent_index.state_grappling {
+			parent_index.state = parent_index.state_free;
+		}
 	}
 }
 
@@ -66,6 +74,10 @@ if (place_meeting(x,y+parent_index.vspeed-1,obj_wallbottomleftcorner) and parent
 	alarm[0] = 2;
 	
 	other.parent_index.dash_time = 0;
+	
+	if parent_index.state = parent_index.state_grappling {
+		parent_index.state = parent_index.state_free;
+	}
 }
 
 
@@ -81,4 +93,8 @@ if (place_meeting(x,y+parent_index.vspeed-1,obj_wallbottomrightcorner) and paren
 	alarm[0] = 2;
 	
 	other.parent_index.dash_time = 0;
+	
+	if parent_index.state = parent_index.state_grappling {
+		parent_index.state = parent_index.state_free;
+	}
 }

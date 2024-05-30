@@ -172,7 +172,19 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}
 		else if(Blue == 220)
 		{
-			return obj_spikeblock;
+			return obj_spikeblock; //down
+		}
+		else if(Blue == 215)
+		{
+			return obj_spikeblock_up; //up
+		}
+		else if(Blue == 210)
+		{
+			return obj_spikeblock_right; //right
+		}
+		else if(Blue == 205)
+		{
+			return obj_spikeblock_left; //left
 		}
 		else if(Blue == 151)
 		{

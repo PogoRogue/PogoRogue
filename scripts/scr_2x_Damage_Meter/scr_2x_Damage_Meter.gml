@@ -5,7 +5,7 @@ function scr_2x_Damage_Meter(yy,draw_meter){
 	draw_set_font(fnt_combo2);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	draw_text(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_2xmeter)/2),yy - 7,"2x Damage");
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_2xmeter)/2),yy - 7,"2x Damage",make_color_rgb(180,82,82));
 	draw_set_color(c_white);
 	
 	if draw_meter = true {

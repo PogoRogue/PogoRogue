@@ -54,6 +54,8 @@ damage_boost_timer = 0;
 landed_on_enemy = false; // for robbery 
 aerial_assassin_frenzy = false;
 aerial_assassin_frenzy_count = 0;
+iframes_add = 0;
+double_kill = 0;
 
 //pickups
 charge = 0;
@@ -77,6 +79,7 @@ freeze_angle = 0;
 frenzy = false;
 frenzy_time = 0;
 tutorialDash = false; // Tutorial ground handler
+grappling_hook = noone;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -106,7 +109,7 @@ max_max_hp = 80; //10 hearts
 armor_buff = 0;
 max_armor_buff = 5;
 stomp_damage = 8;
-num_iframes = 1.5 * room_speed;
+num_iframes = (1.5 + iframes_add) * room_speed;
 current_iframes = 0;
 dead = false;
 
@@ -122,6 +125,7 @@ if global.player_spawn_x = 0 and global.player_spawn_y = 0 {
 image_speed = 0;
 
 depth = -10;
+init_depth = depth;
 
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {
@@ -233,6 +237,12 @@ state_bouncing = function() {
 	if (animation_complete and not_charging_1 and not_charging_2) {
 		scr_Jump(0);
 		platform_on = !platform_on;
+	}
+	
+	with obj_projectile {
+		if gun_name = "Grappling Helmet" {
+			retract = true;
+		}
 	}
 }
 
@@ -677,9 +687,41 @@ state_parachute = function() {
 	scr_Player_Collision();
 }
 
+state_grappling = function() {
+	
+	can_shoot = false;
+	
+	var not_grappling_1 = !(global.key_pickup_1) and pickups_array[0] = pickup_grappling;
+	var not_grappling_2 = !(global.key_pickup_2) and pickups_array[1] = pickup_grappling;
+	
+	if speed <= 10 {
+		speed += 1;
+	}
+	
+	with obj_projectile {
+		if gun_name = "Grappling Helmet" {
+			other.grappling_hook = self;	
+		}
+	}
+
+	if instance_exists(grappling_hook) {
+		if grappling_hook.retract = false {
+			grappling_hook.distance_traveled -= speed;
+		}
+		grappling_hook.x = grappling_hook.collision_x;
+		grappling_hook.y = grappling_hook.collision_y;
+		move_towards_point(grappling_hook.x,grappling_hook.y,speed);
+		if distance_to_point(grappling_hook.x,grappling_hook.y) <= 8 {
+			state = state_free;
+			instance_destroy(grappling_hook);
+		}
+	}
+	
+	scr_Player_Collision();
+}
+
 state_portal = function() {
 	can_shoot = false;
-	can_rotate = false;
 	if instance_exists(portal_object) {
 		if portal_angle_speed < 10 {
 			portal_angle_speed += 0.5;
@@ -852,7 +894,7 @@ all_guns_array = [default_gun,paintball_gun,shotgun_gun,
 				grenade_gun, boomerang_gun,starsucker_gun,
 				water_gun, bubble_gun, yoyo_gun,
 				missile_gun, sniper_gun, laser_gun,
-				slime_gun]; //all guns
+				slime_gun, machine_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();
@@ -936,7 +978,8 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_hatgun, pickup_chargejump, pickup_shieldbubble,
 					pickup_target, pickup_blink, pickup_jetpack,
 					pickup_camera, pickup_frenzy, pickup_bulletblast,
-					pickup_slowmo]; //all pickups
+					pickup_slowmo, pickup_grappling, pickup_winners,
+					pickup_airbag]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();
@@ -985,7 +1028,8 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_dualwielder, buff_steadyhands, buff_tightspring,
 				buff_magicianstouch, buff_impatience, buff_laststand,
 				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
-        buff_recycling, buff_juggler];		
+				buff_recycling, buff_juggler, buff_invincibilityup,
+				buff_doublekill, buff_ironproficiency];
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

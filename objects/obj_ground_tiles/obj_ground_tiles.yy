@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_blacksquare",
-    "path":"sprites/spr_blacksquare/spr_blacksquare.yy",
+    "name":"spr_orangesquare",
+    "path":"sprites/spr_orangesquare/spr_orangesquare.yy",
   },
   "spriteMaskId":null,
   "visible":true,

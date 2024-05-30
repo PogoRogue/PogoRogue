@@ -15,7 +15,6 @@ if (dead = false) {
 	key_left_pressed = global.key_left_pressed_player;
 	
 	key_recenter = global.key_recenter;
-	
 	if use_mouse {
 		key_fire_projectile_pressed = global.key_fire_projectile_pressed;
 		key_fire_projectile_released = global.key_fire_projectile_released;
@@ -484,3 +483,31 @@ if audio_is_playing(snd_bulletblast) and state = state_bouncing or dead = true {
 
 //for testing
 //hp = 40;
+
+//speed cap for player
+vspeed = min(16,vspeed);
+
+//snail slime collision
+if(place_meeting(x, y, obj_enemy_snail_slime)) {
+	snail_slime_object = instance_place(x, y, obj_enemy_snail_slime);
+	vsp_basicjump = snail_slime_object.diminished_player_jump;
+	snail_slime_object.is_touching_player = true;
+	snail_slime_object.wobble = 0.4;
+	depth = snail_slime_object.depth + 5;
+}else if depth != init_depth {
+	depth = init_depth;	
+}
+
+//delete grappling hook
+var not_grappling_1 = !(key_pickup_1 and pickups_array[0] = pickup_grappling);
+var not_grappling_2 = !(key_pickup_2 and pickups_array[1] = pickup_grappling);
+if not_grappling_1 and not_grappling_2 {
+	with obj_projectile {
+		if gun_name = "Grappling Helmet" {
+			retract = true;
+			spd = 0;
+		}
+	}
+}
+
+num_iframes = (1.5 + iframes_add) * room_speed;

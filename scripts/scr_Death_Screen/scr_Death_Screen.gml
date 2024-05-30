@@ -10,8 +10,8 @@ function scr_Death_Screen(win){
 	
 	//actives
 	for(i = 0; i < array_length(global.all_actives_used); i++) {
-		if (i < 21) {
-			draw_sprite(global.all_actives_used[i],2,x+18+(20*(i%7)),y+1+(floor(i/7)*17));
+		if (i < 10) {
+			draw_sprite(global.all_actives_used[i],3,x+22+(28*(i%5)),y+5+(floor(i/5)*25));
 		}
 	}
 	

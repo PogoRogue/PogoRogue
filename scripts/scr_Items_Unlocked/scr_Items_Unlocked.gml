@@ -35,6 +35,14 @@ function scr_Items_Unlocked(){
 	global.passive_unlocked_30 = false;
 	global.passive_unlocked_31 = false;
 	global.passive_unlocked_32 = false;
+	global.passive_unlocked_33 = false;
+	global.passive_unlocked_34 = false;
+	global.passive_unlocked_35 = false;
+	global.passive_unlocked_36 = false;
+	global.passive_unlocked_37 = false;
+	global.passive_unlocked_38 = false;
+	global.passive_unlocked_39 = false;
+	global.passive_unlocked_40 = false;
 	
 	global.passive_unlocked_array = [global.passive_unlocked_1,global.passive_unlocked_2,global.passive_unlocked_3,global.passive_unlocked_4,
 									global.passive_unlocked_5,global.passive_unlocked_6,global.passive_unlocked_7,global.passive_unlocked_8,
@@ -43,7 +51,9 @@ function scr_Items_Unlocked(){
 									global.passive_unlocked_17,global.passive_unlocked_18,global.passive_unlocked_19,global.passive_unlocked_20,
 									global.passive_unlocked_21,global.passive_unlocked_22,global.passive_unlocked_23,global.passive_unlocked_24,
 									global.passive_unlocked_25,global.passive_unlocked_26,global.passive_unlocked_27,global.passive_unlocked_28,
-									global.passive_unlocked_29,global.passive_unlocked_30,global.passive_unlocked_31,global.passive_unlocked_32];
+									global.passive_unlocked_29,global.passive_unlocked_30,global.passive_unlocked_31,global.passive_unlocked_32,
+									global.passive_unlocked_33,global.passive_unlocked_34,global.passive_unlocked_35,global.passive_unlocked_36,
+									global.passive_unlocked_37,global.passive_unlocked_38,global.passive_unlocked_39,global.passive_unlocked_40];
 	
 	//actives
 	global.active_unlocked_1 = false;
@@ -62,11 +72,16 @@ function scr_Items_Unlocked(){
 	global.active_unlocked_14 = false;
 	global.active_unlocked_15 = false;
 	global.active_unlocked_16 = false;
+	global.active_unlocked_17 = false;
+	global.active_unlocked_18 = false;
+	global.active_unlocked_19 = false;
+	global.active_unlocked_20 = false;
 	
 	global.active_unlocked_array = [global.active_unlocked_1,global.active_unlocked_2,global.active_unlocked_3,global.active_unlocked_4,
 									global.active_unlocked_5,global.active_unlocked_6,global.active_unlocked_7,global.active_unlocked_8,
 									global.active_unlocked_9,global.active_unlocked_10,global.active_unlocked_11,global.active_unlocked_12,
-									global.active_unlocked_13,global.active_unlocked_14,global.active_unlocked_15,global.active_unlocked_16];
+									global.active_unlocked_13,global.active_unlocked_14,global.active_unlocked_15,global.active_unlocked_16,
+									global.active_unlocked_17,global.active_unlocked_18,global.active_unlocked_19,global.active_unlocked_20];
 									
 	//weapons
 	global.weapon_unlocked_1 = false; //pistol
@@ -85,11 +100,16 @@ function scr_Items_Unlocked(){
 	global.weapon_unlocked_14 = false;
 	global.weapon_unlocked_15 = false;
 	global.weapon_unlocked_16 = false;
+	global.weapon_unlocked_17 = false;
+	global.weapon_unlocked_18 = false;
+	global.weapon_unlocked_19 = false;
+	global.weapon_unlocked_20 = false;
 	
 	global.weapon_unlocked_array = [global.weapon_unlocked_1,global.weapon_unlocked_2,global.weapon_unlocked_3,global.weapon_unlocked_4,
 									global.weapon_unlocked_5,global.weapon_unlocked_6,global.weapon_unlocked_7,global.weapon_unlocked_8,
 									global.weapon_unlocked_9,global.weapon_unlocked_10,global.weapon_unlocked_11,global.weapon_unlocked_12,
-									global.weapon_unlocked_13,global.weapon_unlocked_14,global.weapon_unlocked_15,global.weapon_unlocked_16];
+									global.weapon_unlocked_13,global.weapon_unlocked_14,global.weapon_unlocked_15,global.weapon_unlocked_16,
+									global.weapon_unlocked_17,global.weapon_unlocked_18,global.weapon_unlocked_19,global.weapon_unlocked_20];
 	
 
 	//save values

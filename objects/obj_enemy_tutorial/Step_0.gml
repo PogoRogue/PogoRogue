@@ -31,7 +31,7 @@ if(is_dead) {
 		global.enemy_killed = true;
 		add_to_combo = false;
 		
-		with instance_create_depth(x+sprite_width/2,y+sprite_height/2,depth-1,obj_coin_spawner) {
+		with instance_create_depth(x+sprite_width/2,y+sprite_height/2,depth+1,obj_coin_spawner) {
 			if global.combo < 5 {
 				num_of_coins = global.combo;
 			}else {

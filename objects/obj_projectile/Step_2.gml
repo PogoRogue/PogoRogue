@@ -163,3 +163,86 @@ if gun_name = "Water Gun" {
 		image_index = 1;	
 	}
 }
+
+if (gun_name = "Grappling Helmet") {
+	
+	hspd = 0;
+	vspd = 0;
+	distance_traveled += spd;
+	if obj_player.vspeed > 0 {
+		distance_traveled += obj_player.vspeed;
+	}
+	
+	if retract = false {
+		x = obj_player.x + lengthdir_x(distance_traveled+56,init_angle);
+		y = obj_player.y + lengthdir_y(distance_traveled+56,init_angle);
+	}
+	
+	//damage once per enemy
+	if place_meeting(x,y,obj_enemy_parent) {
+		damage = 0;
+	}
+	
+	if obj_player.state = obj_player.state_blink {
+		instance_destroy();
+	}
+	
+	if place_meeting(x,y,obj_ground) and retract = false {
+		spd = 0;
+		if collided = false {
+			collided = true;
+			obj_player.state = obj_player.state_grappling;
+			if obj_player.vspeed > 0 {
+				obj_player.vspeed = 0;
+			}
+			//obj_player.speed = 0;
+			collision_x = x;
+			collision_y = y;
+		}
+	}else {
+		if collided = true {
+			retract = true;	
+		}
+	}
+	
+	image_angle = point_direction(x,y,obj_player.x - lengthdir_x(56,obj_player.image_angle-90),obj_player.y - lengthdir_y(56,obj_player.image_angle-90)) + 180;
+	
+	if retract = true {
+		if retracted = false and collided = true {
+			retracted = true;
+		}
+		if retract_spd < 12 {
+			retract_spd += 1;	
+		}
+		move_towards_point(obj_player.x + lengthdir_x(56,obj_player.image_angle+90),obj_player.y + lengthdir_y(56,obj_player.image_angle+90),retract_spd+(obj_player.vspeed * (obj_player.vspeed > 0)))
+		/*distance_traveled -= retract_spd;
+		x = obj_player.x + lengthdir_x(56,obj_player.image_angle+90) + lengthdir_x(distance_traveled,image_angle);
+		y = obj_player.y + lengthdir_y(56,obj_player.image_angle+90) + lengthdir_y(distance_traveled,image_angle);*/
+	}
+	
+	if collided = true and (obj_player.state = obj_player.state_free) {
+		retract = true;
+	}
+	
+	if abs(obj_player.angle+90 - init_angle) > 60 {
+		//retract = true;	
+	}
+	
+	if distance_traveled >= 320 {
+		retract = true;	
+	}
+	
+	if retract = true {
+		spd = 0;
+		if obj_player.state = obj_player.state_grappling {
+			obj_player.state = obj_player.state_free;
+		}
+	}
+	
+	if distance_to_point(obj_player.x + lengthdir_x(56,obj_player.image_angle+90),obj_player.y + lengthdir_y(56,obj_player.image_angle+90)) <= retract_spd {
+		if obj_player.state = obj_player.state_grappling {
+			obj_player.state = obj_player.state_free;
+		}
+		instance_destroy();
+	}
+}

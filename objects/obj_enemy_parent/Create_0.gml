@@ -45,3 +45,5 @@ random_set_seed(global.seed+global.enemy_number);
 random_items = scr_Random_Item_Drops();
 global.enemy_number += 1;
 random_set_seed(global.seed);
+
+shaded = false;
