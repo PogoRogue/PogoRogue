@@ -100,6 +100,7 @@ global.righteousrevenge = false;
 global.robbery = false;
 global.recycling = false;
 global.juggler = false;
+global.iron_proficiency = false;
 
 //items unlockable in the shop
 

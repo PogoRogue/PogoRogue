@@ -598,4 +598,52 @@ function scr_Pickups(){
 			}
 		}
 	};
+	
+	pickup_winners = {
+		_name: "Winner's Mentality",
+		tagline: "Spend a heart to spin a wheel with a chance to win big. If you don't win, try again. That's what a winner \nwould do.",
+		gui_sprite: spr_pickup_winners,
+		max_cooldown_time: 0,
+		cooldown_time: 0,
+		cooldown_text: "Cooldown: " + "Lose a heart",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		on_call: function() {
+			with obj_player {
+				
+			}
+		}
+	};
+	
+	pickup_airbag = {
+		_name: "Airbag",
+		tagline: "Throw a bouncy, floating airbag downwards. You gain an armored heart after bouncing on every 3rd airbag.",
+		gui_sprite: spr_pickup_airbag,
+		max_cooldown_time: 600,
+		cooldown_time: 600,
+		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: [state_free,state_freeze,state_bulletblast,state_parachute],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		on_call: function() {
+			with obj_player {
+				
+			}
+		}
+	};
 }

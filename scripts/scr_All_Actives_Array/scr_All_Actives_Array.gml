@@ -7,8 +7,8 @@ function scr_All_Actives_Array(){
 					obj_item_pickup_hatgun, obj_item_pickup_chargejump, obj_item_pickup_shieldbubble,
 					obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
 					obj_item_pickup_camera, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
-					obj_item_pickup_slowmo, obj_item_pickup_grappling,obj_item_parentpickup,
-					obj_item_parentpickup,obj_item_parentpickup];
+					obj_item_pickup_slowmo, obj_item_pickup_grappling,obj_item_pickup_winners,
+					obj_item_pickup_airbag,obj_item_parentpickup];
 					
 	if global.phase <= 1 and room != room_items {
 		global.all_pickups = [obj_item_pickup_reload, obj_item_pickup_freeze, obj_item_pickup_emergency, 
@@ -21,7 +21,8 @@ function scr_All_Actives_Array(){
 	}else if global.phase = 3 and room != room_items {
 		global.all_pickups = [obj_item_pickup_shieldbubble,obj_item_pickup_target, obj_item_pickup_blink, 
 					obj_item_pickup_jetpack, obj_item_pickup_camera, obj_item_pickup_frenzy,
-					obj_item_pickup_bulletblast,obj_item_pickup_slowmo, obj_item_pickup_grappling];
+					obj_item_pickup_bulletblast,obj_item_pickup_slowmo, obj_item_pickup_grappling, 
+					obj_item_pickup_winners, obj_item_pickup_airbag];
 	}else {
 		global.all_pickups = global.all_pickups_list;
 	}

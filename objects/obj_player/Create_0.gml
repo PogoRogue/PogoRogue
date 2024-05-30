@@ -978,7 +978,8 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_hatgun, pickup_chargejump, pickup_shieldbubble,
 					pickup_target, pickup_blink, pickup_jetpack,
 					pickup_camera, pickup_frenzy, pickup_bulletblast,
-					pickup_slowmo,pickup_grappling]; //all pickups
+					pickup_slowmo, pickup_grappling, pickup_winners,
+					pickup_airbag]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();
@@ -1028,7 +1029,7 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_magicianstouch, buff_impatience, buff_laststand,
 				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
 				buff_recycling, buff_juggler, buff_invincibilityup,
-				buff_doublekill];
+				buff_doublekill, buff_ironproficiency];
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

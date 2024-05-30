@@ -153,7 +153,7 @@ function scr_Get_Rand_Buff_Object()
 							obj_item_buff_magicianstouch, obj_item_buff_impatience, obj_item_buff_laststand,
 							obj_item_buff_psychicbullets, obj_item_buff_righteousrevenge, obj_item_buff_robbery,
 							obj_item_buff_recycling, obj_item_buff_juggler, obj_item_buff_invincibilityup,
-							obj_item_buff_doublekill];
+							obj_item_buff_doublekill, obj_item_buff_ironproficiency];
 	random_buff_drop = list_of_possible_buffs[irandom_range(0,array_length(list_of_possible_buffs)-1)];
 	return random_buff_drop;
 	random_set_seed(global.seed);
@@ -180,9 +180,9 @@ function scr_Get_Rand_Weapon_Object()
 							obj_item_weapon_slime, obj_item_weapon_machine];
 	
 	if global.phase <= 1 {
-		random_weapon_drop = list_of_possible_weapons[irandom_range(0,array_length(list_of_possible_weapons)-9)];
+		random_weapon_drop = list_of_possible_weapons[irandom_range(0,7)];
 	}else if global.phase = 2 {
-		random_weapon_drop = list_of_possible_weapons[irandom_range(4,array_length(list_of_possible_weapons)-5)];
+		random_weapon_drop = list_of_possible_weapons[irandom_range(4,11)];
 	}else {
 		random_weapon_drop = list_of_possible_weapons[irandom_range(8,array_length(list_of_possible_weapons)-1)];
 	}
@@ -200,7 +200,8 @@ function scr_Get_Rand_Pickup_Object()
 							obj_item_pickup_hatgun, obj_item_pickup_chargejump,obj_item_pickup_shieldbubble,
 							obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
 							obj_item_pickup_camera, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
-							obj_item_pickup_slowmo, obj_item_pickup_grappling];
+							obj_item_pickup_slowmo, obj_item_pickup_grappling, obj_item_pickup_winners,
+							obj_item_pickup_airbag];
 	
 	
 	if global.phase <= 1 {

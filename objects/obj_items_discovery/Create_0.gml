@@ -36,7 +36,7 @@ passives_array = [spr_buffitem_lasersight, spr_buffitem_planetarybullets,spr_buf
 				spr_buffitem_magicianstouch,spr_buffitem_impatience,spr_buffitem_laststand,
 				spr_buffitem_psychicbullets,spr_buffitem_righteousrevenge, spr_buffitem_robbery,
 				spr_buffitem_recycling,spr_buffitem_juggler,spr_buffitem_invincibilityup,
-				spr_buffitem_doublekill,spr_nothing,spr_nothing,
+				spr_buffitem_doublekill,spr_buffitem_ironproficiency,spr_nothing,
 				spr_nothing,spr_nothing,spr_nothing,
 				spr_nothing]
 				
@@ -45,8 +45,8 @@ actives_array = [spr_pickup_reload, spr_pickup_freeze, spr_pickup_emergency,
 				spr_pickup_hatgun, spr_pickup_chargejump, spr_pickup_shieldbubble,
 				spr_pickup_target, spr_pickup_blink, spr_pickup_jetpack,
 				spr_pickup_camera, spr_pickup_frenzy, spr_pickup_bulletblast,
-				spr_pickup_slowmo, spr_pickup_grappling,spr_pickup_empty,
-				spr_pickup_empty,spr_pickup_empty];
+				spr_pickup_slowmo, spr_pickup_grappling,spr_pickup_winners,
+				spr_pickup_airbag,spr_pickup_empty];
 				
 weapons_array = [spr_gun_default,spr_gun_paintball,spr_gun_shotgun,
 				spr_gun_burstfire,spr_gun_javelins,spr_gun_bouncyball,
