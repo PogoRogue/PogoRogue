@@ -59,20 +59,23 @@ if key_select and fade_away = false and centered = true {
 		}
 		
 		//experimentation buff
-		if global.experimentation = true {
+		if global.experimentation > 0 {
 			with obj_player {
-				if hp < max_hp {
+				var temp_experimentation = global.experimentation;
+				while hp < max_hp and temp_experimentation > 0 {
 					hp += 8;	
 					audio_play_sound(snd_heartPickup,0,false);
 					instance_activate_object(obj_player_health);
-					with obj_player_health {
-						heart_gain_num = other.hp;	
-					}
+					instance_create_depth(28 + ((hp-8) * 3), 32,depth-1,obj_heart_gain);
+					temp_experimentation -= 1;
+				}
+				while armor_buff < max_armor_buff and temp_experimentation > 0 {
+					armor_buff += 1;
+					audio_play_sound(snd_ArmorHeart,0,false);
+					instance_create_depth(28 + (max_hp/8 * 24) + ((armor_buff-1) * 24), 32,depth-1,obj_heart_shield_gain);
+					temp_experimentation -= 1;
 				}
 			}
-			//global.num_of_coins += experimenting_coins;
-			//global.current_total_coins += experimenting_coins;
-			//alarm[2] = 1;
 		}
 		
 		if weapons_mode = true {
@@ -134,20 +137,23 @@ if key_select and fade_away = false and centered = true {
 		}
 		
 		//experimentation buff
-		if global.experimentation = true {
+		if global.experimentation > 0 {
 			with obj_player {
-				if hp < max_hp {
+				var temp_experimentation = global.experimentation;
+				while hp < max_hp and temp_experimentation > 0 {
 					hp += 8;	
 					audio_play_sound(snd_heartPickup,0,false);
 					instance_activate_object(obj_player_health);
-					with obj_player_health {
-						heart_gain_num = other.hp;	
-					}
+					instance_create_depth(28 + ((hp-8) * 3), 32,depth-1,obj_heart_gain);
+					temp_experimentation -= 1;
+				}
+				while armor_buff < max_armor_buff and temp_experimentation > 0 {
+					armor_buff += 1;
+					audio_play_sound(snd_ArmorHeart,0,false);
+					instance_create_depth(28 + (max_hp/8 * 24) + ((armor_buff-1) * 24), 32,depth-1,obj_heart_shield_gain);
+					temp_experimentation -= 1;
 				}
 			}
-			//global.num_of_coins += experimenting_coins;
-			//global.current_total_coins += experimenting_coins;
-			//alarm[2] = 1;
 		}
 		
 		if weapons_mode = true {
@@ -203,20 +209,23 @@ if key_select and fade_away = false and centered = true {
 		}
 		
 		//experimentation buff
-		if global.experimentation = true {
+		if global.experimentation > 0 {
 			with obj_player {
-				if hp < max_hp {
+				var temp_experimentation = global.experimentation;
+				while hp < max_hp and temp_experimentation > 0 {
 					hp += 8;	
 					audio_play_sound(snd_heartPickup,0,false);
 					instance_activate_object(obj_player_health);
-					with obj_player_health {
-						heart_gain_num = other.hp;	
-					}
+					instance_create_depth(28 + ((hp-8) * 3), 32,depth-1,obj_heart_gain);
+					temp_experimentation -= 1;
+				}
+				while armor_buff < max_armor_buff and temp_experimentation > 0 {
+					armor_buff += 1;
+					audio_play_sound(snd_ArmorHeart,0,false);
+					instance_create_depth(28 + (max_hp/8 * 24) + ((armor_buff-1) * 24), 32,depth-1,obj_heart_shield_gain);
+					temp_experimentation -= 1;
 				}
 			}
-			//global.num_of_coins += experimenting_coins;
-			//global.current_total_coins += experimenting_coins;
-			//alarm[2] = 1;
 		}
 		
 		if weapons_mode = true {

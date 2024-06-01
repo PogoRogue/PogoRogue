@@ -162,7 +162,7 @@ function scr_Buffs(){
 	}
 	
 	buff_experimentation = function(){
-		global.experimentation = true;
+		global.experimentation += 1;
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	

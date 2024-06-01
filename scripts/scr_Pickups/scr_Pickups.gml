@@ -625,7 +625,7 @@ function scr_Pickups(){
 	
 	pickup_airbag = {
 		_name: "Airbag",
-		tagline: "Throw a bouncy floating airbag downwards. It reloads your weapon when \nbounced on. Beep.",
+		tagline: "Create a bouncy floating airbag below you. It reloads your weapon when \nbounced on. Beep.",
 		gui_sprite: spr_pickup_airbag,
 		max_cooldown_time: 300,
 		cooldown_time: 300,

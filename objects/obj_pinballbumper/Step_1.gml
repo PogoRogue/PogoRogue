@@ -4,7 +4,7 @@ if airbag = false {
 
 if spawned = true {
 	with obj_player_mask {
-		if place_meeting(x+parent_index.hspeed,y+parent_index.vspeed,other) and other.activated = false and other.not_meeting = true {
+		if place_meeting(x+parent_index.hspeed,y+parent_index.vspeed,other) and other.activated = false and other.not_meeting = true and parent_index.state != parent_index.state_bouncing {
 			scr_Screen_Shake(4,8,false);
 			audio_play_sound(other.activated_sound,0,false);
 			other.activated = true;

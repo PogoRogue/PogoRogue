@@ -13,7 +13,7 @@ if activated = true {
 //collision
 if spawned = true {
 	with obj_player {
-		if place_meeting(x+hspeed,y+vspeed,other) and other.activated = false and other.not_meeting = true {
+		if place_meeting(x+hspeed,y+vspeed,other) and other.activated = false and other.not_meeting = true and state != state_bouncing {
 			scr_Screen_Shake(4,8,false);
 			audio_play_sound(other.activated_sound,0,false);
 			other.activated = true;
@@ -25,14 +25,19 @@ if spawned = true {
 					direction = angle+90;
 					var prev_spd = speed;
 					var prev_dir = direction;
-					scr_Jump(0);
-					speed = prev_spd;
+					scr_Jump(0); //reload
+					speed = prev_spd + 1;
 					direction = prev_dir;
 				}else {
 					direction = point_direction(other.x,other.y,x + lengthdir_x(22,angle+90),y + lengthdir_y(22,angle+90));
 				}
 			}else {
 				direction = point_direction(other.x,other.y,x + lengthdir_x(22,angle+90),y + lengthdir_y(22,angle+90));
+				var prev_spd = speed;
+				var prev_dir = direction;
+				scr_Jump(0); //reload
+				speed = prev_spd;
+				direction = prev_dir;
 			}
 			state = state_free;
 		}

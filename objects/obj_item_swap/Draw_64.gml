@@ -21,61 +21,71 @@ draw_set_font(fnt_itemdescription2);
 
 for(i = 0; i < num_of_slots; i++) {
 	if num_of_slots = 3 {
-		draw_sprite(spr_item_slot,(i=select-1)+((i = num_of_slots-1)*2),x-64+(64*i),yy);
+		draw_sprite(spr_item_slot,(i=select-1)+((i = num_of_slots-1)*2),x-64+(64*i),yy-16);
 	}else if num_of_slots = 4 {
-		draw_sprite(spr_item_slot,(i=select-1)+((i = num_of_slots-1)*2),x-96+(64*i),yy);
+		draw_sprite(spr_item_slot,(i=select-1)+((i = num_of_slots-1)*2),x-96+(64*i),yy-16);
 	}
 	if i = num_of_slots-1 {
 		if num_of_slots = 3 {
-			scr_Draw_Text_Outlined(x-64+(64*i),yy-21,"Discard",make_color_rgb(180,82,82));
-			draw_sprite(spr_cancel,0,x-64+(64*i),yy);
+			scr_Draw_Text_Outlined(x-64+(64*i),yy-21-16,"Discard",make_color_rgb(180,82,82));
+			draw_sprite(spr_cancel,0,x-64+(64*i),yy-16);
 			draw_set_color(c_white);
 		}else if num_of_slots = 4 {
-			scr_Draw_Text_Outlined(x-96+(64*i),yy-21,"Discard",make_color_rgb(180,82,82));
-			draw_sprite(spr_cancel,0,x-96+(64*i),yy);
+			scr_Draw_Text_Outlined(x-96+(64*i),yy-21-16,"Discard",make_color_rgb(180,82,82));
+			draw_sprite(spr_cancel,0,x-96+(64*i),yy-16);
 			draw_set_color(c_white);
 		}
 	}else if i = 0 {
 		if num_of_slots = 3 {
 			draw_set_valign(fa_center);
-			draw_sprite(sprite_1,0,x-64+(64*i)-x_adjust,yy-y_adjust);
-			scr_Draw_Text_Outlined(x-64+(64*i)-x_adjust,yy-21,scr_Linebreak(item1_name,12,99),c_white);
+			draw_sprite(sprite_1,0,x-64+(64*i)-x_adjust,yy-y_adjust-16);
+			scr_Draw_Text_Outlined(x-64+(64*i)-x_adjust,yy-21-16,scr_Linebreak(item1_name,12,99),c_white);
 		}else if num_of_slots = 4 {
 			draw_set_valign(fa_center);
-			draw_sprite(sprite_1,0,x-96+(64*i)-x_adjust,yy-y_adjust);
-			scr_Draw_Text_Outlined(x-96+(64*i)-x_adjust,yy-21,scr_Linebreak(item1_name,12,99),c_white);
+			draw_sprite(sprite_1,0,x-96+(64*i)-x_adjust,yy-y_adjust-16);
+			scr_Draw_Text_Outlined(x-96+(64*i)-x_adjust,yy-21-16,scr_Linebreak(item1_name,12,99),c_white);
 		}
 	}else if i = 1 {
 		if num_of_slots = 3 {
 			draw_set_valign(fa_center);
-			draw_sprite(sprite_2,0,x-64+(64*i)-x_adjust,yy-y_adjust);
-			scr_Draw_Text_Outlined(x-64+(64*i)-x_adjust,yy-21,scr_Linebreak(item2_name,12,99),c_white);
+			draw_sprite(sprite_2,0,x-64+(64*i)-x_adjust,yy-y_adjust-16);
+			scr_Draw_Text_Outlined(x-64+(64*i)-x_adjust,yy-21-16,scr_Linebreak(item2_name,12,99),c_white);
 		}else if num_of_slots = 4 {
 			draw_set_valign(fa_center);
-			draw_sprite(sprite_2,0,x-96+(64*i)-x_adjust,yy-y_adjust);
-			scr_Draw_Text_Outlined(x-96+(64*i)-x_adjust,yy-21,scr_Linebreak(item2_name,12,99),c_white);
+			draw_sprite(sprite_2,0,x-96+(64*i)-x_adjust,yy-y_adjust-16);
+			scr_Draw_Text_Outlined(x-96+(64*i)-x_adjust,yy-21-16,scr_Linebreak(item2_name,12,99),c_white);
 		}
 	}else if i = 2 and num_of_slots > 3 {
 		draw_set_valign(fa_center);
-		draw_sprite(sprite_3,0,x-96+(64*i)-x_adjust,yy-y_adjust);
-		scr_Draw_Text_Outlined(x-96+(64*i)-x_adjust,yy-21,scr_Linebreak(item3_name,12,99),c_white);
+		draw_sprite(sprite_3,0,x-96+(64*i)-x_adjust,yy-y_adjust-16);
+		scr_Draw_Text_Outlined(x-96+(64*i)-x_adjust,yy-21-16,scr_Linebreak(item3_name,12,99),c_white);
 	}
+	
+	//experimentation
+	if global.experimentation > 0 and i < num_of_slots-1 {
+		if num_of_slots = 3 {
+			draw_sprite(spr_item_slot_healthbonus, global.experimentation-1, x-64+(64*i), yy+24);
+		}else if num_of_slots = 4 {
+			draw_sprite(spr_item_slot_healthbonus, global.experimentation-1, x-96+(64*i), yy+24);
+		}
+	}
+	
 	
 	if global.use_controller = true {
 		if i = select-1 {
 			if num_of_slots = 3 {
-				draw_sprite(select_sprite,0,x-64+(64*i),yy+24);
+				draw_sprite(select_sprite,0,x-64+(64*i),yy+24-16);
 			}else if num_of_slots = 4 {
-				draw_sprite(select_sprite,0,x-96+(64*i),yy+24);
+				draw_sprite(select_sprite,0,x-96+(64*i),yy+24-16);
 			}
 		}
 	}else {
 		if i = select-1 {
 			draw_set_font(fnt_combo2);
 			if num_of_slots = 3 {
-				scr_Draw_Text_Outlined(x-64+(64*i),yy+21,"E",c_white);
+				scr_Draw_Text_Outlined(x-64+(64*i),yy+21-16,"E",c_white);
 			}else if num_of_slots = 4 {
-				scr_Draw_Text_Outlined(x-96+(64*i),yy+21,"E",c_white);
+				scr_Draw_Text_Outlined(x-96+(64*i),yy+21-16,"E",c_white);
 			}
 			draw_set_font(fnt_itemdescription2);
 		}
