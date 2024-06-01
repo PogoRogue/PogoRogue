@@ -123,6 +123,8 @@
     {"name":"spr_3x3_Combat_store","order":1,"path":"sprites/spr_3x3_Combat_store/spr_3x3_Combat_store.yy",},
     {"name":"spr_3x3_Combat_talen_changes","order":3,"path":"sprites/spr_3x3_Combat_talen_changes/spr_3x3_Combat_talen_changes.yy",},
     {"name":"spr_background_supportbeam1","order":1,"path":"sprites/spr_background_supportbeam1/spr_background_supportbeam1.yy",},
+    {"name":"spr_background_supportbeam2","order":2,"path":"sprites/spr_background_supportbeam2/spr_background_supportbeam2.yy",},
+    {"name":"spr_background_supportbeam3","order":3,"path":"sprites/spr_background_supportbeam3/spr_background_supportbeam3.yy",},
     {"name":"spr_blink_animation","order":1,"path":"sprites/spr_blink_animation/spr_blink_animation.yy",},
     {"name":"spr_blink_box_arrows","order":11,"path":"sprites/spr_blink_box_arrows/spr_blink_box_arrows.yy",},
     {"name":"spr_blink_box","order":23,"path":"sprites/spr_blink_box/spr_blink_box.yy",},
@@ -283,6 +285,6 @@
     {"name":"spr_walk_enemy_walk","order":46,"path":"sprites/spr_walk_enemy_walk/spr_walk_enemy_walk.yy",},
     {"name":"Sprint_8_Area2_x4","order":1,"path":"sprites/Sprint_8_Area2_x4/Sprint_8_Area2_x4.yy",},
     {"name":"Sprint_9_3x3_oneRoom","order":1,"path":"sprites/Sprint_9_3x3_oneRoom/Sprint_9_3x3_oneRoom.yy",},
-    {"name":"spr_background_supportbeam2","order":2,"path":"sprites/spr_background_supportbeam2/spr_background_supportbeam2.yy",},
+    {"name":"spr_background_supportbeam4","order":4,"path":"sprites/spr_background_supportbeam4/spr_background_supportbeam4.yy",},
   ],
 }
