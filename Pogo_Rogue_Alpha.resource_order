@@ -1,6 +1,8 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"obj_airbag","order":5,"path":"objects/obj_airbag/obj_airbag.yy",},
+    {"name":"obj_airbag2","order":6,"path":"objects/obj_airbag2/obj_airbag2.yy",},
     {"name":"obj_item_buff_doublekill","order":2,"path":"objects/obj_item_buff_doublekill/obj_item_buff_doublekill.yy",},
     {"name":"obj_item_buff_invincibilityup","order":1,"path":"objects/obj_item_buff_invincibilityup/obj_item_buff_invincibilityup.yy",},
     {"name":"obj_item_buff_ironproficiency","order":3,"path":"objects/obj_item_buff_ironproficiency/obj_item_buff_ironproficiency.yy",},
@@ -19,8 +21,13 @@
     {"name":"obj_text_combo2","order":2,"path":"objects/obj_text_combo2/obj_text_combo2.yy",},
     {"name":"obj_text_tilt2","order":4,"path":"objects/obj_text_tilt2/obj_text_tilt2.yy",},
     {"name":"obj_text_tutorialend2","order":3,"path":"objects/obj_text_tutorialend2/obj_text_tutorialend2.yy",},
+    {"name":"snd_carhorn","order":1,"path":"sounds/snd_carhorn/snd_carhorn.yy",},
     {"name":"snd_grappling","order":1,"path":"sounds/snd_grappling/snd_grappling.yy",},
     {"name":"snd_music_shop","order":1,"path":"sounds/snd_music_shop/snd_music_shop.yy",},
+    {"name":"spr_airbag_activated","order":2,"path":"sprites/spr_airbag_activated/spr_airbag_activated.yy",},
+    {"name":"spr_airbag_spawning","order":3,"path":"sprites/spr_airbag_spawning/spr_airbag_spawning.yy",},
+    {"name":"spr_airbag","order":1,"path":"sprites/spr_airbag/spr_airbag.yy",},
+    {"name":"spr_airbag_propeller","order":4,"path":"sprites/spr_airbag_propeller/spr_airbag_propeller.yy",},
     {"name":"spr_boss1_outerlayer","order":1,"path":"sprites/spr_boss1_outerlayer/spr_boss1_outerlayer.yy",},
     {"name":"spr_boss2_outerlayer","order":2,"path":"sprites/spr_boss2_outerlayer/spr_boss2_outerlayer.yy",},
     {"name":"spr_buffitem_doublekill","order":2,"path":"sprites/spr_buffitem_doublekill/spr_buffitem_doublekill.yy",},

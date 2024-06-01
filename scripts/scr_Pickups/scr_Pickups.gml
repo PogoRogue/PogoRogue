@@ -625,11 +625,11 @@ function scr_Pickups(){
 	
 	pickup_airbag = {
 		_name: "Airbag",
-		tagline: "Throw a bouncy, floating airbag downwards. You gain an armored heart after bouncing on every 3rd airbag.",
+		tagline: "Throw a bouncy floating airbag downwards. It reloads your weapon when \nbounced on. Beep.",
 		gui_sprite: spr_pickup_airbag,
-		max_cooldown_time: 600,
-		cooldown_time: 600,
-		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
+		max_cooldown_time: 300,
+		cooldown_time: 300,
+		cooldown_text: "Cooldown: " + string(300 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze,state_bulletblast,state_parachute],
 		key_held: false,
@@ -641,9 +641,11 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		on_call: function() {
+			
 			with obj_player {
-				
+				instance_create_depth(x,y,depth+1,obj_airbag2);
 			}
+			on_cooldown = true;
 		}
 	};
 }
