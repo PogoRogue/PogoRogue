@@ -240,7 +240,7 @@ function scr_Pickups(){
 	
 	pickup_slowmo = {
 		_name: "Magic Stopwatch",
-		tagline: "Slow down time for 10 seconds, allowing high-precision movement. Slow mo be canceled on re-press.",
+		tagline: "Slow down time for 10 seconds, allowing high-precision movement. Slow mo can be canceled on \nre-press.",
 		gui_sprite: spr_pickup_slowmo,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
@@ -625,7 +625,7 @@ function scr_Pickups(){
 	
 	pickup_airbag = {
 		_name: "Airbag",
-		tagline: "Create a bouncy floating airbag below you. It reloads your weapon when \nbounced on. Beep.",
+		tagline: "Create a bouncy floating airbag below you. It reloads your weapon when \nbounced on. Every 10th \nbounce, gain 1 health. Beep.",
 		gui_sprite: spr_pickup_airbag,
 		max_cooldown_time: 300,
 		cooldown_time: 300,

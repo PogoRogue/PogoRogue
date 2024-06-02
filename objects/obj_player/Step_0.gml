@@ -147,6 +147,8 @@ if(global.impatience == true and impatience_used = false){
 
 #endregion
 
+
+
 //reset ground pound variables
 if state != state_groundpound {
 	ground_pound_slam = false;

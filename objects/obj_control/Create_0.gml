@@ -101,6 +101,7 @@ global.robbery = false;
 global.recycling = false;
 global.juggler = false;
 global.iron_proficiency = false;
+global.fast_forward = 0;
 
 //items unlockable in the shop
 

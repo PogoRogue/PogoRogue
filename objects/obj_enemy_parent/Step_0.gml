@@ -155,6 +155,13 @@ if(is_dead) {
 	else {
 		show_debug_message("Enemy killed! Couldn't change region enemy count");
 	}
+	
+	//fast forward passive
+	with obj_player {
+		if global.fast_forward > 0 {
+			scr_Reduce_Colldown_Times(global.fast_forward * 60);
+		}
+	}
 
 	global.current_enemies_killed += 1;
 	global.enemies_killed += 1;

@@ -153,7 +153,7 @@ function scr_Get_Rand_Buff_Object()
 							obj_item_buff_magicianstouch, obj_item_buff_impatience, obj_item_buff_laststand,
 							obj_item_buff_psychicbullets, obj_item_buff_righteousrevenge, obj_item_buff_robbery,
 							obj_item_buff_recycling, obj_item_buff_juggler, obj_item_buff_invincibilityup,
-							obj_item_buff_doublekill, obj_item_buff_ironproficiency];
+							obj_item_buff_doublekill, obj_item_buff_ironproficiency, obj_item_buff_fastforward];
 	random_buff_drop = list_of_possible_buffs[irandom_range(0,array_length(list_of_possible_buffs)-1)];
 	return random_buff_drop;
 	random_set_seed(global.seed);

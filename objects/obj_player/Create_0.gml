@@ -618,8 +618,8 @@ state_parachute = function() {
 		//slow down
 		if vspeed >= 0 {
 			vspeed += grv/5; //falling slower
-			if vspeed > 3 {
-				vspeed = 3;
+			if vspeed > 2 {
+				vspeed = 2;
 			}
 			
 			//horizontal drag
@@ -1029,7 +1029,7 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_magicianstouch, buff_impatience, buff_laststand,
 				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
 				buff_recycling, buff_juggler, buff_invincibilityup,
-				buff_doublekill, buff_ironproficiency];
+				buff_doublekill, buff_ironproficiency, buff_fastforward];
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

@@ -261,4 +261,11 @@ function scr_Buffs(){
 		global.iron_proficiency = true;    
 		audio_play_sound(snd_passivePowerup,0,false);
 	}
+	
+	buff_fastforward = function(){
+		if global.fast_forward < 3 {
+			global.fast_forward += 1;
+		}
+		audio_play_sound(snd_passivePowerup,0,false);
+	}
 }
