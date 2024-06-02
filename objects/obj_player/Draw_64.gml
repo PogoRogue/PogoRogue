@@ -133,6 +133,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		if pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble)
 		or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
 		or pickups_array[0] = pickup_frenzy and frenzy = true 
+		or pickups_array[0] = pickup_invincibility and invincibility = true 
 		or pickups_array[0] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute) {
 			draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);
@@ -219,6 +220,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		if pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 		or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
 		or pickups_array[1] = pickup_frenzy and frenzy = true 
+		or pickups_array[1] = pickup_invincibility and invincibility = true 
 		or pickups_array[1] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute) {
 			draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
@@ -324,6 +326,7 @@ if pickups_array[1] != pickup_nothing {
 if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
 and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 or pickups_array[0] = pickup_frenzy and frenzy = true
+or pickups_array[0] = pickup_invincibility and invincibility = true
 or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)) {
 	scr_Draw_Input_UI(48,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
 }
@@ -331,6 +334,7 @@ or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)) {
 if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing 
 and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 or pickups_array[1] = pickup_frenzy and frenzy = true
+or pickups_array[1] = pickup_invincibility and invincibility = true
 or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)) {
 	scr_Draw_Input_UI(103,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
 }
@@ -387,7 +391,7 @@ if global.use_controller = true {
 draw_set_color(c_white);
 
 //shield bubble timer
-if instance_exists(obj_shieldbubble) {
+if instance_exists(obj_shieldbubble) and invincibility_time <= 0 {
 	draw_set_color(make_color_rgb(242,240,229));
 	draw_set_font(fnt_combo2);
 	draw_set_halign(fa_left);
@@ -398,4 +402,16 @@ if instance_exists(obj_shieldbubble) {
 		draw_sprite(spr_shieldbubblemeter,0,17,156);
 		draw_sprite_part(spr_shieldbubblemeter,1,0,0,sprite_get_width(spr_shieldbubblemeter)*(obj_shieldbubble.destroy_time_live / obj_shieldbubble.destroy_time),sprite_get_height(spr_shieldbubblemeter),17,156-4);
 	}
+}
+
+//invincibility timer
+if invincibility_time > 0 {
+	draw_set_color(make_color_rgb(242,240,229));
+	draw_set_font(fnt_combo2);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_bottom);
+	scr_Draw_Text_Outlined(17,156-7,"Invincibility",c_white);
+	draw_set_color(c_white);
+	draw_sprite(spr_invincibilitymeter,0,17,156);
+	draw_sprite_part(spr_invincibilitymeter,1,0,0,sprite_get_width(spr_invincibilitymeter)*(invincibility_time / invincibility_time_max),sprite_get_height(spr_invincibilitymeter),17,156-4);
 }

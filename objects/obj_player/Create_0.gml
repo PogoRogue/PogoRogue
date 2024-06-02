@@ -80,6 +80,9 @@ frenzy = false;
 frenzy_time = 0;
 tutorialDash = false; // Tutorial ground handler
 grappling_hook = noone;
+invincibility = false;
+invincibility_time = 0;
+invincibility_time_max = 300;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -979,7 +982,7 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_target, pickup_blink, pickup_jetpack,
 					pickup_camera, pickup_frenzy, pickup_bulletblast,
 					pickup_slowmo, pickup_grappling, pickup_winners,
-					pickup_airbag]; //all pickups
+					pickup_airbag, pickup_invincibility]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();

@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_combometer_red",
   "bboxMode":0,
-  "bbox_bottom":3,
+  "bbox_bottom":5,
   "bbox_left":0,
-  "bbox_right":31,
+  "bbox_right":33,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -17,7 +17,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":4,
+  "height":6,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"2135077d-03d4-4b69-a221-a532e519b2d4","blendMode":0,"displayName":"default","isLocked":false,"name":"2135077d-03d4-4b69-a221-a532e519b2d4","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -79,8 +79,8 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":16,
-    "yorigin":2,
+    "xorigin":17,
+    "yorigin":3,
   },
   "swatchColours":[
     4278190335,4293259506,4290360760,4287136134,4284834660,4283384901,4283971642,4280492321,4282526517,4285154115,
@@ -99,5 +99,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":32,
+  "width":34,
 }

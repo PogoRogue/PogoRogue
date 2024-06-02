@@ -4,7 +4,7 @@ function scr_Player_Damaged(damage){
 	
 	with obj_player {
 		var armored = false;
-		if !instance_exists(obj_shieldbubble) and invincible = false {
+		if !instance_exists(obj_shieldbubble) and invincible = false and invincibility = false {
 			if armor_buff > 0 {
 				armor_buff -= 1;
 				armored = true;
@@ -48,7 +48,7 @@ function scr_Player_Damaged(damage){
 			randomize();
 			audio_play_sound(choose(snd_hurt,snd_hurt2,snd_hurt3),0,false);
 			random_set_seed(global.seed);
-		}else if invincible = false {
+		}else if invincible = false and invincibility = false {
 			current_iframes = num_iframes;
 			hspeed = -2 * sign(hspeed);
 			vspeed = 0;

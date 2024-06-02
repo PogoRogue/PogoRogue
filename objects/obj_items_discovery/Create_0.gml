@@ -46,7 +46,7 @@ actives_array = [spr_pickup_reload, spr_pickup_freeze, spr_pickup_emergency,
 				spr_pickup_target, spr_pickup_blink, spr_pickup_jetpack,
 				spr_pickup_camera, spr_pickup_frenzy, spr_pickup_bulletblast,
 				spr_pickup_slowmo, spr_pickup_grappling,spr_pickup_winners,
-				spr_pickup_airbag,spr_pickup_empty];
+				spr_pickup_airbag,spr_pickup_invincibility];
 				
 weapons_array = [spr_gun_default,spr_gun_paintball,spr_gun_shotgun,
 				spr_gun_burstfire,spr_gun_javelins,spr_gun_bouncyball,

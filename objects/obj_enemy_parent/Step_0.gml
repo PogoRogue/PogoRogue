@@ -156,10 +156,19 @@ if(is_dead) {
 		show_debug_message("Enemy killed! Couldn't change region enemy count");
 	}
 	
-	//fast forward passive
+	
 	with obj_player {
+		//fast forward passive
 		if global.fast_forward > 0 {
 			scr_Reduce_Colldown_Times(global.fast_forward * 60);
+		}
+		
+		if invincibility_time > 0 and invincibility = true {
+			pickup_invincibility.cooldown_time -= 300;
+		}
+		
+		if frenzy_time > 0 and frenzy = true {
+			pickup_frenzy.cooldown_time -= 120;
 		}
 	}
 

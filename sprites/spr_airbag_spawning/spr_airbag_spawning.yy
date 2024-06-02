@@ -17,8 +17,13 @@
     {"$GMSpriteFrame":"","%Name":"362ce669-3d4e-46e3-99f2-2431df3b5db5","name":"362ce669-3d4e-46e3-99f2-2431df3b5db5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"d1949b86-4791-4cce-81e6-a6895f5fca2a","name":"d1949b86-4791-4cce-81e6-a6895f5fca2a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"22828c50-ef12-4647-9486-e96fb73b4319","name":"22828c50-ef12-4647-9486-e96fb73b4319","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"7899328b-9c67-4b5f-92fe-f01f44ab2b6f","name":"7899328b-9c67-4b5f-92fe-f01f44ab2b6f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"33cab9fb-abe9-42f9-9eb8-52c6d7e5068d","name":"33cab9fb-abe9-42f9-9eb8-52c6d7e5068d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5955ba9e-2b7f-4f5b-849f-900de72df9b0","name":"5955ba9e-2b7f-4f5b-849f-900de72df9b0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"97cc7e38-fe56-4c63-bb5d-df8b98f66896","name":"97cc7e38-fe56-4c63-bb5d-df8b98f66896","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"02846fef-563b-4626-9f0a-101d1863bbad","name":"02846fef-563b-4626-9f0a-101d1863bbad","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"d8c7413f-94bf-4ab7-9e64-390101d422bc","name":"d8c7413f-94bf-4ab7-9e64-390101d422bc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f1ab237b-f64b-4bb9-a490-ab9339963dfd","name":"f1ab237b-f64b-4bb9-a490-ab9339963dfd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -56,7 +61,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":7.0,
+    "length":12.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -91,11 +96,26 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"22828c50-ef12-4647-9486-e96fb73b4319","path":"sprites/spr_airbag_spawning/spr_airbag_spawning.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"5ec05fb1-f23a-4e2d-b7ac-ea2ebce775f5","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7899328b-9c67-4b5f-92fe-f01f44ab2b6f","path":"sprites/spr_airbag_spawning/spr_airbag_spawning.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"1a985a4e-8ab6-4a39-95c8-cb2323a1e983","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"33cab9fb-abe9-42f9-9eb8-52c6d7e5068d","path":"sprites/spr_airbag_spawning/spr_airbag_spawning.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7ef9be87-e01b-481d-867f-69be974322e0","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"7ef9be87-e01b-481d-867f-69be974322e0","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5955ba9e-2b7f-4f5b-849f-900de72df9b0","path":"sprites/spr_airbag_spawning/spr_airbag_spawning.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"25499bd6-f906-425f-8f20-6f88676d5928","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"97cc7e38-fe56-4c63-bb5d-df8b98f66896","path":"sprites/spr_airbag_spawning/spr_airbag_spawning.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e40e915b-5697-47be-a1db-6282f7373497","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"e40e915b-5697-47be-a1db-6282f7373497","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"02846fef-563b-4626-9f0a-101d1863bbad","path":"sprites/spr_airbag_spawning/spr_airbag_spawning.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"84131241-449e-4141-b926-ce6cac459016","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d8c7413f-94bf-4ab7-9e64-390101d422bc","path":"sprites/spr_airbag_spawning/spr_airbag_spawning.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d1c7debb-6ced-4334-8fa5-5735b1f982df","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f1ab237b-f64b-4bb9-a490-ab9339963dfd","path":"sprites/spr_airbag_spawning/spr_airbag_spawning.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"bd6f08c6-c4fd-471b-b7e0-52a02fc42ec7","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

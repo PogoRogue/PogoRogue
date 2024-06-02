@@ -406,7 +406,7 @@ function scr_Pickups(){
 	
 	pickup_frenzy = {
 		_name: "Frenzy",
-		tagline: "All weapons are instantly reloaded, and bullets are unlimited without reloading for 5s.",
+		tagline: "All weapons are instantly reloaded, and bullets are unlimited without reloading for 5s. Getting a kill during this time lowers its cooldown time by 2s.",
 		gui_sprite: spr_pickup_frenzy,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
@@ -625,7 +625,7 @@ function scr_Pickups(){
 	
 	pickup_airbag = {
 		_name: "Airbag",
-		tagline: "Create a bouncy floating airbag below you. It reloads your weapon when \nbounced on. Every 10th \nbounce, gain 1 health. Beep.",
+		tagline: "Create a bouncy floating airbag below you. It reloads your weapon when \nbounced on. For every 10th airbag bounced on, gain 1 heart. Beep.",
 		gui_sprite: spr_pickup_airbag,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
@@ -646,6 +646,35 @@ function scr_Pickups(){
 				instance_create_depth(x,y,depth+1,obj_airbag2);
 			}
 			on_cooldown = true;
+		}
+	};
+	
+	pickup_invincibility = {
+	_name: "Invincibility",
+	tagline: "You are invincible to all forms of damage for 5s. Getting a kill during this time lowers its cooldown time \nby 5s.",
+	gui_sprite: spr_pickup_invincibility,
+	max_cooldown_time: 1200,
+	cooldown_time: 1200,
+	cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+	on_cooldown: false,
+	states_to_call_in: all_states,
+	key_held: false,
+	reload_on_bounce: false,
+	max_uses_per_bounce: 0,
+	uses_per_bounce: 0,
+	bounce_reset: 1,
+	bounce_reset_max: 1,
+	enemies_count: 0,
+	enemies_count_max: 0,
+	on_call: function() {
+			with obj_player {
+				if invincibility = false {
+					invincibility = true;
+					invincibility_time = 300;
+					alarm[6] = 300;
+					audio_play_sound(snd_frenzy,0,false);
+				}
+			}
 		}
 	};
 }

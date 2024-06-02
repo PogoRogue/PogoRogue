@@ -260,6 +260,10 @@ if frenzy_time > 0 {
 	frenzy_time -= 1;	
 }
 
+if invincibility_time > 0 {
+	invincibility_time -= 1;	
+}
+
 if aerial_assassin_frenzy_count > 0 {
 	aerial_assassin_frenzy_count -= 1;
 }
