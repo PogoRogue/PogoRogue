@@ -22,6 +22,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,					//make same as bounce_reset
 		enemies_count: 0,                       //how many enemies to kill to cooldown
 		enemies_count_max: 0,					//how many enemies to kill to cooldown
+		text_color: make_color_rgb(255,255,255),     //what color this item's text should show up as
 		on_call: function() { }                 //specific actions to do when this event is called           
 	};
 	
@@ -42,6 +43,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(180,82,82),
 		on_call: function() {
 			if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump {
 				obj_player.state = obj_player.state_chargejump;
@@ -70,6 +72,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(167,123,91),
 		on_call: function() {
 			obj_player.state = obj_player.state_groundpound;
 			obj_player.ground_pound_rise = true;
@@ -96,6 +99,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(207,138,203),
 		on_call: function() {
 			with obj_player {
 				old_gun = gun;
@@ -133,6 +137,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(75,128,202),
 		on_call: function() {
 			if !instance_exists(obj_shieldbubble) {
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-2,obj_shieldbubble);
@@ -157,6 +162,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(211,160,104),
 		on_call: function() {
 			if obj_player.state = obj_player.state_freeze {
 				obj_player.pickup_freeze.on_cooldown = true;
@@ -186,6 +192,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(138,176,96),
 		on_call: function() {
 			if cooldown_time > 0 {
 				cooldown_time -= 1;
@@ -255,6 +262,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(123,114,67),
 		on_call: function() {
 			if !instance_exists(obj_slowmo) {
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_slowmo);
@@ -279,6 +287,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(207,138,203),
 		on_call: function() {
 			obj_player.can_rotate = false;
 			obj_player.can_shoot = false;
@@ -308,6 +317,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(184,181,185),
 		on_call: function() {
 			
 			with obj_player {
@@ -356,6 +366,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 4,
+		text_color: make_color_rgb(237,225,158),
 		on_call: function() {
 			audio_play_sound(snd_camera,0,false);
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup);
@@ -382,6 +393,7 @@ function scr_Pickups(){
 		bounce_reset_max: 3,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(104,194,211),
 		on_call: function() {
 			with obj_player {
 				audio_play_sound(snd_freeze,0,false);
@@ -421,6 +433,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(86,123,121),
 		on_call: function() {
 			with obj_player {
 				if frenzy = false {
@@ -453,6 +466,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 6,
+		text_color: make_color_rgb(180,82,82),
 		on_call: function() {
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_crosshair);
 			on_cooldown = true;
@@ -477,6 +491,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 15,
+		text_color: make_color_rgb(242,240,229),
 		on_call: function() {
 			with obj_player {
 				//heart
@@ -521,6 +536,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 8,
+		text_color: make_color_rgb(138,176,96),
 		on_call: function() {
 			obj_player.state = obj_player.state_blink;
 			if !instance_exists(obj_blink_box) {
@@ -549,6 +565,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(178,180,126),
 		on_call: function() {
 			if !instance_exists(obj_parachute) {
 				with obj_player {
@@ -579,6 +596,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(138,176,96),
 		on_call: function() {
 			with obj_player {
 				old_gun = gun;
@@ -616,6 +634,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(237,225,158),
 		on_call: function() {
 			with obj_player {
 				
@@ -640,6 +659,7 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
+		text_color: make_color_rgb(242,240,229),
 		on_call: function() {
 			
 			with obj_player {
@@ -666,6 +686,7 @@ function scr_Pickups(){
 	bounce_reset_max: 1,
 	enemies_count: 0,
 	enemies_count_max: 0,
+	text_color: make_color_rgb(237,225,158),
 	on_call: function() {
 			with obj_player {
 				if invincibility = false {

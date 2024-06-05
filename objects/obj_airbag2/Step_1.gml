@@ -52,7 +52,8 @@ if !place_meeting(x,y,obj_player) and !place_meeting(x,y,obj_player_mask) and ma
 	not_meeting = true;
 }
 
-while position_meeting(x,y+20,obj_ground) {
+while position_meeting(x,y+20,obj_ground) or position_meeting(x,y+20,obj_ground_oneway)
+or position_meeting(x,y+20,obj_room_gate_open) {
 	y -= 1;
 }
 

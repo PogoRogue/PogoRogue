@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gun_bubble",
-    "path":"sprites/spr_gun_bubble/spr_gun_bubble.yy",
+    "name":"spr_gun_machine",
+    "path":"sprites/spr_gun_machine/spr_gun_machine.yy",
   },
   "spriteMaskId":null,
   "visible":true,

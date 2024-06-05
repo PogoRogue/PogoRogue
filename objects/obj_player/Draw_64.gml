@@ -66,7 +66,7 @@ if frenzy_time > 0 {
 	draw_set_font(fnt_combo2);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",make_color_rgb(242,240,229));
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
 	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(frenzy_time / 300),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
@@ -82,7 +82,7 @@ if frenzy_time > 0 {
 	draw_set_font(fnt_combo2);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",c_white);
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
 	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(aerial_assassin_frenzy_count / 120),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
@@ -313,12 +313,12 @@ if pickups_array[1] = pickup_nothing {
 
 if pickups_array[0] != pickup_nothing {
 	draw_set_font(fnt_itemdescription2);
-	scr_Draw_Text_Outlined(48,88-13,scr_Linebreak(pickups_array[0]._name,12,99),c_white);
+	scr_Draw_Text_Outlined(48,88-13,scr_Linebreak(pickups_array[0]._name,12,99),pickups_array[0].text_color);
 }
 
 if pickups_array[1] != pickup_nothing {
 	draw_set_font(fnt_itemdescription2);
-	scr_Draw_Text_Outlined(103,88-13,scr_Linebreak(pickups_array[1]._name,12,99),c_white);
+	scr_Draw_Text_Outlined(103,88-13,scr_Linebreak(pickups_array[1]._name,12,99),pickups_array[1].text_color);
 }
 
 
@@ -397,7 +397,7 @@ if instance_exists(obj_shieldbubble) and invincibility_time <= 0 {
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_bottom);
 	if obj_shieldbubble.destroy_time_live > 0 {
-		scr_Draw_Text_Outlined(17,156-7,"Shield Bubble",c_white);
+		scr_Draw_Text_Outlined(17,156-7,"Shield Bubble",pickup_shieldbubble.text_color);
 		draw_set_color(c_white);
 		draw_sprite(spr_shieldbubblemeter,0,17,156);
 		draw_sprite_part(spr_shieldbubblemeter,1,0,0,sprite_get_width(spr_shieldbubblemeter)*(obj_shieldbubble.destroy_time_live / obj_shieldbubble.destroy_time),sprite_get_height(spr_shieldbubblemeter),17,156-4);
@@ -410,8 +410,11 @@ if invincibility_time > 0 {
 	draw_set_font(fnt_combo2);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_bottom);
-	scr_Draw_Text_Outlined(17,156-7,"Invincibility",c_white);
+	scr_Draw_Text_Outlined(17,156-7,"Invincibility",pickup_invincibility.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_invincibilitymeter,0,17,156);
 	draw_sprite_part(spr_invincibilitymeter,1,0,0,sprite_get_width(spr_invincibilitymeter)*(invincibility_time / invincibility_time_max),sprite_get_height(spr_invincibilitymeter),17,156-4);
 }
+
+//slot machine
+//draw_sprite(spr_slotmachine,0,384,100);

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_Draw_Skin",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Draw_Skin",
+  "parent":{
+    "name":"Player",
+    "path":"folders/Scripts/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

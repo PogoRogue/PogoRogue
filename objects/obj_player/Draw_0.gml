@@ -118,3 +118,8 @@ shader_reset();
 }
 
 draw_set_color(c_white);
+
+//invincibility
+if invincibility = true {
+	scr_Draw_Skin(spr_player_zekai_invincible,spr_player_zekai_invincible_falling,spr_player_zekai_invincible_charging,spr_player_zekai_invincible_portal);
+}

@@ -26,14 +26,14 @@ if spawned = true {
 					var prev_spd = speed;
 					var prev_dir = direction;
 					scr_Jump(0); //reload
-					speed = prev_spd + 1;
+					speed = prev_spd + 0.5;
 					direction = prev_dir;
 				}else {
 					direction = point_direction(other.x,other.y,x + lengthdir_x(22,angle+90),y + lengthdir_y(22,angle+90));
 					var prev_spd = speed;
 					var prev_dir = direction;
 					scr_Jump(0); //reload
-					speed = prev_spd + 1;
+					speed = prev_spd + 0.5;
 					direction = prev_dir;
 				}
 				other.bounced_on = true;

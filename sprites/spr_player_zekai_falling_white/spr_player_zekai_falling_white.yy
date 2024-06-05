@@ -19,7 +19,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":45,
+  "height":47,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"f580f6d5-b143-4d5a-b073-f606ea75953c","blendMode":0,"displayName":"default","isLocked":false,"name":"f580f6d5-b143-4d5a-b073-f606ea75953c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "name":"Player sprites",
+    "path":"folders/Sprites/Player/Player sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -88,7 +88,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":14,
-    "yorigin":22,
+    "yorigin":23,
   },
   "swatchColours":[
     4278190335,4293259506,4290360760,4287136134,4284834660,4283384901,4283971642,4280492321,4282526517,4285154115,
