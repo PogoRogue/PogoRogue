@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Pickups(){
 	
-	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute];
+	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute,state_shieldbubble];
 
 	
 	pickup_nothing = {
@@ -141,6 +141,7 @@ function scr_Pickups(){
 		on_call: function() {
 			if !instance_exists(obj_shieldbubble) {
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-2,obj_shieldbubble);
+				//obj_player.state = obj_player.state_shieldbubble;
 			}
 		}
 	};
@@ -619,11 +620,11 @@ function scr_Pickups(){
 	
 	pickup_winners = {
 		_name: "Winner's Mentality",
-		tagline: "Spend a heart to spin a wheel with a chance to win big. If you don't win, try again. That's what a winner \nwould do.",
+		tagline: "Spend 25 gold to spin a wheel with a chance to win big. If you don't win, try again. That's what a winner \nwould do.",
 		gui_sprite: spr_pickup_winners,
 		max_cooldown_time: 0,
 		cooldown_time: 0,
-		cooldown_text: "Cooldown: " + "Lose a heart",
+		cooldown_text: "Cooldown: " + "25 gold",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -636,8 +637,12 @@ function scr_Pickups(){
 		enemies_count_max: 0,
 		text_color: make_color_rgb(237,225,158),
 		on_call: function() {
-			with obj_player {
-				
+			if global.num_of_coins >= 0 and !instance_exists(obj_slot_machine) {
+				global.num_of_coins -= 0;
+				with obj_player {
+					instance_create_depth(x,y,depth,obj_slot_machine);
+				}
+				on_cooldown = true;
 			}
 		}
 	};

@@ -68,3 +68,5 @@ for (i = 0; i < array_length(actives_array); i++) {
 		instance_destroy();
 	}
 }
+
+created_new_choosemenu = false;

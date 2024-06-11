@@ -83,6 +83,7 @@ grappling_hook = noone;
 invincibility = false;
 invincibility_time = 0;
 invincibility_time_max = 300;
+shieldbubble_obj = noone;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -721,6 +722,107 @@ state_grappling = function() {
 	}
 	
 	scr_Player_Collision();
+}
+
+state_shieldbubble = function() {
+	can_rotate = false;
+	sprite_index = player_sprite;
+	if image_index < 10 {
+		image_index += 0.5;
+	}else {
+		image_speed = 0;
+		image_index = 10;
+	}
+	
+	vspeed += grv; //falling
+	vsp_basicjump = -6.8;
+	
+	
+	if instance_exists(shieldbubble_obj) {
+		//re-center
+		if (angle != 0)	{
+			var angle_side = sign(angle);
+			angle += (rotation_speed/2)*sign(-angle);
+			if (sign(angle) != angle_side) {
+				angle = 0;
+				current_rotation_speed = 0;
+			}
+		}
+		if shieldbubble_obj.bouncing = false {
+			can_shoot = true;
+			//move left and right
+			if hspeed % 0.25 != 0 {
+				hspeed = round((hspeed/0.25))*0.25
+			}
+			if global.key_left_player {
+				if hspeed > -4 {
+					hspeed -= 1;
+				}else if hspeed < -4 {
+					hspeed += 1;
+				}
+				obj_shieldbubble.decrease_arrows_alpha = true;
+			}
+			if global.key_right_player {
+				if hspeed < 4 {
+					hspeed += 1;
+				}else if hspeed > 4 {
+					hspeed -= 1;
+				}
+				obj_shieldbubble.decrease_arrows_alpha = true;
+			}
+			if global.key_down_menu {
+				if vspeed < 4 {
+					vspeed += 0.25;
+					shieldbubble_obj.bounced = true
+				}
+				//obj_shieldbubble.decrease_arrows_alpha = true;
+			}
+			if !global.key_left_player and !global.key_right_player {
+				if shieldbubble_obj.bounced = true {
+					if hspeed < 0 {
+						hspeed += 0.5;
+						if hspeed > 0 {
+							hspeed = 0;
+						}
+					}else if hspeed > 0 {
+						hspeed -= 0.5;
+						if hspeed < 0 {
+							hspeed = 0;
+						}
+					}
+				}else {
+					if hspeed < 0 {
+						hspeed += 0.25;
+					}else if hspeed > 0 {
+						hspeed -= 0.25;
+					}
+				}
+			}else if shieldbubble_obj.bounced = false {
+				shieldbubble_obj.bounced = true;
+				if shieldbubble_obj.bounced_cancel = true {
+					shieldbubble_obj.bounced_cancel = false;
+				}
+			}
+			
+			if hspeed != 0 {
+				image_xscale = sign(hspeed);
+			}
+			
+			//bounce
+		}else {
+			can_shoot = false;
+			hspeed = 0;
+			vspeed = 0;
+			speed = 0;
+			//state = state_immobile;
+		}
+	}else {
+		state = state_free;
+		can_rotate = true;
+		can_shoot = true;
+	}
+	
+	//scr_Player_Collision();
 }
 
 state_portal = function() {

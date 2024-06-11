@@ -103,6 +103,7 @@ global.juggler = false;
 global.iron_proficiency = false;
 global.fast_forward = 0;
 global.airbag_number = 0;
+global.win_odds = 33; //winner's mentality win odds
 
 //items unlockable in the shop
 

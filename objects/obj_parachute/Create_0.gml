@@ -4,7 +4,7 @@ ready_to_open = false;
 opening = false;
 opened = false;
 retract = false;
-arrows_alpha = 1;
+arrows_alpha = 2;
 decrease_arrows_alpha = false;
 angle_add = 0;
 

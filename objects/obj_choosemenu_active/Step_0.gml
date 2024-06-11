@@ -63,15 +63,23 @@ if key_select and centered = true and fade_away = false {
 	audio_play_sound(snd_selectOption,0,false);
 	
 	alarm[0] = 1;
+	alarm[4] = 2; //create active item menu
 	fade_away = true;
 	
 	//change item
 	instance_activate_object(obj_player);
 	with obj_player {
-		global.all_pickup_costs[0] = other.all_pickups_costs[other.select-1];
-		num_of_pickups = 1;
-		pickup_1 = other.all_actives[other.select-1];
-		pickups_array = [pickup_1, pickup_2];
+		if num_of_pickups = 0 {
+			global.all_pickup_costs[0] = other.all_pickups_costs[other.select-1];
+			num_of_pickups = 1;
+			pickup_1 = other.all_actives[other.select-1];
+			pickups_array = [pickup_1, pickup_2];
+		}else if num_of_pickups = 1 {
+			global.all_pickup_costs[1] = other.all_pickups_costs[other.select-1];
+			num_of_pickups = 2;
+			pickup_2 = other.all_actives[other.select-1];
+			pickups_array = [pickup_1, pickup_2];
+		}
 	}
 	//save item
 	ini_open("itemsunlocked.ini");
