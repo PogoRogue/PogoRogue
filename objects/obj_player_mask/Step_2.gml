@@ -16,7 +16,7 @@ if place_meeting(x-4,y,obj_ground) {
 	colliding_with_ground_left = false;	
 }
 if place_meeting(x+4,y,obj_ground) {
-	if instance_place(x+4,y,obj_ground).x > x {
+	if instance_place(x+4,y,obj_ground).x > x-2 {
 		colliding_with_ground_right = true;
 	}else {
 		colliding_with_ground_right = false;

@@ -620,7 +620,7 @@ function scr_Pickups(){
 	
 	pickup_winners = {
 		_name: "Winner's Mentality",
-		tagline: "Spend 25 gold to spin a wheel with a chance to win big. If you don't win, try again. That's what a winner \nwould do.",
+		tagline: "Spend 25 gold to summon a flying slot machine with a chance to win big. If you don't win, try again. That's what a winner \nwould do.",
 		gui_sprite: spr_pickup_winners,
 		max_cooldown_time: 0,
 		cooldown_time: 0,

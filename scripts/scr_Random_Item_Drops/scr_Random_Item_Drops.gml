@@ -126,7 +126,7 @@ function Create_Item_Drops(object_array)
 		var object_y = center_y + object_data[1][1];
 		var object_depth = depth + object_data[1][2];		
 		
-		var inst = instance_create_depth(object_x, object_y, object_depth, object_to_create)
+		var inst = instance_create_depth(object_x, object_y, object_depth, object_to_create);
 		
 		if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 
 		{

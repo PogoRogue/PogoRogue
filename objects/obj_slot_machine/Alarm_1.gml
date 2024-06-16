@@ -15,13 +15,13 @@ if num_of_spins > 0 {
 			item2_index = irandom_range(0,sprite_get_number(spr_slotmachine_slot_items)-1);
 		}
 	}else {
-		if win = true {
+		if win = true or twoinarow = true {
 			if item2_index != item1_index {
 				item2_index = item1_index;
 			}
 		}
 		if item1_index = item2_index {
-			spin_time *= 1.15;	
+			spin_time *= 1.15;	//slow down if there are two matches to add suspense
 		}
 	}
 	item3_index = irandom_range(0,sprite_get_number(spr_slotmachine_slot_items)-1);

@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_weapon_arrow",
   "bboxMode":0,
-  "bbox_bottom":11,
+  "bbox_bottom":12,
   "bbox_left":0,
-  "bbox_right":5,
+  "bbox_right":7,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -17,7 +17,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":12,
+  "height":13,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"7cfdaed9-d5a5-47e8-8b41-22f634dbba7e","blendMode":0,"displayName":"default","isLocked":false,"name":"7cfdaed9-d5a5-47e8-8b41-22f634dbba7e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -79,7 +79,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":4,
+    "xorigin":5,
     "yorigin":6,
   },
   "swatchColours":[
@@ -99,5 +99,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":7,
+  "width":8,
 }
