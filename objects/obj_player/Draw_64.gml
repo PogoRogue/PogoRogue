@@ -126,7 +126,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 
 //cooldowns
-if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_max = 0 {
+if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_max = 0 { //time cooldown
 	if !(pickups_array[0].on_cooldown) {
 		draw_sprite(pickups_array[0].gui_sprite,1,48,88);
 		//shield bubble / slow mo darkening
@@ -135,10 +135,12 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		or pickups_array[0] = pickup_frenzy and frenzy = true 
 		or pickups_array[0] = pickup_invincibility and invincibility = true 
 		or pickups_array[0] = pickup_blink and instance_exists(obj_blink_box) 
-		or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute) {
+		or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)
+		or pickups_array[0] = pickup_winners and instance_exists(obj_slot_machine) 
+		or pickups_array[0] = pickup_winners and global.num_of_coins < pickup_winners.cost {
 			draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);
 		}
-	}else {
+	}else if pickups_array[0].cost <= 0 {
 		draw_sprite_ext(spr_pickup_empty,0,48,88,1,1,0,c_white,1);
 		draw_sprite_part(pickups_array[0].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(1-(pickups_array[0].cooldown_time/pickups_array[0].max_cooldown_time)),sprite_get_height(spr_pickup_empty),32,72);
 		//darkening
@@ -150,7 +152,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 			scr_Draw_Text_Outlined(48,104,string(ceil((pickups_array[0].cooldown_time+6)/60)-1) + "." + string(ceil(pickups_array[0].cooldown_time/6)%10),c_white); 
 		}
 	}
-}else if pickups_array[0].enemies_count_max = 0 {
+}else if pickups_array[0].enemies_count_max = 0 { //reload on bounce
 	if !(pickups_array[0].on_cooldown) and pickups_array[0].max_cooldown_time < 0 {
 		draw_sprite(pickups_array[0].gui_sprite,1,48,88);
 	}else if pickups_array[0].max_cooldown_time < 0 and pickups_array[0].bounce_reset_max <= 1 {
@@ -192,7 +194,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 			draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);	
 		}
 	}
-}else {
+}else { //enemies count
 	if !(pickups_array[0].on_cooldown) and pickups_array[0].max_cooldown_time < 0 {
 		draw_sprite(pickups_array[0].gui_sprite,1,48,88);
 	}else if pickups_array[0].max_cooldown_time < 0 and pickups_array[0].enemies_count_max <= 1 {
@@ -213,7 +215,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 	}
 }
 
-if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_max = 0 {
+if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_max = 0 { //time
 	if !(pickups_array[1].on_cooldown) {
 		draw_sprite(pickups_array[1].gui_sprite,1,103,88);
 		//shield bubble / slow mo darkening
@@ -222,7 +224,9 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		or pickups_array[1] = pickup_frenzy and frenzy = true 
 		or pickups_array[1] = pickup_invincibility and invincibility = true 
 		or pickups_array[1] = pickup_blink and instance_exists(obj_blink_box) 
-		or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute) {
+		or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute) 
+		or pickups_array[1] = pickup_winners and instance_exists(obj_slot_machine) 
+		or pickups_array[1] = pickup_winners and global.num_of_coins < pickup_winners.cost {
 			draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 		}
 	}else {
@@ -239,7 +243,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 			scr_Draw_Text_Outlined(103,104,string(ceil((pickups_array[1].cooldown_time+6)/60)-1) + "." + string(ceil(pickups_array[1].cooldown_time/6)%10),c_white); 
 		}
 	}
-}else if pickups_array[1].enemies_count_max = 0 {
+}else if pickups_array[1].enemies_count_max = 0 { //bounce cooldown
 	if !(pickups_array[1].on_cooldown) and pickups_array[1].max_cooldown_time < 0 {
 		draw_sprite(pickups_array[1].gui_sprite,1,103,88);
 	}else if pickups_array[1].max_cooldown_time < 0 and pickups_array[1].bounce_reset_max <= 1 {
@@ -282,7 +286,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 			draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 		}
 	}
-}else {
+}else { //enemies cooldown
 	if !(pickups_array[1].on_cooldown) and pickups_array[1].max_cooldown_time < 0 {
 		draw_sprite(pickups_array[1].gui_sprite,1,103,88);
 	}else if pickups_array[1].max_cooldown_time < 0 and pickups_array[1].enemies_count_max <= 1 {
@@ -325,6 +329,8 @@ if pickups_array[1] != pickup_nothing {
 //button 1
 if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing 
 and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
+or (pickups_array[0] = pickup_winners and global.num_of_coins < pickup_winners.cost)
+or (pickups_array[0] = pickup_winners and instance_exists(obj_slot_machine))
 or pickups_array[0] = pickup_frenzy and frenzy = true
 or pickups_array[0] = pickup_invincibility and invincibility = true
 or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)) {
@@ -333,6 +339,8 @@ or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)) {
 //button 2
 if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing 
 and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
+or (pickups_array[1] = pickup_winners and global.num_of_coins < pickup_winners.cost)
+or (pickups_array[1] = pickup_winners and instance_exists(obj_slot_machine))
 or pickups_array[1] = pickup_frenzy and frenzy = true
 or pickups_array[1] = pickup_invincibility and invincibility = true
 or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)) {

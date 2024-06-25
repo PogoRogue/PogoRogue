@@ -23,6 +23,7 @@ function scr_Pickups(){
 		enemies_count: 0,                       //how many enemies to kill to cooldown
 		enemies_count_max: 0,					//how many enemies to kill to cooldown
 		text_color: make_color_rgb(255,255,255),     //what color this item's text should show up as
+		cost: 0,                                //how many coins this item costs to use
 		on_call: function() { }                 //specific actions to do when this event is called           
 	};
 	
@@ -44,6 +45,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(180,82,82),
+		cost: 0,
 		on_call: function() {
 			if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump {
 				obj_player.state = obj_player.state_chargejump;
@@ -73,6 +75,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(167,123,91),
+		cost: 0,
 		on_call: function() {
 			obj_player.state = obj_player.state_groundpound;
 			obj_player.ground_pound_rise = true;
@@ -100,6 +103,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(207,138,203),
+		cost: 0,
 		on_call: function() {
 			with obj_player {
 				old_gun = gun;
@@ -137,7 +141,8 @@ function scr_Pickups(){
 		bounce_reset_max: 1,
 		enemies_count: 0,
 		enemies_count_max: 0,
-		text_color: make_color_rgb(75,128,202),
+		text_color: make_color_rgb(207,138,203),
+		cost: 0,
 		on_call: function() {
 			if !instance_exists(obj_shieldbubble) {
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-2,obj_shieldbubble);
@@ -164,6 +169,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(211,160,104),
+		cost: 0,
 		on_call: function() {
 			if obj_player.state = obj_player.state_freeze {
 				obj_player.pickup_freeze.on_cooldown = true;
@@ -194,6 +200,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(138,176,96),
+		cost: 0,
 		on_call: function() {
 			if cooldown_time > 0 {
 				cooldown_time -= 1;
@@ -264,6 +271,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(123,114,67),
+		cost: 0,
 		on_call: function() {
 			if !instance_exists(obj_slowmo) {
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_slowmo);
@@ -289,6 +297,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(207,138,203),
+		cost: 0,
 		on_call: function() {
 			obj_player.can_rotate = false;
 			obj_player.can_shoot = false;
@@ -319,6 +328,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(184,181,185),
+		cost: 0,
 		on_call: function() {
 			
 			with obj_player {
@@ -368,6 +378,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 4,
 		text_color: make_color_rgb(237,225,158),
+		cost: 0,
 		on_call: function() {
 			audio_play_sound(snd_camera,0,false);
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup);
@@ -395,6 +406,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(104,194,211),
+		cost: 0,
 		on_call: function() {
 			with obj_player {
 				audio_play_sound(snd_freeze,0,false);
@@ -435,6 +447,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(86,123,121),
+		cost: 0,
 		on_call: function() {
 			with obj_player {
 				if frenzy = false {
@@ -468,6 +481,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 6,
 		text_color: make_color_rgb(180,82,82),
+		cost: 0,
 		on_call: function() {
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_crosshair);
 			on_cooldown = true;
@@ -493,6 +507,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 15,
 		text_color: make_color_rgb(242,240,229),
+		cost: 0,
 		on_call: function() {
 			with obj_player {
 				//heart
@@ -538,6 +553,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 8,
 		text_color: make_color_rgb(138,176,96),
+		cost: 0,
 		on_call: function() {
 			obj_player.state = obj_player.state_blink;
 			if !instance_exists(obj_blink_box) {
@@ -567,6 +583,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(178,180,126),
+		cost: 0,
 		on_call: function() {
 			if !instance_exists(obj_parachute) {
 				with obj_player {
@@ -598,6 +615,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(138,176,96),
+		cost: 0,
 		on_call: function() {
 			with obj_player {
 				old_gun = gun;
@@ -636,13 +654,14 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(237,225,158),
+		cost: 25,
 		on_call: function() {
-			if global.num_of_coins >= 0 and !instance_exists(obj_slot_machine) {
-				global.num_of_coins -= 0;
+			if global.num_of_coins >= obj_player.pickup_winners.cost and !instance_exists(obj_slot_machine) {
 				with obj_player {
 					instance_create_depth(x,y,depth,obj_slot_machine);
+					instance_create_depth(obj_player.x+lengthdir_x(34,obj_player.angle+90),obj_player.y+lengthdir_y(34,obj_player.angle+90),obj_player.depth,obj_coin25);
 				}
-				on_cooldown = true;
+				//on_cooldown = true;
 			}
 		}
 	};
@@ -665,6 +684,7 @@ function scr_Pickups(){
 		enemies_count: 0,
 		enemies_count_max: 0,
 		text_color: make_color_rgb(242,240,229),
+		cost: 0,
 		on_call: function() {
 			
 			with obj_player {
@@ -692,6 +712,7 @@ function scr_Pickups(){
 	enemies_count: 0,
 	enemies_count_max: 0,
 	text_color: make_color_rgb(237,225,158),
+	cost: 0,
 	on_call: function() {
 			with obj_player {
 				if invincibility = false {

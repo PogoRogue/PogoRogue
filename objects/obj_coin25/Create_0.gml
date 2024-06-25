@@ -4,9 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
-start_spd = 4; //starting speed
+start_spd = 6; //starting speed
 spd = start_spd;
-max_spd = 4; //max speed
+max_spd = 6; //max speed
 
 if instance_exists(obj_slot_machine) {
 	follow_object = obj_slot_machine;
