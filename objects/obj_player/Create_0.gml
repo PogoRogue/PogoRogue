@@ -31,6 +31,7 @@ platform_on = true;
 centering = false;
 current_burst = 0;
 weapon_arrow_index = 0;
+table = false;
 
 //portal
 portal_object = noone;
@@ -153,7 +154,13 @@ equipped_item = noone; // The weapon that initializes the equipment is none
 state_free = function() {
 	bouncing = false;
 	can_rotate = true;
-	can_shoot = true;
+	if !instance_exists(obj_salesman_table) {
+		can_shoot = true;
+	}else {
+		if obj_salesman_table.being_used = false {
+			can_shoot = true;
+		}
+	}	
 	soundPlayed = false;
 	tutorialDash = false; // Used for tutorial ground tile state
 	
@@ -536,6 +543,36 @@ state_immobile = function() {
 	can_rotate = false;
 	can_shoot = false;
 	speed = 0;
+}
+
+state_immobile_bouncing = function() {
+	vspeed += grv;
+	
+	//check for collision with ground y axis
+	if (place_meeting(x,y+vspeed,obj_ground)) {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
+		}
+		aerial_assassin_count = 0;
+		shop_bouncing = true;
+		speed = 0; //stop player movement while bouncing
+	}
+	
+	if shop_bouncing = true {
+		sprite_index = player_sprite; //set sprite
+		//animate before bouncing
+		if (floor(image_index) = sprite_get_number(sprite_index)-1) {
+			animation_complete = true;
+		}else if (animation_complete = false) {
+			image_index += 0.75;
+		}
+		if scr_Animation_Complete() = true {
+			scr_Jump(0);
+			shop_bouncing = false;
+		}
+	}
+	
+	scr_Player_Collision();
 }
 
 state_revive = function() {

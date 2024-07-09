@@ -168,7 +168,7 @@ if(is_dead) {
 		}
 		
 		if frenzy_time > 0 and frenzy = true {
-			pickup_frenzy.cooldown_time -= 120;
+			pickup_frenzy.cooldown_time -= 60;
 		}
 	}
 

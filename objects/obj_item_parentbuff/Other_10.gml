@@ -40,10 +40,12 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 	
 	with instance_create_depth(x,y,depth-1000,obj_item_text) {
 		item_string = other.item_name;
+		if other.play_sound = true { audio_play_sound(snd_passivePowerup,0,false); }
 	}
 }else if add_sprite_to_list = true {
 	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
 		if global.all_buff_sprites[i] = sprite_index {
+			if play_sound = true { audio_play_sound(snd_passivePowerup,0,false); }
 			//update image index
 			global.all_buff_sprites_index[i] = image_index;
 			//update name

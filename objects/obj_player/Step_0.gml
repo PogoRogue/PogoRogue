@@ -61,7 +61,7 @@ state();
 #region //pickups
 
 //call pickups
-if room != room_shop {
+if room != room_shop and table = false {
 	if pickups_array[0].on_cooldown = false and pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_max = 0 { //cooldown
 		if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
 		or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
@@ -70,14 +70,14 @@ if room != room_shop {
 	}else if pickups_array[0].reload_on_bounce = true and pickups_array[0].uses_per_bounce > 0 and pickups_array[0].enemies_count_max = 0 { //no cooldown
 		if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
 		or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
-			pickups_array[0].on_call();
+			pickups_array[0].on_call();   
 		}
 	}else if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count <= 0 {
 		if (key_pickup_1) and scr_In_Array(pickups_array[0].states_to_call_in, state) and pickups_array[0].key_held 
 		or (key_pickup_1_pressed) and scr_In_Array(pickups_array[0].states_to_call_in, state) and !pickups_array[0].key_held {
 			pickups_array[0].on_call();
 		}
-	}
+	}  
 	
 	//call pickup 2
 	if pickups_array[1].on_cooldown = false and pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_max = 0 { //cooldown
@@ -190,9 +190,18 @@ if centering = true and can_rotate {
 	}
 	
 	//stop if right or left key
-	if key_left or key_right or state = state_bouncing {
-		can_rotate = true;
-		centering = false;
+	if !instance_exists(obj_salesman_table) {
+		if key_left or key_right or state = state_bouncing {
+			can_rotate = true;
+			centering = false;
+		}
+	}else {
+		if obj_salesman_table.being_used = false {
+			if key_left or key_right or state = state_bouncing {
+				can_rotate = true;
+				centering = false;
+			}
+		}
 	}
 }
 
@@ -517,3 +526,5 @@ if not_grappling_1 and not_grappling_2 {
 }
 
 num_iframes = (1.5 + iframes_add) * room_speed;
+
+//show_debug_message("Player X: " + string(x) + " Player Y: " + string(y));

@@ -218,6 +218,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_angled_platform_right;
 		}
+		else if(Red == 40 && Green == 40 && Blue == 40)
+		{
+			return obj_salesman_table;
+		}
 		else if(Red == 30 && Green == 30 && Blue == 30)
 		{
 			return obj_room_gate_open_shop;

@@ -2,7 +2,7 @@
 //randomize();
 randomize();
 if num_of_coins > 0 {
-	instance_create_depth(x+irandom_range(-4,4),y+irandom_range(-4,4),depth,obj_coin);
+	instance_create_depth(x+irandom_range(-4,4),y+irandom_range(-4,4),depth,obj_coin, {salesman: salesman_spawner});
 	alarm[0] = time_between_spawns;
 	num_of_coins -= 1;
 }else {

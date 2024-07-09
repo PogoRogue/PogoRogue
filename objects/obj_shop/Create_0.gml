@@ -61,7 +61,6 @@ alarm3_time = 30;
 //bool to prevent looping sounds
 soundPlayed = false;
 
-
 spawn = false;
 if global.shop_num > global.current_shop_num {
 	spawn = true;

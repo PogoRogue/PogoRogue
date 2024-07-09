@@ -16,16 +16,16 @@ global.player_spawn_y_prev = 0;
 
 if room = room_gameplay_video {
 	global.num_of_coins = 2000;
+}else if room = room_test {
+	global.num_of_coins = 200;
 }else {
-	global.num_of_coins = 0;	
+	global.num_of_coins = 200;	//0
 }
 
 global.mute = false;
 global.shop_index = 0;
 global.num_of_ground_objects = 0;
 global.tiles_left_to_draw = 0;
-
-
 
 if !instance_exists(obj_controls_controller) {
 	instance_create_depth(x,y,depth,obj_controls_controller);
@@ -142,6 +142,7 @@ global.combat_room_num = 0;
 global.shop_number = 0;
 global.enemy_number = 0;
 global.passive_number = 0;
+global.salesman_number = 0;
 
 //set seed in other rooms 
 if room != room_proc_gen_test and room != room_shop

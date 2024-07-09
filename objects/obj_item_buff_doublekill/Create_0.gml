@@ -8,6 +8,7 @@ add_sprite_to_list = true;
 item_cost = 40;
 max_uses = 3;
 item_stats = "";
+index_add = 0; //declare this variable when there are multiple sprites for this item
 
 if obj_player.double_kill = 1 {
 	item_name = "Triple Kill";

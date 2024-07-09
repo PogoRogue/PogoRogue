@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"spr_pogosmith_workbench",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":63,
-  "bbox_left":1,
-  "bbox_right":84,
-  "bbox_top":7,
+  "bbox_left":-32,
+  "bbox_right":116,
+  "bbox_top":-48,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -13,6 +13,7 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"","%Name":"14146533-27b4-4878-b319-5ebe405dbfd1","name":"14146533-27b4-4878-b319-5ebe405dbfd1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"926b5cf3-db21-4fd3-99ba-55ecd7586920","name":"926b5cf3-db21-4fd3-99ba-55ecd7586920","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -23,7 +24,7 @@
   ],
   "name":"spr_pogosmith_workbench",
   "nineSlice":null,
-  "origin":0,
+  "origin":9,
   "parent":{
     "name":"NPCs",
     "path":"folders/Sprites/NPCs.yy",
@@ -49,7 +50,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -59,7 +60,7 @@
     },
     "name":"spr_pogosmith_workbench",
     "playback":1,
-    "playbackSpeed":6.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -71,12 +72,15 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"14146533-27b4-4878-b319-5ebe405dbfd1","path":"sprites/spr_pogosmith_workbench/spr_pogosmith_workbench.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"62536fad-2865-4bd4-abae-f268cab3a23e","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"926b5cf3-db21-4fd3-99ba-55ecd7586920","path":"sprites/spr_pogosmith_workbench/spr_pogosmith_workbench.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"1d147f46-aa00-4552-b979-57d3091d6eaa","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
-    "yorigin":0,
+    "xorigin":44,
+    "yorigin":63,
   },
   "swatchColours":[
     4278190335,4293259506,4290360760,4287136134,4284834660,4283384901,4283971642,4280492321,4282526517,4285154115,

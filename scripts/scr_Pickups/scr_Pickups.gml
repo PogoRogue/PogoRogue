@@ -431,7 +431,7 @@ function scr_Pickups(){
 	
 	pickup_frenzy = {
 		_name: "Frenzy",
-		tagline: "All weapons are instantly reloaded, and bullets are unlimited without reloading for 5s. Getting a kill during this time lowers its cooldown time by 2s.",
+		tagline: "All weapons are instantly reloaded, and bullets are unlimited without reloading for 5s. Getting a kill during this time lowers its cooldown time by 1s.",
 		gui_sprite: spr_pickup_frenzy,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
