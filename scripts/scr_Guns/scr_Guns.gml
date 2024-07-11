@@ -481,4 +481,26 @@ function scr_Guns(){
 		max_added_bullets: 5,
 		max_speed: -vsp_basicjump
 	};
+	
+	puncher_gun = {
+		_name: "Puncher",  
+		tagline: "Fire a large boxing glove that knocks out enemies in its path. It packs a punch! Sorry.",
+		sprite: spr_gun_puncher,   
+		ammo: [puncher_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_shotgun,
+		spread_number: 1,    
+		spread_angle: 0,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1.35, 
+		reset_momentum: true, 
+		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 2,
+		current_bullets: 2 + obj_player.max_ammo_buff,  
+		max_added_bullets: 5,
+		max_speed: 8
+	};
 }

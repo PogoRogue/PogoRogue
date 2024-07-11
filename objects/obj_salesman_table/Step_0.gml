@@ -16,7 +16,7 @@ if (colliding and key_interact) and !instance_exists(obj_fade_in) and all_out = 
 	being_used = not being_used;
 	obj_player.can_rotate = true;
 	obj_player.centering = true;
-	obj_player.table = true;
+	obj_player.table = being_used;
 }
 
 if being_used = true {

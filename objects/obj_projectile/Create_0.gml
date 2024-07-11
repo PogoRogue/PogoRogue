@@ -315,7 +315,17 @@ if (gun_name = "The Portal") {
 	image_angle = 0;
 }
 
+if (gun_name = "Puncher") {
+	maxspd_frames = 5;
+	decrease_spd = 0.9;
+	still_time = 60;
+	image_yscale = sign((2 * (obj_player.puncher_gun.current_bullets % 2)) - 1);
+	init_damage = damage;
+	colliding_with_enemy = false;
+}
+
 //destroy projectile after 30 seconds if still exists
 alarm[2] = 1800;
 
 scr_Projectile_Bounce("Javelins");
+scr_Projectile_Bounce("Puncher");

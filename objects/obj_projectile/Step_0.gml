@@ -38,6 +38,12 @@ if (destroy_on_impact and num_of_bounces <= 0 and destroyable = true) {
 		}else if gun_name = "Water Gun" {
 			alarm[0] = 1;
 			//sprite_index = spr_projectile_water_droplet;
+		}else if gun_name = "Puncher" {
+			alarm[0] = 20;
+			spd = 0;
+			hspd = 0;
+			vspd = 0;
+			still_time = 0;
 		}else {
 			alarm[0] = 1;	
 		}
@@ -71,8 +77,8 @@ if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) {
 	}
 	
 }else if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0 )
-or (place_meeting(x,y+vspd,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) { //top
-	while !place_meeting(x,y+sign(vspd),obj_ground) and !place_meeting(x,y+sign(vspd),obj_ground_oneway) {
+or (place_meeting(x,y+vspd,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) and gun_name != "Puncher" { //top
+	while !place_meeting(x,y+sign(vspd),obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) and gun_name != "Puncher") {
 		y += sign(vspd);
 	}
 	vspd *= -bounce_amount;
@@ -86,7 +92,7 @@ or (place_meeting(x,y+vspd,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_gro
 	}
 
 	
-}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false) 
+}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false and gun_name != "Puncher") 
 or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) 
 or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) {
 	instance_destroy();
@@ -443,5 +449,36 @@ if (gun_name = "The Portal") {
 		obj_player.vspeed = 0;
 		obj_player.gun_array[obj_player.current_gun].current_bullets = 1;
 		instance_destroy();
+	}
+}
+
+if (gun_name = "Puncher") {
+	if maxspd_frames > 0 {
+		maxspd_frames -= 1;
+	}else {
+		if abs(hspd) > 0.05 or abs(vspd) > 0.05 {
+			hspd *= decrease_spd;
+			vspd *= decrease_spd;
+		}else {
+			hspd = 0;
+			vspd = 0;
+			mask_index = spr_nothing;
+			if still_time > 0 {
+				still_time -= 1;
+			}else {
+				if image_alpha > 0 {
+					image_alpha -= 0.05;	
+				}else {
+					instance_destroy();	
+				}
+			}
+		}
+	}
+	
+	//damage once per enemy
+	if colliding_with_enemy = true {
+		damage = 0;
+	}else {
+		damage = init_damage;	
 	}
 }

@@ -2,6 +2,11 @@
 event_inherited();
 
 buff();
+with obj_item_text {
+	if 	item_string = other.item_name {
+		other.text_exists = true;
+	}
+}
 
 //add buff sprite to ui
 if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = true {
@@ -28,8 +33,19 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 	if scr_In_Array(obj_player.all_buffs_array,buff) {
 		for(i = 0; i < array_length(obj_player.all_buffs_array);i++) {
 			if obj_player.all_buffs_array[i] = buff {
-				if global.passive_unlocked_array[i] = false and room != room_tutorial {
-					instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+				if global.passive_unlocked_array[i] = false and room != room_tutorial and text_exists = false {
+					//instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
+					with instance_create_depth(x,y,depth-1000,obj_item_text) {
+						new_discovery = true;
+						item_string = other.item_name;
+						if other.play_sound = true { audio_play_sound(snd_passivePowerup,0,false); }
+					}
+				}else if global.passive_unlocked_array[i] = true and room != room_tutorial and text_exists = false {
+					with instance_create_depth(x,y,depth-1000,obj_item_text) {
+						new_discovery = false;
+						item_string = other.item_name;
+						if other.play_sound = true { audio_play_sound(snd_passivePowerup,0,false); }
+					}
 				}
 				global.passive_unlocked_array[i] = true;
 				ini_write_real("itemsunlocked", "passive " + string(i), global.passive_unlocked_array[i]);
@@ -37,11 +53,6 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 		}
 	}
 	ini_close();
-	
-	with instance_create_depth(x,y,depth-1000,obj_item_text) {
-		item_string = other.item_name;
-		if other.play_sound = true { audio_play_sound(snd_passivePowerup,0,false); }
-	}
 }else if add_sprite_to_list = true {
 	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
 		if global.all_buff_sprites[i] = sprite_index {
@@ -55,13 +66,17 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 			//update numbers
 			if global.all_buff_numbers[i] < max_uses and max_uses > 0 {
 				global.all_buff_numbers[i] += 1;
-				with instance_create_depth(x,y,depth-1000,obj_item_text) {
-					item_string = other.item_name;
+				if play_sound = true and text_exists = false {
+					with instance_create_depth(x,y,depth-1000,obj_item_text) {
+						item_string = other.item_name;
+					}
 				}
 			}else if max_uses <= 0 {
 				global.all_buff_numbers[i] += 1;
-				with instance_create_depth(x,y,depth-1000,obj_item_text) {
-					item_string = other.item_name;
+				if play_sound = true and text_exists = false {
+					with instance_create_depth(x,y,depth-1000,obj_item_text) {
+						item_string = other.item_name;
+					}
 				}
 			}
 		}

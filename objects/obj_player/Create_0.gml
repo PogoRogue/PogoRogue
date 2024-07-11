@@ -1036,7 +1036,7 @@ all_guns_array = [default_gun,paintball_gun,shotgun_gun,
 				grenade_gun, boomerang_gun,starsucker_gun,
 				water_gun, bubble_gun, yoyo_gun,
 				missile_gun, sniper_gun, laser_gun,
-				slime_gun, machine_gun]; //all guns
+				slime_gun, machine_gun, puncher_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();
