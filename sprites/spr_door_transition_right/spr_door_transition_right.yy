@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":431,
   "bbox_left":0,
-  "bbox_right":431,
+  "bbox_right":423,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b7ee6c72-1973-4ebf-bdaf-7b1276fd6151","name":"b7ee6c72-1973-4ebf-bdaf-7b1276fd6151","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"768e9329-9246-4f8b-9698-98c07135ba5c","name":"768e9329-9246-4f8b-9698-98c07135ba5c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":432,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"1a95b4d8-d03e-4de0-af39-7e2bb5480025","blendMode":0,"displayName":"default","isLocked":false,"name":"1a95b4d8-d03e-4de0-af39-7e2bb5480025","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"6a6abf4c-f12a-442c-8be2-411f96779e33","blendMode":0,"displayName":"default","isLocked":false,"name":"6a6abf4c-f12a-442c-8be2-411f96779e33","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_door_transition_right",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b7ee6c72-1973-4ebf-bdaf-7b1276fd6151","path":"sprites/spr_door_transition_right/spr_door_transition_right.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"68f8f385-fb78-47cb-a3bb-b145ff759d36","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"768e9329-9246-4f8b-9698-98c07135ba5c","path":"sprites/spr_door_transition_right/spr_door_transition_right.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2468a5a8-e5ae-4699-8d21-6a0057894a63","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

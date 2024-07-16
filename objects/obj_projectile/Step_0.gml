@@ -77,8 +77,8 @@ if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) {
 	}
 	
 }else if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0 )
-or (place_meeting(x,y+vspd,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) and gun_name != "Puncher" { //top
-	while !place_meeting(x,y+sign(vspd),obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) and gun_name != "Puncher") {
+or (place_meeting(x,y+vspd,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) /*and gun_name != "Puncher"*/ { //top
+	while !place_meeting(x,y+sign(vspd),obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) /*and gun_name != "Puncher"*/) {
 		y += sign(vspd);
 	}
 	vspd *= -bounce_amount;
@@ -92,7 +92,7 @@ or (place_meeting(x,y+vspd,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_gro
 	}
 
 	
-}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false and gun_name != "Puncher") 
+}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false /*and gun_name != "Puncher"*/) 
 or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) 
 or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) {
 	instance_destroy();
@@ -462,7 +462,7 @@ if (gun_name = "Puncher") {
 		}else {
 			hspd = 0;
 			vspd = 0;
-			mask_index = spr_nothing;
+			//mask_index = spr_nothing;
 			if still_time > 0 {
 				still_time -= 1;
 			}else {
@@ -475,10 +475,20 @@ if (gun_name = "Puncher") {
 		}
 	}
 	
-	//damage once per enemy
-	if colliding_with_enemy = true {
-		damage = 0;
-	}else {
-		damage = init_damage;	
+	//store prev x/y values for trail effect
+	trail = not trail;
+	
+	if trail = false {
+		x_prev_array[4] = x_prev_array[3];
+		y_prev_array[4] = y_prev_array[3];
+		x_prev_array[3] = x_prev_array[2];
+		y_prev_array[3] = y_prev_array[2];
+		x_prev_array[2] = x_prev_array[1];
+		y_prev_array[2] = y_prev_array[1];
+		x_prev_array[1] = x_prev_array[0];
+		y_prev_array[1] = y_prev_array[0];
+		x_prev_array[0] = x;
+		y_prev_array[0] = y;
+		show_debug_message(x_prev_array);
 	}
 }

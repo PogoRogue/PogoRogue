@@ -528,3 +528,7 @@ if not_grappling_1 and not_grappling_2 {
 num_iframes = (1.5 + iframes_add) * room_speed;
 
 //show_debug_message("Player X: " + string(x) + " Player Y: " + string(y));
+
+if global.triplethreat = true {
+	num_of_weapons = 3;
+}

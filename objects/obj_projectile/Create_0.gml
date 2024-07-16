@@ -319,9 +319,24 @@ if (gun_name = "Puncher") {
 	maxspd_frames = 5;
 	decrease_spd = 0.9;
 	still_time = 60;
+	puncher1_snd = choose(snd_puncher1,snd_puncher2);
+	if puncher1_snd = snd_puncher1 {
+		puncher2_snd = 	snd_puncher2;
+	}else {
+		puncher2_snd = 	snd_puncher1;
+	}
 	image_yscale = sign((2 * (obj_player.puncher_gun.current_bullets % 2)) - 1);
+	if image_yscale = 1 {
+		audio_play_sound(puncher1_snd,0,false);
+	}else {
+		audio_play_sound(puncher2_snd,0,false);
+	}
 	init_damage = damage;
 	colliding_with_enemy = false;
+	x_prev_array = [0,0,0,0,0];
+	y_prev_array = [0,0,0,0,0];
+	trail = true;
+	enemies_array = [];
 }
 
 //destroy projectile after 30 seconds if still exists

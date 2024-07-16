@@ -39,6 +39,16 @@ if(!other.invinsible) and damage != 0 {
 			}
 			yoyo_array2[array_length(yoyo_array2)] = other;
 		}
+	}else if gun_name = "Puncher" {
+		enemy_object = other;
+		if !scr_In_Array(enemies_array,enemy_object) {
+			array_resize(enemies_array,array_length(enemies_array)+1);
+			enemies_array[array_length(enemies_array)-1] = enemy_object;
+			enemy_object.hp -= (damage + global.damage_buff - (global.damage_buff)) * enemy_object.bullet_defense;
+			enemy_object.red_frames = 10;
+			scr_Reload_On_Kill();
+
+		}
 	}else {
 		if(!other.is_dead) {
 			other.hp -= (damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "Laser Gun" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "Slime Blaster" and global.damage_buff > 0))) * other.bullet_defense;

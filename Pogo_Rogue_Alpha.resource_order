@@ -146,6 +146,8 @@
     {"name":"snd_carhorn","order":1,"path":"sounds/snd_carhorn/snd_carhorn.yy",},
     {"name":"snd_grappling","order":1,"path":"sounds/snd_grappling/snd_grappling.yy",},
     {"name":"snd_music_shop","order":1,"path":"sounds/snd_music_shop/snd_music_shop.yy",},
+    {"name":"snd_puncher1","order":2,"path":"sounds/snd_puncher1/snd_puncher1.yy",},
+    {"name":"snd_puncher2","order":3,"path":"sounds/snd_puncher2/snd_puncher2.yy",},
     {"name":"spr_airbag_activated","order":2,"path":"sprites/spr_airbag_activated/spr_airbag_activated.yy",},
     {"name":"spr_airbag_propeller","order":4,"path":"sprites/spr_airbag_propeller/spr_airbag_propeller.yy",},
     {"name":"spr_airbag_spawning","order":3,"path":"sprites/spr_airbag_spawning/spr_airbag_spawning.yy",},
@@ -300,5 +302,6 @@
     {"name":"spr_slotmachine_slots","order":7,"path":"sprites/spr_slotmachine_slots/spr_slotmachine_slots.yy",},
     {"name":"spr_slotmachine_tryagain","order":11,"path":"sprites/spr_slotmachine_tryagain/spr_slotmachine_tryagain.yy",},
     {"name":"spr_slotmachine","order":5,"path":"sprites/spr_slotmachine/spr_slotmachine.yy",},
+    {"name":"spr_actives_swap","order":14,"path":"sprites/spr_actives_swap/spr_actives_swap.yy",},
   ],
 }

@@ -489,18 +489,18 @@ function scr_Guns(){
 		ammo: [puncher_bullet],
 		inaccuracy: 0,       
 		kick: 2,              
-		sound: snd_shotgun,
+		sound: snd_nothing,
 		spread_number: 1,    
 		spread_angle: 0,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
-		momentum_added: 1.35, 
+		momentum_added: 1.3, 
 		reset_momentum: true, 
 		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 8
+		max_speed: 11
 	};
 }

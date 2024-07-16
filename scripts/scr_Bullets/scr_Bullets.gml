@@ -423,7 +423,7 @@ function scr_Bullets(){
 	puncher_bullet = {
 		sprite: spr_projectile_puncher,
 		gui_sprite: spr_projectile_puncher_gui,
-		spd: 8,                          
+		spd: 11,                          
 		firerate_start: 1,               
 		firerate_end: 1,                 
 		firerate_mult: 0,               
@@ -436,6 +436,6 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 5,
 		bounce_amount: 1,
-		damage: 16
+		damage: 24
 	};
 }

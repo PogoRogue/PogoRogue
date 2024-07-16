@@ -88,8 +88,31 @@ if select = 2 {
 	if num_of_pickups = 1 {
 		scr_Draw_Pickup_Description(center_x,yy,pickup_1,1,true,global.all_pickup_costs[0]);
 	}else if num_of_pickups = 2 {
-		scr_Draw_Pickup_Description(xx1,yy,pickup_1,1,true,global.all_pickup_costs[0]);
-		scr_Draw_Pickup_Description(xx2,yy,pickup_2,2,true,global.all_pickup_costs[1]);
+		draw_sprite(spr_actives_swap,actives_swap,center_x,yy-53);
+		if actives_swap = true {
+			//draw select button
+			draw_set_font(fnt_itemdescription2);
+			draw_set_halign(fa_center);
+			if global.use_controller = true {
+				draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[18][0]),2,center_x,yy-34);
+			}else {
+				var keyboard_array_value = global.keyboard_array[18][0];
+				var keyboard_text = scr_Keyboard_Get_Key_String(keyboard_array_value);
+			
+				if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
+					if is_string(keyboard_text) {
+						scr_Draw_Text_Outlined(center_x,yy-34,string(keyboard_text),c_white);
+					}else {
+						draw_sprite(keyboard_text,0,center_x,yy-34);
+					}
+				}else {
+					var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
+					draw_sprite(mouse_sprite,0,center_x,yy-34);
+				}
+			}
+		}
+		scr_Draw_Pickup_Description(xx1-12,yy,pickup_1,1,true,global.all_pickup_costs[0]);
+		scr_Draw_Pickup_Description(xx2+12,yy,pickup_2,2,true,global.all_pickup_costs[1]);
 	}
 }
 
@@ -103,12 +126,80 @@ if select = 3 {
 	if num_of_weapons = 1 {
 		scr_Draw_Weapon_Description(center_x,yy,gun_1,1,true,global.all_weapon_costs[0]);
 	}else if num_of_weapons = 2 {
-		scr_Draw_Weapon_Description(xx1,yy,gun_1,1,true,global.all_weapon_costs[0]);
-		scr_Draw_Weapon_Description(xx2,yy,gun_2,2,true,global.all_weapon_costs[1]);
+		draw_sprite(spr_actives_swap,weapons_swap1,center_x,yy-17);
+		if weapons_swap1 = true {
+			//draw select button
+			draw_set_font(fnt_itemdescription2);
+			draw_set_halign(fa_center);
+			if global.use_controller = true {
+				draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[18][0]),2,center_x,yy+2);
+			}else {
+				var keyboard_array_value = global.keyboard_array[18][0];
+				var keyboard_text = scr_Keyboard_Get_Key_String(keyboard_array_value);
+			
+				if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
+					if is_string(keyboard_text) {
+						scr_Draw_Text_Outlined(center_x,yy+2,string(keyboard_text),c_white);
+					}else {
+						draw_sprite(keyboard_text,0,center_x,yy+2);
+					}
+				}else {
+					var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
+					draw_sprite(mouse_sprite,0,center_x,yy+2);
+				}
+			}
+		}
+		scr_Draw_Weapon_Description(xx1-12,yy,gun_1,1,true,global.all_weapon_costs[0]);
+		scr_Draw_Weapon_Description(xx2+12,yy,gun_2,2,true,global.all_weapon_costs[1]);
 	}else if num_of_weapons = 3 {
+		draw_sprite(spr_actives_swap,weapons_swap1,center_x-98,yy-17);
+		draw_sprite(spr_actives_swap,weapons_swap2,center_x+98,yy-17);
+		if weapons_swap1 = true {
+			//draw select button
+			draw_set_font(fnt_itemdescription2);
+			draw_set_halign(fa_center);
+			if global.use_controller = true {
+				draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[18][0]),2,center_x-98,yy+2);
+			}else {
+				var keyboard_array_value = global.keyboard_array[18][0];
+				var keyboard_text = scr_Keyboard_Get_Key_String(keyboard_array_value);
+			
+				if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
+					if is_string(keyboard_text) {
+						scr_Draw_Text_Outlined(center_x-98,yy+2,string(keyboard_text),c_white);
+					}else {
+						draw_sprite(keyboard_text,0,center_x-98,yy+2);
+					}
+				}else {
+					var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
+					draw_sprite(mouse_sprite,0,center_x-98,yy+2);
+				}
+			}
+		}else if weapons_swap2 = true {
+			//draw select button
+			draw_set_font(fnt_itemdescription2);
+			draw_set_halign(fa_center);
+			if global.use_controller = true {
+				draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[18][0]),2,center_x+98,yy+2);
+			}else {
+				var keyboard_array_value = global.keyboard_array[18][0];
+				var keyboard_text = scr_Keyboard_Get_Key_String(keyboard_array_value);
+			
+				if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
+					if is_string(keyboard_text) {
+						scr_Draw_Text_Outlined(center_x+98,yy+2,string(keyboard_text),c_white);
+					}else {
+						draw_sprite(keyboard_text,0,center_x+98,yy+2);
+					}
+				}else {
+					var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
+					draw_sprite(mouse_sprite,0,center_x+98,yy+2);
+				}
+			}
+		}
 		xx1 = center_x-172;
-		scr_Draw_Weapon_Description(xx1,yy,gun_1,1,true,global.all_weapon_costs[0]);
+		scr_Draw_Weapon_Description(xx1-24,yy,gun_1,1,true,global.all_weapon_costs[0]);
 		scr_Draw_Weapon_Description(center_x,yy,gun_2,2,true,global.all_weapon_costs[1]);
-		scr_Draw_Weapon_Description(xx3,yy,gun_3,3,true,global.all_weapon_costs[2]);
+		scr_Draw_Weapon_Description(xx3+24,yy,gun_3,3,true,global.all_weapon_costs[2]);
 	}
 }

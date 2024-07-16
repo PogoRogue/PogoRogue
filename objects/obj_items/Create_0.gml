@@ -6,6 +6,10 @@ select_x_max = 4; //number of columns
 select_y = 0; //passives only
 select_y_max = 4; //number of rows
 page_num = 1; //page number for passives
+actives_swap = false;
+weapons_swap = false;
+weapons_swap1 = false;
+weapons_swap2 = false;
 
 selected_x = false;
 selected_y = false;

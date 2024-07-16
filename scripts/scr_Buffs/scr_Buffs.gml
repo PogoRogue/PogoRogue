@@ -130,6 +130,7 @@ function scr_Buffs(){
 	
 	buff_triplethreat = function(){
 		with obj_player {
+			global.triplethreat = true;
 			num_of_weapons = 3;
 			gun_array = [gun_1, gun_2, gun_3];
 			//if play_sound = true { audio_play_sound(snd_passivePowerup,0,false); }
