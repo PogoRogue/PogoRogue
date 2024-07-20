@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Choose_Test_Block_To_Generate",
   "isCompatibility":false,
   "isDnD":false,

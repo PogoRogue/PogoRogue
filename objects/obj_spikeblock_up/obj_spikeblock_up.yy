@@ -5,7 +5,7 @@
   "managed":true,
   "name":"obj_spikeblock_up",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_spikeblock","path":"objects/obj_spikeblock/obj_spikeblock.yy",},"propertyId":{"name":"grav","path":"objects/obj_spikeblock/obj_spikeblock.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"-1",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_spikeblock","path":"objects/obj_spikeblock/obj_spikeblock.yy",},"propertyId":{"name":"grav","path":"objects/obj_spikeblock/obj_spikeblock.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"-1",},
   ],
   "parent":{
     "name":"Environmental",

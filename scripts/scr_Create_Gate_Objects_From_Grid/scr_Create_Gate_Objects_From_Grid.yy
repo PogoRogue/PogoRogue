@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Create_Gate_Objects_From_Grid",
   "isCompatibility":false,
   "isDnD":false,

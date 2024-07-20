@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Boss_Button_Press",
   "isCompatibility":false,
   "isDnD":false,

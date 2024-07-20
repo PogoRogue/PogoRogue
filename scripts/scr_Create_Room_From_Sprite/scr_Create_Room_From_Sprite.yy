@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Create_Room_From_Sprite",
   "isCompatibility":false,
   "isDnD":false,

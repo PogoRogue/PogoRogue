@@ -64,14 +64,16 @@ if (gun_name = "Bouncy Ball Blaster") {
 	draw_sprite_ext(sprite_index,image_index,x,y,1,1,spr_angle,c_white,image_alpha);
 }else if (gun_name = "Puncher") {
 	draw_self();
-	for(i = array_length(x_prev_array)-1; i > -1; i--) {
-		if x_prev_array[i] != 0 and y_prev_array[i] != 0 {
-			draw_sprite_ext(sprite_index,0,x_prev_array[i],y_prev_array[i],image_xscale-(i*0.15*sign(image_xscale)),image_yscale-(i*0.15*sign(image_yscale)),image_angle,c_white,image_alpha-(i*0.05));
+	if abs(hspd) > 0.1 or abs(vspd) > 0.1 {
+		for(i = array_length(x_prev_array)-1; i > -1; i--) {
+			if x_prev_array[i] != 0 and y_prev_array[i] != 0 {
+				draw_sprite_ext(sprite_index,0,x_prev_array[i],y_prev_array[i],image_xscale-(i*0.15*sign(image_xscale)),image_yscale-(i*0.15*sign(image_yscale)),image_angle,c_white,image_alpha-(i*0.05));
+			}
 		}
-	}
-	for(i = array_length(x_prev_array)-1; i > -1; i--) {
-		if x_prev_array[i] != 0 and y_prev_array[i] != 0 {
-			draw_sprite_ext(sprite_index,0,x_prev_array[i],y_prev_array[i],image_xscale-(i*0.15*sign(image_xscale)),image_yscale-(i*0.15*sign(image_yscale)),image_angle,c_black,(image_alpha/3)+(i*0.05));
+		for(i = array_length(x_prev_array)-1; i > -1; i--) {
+			if x_prev_array[i] != 0 and y_prev_array[i] != 0 {
+				draw_sprite_ext(sprite_index,0,x_prev_array[i],y_prev_array[i],image_xscale-(i*0.15*sign(image_xscale)),image_yscale-(i*0.15*sign(image_yscale)),image_angle,c_black,(image_alpha/3)+(i*0.05));
+			}
 		}
 	}
 	draw_self();

@@ -21,38 +21,64 @@ if select = 1 {
 			if page_num = 1 {
 				draw_sprite(spr_item_slot_shop,(select_x-1 = xx and select_y-1 = yy)+(2*(ii<(array_length(global.all_buff_sprites)))),center_x-90+xx*60,128+yy*60);
 			}else if page_num = 2 {
-				draw_sprite(spr_item_slot_shop,(select_x-1 = xx and select_y-1 = yy)+(2*((ii+16)<(array_length(global.all_buff_sprites)))),center_x-90+xx*60,128+yy*60);
+				draw_sprite(spr_item_slot_shop,(select_x-1 = xx and select_y-1 = yy)+(2*((ii+20)<(array_length(global.all_buff_sprites)))),center_x-90+xx*60,128+yy*60);
 			}
 		}
 	}
 	
 	//draw arrows
-	if page_num = 1 and array_length(global.all_buff_sprites) > 16 {
+	if page_num = 1 and array_length(global.all_buff_sprites) > 20 {
 		draw_sprite(spr_settings_rightarrow_big,0,center_x+128,128+1.5*60);
-	}else if page_num = 2 and array_length(global.all_buff_sprites) > 16 {
+	}else if page_num = 2 and array_length(global.all_buff_sprites) > 20 {
 		draw_sprite(spr_settings_leftarrow_big,0,center_x-128,128+1.5*60);
 	}
 	
 	//item sprites
 	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
+		show_debug_message(sprite_get_name(global.all_buff_sprites[i]));
 		if page_num = 1 { 
 			var xx = (center_x - 90) + (i % 4) * 60;
 			var yy = 156 + floor(i / 4) * 60;
 		}else if page_num = 2 { 
-			var xx = (center_x - 90) + ((i-16) % 4) * 60;
-			var yy = 156 + floor((i-16) / 4) * 60;
+			var xx = (center_x - 90) + ((i-20) % 4) * 60;
+			var yy = 156 + floor((i-20) / 4) * 60;
 		}
 		
-		if page_num = 1 and i <= 15 
-		or page_num = 2 and i > 15 {
+		if page_num = 1 and i <= 19 
+		or page_num = 2 and i > 19 {
 			//name
 			draw_set_font(fnt_itemdescription2);
 			draw_set_halign(fa_center);
 			draw_set_valign(fa_center);
+			
 			scr_Draw_Text_Outlined(xx,yy-49,scr_Linebreak(global.all_buff_names[i],12,99),c_white);
-		
+			
 			//sprite
 			draw_sprite(global.all_buff_sprites[i],global.all_buff_sprites_index[i],xx,yy-27);
+			
+			//draw item description
+			if i = item_selected-1 and page_num = 1 
+			or (i-20) = item_selected-1 and page_num = 2 {
+			
+				var bubble_x = center_x-190;
+				if select_x <= 2 {
+					bubble_x = center_x-190;
+				}else {
+					var bubble_x = center_x+190;
+				}
+			
+				if i > 15 and i < 20 or i > 35 {
+					var y_offset = 0;//-60;
+				}else {
+					var y_offset  = 0;
+				}
+			
+				if yy > 156 + (3 * 60) {
+					yy -= 56;	
+				}
+			
+				scr_Draw_Passive_Description(bubble_x,yy+y_offset,global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,global.all_buff_names[i],global.all_buff_descriptions[i],global.all_buff_stats[i],true,global.all_buff_costs[i]);
+			}
 	
 			//numbers of each buff
 			draw_set_halign(fa_center);
@@ -61,20 +87,6 @@ if select = 1 {
 			if global.all_buff_numbers[i] > 1 {
 				scr_Draw_Text_Outlined(xx-8,yy-19,global.all_buff_numbers[i],c_white);
 			}
-		}
-		
-		//draw item description
-		if i = item_selected-1 and page_num = 1 
-		or (i-16) = item_selected-1 and page_num = 2 {
-			
-			var bubble_x = center_x-190;
-			if select_x <= 2 {
-				bubble_x = center_x-190;
-			}else {
-				var bubble_x = center_x+190;
-			}
-			
-			scr_Draw_Passive_Description(bubble_x,yy,global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,global.all_buff_names[i],global.all_buff_descriptions[i],global.all_buff_stats[i],true,global.all_buff_costs[i]);
 		}
 	}
 }

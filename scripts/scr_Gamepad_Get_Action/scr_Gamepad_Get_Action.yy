@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Gamepad_Get_Action",
   "isCompatibility":false,
   "isDnD":false,

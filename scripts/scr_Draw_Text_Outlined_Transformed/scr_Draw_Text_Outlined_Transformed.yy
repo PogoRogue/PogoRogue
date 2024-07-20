@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Draw_Text_Outlined_Transformed",
   "isCompatibility":false,
   "isDnD":false,

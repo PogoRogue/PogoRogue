@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Generate_Sprite_Test_Layout",
   "isCompatibility":false,
   "isDnD":false,

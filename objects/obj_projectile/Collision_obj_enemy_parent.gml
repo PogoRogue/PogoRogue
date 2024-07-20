@@ -47,6 +47,9 @@ if(!other.invinsible) and damage != 0 {
 			enemy_object.hp -= (damage + global.damage_buff - (global.damage_buff)) * enemy_object.bullet_defense;
 			enemy_object.red_frames = 10;
 			scr_Reload_On_Kill();
+			randomize();
+			audio_play_sound(choose(snd_puncher1,snd_puncher2),0,false);
+			random_set_seed(global.seed);
 
 		}
 	}else {

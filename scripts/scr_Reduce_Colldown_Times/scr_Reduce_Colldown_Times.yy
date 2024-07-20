@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Reduce_Colldown_Times",
   "isCompatibility":false,
   "isDnD":false,

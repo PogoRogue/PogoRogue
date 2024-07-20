@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Keyboard_Get_Action",
   "isCompatibility":false,
   "isDnD":false,

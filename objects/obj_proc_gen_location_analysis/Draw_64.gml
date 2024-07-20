@@ -29,13 +29,13 @@ if(display_minimap && instance_exists(current_tag_object))
 	}
 	else
 	{
-		draw_sprite(spr_minimap, frame, display_get_gui_width() - 48, display_get_gui_height()/2);
+		draw_sprite(spr_minimap, frame, display_get_gui_width() - 48, display_get_gui_height()/2+8);
 	}
 	previous_region = frame;
 }
 else
 {
-	draw_sprite(spr_minimap, previous_region, display_get_gui_width() - 48, display_get_gui_height()/2)
+	draw_sprite(spr_minimap, previous_region, display_get_gui_width() - 48, display_get_gui_height()/2+8)
 }
 
 if(display_progress_bar)

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Projectile_Bounce",
   "isCompatibility":false,
   "isDnD":false,

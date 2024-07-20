@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Settings_Bindings",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Coordinate_Helper_Functions",
   "isCompatibility":false,
   "isDnD":false,

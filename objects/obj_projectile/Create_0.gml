@@ -319,7 +319,9 @@ if (gun_name = "Puncher") {
 	maxspd_frames = 5;
 	decrease_spd = 0.9;
 	still_time = 60;
+	randomize();
 	puncher1_snd = choose(snd_puncher1,snd_puncher2);
+	random_set_seed(global.seed);
 	if puncher1_snd = snd_puncher1 {
 		puncher2_snd = 	snd_puncher2;
 	}else {

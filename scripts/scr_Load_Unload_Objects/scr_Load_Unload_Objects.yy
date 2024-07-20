@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Load_Unload_Objects",
   "isCompatibility":false,
   "isDnD":false,

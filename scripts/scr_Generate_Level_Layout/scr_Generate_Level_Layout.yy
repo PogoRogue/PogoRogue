@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Generate_Level_Layout",
   "isCompatibility":false,
   "isDnD":false,

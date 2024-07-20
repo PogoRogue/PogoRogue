@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_minimap",
   "bboxMode":0,
-  "bbox_bottom":194,
+  "bbox_bottom":187,
   "bbox_left":0,
-  "bbox_right":39,
+  "bbox_right":53,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -128,5 +128,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":40,
+  "width":56,
 }

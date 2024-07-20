@@ -146,9 +146,9 @@ function scr_Guns(){
 		burst_delay: 0,     
 		momentum_added: 0.2, 
 		reset_momentum: false, 
-		bullets_per_bounce: 25 + obj_player.max_ammo_buff,
-		init_bullets_per_bounce: 25,
-		current_bullets: 25 + obj_player.max_ammo_buff,  
+		bullets_per_bounce: 24 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 24,
+		current_bullets: 24 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
 		max_speed: 8
 	};

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Controls_Array_Keyboard",
   "isCompatibility":false,
   "isDnD":false,
