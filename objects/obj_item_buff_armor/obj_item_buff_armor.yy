@@ -8,7 +8,7 @@
   "managed":true,
   "name":"obj_item_buff_armor",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_parent","path":"objects/obj_item_parent/obj_item_parent.yy",},"propertyId":{"name":"sound","path":"objects/obj_item_parent/obj_item_parent.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"snd_nothing",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_parent","path":"objects/obj_item_parent/obj_item_parent.yy",},"propertyId":{"name":"sound","path":"objects/obj_item_parent/obj_item_parent.yy",},"resource":{"name":"snd_nothing","path":"sounds/snd_nothing/snd_nothing.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"snd_nothing",},
   ],
   "parent":{
     "name":"Buffs",

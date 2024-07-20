@@ -1258,6 +1258,7 @@
     {"id":{"name":"spr_item_menu_areas","path":"sprites/spr_item_menu_areas/spr_item_menu_areas.yy",},},
     {"id":{"name":"spr_item_slot_actives","path":"sprites/spr_item_slot_actives/spr_item_slot_actives.yy",},},
     {"id":{"name":"spr_item_slot_buy","path":"sprites/spr_item_slot_buy/spr_item_slot_buy.yy",},},
+    {"id":{"name":"spr_item_slot_coinbonus","path":"sprites/spr_item_slot_coinbonus/spr_item_slot_coinbonus.yy",},},
     {"id":{"name":"spr_item_slot_description","path":"sprites/spr_item_slot_description/spr_item_slot_description.yy",},},
     {"id":{"name":"spr_item_slot_guns","path":"sprites/spr_item_slot_guns/spr_item_slot_guns.yy",},},
     {"id":{"name":"spr_item_slot_healthbonus","path":"sprites/spr_item_slot_healthbonus/spr_item_slot_healthbonus.yy",},},
@@ -1736,8 +1737,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
     {"roomId":{"name":"room_splashscreens","path":"rooms/room_splashscreens/room_splashscreens.yy",},},
+    {"roomId":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},
     {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
     {"roomId":{"name":"room_boss_3","path":"rooms/room_boss_3/room_boss_3.yy",},},

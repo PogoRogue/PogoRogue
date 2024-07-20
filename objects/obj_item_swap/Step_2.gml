@@ -24,6 +24,7 @@ if selected = false and fade_away = false and centered = true {
 }
 
 if key_select and fade_away = false and centered = true {
+	coin_string_set = true;
 	//slot 1
 	if select = 1 {
 		audio_play_sound(snd_selectOption,0,false);
@@ -34,6 +35,27 @@ if key_select and fade_away = false and centered = true {
 			item_swap = false;
 			paused_outside = true;	
 		}
+		
+		//new recycling buff
+		if global.recycling > 0 {
+			if weapons_mode = true {
+				replaced_item_cost = global.all_weapon_costs[0];
+			}else {
+				replaced_item_cost = global.all_pickup_costs[0];
+			}
+			var new_recycling_cost = 0;
+			switch(global.recycling) {
+				case 1: new_recycling_cost = round(replaced_item_cost/4); break;
+				case 2: new_recycling_cost = round(replaced_item_cost/2); break;
+				case 3: new_recycling_cost = round(replaced_item_cost/2) + round(replaced_item_cost/4); break;
+				case 4: new_recycling_cost = replaced_item_cost; break;
+			}
+			global.num_of_coins += new_recycling_cost;
+			global.current_total_coins += new_recycling_cost;
+			replaced_item_cost = new_recycling_cost;
+			alarm[3] = 1;
+		}
+		
 		//change gun
 		instance_activate_object(obj_player);
 		with obj_player {
@@ -120,6 +142,27 @@ if key_select and fade_away = false and centered = true {
 			item_swap = false;
 			paused_outside = true;	
 		}
+		
+		//new recycling buff
+		if global.recycling > 0 {
+			if weapons_mode = true {
+				replaced_item_cost = global.all_weapon_costs[1];
+			}else {
+				replaced_item_cost = global.all_pickup_costs[1];
+			}
+			var new_recycling_cost = 0;
+			switch(global.recycling) {
+				case 1: new_recycling_cost = round(replaced_item_cost/4); break;
+				case 2: new_recycling_cost = round(replaced_item_cost/2); break;
+				case 3: new_recycling_cost = round(replaced_item_cost/2) + round(replaced_item_cost/4); break;
+				case 4: new_recycling_cost = replaced_item_cost; break;
+			}
+			global.num_of_coins += new_recycling_cost;
+			global.current_total_coins += new_recycling_cost;
+			replaced_item_cost = new_recycling_cost;
+			alarm[3] = 1;
+		}
+		
 		//change gun
 		instance_activate_object(obj_player);
 		with obj_player {
@@ -198,6 +241,27 @@ if key_select and fade_away = false and centered = true {
 			item_swap = false;
 			paused_outside = true;	
 		}
+		
+		//new recycling buff
+		if global.recycling > 0 {
+			if weapons_mode = true {
+				replaced_item_cost = global.all_weapon_costs[2];
+			}else {
+				replaced_item_cost = 0;
+			}
+			var new_recycling_cost = 0;
+			switch(global.recycling) {
+				case 1: new_recycling_cost = round(replaced_item_cost/4); break;
+				case 2: new_recycling_cost = round(replaced_item_cost/2); break;
+				case 3: new_recycling_cost = round(replaced_item_cost/2) + round(replaced_item_cost/4); break;
+				case 4: new_recycling_cost = replaced_item_cost; break;
+			}
+			global.num_of_coins += new_recycling_cost;
+			global.current_total_coins += new_recycling_cost;
+			replaced_item_cost = new_recycling_cost;
+			alarm[3] = 1;
+		}
+		
 		//change gun
 		instance_activate_object(obj_player);
 		with obj_player {
@@ -248,12 +312,12 @@ if key_select and fade_away = false and centered = true {
 	if select = num_of_slots {
 		audio_play_sound(snd_unavailable,0,false);
 		
-		//recycling buff
-		if global.recycling = true and room != room_shop {
+		//old recycling buff
+		/*if global.recycling = true and room != room_shop {
 			global.num_of_coins += round(new_item_cost/4);
 			global.current_total_coins += round(new_item_cost/4);
 			alarm[3] = 1;
-		}
+		}*/
 		
 		with obj_pause {
 			item_swap = false;
@@ -282,6 +346,9 @@ with obj_player {
 		other.sprite_2 = pickup_2.gui_sprite;
 		other.item1_name = pickup_1._name;
 		other.item2_name = pickup_2._name;
+		other.item1_cost = global.all_pickup_costs[0];
+		other.item2_cost = global.all_pickup_costs[1];
+		other.item3_cost = 0;
 	}else if other.weapons_mode = true {
 		other.sprite_1 = gun_1.sprite;
 		other.sprite_2 = gun_2.sprite;
@@ -289,6 +356,9 @@ with obj_player {
 		other.item1_name = gun_1._name;
 		other.item2_name = gun_2._name;
 		other.item3_name = gun_3._name;
+		other.item1_cost = global.all_weapon_costs[0];
+		other.item2_cost = global.all_weapon_costs[1];
+		other.item3_cost = global.all_weapon_costs[2];
 	}
 }
 

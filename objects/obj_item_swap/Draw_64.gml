@@ -61,12 +61,64 @@ for(i = 0; i < num_of_slots; i++) {
 		scr_Draw_Text_Outlined(x-96+(64*i)-x_adjust,yy-21-16,scr_Linebreak(item3_name,12,99),c_white);
 	}
 	
-	//experimentation
+	draw_set_font(fnt_itemdescription2);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_center);
+	
+	//experimentation/recycling
+	var item1_recycling_cost = 0;
+	var item2_recycling_cost = 0;
+	var item3_recycling_cost = 0;
+	if global.recycling > 0 { //get recycling costs
+		switch(global.recycling) {
+			case 1: item1_recycling_cost = round(item1_cost/4); item2_recycling_cost = round(item2_cost/4); item3_recycling_cost = round(item3_cost/4); break;
+			case 2: item1_recycling_cost = round(item1_cost/2); item2_recycling_cost = round(item2_cost/2); item3_recycling_cost = round(item3_cost/2); break;
+			case 3: item1_recycling_cost = round(item1_cost/2) + round(item1_cost/4); item2_recycling_cost = round(item2_cost/2) + round(item2_cost/4); item3_recycling_cost = round(item3_cost/2) + round(item3_cost/4); break;
+			case 4: item1_recycling_cost = item1_cost; item2_recycling_cost = item2_cost; item3_recycling_cost = item3_cost; break;
+		}
+		if num_of_slots = 3 and fade_away = false {
+			if i = 0 {
+				coin_string[i] = "+" + string(item1_recycling_cost);
+			}else if i = 1 {
+				coin_string[i] = "+" + string(item2_recycling_cost);
+			}
+		}else if num_of_slots = 4 and fade_away = false {
+			if i = 0 {
+				coin_string[i] = "+" + string(item1_recycling_cost);
+			}else if i = 1 {
+				coin_string[i] = "+" + string(item2_recycling_cost);
+			}else if i = 2 {
+				coin_string[i] = "+" + string(item3_recycling_cost);
+			}
+		}
+	}
+	
 	if global.experimentation > 0 and i < num_of_slots-1 {
 		if num_of_slots = 3 {
-			draw_sprite(spr_item_slot_healthbonus, global.experimentation-1, x-64+(64*i), yy+24);
+			draw_sprite(spr_item_slot_healthbonus, global.experimentation-1, x-64+(64*i), yy+21);
 		}else if num_of_slots = 4 {
-			draw_sprite(spr_item_slot_healthbonus, global.experimentation-1, x-96+(64*i), yy+24);
+			draw_sprite(spr_item_slot_healthbonus, global.experimentation-1, x-96+(64*i), yy+21);
+		}
+		if global.recycling > 0 and i < num_of_slots-1 {
+			if num_of_slots = 3 {
+				draw_sprite(spr_item_slot_coinbonus, global.recycling-1, x-64+(64*i), yy+21+22);
+				scr_Draw_Text_Outlined(x-64+(64*i)-4, yy+21+22,coin_string[i],c_white);
+				draw_sprite(spr_coin,0,x-64+(64*i)+(string_width(coin_string[i])/2)+1, yy+21+22);
+			}else if num_of_slots = 4 {
+				draw_sprite(spr_item_slot_coinbonus, global.recycling-1, x-96+(64*i), yy+21+22);
+				scr_Draw_Text_Outlined(x-96+(64*i)-4, yy+21+22,coin_string[i],c_white);
+				draw_sprite(spr_coin,0,x-96+(64*i)+(string_width(coin_string[i])/2)+1, yy+21+22);
+			}
+		}
+	}else if global.recycling > 0 and i < num_of_slots-1 {
+		if num_of_slots = 3 {
+			draw_sprite(spr_item_slot_coinbonus, global.recycling-1, x-64+(64*i), yy+21);
+			scr_Draw_Text_Outlined(x-64+(64*i)-4, yy+21,coin_string[i],c_white);
+			draw_sprite(spr_coin,0,x-64+(64*i)+(string_width(coin_string[i])/2)+1, yy+21);
+		}else if num_of_slots = 4 {
+			draw_sprite(spr_item_slot_coinbonus, global.recycling-1, x-96+(64*i), yy+21);
+			scr_Draw_Text_Outlined(x-96+(64*i)-4, yy+21,coin_string[i],c_white);
+			draw_sprite(spr_coin,0,x-96+(64*i)+(string_width(coin_string[i])/2)+1, yy+21);
 		}
 	}
 	
@@ -94,12 +146,19 @@ for(i = 0; i < num_of_slots; i++) {
 }
 
 //draw new item
+if global.experimentation = 0 and global.recycling = 0 {
+	var y_offset = 40;
+}else if global.experimentation = 0 or global.recycling = 0 {
+	var y_offset = 16;
+}else {
+	var y_offset = 0;
+}
 if pickups_mode = true {
 	num_of_slots = 3;
-	scr_Draw_Pickup_Description(x,yy+178,new_item,0,true,new_item_cost);
+	scr_Draw_Pickup_Description(x,yy+185-y_offset,new_item,0,true,new_item_cost);
 	draw_set_font(fnt_item_popup);
 }else if weapons_mode = true {
-	scr_Draw_Weapon_Description(x,yy+178,new_item,0,true,new_item_cost);
+	scr_Draw_Weapon_Description(x,yy+185-y_offset,new_item,0,true,new_item_cost);
 	draw_set_font(fnt_item_popup);
 }
 /*

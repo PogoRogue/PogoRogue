@@ -8,6 +8,8 @@ add_sprite_to_list = true;
 item_cost = 35;
 max_uses = 5;
 item_stats = "";
+index_add = 0; //declare this variable when there are multiple sprites for this item
+
 
 if global.experimentation = 1 {
 	item_tagline = "Replacing an active item or weapon also gives you 2 hearts.";
@@ -20,6 +22,12 @@ if global.experimentation = 1 {
 }
 
 scr_Buff_Stats();
+
+if global.experimentation < max_uses {
+	image_index = global.experimentation*2 + index_add;
+}else {
+	image_index = (max_uses-1)*2;
+}
 
 if scr_In_Array(global.all_buffs, object_index) {
 	scr_Buff_Replace();

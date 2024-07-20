@@ -35,7 +35,6 @@ if select = 1 {
 	
 	//item sprites
 	for (i = 0; i < array_length(global.all_buff_sprites); i++) {
-		show_debug_message(sprite_get_name(global.all_buff_sprites[i]));
 		if page_num = 1 { 
 			var xx = (center_x - 90) + (i % 4) * 60;
 			var yy = 156 + floor(i / 4) * 60;
@@ -77,7 +76,7 @@ if select = 1 {
 					yy -= 56;	
 				}
 			
-				scr_Draw_Passive_Description(bubble_x,yy+y_offset,global.all_buff_sprites[i],global.all_buff_sprites_index[i]+1,global.all_buff_names[i],global.all_buff_descriptions[i],global.all_buff_stats[i],true,global.all_buff_costs[i]);
+				scr_Draw_Passive_Description(bubble_x,yy+y_offset,global.all_buff_sprites[i],global.all_buff_sprites_index[i],global.all_buff_names[i],global.all_buff_descriptions[i],global.all_buff_stats[i],true,global.all_buff_costs[i]);
 			}
 	
 			//numbers of each buff

@@ -26,7 +26,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	
 	//draw cost
 	
-	if unlocked = true and !instance_exists(obj_item_swap) or instance_exists(obj_item_swap) and global.recycling = true {
+	if unlocked = true and !instance_exists(obj_item_swap) or instance_exists(obj_item_swap) /*and global.recycling = true*/ {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_itemdescription2);

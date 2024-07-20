@@ -212,6 +212,7 @@
     {"name":"spr_gun_puncher","order":3,"path":"sprites/spr_gun_puncher/spr_gun_puncher.yy",},
     {"name":"spr_invincibilitymeter","order":6,"path":"sprites/spr_invincibilitymeter/spr_invincibilitymeter.yy",},
     {"name":"spr_item_menu_areas","order":3,"path":"sprites/spr_item_menu_areas/spr_item_menu_areas.yy",},
+    {"name":"spr_item_slot_coinbonus","order":10,"path":"sprites/spr_item_slot_coinbonus/spr_item_slot_coinbonus.yy",},
     {"name":"spr_item_slot_healthbonus","order":5,"path":"sprites/spr_item_slot_healthbonus/spr_item_slot_healthbonus.yy",},
     {"name":"spr_jetpack_charging","order":11,"path":"sprites/spr_jetpack_charging/spr_jetpack_charging.yy",},
     {"name":"spr_jetpack_smoke","order":15,"path":"sprites/spr_jetpack_smoke/spr_jetpack_smoke.yy",},

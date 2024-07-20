@@ -237,7 +237,7 @@ function scr_Buffs(){
 	}
     
 	buff_recycling = function(){
-		global.recycling = true;
+		global.recycling += 1;
 		
 	}
 	
