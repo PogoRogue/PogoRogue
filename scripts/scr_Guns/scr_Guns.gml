@@ -503,4 +503,26 @@ function scr_Guns(){
 		max_added_bullets: 5,
 		max_speed: 11
 	};
+	
+	sixshooter_gun = {
+		_name: "Six Shooter",
+		tagline: "Six shots of pure gunslinging fun! Tap fire to shoot single shots, or hold down the shoot button to unload the remaining clip.",
+		sprite: spr_gun_sixshooter,
+		ammo: [sixshooter_bullet],
+		inaccuracy: 10,
+		kick: 2,
+		sound: snd_nothing,
+		spread_number: 1,
+		spread_angle: 0,
+		full_auto: true,
+		burst_number: 1,
+		burst_delay: 0,
+		momentum_added: 2,
+		reset_momentum: false,
+		bullets_per_bounce: 6 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 6,
+		current_bullets: 6 + obj_player.max_ammo_buff,
+		max_added_bullets: 5,
+		max_speed: -vsp_basicjump
+	};
 }

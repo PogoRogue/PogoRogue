@@ -105,6 +105,8 @@ global.fast_forward = 0;
 global.airbag_number = 0;
 global.win_odds = 30 + global.luck; //winner's mentality win odds 33
 global.triplethreat = false;
+global.critchance = 0;
+global.crit_percentage = 0;
 
 //items unlockable in the shop
 

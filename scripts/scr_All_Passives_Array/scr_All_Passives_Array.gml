@@ -13,5 +13,5 @@ function scr_All_Passives_Array(){
 						obj_item_buff_psychicbullets, obj_item_buff_righteousrevenge, obj_item_buff_robbery, 
 						obj_item_buff_recycling, obj_item_buff_juggler, obj_item_buff_invincibilityup,
 						obj_item_buff_doublekill, obj_item_buff_ironproficiency, obj_item_buff_fastforward,
-						obj_item_buff_paparazzi];
+						obj_item_buff_paparazzi, obj_item_buff_crit];
 }

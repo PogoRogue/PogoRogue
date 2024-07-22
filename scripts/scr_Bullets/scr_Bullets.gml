@@ -438,4 +438,23 @@ function scr_Bullets(){
 		bounce_amount: 1,
 		damage: 24
 	};
+	
+	sixshooter_bullet = {
+		sprite: spr_projectile_sixshooter,
+		gui_sprite: spr_projectile_sixshooter_gui,
+		spd: 24,
+		firerate_start: 4,
+		firerate_end: 4,
+		firerate_mult: 0,
+		firerate: 4,
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 3.5, frames: 10},
+		destroy_time: 0,
+		flash_frame: 2,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0 + global.bouncy_bullets,
+		bounce_amount: 1,
+		damage: 6
+	};
 }

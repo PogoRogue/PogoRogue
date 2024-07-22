@@ -54,7 +54,7 @@ function scr_Enemy_Collision_Check(condition){
 			}
 		}
 	}
-	if place_meeting(x,y+vspeed,obj_enemy_parent) and condition = true and free = true {
+	if place_meeting(x,y+vspeed,obj_enemy_parent) and condition = true and free = true and current_iframes <= 0 {
 		if instance_place(x,y+vspeed,obj_enemy_parent).is_dead = false {
 			while !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) and (place_meeting(x,y+vspeed,obj_enemy_parent)) {
 				y += sign(vspeed);

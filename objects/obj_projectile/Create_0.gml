@@ -341,6 +341,20 @@ if (gun_name = "Puncher") {
 	enemies_array = [];
 }
 
+if (gun_name = "Six Shooter") {
+	randomize();
+	if obj_player.sixshooter_gun.inaccuracy = 5 {
+		random_snd = choose(snd_sixshooter1,snd_sixshooter2,snd_sixshooter3,snd_sixshooter4,snd_sixshooter5,snd_sixshooter6);
+	}else {
+		random_snd = snd_sixshooter1;
+	}
+	random_set_seed(global.seed);
+	audio_play_sound(random_snd,0,false);
+	depth = obj_player.depth+5;
+	x = obj_player.x + lengthdir_x(32,image_angle);
+	y = obj_player.y + lengthdir_y(32,image_angle);
+}
+
 //destroy projectile after 30 seconds if still exists
 alarm[2] = 1800;
 

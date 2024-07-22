@@ -20,6 +20,9 @@ function scr_Shoot(){
 		
 		for (var i = 0; i < gun.spread_number; i++;) {
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
+			if gun = sixshooter_gun {
+				var angle_ = image_angle + (gun.spread_angle);
+			}
 			var destroyOnImpact;
 			destroyOnImpact = gun.ammo[bullet_index].destroy_on_impact;
 

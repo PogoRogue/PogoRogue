@@ -33,12 +33,18 @@ current_burst = 0;
 weapon_arrow_index = 0;
 table = false;
 
-//portal
+//weapons
 portal_object = noone;
 portal_speed = 0;
 portal_angle_speed = 0;
 portal_rot_distance = 0;
 used_shop_portal = false;
+sixshooter_held = false;
+sixshooter_held_num = 0;
+fullauto_condtional = true;
+temp_xscale = 1;
+new_angle = 0;
+new_xscale = 1;
 
 //buffs
 damage_buff = 0;
@@ -1036,7 +1042,8 @@ all_guns_array = [default_gun,paintball_gun,shotgun_gun,
 				grenade_gun, boomerang_gun,starsucker_gun,
 				water_gun, bubble_gun, yoyo_gun,
 				missile_gun, sniper_gun, laser_gun,
-				slime_gun, machine_gun, puncher_gun]; //all guns
+				slime_gun, machine_gun, puncher_gun,
+				sixshooter_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();
@@ -1172,7 +1179,7 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
 				buff_recycling, buff_juggler, buff_invincibilityup,
 				buff_doublekill, buff_ironproficiency, buff_fastforward,
-				buff_paparazzi];
+				buff_paparazzi, buff_crit];
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {

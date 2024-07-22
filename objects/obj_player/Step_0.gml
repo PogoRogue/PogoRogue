@@ -212,7 +212,7 @@ if global.key_fire_projectile_pressed {
 }
 
 if can_shoot = true and room != room_shop { 
-	var shoot = gun.full_auto ? key_fire_projectile : key_fire_projectile_pressed;
+	var shoot = (gun.full_auto and fullauto_condtional = true) ? key_fire_projectile : key_fire_projectile_pressed;
 	if gun = laser_gun and !instance_exists(obj_laser) or gun = javelin_gun and !instance_exists(obj_javelin_charge) { //special conditions for laser gun and javelins
 		shoot = key_fire_projectile;
 	}
@@ -226,6 +226,97 @@ if can_shoot = true and room != room_shop {
 
 var ammo = gun.ammo[bullet_index];
 //ammo += max_ammo_increase;// increase ammo by max ammo increase if players has collected max ammo buffs
+
+//six shooter
+if gun = sixshooter_gun and shoot = true {
+	sixshooter_held = true;
+}
+if gun = sixshooter_gun and state = state_bouncing and key_fire_projectile {
+	sixshooter_held = true;
+	if sixshooter_held_num < 15 {
+		sixshooter_held_num = 15;
+	}
+	sixshooter_held_num += 1;
+	fullauto_condtional = false;
+	sixshooter_gun.inaccuracy = 25;
+}
+if sixshooter_held = true and gun = sixshooter_gun {
+	if key_fire_projectile {
+		sixshooter_held_num += 1;
+		if sixshooter_held_num >= 30 {
+			if fullauto_condtional = false {
+				fullauto_condtional = true;
+				sixshooter_gun.current_bullets += 0;
+				if sixshooter_gun.current_bullets > sixshooter_gun.bullets_per_bounce {
+					sixshooter_gun.current_bullets = sixshooter_gun.bullets_per_bounce;
+				}
+				sixshooter_gun.spread_angle = 0;
+			}
+			sixshooter_gun.inaccuracy = 25;
+			if hspeed != 0 {
+				//sixshooter_gun.spread_angle += 4 * sign(hspeed);
+			}else {
+				//sixshooter_gun.spread_angle += 4 * sign(image_xscale);
+			}
+			sixshooter_gun.max_speed += 0.075;
+			if sixshooter_gun.max_speed > 8.5 {
+				sixshooter_gun.max_speed = 8.5;
+			}
+			shoot = true;
+		}
+	}else if !key_fire_projectile and sixshooter_held_num < 30 {
+		sixshooter_held_num = 0;
+		sixshooter_held = false;
+		fullauto_condtional = gun != sixshooter_gun;
+		sixshooter_gun.inaccuracy = 5;
+		sixshooter_gun.max_speed = -vsp_basicjump;
+		sixshooter_gun.spread_angle = 0;
+	}else if !key_fire_projectile and sixshooter_gun.inaccuracy = 25 {
+		sixshooter_held_num += 1;
+		if sixshooter_held_num >= 30 {
+			if fullauto_condtional = false {
+				fullauto_condtional = true;
+				sixshooter_gun.current_bullets += 0;
+				if sixshooter_gun.current_bullets > sixshooter_gun.bullets_per_bounce {
+					sixshooter_gun.current_bullets = sixshooter_gun.bullets_per_bounce;
+				}
+				sixshooter_gun.spread_angle = 0;
+			}
+			if hspeed != 0 {
+				//sixshooter_gun.spread_angle += 4 * sign(hspeed);
+			}else {
+				//sixshooter_gun.spread_angle += 4 * sign(image_xscale);
+			}
+			sixshooter_gun.inaccuracy = 25;
+			sixshooter_gun.max_speed += 0.075;
+			if sixshooter_gun.max_speed > 8.5 {
+				sixshooter_gun.max_speed = 8.5;
+			}
+			shoot = true;
+		}
+	}
+}else {
+	fullauto_condtional = gun != sixshooter_gun;
+	sixshooter_gun.inaccuracy = 5;
+	sixshooter_gun.max_speed = -vsp_basicjump;
+	sixshooter_held_num = 0;
+	sixshooter_gun.spread_angle = 0;
+}
+
+if gun.current_bullets <= 0 {
+	fullauto_condtional = true;	
+	sixshooter_gun.inaccuracy = 5;
+	sixshooter_gun.max_speed = -vsp_basicjump;
+	if !key_fire_projectile and state != state_bouncing {
+		sixshooter_held_num = 0;
+		sixshooter_held = false;
+	}
+}
+	
+if !key_fire_projectile and state = state_bouncing {
+	sixshooter_held_num = 0;
+	sixshooter_held = false;
+}
 
 if (canshoot > 0) {
 	canshoot -= 1;
@@ -259,6 +350,7 @@ if (canshoot > 0) {
 			audio_stop_sound(snd_watergun);
 		}
 	}	
+
 }else {
 	if (audio_is_playing(snd_watergun)) {
 		audio_stop_sound(snd_watergun);

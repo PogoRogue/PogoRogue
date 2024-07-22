@@ -273,4 +273,9 @@ function scr_Buffs(){
 	buff_paparazzi = function(){
 		//insert code here, do nothing for now
 	}
+	
+	buff_crit = function(){
+		global.critchance += 1;
+		global.crit_percentage += 5;
+	}
 }
