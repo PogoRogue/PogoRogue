@@ -3,8 +3,8 @@
   "%Name":"spr_projectile_sixshooter",
   "bboxMode":2,
   "bbox_bottom":19,
-  "bbox_left":2,
-  "bbox_right":61,
+  "bbox_left":34,
+  "bbox_right":93,
   "bbox_top":12,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -23,7 +23,7 @@
   ],
   "name":"spr_projectile_sixshooter",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Projectiles",
     "path":"folders/Sprites/Projectiles.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":32,
+    "xorigin":94,
     "yorigin":16,
   },
   "swatchColours":[
@@ -95,5 +95,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":64,
+  "width":96,
 }

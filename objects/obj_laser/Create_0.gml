@@ -7,3 +7,5 @@ gun_name = "Laser Gun";
 destroy_on_impact = false;
 attach_to_player = 0;
 boss_projectile=false;
+hspd = 0;
+vspd = 0;

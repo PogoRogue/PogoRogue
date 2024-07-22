@@ -61,6 +61,8 @@ if (gun_name = "Laser Gun") {
 	//obj_player.image_angle-90
 	image_angle = obj_player.image_angle-90
 	instance_laser = 0;
+	hspd = 0;
+	vspd = 0;
 	
 	//create rest of laser
 	for (i = 2; i < 48; i++) {
@@ -122,6 +124,8 @@ if (gun_name = "Sniper Rifle") {
 	rotation_speed = obj_player.rotation_speed;
 	sniped = false;
 	sound = true;
+	hspd = 0;
+	vspd = 0;
 	
 	//create rest of laser
 	for (i = 2; i < 48; i++) {
@@ -351,12 +355,13 @@ if (gun_name = "Six Shooter") {
 	random_set_seed(global.seed);
 	audio_play_sound(random_snd,0,false);
 	depth = obj_player.depth+5;
-	x = obj_player.x + lengthdir_x(32,image_angle);
-	y = obj_player.y + lengthdir_y(32,image_angle);
+	x = obj_player.x + lengthdir_x(62,image_angle);
+	y = obj_player.y + lengthdir_y(62,image_angle);
 }
 
 //destroy projectile after 30 seconds if still exists
 alarm[2] = 1800;
 
 scr_Projectile_Bounce("Javelins");
+scr_Projectile_Bounce("Six Shooter");
 scr_Projectile_Bounce("Puncher");

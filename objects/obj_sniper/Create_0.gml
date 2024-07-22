@@ -15,3 +15,5 @@ attach_to_player = 0;
 
 sniped_array = [];
 boss_projectile=false;
+hspd = 0;
+vspd = 0;

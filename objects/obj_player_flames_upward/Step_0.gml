@@ -7,7 +7,7 @@ if (parent_index.vspeed >= 0 and despawnable) or (parent_index.speed < parent_in
 if (despawn = false) {
 	obj_player.invincible = true;
 }else if despawn = true {
-	image_alpha -= 0.1;
+	image_alpha -= 0.2;
 	//destroy
 	if image_alpha <= 0 {
 		instance_destroy();	
