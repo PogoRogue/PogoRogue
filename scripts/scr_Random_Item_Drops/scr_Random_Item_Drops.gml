@@ -179,7 +179,7 @@ function scr_Get_Rand_Weapon_Object()
 							obj_item_weapon_water, obj_item_weapon_bubble, obj_item_weapon_yoyo,
 							obj_item_weapon_missile, obj_item_weapon_sniper, obj_item_weapon_laser,
 							obj_item_weapon_slime, obj_item_weapon_machine, obj_item_weapon_puncher,
-							obj_item_weapon_sixshooter];
+							obj_item_weapon_sixshooter, obj_item_weapon_plasma];
 	
 	if global.phase <= 1 {
 		random_weapon_drop = list_of_possible_weapons[irandom_range(0,7)];

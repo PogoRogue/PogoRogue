@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Pickups(){
 	
-	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute,state_shieldbubble];
+	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute,state_shieldbubble,state_plasmacharge];
 
 	
 	pickup_nothing = {

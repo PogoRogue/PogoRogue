@@ -250,6 +250,14 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_seeding_station;
 		}
+		else if(Red == 2 && Green == 2 && Blue == 2)
+		{
+			return obj_shop_indicator; //fix minimap bug
+		}
+		else if(Red == 1 && Green == 1 && Blue == 1)
+		{
+			return obj_shop_indicator2; //fix minimap bug
+		}
 	}
 	
 	//Color had no matches, generate nothing

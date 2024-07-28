@@ -73,7 +73,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	
 		//special conditions
 		
-		if weapon._name = "Laser Gun" {
+		if weapon._name = "Laser Gun" or weapon._name = "Plasma Gun" {
 			line_1 = "Time per bounce: " + string(weapon.bullets_per_bounce/60) + "s";// + " (Max " + string((weapon.init_bullets_per_bounce + weapon.max_added_bullets)/60) + "s)";
 		}
 		
@@ -115,6 +115,8 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 			line_2 = "Damage per javelin: " + string(weapon.ammo[0].damage) + "-16" + added_damage;
 		}else if weapon._name = "Bouncy Ball Blaster" {
 			line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + "-" + string(weapon.ammo[0].damage*8) + added_damage;
+		}else if weapon._name = "Plasma Gun" {
+			line_2 = "Damage per orb: " + string(weapon.ammo[0].damage) + "-24" + added_damage;
 		}
 	
 		if weapon.full_auto = true {
@@ -135,7 +137,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		}else {
 			line_3 = "Auto Fire: No";	
 			line_4 = "Shoot: On Press";
-			if weapon._name = "Javelins" {
+			if weapon._name = "Javelins" or weapon._name = "Plasma Gun" {
 				line_4 = "Shoot: On Release";
 			}else if weapon._name = "Yo-yo" {
 				line_4 = "Shoot: Press and Hold";

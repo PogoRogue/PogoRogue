@@ -525,4 +525,26 @@ function scr_Guns(){
 		max_added_bullets: 5,
 		max_speed: -vsp_basicjump
 	};
+	
+	plasma_gun = {
+		_name: "Plasma Gun",
+		tagline: "Hold down the shoot button to charge up a powerful plasma orb! While charging, you will remain stationary in the air. The longer you charge, the more damage your \nplasma orb will do.",
+		sprite: spr_gun_plasma,
+		ammo: [plasma_bullet],
+		inaccuracy: 0,
+		kick: 2,
+		sound: snd_nothing,
+		spread_number: 1,
+		spread_angle: 0,
+		full_auto: false,
+		burst_number: 1,
+		burst_delay: 0,
+		momentum_added: 0,
+		reset_momentum: false,
+		bullets_per_bounce: 120 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 120,
+		current_bullets: 120 + obj_player.max_ammo_buff,
+		max_added_bullets: 5,
+		max_speed: 7.5
+	};
 }

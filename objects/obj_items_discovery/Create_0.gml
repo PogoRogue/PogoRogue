@@ -54,7 +54,7 @@ weapons_array = [spr_gun_default,spr_gun_paintball,spr_gun_shotgun,
 				spr_gun_water, spr_gun_bubble, spr_gun_yoyo,
 				spr_gun_missile, spr_gun_sniper, spr_gun_laser,
 				spr_gun_slime,spr_gun_machine, spr_gun_puncher,
-				spr_gun_sixshooter,spr_nothing];
+				spr_gun_sixshooter,spr_gun_plasma];
 				
 current_array = passives_array;
 

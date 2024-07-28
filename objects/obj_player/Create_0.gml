@@ -472,6 +472,26 @@ state_bulletblast = function() {
 	}
 }
 
+state_plasmacharge = function() {
+	can_rotate = true;
+	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
+		sprite_index = player_sprite;
+	}
+
+	speed = speed * 0.9;
+	if scr_Animation_Complete() and sprite_index = player_sprite {
+		sprite_index = charging_sprite;	
+	}else if sprite_index = player_sprite {
+		image_index += 1;
+	}else {
+		image_index += 0.25;	
+	}
+	scr_Player_Collision();
+	if state = state_bouncing { //dont want to cancel powerup after collision
+		state = state_plasmacharge;	
+	}
+}
+
 state_freeze = function() {
 	
 	if pickup_1 = pickup_freeze {  
@@ -1043,7 +1063,7 @@ all_guns_array = [default_gun,paintball_gun,shotgun_gun,
 				water_gun, bubble_gun, yoyo_gun,
 				missile_gun, sniper_gun, laser_gun,
 				slime_gun, machine_gun, puncher_gun,
-				sixshooter_gun]; //all guns
+				sixshooter_gun, plasma_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();

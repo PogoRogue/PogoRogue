@@ -77,6 +77,13 @@ if (gun_name = "Bouncy Ball Blaster") {
 		}
 	}
 	draw_self();
+}else if (gun_name = "Plasma Gun") {
+	if hspd = 0 and vspd = 0 {
+		draw_sprite_ext(orb_glow_sprite,0,x,y,image_xscale,image_yscale,image_angle,c_white,glow_alpha);
+	}else {
+		draw_sprite_ext(orb_glow_sprite,0,x,y,image_xscale,image_yscale,image_angle,c_white,1);
+	}
+	draw_self();
 }else {
 	draw_self();
 }

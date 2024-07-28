@@ -417,7 +417,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 0 + global.bouncy_bullets,
 		bounce_amount: 1,
-		damage: 4
+		damage: 2
 	};
 	
 	puncher_bullet = {
@@ -456,5 +456,24 @@ function scr_Bullets(){
 		num_of_bounces: 0 + global.bouncy_bullets,
 		bounce_amount: 1,
 		damage: 6
+	};
+	
+	plasma_bullet = {
+		sprite: spr_projectile_plasma1,
+		gui_sprite: spr_projectile_plasma_gui2,
+		spd: 0,
+		firerate_start: 1,
+		firerate_end: 1,
+		firerate_mult: 0,
+		firerate: 1,
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 0, frames: 0},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0 + global.bouncy_bullets,
+		bounce_amount: 1,
+		damage: 1
 	};
 }

@@ -9,6 +9,10 @@ if(is_dead) {
 		instance_destroy();	
 	}
 } else if (hp <= 0) {
+	if object_get_name(object_index) != "obj_enemy_explode_walking" {
+		image_speed = 0;
+	}
+	speed = 0;
 	alarm_set(0, despawn_timer);
 	alarm_set(11, 10);
 	randomize();

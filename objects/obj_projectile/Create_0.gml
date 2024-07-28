@@ -362,6 +362,28 @@ if (gun_name = "Six Shooter") {
 //destroy projectile after 30 seconds if still exists
 alarm[2] = 1800;
 
+//Plasma Gun
+if (gun_name = "Plasma Gun") {
+	//depth = obj_player.depth+1;
+	temp_charge = 0;
+	temp_charge_max = 9;
+	orb_glow_sprite = spr_plasma_outline1;
+	glow_alpha = -1;
+	glow_up = true;
+	created = false;
+	with instance_create_depth(x,y,obj_player.depth+1,obj_plasma_charge) {
+		plasma_object = other;
+		//instance_deactivate_object(plasma_object);	
+	}
+	trail_sprite = spr_plasma_trail1;
+	trail_spawnrate = 5;
+	alarm[2] = 600;
+	
+	init_damage = damage;
+	colliding_with_enemy = false;
+	enemies_array = [];
+}
+
 scr_Projectile_Bounce("Javelins");
 scr_Projectile_Bounce("Six Shooter");
 scr_Projectile_Bounce("Puncher");

@@ -36,3 +36,6 @@ player_max_region = 0;
 
 display_progress_bar = false;
 kills_left = 0;
+
+above_shop = false;
+in_shop = false;

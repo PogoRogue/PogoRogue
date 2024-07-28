@@ -12,12 +12,22 @@ function scr_Player_Damaged(damage){
 					heart_shield_lost_num = other.armor_buff+1;	
 				}
 				global.enemy_killed = true; //resume combo meter
+				
+				if global.paparazzi = true {
+					audio_play_sound(snd_camera,0,false);
+					instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup,{damage: 3});
+				}
 			}else {
 				hp -= (damage);
 				with obj_player_health {
 					heart_lost_num = other.hp;	
 				}
 				global.enemy_killed = true; //resume combo meter
+				
+				if global.paparazzi = true {
+					audio_play_sound(snd_camera,0,false);
+					instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup,{damage: 3});
+				}
 			}
 			current_iframes = num_iframes;
 			hspeed = -2 * sign(hspeed);

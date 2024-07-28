@@ -26,6 +26,7 @@ function scr_Save_Load_Variables(){
 	global.resolution_num = 4;
 	global.resolution_x = 1920;
 	global.resolution_y = 1080;
+	global.flash = true;
 	
 	//gameplay settings
 	global.tilt_speed = 3;
@@ -57,6 +58,7 @@ function scr_Save_Load_Variables(){
 	global.resolution_num = ini_read_real("savegame", "resolution_num", 4);
 	global.resolution_x = ini_read_real("savegame", "resolution_x", 1920);
 	global.resolution_y = ini_read_real("savegame", "resolution_y", 1080);
+	global.flash = ini_read_real("savegame", "flash", true);
 	
 	global.tilt_speed = ini_read_real("savegame", "tilt_speed", 3);
 	global.screenshake = ini_read_real("savegame", "screenshake", 80);

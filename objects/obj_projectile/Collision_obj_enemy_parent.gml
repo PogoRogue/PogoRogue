@@ -14,7 +14,7 @@ if crit_chance > 100 - global.crit_percentage {
 random_set_seed(global.seed);
 
 if(boss_projectile==false){
-if(!other.invinsible) and damage != 0 {
+if(!other.invinsible) and damage != 0 and other.hp > 0 {
     var laser_damage = 0.9; //apply damage buff differently for laser
 	var slime_damage = 0.7; //apply damage buff differently for slime
 	
@@ -73,6 +73,18 @@ if(!other.invinsible) and damage != 0 {
 			randomize();
 			audio_play_sound(choose(snd_puncher1,snd_puncher2),0,false);
 			random_set_seed(global.seed);
+			if crit_chance > 100 - global.crit_percentage {
+				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
+			}
+		}
+	}else if gun_name = "Plasma Gun" {
+		enemy_object = other;
+		if !scr_In_Array(enemies_array,enemy_object) {
+			array_resize(enemies_array,array_length(enemies_array)+1);
+			enemies_array[array_length(enemies_array)-1] = enemy_object;
+			enemy_object.hp -= (damage + global.damage_buff - (global.damage_buff)) * enemy_object.bullet_defense * crit_dmg_mult;
+			enemy_object.red_frames = 10;
+			scr_Reload_On_Kill();
 			if crit_chance > 100 - global.crit_percentage {
 				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
 			}

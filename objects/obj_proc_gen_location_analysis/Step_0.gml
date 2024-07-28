@@ -98,3 +98,19 @@ else
 
 
 
+//fix minimap glitch
+if above_shop = false and instance_exists(obj_shop_indicator) {
+	with obj_player {
+		if y < obj_shop_indicator.y {
+			other.above_shop = true; 
+		}
+	}
+}
+
+if in_shop = false and instance_exists(obj_shop_indicator2) {
+	with obj_player {
+		if y < obj_shop_indicator2.y {
+			other.in_shop = true; 
+		}
+	}
+}

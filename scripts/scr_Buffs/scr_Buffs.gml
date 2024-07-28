@@ -271,7 +271,7 @@ function scr_Buffs(){
 	}
 	
 	buff_paparazzi = function(){
-		//insert code here, do nothing for now
+		global.paparazzi = true;
 	}
 	
 	buff_crit = function(){

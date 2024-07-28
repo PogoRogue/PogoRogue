@@ -15,7 +15,7 @@ if instance_exists(obj_camera) {
 		if (gun_name = "Bouncy Ball Blaster") and num_of_bounces < max_num_of_bounces {
 			damage = init_damage * (2*(max_num_of_bounces-num_of_bounces));
 			image_index = max_num_of_bounces-num_of_bounces;
-		}else if (gun_name = "Javelins") {
+		}else if (gun_name = "Javelins") or gun_name = "Plasma Gun" {
 			if created = true {
 				damage = init_damage + ((temp_charge/temp_charge_max)*12);	
 			}
@@ -491,4 +491,24 @@ if (gun_name = "Puncher") {
 		y_prev_array[0] = y;
 		show_debug_message(x_prev_array);
 	}
+}
+
+if (gun_name = "Plasma Gun") {
+	//depth = obj_player.depth+1;
+	if created = false {
+		//instance_destroy();	
+	}
+	
+	//glow
+	if glow_up = true and glow_alpha < 1 {
+		glow_alpha += 0.025;	
+	}else if glow_up = true {
+		//glow_up = false;
+	}else if glow_up = false and glow_alpha > 0 {
+		glow_alpha -= 0.025;	
+	}else if glow_up = false {
+		glow_up = true;
+	}
+	
+	image_angle += 5;
 }

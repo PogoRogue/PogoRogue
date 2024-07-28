@@ -51,12 +51,12 @@ if test_mode = false {
 					obj_item_weapon_water, obj_item_weapon_bubble, obj_item_weapon_yoyo,
 					obj_item_weapon_missile, obj_item_weapon_sniper, obj_item_weapon_laser,
 					obj_item_weapon_slime, obj_item_weapon_machine, obj_item_weapon_puncher,
-					obj_item_weapon_sixshooter];
+					obj_item_weapon_sixshooter, obj_item_weapon_plasma];
 }
 			
 select_max = array_length(weapons_array);
 
-if select_max < select_x_max { 
+if select_max < select_x_max {
 	select_x_max = select_max;
 }
 				

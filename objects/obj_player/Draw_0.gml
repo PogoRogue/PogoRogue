@@ -126,3 +126,9 @@ draw_set_color(c_white);
 if invincibility = true {
 	scr_Draw_Skin(spr_player_zekai_invincible,spr_player_zekai_invincible_falling,spr_player_zekai_invincible_charging,spr_player_zekai_invincible_portal);
 }
+
+//six shooter UI
+if sixshooter_held_num >= 10 and sixshooter_gun.inaccuracy != 25 and sixshooter_held_num < 30 {
+	draw_sprite_general(spr_chargebar_sixshooter,0,0,0,sprite_get_width(spr_chargebar_sixshooter),sprite_get_height(spr_chargebar_sixshooter),x+lengthdir_x(12,image_angle+180)+lengthdir_x(4,image_angle-90),y+lengthdir_y(12,image_angle+180)+lengthdir_y(4,image_angle-90),1,1,image_angle,c_white,c_white,c_white,c_white,1);
+	draw_sprite_general(spr_chargebar_sixshooter_color,0,0,0,sprite_get_width(spr_chargebar_sixshooter_color)*((other.sixshooter_held_num-10)/(30-10)),sprite_get_height(spr_chargebar_sixshooter_color),x+lengthdir_x(12,image_angle+180)+lengthdir_x(4,image_angle-90),y+lengthdir_y(12,image_angle+180)+lengthdir_y(4,image_angle-90),1,1,image_angle,c_white,c_white,c_white,c_white,1);
+}
