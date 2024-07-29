@@ -108,6 +108,8 @@ global.triplethreat = false;
 global.critchance = 0;
 global.crit_percentage = 0;
 global.paparazzi = false;
+global.bar_time_added = 1;
+global.bartime = 25;
 
 //items unlockable in the shop
 

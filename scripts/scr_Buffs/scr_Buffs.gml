@@ -144,7 +144,6 @@ function scr_Buffs(){
 	
 	buff_combotime = function(){
 		global.combo_time_added += 150;
-		
 	}
 	
 	buff_sharpshooter = function(){
@@ -277,5 +276,10 @@ function scr_Buffs(){
 	buff_crit = function(){
 		global.critchance += 1;
 		global.crit_percentage += 5;
+	}
+	
+	buff_bartime = function(){
+		global.bar_time_added += 0.25;
+		global.bartime += 25;
 	}
 }

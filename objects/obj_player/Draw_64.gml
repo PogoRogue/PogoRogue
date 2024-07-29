@@ -74,7 +74,7 @@ if frenzy_time > 0 {
 	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
-	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(frenzy_time / 300),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
+	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(frenzy_time / (300 * global.bar_time_added)),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
 	
 	//2x damage buffs
 	if (global.laststand and hp <= 8 and hp > 0) {
@@ -90,7 +90,7 @@ if frenzy_time > 0 {
 	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
-	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(aerial_assassin_frenzy_count / 120),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
+	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(aerial_assassin_frenzy_count / (120 * global.bar_time_added)),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
 	
 	//2x damage buffs
 	if (global.laststand and hp <= 8 and hp > 0) {
@@ -413,7 +413,7 @@ if instance_exists(obj_shieldbubble) and invincibility_time <= 0 {
 		scr_Draw_Text_Outlined(17,156-7,"Shield Bubble",pickup_shieldbubble.text_color);
 		draw_set_color(c_white);
 		draw_sprite(spr_shieldbubblemeter,0,17,156);
-		draw_sprite_part(spr_shieldbubblemeter,1,0,0,sprite_get_width(spr_shieldbubblemeter)*(obj_shieldbubble.destroy_time_live / obj_shieldbubble.destroy_time),sprite_get_height(spr_shieldbubblemeter),17,156-4);
+		draw_sprite_part(spr_shieldbubblemeter,1,0,0,sprite_get_width(spr_shieldbubblemeter)*(obj_shieldbubble.destroy_time_live / (obj_shieldbubble.destroy_time * global.bar_time_added)),sprite_get_height(spr_shieldbubblemeter),17,156-4);
 	}
 }
 
@@ -426,7 +426,7 @@ if invincibility_time > 0 {
 	scr_Draw_Text_Outlined(17,156-7,"Invincibility",pickup_invincibility.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_invincibilitymeter,0,17,156);
-	draw_sprite_part(spr_invincibilitymeter,1,0,0,sprite_get_width(spr_invincibilitymeter)*(invincibility_time / invincibility_time_max),sprite_get_height(spr_invincibilitymeter),17,156-4);
+	draw_sprite_part(spr_invincibilitymeter,1,0,0,sprite_get_width(spr_invincibilitymeter)*(invincibility_time / (invincibility_time_max * global.bar_time_added)),sprite_get_height(spr_invincibilitymeter),17,156-4);
 }
 
 //slot machine

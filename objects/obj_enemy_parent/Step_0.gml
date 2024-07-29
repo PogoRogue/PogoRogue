@@ -52,8 +52,8 @@ if(is_dead) {
 					gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
 					gun_3.current_bullets = gun_3.bullets_per_bounce + max_ammo_buff;
 					aerial_assassin_frenzy = true;
-					alarm[4] = 120;
-					aerial_assassin_frenzy_count = 120;
+					alarm[4] = 120 * global.bar_time_added;
+					aerial_assassin_frenzy_count = 120 * global.bar_time_added;
 					aerial_assassin_count = 0;
 				}
 			}

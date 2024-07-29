@@ -255,7 +255,7 @@ function scr_Pickups(){
 	
 	pickup_slowmo = {
 		_name: "Magic Stopwatch",
-		tagline: "Slow down time for 10 seconds, allowing high-precision movement. Slow mo can be canceled on \nre-press.",
+		tagline: "Slow down time for 15 seconds, allowing high-precision movement. Slow mo can be canceled on \nre-press.",
 		gui_sprite: spr_pickup_slowmo,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
@@ -452,8 +452,8 @@ function scr_Pickups(){
 			with obj_player {
 				if frenzy = false {
 					frenzy = true;
-					frenzy_time = 300;
-					alarm[3] = 300;
+					frenzy_time = 300 * global.bar_time_added;
+					alarm[3] = 300 * global.bar_time_added;
 					gun_1.current_bullets = gun_1.bullets_per_bounce + max_ammo_buff;
 					gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
 					gun_3.current_bullets = gun_3.bullets_per_bounce + max_ammo_buff;
@@ -717,8 +717,8 @@ function scr_Pickups(){
 			with obj_player {
 				if invincibility = false {
 					invincibility = true;
-					invincibility_time = 300;
-					alarm[6] = 300;
+					invincibility_time = 300 * global.bar_time_added;
+					alarm[6] = 300 * global.bar_time_added;
 					audio_play_sound(snd_frenzy,0,false);
 				}
 			}

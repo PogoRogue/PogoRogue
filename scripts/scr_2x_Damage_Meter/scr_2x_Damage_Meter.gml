@@ -10,6 +10,6 @@ function scr_2x_Damage_Meter(yy,draw_meter){
 	
 	if draw_meter = true {
 		draw_sprite(spr_2xmeter,0,camera_get_view_width(view_camera[0])-16,yy);
-		draw_sprite_part(spr_2xmeter,1,0,0,sprite_get_width(spr_2xmeter)*(damage_boost_timer / 180),sprite_get_height(spr_2xmeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_2xmeter),yy-4);
+		draw_sprite_part(spr_2xmeter,1,0,0,sprite_get_width(spr_2xmeter)*(damage_boost_timer / (180 * global.bar_time_added)),sprite_get_height(spr_2xmeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_2xmeter),yy-4);
 	}
 }

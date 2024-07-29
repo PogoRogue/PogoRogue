@@ -1,6 +1,6 @@
 fade_out = false;
 destroy_time = 300;
-destroy_time_live = destroy_time;
+destroy_time_live = destroy_time * global.bar_time_added;
 //alarm[0] = destroy_time;
 audio_play_sound(snd_shieldBubble,0,false);
 image_speed = 0;

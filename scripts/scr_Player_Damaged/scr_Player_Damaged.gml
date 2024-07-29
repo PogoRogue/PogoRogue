@@ -37,9 +37,9 @@ function scr_Player_Damaged(damage){
 			if(global.righteousrevenge == true){
 				if damage_boost_active = false {
 					damage_boost_active = true; // This variable is declared in obj_player Create Event.
-					damage_boost_timer = 180;
+					damage_boost_timer = 180 * global.bar_time_added;
 				}else {
-					damage_boost_timer = 180;	
+					damage_boost_timer = 180 * global.bar_time_added;	
 				}
 			}
 		
