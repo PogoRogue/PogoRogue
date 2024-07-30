@@ -38,7 +38,7 @@ passives_array = [spr_buffitem_lasersight, spr_buffitem_planetarybullets,spr_buf
 				spr_buffitem_recycling,spr_buffitem_juggler,spr_buffitem_invincibilityup,
 				spr_buffitem_doublekill,spr_buffitem_ironproficiency,spr_buffitem_fastforward,
 				spr_buffitem_paparazzi,spr_buffitem_crit,spr_buffitem_bartime,
-				spr_nothing]
+				spr_buffitem_strongmuscles]
 				
 actives_array = [spr_pickup_reload, spr_pickup_freeze, spr_pickup_emergency, 
 				spr_pickup_parachute, spr_pickup_firedash, spr_pickup_groundpound, 

@@ -254,16 +254,16 @@ if (gun_name = "Yo-yo") {
 	if dist < max_dist or reached_end = true {
 		if reached_end = false {
 			speed = 0;
-			dist += 8;
+			dist += yoyo_spd;
 			x = obj_player.x + lengthdir_x(dist,ang-90);
 			y = obj_player.y + lengthdir_y(dist,ang-90);
 		}else if reached_end = true {
-			if dist > 16 {
+			if dist > yoyo_spd * 2 {
 				dist -= retract_spd;
 				x = obj_player.x + lengthdir_x(dist,ang-90);
 				y = obj_player.y + lengthdir_y(dist,ang-90);
-				if retract_spd < 16 {
-					retract_spd  += 4;
+				if retract_spd < yoyo_spd * 2 {
+					retract_spd  += yoyo_spd / 2;
 				}
 			}else {
 				//collision with player
@@ -306,10 +306,10 @@ if (gun_name = "Yo-yo") {
 		}
 	}
 	
-	if abs(obj_player.angle - ang) > 16 {
-		var ang_max_spd = 4;
+	if abs(obj_player.angle - ang) > yoyo_spd * 2 {
+		var ang_max_spd = yoyo_spd / 2;
 	}else {
-		var ang_max_spd = (abs(((obj_player.angle - ang)/16) + 0.1))*4;
+		var ang_max_spd = (abs(((obj_player.angle - ang)/(yoyo_spd * 2)) + 0.1))*(yoyo_spd / 2);
 	}
 	
 	//adjust with angle

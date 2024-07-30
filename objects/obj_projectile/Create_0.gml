@@ -159,6 +159,7 @@ yoyo_array2 = []; //retract array
 
 //yo-yo
 if (gun_name = "Yo-yo") {
+	yoyo_spd = 8 + (4 * global.strong_muscles);
 	audio_play_sound(snd_yoyo1,0,false);
 	yoyo_num = 0;
 	with obj_projectile {
@@ -172,7 +173,7 @@ if (gun_name = "Yo-yo") {
 		}	
 	}
 	dist  = 0;
-	max_dist = 160;
+	max_dist = yoyo_spd * 20; //160
 	ang = obj_player.angle;
 	ang_increase_speed = 0
 	ang_decrease_speed = 0;

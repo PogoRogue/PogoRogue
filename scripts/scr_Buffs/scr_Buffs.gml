@@ -207,7 +207,6 @@ function scr_Buffs(){
 	
 	buff_steadyhands = function(){
 		global.steadyhands = true;
-		
 	}
 	
 	buff_impatience = function(){
@@ -281,5 +280,14 @@ function scr_Buffs(){
 	buff_bartime = function(){
 		global.bar_time_added += 0.25;
 		global.bartime += 25;
+	}
+	
+	buff_strongmuscles = function(){
+		if global.strong_muscles = false {
+			global.strong_muscles = true;
+			obj_player.shotgun_gun.ammo[bullet_index].destroy_time += 10;
+			obj_player.bubble_gun.ammo[bullet_index].destroy_time += 25;
+			obj_player.puncher_gun.ammo[bullet_index].spd += 6;
+		}
 	}
 }

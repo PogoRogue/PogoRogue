@@ -43,7 +43,9 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 	if (charge < charge_max) {
 		charge += charge_max/frames_to_charge;
 	}
-	obj_player.plasma_gun.current_bullets -= 1;
+	if obj_player.frenzy = false and obj_player.aerial_assassin_frenzy = false {
+		obj_player.plasma_gun.current_bullets -= 1;
+	}
 	//scale orb up
 	if charge <= 2 {
 		orb_sprite = spr_projectile_plasma1;

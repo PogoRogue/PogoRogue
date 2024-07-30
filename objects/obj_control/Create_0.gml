@@ -110,6 +110,7 @@ global.crit_percentage = 0;
 global.paparazzi = false;
 global.bar_time_added = 1;
 global.bartime = 25;
+global.strong_muscles = false;
 
 //items unlockable in the shop
 

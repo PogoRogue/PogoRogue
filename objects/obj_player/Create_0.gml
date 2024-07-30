@@ -1199,7 +1199,8 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
 				buff_recycling, buff_juggler, buff_invincibilityup,
 				buff_doublekill, buff_ironproficiency, buff_fastforward,
-				buff_paparazzi, buff_crit, buff_bartime];
+				buff_paparazzi, buff_crit, buff_bartime,
+				buff_strongmuscles];
 
 //create text in proc gen room
 if room = room_proc_gen_test || room = room_sprite_level_test {
