@@ -31,7 +31,7 @@
   ],
   "name":"spr_shopkeeper_new",
   "nineSlice":null,
-  "origin":4,
+  "origin":7,
   "parent":{
     "name":"Items",
     "path":"folders/Sprites/Items.yy",
@@ -108,7 +108,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":17,
-    "yorigin":30,
+    "yorigin":60,
   },
   "swatchColours":[
     4278190335,4293259506,4290360760,4287136134,4284834660,4283384901,4283971642,4280492321,4282526517,4285154115,

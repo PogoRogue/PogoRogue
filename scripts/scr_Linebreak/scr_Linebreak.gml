@@ -35,6 +35,5 @@ function scr_Linebreak(str,maxLength,maxWordLength){
 	       insert = 0;
 	    }
 	}
- 
 	return text;
 }
