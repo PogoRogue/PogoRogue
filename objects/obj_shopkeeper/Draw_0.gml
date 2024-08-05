@@ -13,8 +13,8 @@ switch(floor(image_index)) {
 }
 if instance_exists(speechbubble_obj) {
 	if speechbubble_obj.bubble_index = 0 {
-		draw_sprite(spr_shopkeeper_nametag,0,x,y-61+y_offset);
+		draw_sprite(spr_shopkeeper_nametag,0,x,y-60+y_offset);
 	}
 }else {
-	draw_sprite(spr_shopkeeper_nametag,0,x,y-61+y_offset);
+	draw_sprite(spr_shopkeeper_nametag,0,x,y-60+y_offset);
 }

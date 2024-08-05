@@ -15,12 +15,13 @@ if global.combo > 0 {
 	with obj_player {
 		if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 			var distance = 48;
+			distance += obj_player.combo_offset;
 			
 			if instance_exists(obj_shieldbubble) {
 				distance += 12; //8
 			}else if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun
 			or pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling { 
-				distance += 18;
+				distance += 20;
 			}
 			
 			if other.combometer_scale <= 1 {

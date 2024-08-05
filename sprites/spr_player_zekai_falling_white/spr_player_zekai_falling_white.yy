@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Player sprites",
-    "path":"folders/Sprites/Player/Player sprites.yy",
+    "name":"White (Blink)",
+    "path":"folders/Sprites/Player/Player sprites/Skins/White (Blink).yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

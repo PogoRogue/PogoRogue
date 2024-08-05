@@ -19,7 +19,7 @@
   "height":47,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"af8c70d7-f76c-470b-9e42-3e0b8cac3901","blendMode":0,"displayName":"default","isLocked":false,"name":"af8c70d7-f76c-470b-9e42-3e0b8cac3901","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"af8c70d7-f76c-470b-9e42-3e0b8cac3901","blendMode":0,"displayName":"default","isLocked":false,"name":"af8c70d7-f76c-470b-9e42-3e0b8cac3901","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
     {"$GMImageLayer":"","%Name":"ac6da501-d6f3-47e1-bb11-577b4e597cec","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"ac6da501-d6f3-47e1-bb11-577b4e597cec","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_player_zekai_portal_jetpack",

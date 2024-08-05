@@ -13,6 +13,26 @@ if (restart_button) {
 	}
 }
 
+//change skin
+if keyboard_check_pressed(vk_f2) {
+	if global.current_skin < 4 {
+		global.current_skin += 1;
+	}else {
+		global.current_skin = 0;
+	}
+	with obj_player {
+		player_sprite = bouncing_array[global.current_skin];
+		falling_sprite = falling_array[global.current_skin];
+		charging_sprite = charging_array[global.current_skin];
+		portal_sprite = portal_array[global.current_skin];
+		face_sprite = face_array[global.current_skin];
+		red_sprite = red_array[global.current_skin];
+		white_sprite = white_array[global.current_skin];
+		revive_sprite = revive_array[global.current_skin];
+		revive_white_sprite = revive_white_array[global.current_skin];
+	}
+}
+
 if (mute_button) {
 	global.mute = not global.mute;
 	var num = audio_get_listener_count();

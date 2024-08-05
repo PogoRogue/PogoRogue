@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Skins",
-    "path":"folders/Sprites/Player/Player sprites/Skins.yy",
+    "name":"Falling",
+    "path":"folders/Sprites/Player/Player sprites/Skins/Falling.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

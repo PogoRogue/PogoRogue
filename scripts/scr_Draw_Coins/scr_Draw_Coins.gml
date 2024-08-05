@@ -21,6 +21,6 @@ function scr_Draw_Coins(distance) {
 		var white = make_color_rgb(242,240,229);
 		draw_set_halign(fa_right);
 		draw_set_valign(fa_top);
-		scr_Draw_Text_Outlined_Transformed(x + lengthdir_x(width_added/2,angle) + lengthdir_x(distance+3,angle+90),y + lengthdir_y(width_added/2,angle) + lengthdir_y(distance+3,angle+90),str,white,1,1,angle,other.coin_alpha);
+		scr_Draw_Text_Outlined_Transformed(x + lengthdir_x(width_added/2,angle) + lengthdir_x(distance+4,angle+90),y + lengthdir_y(width_added/2,angle) + lengthdir_y(distance+4,angle+90),str,white,1,1,angle,other.coin_alpha);
 	}
 }

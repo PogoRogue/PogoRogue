@@ -108,10 +108,36 @@ key_pickup_2 = 0;
 key_pickup_1_pressed = 0;
 key_pickup_2_pressed = 0;
 
+//skins
+bouncing_array = [spr_player_zekai,spr_player_skin1,spr_player_skin2,spr_player_skin3,spr_player_skin4];
+charging_array = [spr_player_zekai_charging,spr_player_skin1_charging,spr_player_skin2_charging,spr_player_skin3_charging,spr_player_skin4_charging];
+falling_array = [spr_player_zekai_falling,spr_player_skin1_falling,spr_player_skin2_falling,spr_player_skin3_falling,spr_player_skin4_falling];
+portal_array = [spr_player_zekai_portal,spr_player_skin1_portal,spr_player_skin2_portal,spr_player_skin3_portal,spr_player_skin4_portal];
+hurt1_array = [spr_player_hurtface1,spr_player_skin1_hurtface1,spr_player_skin2_hurtface1,spr_player_skin3_hurtface1,spr_player_skin4_hurtface1];
+hurt2_array = [spr_player_hurtface2,spr_player_skin1_hurtface2,spr_player_skin2_hurtface2,spr_player_skin3_hurtface2,spr_player_skin4_hurtface2];
+hurt3_array = [spr_player_hurtface3,spr_player_skin1_hurtface3,spr_player_skin2_hurtface3,spr_player_skin3_hurtface3,spr_player_skin4_hurtface3];
+hurt4_array = [spr_player_hurtface4,spr_player_skin1_hurtface4,spr_player_skin2_hurtface4,spr_player_skin3_hurtface4,spr_player_skin4_hurtface4];
+face_array = [spr_player_face,spr_player_skin1_face,spr_player_skin2_face,spr_player_skin3_face,spr_player_skin4_face];
+red_array = [spr_player_zekai_charging_red,spr_player_skin1_charging_red,spr_player_skin2_charging_red,spr_player_skin3_charging_red,spr_player_skin4_charging_red];
+white_array = [spr_player_zekai_falling_white,spr_player_skin1_falling_white,spr_player_skin2_falling_white,spr_player_skin3_falling_white,spr_player_skin4_falling_white];
+revive_array = [spr_player_revive_animation,spr_player_skin1_revive,spr_player_skin2_revive,spr_player_skin3_revive,spr_player_skin4_revive];
+revive_white_array = [spr_player_revive_white,spr_player_skin1_revive_white,spr_player_skin2_revive_white,spr_player_skin3_revive_white,spr_player_skin4_revive_white];
+
 //player sprite
-player_sprite = spr_player_zekai;
-falling_sprite = spr_player_zekai_falling;
-charging_sprite = spr_player_zekai_charging;
+player_sprite = bouncing_array[global.current_skin];
+falling_sprite = falling_array[global.current_skin];
+charging_sprite = charging_array[global.current_skin];
+portal_sprite = portal_array[global.current_skin];
+face_sprite = face_array[global.current_skin];
+red_sprite = red_array[global.current_skin];
+white_sprite = white_array[global.current_skin];
+revive_sprite = revive_array[global.current_skin];
+revive_white_sprite = revive_white_array[global.current_skin];
+current_hurt_array = hurt1_array;
+hurt_sprite = current_hurt_array[global.current_skin];
+hurt_yoffset = 0;
+hat_yoffset = 0;
+combo_offset = 0;
 
 // Stats
 hp = 40;
@@ -453,7 +479,7 @@ state_bulletblast = function() {
 		}
 		bulletblast_frames += 1;
 		if bulletblast_frames >= bulletblast_frames_max - 2 {
-			sprite_index = spr_player_zekai_charging_red;	
+			sprite_index = red_sprite;	
 		}
 	}else {
 		old_gun = gun;
@@ -889,6 +915,7 @@ state_shieldbubble = function() {
 }
 
 state_portal = function() {
+	//sprite_index = portal_sprite;
 	can_shoot = false;
 	if instance_exists(portal_object) {
 		if portal_angle_speed < 10 {
@@ -949,6 +976,7 @@ state_portal = function() {
 }
 
 state_shop_portal = function() {
+	//sprite_index = portal_sprite;
 	can_shoot = false;
 	can_rotate = false;
 	if instance_exists(portal_object) {
@@ -1007,7 +1035,7 @@ state_shop_portal = function() {
 }
 
 state_spawn = function() {
-	sprite_index = spr_player_zekai_portal;
+	sprite_index = portal_sprite;
 	can_shoot = false;
 	can_rotate = false;
 	
@@ -1019,7 +1047,7 @@ state_spawn = function() {
 	}else {
 		state = state_free;
 		y += 22;
-		sprite_index = spr_player_zekai;
+		sprite_index = bouncing_array[global.current_skin];
 	}
 }
 

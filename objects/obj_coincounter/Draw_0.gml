@@ -10,12 +10,13 @@ if global.combo > 0 {
 	with obj_player {
 		if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 			var distance = 48;
+			distance += obj_player.combo_offset;
 			
 			if instance_exists(obj_shieldbubble) {
 				distance += 12; //8
 			}else if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun 
 			or pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling { 
-				distance += 18;
+				distance += 20;
 			}
 
 			//text
@@ -24,12 +25,13 @@ if global.combo > 0 {
 			scr_Draw_Coins(distance+28);
 		}else {
 			var distance = 52;
+			distance += obj_player.combo_offset;
 			
 			if instance_exists(obj_shieldbubble) {
 				distance += 12;
 			}else if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun 
 			or pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling { 
-				distance += 18;
+				distance += 20;
 			}
 			
 			scr_Draw_Coins(distance); //8
@@ -37,10 +39,11 @@ if global.combo > 0 {
 	}
 }else {
 	with obj_player {
-		var distance = 52;
+		var distance = 54;
+		distance += obj_player.combo_offset;
 		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun 
 		or pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling { 
-			distance += 18;
+			distance += 20;
 		}
 		if instance_exists(obj_shieldbubble) {
 			distance += 14; //10

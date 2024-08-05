@@ -60,7 +60,6 @@ function scr_Buffs(){
 			if gun_1.bullets_per_bounce < gun_1.init_bullets_per_bounce + gun_1.max_added_bullets {
 				gun_1.bullets_per_bounce += gun_1.burst_number;
 				gun_1.current_bullets += gun_1.burst_number;
-				
 			}
 			if gun_2.bullets_per_bounce < gun_2.init_bullets_per_bounce + gun_2.max_added_bullets and gun_2 != gun_1 {
 				gun_2.bullets_per_bounce += gun_2.burst_number;
@@ -70,7 +69,15 @@ function scr_Buffs(){
 			if gun_3.bullets_per_bounce < gun_3.init_bullets_per_bounce + gun_3.max_added_bullets and gun_3 != gun_1 and gun_3 != gun_2 {
 				gun_3.bullets_per_bounce += gun_3.burst_number;
 				gun_3.current_bullets += gun_3.burst_number;
-				
+			}
+			//change name of six shooter when more bullets
+			switch(sixshooter_gun.bullets_per_bounce) {
+				case 7: sixshooter_gun._name = "Seven Shooter"; break;
+				case 8: sixshooter_gun._name = "Eight Shooter"; break;
+				case 9: sixshooter_gun._name = "Nine Shooter"; break; 
+				case 10: sixshooter_gun._name = "Ten Shooter"; break;
+				case 11: sixshooter_gun._name = "Eleven Shooter"; break;
+				default: sixshooter_gun._name = "Six Shooter"; break;
 			}
 		}
 	}

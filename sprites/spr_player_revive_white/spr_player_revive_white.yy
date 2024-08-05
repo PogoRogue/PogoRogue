@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Player sprites",
-    "path":"folders/Sprites/Player/Player sprites.yy",
+    "name":"Revive",
+    "path":"folders/Sprites/Player/Player sprites/Skins/Revive.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

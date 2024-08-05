@@ -29,8 +29,8 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 		}
 		
 		created = true;	
-		audio_stop_sound(snd_javelin_charge);
-		audio_play_sound(snd_javelin,0,false);
+		audio_stop_sound(snd_plasma_charge);
+		audio_play_sound(snd_plasmagun,0,false);
 		scr_Screen_Shake(3 + ((temp_charge/temp_charge_max)*4), 6 + ((temp_charge/temp_charge_max)*10), true);
 		hspd = lengthdir_x(other.orb_speed,angle);
 		vspd = lengthdir_y(other.orb_speed,angle);

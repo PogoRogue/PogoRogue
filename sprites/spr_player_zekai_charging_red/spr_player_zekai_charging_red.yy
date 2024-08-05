@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Player sprites",
-    "path":"folders/Sprites/Player/Player sprites.yy",
+    "name":"Charging Red Frame",
+    "path":"folders/Sprites/Player/Player sprites/Skins/Charging Red Frame.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

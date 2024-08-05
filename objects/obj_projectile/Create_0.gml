@@ -346,7 +346,8 @@ if (gun_name = "Puncher") {
 	enemies_array = [];
 }
 
-if (gun_name = "Six Shooter") {
+if (gun_name = "Six Shooter") or (gun_name = "Seven Shooter") or (gun_name = "Eight Shooter") 
+or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Eleven Shooter") {
 	randomize();
 	if obj_player.sixshooter_gun.inaccuracy = 5 {
 		random_snd = choose(snd_sixshooter1,snd_sixshooter2,snd_sixshooter3,snd_sixshooter4,snd_sixshooter5,snd_sixshooter6);
@@ -387,4 +388,9 @@ if (gun_name = "Plasma Gun") {
 
 scr_Projectile_Bounce("Javelins");
 scr_Projectile_Bounce("Six Shooter");
+scr_Projectile_Bounce("Seven Shooter");
+scr_Projectile_Bounce("Eight Shooter");
+scr_Projectile_Bounce("Nine Shooter");
+scr_Projectile_Bounce("Ten Shooter");
+scr_Projectile_Bounce("Eleven Shooter");
 scr_Projectile_Bounce("Puncher");
