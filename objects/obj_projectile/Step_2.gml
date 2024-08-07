@@ -190,6 +190,9 @@ if (gun_name = "Grappling Helmet") {
 	if place_meeting(x,y,obj_ground) and retract = false {
 		spd = 0;
 		if collided = false {
+			//audio_stop_sound(rope_sound);
+			audio_play_sound(snd_grappling_hit,0,false);
+			audio_play_sound(snd_grappling_pull,0,false);
 			collided = true;
 			obj_player.state = obj_player.state_grappling;
 			if obj_player.vspeed > 0 {

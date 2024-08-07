@@ -1,6 +1,7 @@
 if handle_frame < sprite_get_number(spr_slotmachine_handle) and handle_done = false and pull_handle = true { 
 	handle_frame += 0.25;
 	if handle_frame >= 5 and spin = false {
+		audio_play_sound(snd_slotmachine_spinning,0,false);
 		spin = true;
 		alarm[2] = spin_time;
 		item1_index = 0;//irandom_range(0,sprite_get_number(spr_slotmachine_slot_items)-1);
@@ -21,8 +22,16 @@ if tryagain = true {
 }
 
 if tryagain_index > blink_max or jackpot_index > blink_max {
-	fade_out = true;
-	tryagain = false;
+	if fade_out = false {
+		fade_out = true;
+		tryagain = false;
+		if audio_is_playing(jackpot_sound) {
+			audio_sound_gain(jackpot_sound, 0, 1000);
+		}
+		if audio_is_playing(propeller_sound) {
+			audio_sound_gain(propeller_sound, 0, 1000);
+		}
+	}
 	//jackpot = false;
 }
 
@@ -157,8 +166,9 @@ propeller_frame += 0.5;
 if num_of_spins <= 15 {
 	item2 = item2_array[item2_index];
 	if win = true or twoinarow = true {
-		if item2 = item1 {
+		if item2 = item1 and item2_locked = false {
 			item2_locked = true;
+			audio_play_sound(snd_slotmachine_stop,0,false);
 		}
 	}
 }
@@ -166,9 +176,10 @@ if num_of_spins <= 15 {
 if num_of_spins <= array_length(item3_array) {
 	item3 = item3_array[item3_index];
 	if win = true {
-		if item3 = item2 {
+		if item3 = item2 and item3_locked = false {
 			num_of_spins = 0;
 			item3_locked = true;
+			audio_play_sound(snd_slotmachine_stop,0,false);
 			spin = false;
 		}
 	}

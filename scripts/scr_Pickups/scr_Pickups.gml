@@ -719,7 +719,7 @@ function scr_Pickups(){
 					invincibility = true;
 					invincibility_time = 300 * global.bar_time_added;
 					alarm[6] = 300 * global.bar_time_added;
-					audio_play_sound(snd_frenzy,0,false);
+					audio_play_sound(snd_invincible,0,false);
 				}
 			}
 		}

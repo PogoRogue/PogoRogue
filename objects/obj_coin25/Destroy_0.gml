@@ -8,5 +8,6 @@ if global.num_of_coins <= 0 {
 if room != room_shop {
 	with follow_object {
 		pull_handle = true;	
+		audio_play_sound(snd_slotmachine_lever,0,false);
 	}
 }

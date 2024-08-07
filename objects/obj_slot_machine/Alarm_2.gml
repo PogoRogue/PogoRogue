@@ -14,6 +14,7 @@ if num_of_spins > 0 {
 		item1 = item1_array[item1_index];
 		if num_of_spins = 22 {
 			item1_locked = true;	
+			audio_play_sound(snd_slotmachine_stop,0,false);
 		}
 	}
 	//item 2
@@ -25,8 +26,9 @@ if num_of_spins > 0 {
 		}
 		item2 = item2_array[item2_index];
 		
-		if num_of_spins = 16 and !(win = true or twoinarow = true) {
+		if num_of_spins = 16 and !(win = true or twoinarow = true) and item2_locked = false {
 			item2_locked = true;	
+			audio_play_sound(snd_slotmachine_stop,0,false);
 		}
 	}else {
 		item2 = item2_array[item2_index];
@@ -39,11 +41,15 @@ if num_of_spins > 0 {
 				}
 				item2 = item2_array[item2_index];
 			}
-			if item2 = item1 {
+			if item2 = item1 and item2_locked = false {
 				item2_locked = true;
+				audio_play_sound(snd_slotmachine_stop,0,false);
 			}
 		}else {
-			item2_locked = true;
+			if item2_locked = false {
+				item2_locked = true;
+				audio_play_sound(snd_slotmachine_stop,0,false);
+			}
 		}
 	}
 	//item 3
@@ -58,8 +64,9 @@ if num_of_spins > 0 {
 			//spin_time *= 1.15;
 		}
 		
-		if num_of_spins = array_length(item3_array)+1 and win = false {
+		if num_of_spins = array_length(item3_array)+1 and win = false and item3_locked = false {
 			item3_locked = true;
+			audio_play_sound(snd_slotmachine_stop,0,false);
 		}
 	}else {
 		item3 = item3_array[item3_index];
@@ -77,12 +84,18 @@ if num_of_spins > 0 {
 			}
 			if item3 = item2 {
 				num_of_spins = 0;
-				item3_locked = true;
+				if item3_locked = false {
+					item3_locked = true;
+					audio_play_sound(snd_slotmachine_stop,0,false);
+				}
 				spin = false;
 			}
 		}else {
 			num_of_spins = 0;
-			item3_locked = true;
+			if item3_locked = false {
+				item3_locked = true;
+				audio_play_sound(snd_slotmachine_stop,0,false);
+			}
 			spin = false;
 		}
 	}
@@ -111,9 +124,17 @@ if num_of_spins > 0 {
 	if item1 = item2 and item2 = item3 {
 		jackpot = true;
 		global.win_odds = 30 + global.luck;
+		jackpot_sound = audio_play_sound(snd_slotmachine_jackpot,0,false);
+		audio_stop_sound(snd_slotmachine_spinning);
+		if item3_locked = false {
+			item3_locked = true;
+			audio_play_sound(snd_slotmachine_stop,0,false);
+		}
 	}else if tryagain = false {
 		tryagain = true;
 		global.win_odds += 5;
+		audio_play_sound(snd_slotmachine_lose,0,false);
+		audio_stop_sound(snd_slotmachine_spinning);
 	}
 }
 random_set_seed(global.seed);

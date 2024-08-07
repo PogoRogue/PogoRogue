@@ -86,3 +86,8 @@ random_items = scr_Random_Item_Drops();
 
 blink_max = 6.9;
 coin_spawner = noone;
+
+jackpot_sound = audio_play_sound(snd_nothing,0,false);
+propeller_sound = audio_play_sound(snd_slotmachine_propeller,0,true);
+audio_sound_gain(propeller_sound, 0, 0);
+audio_sound_gain(propeller_sound, 1, 750);

@@ -293,6 +293,7 @@ if (gun_name = "Water Gun") {
 
 //Grappling Helmet
 if (gun_name = "Grappling Helmet") {
+	rope_sound = audio_play_sound(snd_grappling_rope,0,false);
 	init_angle = obj_player.angle;
 	distance_traveled = 0;
 	damage = 0;

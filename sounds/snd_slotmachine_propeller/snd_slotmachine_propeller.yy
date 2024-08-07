@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_shotgun",
+  "%Name":"snd_slotmachine_propeller",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.0,
-  "name":"snd_shotgun",
+  "duration":4.052245,
+  "name":"snd_slotmachine_propeller",
   "parent":{
-    "name":"Weapons",
-    "path":"folders/Sounds/Weapons.yy",
+    "name":"Powerups",
+    "path":"folders/Sounds/Powerups.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_shotgun.wav",
+  "soundFile":"snd_slotmachine_propeller.wav",
   "type":0,
   "volume":1.0,
 }
