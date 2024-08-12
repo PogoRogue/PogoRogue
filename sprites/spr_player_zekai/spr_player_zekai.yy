@@ -36,8 +36,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Player sprites",
-    "path":"folders/Sprites/Player/Player sprites.yy",
+    "name":"Bouncing",
+    "path":"folders/Sprites/Player/Player sprites/Skins/Bouncing.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

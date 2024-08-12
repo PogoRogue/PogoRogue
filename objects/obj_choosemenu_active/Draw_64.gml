@@ -17,6 +17,9 @@ for (i = 0; i < array_length(actives_array); i++) {
 	if i < array_length(actives_array) {
 		
 		draw_sprite(select_sprite,2 + (select = i + 1),xx,yy-27);
+		if all_actives[i].is_synergy = true {
+			draw_sprite(spr_synergy_animation,global.synergy_frame,xx,yy-27);
+		}
 		draw_sprite(all_actives[i].gui_sprite,0,xx,yy-27);
 	
 		if (i < array_length(all_actives)) {

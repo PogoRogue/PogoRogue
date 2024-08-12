@@ -42,6 +42,13 @@ if abs(image_xscale) > 0.1 and abs(image_yscale) > 0.1 {
 	draw_self();
 }
 
+//draw charge bar
+if (state = state_chargejump) {
+	draw_sprite_general(spr_chargebar,0,0,0,sprite_get_width(spr_chargebar),sprite_get_height(spr_chargebar),x+(lengthdir_x(16,image_angle)*image_xscale),y+(lengthdir_y(16,image_angle)*image_xscale),image_xscale,-1,image_angle,c_white,c_white,c_white,c_white,1);
+	draw_sprite_general(spr_chargebar_color,0,0,0,sprite_get_width(spr_chargebar_color),sprite_get_height(spr_chargebar_color)*(charge/charge_max),x+(lengthdir_x(16,image_angle)*image_xscale),y+(lengthdir_y(16,image_angle)*image_xscale),image_xscale,-1,image_angle,c_white,c_white,c_white,c_white,1);
+	draw_sprite_ext(red_sprite,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,(charge/charge_max)*0.6 + 0.1);
+}
+
 //draw hat gun
 if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
 	if sprite_index = player_sprite or sprite_index = revive_sprite {
@@ -68,19 +75,44 @@ if pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling {
 	}
 }
 
+//draw grappling helmet
+if pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
+	harpoon_empty = false;
+	with obj_projectile {
+		if gun_name = "Harpoon Helmet" {
+			other.harpoon_empty = true;
+		}
+	}
+	if harpoon_empty = false {
+		if sprite_index = player_sprite or sprite_index = revive_sprite {
+			draw_sprite_ext(spr_player_zekai_hat3,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}else if sprite_index = falling_sprite {
+			draw_sprite_ext(spr_player_zekai_hat_falling3,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}else if sprite_index = charging_sprite or sprite_index = red_sprite {
+			draw_sprite_ext(spr_player_zekai_hat_charging3,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}else if sprite_index = portal_sprite and image_xscale > 0.1 and abs(image_yscale > 0.1) {
+			draw_sprite_ext(spr_player_zekai_portal_harpoon,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}
+	}else {
+		if sprite_index = player_sprite or sprite_index = revive_sprite {
+			draw_sprite_ext(spr_player_zekai_hat3_empty,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}else if sprite_index = falling_sprite {
+			draw_sprite_ext(spr_player_zekai_hat_falling3_empty,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}else if sprite_index = charging_sprite or sprite_index = red_sprite {
+			draw_sprite_ext(spr_player_zekai_hat_charging3_empty,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}else if sprite_index = portal_sprite and image_xscale > 0.1 and abs(image_yscale > 0.1) {
+			draw_sprite_ext(spr_player_zekai_portal_harpoon_empty,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}
+	}
+}
+
+
 //revive
 if (state = state_revive) {
 	draw_sprite_ext(spr_player_revive,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);	
 	draw_sprite_ext(revive_white_sprite,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,revive_alpha);	
 }else if revive_alpha > 0 {
 	draw_sprite_ext(spr_player_revive,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,revive_alpha);	
-}
-
-//draw charge bar
-if (state = state_chargejump) {
-	draw_sprite_general(spr_chargebar,0,0,0,sprite_get_width(spr_chargebar),sprite_get_height(spr_chargebar),x+(lengthdir_x(16,image_angle)*image_xscale),y+(lengthdir_y(16,image_angle)*image_xscale),image_xscale,-1,image_angle,c_white,c_white,c_white,c_white,1);
-	draw_sprite_general(spr_chargebar_color,0,0,0,sprite_get_width(spr_chargebar_color),sprite_get_height(spr_chargebar_color)*(charge/charge_max),x+(lengthdir_x(16,image_angle)*image_xscale),y+(lengthdir_y(16,image_angle)*image_xscale),image_xscale,-1,image_angle,c_white,c_white,c_white,c_white,1);
-	draw_sprite_ext(red_sprite,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,(charge/charge_max)*0.6 + 0.1);
 }
 
 //draw slam trail

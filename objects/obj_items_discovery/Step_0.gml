@@ -117,3 +117,5 @@ if key_back and !instance_exists(obj_fade_in) {
 		audio_play_sound(snd_unavailable,0,false);
 	}
 }
+
+global.synergy_frame += 0.25;

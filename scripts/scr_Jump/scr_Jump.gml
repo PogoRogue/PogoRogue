@@ -91,6 +91,12 @@ function scr_Jump(add_to_jump){
 	
 	grappling_gun.current_bullets = 1;
 	
+	//harpoon helmet
+	pickup_harpoon.uses_per_bounce = pickup_harpoon.max_uses_per_bounce;
+	pickup_harpoon.on_cooldown = false;
+	
+	harpoon_gun.current_bullets = 1;
+	
 	//flames
 	allow_flames = false;
 	min_flames_speed = 5.6;

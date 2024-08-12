@@ -37,8 +37,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Player sprites",
-    "path":"folders/Sprites/Player/Player sprites.yy",
+    "name":"Hats",
+    "path":"folders/Sprites/Player/Player sprites/Hats.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

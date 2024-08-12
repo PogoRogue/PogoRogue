@@ -5,7 +5,7 @@ function scr_Settings_Gameplay(){
 		_text: "Tilt Speed: ",
 		_type: "slider",
 		lowest_value: 2,
-		highest_value: 4,
+		highest_value: 5,
 		increment: 0.1,
 		default_value: global.tilt_speed,
 		current_value: global.tilt_speed,

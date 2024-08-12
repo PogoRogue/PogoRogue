@@ -54,6 +54,9 @@ for (i = 0; i < 40; i++) {
 		if global.active_unlocked_array[i] = true {
 			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27);
 		}
+		if i = 12 or i > 19 {
+			draw_sprite(spr_synergy_animation,global.synergy_frame,xx,yy-27);
+		}
 		draw_sprite(actives_array[i],(sprite_get_number(actives_array[i])-1)*(global.active_unlocked_array[i] = false) /*+ (global.active_unlocked_array[i] = true)*/,xx,yy-27);
 	
 		if (i < 20 and global.active_unlocked_array[i]= true) {

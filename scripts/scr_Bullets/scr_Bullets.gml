@@ -476,4 +476,23 @@ function scr_Bullets(){
 		bounce_amount: 1,
 		damage: 1
 	};
+	
+	harpoon_bullet = {
+		sprite: spr_harpoon,
+		gui_sprite: spr_nothing,
+		spd: 12,                          
+		firerate_start: 1,               
+		firerate_end: 1,                 
+		firerate_mult: 0,               
+		firerate: 1,                     
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 4, frames: 4},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 8
+	};
 }

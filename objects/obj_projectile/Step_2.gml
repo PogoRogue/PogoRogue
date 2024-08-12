@@ -164,7 +164,7 @@ if gun_name = "Water Gun" {
 	}
 }
 
-if (gun_name = "Grappling Helmet") {
+if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
 	
 	hspd = 0;
 	vspd = 0;
@@ -176,10 +176,24 @@ if (gun_name = "Grappling Helmet") {
 	if retract = false {
 		x = obj_player.x + lengthdir_x(distance_traveled+56,init_angle);
 		y = obj_player.y + lengthdir_y(distance_traveled+56,init_angle);
+
+		sprite_angle = point_direction(x,y,obj_player.x - lengthdir_x(56,obj_player.image_angle-90),obj_player.y - lengthdir_y(56,obj_player.image_angle-90)) + 180;
+		show_debug_message("SPRITE ANGLE: " + string(sprite_angle - 360));
+	}
+	
+	if retract = true {
+		if abs(sprite_angle - obj_player.angle) > 1 {
+			//sprite_angle += sign((sprite_angle+90) - obj_player.angle) / 10 ;
+		}else {
+			//sprite_angle = obj_player.angle;	
+		}
+		
+		//x = obj_player.x + lengthdir_x(distance_traveled+56,init_angle);
+		//y = obj_player.y + lengthdir_y(distance_traveled+56,init_angle);
 	}
 	
 	//damage once per enemy
-	if place_meeting(x,y,obj_enemy_parent) {
+	if place_meeting(x,y,obj_enemy_parent) and gun_name = "Grappling Helmet" {
 		damage = 0;
 	}
 	
@@ -195,6 +209,7 @@ if (gun_name = "Grappling Helmet") {
 			audio_play_sound(snd_grappling_pull,0,false);
 			collided = true;
 			obj_player.state = obj_player.state_grappling;
+			obj_player.image_index = 0;
 			if obj_player.vspeed > 0 {
 				obj_player.vspeed = 0;
 			}
@@ -208,17 +223,53 @@ if (gun_name = "Grappling Helmet") {
 		}
 	}
 	
-	image_angle = point_direction(x,y,obj_player.x - lengthdir_x(56,obj_player.image_angle-90),obj_player.y - lengthdir_y(56,obj_player.image_angle-90)) + 180;
-	
 	if retract = true {
+		
 		if retracted = false and collided = true {
 			retracted = true;
 		}
 		if retract_spd < 12 {
 			retract_spd += 1;	
 		}
-		move_towards_point(obj_player.x + lengthdir_x(56,obj_player.image_angle+90),obj_player.y + lengthdir_y(56,obj_player.image_angle+90),retract_spd+(obj_player.vspeed * (obj_player.vspeed > 0)))
-		/*distance_traveled -= retract_spd;
+		
+		if retracting_distance > 0 {
+			retracting_distance	-= retract_spd;
+		}else {
+			retracting_distance = 0;
+		}
+		
+		if retracting_distance_set = false {
+			retract_angle = sprite_angle - 360;
+			show_debug_message("sprite_angle: " + string(retract_angle));
+			show_debug_message("player: " + string(obj_player.angle+90));
+			angle_diff = retract_angle - (obj_player.angle+90);
+			retracting_distance_set = true;
+			lerp_value = 0;
+			enemies_array = [];
+		}
+		
+		if abs((retract_angle) != (obj_player.angle+90)) {
+			if lerp_value < 1 {
+				lerp_value += 0.1;
+			}else {
+				lerp_value = 1;
+			}
+			
+			if distance_to_point(obj_player.x + lengthdir_x(56,obj_player.angle+90),obj_player.y + lengthdir_y(56,obj_player.angle+90)) <= 64 {
+				lerp_value = 1;
+			}
+			retract_angle = (obj_player.angle+90 + (angle_diff*(1-lerp_value)));
+			//sprite_angle = obj_player.angle+90;
+		}else {
+			retract_angle = obj_player.angle+90;
+			//sprite_angle = obj_player.angle+90;
+		}
+		x = obj_player.x + lengthdir_x(abs(distance_to_point(obj_player.x,obj_player.y)),retract_angle);
+		y = obj_player.y + lengthdir_y(abs(distance_to_point(obj_player.x,obj_player.y)),retract_angle);
+		
+		move_towards_point(obj_player.x + lengthdir_x(56,obj_player.angle+90),obj_player.y + lengthdir_y(56,obj_player.angle+90),retract_spd+(obj_player.vspeed * (obj_player.vspeed > 0)))
+		
+		distance_traveled -= retract_spd;/*
 		x = obj_player.x + lengthdir_x(56,obj_player.image_angle+90) + lengthdir_x(distance_traveled,image_angle);
 		y = obj_player.y + lengthdir_y(56,obj_player.image_angle+90) + lengthdir_y(distance_traveled,image_angle);*/
 	}
@@ -231,7 +282,7 @@ if (gun_name = "Grappling Helmet") {
 		//retract = true;	
 	}
 	
-	if distance_traveled >= 320 {
+	if distance_traveled >= 320 + (128 * global.strong_muscles) {
 		retract = true;	
 	}
 	
@@ -242,10 +293,15 @@ if (gun_name = "Grappling Helmet") {
 		}
 	}
 	
-	if distance_to_point(obj_player.x + lengthdir_x(56,obj_player.image_angle+90),obj_player.y + lengthdir_y(56,obj_player.image_angle+90)) <= retract_spd {
+	if distance_to_point(obj_player.x + lengthdir_x(56,obj_player.angle+90),obj_player.y + lengthdir_y(56,obj_player.angle+90)) <= retract_spd * 2 {
 		if obj_player.state = obj_player.state_grappling {
 			obj_player.state = obj_player.state_free;
 		}
 		instance_destroy();
+	}
+	
+	if distance_to_object(obj_player) < 16 and retract = true
+	or distance_to_object(obj_player_mask) < 16 and retract = true {
+		instance_destroy();	
 	}
 }

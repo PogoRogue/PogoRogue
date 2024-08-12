@@ -1,4 +1,4 @@
-image_speed = 1;
+image_speed = 2;
 image_index = 2;
 ready_to_open = false;
 opening = false;

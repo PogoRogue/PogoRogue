@@ -15,7 +15,7 @@ if (restart_button) {
 
 //change skin
 if keyboard_check_pressed(vk_f2) {
-	if global.current_skin < 4 {
+	if global.current_skin < 6 {
 		global.current_skin += 1;
 	}else {
 		global.current_skin = 0;
@@ -120,3 +120,5 @@ if instance_exists(obj_pause) {
 		}
 	}
 }
+
+global.synergy_frame += 0.25;

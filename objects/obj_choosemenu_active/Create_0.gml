@@ -45,7 +45,7 @@ actives_array = [obj_item_pickup_reload, obj_item_pickup_freeze, obj_item_pickup
 				obj_item_pickup_parachute, obj_item_pickup_firedash, obj_item_pickup_groundpound, 
 				obj_item_pickup_hatgun, obj_item_pickup_chargejump, obj_item_pickup_shieldbubble,
 				obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
-				obj_item_pickup_camera, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
+				obj_item_pickup_synergy_harpoon, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
 				obj_item_pickup_slowmo, obj_item_pickup_grappling,obj_item_pickup_winners,
 				obj_item_pickup_airbag, obj_item_pickup_invincibility];
 				

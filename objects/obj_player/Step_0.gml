@@ -59,72 +59,6 @@ if current_iframes <= 0 {
 	bubble = false;	
 }
 
-//adjust y position of hurt sprites
-if current_iframes > 0 and bubble = false || dead {
-	if hp >= 8 * 4 { //4 or more hearts left
-		current_hurt_array = hurt1_array;
-		hurt_sprite = current_hurt_array[global.current_skin];	
-	}else if hp >= 8 * 3 { //3 hearts left
-		current_hurt_array = hurt2_array;
-		hurt_sprite = current_hurt_array[global.current_skin];		
-	}else if hp >= 8 * 2 { //2 hearts left
-		current_hurt_array = hurt3_array;
-		hurt_sprite = current_hurt_array[global.current_skin];		
-	}else { //1 or fewer hearts left
-		current_hurt_array = hurt4_array;
-		hurt_sprite = current_hurt_array[global.current_skin];	
-	}
-}
-
-if sprite_index = player_sprite {
-	switch(floor(image_index)) {
-		case 0: hurt_yoffset = 0; break;
-		case 1: hurt_yoffset = 3; break;
-		case 2: hurt_yoffset = 5; break;
-		case 3: hurt_yoffset = 7; break;
-		case 4: hurt_yoffset = 8; break;
-		case 5: hurt_yoffset = 10; break;
-		case 6: hurt_yoffset = 10; break;
-		case 7: hurt_yoffset = 11; break;
-		case 8: hurt_yoffset = 11; break;
-		case 9: hurt_yoffset = 11; break;
-		case 10: hurt_yoffset = 11; break;
-		case 11: hurt_yoffset = 11; break;
-		default: hurt_yoffset = 11; break;
-	}
-}else if sprite_index = falling_sprite {
-	switch(floor(image_index)) {
-		case 0: hurt_yoffset = 1; break;
-		case 1: hurt_yoffset = 1; break;
-		case 2: hurt_yoffset = 0; break;
-		case 3: hurt_yoffset = 0; break;
-	}
-}else if sprite_index = charging_sprite {
-	if floor(image_index) % 2 = 0 {
-		hurt_yoffset = 11;
-	}else {
-		hurt_yoffset = 10;
-	}
-}
-
-//hat/combo offset
-if global.current_skin = 1 {
-	hat_yoffset = 3;
-	combo_offset = 4;
-}else if global.current_skin = 2 {
-	hat_yoffset = 2;
-	combo_offset = 5;
-}else if global.current_skin = 3 {
-	hat_yoffset = 2;
-	combo_offset = 5;
-}else if global.current_skin = 4 {
-	hat_yoffset = 2;
-	combo_offset = 4;
-}else {
-	hat_yoffset = 0;
-	combo_offset = 1;
-}
-
 //run state machine
 state();
 
@@ -676,13 +610,21 @@ if(place_meeting(x, y, obj_enemy_snail_slime)) {
 }
 
 //delete grappling hook
-var not_grappling_1 = !(key_pickup_1 and pickups_array[0] = pickup_grappling);
-var not_grappling_2 = !(key_pickup_2 and pickups_array[1] = pickup_grappling);
-if not_grappling_1 and not_grappling_2 {
-	with obj_projectile {
-		if gun_name = "Grappling Helmet" {
+
+with obj_projectile {
+	if gun_name = "Grappling Helmet"  {
+		var not_grappling_1 = !(other.key_pickup_1) and other.pickups_array[0] = other.pickup_grappling;
+		var not_grappling_2 = !(other.key_pickup_2) and other.pickups_array[1] = other.pickup_grappling;
+		if not_grappling_1 or not_grappling_2 {
 			retract = true;
-			spd = 0;
+			//spd = 0;
+		}
+	}else if gun_name = "Harpoon Helmet"  {
+		var not_grappling_1 = !(other.key_pickup_1) and other.pickups_array[0] = other.pickup_harpoon;
+		var not_grappling_2 = !(other.key_pickup_2) and other.pickups_array[1] = other.pickup_harpoon;
+		if not_grappling_1 or not_grappling_2 {
+			retract = true;
+			//spd = 0;
 		}
 	}
 }
@@ -698,3 +640,5 @@ if global.triplethreat = true {
 if mask_index != spr_nothing {
 	mask_index = spr_player_zekai;	
 }
+
+synergy_frame += 0.25;

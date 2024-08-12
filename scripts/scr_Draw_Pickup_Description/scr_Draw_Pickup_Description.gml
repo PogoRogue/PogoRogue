@@ -24,6 +24,9 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	}
 	
 	//sprites
+	if pickup.is_synergy = true and img_index < 2 {
+		draw_sprite(spr_synergy_animation,global.synergy_frame,xx-49,yy-97);
+	}
 	draw_sprite(pickup.gui_sprite,img_index,xx-49,yy-97);
 	
 	//draw cost

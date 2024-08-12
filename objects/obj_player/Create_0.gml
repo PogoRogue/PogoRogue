@@ -91,6 +91,8 @@ invincibility = false;
 invincibility_time = 0;
 invincibility_time_max = 300 * global.bar_time_added;
 shieldbubble_obj = noone;
+harpoon_empty = false;
+synergy_frame = 0;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -109,19 +111,19 @@ key_pickup_1_pressed = 0;
 key_pickup_2_pressed = 0;
 
 //skins
-bouncing_array = [spr_player_zekai,spr_player_skin1,spr_player_skin2,spr_player_skin3,spr_player_skin4];
-charging_array = [spr_player_zekai_charging,spr_player_skin1_charging,spr_player_skin2_charging,spr_player_skin3_charging,spr_player_skin4_charging];
-falling_array = [spr_player_zekai_falling,spr_player_skin1_falling,spr_player_skin2_falling,spr_player_skin3_falling,spr_player_skin4_falling];
-portal_array = [spr_player_zekai_portal,spr_player_skin1_portal,spr_player_skin2_portal,spr_player_skin3_portal,spr_player_skin4_portal];
-hurt1_array = [spr_player_hurtface1,spr_player_skin1_hurtface1,spr_player_skin2_hurtface1,spr_player_skin3_hurtface1,spr_player_skin4_hurtface1];
-hurt2_array = [spr_player_hurtface2,spr_player_skin1_hurtface2,spr_player_skin2_hurtface2,spr_player_skin3_hurtface2,spr_player_skin4_hurtface2];
-hurt3_array = [spr_player_hurtface3,spr_player_skin1_hurtface3,spr_player_skin2_hurtface3,spr_player_skin3_hurtface3,spr_player_skin4_hurtface3];
-hurt4_array = [spr_player_hurtface4,spr_player_skin1_hurtface4,spr_player_skin2_hurtface4,spr_player_skin3_hurtface4,spr_player_skin4_hurtface4];
-face_array = [spr_player_face,spr_player_skin1_face,spr_player_skin2_face,spr_player_skin3_face,spr_player_skin4_face];
-red_array = [spr_player_zekai_charging_red,spr_player_skin1_charging_red,spr_player_skin2_charging_red,spr_player_skin3_charging_red,spr_player_skin4_charging_red];
-white_array = [spr_player_zekai_falling_white,spr_player_skin1_falling_white,spr_player_skin2_falling_white,spr_player_skin3_falling_white,spr_player_skin4_falling_white];
-revive_array = [spr_player_revive_animation,spr_player_skin1_revive,spr_player_skin2_revive,spr_player_skin3_revive,spr_player_skin4_revive];
-revive_white_array = [spr_player_revive_white,spr_player_skin1_revive_white,spr_player_skin2_revive_white,spr_player_skin3_revive_white,spr_player_skin4_revive_white];
+bouncing_array = [spr_player_zekai,spr_player_skin1,spr_player_skin2,spr_player_skin3,spr_player_skin4,spr_player_skin5,spr_player_skin6];
+charging_array = [spr_player_zekai_charging,spr_player_skin1_charging,spr_player_skin2_charging,spr_player_skin3_charging,spr_player_skin4_charging,spr_player_skin5_charging,spr_player_skin6_charging];
+falling_array = [spr_player_zekai_falling,spr_player_skin1_falling,spr_player_skin2_falling,spr_player_skin3_falling,spr_player_skin4_falling,spr_player_skin5_falling,spr_player_skin6_falling];
+portal_array = [spr_player_zekai_portal,spr_player_skin1_portal,spr_player_skin2_portal,spr_player_skin3_portal,spr_player_skin4_portal,spr_player_skin5_portal,spr_player_skin6_portal];
+hurt1_array = [spr_player_hurtface1,spr_player_skin1_hurtface1,spr_player_skin2_hurtface1,spr_player_skin3_hurtface1,spr_player_skin4_hurtface1,spr_player_skin5_hurtface1,spr_player_skin6_hurtface1];
+hurt2_array = [spr_player_hurtface2,spr_player_skin1_hurtface2,spr_player_skin2_hurtface2,spr_player_skin3_hurtface2,spr_player_skin4_hurtface2,spr_player_skin5_hurtface2,spr_player_skin6_hurtface2];
+hurt3_array = [spr_player_hurtface3,spr_player_skin1_hurtface3,spr_player_skin2_hurtface3,spr_player_skin3_hurtface3,spr_player_skin4_hurtface3,spr_player_skin5_hurtface3,spr_player_skin6_hurtface3];
+hurt4_array = [spr_player_hurtface4,spr_player_skin1_hurtface4,spr_player_skin2_hurtface4,spr_player_skin3_hurtface4,spr_player_skin4_hurtface4,spr_player_skin5_hurtface4,spr_player_skin6_hurtface4];
+face_array = [spr_player_face,spr_player_skin1_face,spr_player_skin2_face,spr_player_skin3_face,spr_player_skin4_face,spr_player_skin5_face,spr_player_skin6_face];
+red_array = [spr_player_zekai_charging_red,spr_player_skin1_charging_red,spr_player_skin2_charging_red,spr_player_skin3_charging_red,spr_player_skin4_charging_red,spr_player_skin5_charging_red,spr_player_skin6_charging_red];
+white_array = [spr_player_zekai_falling_white,spr_player_skin1_falling_white,spr_player_skin2_falling_white,spr_player_skin3_falling_white,spr_player_skin4_falling_white,spr_player_skin5_falling_white,spr_player_skin6_falling_white];
+revive_array = [spr_player_revive_animation,spr_player_skin1_revive,spr_player_skin2_revive,spr_player_skin3_revive,spr_player_skin4_revive,spr_player_skin5_revive,spr_player_skin6_revive];
+revive_white_array = [spr_player_revive_white,spr_player_skin1_revive_white,spr_player_skin2_revive_white,spr_player_skin3_revive_white,spr_player_skin4_revive_white,spr_player_skin5_revive_white,spr_player_skin6_revive_white];
 
 //player sprite
 player_sprite = bouncing_array[global.current_skin];
@@ -283,8 +285,8 @@ state_bouncing = function() {
 	}
 	
 	with obj_projectile {
-		if gun_name = "Grappling Helmet" {
-			retract = true;
+		if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
+			//retract = true;
 		}
 	}
 }
@@ -784,15 +786,15 @@ state_grappling = function() {
 	
 	can_shoot = false;
 	
-	var not_grappling_1 = !(global.key_pickup_1) and pickups_array[0] = pickup_grappling;
-	var not_grappling_2 = !(global.key_pickup_2) and pickups_array[1] = pickup_grappling;
+	var not_grappling_1 = !(global.key_pickup_1) and pickups_array[0] = pickup_grappling or !(global.key_pickup_1) and pickups_array[0] = pickup_harpoon;
+	var not_grappling_2 = !(global.key_pickup_2) and pickups_array[1] = pickup_grappling or !(global.key_pickup_2) and pickups_array[1] = pickup_harpoon;
 	
-	if speed <= 10 {
-		speed += 1;
+	if speed <= 8 {
+		speed += 0.75;
 	}
 	
 	with obj_projectile {
-		if gun_name = "Grappling Helmet" {
+		if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
 			other.grappling_hook = self;	
 		}
 	}
@@ -1174,7 +1176,7 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_parachute, pickup_firedash, pickup_groundpound, 
 					pickup_hatgun, pickup_chargejump, pickup_shieldbubble,
 					pickup_target, pickup_blink, pickup_jetpack,
-					pickup_camera, pickup_frenzy, pickup_bulletblast,
+					pickup_harpoon, pickup_frenzy, pickup_bulletblast,
 					pickup_slowmo, pickup_grappling, pickup_winners,
 					pickup_airbag, pickup_invincibility]; //all pickups
 

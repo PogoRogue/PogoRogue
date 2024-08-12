@@ -2,7 +2,6 @@
 //for final boss
 boss_projectile=false;
 
-
 image_index = 0;
 image_speed = 0;
 angle = image_angle;
@@ -292,17 +291,19 @@ if (gun_name = "Water Gun") {
 }
 
 //Grappling Helmet
-if (gun_name = "Grappling Helmet") {
+if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
 	rope_sound = audio_play_sound(snd_grappling_rope,0,false);
 	init_angle = obj_player.angle;
 	distance_traveled = 0;
-	damage = 0;
+	if (gun_name = "Grappling Helmet") {
+		damage = 0;
+	}
 	init_damage = damage;
 	colliding_with_enemy = false;
 	depth = obj_player.depth + 1;
 	image_index = 0;
 	num_of_bounces = 0;
-	image_angle = obj_player.angle+90;
+	sprite_angle = obj_player.angle+90;
 	init_angle = image_angle;
 	init_x = x;
 	init_y = y;
@@ -313,6 +314,13 @@ if (gun_name = "Grappling Helmet") {
 	collision_x = x;
 	collision_y = y;
 	retracted = false;
+	retracting_distance = 0;
+	retracting_distance_set = false;
+	lerp_value = 0;
+	retract_angle = obj_player.angle+90;
+	angle_diff = 0;
+	
+	enemies_array = [];
 }
 
 if (gun_name = "The Portal") {

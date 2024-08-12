@@ -20,7 +20,8 @@ if global.combo > 0 {
 			if instance_exists(obj_shieldbubble) {
 				distance += 12; //8
 			}else if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun
-			or pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling { 
+			or pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling
+			or pickups_array[0] = pickup_harpoon or pickups_array[1] =  pickup_harpoon { 
 				distance += 20;
 			}
 			

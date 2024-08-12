@@ -38,6 +38,9 @@ for(i = 0; i < num_of_slots; i++) {
 	}else if i = 0 {
 		if num_of_slots = 3 {
 			draw_set_valign(fa_center);
+			if pickups_mode = true {
+				draw_sprite(spr_synergy_animation,global.synergy_frame,x-64+(64*i)-x_adjust,yy-y_adjust-16);
+			}
 			draw_sprite(sprite_1,0,x-64+(64*i)-x_adjust,yy-y_adjust-16);
 			scr_Draw_Text_Outlined(x-64+(64*i)-x_adjust,yy-21-16,scr_Linebreak(item1_name,12,99),c_white);
 		}else if num_of_slots = 4 {
@@ -48,6 +51,7 @@ for(i = 0; i < num_of_slots; i++) {
 	}else if i = 1 {
 		if num_of_slots = 3 {
 			draw_set_valign(fa_center);
+			draw_sprite(spr_synergy_animation,global.synergy_frame,x-64+(64*i)-x_adjust,yy-y_adjust-16);
 			draw_sprite(sprite_2,0,x-64+(64*i)-x_adjust,yy-y_adjust-16);
 			scr_Draw_Text_Outlined(x-64+(64*i)-x_adjust,yy-21-16,scr_Linebreak(item2_name,12,99),c_white);
 		}else if num_of_slots = 4 {
