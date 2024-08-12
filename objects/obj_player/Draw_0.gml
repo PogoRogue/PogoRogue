@@ -52,7 +52,7 @@ if (state = state_chargejump) {
 //draw hat gun
 if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
 	if sprite_index = player_sprite or sprite_index = revive_sprite {
-		draw_sprite_ext(spr_player_zekai_hat,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		draw_sprite_ext(spr_player_zekai_hat,image_index,x+lengthdir_x(hat_yoffset,angle+90), y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}else if sprite_index = falling_sprite {
 		draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}else if sprite_index = charging_sprite {
@@ -139,9 +139,13 @@ if ground_pound_slam = true {
 		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
 			draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
 		}
-		//draw helmet during slam
+		//draw grappling helmet during slam
 		if pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling {
 			draw_sprite_ext(spr_player_zekai_hat_falling2,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
+		//draw harpoon helmet during slam
+		if pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
+			draw_sprite_ext(spr_player_zekai_hat_falling3,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
 		}
     }
 	draw_self();

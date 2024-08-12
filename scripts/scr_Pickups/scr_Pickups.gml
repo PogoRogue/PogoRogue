@@ -766,6 +766,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(75,128,202),
 		cost: 0,
 		is_synergy: true,
+		item_cost: 160, //only for synergies (item 1 + item 2 costs)
 		on_call: function() {
 			with obj_player {
 				old_gun = gun;
