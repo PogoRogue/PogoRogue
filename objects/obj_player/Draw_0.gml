@@ -49,6 +49,82 @@ if (state = state_chargejump) {
 	draw_sprite_ext(red_sprite,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,(charge/charge_max)*0.6 + 0.1);
 }
 
+
+//revive
+if (state = state_revive) {
+	draw_sprite_ext(spr_player_revive,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);	
+	draw_sprite_ext(revive_white_sprite,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,revive_alpha);	
+}else if revive_alpha > 0 {
+	draw_sprite_ext(spr_player_revive,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,revive_alpha);	
+}
+
+//draw slam trail
+var slam_alpha = 0;
+if ground_pound_slam = true or harpooning = true {
+	if  harpooning = true {
+		var y_dir = -1;
+		var y_angle = direction+180;
+		if state = state_grappling {
+			if (slam_trail_distance  < slam_speed*2) {
+				slam_trail_distance += 0.25 + ((slam_speed-slam_trail_distance)>9);
+				}else { 
+					slam_trail_distance += 0.1;
+			}
+		}else if slam_trail_distance > 0 {
+			slam_trail_distance -= 0.25;
+		}else {
+			slam_trail_distance = 0;
+			harpooning = false;	
+			invincible = false;
+		}
+		var x_add = slam_trail_distance;
+		var harpoon_sprite = spr_player_zekai_hat_falling3_empty;
+	}else {
+		var x_add = 0;
+		var y_dir = 1;
+		var y_angle = 90;
+		if (slam_trail_distance  < slam_speed*2) {
+			slam_trail_distance += 0.25 + ((slam_speed-slam_trail_distance)>9);
+		}else { 
+			slam_trail_distance += 0.1;
+		}
+		var harpoon_sprite = spr_player_zekai_hat_falling3;
+	}
+	
+	for(i = 5; i > 0; i -= 1) {
+		slam_alpha += 0.2;
+		//draw jetpack during slam
+		if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {
+			draw_sprite_ext(spr_jetpack,0,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
+        draw_sprite_ext(sprite_index,image_index,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		if invincibility = true {
+			 draw_sprite_ext(spr_player_zekai_invincible,image_index,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
+		//draw face during slam
+		draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90)+lengthdir_x(x_add*i,y_angle),y+lengthdir_y(hurt_yoffset,angle-90)+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		//draw hat during slam
+		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
+			draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
+		//draw grappling helmet during slam
+		if pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling {
+			draw_sprite_ext(spr_player_zekai_hat_falling2,image_index,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
+		//draw harpoon helmet during slam
+		if pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
+			draw_sprite_ext(harpoon_sprite,image_index,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+		}
+    }
+	draw_self();
+}
+
+//invincibility
+if invincibility = true and global.current_skin = 0 {
+	scr_Draw_Skin(spr_player_zekai_invincible,spr_player_zekai_invincible_falling,spr_player_zekai_invincible_charging,spr_player_zekai_invincible_portal);
+}
+
+
 //draw hat gun
 if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
 	if sprite_index = player_sprite or sprite_index = revive_sprite {
@@ -75,7 +151,7 @@ if pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling {
 	}
 }
 
-//draw grappling helmet
+//draw harpoon helmet
 if pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
 	harpoon_empty = false;
 	with obj_projectile {
@@ -106,50 +182,6 @@ if pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
 	}
 }
 
-
-//revive
-if (state = state_revive) {
-	draw_sprite_ext(spr_player_revive,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);	
-	draw_sprite_ext(revive_white_sprite,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,revive_alpha);	
-}else if revive_alpha > 0 {
-	draw_sprite_ext(spr_player_revive,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,revive_alpha);	
-}
-
-//draw slam trail
-var slam_alpha = 0;
-if ground_pound_slam = true {
-	if (slam_trail_distance  < slam_speed*2) {
-		slam_trail_distance += 0.25 + ((slam_speed-slam_trail_distance)>9);
-	}else { 
-		slam_trail_distance += 0.1;
-	}
-	for(i = 5; i > 0; i -= 1) {
-		slam_alpha += 0.2;
-		//draw jetpack during slam
-		if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {
-			draw_sprite_ext(spr_jetpack,0,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
-		}
-        draw_sprite_ext(sprite_index,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
-		if invincibility = true {
-			 draw_sprite_ext(spr_player_zekai_invincible,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
-		}
-		//draw face during slam
-		draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90)-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
-		//draw hat during slam
-		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
-			draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
-		}
-		//draw grappling helmet during slam
-		if pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling {
-			draw_sprite_ext(spr_player_zekai_hat_falling2,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
-		}
-		//draw harpoon helmet during slam
-		if pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
-			draw_sprite_ext(spr_player_zekai_hat_falling3,image_index,x,y-(i*slam_trail_distance),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
-		}
-    }
-	draw_self();
-}
 //laser sight
 scr_Laser_Sight();
 
@@ -179,11 +211,6 @@ shader_reset();
 }
 
 draw_set_color(c_white);
-
-//invincibility
-if invincibility = true and global.current_skin = 0 {
-	scr_Draw_Skin(spr_player_zekai_invincible,spr_player_zekai_invincible_falling,spr_player_zekai_invincible_charging,spr_player_zekai_invincible_portal);
-}
 
 //six shooter UI
 if sixshooter_held_num >= 10 and sixshooter_gun.inaccuracy != 25 and sixshooter_held_num < 30 {

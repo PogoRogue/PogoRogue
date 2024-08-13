@@ -57,6 +57,13 @@ if (place_meeting(x,y+parent_index.vspeed,obj_ground) and parent_index.vspeed < 
 									}
 									other.parent_index.state = other.parent_index.state_free;
 								}
+								if other.parent_index.harpooning = true {
+									other.parent_index.harpooning = false;
+									other.parent_index.invincible = false;
+									scr_Screen_Shake(5, 10, false);
+									audio_play_sound(snd_groundpound,0,false);
+									other.parent_index.vspeed *= 0.5;
+								}
 							}
 						}
 					}
@@ -102,6 +109,12 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed >
 								}
 								other.parent_index.state = other.parent_index.state_free;
 							}
+							if other.parent_index.harpooning = true {
+								other.parent_index.harpooning = false;
+								other.parent_index.invincible = false;
+								scr_Screen_Shake(5, 10, false);
+								audio_play_sound(snd_groundpound,0,false);
+							}
 						}
 					}
 					if right_corner = false and left_corner = false and bottom_right_corner = false and bottom_left_corner = false and top = false and active = true
@@ -144,6 +157,12 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed <
 									other.parent_index.grappling_hook.retract = true;
 								}
 								other.parent_index.state = other.parent_index.state_free;
+							}
+							if other.parent_index.harpooning = true {
+								other.parent_index.harpooning = false;
+								other.parent_index.invincible = false;
+								scr_Screen_Shake(5, 10, false);
+								audio_play_sound(snd_groundpound,0,false);
 							}
 						}
 					}
@@ -201,6 +220,12 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed >= 0 {
 								}
 								other.parent_index.state = other.parent_index.state_free;
 							}
+							if other.parent_index.harpooning = true {
+								other.parent_index.harpooning = false;
+								other.parent_index.invincible = false;
+								scr_Screen_Shake(5, 10, false);
+								audio_play_sound(snd_groundpound,0,false);
+							}
 						}
 					}
 					if _break = true {
@@ -234,6 +259,12 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed <= 0 {
 									other.parent_index.grappling_hook.retract = true;
 								}
 								other.parent_index.state = other.parent_index.state_free;
+							}
+							if other.parent_index.harpooning = true {
+								other.parent_index.harpooning = false;
+								other.parent_index.invincible = false;
+								scr_Screen_Shake(5, 10, false);
+								audio_play_sound(snd_groundpound,0,false);
 							}
 						}
 					}
@@ -269,6 +300,12 @@ if (place_meeting(x,y,obj_wallbutton) and parent_index.vspeed < 0) {
 										other.parent_index.grappling_hook.retract = true;
 									}
 									other.parent_index.state = other.parent_index.state_free;
+								}
+								if other.parent_index.harpooning = true {
+									other.parent_index.harpooning = false;
+									other.parent_index.invincible = false;
+									scr_Screen_Shake(5, 10, false);
+									audio_play_sound(snd_groundpound,0,false);
 								}
 							}
 						}

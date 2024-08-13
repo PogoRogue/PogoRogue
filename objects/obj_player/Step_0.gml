@@ -154,7 +154,13 @@ if(global.impatience == true and impatience_used = false){
 
 
 //reset ground pound variables
-if state != state_groundpound {
+if harpooning = true and state != state_grappling {
+	if speed < 8 or vspeed > 0 {
+		harpooning = false;
+		invincible = false;
+	}
+}
+if state != state_groundpound and harpooning = false {
 	ground_pound_slam = false;
 	//can_shoot = true;
 	slam_speed = 12;

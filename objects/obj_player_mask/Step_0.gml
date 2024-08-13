@@ -32,7 +32,17 @@ if player_colliding = false {
 		}
 		
 		if parent_index.state = parent_index.state_grappling {
+			if instance_exists(other.parent_index.grappling_hook) {
+				other.parent_index.grappling_hook.retract = true;
+			}
 			parent_index.state = parent_index.state_free;
+		}
+		
+		if other.parent_index.harpooning = true {
+			other.parent_index.harpooning = false;
+			other.parent_index.invincible = false;
+			scr_Screen_Shake(5, 10, false);
+			audio_play_sound(snd_groundpound,0,false);
 		}
 	}
 
@@ -57,7 +67,17 @@ if player_colliding = false {
 		}
 		
 		if parent_index.state = parent_index.state_grappling {
+			if instance_exists(other.parent_index.grappling_hook) {
+				other.parent_index.grappling_hook.retract = true;
+			}
 			parent_index.state = parent_index.state_free;
+		}
+		
+		if other.parent_index.harpooning = true {
+			other.parent_index.harpooning = false;
+			other.parent_index.invincible = false;
+			scr_Screen_Shake(5, 10, false);
+			audio_play_sound(snd_groundpound,0,false);
 		}
 	}
 }
@@ -76,7 +96,18 @@ if (place_meeting(x,y+parent_index.vspeed-1,obj_wallbottomleftcorner) and parent
 	other.parent_index.dash_time = 0;
 	
 	if parent_index.state = parent_index.state_grappling {
+		if instance_exists(other.parent_index.grappling_hook) {
+			other.parent_index.grappling_hook.retract = true;
+		}
 		parent_index.state = parent_index.state_free;
+	}
+	
+	if other.parent_index.harpooning = true {
+		other.parent_index.harpooning = false;
+		other.parent_index.invincible = false;
+		scr_Screen_Shake(5, 10, false);
+		audio_play_sound(snd_groundpound,0,false);
+		other.parent_index.vspeed *= 0.5;
 	}
 }
 
@@ -95,6 +126,17 @@ if (place_meeting(x,y+parent_index.vspeed-1,obj_wallbottomrightcorner) and paren
 	other.parent_index.dash_time = 0;
 	
 	if parent_index.state = parent_index.state_grappling {
+		if instance_exists(other.parent_index.grappling_hook) {
+			other.parent_index.grappling_hook.retract = true;
+		}
 		parent_index.state = parent_index.state_free;
+	}
+	
+	if other.parent_index.harpooning = true {
+		other.parent_index.harpooning = false;
+		other.parent_index.invincible = false;
+		scr_Screen_Shake(5, 10, false);
+		audio_play_sound(snd_groundpound,0,false);
+		other.parent_index.vspeed *= 0.5;
 	}
 }

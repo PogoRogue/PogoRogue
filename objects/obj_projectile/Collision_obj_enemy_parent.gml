@@ -89,7 +89,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
 			}
 		}
-	}else if gun_name = "Harpoon Helmet" {
+	}else if gun_name = "Harpoon Helmet" and damage > 0 {
 		enemy_object = other;
 		if !scr_In_Array(enemies_array,enemy_object) {
 			array_resize(enemies_array,array_length(enemies_array)+1);

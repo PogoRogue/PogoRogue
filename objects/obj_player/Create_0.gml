@@ -92,6 +92,7 @@ invincibility_time = 0;
 invincibility_time_max = 300 * global.bar_time_added;
 shieldbubble_obj = noone;
 harpoon_empty = false;
+harpooning = false;
 synergy_frame = 0;
 
 //upward flames
@@ -229,7 +230,7 @@ state_free = function() {
 	}
 	
 	//restart room if reached the top unless procgen room
-	if room != room_proc_gen_test && room != room_sprite_level_test && room != room_tutorial {
+	if room != room_proc_gen_test && room != room_sprite_level_test && room != room_tutorial && room != room_starting_temp {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			scr_Room_Restart(true);
 		}
@@ -245,6 +246,11 @@ state_free = function() {
 				paused_outside = true;
 			}
 			state = state_immobile;
+		}
+	}else if room = room_starting_temp {
+		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			state = state_immobile;
+			scr_Room_Transition(room_proc_gen_test);
 		}
 	}
 	
@@ -789,13 +795,23 @@ state_grappling = function() {
 	var not_grappling_1 = !(global.key_pickup_1) and pickups_array[0] = pickup_grappling or !(global.key_pickup_1) and pickups_array[0] = pickup_harpoon;
 	var not_grappling_2 = !(global.key_pickup_2) and pickups_array[1] = pickup_grappling or !(global.key_pickup_2) and pickups_array[1] = pickup_harpoon;
 	
-	if speed <= 8 {
-		speed += 0.75;
-	}
-	
 	with obj_projectile {
 		if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
 			other.grappling_hook = self;	
+		}
+	}
+	
+	if instance_exists(grappling_hook) {
+		if grappling_hook.gun_name = "Grappling Helmet" {
+			if speed <= 8 {
+				speed += 0.75;
+			}
+		}else if grappling_hook.gun_name = "Harpoon Helmet" {
+			harpooning = true;
+			invincible = true;
+			if speed <= 12 {
+				speed += 1;
+			}
 		}
 	}
 
@@ -810,6 +826,11 @@ state_grappling = function() {
 			state = state_free;
 			instance_destroy(grappling_hook);
 		}
+	}
+	
+	
+	if slam_speed < 15.9 {
+		slam_speed += 0.1;
 	}
 	
 	scr_Player_Collision();

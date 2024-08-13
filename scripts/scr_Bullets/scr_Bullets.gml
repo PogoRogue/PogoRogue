@@ -56,7 +56,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 0 + global.bouncy_bullets,
 		bounce_amount: 1,
-		damage: 6
+		damage: 4
 	};
 	
 	bulletblast_bullet = {
@@ -480,7 +480,7 @@ function scr_Bullets(){
 	harpoon_bullet = {
 		sprite: spr_harpoon,
 		gui_sprite: spr_nothing,
-		spd: 12,                          
+		spd: 20,                          
 		firerate_start: 1,               
 		firerate_end: 1,                 
 		firerate_mult: 0,               

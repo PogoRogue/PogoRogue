@@ -748,7 +748,7 @@ function scr_Pickups(){
 	
 	pickup_harpoon = {
 		_name: "Harpoon Helmet",
-		tagline: "Press and hold to shoot a harpoon from the top of your head, damaging enemies in its path and pulling you towards the wall it attaches to.",
+		tagline: "Fire a sharp harpoon from the top of your head that attaches to walls. Dash through enemies who dare \nstand in your path.",
 		gui_sprite: spr_pickup_synergy_harpoon,
 		max_cooldown_time: -1,
 		cooldown_time: -1,

@@ -193,8 +193,9 @@ if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
 	}
 	
 	//damage once per enemy
-	if place_meeting(x,y,obj_enemy_parent) and gun_name = "Grappling Helmet" {
+	if place_meeting(x,y,obj_enemy_parent) and gun_name = "Grappling Helmet" or retract = true {
 		damage = 0;
+		init_damage = 0;
 	}
 	
 	if obj_player.state = obj_player.state_blink {
@@ -245,7 +246,7 @@ if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
 			angle_diff = retract_angle - (obj_player.angle+90);
 			retracting_distance_set = true;
 			lerp_value = 0;
-			enemies_array = [];
+			//enemies_array = [];
 		}
 		
 		if abs((retract_angle) != (obj_player.angle+90)) {
@@ -282,8 +283,14 @@ if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
 		//retract = true;	
 	}
 	
-	if distance_traveled >= 320 + (128 * global.strong_muscles) {
-		retract = true;	
+	if gun_name = "Grappling Helmet" {
+		if distance_traveled >= 320 + (128 * global.strong_muscles) {
+			retract = true;	
+		}
+	}else if gun_name = "Harpoon Helmet" {
+		if distance_traveled >= 420 + (128 * global.strong_muscles) {
+			retract = true;	
+		}
 	}
 	
 	if retract = true {
