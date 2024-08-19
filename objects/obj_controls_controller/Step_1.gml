@@ -1,10 +1,12 @@
 if !gamepad_is_connected(0) and global.use_controller = true {
 	if !instance_exists(obj_seeding_prompt) {
 		with obj_pause {
-			controller_disconnected = true;
-			instance_activate_object(obj_pausemenu);
-			global.use_keyboard = true;
-			global.use_controller = false;	
+			if pause = false {
+				controller_disconnected = true;
+				instance_activate_object(obj_pausemenu);
+				global.use_keyboard = true;
+				global.use_controller = false;	
+			}
 		}
 	}else {
 		global.use_keyboard = true;

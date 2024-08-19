@@ -66,7 +66,7 @@ if select = 1 { //audio
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_combo2);
-		draw_text(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i),menu_audio.options_array[i]._text);
+		scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i),menu_audio.options_array[i]._text,color);
 		
 		draw_set_halign(fa_center);
 		if (menu_audio.options_array[i]._type = "slider") {
@@ -74,7 +74,7 @@ if select = 1 { //audio
 			var slider_x = ((menu_audio.options_array[i].highest_value - menu_audio.options_array[i].current_value) / slider_range) * sprite_get_width(spr_slider_bar_settings);
 			draw_sprite(spr_slider_bar_settings,(i = select_y-1),camera_get_view_width(view_camera[0])/2+104,option_1_y+(item_height*i));
 			draw_sprite(spr_slider_button_settings,(i = select_y-1),camera_get_view_width(view_camera[0])/2+104-slider_x,option_1_y+(item_height*i));
-			draw_text(camera_get_view_width(view_camera[0])/2+104-slider_x,option_1_y+(item_height*i)-14,string(menu_audio.options_array[i].current_value) + menu_audio.options_array[i].add_to_string);
+			scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2+104-slider_x,option_1_y+(item_height*i)-14,string(menu_audio.options_array[i].current_value) + menu_audio.options_array[i].add_to_string,color);
 			
 			if (i = select_y-1) {
 				draw_sprite(spr_slider_button_outline,(i = select_y-1),camera_get_view_width(view_camera[0])/2+104-slider_x,option_1_y+(item_height*i));	
@@ -98,14 +98,14 @@ if select = 2 { //video
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_combo2);
-		draw_text(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i),menu_video.options_array[i]._text);
+		scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i),menu_video.options_array[i]._text,color);
 		
 		draw_set_halign(fa_right);
 		if menu_video.options_array[i]._type = "checkbox" {
 			draw_sprite(spr_checkbox,(menu_video.options_array[i].current_mode)+((i = select_y-1) * 2),camera_get_view_width(view_camera[0])/2+104,option_1_y+(item_height*i));
 		}
 		if menu_video.options_array[i]._type = "list_slider" {
-			draw_text(camera_get_view_width(view_camera[0])/2+104,option_1_y+(item_height*i),list_slider_str);
+			scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2+104,option_1_y+(item_height*i),list_slider_str,color);
 			draw_sprite_ext(spr_settings_leftarrow,!(menu_video.options_array[i].current_selection > 0),camera_get_view_width(view_camera[0])/2+104-string_width(list_slider_str)-4,option_1_y+(item_height*i),1,1,0,color,1);
 			draw_sprite_ext(spr_settings_rightarrow,!(menu_video.options_array[i].current_selection < menu_video.options_array[i].num_of_values-1),camera_get_view_width(view_camera[0])/2+104+4,option_1_y+(item_height*i),1,1,0,color,1);
 		}
@@ -129,10 +129,10 @@ if select = 3 { //gameplay
 		draw_set_font(fnt_combo2);
 		if menu_gameplay.options_array[i]._type != "doonpress" {
 			draw_set_halign(fa_left);
-			draw_text(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i),menu_gameplay.options_array[i]._text);
+			scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i),menu_gameplay.options_array[i]._text,color);
 		}else {
 			draw_set_halign(fa_center);
-			draw_text(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i),menu_gameplay.options_array[i]._text);
+			scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i),menu_gameplay.options_array[i]._text,color);
 		}
 		
 		
@@ -142,7 +142,7 @@ if select = 3 { //gameplay
 			var slider_x = ((menu_gameplay.options_array[i].highest_value - menu_gameplay.options_array[i].current_value) / slider_range) * sprite_get_width(spr_slider_bar_settings);
 			draw_sprite(spr_slider_bar_settings,(i = select_y-1),camera_get_view_width(view_camera[0])/2+104,option_1_y+(item_height*i));
 			draw_sprite(spr_slider_button_settings,(i = select_y-1),camera_get_view_width(view_camera[0])/2+104-slider_x,option_1_y+(item_height*i));
-			draw_text(camera_get_view_width(view_camera[0])/2+104-slider_x,option_1_y+(item_height*i)-14,string(menu_gameplay.options_array[i].current_value) + menu_gameplay.options_array[i].add_to_string);
+			scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2+104-slider_x,option_1_y+(item_height*i)-14,string(menu_gameplay.options_array[i].current_value) + menu_gameplay.options_array[i].add_to_string,color);
 			
 			if (i = select_y-1) {
 				draw_sprite(spr_slider_button_outline,(i = select_y-1),camera_get_view_width(view_camera[0])/2+104-slider_x,option_1_y+(item_height*i));	
@@ -187,10 +187,10 @@ if select = 4 { //bindings
 			if (i - select_y_added >= 0 and i - select_y_added < 8) {
 				if (i = 0) {
 					draw_set_halign(fa_center);
-					draw_text(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i)-(select_y_added*item_height),menu_bindings.options_array[i]._text);	
+					scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i)-(select_y_added*item_height),menu_bindings.options_array[i]._text,color);	
 				}else {
 					draw_set_halign(fa_left);
-					draw_text(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i)-(select_y_added*item_height),menu_bindings.options_array[i]._text);
+					scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i)-(select_y_added*item_height),menu_bindings.options_array[i]._text,color);
 				}
 
 				//icon sprites
@@ -234,7 +234,7 @@ if select = 4 { //bindings
 							draw_set_font(fnt_combo2);
 							draw_set_halign(fa_right);
 							draw_set_valign(fa_center);
-							draw_text(binding1_x,binding_y,scr_Keyboard_Get_Key_String(global.keyboard_array[i-1][0]));
+							scr_Draw_Text_Outlined(binding1_x,binding_y,scr_Keyboard_Get_Key_String(global.keyboard_array[i-1][0]),color);
 							draw_set_color(c_white);
 						}
 					}else {
@@ -260,7 +260,7 @@ if select = 4 { //bindings
 							draw_set_font(fnt_combo2);
 							draw_set_halign(fa_left);
 							draw_set_valign(fa_center);
-							draw_text(binding2_x,binding_y,scr_Keyboard_Get_Key_String(global.keyboard_array[i-1][1]));
+							scr_Draw_Text_Outlined(binding2_x,binding_y,scr_Keyboard_Get_Key_String(global.keyboard_array[i-1][1]),color);
 							draw_set_color(c_white);
 						}
 					}else {

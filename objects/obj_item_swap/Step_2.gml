@@ -52,6 +52,9 @@ if key_select and fade_away = false and centered = true {
 			}
 			global.num_of_coins += new_recycling_cost;
 			global.current_total_coins += new_recycling_cost;
+			global.total_coins += new_recycling_cost;
+			scr_Save_Real("total_coins",global.total_coins);
+			
 			replaced_item_cost = new_recycling_cost;
 			alarm[3] = 1;
 		}
@@ -159,6 +162,9 @@ if key_select and fade_away = false and centered = true {
 			}
 			global.num_of_coins += new_recycling_cost;
 			global.current_total_coins += new_recycling_cost;
+			global.total_coins += new_recycling_cost;
+			scr_Save_Real("total_coins",global.total_coins);
+			
 			replaced_item_cost = new_recycling_cost;
 			alarm[3] = 1;
 		}
@@ -258,6 +264,9 @@ if key_select and fade_away = false and centered = true {
 			}
 			global.num_of_coins += new_recycling_cost;
 			global.current_total_coins += new_recycling_cost;
+			global.total_coins += new_recycling_cost;
+			scr_Save_Real("total_coins",global.total_coins);
+			
 			replaced_item_cost = new_recycling_cost;
 			alarm[3] = 1;
 		}

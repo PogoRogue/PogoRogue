@@ -1,6 +1,12 @@
 /// @description go to next room
 instance_destroy();
 instance_create_depth(x,y,depth,obj_fade_in);
+
+if next_room = room_proc_gen_test and room = room_starting_temp {
+	instance_deactivate_all(false);	
+}
+
+
 room = next_room;
 
 with obj_player {

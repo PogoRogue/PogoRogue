@@ -22,3 +22,5 @@ if room != room_boss_2 {
 }
 
 gamepad_set_vibration(0,0,0);
+
+global.current_skin = 0;

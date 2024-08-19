@@ -3,16 +3,34 @@
 function scr_Save_Load_Variables(){
 	//declare variables
 	
-	//stats
-	global.enemies_killed = 0;
-	global.best_combo = 0;
-	global.best_coins = 0;
-	global.best_enemies = 0;
+	//STATS
+	
+	//runs
 	global.total_runs = 0;
 	global.area_2_reached = 0;
 	global.area_3_reached = 0;
 	global.num_of_wins = 0;
-	global.fastest_time = 0;
+	
+	//splits
+	global.fastest_time_area1 = 0;
+	global.fastest_time_boss1 = 0;
+	global.fastest_time_boss2 = 0;
+	global.fastest_time_area2 = 0;
+	global.fastest_time_boss3 = 0;
+	global.fastest_time_boss4 = 0;
+	global.fastest_time_area3 = 0;
+	global.fastest_time_boss5 = 0;
+	global.fastest_time_custom = 0;
+	global.fastest_time_random = 0;
+	
+	//enemies
+	global.best_enemies = 0;
+	global.enemies_killed = 0;
+	global.best_combo = 0;
+	
+	//coins
+	global.best_coins = 0;
+	global.total_coins = 0;
 	
 	global.credits_watched = false; //credits are required once
 	global.tutorial_completed = false;
@@ -38,15 +56,34 @@ function scr_Save_Load_Variables(){
 	
 	//load existing data, set default value if doesn't exist
 	ini_open("savedata.ini");
-	global.enemies_killed = ini_read_real("savegame", "enemies_killed", 0);
-	global.best_combo = ini_read_real("savegame", "best_combo", 0);
-	global.best_coins = ini_read_real("savegame", "best_coins", 0);
-	global.best_enemies = ini_read_real("savegame", "best_enemies", 0);
+	
+	//runs
 	global.total_runs = ini_read_real("savegame", "total_runs", 0);
 	global.area_2_reached = ini_read_real("savegame", "area_2_reached", 0);
 	global.area_3_reached = ini_read_real("savegame", "area_3_reached", 0);
 	global.num_of_wins = ini_read_real("savegame", "num_of_wins", 0);
-	global.fastest_time = ini_read_real("savegame", "fastest_time", 0);
+	
+	//splits
+	global.fastest_time_area1 = ini_read_real("savegame", "fastest_time_area1", 0);
+	global.fastest_time_boss1 = ini_read_real("savegame", "fastest_time_boss1", 0);
+	global.fastest_time_boss2 = ini_read_real("savegame", "fastest_time_boss2", 0);
+	global.fastest_time_area2 = ini_read_real("savegame", "fastest_time_area2", 0);
+	global.fastest_time_boss3 = ini_read_real("savegame", "fastest_time_boss3", 0);
+	global.fastest_time_boss4 = ini_read_real("savegame", "fastest_time_boss4", 0);
+	global.fastest_time_area3 = ini_read_real("savegame", "fastest_time_area3", 0);
+	global.fastest_time_boss5 = ini_read_real("savegame", "fastest_time_boss5", 0);
+	global.fastest_time_custom = ini_read_real("savegame", "fastest_time_custom", 0);
+	global.fastest_time_random = ini_read_real("savegame", "fastest_time_random", 0);
+	
+	//enemies
+	global.best_enemies = ini_read_real("savegame", "best_enemies", 0);
+	global.enemies_killed = ini_read_real("savegame", "enemies_killed", 0);
+	global.best_combo = ini_read_real("savegame", "best_combo", 0);
+	
+	//coins
+	global.best_coins = ini_read_real("savegame", "best_coins", 0);
+	global.total_coins = ini_read_real("savegame", "total_coins", 0);
+	
 	
 	global.credits_watched = ini_read_real("savegame", "credits_watched", false);
 	global.tutorial_completed = ini_read_real("savegame", "tutorial_completed", false);

@@ -32,6 +32,10 @@ if skin_num = 1 {
 	text_offset = 5;
 }else if skin_num = 4 {
 	text_offset = 2;
+}else if skin_num = 5 {
+	text_offset = 3;
+}else if skin_num = 6 {
+	text_offset = 1;
 }else {
-	text_offset = 0;
+	text_offset = 1;
 }

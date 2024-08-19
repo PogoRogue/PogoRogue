@@ -754,7 +754,7 @@ function scr_Pickups(){
 		cooldown_time: -1,
 		cooldown_text: "Cooldown: On None",
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze,state_parachute],
+		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze,state_parachute,state_groundpound],
 		key_held: false,
 		reload_on_bounce: true,
 		max_uses_per_bounce: 1,
@@ -766,6 +766,8 @@ function scr_Pickups(){
 		text_color: make_color_rgb(75,128,202),
 		cost: 0,
 		is_synergy: true,
+		base_item_sprite_1: spr_pickup_hatgun,
+		base_item_sprite_2: spr_pickup_grappling,
 		item_cost: 160, //only for synergies (item 1 + item 2 costs)
 		on_call: function() {
 			with obj_player {

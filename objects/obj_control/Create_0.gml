@@ -26,7 +26,6 @@ global.mute = false;
 global.shop_index = 0;
 global.num_of_ground_objects = 0;
 global.tiles_left_to_draw = 0;
-global.current_skin = 0;
 
 
 if !instance_exists(obj_controls_controller) {
@@ -38,9 +37,6 @@ if !instance_exists(obj_controls_keyboard) {
 if !instance_exists(obj_runstats) {
 	instance_create_depth(x,y,depth,obj_runstats);
 }
-
-
-
 
 //combo
 global.combo = 0;
@@ -155,6 +151,8 @@ global.passive_number = 0;
 global.salesman_number = 0;
 
 //set seed in other rooms 
+global.random_seed = true;
+
 if room != room_proc_gen_test and room != room_shop
 and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 	//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######

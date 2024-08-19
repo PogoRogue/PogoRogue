@@ -60,7 +60,7 @@ if (place_meeting(x,y+parent_index.vspeed,obj_ground) and parent_index.vspeed < 
 								if other.parent_index.harpooning = true {
 									other.parent_index.harpooning = false;
 									other.parent_index.invincible = false;
-									scr_Screen_Shake(5, 10, false);
+									scr_Screen_Shake(6, 10, false);
 									audio_play_sound(snd_groundpound,0,false);
 									other.parent_index.vspeed *= 0.5;
 								}
@@ -112,7 +112,7 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed >
 							if other.parent_index.harpooning = true {
 								other.parent_index.harpooning = false;
 								other.parent_index.invincible = false;
-								scr_Screen_Shake(5, 10, false);
+								scr_Screen_Shake(6, 10, false);
 								audio_play_sound(snd_groundpound,0,false);
 							}
 						}
@@ -161,7 +161,7 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed <
 							if other.parent_index.harpooning = true {
 								other.parent_index.harpooning = false;
 								other.parent_index.invincible = false;
-								scr_Screen_Shake(5, 10, false);
+								scr_Screen_Shake(6, 10, false);
 								audio_play_sound(snd_groundpound,0,false);
 							}
 						}
@@ -223,7 +223,7 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed >= 0 {
 							if other.parent_index.harpooning = true {
 								other.parent_index.harpooning = false;
 								other.parent_index.invincible = false;
-								scr_Screen_Shake(5, 10, false);
+								scr_Screen_Shake(6, 10, false);
 								audio_play_sound(snd_groundpound,0,false);
 							}
 						}
@@ -263,7 +263,7 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed <= 0 {
 							if other.parent_index.harpooning = true {
 								other.parent_index.harpooning = false;
 								other.parent_index.invincible = false;
-								scr_Screen_Shake(5, 10, false);
+								scr_Screen_Shake(6, 10, false);
 								audio_play_sound(snd_groundpound,0,false);
 							}
 						}
@@ -304,7 +304,7 @@ if (place_meeting(x,y,obj_wallbutton) and parent_index.vspeed < 0) {
 								if other.parent_index.harpooning = true {
 									other.parent_index.harpooning = false;
 									other.parent_index.invincible = false;
-									scr_Screen_Shake(5, 10, false);
+									scr_Screen_Shake(6, 10, false);
 									audio_play_sound(snd_groundpound,0,false);
 								}
 							}

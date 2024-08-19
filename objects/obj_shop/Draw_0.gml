@@ -3,6 +3,8 @@ if room = room_shop {
 var xx = 0;
 var yy = 0;
 
+var yellow = make_color_rgb(237,225,158);
+
 for(i = 0; i < num_of_slots; i++) {
 	if i % 2 = 0 {
 		xx = 272+32;
@@ -49,24 +51,29 @@ for(i = 0; i < num_of_slots; i++) {
 	//draw cost
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_uifontsmall);
+	draw_set_font(fnt_combo2);
 	
 	if instance_exists(slot_items_array[i]) {
-		draw_sprite(spr_coin,0,xx+10,yy+21);
+		//draw_sprite(spr_coin,0,xx+10,yy+21);
 		
 		if global.num_of_coins < round(slot_items_array[i].item_cost * global.sale) or (slot_items_array[i].sold_out = true) {
-			scr_Draw_Text_Outlined(xx-6,yy+21,round(slot_items_array[i].item_cost * global.sale),make_color_rgb(180,82,82));
+			scr_Draw_Text_Outlined(xx,yy+21,round(slot_items_array[i].item_cost * global.sale),make_color_rgb(180,82,82));
 			draw_set_color(c_white);
 		} else {
-			scr_Draw_Text_Outlined(xx-6,yy+21,round(slot_items_array[i].item_cost * global.sale),c_white);
+			scr_Draw_Text_Outlined(xx,yy+21,round(slot_items_array[i].item_cost * global.sale),yellow);
 		}
 		
 		//sold out
 		if slot_items_array[i].sold_out = true {
 			draw_set_halign(fa_center);
 			draw_set_valign(fa_center);
-			draw_set_font(fnt_uifontsmall);
+			draw_set_font(fnt_itemdescription2);
 			scr_Draw_Text_Outlined(xx,yy-21,"Sold Out",make_color_rgb(180,82,82));
+		}else {
+			draw_set_halign(fa_center);
+			draw_set_valign(fa_center);
+			draw_set_font(fnt_itemdescription2);
+			scr_Draw_Text_Outlined(xx,yy-21,scr_Linebreak(slot_items_array[i].item_name,12,99),c_white);
 		}
 	}
 	
@@ -80,16 +87,16 @@ for(i = 0; i < num_of_slots; i++) {
 			description_x = 440+32;
 			description_y = 132;
 			
-				scr_Draw_Passive_Description(description_x,description_y,slot_items_array[last_selected-1].sprite_index,slot_items_array[last_selected-1].image_index+1,slot_items_array[last_selected-1].item_name,slot_items_array[last_selected-1].item_tagline,string(slot_items_array[last_selected-1].item_stats),true,slot_items_array[last_selected-1].item_cost);
+				scr_Draw_Passive_Description(description_x+4,description_y,slot_items_array[last_selected-1].sprite_index,slot_items_array[last_selected-1].image_index+1,slot_items_array[last_selected-1].item_name,slot_items_array[last_selected-1].item_tagline,string(slot_items_array[last_selected-1].item_stats),true,slot_items_array[last_selected-1].item_cost);
 			if too_expensive or sold_out {
-				draw_sprite(spr_item_slot_buy,(select = 0) + (too_expensive and select = 0 or sold_out and select = 0)+3,description_x,description_y+69);
+				draw_sprite(spr_item_slot_buy,(select = 0) + (too_expensive and select = 0 or sold_out and select = 0)+3,description_x,description_y+79);
 			}else {
-				draw_sprite(spr_item_slot_buy,(select = 0) + (too_expensive and select = 0 or sold_out and select = 0),description_x,description_y+69);
+				draw_sprite(spr_item_slot_buy,(select = 0) + (too_expensive and select = 0 or sold_out and select = 0),description_x,description_y+79);
 			}
 			
 			//button
-			if global.use_controller = true and !sold_out {
-				draw_sprite(spr_controller_button_bottom,0,description_x,description_y+81);
+			if global.use_controller = true and !sold_out and !too_expensive {
+				draw_sprite(spr_controller_button_bottom,0,description_x,description_y+92);
 			}
 		}else if last_selected <= 6 { //weapons
 			description_x = 458+32;
@@ -103,8 +110,8 @@ for(i = 0; i < num_of_slots; i++) {
 			}
 			
 			//button
-			if global.use_controller = true and !sold_out {
-				draw_sprite(spr_controller_button_bottom,0,description_x,description_y+124);
+			if global.use_controller = true and !sold_out and !too_expensive {
+				draw_sprite(spr_controller_button_bottom,0,description_x,description_y+125);
 			}
 		}else { //actives
 			description_x = 458+32;
@@ -118,8 +125,8 @@ for(i = 0; i < num_of_slots; i++) {
 			}
 			
 			//button
-			if global.use_controller = true and !sold_out {
-				draw_sprite(spr_controller_button_bottom,0,description_x,description_y+52);
+			if global.use_controller = true and !sold_out and !too_expensive {
+				draw_sprite(spr_controller_button_bottom,0,description_x,description_y+51);
 			}
 		}
 	}
@@ -127,16 +134,16 @@ for(i = 0; i < num_of_slots; i++) {
 	//draw item types
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_combo2);
+	draw_set_font(fnt_item_popup);
 	
 	if i < 2 {
-		scr_Draw_Text_Outlined(304+32,yy-32,"Health",c_white);
+		//scr_Draw_Text_Outlined(304+32,yy-33,"Health",c_white);
 	}else if i < 4 {
-		scr_Draw_Text_Outlined(304+32,yy-32,"Passive Items",c_white);
+		//scr_Draw_Text_Outlined(304+32,yy-31,"Passive Items",c_white);
 	}else if i < 6 {
-		scr_Draw_Text_Outlined(304+32,yy-32,"Weapons",c_white);
+		//scr_Draw_Text_Outlined(304+32,yy-31,"Weapons",c_white);
 	}else {
-		scr_Draw_Text_Outlined(304+32,yy-32,"Active Items",c_white);
+		//scr_Draw_Text_Outlined(304+32,yy-31,"Active Items",c_white);
 	}
 }
 
@@ -156,28 +163,28 @@ if global.num_of_coins >= global.refresh_cost {
 
 
 if refreshes_left > 0 {
-	draw_set_font(fnt_uifontsmall);
+	draw_set_font(fnt_combo2);
 	
 	if global.num_of_coins < global.refresh_cost {
-		scr_Draw_Text_Outlined(xx-6,yy2+9,global.refresh_cost,make_color_rgb(180,82,82));
+		scr_Draw_Text_Outlined(xx,yy2+9,global.refresh_cost,make_color_rgb(180,82,82));
 		draw_set_font(fnt_uifont2small);
-		draw_text_color(xx,yy2,"REFRESH",make_color_rgb(180,82,82),make_color_rgb(180,82,82),make_color_rgb(180,82,82),make_color_rgb(180,82,82),1);
+		scr_Draw_Text_Outlined(xx,yy2,"REFRESH",make_color_rgb(180,82,82));
 		draw_set_color(c_white);
 	} else {
-		draw_set_font(fnt_uifontsmall);
-		scr_Draw_Text_Outlined(xx-6,yy2+9,global.refresh_cost,c_white);
+		draw_set_font(fnt_combo2);
+		scr_Draw_Text_Outlined(xx,yy2+9,global.refresh_cost,yellow);
 		draw_set_font(fnt_uifont2small);
-		draw_text_color(xx,yy2,"REFRESH",make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),make_color_rgb(242,240,229),1);
+		scr_Draw_Text_Outlined(xx,yy2,"REFRESH",make_color_rgb(242,240,229));
 	}
 	
-	draw_sprite(spr_coin,0,xx+10,yy2+9);
+	//draw_sprite(spr_coin,0,xx+10,yy2+9);
 }
 draw_set_font(fnt_uifont2small);
 
 if global.refreshes_used != 1 {
 	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " REFRESHES USED",c_white);
 }else {
-	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " REFRESH USED",c_white);
+	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " REFRESHES USED",c_white);
 }
 
 }

@@ -15,19 +15,46 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 		var item_description = "This item has not been discovered yet.";
 		var item_stats = "Cooldown: ???";
 	}
+	if pickup.is_synergy = false {
+		var slot_sprite = spr_itemmenu_pickup_slot;
+	}else {
+		var slot_sprite = spr_itemmenu_pickup_slot_synergy;
+	}
+	
+	//special cases
+	if item_name = "Magic Stopwatch" {
+		item_name = "Magic\nStopwatch"
+	}
 	
 	//slot
-	draw_sprite(spr_itemmenu_pickup_slot,bg_spr_index,xx,yy);
+	if pickup.is_synergy = true {
+		if instance_exists(obj_items) {
+			draw_sprite(slot_sprite,bg_spr_index+2,xx,yy);
+		}else {
+			draw_sprite(slot_sprite,bg_spr_index,xx,yy);
+		}
+	}else {
+		draw_sprite(slot_sprite,bg_spr_index,xx,yy);
+	}
 	
 	if img_index = 1 {
 		img_index = 0;	
 	}
 	
 	//sprites
-	if pickup.is_synergy = true and img_index < 2 {
-		draw_sprite(spr_synergy_animation,global.synergy_frame,xx-49,yy-97);
+	if pickup.is_synergy = true and img_index < 2 and unlocked = true {
+		draw_sprite(spr_synergy_animation,global.synergy_frame,xx-50,yy-98);
+		draw_sprite(pickup.gui_sprite,img_index,xx-50,yy-98);
+		if instance_exists(obj_items) {
+			draw_sprite(pickup.base_item_sprite_1,3,xx-32+2,yy+46);
+			draw_sprite(pickup.base_item_sprite_2,3,xx+32+2,yy+46);
+		}else {
+			draw_sprite(pickup.base_item_sprite_1,3,xx-32+2,yy-153);
+			draw_sprite(pickup.base_item_sprite_2,3,xx+32+2,yy-153);
+		}
+		
 	}
-	draw_sprite(pickup.gui_sprite,img_index,xx-49,yy-97);
+	draw_sprite(pickup.gui_sprite,img_index,xx-50,yy-98);
 	
 	//draw cost
 	
@@ -36,8 +63,8 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_itemdescription2);
 	
-		draw_sprite(spr_coin,0,xx-49+7,yy-97+23);
-		scr_Draw_Text_Outlined(xx-49-5,yy-97+23,item_cost,c_white);
+		//draw_sprite(spr_coin,0,xx-49+7,yy-97+23);
+		scr_Draw_Text_Outlined(xx-50,yy-97+23,item_cost,make_color_rgb(237,225,158)); //50 - 5
 	}
 	
 	//"Active" text
@@ -55,16 +82,16 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	draw_set_valign(fa_center);
 	draw_set_font(fnt_combo2);
 	var white = make_color_rgb(242,240,229);
-	draw_text_color(xx+26,yy-105,scr_Linebreak(item_name,16,99),white,white,white,white,draw_get_alpha());
+	scr_Draw_Text_Outlined(xx+29,yy-105,scr_Linebreak(item_name,16,99),c_white);
 	
 	//Powerup Description
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	draw_set_font(fnt_itemdescription2);
-	draw_text_color(xx-72,yy-68,scr_Linebreak(item_description,28,99),white,white,white,white,draw_get_alpha());
+	scr_Draw_Text_Outlined(xx-72,yy-68,scr_Linebreak(item_description,28,99),c_white);
 	
 	//draw stats
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_text_color(xx,yy+6,item_stats,white,white,white,white,draw_get_alpha());
+	scr_Draw_Text_Outlined(xx+2,yy+7,item_stats,c_white);
 }

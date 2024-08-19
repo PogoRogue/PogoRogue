@@ -41,7 +41,7 @@ if player_colliding = false {
 		if other.parent_index.harpooning = true {
 			other.parent_index.harpooning = false;
 			other.parent_index.invincible = false;
-			scr_Screen_Shake(5, 10, false);
+			scr_Screen_Shake(6, 10, false);
 			audio_play_sound(snd_groundpound,0,false);
 		}
 	}
@@ -76,7 +76,7 @@ if player_colliding = false {
 		if other.parent_index.harpooning = true {
 			other.parent_index.harpooning = false;
 			other.parent_index.invincible = false;
-			scr_Screen_Shake(5, 10, false);
+			scr_Screen_Shake(6, 10, false);
 			audio_play_sound(snd_groundpound,0,false);
 		}
 	}
@@ -105,7 +105,7 @@ if (place_meeting(x,y+parent_index.vspeed-1,obj_wallbottomleftcorner) and parent
 	if other.parent_index.harpooning = true {
 		other.parent_index.harpooning = false;
 		other.parent_index.invincible = false;
-		scr_Screen_Shake(5, 10, false);
+		scr_Screen_Shake(6, 10, false);
 		audio_play_sound(snd_groundpound,0,false);
 		other.parent_index.vspeed *= 0.5;
 	}
@@ -135,7 +135,7 @@ if (place_meeting(x,y+parent_index.vspeed-1,obj_wallbottomrightcorner) and paren
 	if other.parent_index.harpooning = true {
 		other.parent_index.harpooning = false;
 		other.parent_index.invincible = false;
-		scr_Screen_Shake(5, 10, false);
+		scr_Screen_Shake(6, 10, false);
 		audio_play_sound(snd_groundpound,0,false);
 		other.parent_index.vspeed *= 0.5;
 	}

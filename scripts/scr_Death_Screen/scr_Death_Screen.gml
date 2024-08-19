@@ -33,21 +33,32 @@ function scr_Death_Screen(win){
 	
 	
 	draw_set_font(fnt_combo2);
-	draw_set_halign(fa_center);
+	draw_set_halign(fa_left);
 	draw_set_valign(fa_center);
 	
-	scr_Draw_Text_Outlined(x-78,y-74,"Best Combo:  " + string(global.current_best_combo),c_white);
-	scr_Draw_Text_Outlined(x-78,y-36,"Enemies Killed:  " + string(global.current_enemies_killed),c_white);
-	scr_Draw_Text_Outlined(x-78,y-2,"Coins Collected:  " + string(global.current_total_coins),c_white);
-	scr_Draw_Text_Outlined(x-78,y+34,"Time:  " + scr_Convert_Frames_To_Time(global.current_time_elapsed),c_white);
-	scr_Draw_Text_Outlined(x-78,y+70,"Area Reached:  " + string(global.current_area_reached),c_white);
-	scr_Draw_Text_Outlined(x-78,y+106,"Seed:  " + string(current_seed),c_white);
+	scr_Draw_Text_Outlined(x-78-52,y-75,"Best Combo:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y-37,"Enemies Killed:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y,"Coins Collected:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y+37,"Time:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y+74,"Area Reached:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y+110,"Seed:  ",c_white);
+	
+	draw_set_halign(fa_right);
+	
+	scr_Draw_Text_Outlined(x-78+52,y-75, string(global.current_best_combo),c_white);
+	scr_Draw_Text_Outlined(x-78+52,y-37,string(global.current_enemies_killed),c_white);
+	scr_Draw_Text_Outlined(x-78+52,y,string(global.current_total_coins),c_white);
+	scr_Draw_Text_Outlined(x-78+52,y+37,scr_Convert_Frames_To_Time(global.current_time_elapsed),c_white);
+	scr_Draw_Text_Outlined(x-78+52,y+74,string(global.current_area_reached),c_white);
+	scr_Draw_Text_Outlined(x-78+52,y+110,string(current_seed),c_white);
+	
+	draw_set_halign(fa_center);
 	
 	
 	//new best
 	if (global.current_best_combo > global.init_combo_highscore) { //combo
 		draw_set_font(fnt_itemdescription2);
-		scr_Draw_Text_Outlined(x-78,y-59,"(New Best!)",make_color_rgb(237,225,158));//+15
+		scr_Draw_Text_Outlined(x-78,y-60,"(New Best!)",make_color_rgb(237,225,158));//+15
 	}
 	
 	if (global.current_enemies_killed > global.init_enemies_highscore) { //enemies
