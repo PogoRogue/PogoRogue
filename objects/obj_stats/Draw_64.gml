@@ -64,7 +64,7 @@ for(i = 0; i < array_length(stats_array_runs); i++) {
 	}
 }
 
-//draw stats text
+//draw splits text
 for(i = 0; i < array_length(stats_array_splits); i++) {
 	var starting_x = camera_get_view_width(view_camera[0])/2-184;
 	var starting_y = 119 + (array_length(stats_array_runs)+1)*stat_height;
@@ -82,7 +82,11 @@ for(i = 0; i < array_length(stats_array_splits); i++) {
 	
 		//right side
 		draw_set_halign(fa_right);
-		scr_Draw_Text_Outlined(starting_x+168,starting_y-16+(stat_height*i),stats_array_splits[i][1],c_white);
+		if stats_array_splits[i][1] != "0:00.00" {
+			scr_Draw_Text_Outlined(starting_x+168,starting_y-16+(stat_height*i),stats_array_splits[i][1],c_white);
+		}else {
+			scr_Draw_Text_Outlined(starting_x+168,starting_y-16+(stat_height*i),stats_array_splits[i][1],color_grey);
+		}
 	}
 }
 
@@ -104,7 +108,11 @@ for(i = 0; i < array_length(stats_array_enemies); i++) {
 	
 		//right side
 		draw_set_halign(fa_right);
-		scr_Draw_Text_Outlined(starting_x,starting_y-16+(stat_height*i),stats_array_enemies[i][1],c_white);
+		if stats_array_enemies[i][1] != "0" {
+			scr_Draw_Text_Outlined(starting_x,starting_y-16+(stat_height*i),stats_array_enemies[i][1],c_white);
+		}else {
+			scr_Draw_Text_Outlined(starting_x,starting_y-16+(stat_height*i),stats_array_enemies[i][1],color_grey);
+		}
 	}
 }
 

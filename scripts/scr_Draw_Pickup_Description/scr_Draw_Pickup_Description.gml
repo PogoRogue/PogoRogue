@@ -28,7 +28,7 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	
 	//slot
 	if pickup.is_synergy = true {
-		if instance_exists(obj_items) {
+		if instance_exists(obj_items) or instance_exists(obj_item_swap) {
 			draw_sprite(slot_sprite,bg_spr_index+2,xx,yy);
 		}else {
 			draw_sprite(slot_sprite,bg_spr_index,xx,yy);

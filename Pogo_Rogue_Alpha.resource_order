@@ -128,6 +128,7 @@
     {"name":"obj_javelin_charge","order":8,"path":"objects/obj_javelin_charge/obj_javelin_charge.yy",},
     {"name":"obj_jetpack_smoke","order":26,"path":"objects/obj_jetpack_smoke/obj_jetpack_smoke.yy",},
     {"name":"obj_laser","order":19,"path":"objects/obj_laser/obj_laser.yy",},
+    {"name":"obj_newbest_split","order":2,"path":"objects/obj_newbest_split/obj_newbest_split.yy",},
     {"name":"obj_paintball_droplet","order":23,"path":"objects/obj_paintball_droplet/obj_paintball_droplet.yy",},
     {"name":"obj_parachute","order":18,"path":"objects/obj_parachute/obj_parachute.yy",},
     {"name":"obj_planetarybullets","order":12,"path":"objects/obj_planetarybullets/obj_planetarybullets.yy",},
@@ -526,5 +527,6 @@
     {"name":"spr_speechbubble_top","order":14,"path":"sprites/spr_speechbubble_top/spr_speechbubble_top.yy",},
     {"name":"spr_speechbubble","order":12,"path":"sprites/spr_speechbubble/spr_speechbubble.yy",},
     {"name":"spr_synergy_animation","order":6,"path":"sprites/spr_synergy_animation/spr_synergy_animation.yy",},
+    {"name":"spr_timergui_small","order":17,"path":"sprites/spr_timergui_small/spr_timergui_small.yy",},
   ],
 }

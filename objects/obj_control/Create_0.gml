@@ -150,9 +150,6 @@ global.enemy_number = 0;
 global.passive_number = 0;
 global.salesman_number = 0;
 
-//set seed in other rooms 
-global.random_seed = true;
-
 if room != room_proc_gen_test and room != room_shop
 and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 	//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######

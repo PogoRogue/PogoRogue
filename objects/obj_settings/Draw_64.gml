@@ -132,7 +132,13 @@ if select = 3 { //gameplay
 			scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i),menu_gameplay.options_array[i]._text,color);
 		}else {
 			draw_set_halign(fa_center);
-			scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i),menu_gameplay.options_array[i]._text,color);
+			if i = menu_gameplay.num_of_options-1 {
+				scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i)-16-4,menu_gameplay.options_array[i]._text,color);
+			}else if i = menu_gameplay.num_of_options-2 {
+				scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i)-4,menu_gameplay.options_array[i]._text,color);
+			}else {
+				scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i),menu_gameplay.options_array[i]._text,color);
+			}
 		}
 		
 		

@@ -51,8 +51,11 @@ function scr_Save_Load_Variables(){
 	global.screenshake = 60;
 	global.controller_vibration = 60;
 	global.show_timer = false;
+	global.show_splits = false;
 	global.show_coins = true;
 	global.show_passives = true;
+	
+	global.random_seed = true;
 	
 	//load existing data, set default value if doesn't exist
 	ini_open("savedata.ini");
@@ -101,8 +104,11 @@ function scr_Save_Load_Variables(){
 	global.screenshake = ini_read_real("savegame", "screenshake", 80);
 	global.controller_vibration = ini_read_real("savegame", "controller_vibration", 80);
 	global.show_timer = ini_read_real("savegame", "show_timer", true);
+	global.show_splits = ini_read_real("savegame", "show_splits", false);
 	global.show_coins = ini_read_real("savegame", "show_coins", true);
 	global.show_passives = ini_read_real("savegame", "show_passives", true);
+	
+	global.random_seed = ini_read_real("savegame", "random_seed", true);
 	ini_close();
 	
 	show_debug_message("Total Enemies Killed: " + string(global.enemies_killed));

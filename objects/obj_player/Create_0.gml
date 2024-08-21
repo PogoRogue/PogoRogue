@@ -996,6 +996,11 @@ state_portal = function() {
 			}
 		}
 	}
+	
+	//stop splits
+	with obj_runstats {
+		stop_time = true;
+	}
 }
 
 state_shop_portal = function() {

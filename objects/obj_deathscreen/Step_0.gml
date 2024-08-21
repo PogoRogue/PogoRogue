@@ -87,9 +87,7 @@ if win = true {
 			best_time = true;
 		}
 		win_stat_added = true;
-	}
-	
-	if win_stat_added = false and global.random_seed = false {
+	}else if win_stat_added = false and global.random_seed = false {
 		//check if time is new best
 		if global.current_time_elapsed < global.fastest_time_custom
 		or global.fastest_time_custom = 0 { //fastest time across all runs

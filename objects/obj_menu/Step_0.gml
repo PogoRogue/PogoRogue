@@ -87,3 +87,6 @@ if y > 252 {
 }
 
 frame += (1/3);
+
+global.random_seed = true;
+scr_Save_Real("random_seed",global.random_seed);

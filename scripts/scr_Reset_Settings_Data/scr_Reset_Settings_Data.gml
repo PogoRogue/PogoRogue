@@ -15,8 +15,11 @@ function scr_Reset_Settings_Data(){
 	ini_key_delete("savegame", "screenshake");
 	ini_key_delete("savegame", "controller_vibration");
 	ini_key_delete("savegame", "show_timer");
+	ini_key_delete("savegame", "show_splits");
 	ini_key_delete("savegame", "show_coins");
 	ini_key_delete("savegame", "show_passives");
+	ini_key_delete("savegame", "flash");
+	
 	
 	ini_close();
 	
