@@ -164,7 +164,7 @@ if(is_dead) {
 	with obj_player {
 		//fast forward passive
 		if global.fast_forward > 0 {
-			scr_Reduce_Colldown_Times(global.fast_forward * 60);
+			scr_Reduce_Cooldown_Times(global.fast_forward * 60);
 		}
 		
 		if invincibility_time > 0 and invincibility = true {
@@ -173,6 +173,10 @@ if(is_dead) {
 		
 		if frenzy_time > 0 and frenzy = true {
 			pickup_frenzy.cooldown_time -= 60;
+		}
+		
+		if pogomode_time > 0 and pogomode = true {
+			pickup_pogomode.cooldown_time -= 60;
 		}
 	}
 

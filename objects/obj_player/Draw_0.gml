@@ -120,7 +120,8 @@ if ground_pound_slam = true or harpooning = true {
 }
 
 //invincibility
-if invincibility = true and global.current_skin = 0 {
+if invincibility = true and global.current_skin = 0 
+or pogomode = true and global.current_skin = 0 {
 	scr_Draw_Skin(spr_player_zekai_invincible,spr_player_zekai_invincible_falling,spr_player_zekai_invincible_charging,spr_player_zekai_invincible_portal);
 }
 

@@ -65,8 +65,24 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	
 }
 
-//draw frenzy meter
-if frenzy_time > 0 {
+
+if pogomode_time > 0 {
+	draw_set_color(make_color_rgb(242,240,229));
+	draw_set_font(fnt_combo2);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_bottom);
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_pogomodemeter)/2),29+(48 * gun_num),"POGO MODE",pickup_pogomode.text_color);
+	draw_set_color(c_white);
+	draw_sprite(spr_pogomodemeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
+	draw_sprite_part(spr_pogomodemeter,1,0,0,sprite_get_width(spr_pogomodemeter)*(pogomode_time / (420 * global.bar_time_added)),sprite_get_height(spr_pogomodemeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_pogomodemeter),36+(48 * gun_num)-4);
+	
+	//2x damage buffs
+	if (global.laststand and hp <= 8 and hp > 0) {
+		scr_2x_Damage_Meter(36+(48 * gun_num)+48,false);
+	}else if global.righteousrevenge = true and damage_boost_active and damage_boost_timer > 0 and hp > 0 {
+		scr_2x_Damage_Meter(36+(48 * gun_num)+48,true);
+	}
+}else if frenzy_time > 0 { //draw frenzy meter
 	draw_set_color(make_color_rgb(242,240,229));
 	draw_set_font(fnt_combo2);
 	draw_set_halign(fa_center);
@@ -141,6 +157,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		if pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble)
 		or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
 		or pickups_array[0] = pickup_frenzy and frenzy = true 
+		or pickups_array[0] = pickup_pogomode and pogomode = true 
 		or pickups_array[0] = pickup_invincibility and invincibility = true 
 		or pickups_array[0] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)
@@ -257,6 +274,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		if pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 		or pickups_array[1] = pickup_slowmo and instance_exists(obj_slowmo)
 		or pickups_array[1] = pickup_frenzy and frenzy = true 
+		or pickups_array[1] = pickup_pogomode and pogomode = true 
 		or pickups_array[1] = pickup_invincibility and invincibility = true 
 		or pickups_array[1] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute) 
@@ -392,6 +410,7 @@ or (pickups_array[0] = pickup_winners and global.num_of_coins < pickup_winners.c
 or (pickups_array[0] = pickup_winners and instance_exists(obj_slot_machine))
 or pickups_array[0] = pickup_frenzy and frenzy = true
 or pickups_array[0] = pickup_invincibility and invincibility = true
+or pickups_array[0] = pickup_pogomode and pogomode = true
 or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)) {
 	scr_Draw_Input_UI(48,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
 }
@@ -402,6 +421,7 @@ or (pickups_array[1] = pickup_winners and global.num_of_coins < pickup_winners.c
 or (pickups_array[1] = pickup_winners and instance_exists(obj_slot_machine))
 or pickups_array[1] = pickup_frenzy and frenzy = true
 or pickups_array[1] = pickup_invincibility and invincibility = true
+or pickups_array[1] = pickup_pogomode and pogomode = true
 or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)) {
 	scr_Draw_Input_UI(103,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
 }

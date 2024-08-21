@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_weapons_station",
-    "path":"sprites/spr_weapons_station/spr_weapons_station.yy",
+    "name":"spr_station_weapons",
+    "path":"sprites/spr_station_weapons/spr_station_weapons.yy",
   },
   "spriteMaskId":null,
   "visible":true,

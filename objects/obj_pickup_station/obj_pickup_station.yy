@@ -31,14 +31,14 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"shop_index","filters":[],"listItems":[],"multiselect":false,"name":"shop_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"shop_index","filters":[],"listItems":[],"multiselect":false,"name":"shop_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_actives_station",
-    "path":"sprites/spr_actives_station/spr_actives_station.yy",
+    "name":"spr_station_actives",
+    "path":"sprites/spr_station_actives/spr_station_actives.yy",
   },
   "spriteMaskId":null,
   "visible":true,

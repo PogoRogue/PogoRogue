@@ -233,10 +233,10 @@ function scr_Pickups(){
 					}
 					
 					//smoke
-					if other.cooldown_time % 2 = 0 { //every other frame
+					//if other.cooldown_time % 2 = 0 { //every other frame
 						instance_create_depth(x+lengthdir_x(16,image_angle)+lengthdir_x(12,image_angle+90),y+lengthdir_y(16,image_angle)+lengthdir_y(12,image_angle+90),depth+1,obj_jetpack_smoke);
 						instance_create_depth(x+lengthdir_x(-16,image_angle)+lengthdir_x(12,image_angle+90),y+lengthdir_y(-16,image_angle)+lengthdir_y(12,image_angle+90),depth+1,obj_jetpack_smoke);
-					}
+					//}
 					
 					//sound
 					if !audio_is_playing(snd_jetpack) {
@@ -445,9 +445,9 @@ function scr_Pickups(){
 		_name: "Frenzy",
 		tagline: "All weapons are instantly reloaded, and bullets are unlimited without reloading for 5s. Getting a kill during this time lowers its cooldown time by 1s.",
 		gui_sprite: spr_pickup_frenzy,
-		max_cooldown_time: 1200,
-		cooldown_time: 1200,
-		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		max_cooldown_time: 1800,
+		cooldown_time: 1800,
+		cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -718,9 +718,9 @@ function scr_Pickups(){
 	_name: "Invincibility",
 	tagline: "You are invincible to all forms of damage for 5s. Getting a kill during this time lowers its cooldown time \nby 5s.",
 	gui_sprite: spr_pickup_invincibility,
-	max_cooldown_time: 1200,
-	cooldown_time: 1200,
-	cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+	max_cooldown_time: 1800,
+	cooldown_time: 1800,
+	cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
 	on_cooldown: false,
 	states_to_call_in: all_states,
 	key_held: false,
@@ -785,6 +785,66 @@ function scr_Pickups(){
 			uses_per_bounce -= 1;
 			if uses_per_bounce <= 0 {
 				on_cooldown = true;
+			}
+		}
+	};
+	
+	pickup_pogomode = {
+		_name: "Pogo Mode",
+		tagline: "Frenzy and Invincibility are combined for 7s. Your other active item has no cooldown during this period. Time to go pogo mode.",
+		gui_sprite: spr_pickup_synergy_pogomode,
+		max_cooldown_time: 2100,
+		cooldown_time: 2100,
+		cooldown_text: "Cooldown: " + string(2100 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		text_color: make_color_rgb(237,225,158),
+		cost: 0,
+		is_synergy: true,
+		base_item_sprite_1: spr_pickup_frenzy,
+		base_item_sprite_2: spr_pickup_invincibility,
+		on_call: function() {
+			with obj_player {
+				if pogomode = false {
+					pogomode = true;
+					pogomode_time = 420 * global.bar_time_added;
+					alarm[8] = 420 * global.bar_time_added;
+					gun_1.current_bullets = gun_1.bullets_per_bounce + max_ammo_buff;
+					gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
+					gun_3.current_bullets = gun_3.bullets_per_bounce + max_ammo_buff;
+					audio_play_sound(snd_frenzy,0,false);
+					if pickups_array[0] != pickup_pogomode {
+						if pickups_array[0] != pickup_jetpack {
+							pickups_array[0].uses_per_bounce = pickups_array[0].max_uses_per_bounce;
+							pickups_array[0].on_cooldown = false;
+							pickups_array[0].bounce_reset = pickups_array[0].bounce_reset_max;
+							pickups_array[0].cooldown_time = 0;
+							pickups_array[0].enemies_count = 0;
+						}else {
+							pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
+						}
+					}else {
+						if pickups_array[1] != pickup_pogomode {
+							if pickups_array[1] != pickup_jetpack {
+								pickups_array[1].uses_per_bounce = pickups_array[1].max_uses_per_bounce;
+								pickups_array[1].on_cooldown = false;
+								pickups_array[1].bounce_reset = pickups_array[1].bounce_reset_max;
+								pickups_array[1].cooldown_time = 0;
+								pickups_array[1].enemies_count = 0;
+							}else {
+								pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
+							}
+						}
+					}
+				}
 			}
 		}
 	};

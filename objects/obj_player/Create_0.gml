@@ -85,6 +85,8 @@ freeze_alpha = 0;
 freeze_angle = 0;
 frenzy = false;
 frenzy_time = 0;
+pogomode = false;
+pogomode_time = 0;
 tutorialDash = false; // Tutorial ground handler
 grappling_hook = noone;
 invincibility = false;
@@ -1204,7 +1206,7 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_target, pickup_blink, pickup_jetpack,
 					pickup_harpoon, pickup_frenzy, pickup_bulletblast,
 					pickup_slowmo, pickup_grappling, pickup_winners,
-					pickup_airbag, pickup_invincibility]; //all pickups
+					pickup_airbag, pickup_invincibility, pickup_pogomode]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();

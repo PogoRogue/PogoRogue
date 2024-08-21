@@ -49,7 +49,7 @@ if (gun_name = "Laser Gun" ) {
 		}
 		
 		//decrease ammo
-		if (gun.spread_number = 1 and other.laser_boost and frenzy = false and aerial_assassin_frenzy = false) {
+		if (gun.spread_number = 1 and other.laser_boost and frenzy = false and pogomode = false and aerial_assassin_frenzy = false) {
 			gun.current_bullets -= 1;
 		}
 		

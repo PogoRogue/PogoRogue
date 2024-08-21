@@ -69,16 +69,26 @@ if key_select and centered = true and fade_away = false {
 	//change weapon
 	instance_activate_object(obj_player);
 	with obj_player {
-		global.all_weapon_costs[0] = other.all_weapons_costs[other.select-1];
-		global.all_weapon_costs[1] = 25;
-		num_of_weapons = 2;
-		gun_1 = other.all_weapons[other.select-1];
-		gun_2 = all_guns_array[0];
-		gun_3 = gun_1;
-		gun_array = [gun_1, gun_2, gun_1];
-		current_gun = 0;
-		gun = gun_array[current_gun];
+		if num_of_weapons = 1 {
+			global.all_weapon_costs[0] = other.all_weapons_costs[other.select-1];
+			global.all_weapon_costs[1] = other.all_weapons_costs[0];
+			num_of_weapons = 2;
+			gun_2 = gun_1;
+			gun_1 = other.all_weapons[other.select-1];
+			gun_3 = gun_1;
+			gun_array = [gun_1, gun_2, gun_1];
+			current_gun = 0;
+			gun = gun_array[current_gun];
+		}else if num_of_weapons = 2 {
+			global.all_weapon_costs[0] = other.all_weapons_costs[other.select-1];
+			gun_1 = other.all_weapons[other.select-1];
+			gun_3 = gun_1;
+			gun_array = [gun_1, gun_2, gun_1];
+			current_gun = 0;
+			gun = gun_array[current_gun];
+		}
 	}
+
 	//save weapon
 	ini_open("itemsunlocked.ini");
 	if scr_In_Array(obj_player.all_guns_array,all_weapons[select-1]) {

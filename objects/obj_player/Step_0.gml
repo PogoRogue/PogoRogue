@@ -352,7 +352,7 @@ if (canshoot > 0) {
 		}
 		
 		//decrease ammo count for spread weapons
-		if gun.spread_number > 1 and frenzy = false and aerial_assassin_frenzy = false {
+		if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false {
 			gun.current_bullets -= 1;
 		}
 	}else {
@@ -377,6 +377,36 @@ if invincibility_time > 0 {
 
 if aerial_assassin_frenzy_count > 0 {
 	aerial_assassin_frenzy_count -= 1;
+}
+
+if pogomode_time > 0 {
+	pogomode_time -= 1;	
+}
+
+if pogomode = true {
+	if pickups_array[0] != pickup_pogomode {
+		if pickups_array[0] != pickup_jetpack {
+			pickups_array[0].uses_per_bounce = pickups_array[0].max_uses_per_bounce;
+			pickups_array[0].on_cooldown = false;
+			pickups_array[0].bounce_reset = pickups_array[0].bounce_reset_max;
+			pickups_array[0].cooldown_time = 0;
+			pickups_array[0].enemies_count = 0;
+		}else {
+			pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
+		}
+	}else {
+		if pickups_array[1] != pickup_pogomode {
+			if pickups_array[1] != pickup_jetpack {
+				pickups_array[1].uses_per_bounce = pickups_array[1].max_uses_per_bounce;
+				pickups_array[1].on_cooldown = false;
+				pickups_array[1].bounce_reset = pickups_array[1].bounce_reset_max;
+				pickups_array[1].cooldown_time = 0;
+				pickups_array[1].enemies_count = 0;
+			}else {
+				pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
+			}
+		}
+	}
 }
 
 if !(key_fire_projectile) { //lerp back to starting firerate while not shooting

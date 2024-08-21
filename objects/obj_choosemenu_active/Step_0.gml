@@ -79,6 +79,10 @@ if key_select and centered = true and fade_away = false {
 			num_of_pickups = 2;
 			pickup_2 = other.all_actives[other.select-1];
 			pickups_array = [pickup_1, pickup_2];
+		}else if num_of_pickups = 2 {
+			global.all_pickup_costs[0] = other.all_pickups_costs[other.select-1];
+			pickup_1 = other.all_actives[other.select-1];
+			pickups_array = [pickup_1, pickup_2];
 		}
 	}
 	//save item

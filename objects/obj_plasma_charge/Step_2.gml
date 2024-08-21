@@ -21,7 +21,7 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 			speed = 0;
 			motion_add(angle - 90, vsp_basicjump * (0.7 + ((other.temp_charge/other.temp_charge_max)*0.7)));
 			
-			if frenzy = false and aerial_assassin_frenzy = false {
+			if frenzy = false and aerial_assassin_frenzy = false and pogomode = false {
 				//gun.current_bullets -= 1;
 			}else {
 				gun.current_bullets = gun.bullets_per_bounce + max_ammo_buff;
@@ -43,7 +43,7 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 	if (charge < charge_max) {
 		charge += charge_max/frames_to_charge;
 	}
-	if obj_player.frenzy = false and obj_player.aerial_assassin_frenzy = false {
+	if obj_player.frenzy = false and obj_player.pogomode = false and obj_player.aerial_assassin_frenzy = false {
 		obj_player.plasma_gun.current_bullets -= 1;
 	}
 	//scale orb up
