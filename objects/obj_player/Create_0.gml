@@ -32,6 +32,7 @@ centering = false;
 current_burst = 0;
 weapon_arrow_index = 0;
 table = false;
+launchpad = false;
 
 //weapons
 portal_object = noone;
@@ -287,7 +288,7 @@ state_bouncing = function() {
 	//bounce after animation is complete
 	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump and pickups_array[0].on_cooldown = false);
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump and pickups_array[1].on_cooldown = false);
-	if (animation_complete and not_charging_1 and not_charging_2) {
+	if (animation_complete and not_charging_1 and not_charging_2 or animation_complete and launchpad = true) {
 		scr_Jump(0);
 		platform_on = !platform_on;
 	}
@@ -318,8 +319,8 @@ state_chargejump = function() {
 	// Conveyor belt handling
 	scr_Conveyor_Belt();
 	
-	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump);
-	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
+	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump) and launchpad = false;
+	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump) and launchpad = false;
 	
 	if not_charging_1 and not_charging_2 or end_of_charge {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5,true);
@@ -420,10 +421,23 @@ state_groundpound = function() {
 				y += sign(vspeed);
 			}
 			
+			if place_meeting(x,y+2,obj_launchpad) {
+				with instance_place(x,y+2,obj_launchpad) {
+					if animating = false and not_meeting = true {
+						animating = true;
+						missiles_left = 0;
+						player_y = other.y;
+						sprite_index = spr_launchpad_both;
+						mask_index = spr_nothing;
+					}
+				}
+			}
+			
+			
 			if place_meeting(x,y+vspeed,obj_ground_parent) {
 				aerial_assassin_count = 0;	
 			}
-			
+
 			scr_Enemy_Collision_Check(true);
 			pickup_groundpound.on_cooldown = true;
 			state = state_bouncing;
@@ -432,6 +446,7 @@ state_groundpound = function() {
 			audio_play_sound(snd_groundpound,0,false);
 			stomp_damage = 8;
 			soundPlayed = false;
+			
 		}
 	}
 }
@@ -1206,7 +1221,8 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_target, pickup_blink, pickup_jetpack,
 					pickup_harpoon, pickup_frenzy, pickup_bulletblast,
 					pickup_slowmo, pickup_grappling, pickup_winners,
-					pickup_airbag, pickup_invincibility, pickup_pogomode]; //all pickups
+					pickup_airbag, pickup_invincibility, pickup_pogomode,
+					pickup_launchpad]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();

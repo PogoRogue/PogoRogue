@@ -29,9 +29,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"activated_sprite","filters":[],"listItems":[],"multiselect":false,"name":"activated_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_pinballbumper_activated","varType":5,},
-    {"$GMObjectProperty":"v1","%Name":"activated_sound","filters":[],"listItems":[],"multiselect":false,"name":"activated_sound","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"snd_pinball","varType":5,},
-    {"$GMObjectProperty":"v1","%Name":"starting_sprite","filters":[],"listItems":[],"multiselect":false,"name":"starting_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_pinballbumper","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"activated_sprite","filters":[],"listItems":[],"multiselect":false,"name":"activated_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_pinballbumper_activated","path":"sprites/spr_pinballbumper_activated/spr_pinballbumper_activated.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_pinballbumper_activated","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"activated_sound","filters":[],"listItems":[],"multiselect":false,"name":"activated_sound","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"snd_pinball","path":"sounds/snd_pinball/snd_pinball.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"snd_pinball","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"starting_sprite","filters":[],"listItems":[],"multiselect":false,"name":"starting_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_pinballbumper","path":"sprites/spr_pinballbumper/spr_pinballbumper.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_pinballbumper","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

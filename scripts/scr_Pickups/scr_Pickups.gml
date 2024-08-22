@@ -49,11 +49,13 @@ function scr_Pickups(){
 		cost: 0,
 		is_synergy: false,
 		on_call: function() {
-			if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump {
-				obj_player.state = obj_player.state_chargejump;
-				obj_player.rotation_speed = obj_player.rotation_speed * 0.65;
-				if obj_player.rotation_speed < 2 {
-					obj_player.rotation_speed = 2;
+			with obj_player {
+				if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump and launchpad = false and !place_meeting(x,y+4,obj_launchpad) {
+					obj_player.state = obj_player.state_chargejump;
+					obj_player.rotation_speed = obj_player.rotation_speed * 0.65;
+					if obj_player.rotation_speed < 2 {
+						obj_player.rotation_speed = 2;
+					}
 				}
 			}
 		}                  
@@ -687,7 +689,7 @@ function scr_Pickups(){
 	
 	pickup_airbag = {
 		_name: "Airbag",
-		tagline: "Create a bouncy floating airbag below you. It reloads your weapon when \nbounced on. For every 10th airbag bounced on, gain 1 heart. Beep.",
+		tagline: "Create a bouncy floating airbag below you. It reloads your weapon when \nbounced on. Every 10th airbag, gain a heart on bounce. Beep.",
 		gui_sprite: spr_pickup_airbag,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
@@ -791,7 +793,7 @@ function scr_Pickups(){
 	
 	pickup_pogomode = {
 		_name: "Pogo Mode",
-		tagline: "Frenzy and Invincibility are combined for 7s. Your other active item has no cooldown during this period. Time to go pogo mode.",
+		tagline: "Frenzy and Invincibility are combined for 7s. Your other active item has no cooldown during this period. It's time to go pogo mode.",
 		gui_sprite: spr_pickup_synergy_pogomode,
 		max_cooldown_time: 2100,
 		cooldown_time: 2100,
@@ -811,6 +813,7 @@ function scr_Pickups(){
 		is_synergy: true,
 		base_item_sprite_1: spr_pickup_frenzy,
 		base_item_sprite_2: spr_pickup_invincibility,
+		item_cost: 190, //only for synergies (item 1 + item 2 costs)
 		on_call: function() {
 			with obj_player {
 				if pogomode = false {
@@ -846,6 +849,39 @@ function scr_Pickups(){
 					}
 				}
 			}
+		}
+	};
+	
+	pickup_launchpad = {
+		_name: "Launch Pad",
+		tagline: "Create a launch pad below you. It holds two homing missiles that launch when the pad is bounced on.",
+		gui_sprite: spr_pickup_synergy_launchpad,
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: Every 8 kills",
+		on_cooldown: false,
+		states_to_call_in: [state_free,state_freeze,state_bulletblast,state_parachute],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 8,
+		text_color: make_color_rgb(207,138,203),
+		cost: 0,
+		is_synergy: true,
+		base_item_sprite_1: spr_pickup_airbag,
+		base_item_sprite_2: spr_pickup_target,
+		item_cost: 140, //only for synergies (item 1 + item 2 costs)
+		on_call: function() {
+			
+			with obj_player {
+				instance_create_depth(x,y+48,depth+1,obj_launchpad);
+			}
+			on_cooldown = true;
+			enemies_count = enemies_count_max;
 		}
 	};
 }

@@ -310,6 +310,33 @@ if usable = true {
 }
 
 /*
+if instance_exists(obj_fade_out)  {
+	if instance_exists(buff_1) {
+		with buff_1 {
+			if !place_meeting(x,y,obj_salesman_table) {
+				instance_destroy();
+			}
+		}
+	}
+
+	if instance_exists(buff_2) {
+		with buff_2 {
+			if !place_meeting(x,y,obj_salesman_table) {
+				instance_destroy();
+			}
+		}
+	}
+
+	if instance_exists(buff_3) {
+		with buff_3 {
+			if !place_meeting(x,y,obj_salesman_table) {
+				instance_destroy();
+			}
+		}
+	}
+}
+
+/*
 for (j = 0; j < array_length(global.all_buff_sprites); j++) {
 	for (jj = 0; jj < array_length(passives_array); jj++) {
 		if instance_exists(passives_array[jj]) {

@@ -47,3 +47,4 @@ global.enemy_number += 1;
 random_set_seed(global.seed);
 
 shaded = false;
+locked_onto = false;

@@ -7,7 +7,7 @@ event_inherited();
 if(state == SNAIL_STATES.HORIZONTAL) {
 	// Move left and right
 	at_edge = !collision_point(x + (sign(spd) * 15), y + (sprite_height / 2), obj_ground_parent, false, false); 
-	at_wall = place_meeting(x + spd, y, obj_ground_parent);
+	at_wall = place_meeting(x + spd, y, obj_ground_parent) and !place_meeting(x,y,obj_launchpad);
 
 	if (at_edge or at_wall) {
 		spd *= -1;
@@ -39,7 +39,7 @@ if(state == SNAIL_STATES.HORIZONTAL) {
 		if (spd == -0.5) { image_xscale = -1;}
 	}
 
-	at_wall = place_meeting(x, y + spd, obj_ground_parent);
+	at_wall = place_meeting(x, y + spd, obj_ground_parent) and !place_meeting(x,y,obj_launchpad);
 
 	if (at_edge || at_wall) {
 		spd *= -1;

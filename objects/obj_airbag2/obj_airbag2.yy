@@ -10,9 +10,9 @@
   "managed":true,
   "name":"obj_airbag2",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_pinballbumper","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"propertyId":{"name":"starting_sprite","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_airbag",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_pinballbumper","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"propertyId":{"name":"activated_sprite","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_airbag_activated",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_pinballbumper","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"propertyId":{"name":"activated_sound","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"snd_carhorn",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_pinballbumper","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"propertyId":{"name":"starting_sprite","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"resource":{"name":"spr_airbag","path":"sprites/spr_airbag/spr_airbag.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_airbag",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_pinballbumper","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"propertyId":{"name":"activated_sprite","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"resource":{"name":"spr_airbag_activated","path":"sprites/spr_airbag_activated/spr_airbag_activated.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_airbag_activated",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_pinballbumper","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"propertyId":{"name":"activated_sound","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"resource":{"name":"snd_carhorn","path":"sounds/snd_carhorn/snd_carhorn.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"snd_carhorn",},
   ],
   "parent":{
     "name":"Environmental",

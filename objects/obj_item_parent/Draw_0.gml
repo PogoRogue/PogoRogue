@@ -24,4 +24,8 @@ if salesman = true and created_in_room = true {
 	}
 }
 
+if room != init_room and salesman = true and room != room_shop {
+	instance_destroy();
+}
+
 draw_set_color(c_white);

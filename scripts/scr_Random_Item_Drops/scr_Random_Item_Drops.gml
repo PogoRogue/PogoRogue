@@ -204,7 +204,8 @@ function scr_Get_Rand_Pickup_Object()
 							obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
 							obj_item_pickup_synergy_harpoon, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
 							obj_item_pickup_slowmo, obj_item_pickup_grappling, obj_item_pickup_winners,
-							obj_item_pickup_airbag, obj_item_pickup_invincibility, obj_item_pickup_synergy_pogomode];
+							obj_item_pickup_airbag, obj_item_pickup_invincibility, obj_item_pickup_synergy_pogomode,
+							obj_item_pickup_synergy_launchpad];
 	
 	
 	if global.phase <= 1 {

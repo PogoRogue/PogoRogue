@@ -39,6 +39,7 @@
     {"$GMObjectProperty":"v1","%Name":"sold_out","filters":[],"listItems":[],"multiselect":false,"name":"sold_out","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"created_in_room","filters":[],"listItems":[],"multiselect":false,"name":"created_in_room","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"salesman","filters":[],"listItems":[],"multiselect":false,"name":"salesman","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"init_room","filters":[],"listItems":[],"multiselect":false,"name":"init_room","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"room","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
