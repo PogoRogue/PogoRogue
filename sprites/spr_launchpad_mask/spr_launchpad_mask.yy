@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"spr_launchpad_mask",
-  "bboxMode":0,
-  "bbox_bottom":31,
+  "bboxMode":2,
+  "bbox_bottom":15,
   "bbox_left":24,
   "bbox_right":95,
   "bbox_top":0,

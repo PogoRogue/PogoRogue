@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gate_open",
-    "path":"sprites/spr_gate_open/spr_gate_open.yy",
+    "name":"spr_gate_open_new",
+    "path":"sprites/spr_gate_open_new/spr_gate_open_new.yy",
   },
   "spriteMaskId":null,
   "visible":true,

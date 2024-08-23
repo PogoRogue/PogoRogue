@@ -4,6 +4,7 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_room_gate_open_width_fitting",
@@ -13,8 +14,8 @@
     "path":"folders/Objects/Environmental.yy",
   },
   "parentObjectId":{
-    "name":"obj_ground_oneway",
-    "path":"objects/obj_ground_oneway/obj_ground_oneway.yy",
+    "name":"obj_ground",
+    "path":"objects/obj_ground/obj_ground.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -71,8 +71,12 @@ if global.combo > global.current_best_combo {
 //tutorial unlock gate
 if room = room_tutorial and global.combo >= 5 {
 	with obj_room_gate_close_tutorial {
-		instance_create_depth(x,y,depth,obj_room_gate_open);
-		instance_destroy(self);	
+		//instance_create_depth(x,y,depth,obj_room_gate_open);
+		//instance_destroy(self);	
+		destroy = true;
+		sprite_index = spr_gate_open_new;
+		//image_index = 1;
+		image_speed = 1;
 	}
 }
 

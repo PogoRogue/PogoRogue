@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gate_close",
-    "path":"sprites/spr_gate_close/spr_gate_close.yy",
+    "name":"spr_gate_close_new",
+    "path":"sprites/spr_gate_close_new/spr_gate_close_new.yy",
   },
   "spriteMaskId":null,
   "visible":true,

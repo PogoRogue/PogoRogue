@@ -250,6 +250,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_seeding_station;
 		}
+		else if(Red == 3 && Green == 3 && Blue == 3)
+		{
+			return obj_room_gate_open; 
+		}
 		else if(Red == 2 && Green == 2 && Blue == 2)
 		{
 			return obj_shop_indicator; //fix minimap bug

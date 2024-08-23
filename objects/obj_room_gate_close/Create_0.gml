@@ -13,3 +13,7 @@ total_kills = 0;
 kills_left = 0;
 
 alarm[1] = 2; //Count enemies shortly after creation
+
+destroy = false;
+opened = false;
+text_created = false;
