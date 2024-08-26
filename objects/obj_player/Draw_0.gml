@@ -49,6 +49,22 @@ if (state = state_chargejump) {
 	draw_sprite_ext(red_sprite,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,(charge/charge_max)*0.6 + 0.1);
 }
 
+//draw mega bounce charge arrow
+if (state = state_megabounce_charge) {
+	var yoffset = combo_offset;
+	if obj_player.image_xscale = 1 {
+		var xoffset = 0;
+	}else {
+		var xoffset = 1;
+	}
+	if wearing_hat = true {
+		yoffset += 20;
+	}
+	draw_sprite_general(spr_megabounce_chargearrow_outline,0,0,0,sprite_get_width(spr_megabounce_chargearrow_outline),sprite_get_height(spr_megabounce_chargearrow_outline),x+(lengthdir_x(48+yoffset,angle+90))+(lengthdir_x(16+xoffset,angle+180)),y+(lengthdir_y(48+yoffset,angle+90))+(lengthdir_y(16+xoffset,angle+180)),1,-1,image_angle,c_white,c_white,c_white,c_white,1);
+	draw_sprite_general(spr_megabounce_chargearrow_fill,0,0,0,sprite_get_width(spr_megabounce_chargearrow_fill),(sprite_get_height(spr_megabounce_chargearrow_fill)*(charge/charge_max)),x+(lengthdir_x(48+yoffset,angle+90))+(lengthdir_x(16+xoffset,angle+180)),y+(lengthdir_y(48+yoffset,angle+90))+(lengthdir_y(16+xoffset,angle+180)),1,-1,image_angle,c_white,c_white,c_white,c_white,1);
+	draw_sprite_ext(red_sprite,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,(charge/charge_max)*0.6 + 0.1);
+}
+
 
 //revive
 if (state = state_revive) {
@@ -217,4 +233,21 @@ draw_set_color(c_white);
 if sixshooter_held_num >= 10 and sixshooter_gun.inaccuracy != 25 and sixshooter_held_num < 30 {
 	draw_sprite_general(spr_chargebar_sixshooter,0,0,0,sprite_get_width(spr_chargebar_sixshooter),sprite_get_height(spr_chargebar_sixshooter),x+lengthdir_x(12,image_angle+180)+lengthdir_x(4,image_angle-90),y+lengthdir_y(12,image_angle+180)+lengthdir_y(4,image_angle-90),1,1,image_angle,c_white,c_white,c_white,c_white,1);
 	draw_sprite_general(spr_chargebar_sixshooter_color,0,0,0,sprite_get_width(spr_chargebar_sixshooter_color)*((other.sixshooter_held_num-10)/(30-10)),sprite_get_height(spr_chargebar_sixshooter_color),x+lengthdir_x(12,image_angle+180)+lengthdir_x(4,image_angle-90),y+lengthdir_y(12,image_angle+180)+lengthdir_y(4,image_angle-90),1,1,image_angle,c_white,c_white,c_white,c_white,1);
+}
+
+//lock icon
+if state = state_shop or table = true {
+	var distance = 62;
+	distance += combo_offset;
+			
+	if instance_exists(obj_shieldbubble) {
+		distance += 12; //8
+	}else if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun 
+	or pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling 
+	or pickups_array[0] = pickup_harpoon or pickups_array[1] =  pickup_harpoon { 
+		distance += 18;
+	}
+	
+	//sprite
+	draw_sprite_ext(spr_lockicon,1,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,c_white,1);	
 }

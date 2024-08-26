@@ -95,7 +95,7 @@ function scr_Shoot(){
 			}
 		
 			//check if speed slower or faster than max speed to preserve momentum
-			if (abs(speed) > gun.max_speed and vspeed < 0) {
+			if (abs(speed) > abs(gun.max_speed) and vspeed < 0) {
 				slower_than_max = false;
 				current_max = speed;
 			}else {
@@ -114,8 +114,8 @@ function scr_Shoot(){
 			motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
 		
 			//set max speed for auto weapons
-			if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
-				speed = max(gun.max_speed, current_max);
+			if (abs(speed) > abs(gun.max_speed) and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
+				speed = max(abs(gun.max_speed), abs(current_max));
 			}
 		
 		}else {

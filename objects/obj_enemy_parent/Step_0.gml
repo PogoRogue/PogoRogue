@@ -8,7 +8,7 @@ if(is_dead) {
 	if image_alpha <= 0.005 {
 		instance_destroy();	
 	}
-} else if (hp <= 0) {
+} else if (hp <= 0) and megabounce_freeze = false {
 	if object_get_name(object_index) != "obj_enemy_explode_walking" {
 		image_speed = 0;
 	}
@@ -183,6 +183,15 @@ if(is_dead) {
 	global.current_enemies_killed += 1;
 	global.enemies_killed += 1;
 	scr_Save_Real("enemies_killed",global.enemies_killed);
+}else if (hp <= 0) {
+	red_frames = 5;
+	x = freeze_x;
+	y = freeze_y;
+	image_index = freeze_frame;
+	speed = 0;
+	if obj_player.state = obj_player.state_free {
+		megabounce_freeze = false;
+	}
 }
 
 // Update iframes

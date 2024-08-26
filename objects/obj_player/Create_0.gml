@@ -97,6 +97,9 @@ shieldbubble_obj = noone;
 harpoon_empty = false;
 harpooning = false;
 synergy_frame = 0;
+megajump_centered = false;
+end_of_charge = false;
+wearing_hat = false;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -448,6 +451,179 @@ state_groundpound = function() {
 			soundPlayed = false;
 			
 		}
+	}
+}
+
+state_megabounce = function() {
+	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
+		sprite_index = player_sprite;
+	}
+	
+	hspeed = hspeed * 0.8;
+	
+	if !global.key_fire_projectile {
+		can_shoot = true;
+	}
+	can_rotate = false;
+	
+	if slam_speed < 15 { //15 because dont wanna glitch through 16px platforms
+		slam_speed += 1;
+	}
+	
+	if soundPlayed = false {
+		audio_play_sound(snd_slamCharge,0,false);
+		soundPlayed = true;
+	}
+	
+	ground_pound_rise = false;
+	ground_pound_slam = true;
+	
+	//slam
+	if ground_pound_slam = true {
+		if (angle != 0)	{
+			var angle_side = sign(angle);
+			angle += rotation_speed*sign(-angle);
+			if (sign(angle) != angle_side) {
+				angle = 0;
+				current_rotation_speed = 0;
+			}
+			megajump_centered = false;
+		}else {
+			megajump_centered = true;	
+		}
+		
+		vspeed = slam_speed;
+		vsp_basicjump = -9;
+		stomp_damage = 40;
+		//switch states
+		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
+			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
+				y += sign(vspeed);
+			}
+			
+			if place_meeting(x,y+2,obj_launchpad) {
+				with instance_place(x,y+2,obj_launchpad) {
+					if animating = false and not_meeting = true {
+						animating = true;
+						missiles_left = 0;
+						player_y = other.y;
+						sprite_index = spr_launchpad_both;
+						mask_index = spr_nothing;
+					}
+				}
+				launchpad = true;
+			}
+			
+			if place_meeting(x,y+vspeed,obj_ground_parent) {
+				aerial_assassin_count = 0;	
+			}
+
+			scr_Enemy_Collision_Check(true);
+			//pickup_megabounce.on_cooldown = true;
+			if launchpad = false {
+				state = state_megabounce_charge;
+			}else {
+				state = state_bouncing;	
+			}
+			vspeed = 0;
+			scr_Screen_Shake(6, 15, true);
+			audio_play_sound(snd_groundpound,0,false);
+			stomp_damage = 8;
+			soundPlayed = false;
+			
+		}
+	}
+}
+
+state_megabounce_charge = function() {
+	if (angle != 0)	and megajump_centered = false {
+		var angle_side = sign(angle);
+		angle += rotation_speed*sign(-angle);
+		if (sign(angle) != angle_side) {
+			angle = 0;
+			current_rotation_speed = 0;
+			megajump_centered = true;
+		}
+	}else if megajump_centered = false {
+			megajump_centered = true;
+	}
+	
+	if megajump_centered = true {
+		rotation_speed = original_rotation_speed/2;
+		rotation_speed = min(rotation_speed,2);
+		can_rotate = true;
+	}else {
+		can_rotate = false;
+	}
+	can_shoot = false;
+	
+	if !audio_is_playing(snd_chargejump) { //sound
+		if (charge > charge_max) {
+			audio_play_sound(snd_chargejump,0,false);
+		}else {
+			end_of_charge = true;
+		}
+	}
+	
+	if global.key_fire_projectile_pressed or charge = charge_max {
+		end_of_charge = true;
+		charge = charge_max;
+	}
+	
+	bouncing = true;
+	sprite_index = charging_sprite;
+	image_speed = 1;
+	vsp_basicjump = -6.6;
+	
+	// Conveyor belt handling
+	scr_Conveyor_Belt();
+	
+	if end_of_charge {
+		platform_on = !platform_on;
+		end_of_charge = false;
+		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5,true);
+		//can_shoot = true;
+		scr_Jump(charge+1);
+		grv = 0;
+		audio_stop_sound(snd_chargejump);
+		audio_stop_sound(snd_bounce);
+		audio_stop_sound(snd_bounce2);
+		audio_stop_sound(snd_bounce3);
+		audio_play_sound(snd_chargejump_launch,0,false);
+		allow_flames = true;
+		min_flames_speed = 7.2;
+		pickup_megabounce.on_cooldown = true;
+		if !instance_exists(obj_player_flames_upward) {
+			with instance_create_depth(x,y,depth+1,obj_player_flames_upward) {
+				chargejump = true;
+				megabounce = true;
+			}
+		}
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+		angle = round(angle / original_rotation_speed)*original_rotation_speed;
+		//current_rotation_speed = 0;
+		can_rotate = true;
+	}else {
+		if (charge > charge_max) {
+			charge += charge_max/80; //80 = how many frames until max charge
+		}
+	}
+	
+	//cancel if not colliding
+	if !place_meeting(x,y+4,obj_ground_parent) and !place_meeting(x,y+4,obj_enemy_parent) 
+	and !place_meeting(x+4,y+4,obj_ground_parent) and !place_meeting(x+4,y+4,obj_enemy_parent) 
+	and !place_meeting(x-4,y+4,obj_ground_parent) and !place_meeting(x-4,y+4,obj_enemy_parent) {
+		state = state_free;
+		charge = 0;
+		bouncing = false;
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+		angle = round(angle / original_rotation_speed)*original_rotation_speed;
+		current_rotation_speed = 0;
+		sprite_index = falling_sprite;
+		image_index = 0; //reset animation to starting frame
+		animation_complete = false;
 	}
 }
 
@@ -1222,7 +1398,7 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_harpoon, pickup_frenzy, pickup_bulletblast,
 					pickup_slowmo, pickup_grappling, pickup_winners,
 					pickup_airbag, pickup_invincibility, pickup_pogomode,
-					pickup_launchpad]; //all pickups
+					pickup_launchpad, pickup_megabounce]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();

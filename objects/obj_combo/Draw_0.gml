@@ -1,4 +1,5 @@
-if obj_player.state != obj_player.state_blink and obj_player.state != obj_player.state_portal  and obj_player.state != obj_player.state_shop_portal {
+if obj_player.state != obj_player.state_blink and obj_player.state != obj_player.state_portal  and obj_player.state != obj_player.state_shop_portal 
+and !(obj_player.state = obj_player.state_shop or obj_player.table = true) {
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
@@ -49,7 +50,7 @@ if global.combo > 0 {
 			}
 			scr_Draw_Text_Outlined_Transformed(x + lengthdir_x(distance+5,angle+90),y + lengthdir_y(distance+5,angle+90),"x" + string(global.combo) + " Combo",temp_text_color,other.combometer_scale,other.combometer_scale,angle,1);
 			//draw_text_transformed(x + lengthdir_x(distance+5,angle+90),y + lengthdir_y(distance+5,angle+90),"x" + string(global.combo) + " Combo",other.combometer_scale,other.combometer_scale,angle);
-		}
+		}	
 	}
 }
 

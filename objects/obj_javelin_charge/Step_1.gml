@@ -1,6 +1,12 @@
 if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true or obj_player.state = obj_player.state_blink {
 	instance_destroy();	
 }else if global.key_fire_projectile_released {
+	with obj_player {
+		if state = state_megabounce_charge {
+			end_of_charge = true;
+			charge = charge_max;
+		}
+	}
 	instance_activate_object(javelin_object);	
 	with javelin_object {
 		x = obj_player.x;

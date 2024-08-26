@@ -45,7 +45,7 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	if pickup.is_synergy = true and img_index < 2 and unlocked = true {
 		draw_sprite(spr_synergy_animation,global.synergy_frame,xx-50,yy-98);
 		draw_sprite(pickup.gui_sprite,img_index,xx-50,yy-98);
-		if instance_exists(obj_items) {
+		if instance_exists(obj_items) or instance_exists(obj_item_swap) {
 			draw_sprite(pickup.base_item_sprite_1,3,xx-32+2,yy+46);
 			draw_sprite(pickup.base_item_sprite_2,3,xx+32+2,yy+46);
 		}else {

@@ -48,3 +48,8 @@ random_set_seed(global.seed);
 
 shaded = false;
 locked_onto = false;
+
+megabounce_freeze = false; //dont despawn right away if killed by megabounce
+freeze_x = x;
+freeze_y = y;
+freeze_frame = 0;

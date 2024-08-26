@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Pickups(){
 	
-	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute,state_shieldbubble,state_plasmacharge];
+	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute,state_shieldbubble,state_plasmacharge,state_megabounce,state_megabounce_charge];
 
 	
 	pickup_nothing = {
@@ -689,7 +689,7 @@ function scr_Pickups(){
 	
 	pickup_airbag = {
 		_name: "Airbag",
-		tagline: "Create a bouncy floating airbag below you. It reloads your weapon when \nbounced on. Every 10th airbag, gain a heart on bounce. Beep.",
+		tagline: "Create a bouncy floating airbag below you. It reloads your weapon when \nbounced on. Every 10th airbag, gain a heart on \nbounce. Beep.",
 		gui_sprite: spr_pickup_airbag,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
@@ -860,7 +860,7 @@ function scr_Pickups(){
 		cooldown_time: -1,
 		cooldown_text: "Cooldown: Every 8 kills",
 		on_cooldown: false,
-		states_to_call_in: [state_free,state_freeze,state_bulletblast,state_parachute],
+		states_to_call_in: [state_free,state_freeze,state_bulletblast,state_parachute,state_groundpound],
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
@@ -882,6 +882,43 @@ function scr_Pickups(){
 			}
 			on_cooldown = true;
 			enemies_count = enemies_count_max;
+		}
+	};
+	
+	pickup_megabounce = {
+		_name: "Mega Bounce",
+		tagline: "Instantly slam to the ground with immense power, then aim, ready, and fire with a powerful charge jump! Getting a slam kill resets its cooldown time.",
+		gui_sprite: spr_pickup_synergy_megabounce,
+		max_cooldown_time: 600,
+		cooldown_time: 600,
+		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: [state_free,state_freeze],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		text_color: make_color_rgb(180,82,82),
+		cost: 0,
+		is_synergy: true,
+		base_item_sprite_1: spr_pickup_groundpound,
+		base_item_sprite_2: spr_pickup_chargejump,
+		item_cost: 115, //only for synergies (item 1 + item 2 costs)
+		on_call: function() {
+			obj_player.state = obj_player.state_megabounce;
+			obj_player.ground_pound_rise = true;
+			obj_player.ground_pound_slam = false;
+			obj_player.ground_pound_distance_risen = 0;
+			obj_player.can_shoot = false;
+			if obj_player.vspeed > 0 {
+				obj_player.slam_speed = obj_player.vspeed;
+			}else {
+				obj_player.slam_speed = 0;
+			}
 		}
 	};
 }

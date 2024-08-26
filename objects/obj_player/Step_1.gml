@@ -51,8 +51,6 @@ if (can_rotate) {
 		}else if hspeed < -0.5 {
 			image_xscale = -1;
 		}
-		
-		
 	
 	}else if (dead = false) { //use mouse to angle player
 	

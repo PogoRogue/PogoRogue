@@ -1,4 +1,4 @@
-if global.combo_length > 0 and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+if global.combo_length > 0 and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and obj_player.table = false {
 	if global.combo > 0 and global.enemy_killed = true {
 		global.combo_length -= combo_decrease_speed;
 	}else if global.enemy_killed = true {
@@ -6,9 +6,9 @@ if global.combo_length > 0 and room != room_boss_1 and room != room_boss_2 and r
 	}else {
 		global.combo_length = global.combo_max;
 	}
-}else if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+}else if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and obj_player.table = false {
 	global.combo = 0;
-}else {
+}else if obj_player.table = false {
 	global.combo_length = global.combo_max;
 }
 

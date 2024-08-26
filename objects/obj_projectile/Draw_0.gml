@@ -21,7 +21,7 @@ if (gun_name = "Bouncy Ball Blaster") {
 	}
 	var dir = point_direction(x,y,obj_player.x - lengthdir_x(56,obj_player.image_angle-90),obj_player.y - lengthdir_y(56,obj_player.image_angle-90)) - 180;
 	draw_sprite_ext(spr_rope,0,x,y,xscale,sign(obj_player.image_xscale),dir,c_white,1);
-	draw_sprite_ext(sprite_index,0,x,y,image_xscale,-sign(obj_player.image_xscale),dir,c_white,1);
+	draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,-sign(obj_player.image_xscale),dir,c_white,1);
 }else if (gun_name = "Water Gun") {
 	if image_index = 0 {
 		draw_sprite_ext(sprite_index,3,x,y,1,1,angle2,c_white,image_alpha);

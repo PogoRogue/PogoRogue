@@ -9,7 +9,7 @@ function scr_All_Actives_Array(){
 					obj_item_pickup_synergy_harpoon, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
 					obj_item_pickup_slowmo, obj_item_pickup_grappling,obj_item_pickup_winners,
 					obj_item_pickup_airbag,obj_item_pickup_invincibility,obj_item_pickup_synergy_pogomode,
-					obj_item_pickup_synergy_launchpad];
+					obj_item_pickup_synergy_launchpad, obj_item_pickup_synergy_megabounce];
 					
 	if global.phase <= 1 and room != room_items {
 		global.all_pickups = [obj_item_pickup_reload, obj_item_pickup_freeze, obj_item_pickup_emergency, 
@@ -24,7 +24,7 @@ function scr_All_Actives_Array(){
 					obj_item_pickup_jetpack, obj_item_pickup_synergy_harpoon, obj_item_pickup_frenzy,
 					obj_item_pickup_bulletblast,obj_item_pickup_slowmo, obj_item_pickup_grappling, 
 					obj_item_pickup_winners, obj_item_pickup_airbag, obj_item_pickup_invincibility,
-					obj_item_pickup_synergy_pogomode, obj_item_pickup_synergy_launchpad];
+					obj_item_pickup_synergy_pogomode, obj_item_pickup_synergy_launchpad, obj_item_pickup_synergy_megabounce];
 	}else {
 		global.all_pickups = global.all_pickups_list;
 	}

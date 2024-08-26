@@ -145,4 +145,6 @@ function scr_Controls(){
 	global.pause_buttons,global.item_buttons];
 	
 	global.gamepad_menu_array = [global.menu_right_buttons,global.menu_left_buttons,global.menu_down_buttons,global.menu_up_buttons,global.select_buttons,global.back_buttons];
+
+	global.current_skin = 0;
 }

@@ -7,8 +7,12 @@ function scr_Jump(add_to_jump){
 		launchpad = false;
 	}
 	
-	speed = vsp_basicjump+add_to_jump+((vsp_basicjump/10)*global.tightspring); //bounce speed
+	speed = vsp_basicjump+add_to_jump+((vsp_basicjump/10)*global.tightspring); //bounce spee
 	direction = angle - 90; //bounce angle
+	if speed < 0 {
+		speed = abs(speed);
+		direction = angle + 90;
+	}
 	hspeed += conveyor_speed;
 	conveyor_speed = 0;
 	sprite_index = player_sprite;

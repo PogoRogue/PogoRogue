@@ -108,7 +108,8 @@ if animating = true and scale = 1 {
 	
 	mask_index = spr_nothing;
 	
-	if obj_player.state = obj_player.state_bouncing or obj_player.state = obj_player.state_groundpound {
+	if obj_player.state = obj_player.state_bouncing or obj_player.state = obj_player.state_groundpound
+	or obj_player.state = obj_player.state_megabounce {
 		switch (floor(image_index)) {
 			case 0: obj_player.y = player_y; break;
 			case 1: obj_player.y = player_y+4; break;

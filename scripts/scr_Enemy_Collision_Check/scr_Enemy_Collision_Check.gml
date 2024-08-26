@@ -63,8 +63,15 @@ function scr_Enemy_Collision_Check(condition){
 			free = false;
 			with instance_place(x,y+1,obj_enemy_parent) {
 				if (!is_dead && current_iframes <= 0) and other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
-					if other.state != other.state_chargejump {
+					if other.state != other.state_chargejump and obj_player.state != obj_player.state_megabounce and obj_player.state != obj_player.state_megabounce_charge {
 						other.state = other.state_bouncing;
+					}
+					if (obj_player.state = obj_player.state_megabounce or obj_player.state = obj_player.state_megabounce_charge) {
+						freeze_x = x;
+						freeze_y = y;
+						freeze_frame = image_index;
+						megabounce_freeze = true;
+						other.pickup_megabounce.cooldown_time = 0;
 					}
 					other.speed = 0;
 					if other.vsp_basicjump < -7 { //check if state = state_groundpound

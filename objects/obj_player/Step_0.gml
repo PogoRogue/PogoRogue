@@ -160,7 +160,7 @@ if harpooning = true and state != state_grappling {
 		invincible = false;
 	}
 }
-if state != state_groundpound and harpooning = false {
+if state != state_groundpound and harpooning = false and state != state_megabounce {
 	ground_pound_slam = false;
 	//can_shoot = true;
 	slam_speed = 12;
@@ -663,6 +663,15 @@ with obj_projectile {
 			//spd = 0;
 		}
 	}
+}
+
+//wearing hat
+if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun
+or pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling
+or pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
+	wearing_hat = true;
+}else {
+	wearing_hat = false;
 }
 
 num_iframes = (1.5 + iframes_add) * room_speed;
