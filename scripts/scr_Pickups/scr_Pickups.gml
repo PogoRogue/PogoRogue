@@ -507,7 +507,7 @@ function scr_Pickups(){
 	
 	pickup_emergency = {
 		_name: "Emergency Treatment",
-		tagline: "Instantly restore 1 HP and generates an armored heart.",
+		tagline: "Instantly generates an armored heart.",
 		gui_sprite: spr_pickup_emergency,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
@@ -527,15 +527,6 @@ function scr_Pickups(){
 		is_synergy: false,
 		on_call: function() {
 			with obj_player {
-				//heart
-				if hp < max_hp {
-					hp += 8;	
-					audio_play_sound(snd_heartPickup,0,false);
-					with obj_player_health {
-						heart_gain_num = other.hp;	
-					}
-				}
-				
 				//armored heart
 				with obj_player {
 					if armor_buff < max_armor_buff {
@@ -919,6 +910,91 @@ function scr_Pickups(){
 			}else {
 				obj_player.slam_speed = 0;
 			}
+		}
+	};
+	
+	pickup_jolt = {
+		_name: "Jolt",
+		tagline: "Instantly reload all of your weapons, and generate 3 temporary energy hearts. Getting a kill zaps life back into an energy heart.",
+		gui_sprite: spr_pickup_synergy_jolt,
+		max_cooldown_time: 1200,
+		cooldown_time: 1200,
+		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		text_color: make_color_rgb(211,160,104),
+		cost: 0,
+		is_synergy: true,
+		base_item_sprite_1: spr_pickup_reload,
+		base_item_sprite_2: spr_pickup_emergency,
+		item_cost: 115, //only for synergies (item 1 + item 2 costs)
+		on_call: function() {
+			if obj_player.energy_buff = 0 {
+				with obj_player {
+					if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun { //reload bullets
+						//reload sound
+						audio_play_sound(snd_reload,0,false);
+						gun_1.current_bullets = gun_1.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+						instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+					}
+					if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun { //reload bullets
+						//reload sound
+						audio_play_sound(snd_reload,0,false);
+						gun_2.current_bullets = gun_2.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+						instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+					}
+					if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun { //reload bullets
+						//reload sound
+						audio_play_sound(snd_reload,0,false);
+						gun_3.current_bullets = gun_3.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
+						instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
+					}
+				
+					//armored heart
+					energy_buff = max_energy_buff;
+					audio_play_sound(snd_zap,0,false);
+					with obj_player_health {
+						heart_energy_gain_num = other.energy_buff;	
+						alarm[0] = 1;
+					}
+				}
+			}
+		}
+	};
+	
+	pickup_hacker = {
+		_name: "Hacker",
+		tagline: "Slow down time for 20 seconds and summon a flying slot machine. While spinning, stop each reel with the press of a button.",
+		gui_sprite: spr_pickup_synergy_hacker,
+		max_cooldown_time: 0,
+		cooldown_time: 0,
+		cooldown_text: "Cooldown: " + "25 gold",
+		on_cooldown: false,
+		states_to_call_in: all_states,
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		text_color: make_color_rgb(138,176,96),
+		cost: 25,
+		is_synergy: true,
+		base_item_sprite_1: spr_pickup_slowmo,
+		base_item_sprite_2: spr_pickup_winners,
+		item_cost: 185, //only for synergies (item 1 + item 2 costs)
+		on_call: function() {
+			
 		}
 	};
 }

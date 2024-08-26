@@ -154,6 +154,8 @@ max_hp = 40; //5 hearts
 max_max_hp = 80; //10 hearts
 armor_buff = 0;
 max_armor_buff = 5;
+energy_buff = 0;
+max_energy_buff = 3;
 stomp_damage = 8;
 num_iframes = (1.5 + iframes_add) * room_speed;
 current_iframes = 0;
@@ -1398,7 +1400,8 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_harpoon, pickup_frenzy, pickup_bulletblast,
 					pickup_slowmo, pickup_grappling, pickup_winners,
 					pickup_airbag, pickup_invincibility, pickup_pogomode,
-					pickup_launchpad, pickup_megabounce]; //all pickups
+					pickup_launchpad, pickup_megabounce,pickup_jolt,
+					pickup_hacker]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();

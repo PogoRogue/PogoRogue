@@ -5,7 +5,19 @@ function scr_Player_Damaged(damage){
 	with obj_player {
 		var armored = false;
 		if !instance_exists(obj_shieldbubble) and invincible = false and invincibility = false and pogomode = false {
-			if armor_buff > 0 {
+			if energy_buff > 0 {
+				energy_buff -= 1;
+				armored = true;
+				with obj_player_health {
+					heart_energy_lost_num = other.energy_buff+1;	
+				}
+				global.enemy_killed = true; //resume combo meter
+				
+				if global.paparazzi = true {
+					audio_play_sound(snd_camera,0,false);
+					instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup,{damage: 3});
+				}
+			}else if armor_buff > 0 {
 				armor_buff -= 1;
 				armored = true;
 				with obj_player_health {

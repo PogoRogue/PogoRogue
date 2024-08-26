@@ -128,6 +128,14 @@ if(is_dead) {
 		}
 	}
 	
+	with obj_heart_energy_gain {
+		if sprite_index = spr_heart_energy_animation and !scr_Animation_Complete() and image_speed = 1 {
+			sprite_index = spr_heart_energy_ui_gain;
+			image_index = 0;
+			audio_play_sound(snd_zap,0,false);
+		}
+	}
+	
 	is_dead = true;
 	mask_index = spr_nothing;
 	

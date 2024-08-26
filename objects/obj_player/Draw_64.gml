@@ -159,6 +159,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		or pickups_array[0] = pickup_frenzy and frenzy = true 
 		or pickups_array[0] = pickup_pogomode and pogomode = true 
 		or pickups_array[0] = pickup_invincibility and invincibility = true 
+		or pickups_array[0] = pickup_jolt and energy_buff > 0 
 		or pickups_array[0] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)
 		or pickups_array[0] = pickup_winners and instance_exists(obj_slot_machine) 
@@ -276,6 +277,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		or pickups_array[1] = pickup_frenzy and frenzy = true 
 		or pickups_array[1] = pickup_pogomode and pogomode = true 
 		or pickups_array[1] = pickup_invincibility and invincibility = true 
+		or pickups_array[1] = pickup_jolt and energy_buff > 0 
 		or pickups_array[1] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute) 
 		or pickups_array[1] = pickup_winners and instance_exists(obj_slot_machine) 
@@ -410,6 +412,7 @@ or (pickups_array[0] = pickup_winners and global.num_of_coins < pickup_winners.c
 or (pickups_array[0] = pickup_winners and instance_exists(obj_slot_machine))
 or pickups_array[0] = pickup_frenzy and frenzy = true
 or pickups_array[0] = pickup_invincibility and invincibility = true
+or pickups_array[0] = pickup_jolt and energy_buff > 0 
 or pickups_array[0] = pickup_pogomode and pogomode = true
 or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)) {
 	scr_Draw_Input_UI(48,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
@@ -421,6 +424,7 @@ or (pickups_array[1] = pickup_winners and global.num_of_coins < pickup_winners.c
 or (pickups_array[1] = pickup_winners and instance_exists(obj_slot_machine))
 or pickups_array[1] = pickup_frenzy and frenzy = true
 or pickups_array[1] = pickup_invincibility and invincibility = true
+or pickups_array[1] = pickup_jolt and energy_buff > 0 
 or pickups_array[1] = pickup_pogomode and pogomode = true
 or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)) {
 	scr_Draw_Input_UI(103,108,5,0,fnt_itemdescription2,fa_center,fa_middle);

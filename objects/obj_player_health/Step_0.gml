@@ -4,3 +4,5 @@ max_hp = parent_index.max_hp;
 max_max_hp = parent_index.max_max_hp;
 armor_buff = parent_index.armor_buff;
 max_armor_buff = parent_index.max_armor_buff;
+energy_buff = parent_index.energy_buff;
+max_energy_buff = parent_index.max_energy_buff;

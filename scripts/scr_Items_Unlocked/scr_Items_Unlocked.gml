@@ -79,13 +79,22 @@ function scr_Items_Unlocked(){
 	global.active_unlocked_21 = false;
 	global.active_unlocked_22 = false;
 	global.active_unlocked_23 = false;
+	global.active_unlocked_24 = false;
+	global.active_unlocked_25 = false;
+	global.active_unlocked_26 = false;
+	global.active_unlocked_27 = false;
+	global.active_unlocked_28 = false;
+	global.active_unlocked_29 = false;
+	global.active_unlocked_30 = false;
 	
 	global.active_unlocked_array = [global.active_unlocked_1,global.active_unlocked_2,global.active_unlocked_3,global.active_unlocked_4,
 									global.active_unlocked_5,global.active_unlocked_6,global.active_unlocked_7,global.active_unlocked_8,
 									global.active_unlocked_9,global.active_unlocked_10,global.active_unlocked_11,global.active_unlocked_12,
 									global.active_unlocked_13,global.active_unlocked_14,global.active_unlocked_15,global.active_unlocked_16,
 									global.active_unlocked_17,global.active_unlocked_18,global.active_unlocked_19,global.active_unlocked_20,
-									global.active_unlocked_21,global.active_unlocked_22,global.active_unlocked_23];
+									global.active_unlocked_21,global.active_unlocked_22,global.active_unlocked_23,global.active_unlocked_24,
+									global.active_unlocked_25,global.active_unlocked_26,global.active_unlocked_27,global.active_unlocked_28,
+									global.active_unlocked_29,global.active_unlocked_30];
 									
 	//weapons
 	global.weapon_unlocked_1 = false; //pistol

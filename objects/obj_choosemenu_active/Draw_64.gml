@@ -23,7 +23,7 @@ for (i = 0; i < array_length(actives_array); i++) {
 		draw_sprite(all_actives[i].gui_sprite,0,xx,yy-27);
 	
 		if (i < array_length(all_actives)) {
-			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_actives[i]._name,12,99),c_white);
+			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_actives[i]._name,12,99),all_actives[i].text_color);
 		}
 	}
 }
