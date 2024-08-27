@@ -4,6 +4,8 @@
 if room != room_shop {
 	if instance_exists(obj_slot_machine) {
 		follow_object = obj_slot_machine;
+	}else if instance_exists(obj_slot_machine2) {
+		follow_object = obj_slot_machine2;
 	}else {
 		follow_object = noone;	
 	}

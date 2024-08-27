@@ -197,7 +197,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)
 		or (pickups_array[0] = pickup_winners) and instance_exists(obj_slot_machine) 
 		or pickups_array[0] = pickup_winners and global.num_of_coins < pickup_winners.cost 
-		or (pickups_array[0] = pickup_hacker) and (instance_exists(obj_slot_machine) or instance_exists(obj_slowmo))
+		or (pickups_array[0] = pickup_hacker) and (instance_exists(obj_slot_machine2) or instance_exists(obj_slowmo))
 		or pickups_array[0] = pickup_hacker and global.num_of_coins < pickup_hacker.cost {
 			draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);
 		}
@@ -318,7 +318,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute) 
 		or (pickups_array[1] = pickup_winners) and instance_exists(obj_slot_machine) 
 		or pickups_array[1] = pickup_winners and global.num_of_coins < pickup_winners.cost 
-		or (pickups_array[1] = pickup_hacker) and (instance_exists(obj_slot_machine) or instance_exists(obj_slowmo))
+		or (pickups_array[1] = pickup_hacker) and (instance_exists(obj_slot_machine2) or instance_exists(obj_slowmo))
 		or pickups_array[1] = pickup_hacker and global.num_of_coins < pickup_hacker.cost {
 			draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 		}
@@ -449,7 +449,7 @@ and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubbl
 or (pickups_array[0] = pickup_winners and global.num_of_coins < pickup_winners.cost)
 or (pickups_array[0] = pickup_winners and instance_exists(obj_slot_machine))
 or (pickups_array[0] = pickup_hacker and global.num_of_coins < pickup_hacker.cost)
-or (pickups_array[0] = pickup_hacker) and (instance_exists(obj_slot_machine) or instance_exists(obj_slowmo))
+or (pickups_array[0] = pickup_hacker) and instance_exists(obj_slot_machine2)
 or pickups_array[0] = pickup_frenzy and frenzy = true
 or pickups_array[0] = pickup_invincibility and invincibility = true
 or pickups_array[0] = pickup_tripleshot and tripleshot = true 
@@ -464,7 +464,7 @@ and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubbl
 or (pickups_array[1] = pickup_winners and global.num_of_coins < pickup_winners.cost)
 or (pickups_array[1] = pickup_winners and instance_exists(obj_slot_machine))
 or (pickups_array[1] = pickup_hacker and global.num_of_coins < pickup_hacker.cost)
-or pickups_array[1] = pickup_hacker and (instance_exists(obj_slot_machine) or instance_exists(obj_slowmo))
+or pickups_array[1] = pickup_hacker and  instance_exists(obj_slot_machine2)
 or pickups_array[1] = pickup_frenzy and frenzy = true
 or pickups_array[1] = pickup_invincibility and invincibility = true
 or pickups_array[1] = pickup_tripleshot and tripleshot = true 

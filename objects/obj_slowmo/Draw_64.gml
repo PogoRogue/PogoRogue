@@ -19,10 +19,10 @@ if room_speed < 60 {
 		draw_set_valign(fa_bottom);
 		scr_Draw_Text_Outlined(17,156-7,"Slow Mo",obj_player.pickup_slowmo.text_color);
 		draw_set_color(c_white);
-		if hacker = false {
+		//if hacker = false {
 			draw_sprite(spr_slowmometer,0,17,156);
 			draw_sprite_part(spr_slowmometer,1,0,0,sprite_get_width(spr_slowmometer)*(time_left / (time)),sprite_get_height(spr_slowmometer),17,156-4);
-		}
+		//}
 	}else if time > 0 and instance_exists(obj_shieldbubble) and obj_player.invincibility_time <= 0 {
 		if obj_shieldbubble.destroy_time_live = 0 {
 			draw_set_color(obj_player.pickup_slowmo.text_color);

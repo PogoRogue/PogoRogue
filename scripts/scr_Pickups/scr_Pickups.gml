@@ -192,10 +192,10 @@ function scr_Pickups(){
 	
 	pickup_jetpack = {
 		_name: "Jetpack",
-		tagline: "A jetpack that gives you additional momentum when used. It has limited fuel, but can be easily refueled.",
+		tagline: "A jetpack that gives you additional momentum when used. It has limited fuel, but can be easily refueled with bounces or kills.",
 		gui_sprite: spr_pickup_jetpack,
-		max_cooldown_time: 60,
-		cooldown_time: 60,
+		max_cooldown_time: 100,
+		cooldown_time: 100,
 		cooldown_text: "Cooldown: 1/4 every bounce / kill",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
@@ -1004,7 +1004,7 @@ function scr_Pickups(){
 	
 	pickup_hacker = {
 		_name: "Hacker",
-		tagline: "Slow down time for 20 seconds and summon a flying slot machine. While spinning, stop each reel with the press of a button.",
+		tagline: "Slow down time for 10 seconds and summon a flying slot machine. While spinning, stop each reel with the press of a button.",
 		gui_sprite: spr_pickup_synergy_hacker,
 		max_cooldown_time: 0,
 		cooldown_time: 0,
@@ -1026,12 +1026,12 @@ function scr_Pickups(){
 		base_item_sprite_2: spr_pickup_winners,
 		item_cost: 185, //only for synergies (item 1 + item 2 costs)
 		on_call: function() {
-			if global.num_of_coins >= obj_player.pickup_hacker.cost and !instance_exists(obj_slot_machine) and !instance_exists(obj_slowmo) {
+			if global.num_of_coins >= obj_player.pickup_hacker.cost and !instance_exists(obj_slot_machine2) and !instance_exists(obj_slowmo) {
 				if !instance_exists(obj_slowmo) {
 					instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_slowmo,{hacker: true});
 				}
 				with obj_player {
-					instance_create_depth(x,y,depth,obj_slot_machine);
+					instance_create_depth(x,y,depth,obj_slot_machine2);
 					instance_create_depth(obj_player.x+lengthdir_x(34,obj_player.angle+90),obj_player.y+lengthdir_y(34,obj_player.angle+90),obj_player.depth,obj_coin25);
 				}
 				//on_cooldown = true;
