@@ -202,7 +202,7 @@ function scr_Get_Rand_Pickup_Object()
 							obj_item_pickup_parachute, obj_item_pickup_firedash, obj_item_pickup_groundpound, 
 							obj_item_pickup_hatgun, obj_item_pickup_chargejump,obj_item_pickup_shieldbubble,
 							obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
-							obj_item_pickup_synergy_harpoon, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
+							obj_item_pickup_tripleshot, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
 							obj_item_pickup_slowmo, obj_item_pickup_grappling, obj_item_pickup_winners,
 							obj_item_pickup_airbag, obj_item_pickup_invincibility, obj_item_pickup_synergy_pogomode,
 							obj_item_pickup_synergy_launchpad, obj_item_pickup_synergy_megabounce,obj_item_pickup_synergy_jolt,

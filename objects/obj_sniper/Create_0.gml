@@ -10,7 +10,17 @@ laser_boost = false;
 angle = obj_player.image_angle-90;
 cut_sound = true;
 image_index = sprite_get_number(sprite_index)-2;
-image_angle = obj_player.image_angle-90;
+if obj_player.sniper_gun.spread_number = 1 {
+	image_angle = obj_player.image_angle-90;
+}else if obj_player.sniper_gun.spread_number = 3 {
+	if spread_index = 0 {
+		image_angle = obj_player.image_angle-90-obj_player.sniper_gun.spread_angle;
+	}else if spread_index = 1 {
+		image_angle = obj_player.image_angle-90;
+	}else if spread_index = 2 {
+		image_angle = obj_player.image_angle-90+obj_player.sniper_gun.spread_angle;
+	}
+}
 attach_to_player = 0;
 
 sniped_array = [];

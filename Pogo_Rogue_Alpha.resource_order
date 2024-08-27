@@ -127,6 +127,7 @@
     {"name":"obj_item_pickup_synergy_launchpad","order":7,"path":"objects/obj_item_pickup_synergy_launchpad/obj_item_pickup_synergy_launchpad.yy",},
     {"name":"obj_item_pickup_synergy_megabounce","order":8,"path":"objects/obj_item_pickup_synergy_megabounce/obj_item_pickup_synergy_megabounce.yy",},
     {"name":"obj_item_pickup_synergy_pogomode","order":6,"path":"objects/obj_item_pickup_synergy_pogomode/obj_item_pickup_synergy_pogomode.yy",},
+    {"name":"obj_item_pickup_tripleshot","order":11,"path":"objects/obj_item_pickup_tripleshot/obj_item_pickup_tripleshot.yy",},
     {"name":"obj_item_pickup_winners","order":2,"path":"objects/obj_item_pickup_winners/obj_item_pickup_winners.yy",},
     {"name":"obj_item_text_newdiscovery","order":1,"path":"objects/obj_item_text_newdiscovery/obj_item_text_newdiscovery.yy",},
     {"name":"obj_item_weapon_machine","order":2,"path":"objects/obj_item_weapon_machine/obj_item_weapon_machine.yy",},
@@ -429,6 +430,7 @@
     {"name":"spr_pickup_synergy_launchpad","order":8,"path":"sprites/spr_pickup_synergy_launchpad/spr_pickup_synergy_launchpad.yy",},
     {"name":"spr_pickup_synergy_megabounce","order":9,"path":"sprites/spr_pickup_synergy_megabounce/spr_pickup_synergy_megabounce.yy",},
     {"name":"spr_pickup_synergy_pogomode","order":7,"path":"sprites/spr_pickup_synergy_pogomode/spr_pickup_synergy_pogomode.yy",},
+    {"name":"spr_pickup_tripleshot","order":12,"path":"sprites/spr_pickup_tripleshot/spr_pickup_tripleshot.yy",},
     {"name":"spr_pickup_winners","order":2,"path":"sprites/spr_pickup_winners/spr_pickup_winners.yy",},
     {"name":"spr_plasma_outline1","order":11,"path":"sprites/spr_plasma_outline1/spr_plasma_outline1.yy",},
     {"name":"spr_plasma_outline2","order":12,"path":"sprites/spr_plasma_outline2/spr_plasma_outline2.yy",},
@@ -657,6 +659,7 @@
     {"name":"spr_station_actives","order":18,"path":"sprites/spr_station_actives/spr_station_actives.yy",},
     {"name":"spr_synergy_animation","order":6,"path":"sprites/spr_synergy_animation/spr_synergy_animation.yy",},
     {"name":"spr_timergui_small","order":17,"path":"sprites/spr_timergui_small/spr_timergui_small.yy",},
+    {"name":"spr_tripleshotmeter","order":119,"path":"sprites/spr_tripleshotmeter/spr_tripleshotmeter.yy",},
     {"name":"spr_weapon_arrow","order":62,"path":"sprites/spr_weapon_arrow/spr_weapon_arrow.yy",},
   ],
 }

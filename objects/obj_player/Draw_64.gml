@@ -114,7 +114,39 @@ if pogomode_time > 0 {
 	}else if global.righteousrevenge = true and damage_boost_active and damage_boost_timer > 0 and hp > 0 {
 		scr_2x_Damage_Meter(36+(48 * gun_num)+48,true);
 	}
-}else {
+}else if frenzy_time > 0 { //draw frenzy meter
+	draw_set_color(make_color_rgb(242,240,229));
+	draw_set_font(fnt_combo2);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_bottom);
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
+	draw_set_color(c_white);
+	draw_sprite(spr_frenzymeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
+	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(frenzy_time / (300 * global.bar_time_added)),sprite_get_height(spr_frenzymeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
+	
+	//2x damage buffs
+	if (global.laststand and hp <= 8 and hp > 0) {
+		scr_2x_Damage_Meter(36+(48 * gun_num)+48,false);
+	}else if global.righteousrevenge = true and damage_boost_active and damage_boost_timer > 0 and hp > 0 {
+		scr_2x_Damage_Meter(36+(48 * gun_num)+48,true);
+	}
+}else if tripleshot_time > 0 { //draw frenzy meter
+	draw_set_color(make_color_rgb(242,240,229));
+	draw_set_font(fnt_combo2);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_bottom);
+	scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])-16-(sprite_get_width(spr_tripleshotmeter)/2),29+(48 * gun_num),"Triple Shot",pickup_tripleshot.text_color);
+	draw_set_color(c_white);
+	draw_sprite(spr_tripleshotmeter,0,camera_get_view_width(view_camera[0])-16,36+(48 * gun_num));
+	draw_sprite_part(spr_tripleshotmeter,1,0,0,sprite_get_width(spr_tripleshotmeter)*(tripleshot_time / (480 * global.bar_time_added)),sprite_get_height(spr_tripleshotmeter),camera_get_view_width(view_camera[0])-16-sprite_get_width(spr_tripleshotmeter),36+(48 * gun_num)-4);
+
+	//2x damage buffs
+	if (global.laststand and hp <= 8 and hp > 0) {
+		scr_2x_Damage_Meter(36+(48 * gun_num)+48,false);
+	}else if global.righteousrevenge = true and damage_boost_active and damage_boost_timer > 0 and hp > 0 {
+		scr_2x_Damage_Meter(36+(48 * gun_num)+48,true);
+	}
+} else {
 	//2x damage buffs
 	if (global.laststand and hp <= 8 and hp > 0) {
 		scr_2x_Damage_Meter(36+(48 * gun_num),false);
@@ -159,11 +191,14 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		or pickups_array[0] = pickup_frenzy and frenzy = true 
 		or pickups_array[0] = pickup_pogomode and pogomode = true 
 		or pickups_array[0] = pickup_invincibility and invincibility = true 
+		or pickups_array[0] = pickup_tripleshot and tripleshot = true 
 		or pickups_array[0] = pickup_jolt and energy_buff > 0 
 		or pickups_array[0] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)
-		or pickups_array[0] = pickup_winners and instance_exists(obj_slot_machine) 
-		or pickups_array[0] = pickup_winners and global.num_of_coins < pickup_winners.cost {
+		or (pickups_array[0] = pickup_winners) and instance_exists(obj_slot_machine) 
+		or pickups_array[0] = pickup_winners and global.num_of_coins < pickup_winners.cost 
+		or (pickups_array[0] = pickup_hacker) and (instance_exists(obj_slot_machine) or instance_exists(obj_slowmo))
+		or pickups_array[0] = pickup_hacker and global.num_of_coins < pickup_hacker.cost {
 			draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);
 		}
 	}else if pickups_array[0].cost <= 0 {
@@ -277,11 +312,14 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		or pickups_array[1] = pickup_frenzy and frenzy = true 
 		or pickups_array[1] = pickup_pogomode and pogomode = true 
 		or pickups_array[1] = pickup_invincibility and invincibility = true 
+		or pickups_array[1] = pickup_tripleshot and tripleshot = true 
 		or pickups_array[1] = pickup_jolt and energy_buff > 0 
 		or pickups_array[1] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute) 
-		or pickups_array[1] = pickup_winners and instance_exists(obj_slot_machine) 
-		or pickups_array[1] = pickup_winners and global.num_of_coins < pickup_winners.cost {
+		or (pickups_array[1] = pickup_winners) and instance_exists(obj_slot_machine) 
+		or pickups_array[1] = pickup_winners and global.num_of_coins < pickup_winners.cost 
+		or (pickups_array[1] = pickup_hacker) and (instance_exists(obj_slot_machine) or instance_exists(obj_slowmo))
+		or pickups_array[1] = pickup_hacker and global.num_of_coins < pickup_hacker.cost {
 			draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 		}
 	}else {
@@ -410,8 +448,11 @@ if !(pickups_array[0].on_cooldown) and pickups_array[0] != pickup_nothing
 and !(pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 or (pickups_array[0] = pickup_winners and global.num_of_coins < pickup_winners.cost)
 or (pickups_array[0] = pickup_winners and instance_exists(obj_slot_machine))
+or (pickups_array[0] = pickup_hacker and global.num_of_coins < pickup_hacker.cost)
+or (pickups_array[0] = pickup_hacker) and (instance_exists(obj_slot_machine) or instance_exists(obj_slowmo))
 or pickups_array[0] = pickup_frenzy and frenzy = true
 or pickups_array[0] = pickup_invincibility and invincibility = true
+or pickups_array[0] = pickup_tripleshot and tripleshot = true 
 or pickups_array[0] = pickup_jolt and energy_buff > 0 
 or pickups_array[0] = pickup_pogomode and pogomode = true
 or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)) {
@@ -422,8 +463,11 @@ if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing
 and !(pickups_array[1] = pickup_shieldbubble and instance_exists(obj_shieldbubble) 
 or (pickups_array[1] = pickup_winners and global.num_of_coins < pickup_winners.cost)
 or (pickups_array[1] = pickup_winners and instance_exists(obj_slot_machine))
+or (pickups_array[1] = pickup_hacker and global.num_of_coins < pickup_hacker.cost)
+or pickups_array[1] = pickup_hacker and (instance_exists(obj_slot_machine) or instance_exists(obj_slowmo))
 or pickups_array[1] = pickup_frenzy and frenzy = true
 or pickups_array[1] = pickup_invincibility and invincibility = true
+or pickups_array[1] = pickup_tripleshot and tripleshot = true 
 or pickups_array[1] = pickup_jolt and energy_buff > 0 
 or pickups_array[1] = pickup_pogomode and pogomode = true
 or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)) {

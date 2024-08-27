@@ -248,12 +248,12 @@ if gun = sixshooter_gun and state = state_bouncing and key_fire_projectile {
 	}
 	sixshooter_held_num += 1;
 	fullauto_condtional = false;
-	sixshooter_gun.inaccuracy = 25;
+	sixshooter_gun.inaccuracy = 15;
 }
 if sixshooter_held = true and gun = sixshooter_gun {
 	if key_fire_projectile {
 		sixshooter_held_num += 1;
-		if sixshooter_held_num >= 30 {
+		if sixshooter_held_num >= 45 {
 			if fullauto_condtional = false {
 				fullauto_condtional = true;
 				sixshooter_gun.current_bullets += 0;
@@ -262,7 +262,7 @@ if sixshooter_held = true and gun = sixshooter_gun {
 				}
 				sixshooter_gun.spread_angle = 0;
 			}
-			sixshooter_gun.inaccuracy = 25;
+			sixshooter_gun.inaccuracy = 15;
 			if hspeed != 0 {
 				//sixshooter_gun.spread_angle += 4 * sign(hspeed);
 			}else {
@@ -274,7 +274,7 @@ if sixshooter_held = true and gun = sixshooter_gun {
 			}
 			shoot = true;
 		}
-	}else if !key_fire_projectile and sixshooter_held_num < 30 {
+	}else if !key_fire_projectile and sixshooter_held_num < 45 {
 		sixshooter_held_num = 0;
 		sixshooter_held = false;
 		fullauto_condtional = gun != sixshooter_gun;
@@ -334,6 +334,14 @@ if (canshoot > 0) {
 	//reset firerate
 	canshoot = ammo.firerate;
 	
+	if gun.spread_number = 1 and tripleshot = true {
+		if gun != water_gun and gun != laser_gun {
+			gun.spread_number = 3;
+		}
+	}else if gun.spread_number = 3 and tripleshot = false {
+		gun.spread_number = 1;
+	}
+	
 	//lerp firerate to end while shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_end, ammo.firerate_mult);
 	
@@ -352,7 +360,7 @@ if (canshoot > 0) {
 		}
 		
 		//decrease ammo count for spread weapons
-		if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false {
+		if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
 			gun.current_bullets -= 1;
 		}
 	}else {
@@ -374,6 +382,11 @@ if frenzy_time > 0 {
 if invincibility_time > 0 {
 	invincibility_time -= 1;	
 }
+
+if tripleshot_time > 0 {
+	tripleshot_time -= 1;	
+}
+
 
 if aerial_assassin_frenzy_count > 0 {
 	aerial_assassin_frenzy_count -= 1;

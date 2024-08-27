@@ -238,6 +238,17 @@ if (gun_name = "Boomerangs") {
 }
 
 if (gun_name = "Yo-yo") {
+	if obj_player.yoyo_gun.spread_number = 3 and offset_set = false {
+		if spread_index = 0 {
+			angle_offset = -obj_player.yoyo_gun.spread_angle;
+		}else if spread_index = 1 {
+			angle_offset = 0;
+		}else if spread_index = 2 {
+			angle_offset = obj_player.yoyo_gun.spread_angle;
+		}
+		ang = obj_player.angle+angle_offset;
+	}
+	
 	for(i = 0; i < array_length(yoyo_array); i++) {
 		if !place_meeting(x,y,yoyo_array[i]) {
 			array_delete(yoyo_array,i,1);
@@ -268,7 +279,9 @@ if (gun_name = "Yo-yo") {
 			}else {
 				//collision with player
 				instance_destroy();
-				audio_play_sound(snd_reload,0,false);
+				if spread_index = 0 {
+					audio_play_sound(snd_reload,0,false);
+				}
 			}
 		}
 	}else {
@@ -306,14 +319,14 @@ if (gun_name = "Yo-yo") {
 		}
 	}
 	
-	if abs(obj_player.angle - ang) > yoyo_spd * 2 {
+	if abs((obj_player.angle+angle_offset) - ang) > yoyo_spd * 2 {
 		var ang_max_spd = yoyo_spd / 2;
 	}else {
-		var ang_max_spd = (abs(((obj_player.angle - ang)/(yoyo_spd * 2)) + 0.1))*(yoyo_spd / 2);
+		var ang_max_spd = (abs((((obj_player.angle+angle_offset) - ang)/(yoyo_spd * 2)) + 0.1))*(yoyo_spd / 2);
 	}
 	
 	//adjust with angle
-	if ang < obj_player.angle {
+	if ang < obj_player.angle + angle_offset {
 		ang += ang_increase_speed;
 		ang += ang_decrease_speed;
 		if ang_increase_speed < ang_max_spd {
@@ -326,7 +339,7 @@ if (gun_name = "Yo-yo") {
 		}else {
 			ang_decrease_speed = 0;
 		}
-	}else if ang > obj_player.angle {
+	}else if ang > obj_player.angle + angle_offset {
 		ang += ang_increase_speed;
 		ang += ang_decrease_speed;
 		if ang_decrease_speed > -ang_max_spd {
@@ -511,4 +524,16 @@ if (gun_name = "Plasma Gun") {
 	}
 	
 	image_angle += 5;
+	
+	if obj_player.plasma_gun.spread_number = 1 {
+		angle_offset = 0;
+	}else if obj_player.plasma_gun.spread_number = 3 { //triple shot
+		if spread_index = 0 {
+			angle_offset = -obj_player.plasma_gun.spread_angle;
+		}else if spread_index = 1 {
+			angle_offset = 0;
+		}else if spread_index = 2 {
+			angle_offset = obj_player.plasma_gun.spread_angle;
+		}
+	}
 }

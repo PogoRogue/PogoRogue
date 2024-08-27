@@ -16,4 +16,6 @@ damage = 1;
 obj_player.state = obj_player.state_plasmacharge;
 obj_player.plasma_gun.current_bullets += 1;
 
-audio_play_sound(snd_plasma_charge,0,false);
+if !audio_is_playing(snd_plasma_charge) {
+	audio_play_sound(snd_plasma_charge,0,false);
+}

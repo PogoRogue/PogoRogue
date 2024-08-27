@@ -166,15 +166,13 @@ if animating = true and scale = 1 {
 
 if scr_Animation_Complete() and image_speed = 1 {
 	if sprite_index = spr_launchpad_left {
-		with rocket_1 {launched = true;}
-		audio_play_sound(snd_rocketwhoosh,0,false);
+		with rocket_1 {launched = true;audio_play_sound(snd_rocketwhoosh,0,false);}
 	}else if sprite_index = spr_launchpad_right {
-		with rocket_2 {launched = true;}
-		audio_play_sound(snd_rocketwhoosh,0,false);
+		with rocket_2 {launched = true;audio_play_sound(snd_rocketwhoosh,0,false);}
 	}else if sprite_index = spr_launchpad_both {
-		with rocket_1 {launched = true;}
-		with rocket_2 {launched = true;}
-		audio_play_sound(snd_rocketwhoosh,0,false);
+		with rocket_1 {launched = true;audio_play_sound(snd_rocketwhoosh,0,false);}
+		with rocket_2 {launched = true;audio_play_sound(snd_rocketwhoosh,0,false);}
+		
 	}
 	sprite_index = spr_launchpad_none;
 	image_speed = -1;	

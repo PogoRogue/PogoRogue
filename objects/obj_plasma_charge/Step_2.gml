@@ -11,7 +11,7 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 		sprite_index = other.orb_sprite;
 		x = obj_player.x+lengthdir_x(sprite_get_height(other.orb_sprite)/2,obj_player.angle-90);
 		y = obj_player.y+lengthdir_y(sprite_get_height(other.orb_sprite)/2,obj_player.angle-90);
-		angle = obj_player.angle-90;
+		angle = obj_player.angle-90 + angle_offset;
 		image_angle = angle;
 		
 		temp_charge = other.charge;
@@ -30,7 +30,9 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 		
 		created = true;	
 		audio_stop_sound(snd_plasma_charge);
-		audio_play_sound(snd_plasmagun,0,false);
+		if spread_index = 0 {
+			audio_play_sound(snd_plasmagun,0,false);
+		}
 		scr_Screen_Shake(3 + ((temp_charge/temp_charge_max)*4), 6 + ((temp_charge/temp_charge_max)*10), true);
 		hspd = lengthdir_x(other.orb_speed,angle);
 		vspd = lengthdir_y(other.orb_speed,angle);
@@ -43,7 +45,7 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 	if (charge < charge_max) {
 		charge += charge_max/frames_to_charge;
 	}
-	if obj_player.frenzy = false and obj_player.pogomode = false and obj_player.aerial_assassin_frenzy = false {
+	if obj_player.frenzy = false and obj_player.pogomode = false and obj_player.aerial_assassin_frenzy = false and spread_index = 0 {
 		obj_player.plasma_gun.current_bullets -= 1;
 	}
 	//scale orb up

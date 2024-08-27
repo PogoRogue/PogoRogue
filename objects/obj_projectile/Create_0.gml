@@ -74,14 +74,17 @@ if (gun_name = "Laser Gun") {
 			destroy_on_impact: destroy_on_impact,
 			full_sprite: spr_projectile_laser,
 			mask_index: spr_nothing,
-			rotation_speed: rotation_speed
+			rotation_speed: rotation_speed,
+			spread_index: spread_index
 		});
 	}
 }
 
 //missile
 if (gun_name = "Missile Launcher") {
-	sound = audio_play_sound(snd_rocketwhoosh,0,false);
+	if spread_index = 0 {
+		sound = audio_play_sound(snd_rocketwhoosh,0,false);
+	}
 	temp_angle = image_angle;
 	if collision_circle(x,y,160,obj_enemy_parent,false,true) != noone {
 		if(!boss_projectile){
@@ -137,7 +140,8 @@ if (gun_name = "Sniper Rifle") {
 			destroy_on_impact: destroy_on_impact,
 			full_sprite: spr_projectile_sniper_middle_held,
 			mask_index: spr_nothing,
-			rotation_speed: rotation_speed
+			rotation_speed: rotation_speed,
+			spread_index: spread_index
 		});
 	}
 	//image_angle = obj_player.image_angle-90;
@@ -159,21 +163,37 @@ yoyo_array2 = []; //retract array
 //yo-yo
 if (gun_name = "Yo-yo") {
 	yoyo_spd = 8 + (4 * global.strong_muscles);
-	audio_play_sound(snd_yoyo1,0,false);
+	if !audio_is_playing(snd_yoyo1) {
+		audio_play_sound(snd_yoyo1,0,false);
+	}
 	yoyo_num = 0;
 	with obj_projectile {
 		if (gun_name = "Yo-yo") {
 			other.yoyo_num += 1;	
 		}
 	}
-	if yoyo_num > 1 {
+	if yoyo_num > obj_player.yoyo_gun.spread_number {
 		if obj_player.frenzy = false and obj_player.aerial_assassin_frenzy = false and obj_player.pogomode = false {
 			instance_destroy();
 		}	
 	}
 	dist  = 0;
 	max_dist = yoyo_spd * 20; //160
-	ang = obj_player.angle;
+	if obj_player.yoyo_gun.spread_number = 1 {
+		ang = obj_player.angle;
+		angle_offset = 0;
+	}else if obj_player.yoyo_gun.spread_number = 3 { //triple shot
+		if spread_index = 0 {
+			angle_offset = -obj_player.yoyo_gun.spread_angle;
+		}else if spread_index = 1 {
+			angle_offset = 0;
+		}else if spread_index = 2 {
+			angle_offset = obj_player.yoyo_gun.spread_angle;
+		}
+		ang = obj_player.angle+angle_offset;
+		
+	}
+	offset_set = false;
 	ang_increase_speed = 0
 	ang_decrease_speed = 0;
 	x = obj_player.x + lengthdir_x(dist,ang-90);
@@ -206,7 +226,7 @@ if (gun_name = "Javelins") {
 	}
 }
 
-if gun_name = "Boomerangs" {
+if gun_name = "Boomerangs" and spread_index = 0 {
 	sound = audio_play_sound(snd_boomerangs,0,false);
 }
 
@@ -342,9 +362,9 @@ if (gun_name = "Puncher") {
 		puncher2_snd = 	snd_puncher1;
 	}
 	image_yscale = sign((2 * (obj_player.puncher_gun.current_bullets % 2)) - 1);
-	if image_yscale = 1 {
+	if image_yscale = 1 and spread_index = 0 {
 		audio_play_sound(puncher1_snd,0,false);
-	}else {
+	}else if spread_index = 0 {
 		audio_play_sound(puncher2_snd,0,false);
 	}
 	init_damage = damage;
@@ -364,10 +384,13 @@ or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Ele
 		random_snd = snd_sixshooter1;
 	}
 	random_set_seed(global.seed);
-	audio_play_sound(random_snd,0,false);
+	if !audio_is_playing(random_snd) and spread_index = 0 or obj_player.sixshooter_gun.inaccuracy != 5 and spread_index = 0 {
+		audio_play_sound(random_snd,0,false);
+	}
 	depth = obj_player.depth+5;
-	x = obj_player.x + lengthdir_x(62,image_angle);
-	y = obj_player.y + lengthdir_y(62,image_angle);
+	x = obj_player.x + lengthdir_x(94,image_angle);
+	y = obj_player.y + lengthdir_y(94,image_angle);
+	show_debug_message(image_angle);
 }
 
 //destroy projectile after 30 seconds if still exists
@@ -384,6 +407,7 @@ if (gun_name = "Plasma Gun") {
 	created = false;
 	with instance_create_depth(x,y,obj_player.depth+1,obj_plasma_charge) {
 		plasma_object = other;
+		spread_index = other.spread_index;
 		//instance_deactivate_object(plasma_object);	
 	}
 	trail_sprite = spr_plasma_trail1;
@@ -393,6 +417,20 @@ if (gun_name = "Plasma Gun") {
 	init_damage = damage;
 	colliding_with_enemy = false;
 	enemies_array = [];
+	
+	if obj_player.plasma_gun.spread_number = 1 {
+		angle_offset = 0;
+	}else if obj_player.plasma_gun.spread_number = 3 { //triple shot
+		if spread_index = 0 {
+			angle_offset = -obj_player.plasma_gun.spread_angle;
+		}else if spread_index = 1 {
+			angle_offset = 0;
+		}else if spread_index = 2 {
+			angle_offset = obj_player.plasma_gun.spread_angle;
+		}
+	}
+	create_trail = false;
+	create_trail_num = 0;
 }
 
 scr_Projectile_Bounce("Javelins");

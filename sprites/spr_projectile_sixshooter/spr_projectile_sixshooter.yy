@@ -3,7 +3,7 @@
   "%Name":"spr_projectile_sixshooter",
   "bboxMode":2,
   "bbox_bottom":19,
-  "bbox_left":34,
+  "bbox_left":0,
   "bbox_right":93,
   "bbox_top":12,
   "collisionKind":1,

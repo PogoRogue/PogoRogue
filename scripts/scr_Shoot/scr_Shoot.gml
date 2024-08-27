@@ -19,9 +19,14 @@ function scr_Shoot(){
 		}
 		
 		for (var i = 0; i < gun.spread_number; i++;) {
+			var number_in_spread = i;
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
 			if gun = sixshooter_gun {
-				var angle_ = image_angle + (gun.spread_angle);
+				if sixshooter_gun.spread_number = 1 {
+					var angle_ = image_angle + (gun.spread_angle);
+				}else {
+					var angle_ = image_angle + (i * 45) - ((gun.spread_number - 1) * (45 / 2));
+				}
 			}
 			var destroyOnImpact;
 			destroyOnImpact = gun.ammo[bullet_index].destroy_on_impact;
@@ -29,7 +34,9 @@ function scr_Shoot(){
 			if(global.steadyhands){
 				imageAngle = angle_ - 90;
 			}else{
+				randomize();
 				imageAngle = angle_ + (random_range(-gun.inaccuracy,gun.inaccuracy)*(gun.ammo[bullet_index].firerate_end/gun.ammo[bullet_index].firerate))  - 90;
+				random_set_seed(global.seed);
 			}
 			if(global.laststand and hp <= 8){
 				damage_multiplier *= 2;
@@ -52,6 +59,7 @@ function scr_Shoot(){
 					num_of_bounces: gun.ammo[bullet_index].num_of_bounces + global.bouncy_bullets,
 					bounce_amount: gun.ammo[bullet_index].bounce_amount,
 					damage: gun.ammo[bullet_index].damage * (1 + ((global.sharpshooter = true and gun.current_bullets = gun.bullets_per_bounce) * 0.5)) * damage_multiplier,
+					spread_index: number_in_spread,
 				});
 			}
 			
@@ -68,6 +76,10 @@ function scr_Shoot(){
 			//decrease ammo
 			if gun.spread_number = 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
 				gun.current_bullets -= 1;
+			}
+			
+			if gun.spread_number = 3 and gun._name = "Burst Fire Gun" and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+				gun.current_bullets -= 1/3;
 			}
 			
 			//allow upward flames
@@ -119,7 +131,7 @@ function scr_Shoot(){
 			}
 		
 		}else {
-			if audio_is_playing(snd_burstfire) {
+			if audio_is_playing(snd_burstfire) and burstfire_gun.spread_number = 1 {
 				audio_stop_sound(snd_burstfire);
 			}
 		}
@@ -140,6 +152,7 @@ function scr_Shoot(){
 			//rotation_delay = rotation_speed / 10;
 		}
 		
+		
 		current_burst += 1;
 		
 		if current_burst = gun.burst_number {
@@ -148,6 +161,7 @@ function scr_Shoot(){
 		
 		if gun._name = "Burst Fire Gun" and (gun.current_bullets % gun.burst_number) != 0 and current_burst = 0 {
 			gun.current_bullets = ceil(gun.current_bullets/gun.burst_number) * gun.burst_number;
+			show_debug_message(gun.current_bullets);
 		}
 		random_set_seed(global.seed);
 	}

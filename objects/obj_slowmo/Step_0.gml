@@ -1,6 +1,8 @@
-if obj_player.pickup_1 = obj_player.pickup_slowmo {  
+if obj_player.pickup_1 = obj_player.pickup_slowmo
+or obj_player.pickup_1 = obj_player.pickup_hacker and !instance_exists(obj_slot_machine) {  
 	key_select = global.key_pickup_1_pressed;
-}else if obj_player.pickup_2 = obj_player.pickup_slowmo {  
+}else if obj_player.pickup_2 = obj_player.pickup_slowmo 
+or obj_player.pickup_2 = obj_player.pickup_hacker and !instance_exists(obj_slot_machine) {  
 	key_select = global.key_pickup_2_pressed;
 }else {
 	key_select = 0;

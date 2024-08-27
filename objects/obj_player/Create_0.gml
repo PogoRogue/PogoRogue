@@ -93,6 +93,9 @@ grappling_hook = noone;
 invincibility = false;
 invincibility_time = 0;
 invincibility_time_max = 300 * global.bar_time_added;
+tripleshot = false;
+tripleshot_time = 0;
+tripleshot_time_max = 480 * global.bar_time_added;
 shieldbubble_obj = noone;
 harpoon_empty = false;
 harpooning = false;
@@ -1397,7 +1400,7 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_parachute, pickup_firedash, pickup_groundpound, 
 					pickup_hatgun, pickup_chargejump, pickup_shieldbubble,
 					pickup_target, pickup_blink, pickup_jetpack,
-					pickup_harpoon, pickup_frenzy, pickup_bulletblast,
+					pickup_tripleshot, pickup_frenzy, pickup_bulletblast,
 					pickup_slowmo, pickup_grappling, pickup_winners,
 					pickup_airbag, pickup_invincibility, pickup_pogomode,
 					pickup_launchpad, pickup_megabounce,pickup_jolt,

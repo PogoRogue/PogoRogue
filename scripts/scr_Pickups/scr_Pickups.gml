@@ -649,11 +649,11 @@ function scr_Pickups(){
 	
 	pickup_winners = {
 		_name: "Winner's Mentality",
-		tagline: "Spend 25 gold to summon a flying slot machine with a chance to win big. If you don't win, try again. That's what a winner \nwould do.",
+		tagline: "Spend 25 coins to summon a flying slot machine with a chance to win big. If you don't win, try again. That's what a winner \nwould do.",
 		gui_sprite: spr_pickup_winners,
 		max_cooldown_time: 0,
 		cooldown_time: 0,
-		cooldown_text: "Cooldown: " + "25 gold",
+		cooldown_text: "Cooldown: " + "25 coins",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -733,6 +733,38 @@ function scr_Pickups(){
 					invincibility = true;
 					invincibility_time = 300 * global.bar_time_added;
 					alarm[6] = 300 * global.bar_time_added;
+					audio_play_sound(snd_invincible,0,false);
+				}
+			}
+		}
+	};
+	
+	pickup_tripleshot = {
+	_name: "Triple Shot",
+	tagline: "For 8s, your single projectile weapons \nshoot in a spread of 3.",
+	gui_sprite: spr_pickup_tripleshot,
+	max_cooldown_time: 1500, //1800
+	cooldown_time: 1500,
+	cooldown_text: "Cooldown: " + string(1500 / 60) + "s",
+	on_cooldown: false,
+	states_to_call_in: all_states,
+	key_held: false,
+	reload_on_bounce: false,
+	max_uses_per_bounce: 0,
+	uses_per_bounce: 0,
+	bounce_reset: 1,
+	bounce_reset_max: 1,
+	enemies_count: 0,
+	enemies_count_max: 0,
+	text_color: make_color_rgb(211,160,104),
+	cost: 0,
+	is_synergy: false,
+	on_call: function() {
+			with obj_player {
+				if tripleshot = false {
+					tripleshot = true;
+					tripleshot_time = 480 * global.bar_time_added;
+					alarm[9] = 480 * global.bar_time_added;
 					audio_play_sound(snd_invincible,0,false);
 				}
 			}
@@ -917,9 +949,9 @@ function scr_Pickups(){
 		_name: "Jolt",
 		tagline: "Instantly reload all of your weapons, and generate 3 temporary energy hearts. Getting a kill zaps life back into an energy heart.",
 		gui_sprite: spr_pickup_synergy_jolt,
-		max_cooldown_time: 1200,
-		cooldown_time: 1200,
-		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		max_cooldown_time: 2400,
+		cooldown_time: 2400,
+		cooldown_text: "Cooldown: " + string(2400 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -976,7 +1008,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_synergy_hacker,
 		max_cooldown_time: 0,
 		cooldown_time: 0,
-		cooldown_text: "Cooldown: " + "25 gold",
+		cooldown_text: "Cooldown: " + "25 coins",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -994,7 +1026,16 @@ function scr_Pickups(){
 		base_item_sprite_2: spr_pickup_winners,
 		item_cost: 185, //only for synergies (item 1 + item 2 costs)
 		on_call: function() {
-			
+			if global.num_of_coins >= obj_player.pickup_hacker.cost and !instance_exists(obj_slot_machine) and !instance_exists(obj_slowmo) {
+				if !instance_exists(obj_slowmo) {
+					instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_slowmo,{hacker: true});
+				}
+				with obj_player {
+					instance_create_depth(x,y,depth,obj_slot_machine);
+					instance_create_depth(obj_player.x+lengthdir_x(34,obj_player.angle+90),obj_player.y+lengthdir_y(34,obj_player.angle+90),obj_player.depth,obj_coin25);
+				}
+				//on_cooldown = true;
+			}
 		}
 	};
 }
