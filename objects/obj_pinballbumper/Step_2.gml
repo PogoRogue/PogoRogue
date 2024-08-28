@@ -46,6 +46,10 @@ if spawned = true {
 				direction = prev_dir;
 			}
 			state = state_free;
+			with obj_parachute_dragster {
+				obj_player.dash_time = 0;
+				despawn = true;	
+			}
 		}
 	}
 

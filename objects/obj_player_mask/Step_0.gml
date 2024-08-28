@@ -24,7 +24,7 @@ if player_colliding = false {
 		left_corner = true;
 		alarm[0] = 5;
 	
-		other.parent_index.dash_time = 0;
+		//other.parent_index.dash_time = 0;
 	
 		//prevent groundpound collision glitch
 		if parent_index.state = parent_index.state_groundpound or parent_index.state = parent_index.state_parachute {
@@ -59,7 +59,7 @@ if player_colliding = false {
 		right_corner = true;
 		alarm[0] = 5;
 	
-		other.parent_index.dash_time = 0;
+		//other.parent_index.dash_time = 0;
 	
 		//prevent groundpound collision glitch
 		if parent_index.state = parent_index.state_groundpound or parent_index.state = parent_index.state_parachute {
@@ -93,7 +93,7 @@ if (place_meeting(x,y+parent_index.vspeed-1,obj_wallbottomleftcorner) and parent
 	bottom_left_corner = true;
 	alarm[0] = 2;
 	
-	other.parent_index.dash_time = 0;
+	//other.parent_index.dash_time = 0;
 	
 	if parent_index.state = parent_index.state_grappling {
 		if instance_exists(other.parent_index.grappling_hook) {
@@ -123,7 +123,7 @@ if (place_meeting(x,y+parent_index.vspeed-1,obj_wallbottomrightcorner) and paren
 	bottom_right_corner = true;
 	alarm[0] = 2;
 	
-	other.parent_index.dash_time = 0;
+	//other.parent_index.dash_time = 0;
 	
 	if parent_index.state = parent_index.state_grappling {
 		if instance_exists(other.parent_index.grappling_hook) {

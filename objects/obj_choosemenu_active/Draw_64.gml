@@ -2,7 +2,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
 draw_set_font(fnt_item_popup);
 draw_set_alpha(1); //alpha
-scr_Draw_Text_Outlined(center_x,center_y-140,"Choose your starting active item:", c_white);
+scr_Draw_Text_Outlined(center_x,center_y-140-32,"Choose an active item:", c_white);
 
 draw_set_font(fnt_itemdescription2);
 draw_set_halign(fa_center);
@@ -11,7 +11,7 @@ draw_set_valign(fa_center);
 //item sprites
 for (i = 0; i < array_length(actives_array); i++) {
 	var xx = (center_x - ((x_gap*select_x_max-x_gap)/2)) + (i % select_x_max) * x_gap;
-	var yy = 156 + floor(i / select_x_max) * y_gap;
+	var yy = 156-32 + floor(i / select_x_max) * y_gap;
 
 	//ACTIVES
 	if i < array_length(actives_array) {
@@ -31,7 +31,7 @@ for (i = 0; i < array_length(actives_array); i++) {
 //buttons
 for (i = 0; i < array_length(actives_array); i++) {
 	var xx = (center_x - ((x_gap*select_x_max-x_gap)/2)) + (i % select_x_max) * x_gap;
-	var yy = 156 + floor(i / select_x_max) * y_gap;
+	var yy = 156-32 + floor(i / select_x_max) * y_gap;
 	
 	if (select = i + 1) {
 		scr_Draw_Input_UI(xx,yy+4,18,0,fnt_combo2,fa_center,fa_middle);
@@ -48,15 +48,15 @@ for (i = 0; i < array_length(all_actives); i++) {
 		if select_x <= select_x_max/2 {
 			var xx = (center_x-384) + x_offset;
 		}else {
-			var xx = (center_x+384) - x_offset;
+			var xx = (center_x+380) - x_offset;
 		}
 			
-		if select_y > 3 {
-			var y_offset = -y_gap * (select_y-3);
+		if select_y > 4 {
+			var y_offset = -y_gap * (select_y-4);
 		}else {
 			var y_offset = 0;
 		}
 			
-		scr_Draw_Pickup_Description(xx,yy+y_offset,all_actives[i],0,true,all_pickups_costs[i]);
+		scr_Draw_Pickup_Description(xx,yy+y_offset-32,all_actives[i],0,true,all_pickups_costs[i]);
 	}
 }

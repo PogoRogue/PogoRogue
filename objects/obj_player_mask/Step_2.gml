@@ -48,7 +48,9 @@ if (place_meeting(x,y+parent_index.vspeed,obj_ground) and parent_index.vspeed < 
 							if other.parent_index.free = true {
 								other.parent_index.vspeed *= -0.5;
 								other._break3 = true;
-								other.parent_index.dash_time = 0;
+								if !instance_exists(obj_parachute_dragster) {
+									//other.parent_index.dash_time = 0;
+								}
 								other.top = true;
 								other.alarm[1] = 3;
 								if other.parent_index.state = other.parent_index.state_grappling {
@@ -100,7 +102,9 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed >
 						if place_meeting(bbox_left-other.parent_index.hspeed,y,other) and other.bbox_top < bbox_bottom - 12 {
 							other.parent_index.hspeed *= -0.35;
 							other._break = true;
-							other.parent_index.dash_time = 0;
+							if !instance_exists(obj_parachute_dragster) {
+								//other.parent_index.dash_time = 0;
+							}
 							other.right = true;
 							other.alarm[2] = 3;
 							if other.parent_index.state = other.parent_index.state_grappling {
@@ -149,7 +153,9 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed <
 						if place_meeting(bbox_right-other.parent_index.hspeed,y,other) and other.bbox_top < bbox_bottom - 12 {
 							other.parent_index.hspeed *= -0.35;
 							other._break2 = true;
-							other.parent_index.dash_time = 0;
+							if !instance_exists(obj_parachute_dragster) {
+								//other.parent_index.dash_time = 0;
+							}
 							other.left = true;
 							other.alarm[2] = 3;
 							if other.parent_index.state = other.parent_index.state_grappling {
@@ -213,7 +219,9 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed >= 0 {
 						if place_meeting(bbox_left,y,other) and other.bbox_top < bbox_bottom - 4 {
 							other.parent_index.hspeed *= -0.35;
 							other._break = true;
-							other.parent_index.dash_time = 0;
+							if !instance_exists(obj_parachute_dragster) {
+								//other.parent_index.dash_time = 0;
+							}
 							if other.parent_index.state = other.parent_index.state_grappling {
 								if instance_exists(other.parent_index.grappling_hook) {
 									other.parent_index.grappling_hook.retract = true;
@@ -253,7 +261,9 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed <= 0 {
 						if place_meeting(bbox_right,y,other) and other.bbox_top < bbox_bottom - 4 {
 							other.parent_index.hspeed *= -0.35;
 							other._break2 = true;
-							other.parent_index.dash_time = 0;
+							if !instance_exists(obj_parachute_dragster) {
+								//other.parent_index.dash_time = 0;
+							}
 							if other.parent_index.state = other.parent_index.state_grappling {
 								if instance_exists(other.parent_index.grappling_hook) {
 									other.parent_index.grappling_hook.retract = true;
@@ -294,7 +304,9 @@ if (place_meeting(x,y,obj_wallbutton) and parent_index.vspeed < 0) {
 							if other.parent_index.free = true {
 								other.parent_index.vspeed *= -0.35;
 								other._break3 = true;
-								other.parent_index.dash_time = 0;
+								if !instance_exists(obj_parachute_dragster) {
+									//other.parent_index.dash_time = 0;
+								}
 								if other.parent_index.state = other.parent_index.state_grappling {
 									if instance_exists(other.parent_index.grappling_hook) {
 										other.parent_index.grappling_hook.retract = true;

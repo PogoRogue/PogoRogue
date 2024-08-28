@@ -115,7 +115,7 @@ if ground_pound_slam = true or harpooning = true {
 		}
         draw_sprite_ext(sprite_index,image_index,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
 		if invincibility = true {
-			 draw_sprite_ext(spr_player_zekai_invincible,image_index,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
+			 //draw_sprite_ext(spr_player_zekai_invincible,image_index,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
 		}
 		//draw face during slam
 		draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90)+lengthdir_x(x_add*i,y_angle),y+lengthdir_y(hurt_yoffset,angle-90)+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
@@ -138,7 +138,7 @@ if ground_pound_slam = true or harpooning = true {
 //invincibility
 if invincibility = true and global.current_skin = 0 
 or pogomode = true and global.current_skin = 0 {
-	scr_Draw_Skin(spr_player_zekai_invincible,spr_player_zekai_invincible_falling,spr_player_zekai_invincible_charging,spr_player_zekai_invincible_portal);
+	//scr_Draw_Skin(spr_player_zekai_invincible,spr_player_zekai_invincible_falling,spr_player_zekai_invincible_charging,spr_player_zekai_invincible_portal);
 }
 
 
@@ -249,5 +249,9 @@ if state = state_shop or table = true {
 	}
 	
 	//sprite
-	draw_sprite_ext(spr_lockicon,1,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,c_white,1);	
+	if image_xscale = 1 {
+		draw_sprite_ext(spr_lockicon,1,x + lengthdir_x(distance,angle+90) + lengthdir_x(1,angle+180),y + lengthdir_y(distance,angle+90)+ lengthdir_y(1,angle+180),1,1,angle,c_white,1);	
+	}else {
+		draw_sprite_ext(spr_lockicon,1,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,c_white,1);	
+	}
 }

@@ -640,6 +640,16 @@ state_firedash = function() {
 		invincible = true;
 		speed = 10;
 		direction = image_angle+90;
+		with obj_player_mask {
+			if place_meeting(x+parent_index.hspeed,y,obj_ground) {
+				parent_index.x -= parent_index.hspeed * 2;
+				parent_index.hspeed = 0;
+			}
+			if place_meeting(x,y+parent_index.vspeed,obj_ground) {
+				parent_index.y -= parent_index.vspeed * 2;
+				parent_index.vspeed = 0;
+			}
+		}
 		min_flames_speed = speed;
 		scr_Screen_Shake(4, 4, true);
 		if !instance_exists(obj_player_flames_upward) {
@@ -652,6 +662,55 @@ state_firedash = function() {
 		dash_time = max_dash_time;
 		if instance_exists(obj_player_flames_upward) {
 			obj_player_flames_upward.despawn = true;	
+		}
+	}
+}
+
+state_dragster = function() {
+	
+	//cancel on re-press 
+	if (global.key_pickup_1_pressed and pickup_1 = pickup_dragster) 
+	or (global.key_pickup_2_pressed and pickup_2 = pickup_dragster) {
+		dash_time = 5;
+	}
+	
+	tutorialDash = true;
+	can_rotate = true;
+	can_shoot = false;
+	if dash_time > 0 {
+		if instance_exists(obj_parachute_dragster) {
+			if obj_parachute_dragster.opened = true or obj_parachute_dragster.opening = true {
+				if abs(speed) > 5 { 
+					speed -= 0.5 * sign(speed);
+				}else {
+					speed = 5;	
+				}
+			}
+			invincible = true;
+			direction = image_angle+90;
+			with obj_player_mask {
+				if place_meeting(x+parent_index.hspeed*2,y,obj_ground) {
+					parent_index.x -= parent_index.hspeed;
+					parent_index.hspeed = 0;
+				}
+				if place_meeting(x,y+parent_index.vspeed*2,obj_ground) {
+					parent_index.y -= parent_index.vspeed;
+					parent_index.vspeed = 0;
+				}
+			}
+			min_flames_speed = speed;
+			scr_Screen_Shake(2, 3, true);
+			if !instance_exists(obj_player_flames_upward) {
+				instance_create_depth(x,y,depth+1,obj_player_flames_upward,{dragster: true});	
+			}
+		}
+		dash_time -= 1;
+	}else {
+		speed = speed/1.5;
+		state = state_free;
+		dash_time = max_dash_time * 12;
+		if instance_exists(obj_player_flames_upward) {
+			obj_player_flames_upward.despawn = true;
 		}
 	}
 }
@@ -1404,7 +1463,7 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_slowmo, pickup_grappling, pickup_winners,
 					pickup_airbag, pickup_invincibility, pickup_pogomode,
 					pickup_launchpad, pickup_megabounce,pickup_jolt,
-					pickup_hacker]; //all pickups
+					pickup_hacker, pickup_blizzard, pickup_dragster]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();

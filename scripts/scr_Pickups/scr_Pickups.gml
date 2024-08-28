@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Pickups(){
 	
-	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute,state_shieldbubble,state_plasmacharge,state_megabounce,state_megabounce_charge];
+	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute,state_shieldbubble,state_plasmacharge,state_megabounce,state_megabounce_charge,state_dragster];
 
 	
 	pickup_nothing = {
@@ -1036,6 +1036,70 @@ function scr_Pickups(){
 				}
 				//on_cooldown = true;
 			}
+		}
+	};
+	
+	pickup_blizzard = {
+		_name: "Blizzard",
+		tagline: "",
+		gui_sprite: spr_pickup_synergy_blizzard,
+		max_cooldown_time: 2400,
+		cooldown_time: 2400,
+		cooldown_text: "Cooldown: " + string(2400 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		text_color: make_color_rgb(104,194,211),
+		cost: 0,
+		is_synergy: true,
+		base_item_sprite_1: spr_pickup_freeze,
+		base_item_sprite_2: spr_pickup_bulletblast,
+		item_cost: 155, //only for synergies (item 1 + item 2 costs)
+		on_call: function() {
+			
+		}
+	};
+	
+	pickup_dragster = {
+		_name: "Dragster",
+		tagline: "Perform a longer, more powerful Fire Dash. You shoot a parachute from your pogo stick to slow momentum and allow mid-dash turning. \nCancel on re-press.",
+		gui_sprite: spr_pickup_synergy_dragster,
+		max_cooldown_time: 900,
+		cooldown_time: 900,
+		cooldown_text: "Cooldown: " + string(900 / 60) + "s",
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		text_color: make_color_rgb(184,181,185),
+		cost: 0,
+		is_synergy: true,
+		base_item_sprite_1: spr_pickup_parachute,
+		base_item_sprite_2: spr_pickup_firedash,
+		item_cost: 115, //only for synergies (item 1 + item 2 costs)
+		on_call: function() {
+			cooldown_time = max_cooldown_time;
+			obj_player.state = obj_player.state_dragster;
+			obj_player.dash_time = obj_player.max_dash_time * 12;
+			obj_player.speed = 10;
+			if !instance_exists(obj_parachute_dragster) {
+				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth,obj_parachute_dragster);
+			}
+			//on_cooldown = true;
+			//audio_play_sound(snd_whoosh,0,false);
 		}
 	};
 }
