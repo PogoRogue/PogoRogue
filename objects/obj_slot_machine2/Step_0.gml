@@ -1,7 +1,13 @@
 if obj_player.pickups_array[0] = obj_player.pickup_hacker {
+	key = 1;
+}else if obj_player.pickups_array[1] = obj_player.pickup_hacker {
+	key = 2;
+}
+
+if key = 1 {
 	key_hack = global.key_pickup_1_pressed;
 	button_num = 4;
-}else if obj_player.pickups_array[1] = obj_player.pickup_hacker {
+}else if key = 2 {
 	key_hack = global.key_pickup_2_pressed;
 	button_num = 5;
 }

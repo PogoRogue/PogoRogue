@@ -20,3 +20,5 @@ particle_spawn_gap = 1;
 alarm[3] = 1;
 scr_Create_Flames();
 released = false;
+
+audio_play_sound(snd_dragster,0,false);

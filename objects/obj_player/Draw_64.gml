@@ -185,7 +185,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 			draw_sprite(spr_synergy_animation,synergy_frame,48,88);
 		}
 		draw_sprite(pickups_array[0].gui_sprite,1,48,88);
-		//shield bubble / slow mo darkening
+		//darkening
 		if pickups_array[0] = pickup_shieldbubble and instance_exists(obj_shieldbubble)
 		or pickups_array[0] = pickup_slowmo and instance_exists(obj_slowmo)
 		or pickups_array[0] = pickup_frenzy and frenzy = true 
@@ -198,7 +198,16 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		or (pickups_array[0] = pickup_winners) and instance_exists(obj_slot_machine) 
 		or pickups_array[0] = pickup_winners and global.num_of_coins < pickup_winners.cost 
 		or (pickups_array[0] = pickup_hacker) and (instance_exists(obj_slot_machine2) or instance_exists(obj_slowmo))
-		or pickups_array[0] = pickup_hacker and global.num_of_coins < pickup_hacker.cost {
+		or pickups_array[0] = pickup_hacker and global.num_of_coins < pickup_hacker.cost 
+		or pickups_array[0] = pickup_chargejump and state = state_chargejump
+		or pickups_array[0] = pickup_groundpound and state = state_groundpound
+		or pickups_array[0] = pickup_bulletblast and state = state_bulletblast
+		or pickups_array[0] = pickup_grappling and pickup_grappling.uses_per_bounce = 0
+		or pickups_array[0] = pickup_harpoon and pickup_harpoon.uses_per_bounce = 0
+		or pickups_array[0] = pickup_megabounce and (state = state_megabounce or state = state_megabounce_charge)
+		or pickups_array[0] = pickup_blizzard and instance_exists(obj_blizzard)
+		or pickups_array[0] = pickup_dragster and instance_exists(obj_parachute_dragster)
+		{
 			draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);
 		}
 	}else if pickups_array[0].cost <= 0 {
@@ -319,7 +328,16 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		or (pickups_array[1] = pickup_winners) and instance_exists(obj_slot_machine) 
 		or pickups_array[1] = pickup_winners and global.num_of_coins < pickup_winners.cost 
 		or (pickups_array[1] = pickup_hacker) and (instance_exists(obj_slot_machine2) or instance_exists(obj_slowmo))
-		or pickups_array[1] = pickup_hacker and global.num_of_coins < pickup_hacker.cost {
+		or pickups_array[1] = pickup_hacker and global.num_of_coins < pickup_hacker.cost 
+		or pickups_array[1] = pickup_chargejump and state = state_chargejump
+		or pickups_array[1] = pickup_groundpound and state = state_groundpound
+		or pickups_array[1] = pickup_bulletblast and state = state_bulletblast
+		or pickups_array[1] = pickup_grappling and pickup_grappling.uses_per_bounce = 0
+		or pickups_array[1] = pickup_harpoon and pickup_harpoon.uses_per_bounce = 0
+		or pickups_array[1] = pickup_megabounce and (state = state_megabounce or state = state_megabounce_charge)
+		or pickups_array[1] = pickup_blizzard and instance_exists(obj_blizzard)
+		or pickups_array[1] = pickup_dragster and instance_exists(obj_parachute_dragster)
+		{
 			draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 		}
 	}else {
@@ -455,7 +473,14 @@ or pickups_array[0] = pickup_invincibility and invincibility = true
 or pickups_array[0] = pickup_tripleshot and tripleshot = true 
 or pickups_array[0] = pickup_jolt and energy_buff > 0 
 or pickups_array[0] = pickup_pogomode and pogomode = true
-or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)) {
+or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)
+or pickups_array[0] = pickup_chargejump and state = state_chargejump
+or pickups_array[0] = pickup_groundpound and state = state_groundpound
+or pickups_array[0] = pickup_bulletblast and state = state_bulletblast
+or pickups_array[0] = pickup_grappling and pickup_grappling.uses_per_bounce = 0
+or pickups_array[0] = pickup_harpoon and pickup_harpoon.uses_per_bounce = 0
+or pickups_array[0] = pickup_megabounce and (state = state_megabounce or state = state_megabounce_charge)
+or pickups_array[0] = pickup_blizzard and instance_exists(obj_blizzard)) {
 	scr_Draw_Input_UI(48,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
 }
 //button 2
@@ -470,7 +495,14 @@ or pickups_array[1] = pickup_invincibility and invincibility = true
 or pickups_array[1] = pickup_tripleshot and tripleshot = true 
 or pickups_array[1] = pickup_jolt and energy_buff > 0 
 or pickups_array[1] = pickup_pogomode and pogomode = true
-or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)) {
+or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)
+or pickups_array[1] = pickup_chargejump and state = state_chargejump
+or pickups_array[1] = pickup_groundpound and state = state_groundpound
+or pickups_array[1] = pickup_bulletblast and state = state_bulletblast
+or pickups_array[1] = pickup_grappling and pickup_grappling.uses_per_bounce = 0
+or pickups_array[1] = pickup_harpoon and pickup_harpoon.uses_per_bounce = 0
+or pickups_array[1] = pickup_megabounce and (state = state_megabounce or state = state_megabounce_charge)
+or pickups_array[1] = pickup_blizzard and instance_exists(obj_blizzard)) {
 	scr_Draw_Input_UI(103,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
 }
 

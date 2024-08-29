@@ -56,7 +56,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 0 + global.bouncy_bullets,
 		bounce_amount: 1,
-		damage: 4
+		damage: 6
 	};
 	
 	bulletblast_bullet = {
@@ -75,7 +75,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: -1,
 		bounce_amount: 1,
-		damage: 8
+		damage: 6
 	};
 
 	paintball_bullet = {

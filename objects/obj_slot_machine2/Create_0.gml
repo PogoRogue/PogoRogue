@@ -22,7 +22,7 @@ handle_frame = 0;
 handle_done = false; //animate once
 pull_handle = false;
 spin = false;
-spin_time = 15; //7
+spin_time = 13; //7
 num_of_spins = 30;
 jackpot_index = 1;
 jackpot = false;
@@ -93,3 +93,9 @@ jackpot_sound = audio_play_sound(snd_nothing,0,false);
 propeller_sound = audio_play_sound(snd_slotmachine_propeller,0,true);
 audio_sound_gain(propeller_sound, 0, 0);
 audio_sound_gain(propeller_sound, 1, 750);
+
+if obj_player.pickups_array[0] = obj_player.pickup_hacker {
+	key = 1;
+}else if obj_player.pickups_array[1] = obj_player.pickup_hacker {
+	key = 2;
+}

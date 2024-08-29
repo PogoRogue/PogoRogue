@@ -16,3 +16,7 @@ with obj_flames_particle {
 		image_index  = 2;
 	}
 }
+
+if audio_is_playing(snd_dragster) {
+	audio_stop_sound(snd_dragster);	
+}

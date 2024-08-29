@@ -92,7 +92,7 @@ function scr_Pickups(){
 	
 	pickup_hatgun = {
 		_name: "Hat Gun",
-		tagline: "Shoot 3 pistol bullets from your head per bounce.",
+		tagline: "Shoot a bullet from your head. Each bounce, reload one bullet to a maximum of 3.",
 		gui_sprite: spr_pickup_hatgun,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
@@ -1041,13 +1041,13 @@ function scr_Pickups(){
 	
 	pickup_blizzard = {
 		_name: "Blizzard",
-		tagline: "",
+		tagline: "Summon a windy, icy blizzard that cuts through all enemies around you. It doesn't hurt you because you're built different.",
 		gui_sprite: spr_pickup_synergy_blizzard,
 		max_cooldown_time: 2400,
 		cooldown_time: 2400,
 		cooldown_text: "Cooldown: " + string(2400 / 60) + "s",
 		on_cooldown: false,
-		states_to_call_in: [state_free],
+		states_to_call_in: all_states,
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
@@ -1063,7 +1063,9 @@ function scr_Pickups(){
 		base_item_sprite_2: spr_pickup_bulletblast,
 		item_cost: 155, //only for synergies (item 1 + item 2 costs)
 		on_call: function() {
-			
+			if !instance_exists(obj_blizzard) {
+				instance_create_depth(0,0,obj_player_health.depth+1,obj_blizzard)
+			}
 		}
 	};
 	
@@ -1099,7 +1101,7 @@ function scr_Pickups(){
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth,obj_parachute_dragster);
 			}
 			//on_cooldown = true;
-			//audio_play_sound(snd_whoosh,0,false);
+			audio_play_sound(snd_whoosh,0,false);
 		}
 	};
 }

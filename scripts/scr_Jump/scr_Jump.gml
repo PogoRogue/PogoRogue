@@ -53,7 +53,7 @@ function scr_Jump(add_to_jump){
 		if pickups_array[0] != pickup_jetpack {
 			pickups_array[0].bounce_reset -= 1;
 			if pickups_array[0].bounce_reset <= 0 {
-				pickups_array[0].uses_per_bounce = pickups_array[0].max_uses_per_bounce;
+				//pickups_array[0].uses_per_bounce = pickups_array[0].max_uses_per_bounce;
 				pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
 				pickups_array[0].on_cooldown = false;
 				pickups_array[0].bounce_reset = pickups_array[0].bounce_reset_max;
@@ -74,7 +74,7 @@ function scr_Jump(add_to_jump){
 		if pickups_array[1] != pickup_jetpack {
 			pickups_array[1].bounce_reset -= 1;
 			if pickups_array[1].bounce_reset <= 0 {
-				pickups_array[1].uses_per_bounce = pickups_array[1].max_uses_per_bounce;
+				//pickups_array[1].uses_per_bounce = pickups_array[1].max_uses_per_bounce;
 				pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
 				pickups_array[1].on_cooldown = false;
 				pickups_array[1].bounce_reset = pickups_array[1].bounce_reset_max;
@@ -92,7 +92,9 @@ function scr_Jump(add_to_jump){
 	}
 	
 	//hat gun
-	pickup_hatgun.uses_per_bounce = pickup_hatgun.max_uses_per_bounce;
+	if pickup_hatgun.uses_per_bounce < pickup_hatgun.max_uses_per_bounce {
+		pickup_hatgun.uses_per_bounce += 1;
+	}
 	pickup_hatgun.on_cooldown = false;
 	
 	//grappling helmet

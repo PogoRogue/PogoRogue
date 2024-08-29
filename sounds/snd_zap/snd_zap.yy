@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.755488,
+  "duration":0.450907,
   "name":"snd_zap",
   "parent":{
     "name":"Items",

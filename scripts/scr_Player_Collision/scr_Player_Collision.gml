@@ -23,6 +23,7 @@ function scr_Player_Collision(){
 				player_y = other.y;
 				mask_index = spr_nothing;
 				obj_player.launchpad = true;
+				audio_play_sound(snd_launchpad,0,false);
 			}
 		}
 	}

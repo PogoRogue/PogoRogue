@@ -374,6 +374,15 @@ state_chargejump = function() {
 }
 
 state_groundpound = function() {
+	
+	if instance_exists(obj_blizzard) {
+		hspeed = -(obj_blizzard.white_alpha)*4;
+		if ground_pound_slam = true {
+			vspeed = (obj_blizzard.white_alpha);
+		}
+		scr_Player_Collision();
+	}
+			
 	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
 		sprite_index = player_sprite;
 	}
@@ -437,6 +446,8 @@ state_groundpound = function() {
 						player_y = other.y;
 						sprite_index = spr_launchpad_both;
 						mask_index = spr_nothing;
+						audio_play_sound(snd_launchpad,0,false);
+						audio_play_sound(snd_launchpad,0,false);
 					}
 				}
 			}
@@ -485,6 +496,13 @@ state_megabounce = function() {
 	
 	//slam
 	if ground_pound_slam = true {
+		if instance_exists(obj_blizzard) {
+			hspeed = -(obj_blizzard.white_alpha)*4;
+			if ground_pound_slam = true {
+				vspeed = (obj_blizzard.white_alpha);
+			}
+			scr_Player_Collision();
+		}
 		if (angle != 0)	{
 			var angle_side = sign(angle);
 			angle += rotation_speed*sign(-angle);
@@ -514,6 +532,7 @@ state_megabounce = function() {
 						player_y = other.y;
 						sprite_index = spr_launchpad_both;
 						mask_index = spr_nothing;
+						audio_play_sound(snd_launchpad,0,false);
 					}
 				}
 				launchpad = true;
@@ -640,13 +659,19 @@ state_firedash = function() {
 		invincible = true;
 		speed = 10;
 		direction = image_angle+90;
+		if instance_exists(obj_blizzard) and hspeed > -4 {
+			x -= (obj_blizzard.white_alpha)*4;
+			if ground_pound_slam = true {
+				y += (obj_blizzard.white_alpha)*2;
+			}
+		}
 		with obj_player_mask {
-			if place_meeting(x+parent_index.hspeed,y,obj_ground) {
-				parent_index.x -= parent_index.hspeed * 2;
+			if place_meeting(x+parent_index.hspeed*2,y,obj_ground) {
+				parent_index.x -= parent_index.hspeed;
 				parent_index.hspeed = 0;
 			}
-			if place_meeting(x,y+parent_index.vspeed,obj_ground) {
-				parent_index.y -= parent_index.vspeed * 2;
+			if place_meeting(x,y+parent_index.vspeed*2,obj_ground) {
+				parent_index.y -= parent_index.vspeed;
 				parent_index.vspeed = 0;
 			}
 		}
@@ -688,6 +713,12 @@ state_dragster = function() {
 			}
 			invincible = true;
 			direction = image_angle+90;
+				if instance_exists(obj_blizzard) and hspeed > -4 {
+				hspeed -= (obj_blizzard.white_alpha)*4;
+				if ground_pound_slam = true {
+					vspeed += (obj_blizzard.white_alpha)*2;
+				}
+			}
 			with obj_player_mask {
 				if place_meeting(x+parent_index.hspeed*2,y,obj_ground) {
 					parent_index.x -= parent_index.hspeed;
@@ -962,6 +993,8 @@ state_parachute = function() {
 		}else if hspeed < 0 {
 			motion_add(0,h_grv);
 		}	
+		
+		
 	}else {
 		//re-center
 		if (angle != 0)	{
@@ -999,6 +1032,10 @@ state_parachute = function() {
 			}	
 		}
 		
+		if instance_exists(obj_blizzard) and hspeed > -8 {
+			x -= (4*obj_blizzard.white_alpha);
+		}
+		
 		//move left and right
 		if angle = 0 {
 			if hspeed % 0.25 != 0 {
@@ -1016,6 +1053,9 @@ state_parachute = function() {
 			if global.key_right_player {
 				if hspeed < 4 {
 					hspeed += 0.25;
+					if instance_exists(obj_blizzard) {
+						hspeed += 0.5;
+					}
 				}
 				if obj_parachute.angle_add < 4 {
 					obj_parachute.angle_add += 0.25;
