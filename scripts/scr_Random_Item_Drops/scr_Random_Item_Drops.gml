@@ -200,7 +200,7 @@ function scr_Get_Rand_Pickup_Object()
 	global.active_chest_num += 1;
 	var list_of_possible_pickups = [obj_item_pickup_reload, obj_item_pickup_freeze,obj_item_pickup_emergency, 
 							obj_item_pickup_parachute, obj_item_pickup_firedash, obj_item_pickup_groundpound, 
-							obj_item_pickup_hatgun, obj_item_pickup_chargejump,obj_item_pickup_shieldbubble,
+							obj_item_pickup_hatgun, obj_item_pickup_chargejump,obj_item_pickup_volleyball,
 							obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
 							obj_item_pickup_tripleshot, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
 							obj_item_pickup_slowmo, obj_item_pickup_grappling, obj_item_pickup_winners,

@@ -57,3 +57,10 @@ with obj_player {
 		vspeed += (0.06*other.white_alpha);
 	}
 }
+
+with obj_volleyball {
+	if hspeed > -8 {
+		hspeed -= (0.15*other.white_alpha);
+	}
+	vspeed += (0.06*other.white_alpha);
+}

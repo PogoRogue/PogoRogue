@@ -76,6 +76,12 @@ if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 	
+	if gun_name = "Bouncy Ball Blaster" {
+		randomize();
+		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+		random_set_seed(global.seed);	
+	}
+	
 }else if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0 )
 or (place_meeting(x,y+vspd,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) /*and gun_name != "Puncher"*/ { //top
 	while !place_meeting(x,y+sign(vspd),obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) /*and gun_name != "Puncher"*/) {
@@ -89,6 +95,12 @@ or (place_meeting(x,y+vspd,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_gro
 		alarm[1] = 5;
 	}else if (gun_name != "The Portal") {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
+	}
+	
+	if gun_name = "Bouncy Ball Blaster" {
+		randomize();
+		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+		random_set_seed(global.seed);
 	}
 
 	
@@ -112,6 +124,12 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) {
 	}else if (gun_name != "The Portal") {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
+	
+	if gun_name = "Bouncy Ball Blaster" {
+		randomize();
+		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+		random_set_seed(global.seed);
+	}
 
 }
 //right
@@ -127,6 +145,12 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0 ) {
 		alarm[1] = 5;
 	}else if (gun_name != "The Portal") {
 		image_angle = point_direction(x,y,x+hspd,y+vspd);	
+	}
+	
+	if gun_name = "Bouncy Ball Blaster" {
+		randomize();
+		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+		random_set_seed(global.seed);
 	}
 	
 }

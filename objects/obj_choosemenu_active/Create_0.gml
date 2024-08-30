@@ -43,7 +43,7 @@ alarm[1] = 2;
 scr_All_Actives_Array();
 actives_array = [obj_item_pickup_reload, obj_item_pickup_freeze, obj_item_pickup_emergency, 
 				obj_item_pickup_parachute, obj_item_pickup_firedash, obj_item_pickup_groundpound, 
-				obj_item_pickup_hatgun, obj_item_pickup_chargejump, obj_item_pickup_shieldbubble,
+				obj_item_pickup_hatgun, obj_item_pickup_chargejump, obj_item_pickup_volleyball,
 				obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
 				obj_item_pickup_tripleshot, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
 				obj_item_pickup_slowmo, obj_item_pickup_grappling,obj_item_pickup_winners,

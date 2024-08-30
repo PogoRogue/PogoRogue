@@ -15,7 +15,7 @@ function scr_Jump(add_to_jump){
 	}
 	hspeed += conveyor_speed;
 	conveyor_speed = 0;
-	sprite_index = player_sprite;
+	sprite_index = falling_sprite;
 	image_speed = 0;
 	image_index = 0; //reset animation to starting frame
 	animation_complete = false;

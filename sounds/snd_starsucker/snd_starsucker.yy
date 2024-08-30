@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":0.766667,
   "name":"snd_starsucker",
   "parent":{
     "name":"Weapons",

@@ -220,13 +220,6 @@ state_free = function() {
 		motion_add(0,h_grv);
 	}
 	
-	scr_Player_Collision();
-	
-	//make sure player isn't colliding with anything before checking for collisions again
-	if !(place_meeting(x,y,obj_ground)) and free = false {
-		free = true;	
-	}
-	
 	//falling animation
 	sprite_index = falling_sprite;
 	
@@ -238,6 +231,13 @@ state_free = function() {
 		image_index = 1;
 	}else {
 		image_index = 0;
+	}
+	
+	scr_Player_Collision();
+	
+	//make sure player isn't colliding with anything before checking for collisions again
+	if !(place_meeting(x,y,obj_ground)) and free = false {
+		free = true;	
 	}
 	
 	//restart room if reached the top unless procgen room
@@ -274,6 +274,10 @@ state_free = function() {
 }
 
 state_bouncing = function() {
+	if sprite_index != player_sprite and image_index != 0 {
+		image_index = 0;
+	}
+	sprite_index = player_sprite; //set sprite
 	bouncing = true;
 	//on create
 	if floor(image_index) = 0 {
@@ -281,7 +285,6 @@ state_bouncing = function() {
 		can_shoot = true;
 	}
 	free = false;
-	sprite_index = player_sprite; //set sprite
 	
 	//animate before bouncing
 	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
@@ -713,20 +716,20 @@ state_dragster = function() {
 			}
 			invincible = true;
 			direction = image_angle+90;
-				if instance_exists(obj_blizzard) and hspeed > -4 {
-				hspeed -= (obj_blizzard.white_alpha)*4;
-				if ground_pound_slam = true {
-					vspeed += (obj_blizzard.white_alpha)*2;
-				}
+			if instance_exists(obj_blizzard) and hspeed > -8 {
+				hspeed -= (obj_blizzard.white_alpha)*2;
+				vspeed += (obj_blizzard.white_alpha);
 			}
 			with obj_player_mask {
 				if place_meeting(x+parent_index.hspeed*2,y,obj_ground) {
 					parent_index.x -= parent_index.hspeed;
 					parent_index.hspeed = 0;
+					can_rotate = false;
 				}
 				if place_meeting(x,y+parent_index.vspeed*2,obj_ground) {
 					parent_index.y -= parent_index.vspeed;
 					parent_index.vspeed = 0;
+					can_rotate = false;
 				}
 			}
 			min_flames_speed = speed;
@@ -1497,7 +1500,7 @@ scr_Pickups();
 num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
 all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency, 
 					pickup_parachute, pickup_firedash, pickup_groundpound, 
-					pickup_hatgun, pickup_chargejump, pickup_shieldbubble,
+					pickup_hatgun, pickup_chargejump, pickup_volleyball,
 					pickup_target, pickup_blink, pickup_jetpack,
 					pickup_tripleshot, pickup_frenzy, pickup_bulletblast,
 					pickup_slowmo, pickup_grappling, pickup_winners,

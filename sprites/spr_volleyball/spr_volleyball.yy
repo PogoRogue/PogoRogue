@@ -2,10 +2,10 @@
   "$GMSprite":"",
   "%Name":"spr_volleyball",
   "bboxMode":0,
-  "bbox_bottom":65,
-  "bbox_left":0,
-  "bbox_right":65,
-  "bbox_top":0,
+  "bbox_bottom":64,
+  "bbox_left":1,
+  "bbox_right":64,
+  "bbox_top":1,
   "collisionKind":2,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -13,12 +13,15 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"","%Name":"fd496fcf-8a05-4801-93d4-ae10f64e71ca","name":"fd496fcf-8a05-4801-93d4-ae10f64e71ca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"79459be4-9ec7-49f0-86b5-659acb57bde1","name":"79459be4-9ec7-49f0-86b5-659acb57bde1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"72a39127-34f9-48f0-b001-7f982b045adf","name":"72a39127-34f9-48f0-b001-7f982b045adf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":8,
   "gridY":8,
   "height":66,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"a69de064-f08c-434e-9c04-64e4f530ccfb","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"a69de064-f08c-434e-9c04-64e4f530ccfb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"f4b97701-1084-406c-b936-a9524131b7d2","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"f4b97701-1084-406c-b936-a9524131b7d2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_volleyball",
@@ -49,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":3.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -71,6 +74,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fd496fcf-8a05-4801-93d4-ae10f64e71ca","path":"sprites/spr_volleyball/spr_volleyball.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"0e6798b8-ca0e-4cbf-a6e7-fbf901b031af","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"79459be4-9ec7-49f0-86b5-659acb57bde1","path":"sprites/spr_volleyball/spr_volleyball.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d8be65e4-b945-4b4b-ab87-0c37fd7513f3","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"72a39127-34f9-48f0-b001-7f982b045adf","path":"sprites/spr_volleyball/spr_volleyball.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"e996b8cf-e51c-4878-b0ff-1867b22b4958","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

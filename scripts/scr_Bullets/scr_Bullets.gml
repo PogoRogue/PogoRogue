@@ -206,7 +206,7 @@ function scr_Bullets(){
 		flash_frame: 12,
 		grav_affected: false,
 		grv: obj_player.grv,
-		num_of_bounces: 3,
+		num_of_bounces: 2,
 		bounce_amount: 1,
 		damage: 4
 	};

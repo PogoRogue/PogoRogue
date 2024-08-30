@@ -771,6 +771,39 @@ function scr_Pickups(){
 		}
 	};
 	
+	pickup_volleyball = {
+		_name: "Volleyball",
+		tagline: "Create a giant bouncy volleyball above your head. It can be spiked by the player when collided with and it damages enemies on conact.",
+		gui_sprite: spr_pickup_volleyball,
+		max_cooldown_time: -1,
+		cooldown_time: -1 ,
+		cooldown_text: "Cooldown: Every 10 bounces",
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: true,
+		max_uses_per_bounce: 1,
+		uses_per_bounce: 1,
+		bounce_reset: 10,
+		bounce_reset_max: 10,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		text_color: make_color_rgb(242,240,229),
+		cost: 0,
+		is_synergy: false,
+		on_call: function() {
+			with obj_player {
+				audio_play_sound(snd_blink_respawn,0,false);
+				if instance_exists(obj_volleyball) {
+					obj_volleyball.despawn = true;
+				}
+				pickup_volleyball.on_cooldown = true;
+				pickup_volleyball.bounce_reset = pickup_volleyball.bounce_reset_max;
+				instance_create_depth(x+lengthdir_x(128,image_angle+90),y+lengthdir_y(128,image_angle+90),depth+1,obj_volleyball);
+			}
+		}
+	};
+	
 	pickup_harpoon = {
 		_name: "Harpoon Helmet",
 		tagline: "Fire a sharp harpoon from the top of your head that attaches to walls. Dash through enemies who dare \nstand in your path.",

@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-if closed = false and (obj_player.y < y - 32 or obj_player.x < x and obj_player.y < y or obj_player.x > x + sprite_width and obj_player.y < y) {
+if closed = false and (obj_player.y < y - 1 or obj_player.x < x and obj_player.y < y or obj_player.x > x + sprite_width and obj_player.y < y) {
 	closed = true;	
 	image_speed = -1;
 	mask_index = spr_gate_close_new;
