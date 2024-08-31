@@ -207,6 +207,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		or pickups_array[0] = pickup_megabounce and (state = state_megabounce or state = state_megabounce_charge)
 		or pickups_array[0] = pickup_blizzard and instance_exists(obj_blizzard)
 		or pickups_array[0] = pickup_dragster and instance_exists(obj_parachute_dragster)
+		or pickups_array[0] = pickup_wreckingball and instance_exists(obj_wreckingball)
 		{
 			draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);
 		}
@@ -337,6 +338,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		or pickups_array[1] = pickup_megabounce and (state = state_megabounce or state = state_megabounce_charge)
 		or pickups_array[1] = pickup_blizzard and instance_exists(obj_blizzard)
 		or pickups_array[1] = pickup_dragster and instance_exists(obj_parachute_dragster)
+		or pickups_array[1] = pickup_wreckingball and instance_exists(obj_wreckingball)
 		{
 			draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 		}

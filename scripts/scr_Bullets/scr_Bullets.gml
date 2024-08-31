@@ -495,4 +495,23 @@ function scr_Bullets(){
 		bounce_amount: 1,
 		damage: 8
 	};
+	
+	wreckingball_bullet = {
+		sprite: spr_wreckingball,
+		gui_sprite: spr_nothing,
+		spd: 4,                          
+		firerate_start: 1,               
+		firerate_end: 1,                 
+		firerate_mult: 0,               
+		firerate: 1,                     
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 5, frames: 8},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 8
+	};
 }

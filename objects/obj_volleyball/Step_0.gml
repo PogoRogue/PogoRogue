@@ -26,9 +26,16 @@ if cant_spawn = false {
 			scale = 1.25;	
 		}
 		hspeed *= -bounce_decay;
-		randomize();
-		audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
-		random_set_seed(global.seed);
+		if distance_to_object(obj_player) < 1200 {
+			randomize();
+			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
+			random_set_seed(global.seed);
+			if distance_to_object(obj_player) > 384 {
+				audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
+			}else {
+				audio_group_set_gain(audiogroup_volleyball,1,100);	
+			}
+		}
 	}
 
 	if place_meeting(x,y+vspeed,obj_ground) and !place_meeting(x,y,obj_room_gate_open) and !place_meeting(x,y,obj_room_gate_open_width_fitting) {
@@ -47,7 +54,16 @@ if cant_spawn = false {
 			vspeed = 4 * sign(vspeed);
 			vspeed *= -1;
 		}
-		audio_play_sound(snd_volleyball_bounce,0,false);
+		if distance_to_object(obj_player) < 1200 {
+			randomize();
+			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
+			random_set_seed(global.seed);
+			if distance_to_object(obj_player) > 384 {
+				audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
+			}else {
+				audio_group_set_gain(audiogroup_volleyball,1,100);	
+			}
+		}
 	}
 
 	if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspeed > 0 {
@@ -65,7 +81,17 @@ if cant_spawn = false {
 		}else {
 			vspeed *= -1;
 		}
-		audio_play_sound(snd_volleyball_bounce,0,false);
+		if distance_to_object(obj_player) < 1200 {
+			randomize();
+			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
+			random_set_seed(global.seed);
+			if distance_to_object(obj_player) > 384 {
+				audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
+			}else {
+				audio_group_set_gain(audiogroup_volleyball,1,100);	
+			}
+		}
+		
 	}
 	
 	if scale > 1 {

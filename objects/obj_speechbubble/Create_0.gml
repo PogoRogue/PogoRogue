@@ -12,8 +12,8 @@ chars_per_line = 15;
 play_sound = false;
 image_speed = 0;
 image_index = 0;
-current_text = text1;
 current_line = 1;
+current_text = text_array[current_line-1];
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);

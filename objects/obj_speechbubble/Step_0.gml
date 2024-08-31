@@ -6,7 +6,7 @@ if distance_to_object(obj_player) < spawn_distance and activated = false and ala
 	animation_speed = 0.5;
 	retract = false;
 	alarm[1] = alarm1_time; //retract
-	current_text = text1;
+	current_text = text_array[0];
 	current_line = 1;
 	y_offset = 0;
 	y = init_y;
@@ -44,13 +44,14 @@ if next_button {
 		scrolling_text = "";
 		current_character = 0;
 		current_line += 1;
-		if current_line = 2 {
+		/*if current_line = 2 {
 			current_text = text2;
 		}else if current_line = 3 {
 			current_text = text3;
 		}else if current_line = 4 {
 			current_text = text4;
-		}
+		}*/
+		current_text = text_array[current_line-1];
 	}
 }
 

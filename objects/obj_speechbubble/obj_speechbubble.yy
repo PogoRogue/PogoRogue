@@ -44,6 +44,7 @@
     {"$GMObjectProperty":"v1","%Name":"retract_distance","filters":[],"listItems":[],"multiselect":false,"name":"retract_distance","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"256","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"alarm1_time","filters":[],"listItems":[],"multiselect":false,"name":"alarm1_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"track_y","filters":[],"listItems":[],"multiselect":false,"name":"track_y","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"text_array","filters":[],"listItems":[],"multiselect":false,"name":"text_array","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

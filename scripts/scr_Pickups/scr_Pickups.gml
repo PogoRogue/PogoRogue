@@ -1137,4 +1137,66 @@ function scr_Pickups(){
 			audio_play_sound(snd_whoosh,0,false);
 		}
 	};
+	
+	pickup_wreckingball = {
+		_name: "Wrecking Ball",
+		tagline: "Create a large, spiky wrecking ball that swings from below you. With enough momentum, you can swing it around your head. Re-press \nbutton to retract.",
+		gui_sprite: spr_pickup_synergy_wreckingball,
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: None",
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 0,
+		text_color: make_color_rgb(134,129,136),
+		cost: 0,
+		is_synergy: true,
+		base_item_sprite_1: spr_pickup_volleyball,
+		base_item_sprite_2: spr_pickup_tripleshot,
+		item_cost: 145, //only for synergies (item 1 + item 2 costs)
+		on_call: function() {
+			with obj_player {
+			if !instance_exists(obj_wreckingball) {
+					instance_create_depth(x+lengthdir_x(160,image_angle-90),y+lengthdir_y(160,image_angle-90),depth+1,obj_wreckingball);
+				}
+			}
+		}
+	};
+	
+	pickup_tacticalstrike = {
+		_name: "Tactical Strike",
+		tagline: "",
+		gui_sprite: spr_pickup_synergy_tacticalstrike,
+		max_cooldown_time: -1,
+		cooldown_time: -1,
+		cooldown_text: "Cooldown: Every 8 kills",
+		on_cooldown: false,
+		states_to_call_in: [state_free],
+		key_held: false,
+		reload_on_bounce: false,
+		max_uses_per_bounce: 0,
+		uses_per_bounce: 0,
+		bounce_reset: 1,
+		bounce_reset_max: 1,
+		enemies_count: 0,
+		enemies_count_max: 8,
+		text_color: make_color_rgb(86,123,121),
+		cost: 0,
+		is_synergy: true,
+		base_item_sprite_1: spr_pickup_jetpack,
+		base_item_sprite_2: spr_pickup_blink,
+		item_cost: 225, //only for synergies (item 1 + item 2 costs)
+		on_call: function() {
+			with obj_player {
+				
+			}
+		}
+	};
 }

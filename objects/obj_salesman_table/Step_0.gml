@@ -20,10 +20,16 @@ if (colliding and key_interact) and !instance_exists(obj_fade_in) and all_out = 
 }
 
 if being_used = true {
+	if instance_exists(obj_camera) {
+		obj_camera.follow = self;
+	}
 	obj_player.can_rotate = false;
 	obj_player.can_shoot = false;
 	if distance_to_object(obj_player) > 128 or key_back {
 		being_used = false;
+		if instance_exists(obj_camera) {
+			obj_camera.follow = obj_player;
+		}
 		obj_player.can_rotate = true;
 		obj_player.table = false;
 	}
@@ -269,6 +275,9 @@ if usable = true {
 					}else {
 						buff_selected = 0;
 						being_used = false;
+						if instance_exists(obj_camera) {
+							obj_camera.follow = obj_player;
+						}
 						all_out = true;
 					}
 				}else if buff_selected = 1 and in_air = false {
@@ -279,6 +288,9 @@ if usable = true {
 					}else {
 						buff_selected = 0;	
 						being_used = false;
+						if instance_exists(obj_camera) {
+							obj_camera.follow = obj_player;
+						}
 						all_out = true;
 					}
 				}else if in_air = false  {
@@ -289,6 +301,9 @@ if usable = true {
 					}else {
 						buff_selected = 0;	
 						being_used = false;
+						if instance_exists(obj_camera) {
+							obj_camera.follow = obj_player;
+						}
 						all_out = true;
 					}
 				}
@@ -304,6 +319,9 @@ if usable = true {
 	or in_air = true and !instance_exists(passives_array[1]) and !instance_exists(passives_array[2]) {
 		all_out = true;
 		being_used = false;
+		if instance_exists(obj_camera) {
+			obj_camera.follow = obj_player;
+		}
 		colliding = false;
 		obj_player.table = false
 	}

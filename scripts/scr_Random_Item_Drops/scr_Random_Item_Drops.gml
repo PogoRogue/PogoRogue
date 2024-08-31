@@ -206,7 +206,8 @@ function scr_Get_Rand_Pickup_Object()
 							obj_item_pickup_slowmo, obj_item_pickup_grappling, obj_item_pickup_winners,
 							obj_item_pickup_airbag, obj_item_pickup_invincibility, obj_item_pickup_synergy_pogomode,
 							obj_item_pickup_synergy_launchpad, obj_item_pickup_synergy_megabounce,obj_item_pickup_synergy_jolt,
-							obj_item_pickup_synergy_hacker,obj_item_pickup_synergy_blizzard,obj_item_pickup_synergy_dragster];
+							obj_item_pickup_synergy_hacker,obj_item_pickup_synergy_blizzard,obj_item_pickup_synergy_dragster,
+							obj_item_pickup_synergy_harpoon,obj_item_pickup_synergy_wreckingball, obj_item_pickup_synergy_tacticalstrike];
 	
 	
 	if global.phase <= 1 {

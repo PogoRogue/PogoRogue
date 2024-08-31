@@ -221,7 +221,7 @@ function scr_Guns(){
 	
 	bouncyball_gun = {
 		_name: "Bouncy Ball Blaster",  
-		tagline: "Fire bouncy balls that bounce off of walls up to 3 times, doubling in damage after each bounce.",
+		tagline: "Fire bouncy balls that bounce off of walls 2 times, doubling in damage after each bounce.",
 		sprite: spr_gun_bouncyball,   
 		ammo: [bouncyball_bullet],
 		inaccuracy: 15,       
@@ -568,4 +568,26 @@ function scr_Guns(){
 		max_added_bullets: 0,
 		max_speed: -vsp_basicjump
 	}
+	
+	wreckingball_gun = {
+		_name: "Wrecking Ball",  
+		tagline: "",
+		sprite: spr_nothing,   
+		ammo: [wreckingball_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_nothing,
+		spread_number: 1,    
+		spread_angle: 45,    
+		full_auto: false,   
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1, 
+		reset_momentum: true, 
+		bullets_per_bounce: 1,
+		init_bullets_per_bounce: 1,
+		current_bullets: 1,  
+		max_added_bullets: 0,
+		max_speed: 16
+	};
 }

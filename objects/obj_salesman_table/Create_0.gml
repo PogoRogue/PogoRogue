@@ -21,4 +21,6 @@ alarm2_time = 30;
 all_out = false;
 in_air = false;
 
+angle = 0;
+
 random_set_seed(global.seed);

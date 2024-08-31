@@ -2,14 +2,14 @@
   "$GMSound":"",
   "%Name":"snd_volleyball_bounce2",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"audiogroup_volleyball",
+    "path":"audiogroups/audiogroup_volleyball",
   },
   "bitDepth":1,
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.902381,
+  "duration":2.107143,
   "name":"snd_volleyball_bounce2",
   "parent":{
     "name":"Weapons",

@@ -354,12 +354,12 @@ if (gun_name = "Yo-yo") {
 		ang += ang_increase_speed;
 		ang += ang_decrease_speed;
 		if ang_increase_speed < ang_max_spd {
-			ang_increase_speed += 0.15;
+			ang_increase_speed += 0.15 * (5/obj_player.rotation_speed);
 		}else {
 			ang_increase_speed = ang_max_spd;
 		}
 		if ang_decrease_speed < 0 {
-			ang_decrease_speed += 0.15;
+			ang_decrease_speed += 0.15 * (5/obj_player.rotation_speed);
 		}else {
 			ang_decrease_speed = 0;
 		}

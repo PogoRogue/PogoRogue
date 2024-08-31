@@ -1506,7 +1506,8 @@ all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency,
 					pickup_slowmo, pickup_grappling, pickup_winners,
 					pickup_airbag, pickup_invincibility, pickup_pogomode,
 					pickup_launchpad, pickup_megabounce,pickup_jolt,
-					pickup_hacker, pickup_blizzard, pickup_dragster]; //all pickups
+					pickup_hacker, pickup_blizzard, pickup_dragster,
+					pickup_harpoon, pickup_wreckingball,pickup_tacticalstrike]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();

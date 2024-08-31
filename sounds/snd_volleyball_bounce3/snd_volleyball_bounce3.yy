@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"snd_volleyball_bounce3",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"audiogroup_volleyball",
+    "path":"audiogroups/audiogroup_volleyball",
   },
   "bitDepth":1,
   "bitRate":128,
