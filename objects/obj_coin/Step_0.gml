@@ -13,7 +13,7 @@ if room != room_shop {
 	follow_object2 = obj_shopkeeper;
 }
 
-if obj_player.state != obj_player.state_blink or salesman = true {
+if obj_player.state != obj_player.state_blink and obj_player.state != obj_player.state_strike or salesman = true {
 	if (instance_exists(follow_object)) {
 		move_towards_point(follow_object.x,follow_object.y,spd);
 		spd = lerp(spd,max_spd,0.05);

@@ -3,7 +3,7 @@ if obj_player.state = obj_player.state_free {
 }
 
 if global.key_fire_projectile_released or !global.key_fire_projectile or obj_player.gun != obj_player.plasma_gun
-or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_player.plasma_gun.current_bullets <= 0 {
+or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_player.state = obj_player.state_strike or obj_player.plasma_gun.current_bullets <= 0 {
 	//instance_activate_object(plasma_object);	
 	with plasma_object {
 		enemies_array = [];

@@ -198,7 +198,7 @@ if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
 		init_damage = 0;
 	}
 	
-	if obj_player.state = obj_player.state_blink {
+	if obj_player.state = obj_player.state_blink or obj_player.state = obj_player.state_strike {
 		instance_destroy();
 	}
 	

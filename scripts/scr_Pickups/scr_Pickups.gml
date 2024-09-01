@@ -565,7 +565,7 @@ function scr_Pickups(){
 		is_synergy: false,
 		on_call: function() {
 			obj_player.state = obj_player.state_blink;
-			if !instance_exists(obj_blink_box) {
+			if !instance_exists(obj_blink_box) and !instance_exists(obj_blink_box) {
 				instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box);
 				audio_play_sound(snd_blink_despawn,0,false);
 			}
@@ -1146,7 +1146,7 @@ function scr_Pickups(){
 		cooldown_time: -1,
 		cooldown_text: "Cooldown: None",
 		on_cooldown: false,
-		states_to_call_in: [state_free],
+		states_to_call_in: all_states,
 		key_held: false,
 		reload_on_bounce: false,
 		max_uses_per_bounce: 0,
@@ -1171,12 +1171,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_tacticalstrike = {
-		_name: "Tactical Strike",
-		tagline: "",
+		_name: "Stealth Strike",
+		tagline: "Go into Blink form for 5s with a longer range. While in this state, you are equipped with 3 missiles to strike enemies with.",
 		gui_sprite: spr_pickup_synergy_tacticalstrike,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 8 kills",
+		cooldown_text: "Cooldown: Every 12 kills",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -1186,7 +1186,7 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 8,
+		enemies_count_max: 12,
 		text_color: make_color_rgb(86,123,121),
 		cost: 0,
 		is_synergy: true,
@@ -1195,7 +1195,12 @@ function scr_Pickups(){
 		item_cost: 225, //only for synergies (item 1 + item 2 costs)
 		on_call: function() {
 			with obj_player {
-				
+				obj_player.state = obj_player.state_strike;
+				if !instance_exists(obj_blink_box_strike) {
+					instance_create_depth(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),obj_player.depth-10,obj_blink_box_strike);
+					audio_play_sound(snd_blink_despawn,0,false);
+				}
+				pickup_tacticalstrike.on_cooldown = true;
 			}
 		}
 	};

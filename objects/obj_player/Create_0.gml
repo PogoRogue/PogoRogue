@@ -974,6 +974,20 @@ state_blink = function() {
 	}
 }
 
+state_strike = function() {
+	speed = 0;
+	can_rotate = false;
+	can_shoot = false;
+	mask_index = spr_nothing;
+	with obj_player_mask {
+		mask_index = spr_nothing;
+	}
+	
+	if image_yscale > 0 {
+		image_yscale -= 0.1;
+	}
+}
+
 state_parachute = function() {
 	//can_shoot = false;
 	can_rotate = false;

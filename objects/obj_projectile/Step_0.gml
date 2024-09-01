@@ -255,7 +255,7 @@ if (gun_name = "Boomerangs") {
 		damage = init_damage;	
 	}
 	
-	if obj_player.state = obj_player.state_blink {
+	if obj_player.state = obj_player.state_blink or obj_player.state = obj_player.state_strike {
 		spd = 0;
 		speed = 0;
 	}
@@ -412,7 +412,7 @@ if (gun_name = "Star Sucker") {
 		image_index += 0.5;	
 	}
 	
-	if obj_player.state = obj_player.state_blink {
+	if obj_player.state = obj_player.state_blink or obj_player.state = obj_player.state_strike {
 		speed = 0;
 	}
 }

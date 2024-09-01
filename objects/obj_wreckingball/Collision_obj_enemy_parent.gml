@@ -6,5 +6,6 @@ if(!other.is_dead) {
 		enemy_object.hp -= (damage + global.damage_buff - (global.damage_buff));
 		enemy_object.red_frames = 10;
 		scr_Reload_On_Kill();
+		audio_play_sound(snd_wreckingball_hit,0,false);
 	}
 }

@@ -69,7 +69,7 @@ if rope_length < rope_length_max and !retract {
 	rope_length += 8;
 }
 
-if (key_retract or instance_exists(obj_blink_box)) and can_retract = true {
+if (key_retract or instance_exists(obj_blink_box) or instance_exists(obj_blink_box_strike)) and can_retract = true {
 	if retract = false {
 		audio_play_sound(snd_wreckingball_retract,0,false);	
 		retract = true;

@@ -1,4 +1,4 @@
-if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true or obj_player.state = obj_player.state_blink {
+if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_player.state = obj_player.state_strike {
 	instance_destroy();	
 }else if global.key_fire_projectile_released {
 	with obj_player {

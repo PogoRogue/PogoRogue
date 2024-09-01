@@ -303,10 +303,14 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		draw_sprite_part(pickups_array[0].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[0].enemies_count_max-pickups_array[0].enemies_count)/pickups_array[0].enemies_count_max),sprite_get_height(spr_pickup_empty),32,72);
 		
 		draw_sprite_general(spr_pickup_empty,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[0].enemies_count_max-pickups_array[0].enemies_count)/pickups_array[0].enemies_count_max),sprite_get_height(spr_pickup_empty),32,72,1,1,0,c_white,c_white,c_white,c_white,0.5);
+		
 		//draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);
 		//draw bounces left
 		draw_set_font(fnt_item_popup);
 		scr_Draw_Text_Outlined(48,104,string(pickups_array[0].enemies_count),make_color_rgb(180,82,82));
+	}
+	if pickups_array[0] = pickup_tacticalstrike and instance_exists(obj_blink_box_strike)  {
+		draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);
 	}
 }
 
@@ -414,7 +418,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 			draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 		}
 	}
-}else { //enemies cooldown
+}else { //enemies cooldown	
 	if !(pickups_array[1].on_cooldown) and pickups_array[1].max_cooldown_time < 0 {
 		if pickups_array[1].is_synergy = true {
 			draw_sprite(spr_synergy_animation,synergy_frame,103,88);
@@ -437,10 +441,15 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[1].enemies_count_max-pickups_array[1].enemies_count)/pickups_array[1].enemies_count_max),sprite_get_height(spr_pickup_empty),87,72);
 		
 		draw_sprite_general(spr_pickup_empty,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[1].enemies_count_max-pickups_array[1].enemies_count)/pickups_array[1].enemies_count_max),sprite_get_height(spr_pickup_empty),87,72,1,1,0,c_white,c_white,c_white,c_white,0.5);
+		
 		//draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 		//draw bounces left
 		draw_set_font(fnt_item_popup);
-		scr_Draw_Text_Outlined(103,104,string(pickups_array[1].enemies_count),make_color_rgb(180,111,111));
+		scr_Draw_Text_Outlined(103,104,string(pickups_array[1].enemies_count),make_color_rgb(180,82,82));
+	}
+	
+	if pickups_array[1] = pickup_tacticalstrike and instance_exists(obj_blink_box_strike)  {
+		draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 	}
 }
 

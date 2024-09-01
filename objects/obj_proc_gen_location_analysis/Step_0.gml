@@ -9,7 +9,13 @@ if(instance_exists(obj_player))
 	var y_bias = 10; //Bias to prevent flickering when the player jumps on the ground bordering two different regions
 	currentY = player.y - y_bias;
 }
-
+if(instance_exists(obj_blink_box_strike))
+{
+	var player = instance_nearest(x, y, obj_blink_box_strike);
+	currentX = player.x;
+	var y_bias = 10; //Bias to prevent flickering when the player jumps on the ground bordering two different regions
+	currentY = player.y - y_bias;
+}
 
 
 //Convert player location to grid location

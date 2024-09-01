@@ -1,5 +1,5 @@
 /// @description draw self
-if state != state_blink {
+if state != state_blink and obj_player.state != obj_player.state_strike{
 	
 if(current_iframes >= num_iframes - 10 and bubble = false || dead) {
 	shader_set(sh_tint_red);

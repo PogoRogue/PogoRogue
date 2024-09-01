@@ -2,12 +2,12 @@ if room = room_shop {
 	created_in_room = true;	
 }
 
-if (follow_player = true and obj_player.state != obj_player.state_blink) {
+if (follow_player = true and obj_player.state != obj_player.state_blink and obj_player.state != obj_player.state_strike) {
 	move_towards_point(obj_player.x,obj_player.y,speed);
 	speed = lerp(speed,8,0.05);	
 	image_alpha = 1;
 	mask_index = sprite_index;
-}else if obj_player.state != obj_player.state_blink {
+}else if obj_player.state != obj_player.state_blink and obj_player.state != obj_player.state_strike {
 	if room != room_shop and created_in_room = false {	
 		image_alpha = 0;
 		mask_index = spr_nothing;
