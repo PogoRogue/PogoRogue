@@ -38,12 +38,25 @@ target_x = camera_get_view_width(view_camera[0])/2;
 center_x = -(camera_get_view_width(view_camera[0])/2);
 center_y = camera_get_view_height(view_camera[0])/2;
 
+faded = false;
+
 alarm[1] = 2;
 
-test_mode = true; //set false for builds
+if room = room_proc_gen_test and global.current_skin < 2 
+or room = room_proc_gen_test and global.current_skin = 3 {
+	test_mode = false; //set false for builds
+}else {
+	test_mode = true; //set false for builds
+}
 
 if test_mode = false {
-	weapons_array = [obj_item_weapon_paintball,obj_item_weapon_shotgun,obj_item_weapon_burstfire,obj_item_weapon_javelins];	
+	if global.current_skin < 2 {
+		weapons_array = [obj_item_weapon_paintball,obj_item_weapon_shotgun,obj_item_weapon_burstfire];	
+	}else if global.current_skin = 3 {
+		weapons_array = [obj_item_weapon_bouncyball,obj_item_weapon_boomerang];	
+	}else {
+		weapons_array = [obj_item_weapon_paintball,obj_item_weapon_shotgun,obj_item_weapon_burstfire];	
+	}
 }else {
 	weapons_array = [obj_item_weapon_default,obj_item_weapon_paintball,obj_item_weapon_shotgun,
 					obj_item_weapon_burstfire,obj_item_weapon_javelins,obj_item_weapon_bouncyball,

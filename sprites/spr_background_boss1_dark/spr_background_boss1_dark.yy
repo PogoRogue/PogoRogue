@@ -19,7 +19,7 @@
   "height":496,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"c0888a2b-4b9a-4512-81f7-34cc98dc5cd8","blendMode":0,"displayName":"Dark","isLocked":false,"name":"c0888a2b-4b9a-4512-81f7-34cc98dc5cd8","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"c0888a2b-4b9a-4512-81f7-34cc98dc5cd8","blendMode":0,"displayName":"Dark","isLocked":false,"name":"c0888a2b-4b9a-4512-81f7-34cc98dc5cd8","opacity":75.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"a251cffd-1006-42fd-bc29-04d10624fcbe","blendMode":0,"displayName":"default","isLocked":false,"name":"a251cffd-1006-42fd-bc29-04d10624fcbe","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_background_boss1_dark",

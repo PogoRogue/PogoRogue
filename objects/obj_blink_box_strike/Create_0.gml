@@ -24,3 +24,4 @@ button_num = 2;
 
 init_x = obj_player.x;
 init_y = obj_player.y;	
+flash = false;

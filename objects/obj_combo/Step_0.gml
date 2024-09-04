@@ -68,6 +68,15 @@ if global.combo > global.current_best_combo {
 	global.current_best_combo =  global.combo;	
 }
 
+var skin = 5;
+if global.combo >= 50 and global.skins_unlocked_array[skin-1] = false {
+	ini_open("itemsunlocked.ini");
+	instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
+	global.skins_unlocked_array[skin-1] = true;
+	ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
+	ini_close();	
+}
+
 //tutorial unlock gate
 if room = room_tutorial and global.combo >= 5 {
 	with obj_room_gate_close_tutorial {

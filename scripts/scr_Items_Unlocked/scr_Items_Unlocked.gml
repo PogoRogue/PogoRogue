@@ -124,6 +124,19 @@ function scr_Items_Unlocked(){
 									global.weapon_unlocked_13,global.weapon_unlocked_14,global.weapon_unlocked_15,global.weapon_unlocked_16,
 									global.weapon_unlocked_17,global.weapon_unlocked_18,global.weapon_unlocked_19,global.weapon_unlocked_20];
 	
+	//skins
+	global.skins_unlocked_1 = false;
+	global.skins_unlocked_2 = false;
+	global.skins_unlocked_3 = false;
+	global.skins_unlocked_4 = false;
+	global.skins_unlocked_5 = false;
+	global.skins_unlocked_6 = false;
+	
+	global.skins_unlocked_array = [global.skins_unlocked_1,global.skins_unlocked_2,global.skins_unlocked_3,global.skins_unlocked_4,
+									global.skins_unlocked_5,global.skins_unlocked_6];
+									
+	global.skins_names = ["Rogo","???","Nona","Dogo","Robo","Bandit","3D"];
+	global.howtounlock_array = ["???","Max out your hearts to unlock!","Discover every weapon to unlock!","Beat the game to unlock!","Achieve a combo of 50+ to unlock!","Defeat a boss to unlock!"];
 
 	//save values
 	for(i = 0; i < array_length(global.passive_unlocked_array); i++) { //passives
@@ -142,6 +155,12 @@ function scr_Items_Unlocked(){
 		ini_open("itemsunlocked.ini");
 		global.weapon_unlocked_array[i] = ini_read_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
 		ini_write_real("itemsunlocked", "weapon " + string(i), global.weapon_unlocked_array[i]);
+		ini_close();
+	}
+	for(i = 0; i < array_length(global.skins_unlocked_array); i++) { //passives
+		ini_open("itemsunlocked.ini");
+		global.skins_unlocked_array[i] = ini_read_real("itemsunlocked", "skin " + string(i+1), global.skins_unlocked_array[i]);
+		ini_write_real("itemsunlocked", "skin " + string(i+1), global.skins_unlocked_array[i]);
 		ini_close();
 	}
 }

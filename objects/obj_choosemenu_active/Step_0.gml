@@ -59,7 +59,7 @@ if !key_up and !key_down {
 }
 
 //select
-if key_select and centered = true and fade_away = false {
+if key_select and centered = true and fade_away = false and global.active_unlocked_array[select-1] = true {
 	audio_play_sound(snd_selectOption,0,false);
 	
 	alarm[0] = 1;
@@ -69,7 +69,7 @@ if key_select and centered = true and fade_away = false {
 	//change item
 	instance_activate_object(obj_player);
 	with obj_player {
-		if num_of_pickups = 0 {
+		if num_of_pickups = 0 or other.test_mode = false {
 			global.all_pickup_costs[0] = other.all_pickups_costs[other.select-1];
 			num_of_pickups = 1;
 			pickup_1 = other.all_actives[other.select-1];
@@ -121,7 +121,14 @@ if center_x >= target_x - 64 and centered = false {
 	centered = true;
 }
 
-if fade_away = true {
+if key_back and centered = true and faded = false {
+	alarm[0] = 1;
+	alarm[4] = 2; //create active item menu
+	fade_away = true;	
+	faded = true;
+}
+
+if fade_away = true  {
 	if spd2 < 16 {
 		spd2 += 1;
 	}

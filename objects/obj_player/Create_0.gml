@@ -262,6 +262,7 @@ state_free = function() {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			state = state_immobile;
 			scr_Room_Transition(room_proc_gen_test);
+			global.show_tips_screen = true;
 		}
 	}
 	
@@ -1588,3 +1589,5 @@ if global.phase != 1 {
 if room = room_tutorial {
 	alarm[5] = 10;
 }
+
+scr_Get_Skin_Loadout();

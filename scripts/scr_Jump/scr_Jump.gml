@@ -114,7 +114,7 @@ function scr_Jump(add_to_jump){
 	min_flames_speed = 5.6;
 	
 	//bounce sound
-	if !audio_is_playing(snd_groundpound) {
+	if !audio_is_playing(snd_groundpound) and room != room_shop {
 		randomize();
 		audio_play_sound(choose(snd_bounce,snd_bounce2,snd_bounce3),0,false);
 		random_set_seed(global.seed);

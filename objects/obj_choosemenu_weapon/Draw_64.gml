@@ -3,9 +3,9 @@ draw_set_valign(fa_bottom);
 draw_set_font(fnt_item_popup);
 draw_set_alpha(1); //alpha
 if test_mode = false {
-	scr_Draw_Text_Outlined(center_x,center_y-56,"Choose your starting weapon:", c_white); //center_y - 140 //center_y-56
+	scr_Draw_Text_Outlined(center_x,center_y-56,"Choose a weapon:", c_white); //center_y - 140 //center_y-56
 }else {
-	scr_Draw_Text_Outlined(center_x,center_y-140,"Choose your starting weapon:", c_white); //center_y - 140 //center_y-56	
+	scr_Draw_Text_Outlined(center_x,center_y-140+16,"Choose a weapon:", c_white); //center_y - 140 //center_y-56	
 }
 
 
@@ -25,10 +25,10 @@ for (i = 0; i < array_length(weapons_array); i++) {
 	//WEAPONS
 	if i < array_length(weapons_array) {
 		
-		draw_sprite(select_sprite,2 + (select = i + 1),xx,yy-27);
-		draw_sprite(all_weapons[i].sprite,0,xx,yy-27);
+		draw_sprite(select_sprite,(select = (i+1)) + (2 * (global.weapon_unlocked_array[i] = true)),xx,yy-27);
+		draw_sprite(all_weapons[i].sprite,(sprite_get_number(all_weapons[i].sprite)-1)*(global.weapon_unlocked_array[i] = false),xx,yy-27);
 	
-		if (i < array_length(all_weapons)) {
+		if (i < array_length(all_weapons)) and global.weapon_unlocked_array[i] = true {
 			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_weapons[i]._name,12,99),c_white);
 		}
 	}
@@ -43,9 +43,11 @@ for (i = 0; i < array_length(weapons_array); i++) {
 		var yy = (156) + floor(i / select_x_max) * y_gap; //156 + floor //center_y+8+floor
 	}
 	
-	if (select = i + 1) {
-		scr_Draw_Input_UI(xx,yy+4,18,0,fnt_combo2,fa_center,fa_middle);
-		draw_set_font(fnt_itemdescription2);
+	if global.weapon_unlocked_array[i] = true {
+		if (select = i + 1) {
+			scr_Draw_Input_UI(xx,yy+4,18,0,fnt_combo2,fa_center,fa_middle);
+			draw_set_font(fnt_itemdescription2);
+		}
 	}
 }
 
@@ -71,6 +73,12 @@ for (i = 0; i < array_length(all_weapons); i++) {
 			var y_offset = 0;
 		}
 			
-		scr_Draw_Weapon_Description(xx,yy+y_offset,all_weapons[i],0,true,all_weapons_costs[i]);
+		scr_Draw_Weapon_Description(xx,yy+y_offset,all_weapons[i],0,global.weapon_unlocked_array[i],all_weapons_costs[i]);
 	}
+}
+
+if test_mode = true {
+	scr_Draw_Input_Prompt(center_x,340+52,19,"Back",make_color_rgb(180,82,82));
+}else {
+	scr_Draw_Input_Prompt(center_x,340+52-146,19,"Back",make_color_rgb(180,82,82));
 }

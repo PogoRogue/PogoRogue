@@ -11,8 +11,20 @@ and (obj_player.state = obj_player.state_free or obj_player.state = obj_player.s
 	colliding = false;
 }
 
+if skin_num != 0 {
+	unlocked = global.skins_unlocked_array[skin_num-1];
+}else {
+	unlocked = true;
+}
+
+if unlocked = false {
+	bounce_speed = -3.5;
+}else {
+	bounce_speed = -5;
+}
+
 //switch
-if (colliding and key_interact) {
+if (colliding and key_interact and unlocked = true) {
 	audio_play_sound(snd_selectOption,0,false);
 	var temp_skin = global.current_skin;
 	var temp_x = obj_player.x;
@@ -52,6 +64,9 @@ if (colliding and key_interact) {
 		vspeed = other.vspeed;
 		sprite_index = other.sprite_index;
 		image_index = other.image_index;
+		
+		scr_Get_Skin_Loadout();
+		other.loadout_yscale = 0;
 	}
 	
 	//set this object to player's old skin/position
@@ -81,7 +96,7 @@ if (colliding and key_interact) {
 }
 
 //re-center
-if centering = true {
+if centering = true and unlocked = true {
 	if image_angle >= rotation_speed or image_angle <= -rotation_speed {
 		image_angle += rotation_speed * -sign(image_angle);
 	}else {
@@ -101,4 +116,14 @@ if centering = true {
 	}else {
 		centering = true;
 	}	
+}
+
+if colliding and unlocked {
+	if loadout_yscale < 1 {
+		loadout_yscale += 0.1;
+	}
+}else if unlocked {
+	if loadout_yscale > 0 {
+		loadout_yscale -= 0.1;
+	}
 }

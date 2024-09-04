@@ -26,16 +26,23 @@ if sprite_index = player_sprite {
 //hat offset
 if skin_num = 1 {
 	text_offset = 3;
+	popup_offset = 0;
 }else if skin_num = 2 {
 	text_offset = 5;
+	popup_offset = 22;
 }else if skin_num = 3 {
 	text_offset = 5;
+	popup_offset = 9;
 }else if skin_num = 4 {
 	text_offset = 2;
+	popup_offset = 8;
 }else if skin_num = 5 {
 	text_offset = 3;
+	popup_offset = 10;
 }else if skin_num = 6 {
 	text_offset = 1;
+	popup_offset = 9;
 }else {
 	text_offset = 1;
+	popup_offset = 0;
 }

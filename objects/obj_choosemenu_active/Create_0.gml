@@ -52,6 +52,12 @@ actives_array = [obj_item_pickup_reload, obj_item_pickup_freeze, obj_item_pickup
 				obj_item_pickup_synergy_hacker, obj_item_pickup_synergy_blizzard, obj_item_pickup_synergy_dragster,
 				obj_item_pickup_synergy_harpoon,obj_item_pickup_synergy_wreckingball, obj_item_pickup_synergy_tacticalstrike];
 				
+test_mode = true;
+if room = room_proc_gen_test and global.current_skin = 6 {
+	actives_array = [obj_item_pickup_hatgun,obj_item_pickup_grappling];	
+	test_mode = false;
+}
+				
 select_max = array_length(actives_array);
 
 if select_max < select_x_max { 
@@ -71,5 +77,6 @@ for (i = 0; i < array_length(actives_array); i++) {
 		instance_destroy();
 	}
 }
+faded = false;
 
 created_new_choosemenu = false;

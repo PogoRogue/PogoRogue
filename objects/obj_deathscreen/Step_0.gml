@@ -97,4 +97,13 @@ if win = true {
 		}
 		win_stat_added = true;
 	}
+	//unlock skin
+	var skin = 4;
+	if global.skins_unlocked_array[skin-1] = false {
+		ini_open("itemsunlocked.ini");
+		instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
+		global.skins_unlocked_array[skin-1] = true;
+		ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
+		ini_close();	
+	}
 }

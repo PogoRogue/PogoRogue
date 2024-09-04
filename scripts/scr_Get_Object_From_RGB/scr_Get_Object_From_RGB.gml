@@ -261,8 +261,16 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		else if(Red == 1 && Green == 1 && Blue == 1)
 		{
 			return obj_shop_indicator2; //fix minimap bug
+		}else if (Red == 102 && Green == 45 && Blue == 145)
+		{
+			return obj_background_junk; 
+		}else if (Red == 46 && Green == 49 && Blue == 146)
+		{
+			return obj_background_office;
 		}
 	}
+	
+	
 	
 	//Color had no matches, generate nothing
 	return -1;

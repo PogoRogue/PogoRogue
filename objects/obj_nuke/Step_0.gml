@@ -12,7 +12,7 @@ if instance_exists(obj_camera) {
 	
 	//destroy if far enough away from camera
 	if  !(point_in_rectangle(x,y,obj_camera.x-camera_width-(padding*10),obj_camera.y-camera_height-(padding*10),obj_camera.x+camera_width+(padding*10),obj_camera.y+camera_height+(padding*10))) {
-		instance_destroy();
+		//instance_destroy();
 	}
 }
 
@@ -34,10 +34,6 @@ if target_obj != noone {
 	}
 }else {
 	direction = image_angle;
-		
-	if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 {
-		instance_destroy();	
-	}
 }
 
 
@@ -45,3 +41,4 @@ if destroyable = false and !place_meeting(x,y,obj_ground) {
 	destroyable = true;	
 }
 mask_index = sprite_index;
+//test

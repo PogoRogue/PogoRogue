@@ -154,6 +154,8 @@ if free = true {
 		scr_Screen_Shake(10,8,true);
 		instance_create_depth(x,y,depth+1,obj_strike_placed);
 		shots_left -= 1;
+		flash = true;
+		alarm[0] = 5;
 	}
 }else {
 	if key_select {
@@ -171,6 +173,8 @@ if free = true {
 			scr_Screen_Shake(10,8,true);
 			instance_create_depth(x,y,depth+1,obj_strike_placed);
 			shots_left -= 1;
+			flash = true;
+			alarm[0] = 5;
 		}
 	}
 }
@@ -210,3 +214,6 @@ if (arrows_alpha > 0 and moved = true and obj_player.image_yscale = 0) {
 	arrows_alpha -= 0.05;	
 }
 
+if flash = true {
+	image_index = 3;	
+}

@@ -82,7 +82,11 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	draw_set_valign(fa_center);
 	draw_set_font(fnt_combo2);
 	var white = make_color_rgb(242,240,229);
-	scr_Draw_Text_Outlined(xx+29,yy-105,scr_Linebreak(item_name,16,99),pickup.text_color);
+	if unlocked = true {
+		scr_Draw_Text_Outlined(xx+29,yy-105,scr_Linebreak(item_name,16,99),pickup.text_color);
+	}else {
+		scr_Draw_Text_Outlined(xx+29,yy-105,scr_Linebreak(item_name,16,99),c_white);
+	}
 	
 	//Powerup Description
 	draw_set_halign(fa_left);

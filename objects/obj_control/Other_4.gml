@@ -62,3 +62,9 @@ if !audio_is_playing(global.current_music) {
 	audio_stop_all();
 	audio_play_sound(global.current_music,0,true);
 }
+
+if room = room_proc_gen_test {
+	global.show_tips_screen = true;	
+}else {
+	global.show_tips_screen = false;	
+}

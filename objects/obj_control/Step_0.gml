@@ -122,3 +122,17 @@ if instance_exists(obj_pause) {
 }
 
 global.synergy_frame += 0.25;
+
+if global.show_tips_screen = true and !instance_exists(obj_fade_out) and !instance_exists(obj_fade_in) {
+	global.current_tip = "";	
+}
+
+//unlock skin
+var skin = 6;
+if global.phase = 2 and global.skins_unlocked_array[skin-1] = false {
+	ini_open("itemsunlocked.ini");
+	instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
+	global.skins_unlocked_array[skin-1] = true;
+	ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
+	ini_close();	
+}

@@ -43,6 +43,9 @@ if key_select {
 		for(i = 0; i < array_length(global.weapon_unlocked_array); i++) { //weapons
 			ini_key_delete("itemsunlocked", "weapon " + string(i));
 		}
+		for(i = 0; i < array_length(global.skins_unlocked_array); i++) { //weapons
+			ini_key_delete("itemsunlocked", "skin " + string(i+1));
+		}
 		ini_close();
 		scr_Items_Unlocked();
 		

@@ -1,5 +1,5 @@
 if !gamepad_is_connected(0) and global.use_controller = true {
-	if !instance_exists(obj_seeding_prompt) {
+	if !instance_exists(obj_seeding_prompt) and !instance_exists(obj_code_prompt) {
 		with obj_pause {
 			if pause = false {
 				controller_disconnected = true;
@@ -15,7 +15,7 @@ if !gamepad_is_connected(0) and global.use_controller = true {
 }
 
 if scr_Gamepad_Check_Input() > 0 {
-	if !instance_exists(obj_seeding_prompt) {
+	if !instance_exists(obj_seeding_prompt) and !instance_exists(obj_code_prompt) {
 		global.use_keyboard = false;
 		global.use_controller = true;	
 	}

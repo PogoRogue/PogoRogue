@@ -2,5 +2,5 @@
 //crit chance
 if other = target_obj {
 	instance_destroy();	
-	instance_destroy(other);	
+	instance_destroy(target_obj);	
 }

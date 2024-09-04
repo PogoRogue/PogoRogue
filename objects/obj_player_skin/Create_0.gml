@@ -8,6 +8,7 @@ colliding = false;
 init_x = x;
 centering = false;
 rotation_speed = 4;
+popup_offset = 0;
 
 //skins
 bouncing_array = [spr_player_zekai,spr_player_skin1,spr_player_skin2,spr_player_skin3,spr_player_skin4,spr_player_skin5,spr_player_skin6];
@@ -18,6 +19,16 @@ face_array = [spr_player_face,spr_player_skin1_face,spr_player_skin2_face,spr_pl
 player_sprite = bouncing_array[skin_num];
 falling_sprite = falling_array[skin_num];
 face_sprite = face_array[skin_num];
+
+unlocked = global.skins_unlocked_array[skin_num-1];
+
+if unlocked = false {
+	bounce_speed = -3.5;
+}else {
+	bounce_speed = -5;
+}
+
+loadout_yscale = 0;
 
 state_shop = function() {
 	vspeed += grv;
@@ -40,7 +51,7 @@ state_shop = function() {
 			image_index += 0.75;
 		}
 		if scr_Animation_Complete() = true {
-			speed = -6.6; //bounce speed
+			speed = bounce_speed; //bounce speed
 			direction = image_angle-90; //bounce angle
 			sprite_index = player_sprite;
 			image_speed = 0;
@@ -48,6 +59,18 @@ state_shop = function() {
 			animation_complete = false;
 			shop_bouncing = false;
 		}
+	}
+	
+	if (place_meeting(x,y+vspeed,obj_cage)) {
+		while !(place_meeting(x,y+sign(vspeed),obj_cage)) {
+			y += sign(vspeed);
+		}
+		shop_bouncing = true;
+		speed = 0; //stop player movement while bouncing
+	}
+	
+	while (place_meeting(x,y,obj_cage)) {
+		y -= 1;
 	}
 }
 

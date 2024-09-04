@@ -26,10 +26,10 @@ var rope_angle_acceleration = -0.1 * dcos(rope_angle);
 if rope_angle % 360 > 180 and rope_angle % 360 < 360 {
 	
 	rope_angle_velocity += rope_angle_acceleration;
-	if obj_player.key_left  {
+	if obj_player.key_left and !obj_player.key_right  {
 		rope_angle_velocity += 0.3 + (rope_angle_acceleration);
 		moved = true;
-	}else if obj_player.key_right {
+	}else if obj_player.key_right and !obj_player.key_left {
 		rope_angle_velocity -= 0.3 - (rope_angle_acceleration);
 		moved = true;
 	}else {
@@ -67,6 +67,10 @@ rope_angle_velocity = max(-7,rope_angle_velocity);
 
 if rope_length < rope_length_max and !retract {
 	rope_length += 8;
+}
+
+if obj_player.state = obj_player.state_portal or obj_player.state = obj_player.state_shop_portal {
+	retract = true;	
 }
 
 if (key_retract or instance_exists(obj_blink_box) or instance_exists(obj_blink_box_strike)) and can_retract = true {

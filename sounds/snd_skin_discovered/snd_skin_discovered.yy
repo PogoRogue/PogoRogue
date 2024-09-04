@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_skin_discovered",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.341633,
+  "name":"snd_skin_discovered",
+  "parent":{
+    "name":"Powerups",
+    "path":"folders/Sounds/Powerups.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_skin_discovered.wav",
+  "type":0,
+  "volume":0.5,
+}

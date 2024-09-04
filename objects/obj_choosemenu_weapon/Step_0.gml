@@ -59,7 +59,7 @@ if !key_up and !key_down {
 }
 
 //select
-if key_select and centered = true and fade_away = false {
+if key_select and centered = true and fade_away = false and global.weapon_unlocked_array[select-1] = true {
 	audio_play_sound(snd_selectOption,0,false);
 	
 	alarm[0] = 1;
@@ -69,23 +69,50 @@ if key_select and centered = true and fade_away = false {
 	//change weapon
 	instance_activate_object(obj_player);
 	with obj_player {
-		if num_of_weapons = 1 {
-			global.all_weapon_costs[0] = other.all_weapons_costs[other.select-1];
-			global.all_weapon_costs[1] = other.all_weapons_costs[0];
-			num_of_weapons = 2;
-			gun_2 = gun_1;
-			gun_1 = other.all_weapons[other.select-1];
-			gun_3 = gun_1;
-			gun_array = [gun_1, gun_2, gun_1];
-			current_gun = 0;
-			gun = gun_array[current_gun];
-		}else if num_of_weapons = 2 {
-			global.all_weapon_costs[0] = other.all_weapons_costs[other.select-1];
-			gun_1 = other.all_weapons[other.select-1];
-			gun_3 = gun_1;
-			gun_array = [gun_1, gun_2, gun_1];
-			current_gun = 0;
-			gun = gun_array[current_gun];
+		if other.test_mode = true {
+			if num_of_weapons = 1 {
+				global.all_weapon_costs[0] = other.all_weapons_costs[other.select-1];
+				global.all_weapon_costs[1] = other.all_weapons_costs[0];
+				num_of_weapons = 2;
+				gun_2 = gun_1;
+				gun_1 = other.all_weapons[other.select-1];
+				gun_3 = gun_1;
+				gun_array = [gun_1, gun_2, gun_1];
+				current_gun = 0;
+				gun = gun_array[current_gun];
+			}else if num_of_weapons = 2 {
+				global.all_weapon_costs[0] = other.all_weapons_costs[other.select-1];
+				gun_1 = other.all_weapons[other.select-1];
+				gun_3 = gun_1;
+				gun_array = [gun_1, gun_2, gun_1];
+				current_gun = 0;
+				gun = gun_array[current_gun];
+			}
+		}else {
+			if num_of_weapons = 1 {
+				global.all_weapon_costs[0] = other.all_weapons_costs[other.select-1];
+				global.all_weapon_costs[1] = other.all_weapons_costs[0];
+				num_of_weapons = 2;
+				gun_2 = gun_1;
+				gun_1 = other.all_weapons[other.select-1];
+				gun_3 = gun_1;
+				gun_array = [gun_1, gun_2, gun_1];
+				current_gun = 0;
+				gun = gun_array[current_gun];
+			}else if num_of_weapons = 2 {
+				global.all_weapon_costs[0] = other.all_weapons_costs[other.select-1];
+				if gun_1 != default_gun {
+					gun_1 = other.all_weapons[other.select-1];
+					gun_3 = gun_1;
+					current_gun = 0;
+				}else if gun_2 != default_gun {
+					gun_2 = other.all_weapons[other.select-1];
+					gun_3 = gun_2;
+					current_gun = 1;
+				}
+				gun_array = [gun_1, gun_2, gun_1];
+				gun = gun_array[current_gun];
+			}
 		}
 	}
 
@@ -125,6 +152,13 @@ if center_x >= target_x - 64 and centered = false {
 	centered = true;
 }
 
+if key_back and centered = true and faded = false {
+	alarm[0] = 1;
+	alarm[4] = 2; //create active item menu
+	fade_away = true;	
+	faded = true;
+}
+
 if fade_away = true {
 	if spd2 < 16 {
 		spd2 += 1;
@@ -135,3 +169,25 @@ if fade_away = true {
 		instance_destroy();
 	}
 }
+
+//unlock dogo skin
+var weapons_unlocked = 0;
+
+for(i = 0; i < array_length(global.weapon_unlocked_array); i++) { //weapons
+	if global.weapon_unlocked_array[i] = true {
+		weapons_unlocked++;
+	}
+}
+
+if weapons_unlocked = array_length(global.weapon_unlocked_array) {
+	//unlock skin
+	var skin = 3;
+	if global.skins_unlocked_array[skin-1] = false {
+		ini_open("itemsunlocked.ini");
+		instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
+		global.skins_unlocked_array[skin-1] = true;
+		ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
+		ini_close();	
+	}
+}
+
