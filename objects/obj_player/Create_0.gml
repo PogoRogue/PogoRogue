@@ -241,7 +241,7 @@ state_free = function() {
 	}
 	
 	//restart room if reached the top unless procgen room
-	if room != room_proc_gen_test && room != room_sprite_level_test && room != room_tutorial && room != room_starting_temp {
+	if room != room_proc_gen_test && room != room_sprite_level_test && room != room_tutorial && room != room_starting_area {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			scr_Room_Restart(true);
 		}
@@ -258,10 +258,12 @@ state_free = function() {
 			}
 			state = state_immobile;
 		}
-	}else if room = room_starting_temp {
+	}else if room = room_starting_area {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			state = state_immobile;
 			scr_Room_Transition(room_proc_gen_test);
+			global.total_runs += 1;
+			scr_Save_Real("total_runs",global.total_runs);
 			global.show_tips_screen = true;
 		}
 	}
@@ -1576,7 +1578,7 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_paparazzi, buff_crit, buff_bartime,
 				buff_strongmuscles];
 
-//create text in proc gen room
+//create text in proc gen rooms
 if room = room_proc_gen_test || room = room_sprite_level_test {
 	alarm[2] = 10;
 }
@@ -1588,6 +1590,6 @@ if global.phase != 1 {
 
 if room = room_tutorial {
 	alarm[5] = 10;
-}
-
-scr_Get_Skin_Loadout();
+}else {
+	scr_Get_Skin_Loadout();
+}	

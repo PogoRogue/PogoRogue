@@ -34,8 +34,10 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"min_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"min_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":1,},
-    {"$GMObjectProperty":"v1","%Name":"max_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"max_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"min_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"min_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"max_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"max_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"always_spawn_passive","filters":[],"listItems":[],"multiselect":false,"name":"always_spawn_passive","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"custom_passive_drop","filters":[],"listItems":[],"multiselect":false,"name":"custom_passive_drop","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_item_buff_heart","path":"objects/obj_item_buff_heart/obj_item_buff_heart.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_item_buff_heart","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

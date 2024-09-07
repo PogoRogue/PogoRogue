@@ -236,7 +236,7 @@ if sixshooter_held_num >= 10 and sixshooter_gun.inaccuracy != 25 and sixshooter_
 }
 
 //lock icon
-if state = state_shop or table = true {
+if state = state_shop or table = true or (state = state_immobile and room = room_tutorial) {
 	var distance = 62;
 	distance += combo_offset;
 			

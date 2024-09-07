@@ -18,14 +18,16 @@ if object_get_name(object_index) = "obj_chest" { //dont move special chests
 
 global.chest_number += 1;
 
-if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") { 
-	instance_destroy();
-}else {
-	new_chest = choose(obj_chest,obj_chest,obj_chest,obj_chest,obj_chest_coin,obj_chest_coin,obj_chest_weapon,obj_chest_active);
-
-	if new_chest != obj_chest and object_get_name(object_index) = "obj_chest" {
+if room != room_tutorial {
+	if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") { 
 		instance_destroy();
-		instance_create_depth(x,y,depth,new_chest);
+	}else {
+		new_chest = choose(obj_chest,obj_chest,obj_chest,obj_chest,obj_chest_coin,obj_chest_coin,obj_chest_weapon,obj_chest_active);
+
+		if new_chest != obj_chest and object_get_name(object_index) = "obj_chest" {
+			instance_destroy();
+			instance_create_depth(x,y,depth,new_chest);
+		}
 	}
 }
 

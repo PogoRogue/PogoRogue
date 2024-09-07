@@ -37,3 +37,7 @@ if instance_exists(obj_camera) {
 random_set_seed(global.seed);
 
 audio_play_sound(snd_rocketwhoosh,0,false);
+
+//update center position
+center_x_sprite = bbox_left + ((bbox_right - bbox_left)/2);
+center_y_sprite = bbox_top + ((bbox_bottom - bbox_top)/2);

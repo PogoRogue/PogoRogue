@@ -21,7 +21,7 @@ if(!other.is_dead && !array_contains(damaged_list, other)) {
 					}
 					
 					if pickup_dragster.cooldown_time > 0 {
-						pickup_dragster.cooldown_time -= 240;
+						//pickup_dragster.cooldown_time -= 240;
 					}else {
 						pickup_dragster.cooldown_time = 0;	
 					}

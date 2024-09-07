@@ -267,6 +267,18 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}else if (Red == 46 && Green == 49 && Blue == 146)
 		{
 			return obj_background_office;
+		}else if (Red == 29 && Green == 74 && Blue == 28)
+		{
+			randomize();
+			var random_crate = choose(obj_crate1,obj_crate1);
+			random_set_seed(global.seed);
+			return random_crate;
+		}else if (Red == 10 && Green == 64 && Blue == 60)
+		{
+			return obj_crate3;
+		}else if (Red == 39 && Green == 101 && Blue == 114)
+		{
+			return obj_randomasset1;
 		}
 	}
 	

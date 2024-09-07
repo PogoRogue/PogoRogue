@@ -37,9 +37,7 @@ if key_select and !instance_exists(obj_fade_in) {
 	
 	if select = 1 - options_decrease {
 		if global.tutorial_completed = true {
-			scr_Room_Transition(room_proc_gen_test);
-			global.total_runs += 1;
-			scr_Save_Real("total_runs",global.total_runs);
+			scr_Room_Transition(room_starting_area);
 		}else {
 			//complete tutorial before playing
 			audio_play_sound(snd_unavailable,0,false);

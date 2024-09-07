@@ -47,7 +47,7 @@ function scr_Save_Load_Variables(){
 	global.flash = true;
 	
 	//gameplay settings
-	global.tilt_speed = 3;
+	global.tilt_speed = 4;
 	global.screenshake = 60;
 	global.controller_vibration = 60;
 	global.show_timer = false;
@@ -100,7 +100,7 @@ function scr_Save_Load_Variables(){
 	global.resolution_y = ini_read_real("savegame", "resolution_y", 1080);
 	global.flash = ini_read_real("savegame", "flash", true);
 	
-	global.tilt_speed = ini_read_real("savegame", "tilt_speed", 3);
+	global.tilt_speed = ini_read_real("savegame", "tilt_speed", 4);
 	global.screenshake = ini_read_real("savegame", "screenshake", 80);
 	global.controller_vibration = ini_read_real("savegame", "controller_vibration", 80);
 	global.show_timer = ini_read_real("savegame", "show_timer", true);

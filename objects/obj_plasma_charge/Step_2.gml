@@ -19,7 +19,7 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 		
 		with obj_player {
 			speed = 0;
-			motion_add(angle - 90, vsp_basicjump * (0.7 + ((other.temp_charge/other.temp_charge_max)*0.7)));
+			motion_add(angle - 90, vsp_basicjump * (0.7 + ((other.temp_charge/other.temp_charge_max)*0.8)));
 			
 			if frenzy = false and aerial_assassin_frenzy = false and pogomode = false {
 				//gun.current_bullets -= 1;

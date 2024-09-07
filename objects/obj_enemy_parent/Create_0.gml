@@ -53,3 +53,8 @@ megabounce_freeze = false; //dont despawn right away if killed by megabounce
 freeze_x = x;
 freeze_y = y;
 freeze_frame = 0;
+
+center_x_sprite = bbox_left + ((bbox_right - bbox_left)/2);
+center_y_sprite = bbox_top + ((bbox_top - bbox_top)/2);
+
+bounced_times = 0;

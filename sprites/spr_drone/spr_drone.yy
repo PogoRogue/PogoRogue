@@ -23,7 +23,7 @@
   ],
   "name":"spr_drone",
   "nineSlice":null,
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"NPCs",
     "path":"folders/Sprites/NPCs.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":16,
+    "xorigin":8,
     "yorigin":32,
   },
   "swatchColours":[

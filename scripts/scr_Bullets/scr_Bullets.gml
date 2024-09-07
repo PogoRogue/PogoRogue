@@ -75,7 +75,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: -1,
 		bounce_amount: 1,
-		damage: 6
+		damage: 8
 	};
 
 	paintball_bullet = {

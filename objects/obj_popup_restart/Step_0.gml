@@ -28,7 +28,7 @@ if key_select and image_alpha = 1 {
 		if room != room_tutorial {
 			global.total_runs += 1;
 			scr_Save_Real("total_runs",global.total_runs);
-			if room != room_tutorial and room != room_starting_temp {
+			if room != room_tutorial and room != room_starting_area {
 				global.show_tips_screen = true;
 			}
 		}

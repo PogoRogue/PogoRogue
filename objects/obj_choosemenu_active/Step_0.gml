@@ -121,11 +121,12 @@ if center_x >= target_x - 64 and centered = false {
 	centered = true;
 }
 
-if key_back and centered = true and faded = false {
+if key_back and centered = true and faded = false and fade_away = false {
 	alarm[0] = 1;
 	alarm[4] = 2; //create active item menu
 	fade_away = true;	
 	faded = true;
+	audio_play_sound(snd_unavailable,0,false);
 }
 
 if fade_away = true  {

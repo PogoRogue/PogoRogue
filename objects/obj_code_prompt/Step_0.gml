@@ -172,6 +172,7 @@ if controller = true {
 				obj_code_station.code_accepted = true;
 				obj_code_station.code_denied = false;
 				obj_code_station.alarm[0] = 300;
+				audio_play_sound(snd_accepted,0,false);
 			}else if code_string = "55206237" {
 				//unlock all items
 				for (i=0; i < array_length(global.passive_unlocked_array); i++) {
@@ -196,11 +197,13 @@ if controller = true {
 				obj_code_station.code_accepted = true;
 				obj_code_station.code_denied = false;
 				obj_code_station.alarm[0] = 300;
+				audio_play_sound(snd_accepted,0,false);
 			}else { //invalid code
 				instance_activate_object(obj_code_station);
 				obj_code_station.code_accepted = false;
 				obj_code_station.code_denied = true;
 				obj_code_station.alarm[0] = 120;
+				audio_play_sound(snd_denied,0,false);
 			}
 		}
 	}
@@ -227,6 +230,7 @@ if controller = true {
 			obj_code_station.code_accepted = true;
 			obj_code_station.code_denied = false;
 			obj_code_station.alarm[0] = 300;
+			audio_play_sound(snd_accepted,0,false);
 		}else if code_string = "55206237" {
 			//unlock all items
 			for (i=0; i < array_length(global.passive_unlocked_array); i++) {
@@ -251,11 +255,13 @@ if controller = true {
 			obj_code_station.code_accepted = true;
 			obj_code_station.code_denied = false;
 			obj_code_station.alarm[0] = 300;
+			audio_play_sound(snd_accepted,0,false);
 		}else { //invalid code
 			instance_activate_object(obj_code_station);
 			obj_code_station.code_accepted = false;
 			obj_code_station.code_denied = true;
 			obj_code_station.alarm[0] = 120;
+			audio_play_sound(snd_denied,0,false);
 		}
 	}
 }

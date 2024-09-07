@@ -17,7 +17,7 @@ if instance_exists(obj_player) {
 	}
 }
 
-// Only collide on 0th frame
-if(floor(image_index > 0)) { //4
-	//mask_index = spr_nothing;	
+
+if(floor(image_index > 9)) { //4
+	mask_index = spr_nothing;	
 }

@@ -17,4 +17,6 @@ created_walls = false;
 
 drawn_tiles = false;
 tile_frame = 0;
-depth += 1000;
+if room != room_tutorial {
+	depth += 1000;
+}

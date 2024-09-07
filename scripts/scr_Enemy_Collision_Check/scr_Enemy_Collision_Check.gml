@@ -17,6 +17,7 @@ function scr_Enemy_Collision_Check(condition){
 					speed = 0;
 					hp -= obj_player.stomp_damage * stomp_defense;
 					red_frames = 10;
+					bounced_times += 1;
 					other.parent_obj.bouncing = true;
 					other.parent_obj.bouncing_bottom = true;
 					
@@ -79,6 +80,7 @@ function scr_Enemy_Collision_Check(condition){
 					}
 					hp -= other.stomp_damage * stomp_defense;
 					red_frames = 10;
+					bounced_times += 1;
 					
 					randomize();
 					audio_play_sound(choose(snd_enemyhurt,snd_enemyhurt2,snd_enemyhurt3),0,false);

@@ -294,7 +294,7 @@ if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
 		if place_meeting(x,y,obj_ground) {
 			//image_index = 1;
 			//depth = 100;
-			if room = room_starting_temp or room = room_boss_2 {
+			if room = room_starting_area or room = room_boss_2 {
 				//depth = 401;
 			}else if room = room_boss_3  {
 				//depth = 301;
