@@ -32,12 +32,12 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"on_press_event","filters":[
         "GMScript",
-      ],"listItems":[],"multiselect":false,"name":"on_press_event","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":5,},
-    {"$GMObjectProperty":"v1","%Name":"button_id","filters":[],"listItems":[],"multiselect":false,"name":"button_id","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
-    {"$GMObjectProperty":"v1","%Name":"pitch","filters":[],"listItems":[],"multiselect":false,"name":"pitch","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+      ],"listItems":[],"multiselect":false,"name":"on_press_event","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"button_id","filters":[],"listItems":[],"multiselect":false,"name":"button_id","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"pitch","filters":[],"listItems":[],"multiselect":false,"name":"pitch","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"default_sprite","filters":[
         "GMSprite",
-      ],"listItems":[],"multiselect":false,"name":"default_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_button_red","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"default_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_button_red","path":"sprites/spr_button_red/spr_button_red.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_button_red","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

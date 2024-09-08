@@ -255,3 +255,36 @@ if state = state_shop or table = true or (state = state_immobile and room = room
 		draw_sprite_ext(spr_lockicon,1,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,c_white,1);	
 	}
 }
+
+if lock_unlocked = true {
+	var distance = 62;
+	distance += combo_offset;
+			
+	if instance_exists(obj_shieldbubble) {
+		distance += 12; //8
+	}else if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun 
+	or pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling 
+	or pickups_array[0] = pickup_harpoon or pickups_array[1] =  pickup_harpoon { 
+		distance += 18;
+	}
+	
+	if lock_unlocked_frames < sprite_get_number(spr_lockicon_unlocked)-1 {
+		lock_unlocked_frames += 0.5;
+	}else if lock_alpha > 0 {
+		if lock_alpha >= 1 {
+			audio_play_sound(snd_zap,0,false);
+		}
+		lock_alpha -= 0.1;
+	}else {
+		lock_unlocked = false;
+	}
+	
+	//sprite
+	if image_xscale = 1 {
+		draw_sprite_ext(spr_lockicon_unlocked,lock_unlocked_frames,x + lengthdir_x(distance,angle+90) + lengthdir_x(1,angle+180),y + lengthdir_y(distance,angle+90)+ lengthdir_y(1,angle+180),1,1,angle,c_white,lock_alpha);	
+	}else {
+		draw_sprite_ext(spr_lockicon_unlocked,lock_unlocked_frames,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,c_white,lock_alpha);	
+	}
+}else {
+	lock_unlocked_frames = 0;
+}

@@ -19,6 +19,10 @@ weapon_chance = 60 + global.luck;
 pickup_chance = 60 + global.luck;
 destroy_chance = 80; //when active, change to ~80
 
+lock_unlocked = false;
+lock_unlocked_frames = 0;
+lock_alpha = 1;
+
 if room = room_tutorial {
 	destroy_chance = 0;
 	heart_chance = 0;

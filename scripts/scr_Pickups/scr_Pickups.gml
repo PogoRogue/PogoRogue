@@ -793,13 +793,15 @@ function scr_Pickups(){
 		is_synergy: false,
 		on_call: function() {
 			with obj_player {
-				audio_play_sound(snd_blink_respawn,0,false);
-				if instance_exists(obj_volleyball) {
-					obj_volleyball.despawn = true;
+				if pickup_volleyball.on_cooldown = false {
+					audio_play_sound(snd_blink_respawn,0,false);
+					if instance_exists(obj_volleyball) {
+						obj_volleyball.despawn = true;
+					}
+					pickup_volleyball.on_cooldown = true;
+					pickup_volleyball.bounce_reset = pickup_volleyball.bounce_reset_max;
+					instance_create_depth(x+lengthdir_x(128,image_angle+90),y+lengthdir_y(128,image_angle+90),depth+1,obj_volleyball);
 				}
-				pickup_volleyball.on_cooldown = true;
-				pickup_volleyball.bounce_reset = pickup_volleyball.bounce_reset_max;
-				instance_create_depth(x+lengthdir_x(128,image_angle+90),y+lengthdir_y(128,image_angle+90),depth+1,obj_volleyball);
 			}
 		}
 	};

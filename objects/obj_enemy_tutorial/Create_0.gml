@@ -23,3 +23,11 @@ draw_hp = false;
 y_spd = 0;
 
 init_add_to_combo = add_to_combo;
+
+alpha = 1;
+
+sprite_index = spr_enemy_tutorial_respawn;
+image_index = sprite_get_number(spr_enemy_tutorial_respawn)-1;
+image_speed = -1;
+spawned = false;
+show_red = false;

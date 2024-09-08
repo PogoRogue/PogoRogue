@@ -9,4 +9,4 @@ item_cost = 115;
 synergy_child1 = obj_player.pickup_groundpound;
 synergy_child2 = obj_player.pickup_chargejump;
 
-image_index = 3;
+image_index = 2;

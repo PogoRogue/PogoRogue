@@ -9,4 +9,4 @@ item_cost = 145;
 synergy_child1 = obj_player.pickup_volleyball;
 synergy_child2 = obj_player.pickup_tripleshot;
 
-image_index = 3;
+image_index = 2;

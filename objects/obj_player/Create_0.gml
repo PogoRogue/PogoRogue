@@ -33,6 +33,9 @@ current_burst = 0;
 weapon_arrow_index = 0;
 table = false;
 launchpad = false;
+lock_unlocked = false;
+lock_unlocked_frames = 0;
+lock_alpha = 1;
 
 //weapons
 portal_object = noone;
@@ -224,7 +227,7 @@ state_free = function() {
 	sprite_index = falling_sprite;
 	
 	if (vspeed > 5) {
-		image_index = 3;
+		image_index=3;
 	}else if (vspeed > 3) {
 		image_index = 2;
 	}else if (vspeed > 1) {
@@ -251,11 +254,12 @@ state_free = function() {
 			scr_Save_Real("tutorial_completed",global.tutorial_completed);
 			audio_stop_all();
 			gamepad_set_vibration(0,0,0);
-			scr_Game_Restart();
-			with obj_pause {
+			//scr_Game_Restart();
+			scr_Room_Transition(room_starting_area);
+			/*with obj_pause {
 				item_swap = false;
 				paused_outside = true;
-			}
+			}*/
 			state = state_immobile;
 		}
 	}else if room = room_starting_area {
@@ -266,6 +270,11 @@ state_free = function() {
 			scr_Save_Real("total_runs",global.total_runs);
 			global.show_tips_screen = true;
 		}
+	}
+	
+	if room = room_starting_area and y > room_height + 48 and mask_index != spr_nothing {
+		state = state_immobile;
+		scr_Room_Transition(room_tutorial);
 	}
 	
 	//create upward flames if fast enough

@@ -73,6 +73,10 @@ if current_bubble_exists = false and current_speechbubble != -1 and still = true
 
 
 //specific cases
+if current_speechbubble = 10 and (global.combo >= 5) { //COMBO
+	end_x = 528; end_y = 176; still = false; retract_current_bubble = true; y_up = true; y_add = 0;
+}
+
 if current_speechbubble = 1 and (obj_player.num_of_weapons != 0 or instance_exists(obj_item_weapon_default)) //PISTOL
 or retract_current_bubble and current_speechbubble < array_length(speechbubble_array) {
 	with speechbubble_array[current_speechbubble] {

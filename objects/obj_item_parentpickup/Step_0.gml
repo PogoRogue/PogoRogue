@@ -13,3 +13,5 @@ if instance_exists(obj_player) and room != room_shop {
 		}
 	}
 }
+
+mask_index = spr_pickup_airbag;

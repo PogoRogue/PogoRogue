@@ -28,9 +28,6 @@ if distance_to_object(obj_player) < spawn_distance and activated = false and ala
 	new_y_offset_spd = 0;
 }
 draw_set_font(fnt_itemdescription2);
-//show_debug_message(string_height(scr_Linebreak(current_text,chars_per_line,99)));
-show_debug_message(num_of_lines);
-show_debug_message(new_text_pixel_height);
 
 //retract
 if (distance_to_object(obj_player) > retract_distance and retract_distance != 0) and activated = true and retract = false {
@@ -43,7 +40,7 @@ if (distance_to_object(obj_player) > retract_distance and retract_distance != 0)
 	current_character = 0;
 }
 
-if (next_button and retract_distance = 0) and activated = true and retract = false and current_line >= lines_of_text {
+if (next_button and retract_distance = 0) and activated = true and retract = false and current_line >= lines_of_text and scrolling_text = current_text {
 	if repeat_text = false {
 		retract = true;
 		destroy_on_retract = true;
@@ -85,6 +82,8 @@ if next_button and retract = false {
 		}*/
 		current_text = text_array[current_line-1];
 		new_y_offset_spd = 0;
+	}else if scrolling_text != current_text and awake = true and scrolling_text != "" {
+		scrolling_text = current_text;
 	}
 }
 
@@ -94,11 +93,17 @@ if activated = true {
 		bubble_index += animation_speed;
 	}
 	
-	if bubble_index >= 7 + (3*size2) and bubble_index < 9 + (3*size2) {
-		y_offset += num_of_lines;
+	if size2 = false {
+		if bubble_index >= 7 and bubble_index < 9 {
+			y_offset += num_of_lines;
+		}
+	}else {
+		if bubble_index >= 8 and bubble_index < 12 {
+			y_offset += num_of_lines/2;
+		}
 	}
 	
-	if bubble_index >= 2 + (8*size2) {
+	if bubble_index >= 2 + (11*size2) {
 		if type_text = false {
 			type_text = true;
 			alarm[0] = 2;
@@ -152,4 +157,26 @@ if retract = true {
 
 if floor(bubble_index) = sprite_get_number(sprite_index)-1 and retract = false {
 	animation_speed = 0;
+}
+
+if bubble_num = 2 and current_line >= lines_of_text and awake {
+	with instance_nearest(x,y,obj_chest_weapon) {
+		lock_unlocked = true;
+	}
+}
+
+if bubble_num = 7 and current_line >= lines_of_text and awake {
+	with instance_nearest(x,y,obj_chest_active) {
+		lock_unlocked = true;
+	}
+}
+
+if bubble_num = 9 and current_line >= lines_of_text and awake {
+	with instance_nearest(x,y,obj_chest_weapon) {
+		lock_unlocked = true;
+	}
+}
+
+if y_offset < 0 {
+	y_offset = 0;
 }

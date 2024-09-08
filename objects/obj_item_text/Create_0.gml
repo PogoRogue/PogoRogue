@@ -1,7 +1,7 @@
 alpha = 3;
 depth = -1000;
 
-if room = room_items or room = room_tutorial {
+if room = room_items or room = room_tutorial and item_string = "Revive (Tutorial)" {
 	instance_destroy();	
 }
 

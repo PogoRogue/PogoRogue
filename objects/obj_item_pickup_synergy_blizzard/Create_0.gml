@@ -9,4 +9,4 @@ item_cost = 155;
 synergy_child1 = obj_player.pickup_freeze;
 synergy_child2 = obj_player.pickup_bulletblast;
 
-image_index = 3;
+image_index = 2;

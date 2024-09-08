@@ -9,4 +9,4 @@ item_cost = 185;
 synergy_child1 = obj_player.pickup_winners;
 synergy_child2 = obj_player.pickup_slowmo;
 
-image_index = 3;
+image_index = 2;

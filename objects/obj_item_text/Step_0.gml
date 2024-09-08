@@ -35,6 +35,9 @@ if ready = true {
 	}
 }
 
+if room = room_items or room = room_tutorial and item_string = "Revive (Tutorial)" {
+	instance_destroy();	
+}
 
 if text_number = 1 and ready = false {
 	ready = true;

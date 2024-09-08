@@ -30,8 +30,8 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"min_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"min_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":1,},
-    {"$GMObjectProperty":"v1","%Name":"max_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"max_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"min_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"min_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"max_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"max_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":1,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

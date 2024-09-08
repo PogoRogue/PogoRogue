@@ -33,14 +33,14 @@ if !scr_In_Array(global.all_buff_sprites,sprite_index) and add_sprite_to_list = 
 	if scr_In_Array(obj_player.all_buffs_array,buff) {
 		for(i = 0; i < array_length(obj_player.all_buffs_array);i++) {
 			if obj_player.all_buffs_array[i] = buff {
-				if global.passive_unlocked_array[i] = false and room != room_tutorial and text_exists = false {
+				if global.passive_unlocked_array[i] = false /*and room != room_tutorial*/ and text_exists = false {
 					//instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
 					with instance_create_depth(x,y,depth-1000,obj_item_text) {
 						new_discovery = true;
 						item_string = other.item_name;
 						if other.play_sound = true { audio_play_sound(snd_passivePowerup,0,false); }
 					}
-				}else if global.passive_unlocked_array[i] = true and room != room_tutorial and text_exists = false {
+				}else if global.passive_unlocked_array[i] = true/* and room != room_tutorial*/ and text_exists = false {
 					with instance_create_depth(x,y,depth-1000,obj_item_text) {
 						new_discovery = false;
 						item_string = other.item_name;

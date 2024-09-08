@@ -9,4 +9,4 @@ item_cost = 160;
 synergy_child1 = obj_player.pickup_hatgun;
 synergy_child2 = obj_player.pickup_grappling;
 
-image_index = 3;
+image_index = 2;

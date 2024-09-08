@@ -9,4 +9,4 @@ item_cost = 140;
 synergy_child1 = obj_player.pickup_airbag;
 synergy_child2 = obj_player.pickup_target;
 
-image_index = 3;
+image_index = 2;

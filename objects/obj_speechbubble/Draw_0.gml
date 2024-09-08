@@ -4,6 +4,8 @@ if activated = true or retract = true {
 		for (i = 0; i <= y_offset*2; i += 1) {
 			draw_sprite(middle_sprite,floor(bubble_index),x,y+y_offset - i);
 		}
+	}else if size2 = true {
+		y_offset = 0;
 	}
 	draw_sprite(bottom_sprite,floor(bubble_index),x,y+y_offset);
 	draw_sprite(top_sprite,floor(bubble_index),x,y-y_offset);

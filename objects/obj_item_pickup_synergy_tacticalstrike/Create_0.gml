@@ -9,4 +9,4 @@ item_cost = 225;
 synergy_child1 = obj_player.pickup_jetpack;
 synergy_child2 = obj_player.pickup_blink;
 
-image_index = 3;
+image_index = 2;

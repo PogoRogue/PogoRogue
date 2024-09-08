@@ -47,7 +47,7 @@ if global.combo = 0 {
 	prev_combo = global.combo;
 	if room = room_tutorial {
 		with obj_enemy_tutorial {
-			if image_index = 1 and init_add_to_combo = true {
+			if image_speed = 0 and init_add_to_combo = true and spawned = true and sprite_index = spr_enemy_tutorial_animation  {
 				instance_destroy();
 				with instance_create_layer(self.x,self.y,"Instances",obj_enemy_tutorial) {
 					add_to_combo = other.init_add_to_combo;

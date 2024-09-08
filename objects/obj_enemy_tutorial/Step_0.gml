@@ -3,18 +3,22 @@
 // Inherit the parent event
 //event_inherited();
 if(is_dead) {
-	image_alpha *= 0.9;
+	alpha *= 0.9;
 	mask_index = spr_nothing;
 	spd = 0;
 	speed = 0;
-	if image_alpha <= 0.005 {
+	if alpha <= 0.005 {
 		respawn = true;
 		is_dead = false;
 	}
 } else if (hp <= 0) {
 	is_dead = true;
 	if (doOnce) {
-		image_index = 1;
+		sprite_index = spr_enemy_tutorial_animation;
+		image_index = 0;
+		image_speed = 1;
+		show_red = true;
+		alarm[1] = 8;
 		doOnce = false;
 		randomize();
 		var random_death_sound = choose(snd_enemy_death,snd_enemy_death2,snd_enemy_death3);
@@ -38,7 +42,7 @@ if(is_dead) {
 				num_of_coins = 5;
 			}
 		}
-	}else if init_add_to_combo = false {
+	}else if init_add_to_combo = false and y != 2272 {
 		alarm_set(0, room_speed);
 	}
 }else {
@@ -46,11 +50,24 @@ if(is_dead) {
 }
 
 if (respawn) {
-	image_alpha *= 1.1;
-	if (image_alpha >= 1) {
+	alpha *= 1.1;
+	if (alpha >= 1) {
 		hp = hp_max;
-		image_alpha = 1;
+		alpha = 1;
 		respawn = false;
 	}
 }
 	
+if image_speed = 1 and scr_Animation_Complete() {
+	image_speed = 0;
+	image_index = sprite_get_number(sprite_index)-1;
+}
+
+if image_index < 2 and image_speed = -1 {
+	image_speed = 0;	
+	image_index = 0;	
+	if spawned = false {
+		spawned = true;	
+		sprite_index = spr_enemy_tutorial;
+	}
+}

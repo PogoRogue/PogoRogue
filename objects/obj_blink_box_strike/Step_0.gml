@@ -215,5 +215,5 @@ if (arrows_alpha > 0 and moved = true and obj_player.image_yscale = 0) {
 }
 
 if flash = true {
-	image_index = 3;	
+	image_index=3;	
 }
