@@ -30,3 +30,5 @@ alarm[1] = 2;
 
 controller = global.use_controller;
 alarm3_time = 30;
+
+depth = -2000;

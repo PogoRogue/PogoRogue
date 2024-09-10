@@ -167,7 +167,7 @@ size2: true,
 retract_distance: 0,
 spawn_distance: 1000,
 bubble_num: 9,
-repeat_text: false,
+repeat_text: true,
 repeat_to_line: 1 });
 
 speechbubble_obj_10 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
