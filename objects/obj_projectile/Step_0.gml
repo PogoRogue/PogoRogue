@@ -160,12 +160,12 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0 ) {
 //missile
 if (gun_name = "Missile Launcher") {
 	//speed up
-	if speed < 8 {
-		speed += 0.25;	
+	if speed < 8 + (8 * (gun_level > 1)) {
+		speed += 0.25 + (0.25 * (gun_level > 1));	
 	}
 	
 	//lock on to enemy
-	if collision_circle(x,y,160,obj_enemy_parent,false,true) != noone {
+	if collision_circle(x,y,160+(160 * (gun_level > 1)),obj_enemy_parent,false,true) != noone {
 		closest_enemy = instance_nearest(x,y,obj_enemy_parent);
 	}else {
 		closest_enemy = noone;
@@ -191,7 +191,7 @@ if (gun_name = "Missile Launcher") {
 			direction = image_angle;
 			num_of_bounces -= 1;
 		}
-		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces <= 0 and global.drilltipbullets = false{
+		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces <= 0 and global.drilltipbullets = false {
 			instance_destroy();	
 		}else if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0  {
 			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
@@ -214,7 +214,7 @@ if (gun_name = "Boomerangs") {
 	vspd = 0;
 	image_angle += 20;
 	if spd > 0 {
-		spd -= 0.25;
+		spd -= (0.25 + (0.25 * (gun_level > 1)) + (0.2 * (gun_level > 1)));
 		speed = spd;
 		direction = angle;
 		if spd <= 0 {
@@ -222,7 +222,7 @@ if (gun_name = "Boomerangs") {
 		}
 	}else {
 		speed = 0;
-		spd -= 0.25;
+		spd -= (0.15 + (0.15 * (gun_level > 1)) + (0.2 * (gun_level > 2)));
 		move_towards_point(obj_player.x,obj_player.y,abs(spd));
 		//collision with player
 		if place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask) {

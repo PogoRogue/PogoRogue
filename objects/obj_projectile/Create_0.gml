@@ -55,7 +55,7 @@ if (gun_name = "Laser Gun") {
 	init_sprite = sprite_index;
 	laser_boost = false; //only apply momentum if this is true
 	mask_index = spr_nothing;
-	image_speed = 1;
+	image_speed = 1 + (obj_player.laser_gun.level > 1);
 	rotation_speed = obj_player.rotation_speed;
 	//obj_player.image_angle-90
 	image_angle = obj_player.image_angle-90
@@ -162,7 +162,7 @@ yoyo_array2 = []; //retract array
 
 //yo-yo
 if (gun_name = "Yo-yo") {
-	yoyo_spd = 8 + (4 * global.strong_muscles);
+	yoyo_spd = 8 + (4 * global.strong_muscles) + (2 * (gun_level > 1)) + (4 * (gun_level > 2));
 	if !audio_is_playing(snd_yoyo1) {
 		audio_play_sound(snd_yoyo1,0,false);
 	}

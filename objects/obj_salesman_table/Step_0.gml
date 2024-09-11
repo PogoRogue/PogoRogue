@@ -323,7 +323,7 @@ if usable = true {
 			obj_camera.follow = obj_player;
 		}
 		colliding = false;
-		obj_player.table = false
+		obj_player.table = false;
 	}
 }
 

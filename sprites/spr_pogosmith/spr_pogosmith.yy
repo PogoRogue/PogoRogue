@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_pogosmith",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":39,
-  "bbox_left":0,
-  "bbox_right":42,
+  "bbox_left":17,
+  "bbox_right":39,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,

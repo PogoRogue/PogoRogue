@@ -141,3 +141,7 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 		//image_angle = other.orb_rotation;
 	}
 }
+
+if obj_player.plasma_gun.level > 1 {
+	frames_to_charge = 40;
+}

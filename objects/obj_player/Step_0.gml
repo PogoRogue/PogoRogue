@@ -200,16 +200,32 @@ if centering = true and can_rotate {
 	}
 	
 	//stop if right or left key
-	if !instance_exists(obj_salesman_table) {
+	if !instance_exists(obj_salesman_table) and !instance_exists(obj_pogosmith_table) { 
 		if key_left or key_right or state = state_bouncing {
 			can_rotate = true;
 			centering = false;
 		}
 	}else {
-		if obj_salesman_table.being_used = false {
-			if key_left or key_right or state = state_bouncing {
-				can_rotate = true;
-				centering = false;
+		if instance_exists(obj_salesman_table) and instance_exists(obj_pogosmith_table) {
+			if obj_salesman_table.being_used = false and obj_pogosmith_table.being_used = false {
+				if key_left or key_right or state = state_bouncing {
+					can_rotate = true;
+					centering = false;
+				}
+			}
+		}else if instance_exists(obj_salesman_table) {
+			if obj_salesman_table.being_used = false {
+				if key_left or key_right or state = state_bouncing {
+					can_rotate = true;
+					centering = false;
+				}
+			}
+		}else if instance_exists(obj_pogosmith_table) {
+			if obj_pogosmith_table.being_used = false {
+				if key_left or key_right or state = state_bouncing {
+					can_rotate = true;
+					centering = false;
+				}
 			}
 		}
 	}
@@ -338,22 +354,22 @@ if (canshoot > 0) {
 		if gun != water_gun and gun != laser_gun {
 			gun.spread_number = 3;
 		}
-	}else if gun.spread_number = 3 and tripleshot = false {
+	}else if gun.spread_number = 3 and tripleshot = false and !(gun._name = "Javelins" and gun.level >= 2) {
 		gun.spread_number = 1;
 	}
 	
 	//lerp firerate to end while shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_end, ammo.firerate_mult);
 	
-	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_chargejump) {
+	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_chargejump and table = false) {
 		scr_Shoot();
 	
 		var delay = gun.burst_delay;
 		
 		repeat (gun.burst_number - 1) {
-			if gun._name = "Burst Fire Gun" and delay = gun.burst_delay {
+			if gun._name = "Burst Rifle" and delay = gun.burst_delay {
 				current_burst = 1;
-				audio_play_sound(snd_burstfire,0,false);	
+				audio_play_sound(gun.sound,0,false);	
 			}
 			call_later(delay,time_source_units_frames,scr_Shoot);
 			delay += gun.burst_delay;
@@ -432,9 +448,25 @@ or gun_array[current_gun] != water_gun and gun_1 = water_gun
 or gun_array[current_gun] != water_gun and gun_2 = water_gun
 or gun_array[current_gun] != water_gun and gun_3 = water_gun {
 	if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff and gun_array[current_gun] = water_gun {
-		water_gun.current_bullets += 1/3;
+		if water_gun.level = 1 {
+			water_gun.current_bullets += 1/3;
+		}else if water_gun.level = 2 {
+			water_gun.current_bullets += 3/5;
+		}else if water_gun.level = 3 {
+			water_gun.current_bullets += 3/5;
+		}else if water_gun.level >= 4 {
+			water_gun.current_bullets += 1;
+		}
 	}else if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff {
-		water_gun.current_bullets += 1/10;
+		if water_gun.level = 1 {
+			water_gun.current_bullets += 1/10;
+		}else if water_gun.level = 2 {
+			water_gun.current_bullets += 1/10;
+		}if water_gun.level = 3 {
+			water_gun.current_bullets += 1/5;
+		}if water_gun.level >= 4 {
+			water_gun.current_bullets += 1/3;
+		}
 	}else {
 		water_gun.current_bullets = water_gun.bullets_per_bounce+max_ammo_buff;
 	}
@@ -442,7 +474,7 @@ or gun_array[current_gun] != water_gun and gun_3 = water_gun {
 
 #endregion
 
-if gun_1._name != "Burst Fire Gun" and gun_2._name != "Burst Fire Gun" and gun_3._name != "Burst Fire Gun" {
+if gun_1._name != "Burst Rifle" and gun_2._name != "Burst Rifle" and gun_3._name != "Burst Rifle" {
 	current_burst = 0;
 }
 

@@ -38,7 +38,7 @@ if (gun_name = "Laser Gun" ) {
 			}
 		
 			//add momentum
-			if (other.laser_boost) and other.spread_index = 0 {
+			if (other.laser_boost) and other.spread_index = 0 or (obj_player.laser_gun.level > 1) {
 				motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
 			}
 		

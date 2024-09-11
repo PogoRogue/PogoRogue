@@ -10,7 +10,7 @@ function scr_Shoot(){
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
 		var damage_multiplier = 1;
 		//sound
-		if gun._name != "Paintball Gun" and gun._name != "Bouncy Ball Blaster" and gun._name != "Burst Fire Gun" {
+		if gun._name != "Paintball Gun" and gun._name != "Bouncy Ball Blaster" and gun._name != "Burst Rifle" {
 			audio_play_sound(gun.sound,0,false);
 		}else if gun._name = "Paintball Gun" {
 			audio_play_sound(choose(snd_paintball1,snd_paintball2,snd_paintball3),0,false,1,0,random_range(0.8,1.2));
@@ -60,6 +60,7 @@ function scr_Shoot(){
 					bounce_amount: gun.ammo[bullet_index].bounce_amount,
 					damage: gun.ammo[bullet_index].damage * (1 + ((global.sharpshooter = true and gun.current_bullets = gun.bullets_per_bounce) * 0.5)) * damage_multiplier,
 					spread_index: number_in_spread,
+					gun_level: gun.level
 				});
 			}
 			
@@ -78,8 +79,12 @@ function scr_Shoot(){
 				gun.current_bullets -= 1;
 			}
 			
-			if gun.spread_number = 3 and gun._name = "Burst Fire Gun" and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
-				gun.current_bullets -= 1/3;
+			if gun.spread_number = 3 and gun._name = "Burst Rifle" and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+				if gun.level = 1 {
+					gun.current_bullets -= 1/3;
+				}else {
+					gun.current_bullets -= 1/4;
+				}
 			}
 			
 			//allow upward flames
@@ -134,6 +139,9 @@ function scr_Shoot(){
 			if audio_is_playing(snd_burstfire) and burstfire_gun.spread_number = 1 {
 				audio_stop_sound(snd_burstfire);
 			}
+			if audio_is_playing(snd_burstfire2) and burstfire_gun.spread_number = 1 {
+				audio_stop_sound(snd_burstfire2);
+			}
 		}
 		
 		//iterate through ammo types
@@ -159,7 +167,7 @@ function scr_Shoot(){
 			current_burst = 0;
 		}
 		
-		if gun._name = "Burst Fire Gun" and (gun.current_bullets % gun.burst_number) != 0 and current_burst = 0 {
+		if gun._name = "Burst Rifle" and (gun.current_bullets % gun.burst_number) != 0 and current_burst = 0 {
 			gun.current_bullets = ceil(gun.current_bullets/gun.burst_number) * gun.burst_number;
 			show_debug_message(gun.current_bullets);
 		}

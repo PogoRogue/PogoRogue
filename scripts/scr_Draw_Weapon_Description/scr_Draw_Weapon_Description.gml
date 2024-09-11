@@ -133,7 +133,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 			}else if weapon.ammo[0].firerate_end < 15 {
 				line_4 = "Fire Rate: Medium";
 			}else {
-				if weapon._name != "Burst Fire Gun" {
+				if weapon._name != "Burst Rifle" {
 					line_4 = "Fire Rate: Low";
 				}else {
 					line_4 = "Fire Rate: High";

@@ -152,7 +152,7 @@ negev_gun = {
 };
 
 burstfire_gun = {
-	name: "Burst Fire Gun",  
+	name: "Burst Rifle",  
 	sprite: spr_player,   
 	ammo: [burstfire_bullet],
 	inaccuracy: 10,       

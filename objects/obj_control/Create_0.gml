@@ -14,7 +14,7 @@ global.player_spawn_y = 0;
 global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
 
-if room = room_gameplay_video {
+if room = room_starting_area {
 	global.num_of_coins = 2000;
 }else if room = room_test {
 	global.num_of_coins = 200;

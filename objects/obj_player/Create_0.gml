@@ -1440,12 +1440,12 @@ if room = room_tutorial {
 }
 weapons_equipped = num_of_weapons;
 all_guns_array = [default_gun,paintball_gun,shotgun_gun,
-				burstfire_gun,javelin_gun,bouncyball_gun,
-				grenade_gun, boomerang_gun,starsucker_gun,
-				water_gun, bubble_gun, yoyo_gun,
-				missile_gun, sniper_gun, laser_gun,
-				slime_gun, machine_gun, puncher_gun,
-				sixshooter_gun, plasma_gun]; //all guns
+				burstfire_gun,javelin_gun,puncher_gun,
+				sixshooter_gun, bouncyball_gun, boomerang_gun,
+				water_gun, machine_gun, grenade_gun,
+				starsucker_gun, yoyo_gun, bubble_gun,
+				slime_gun, sniper_gun, plasma_gun,
+				laser_gun, missile_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();
@@ -1524,16 +1524,16 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency, 
-					pickup_parachute, pickup_firedash, pickup_groundpound, 
-					pickup_hatgun, pickup_chargejump, pickup_volleyball,
-					pickup_target, pickup_blink, pickup_jetpack,
-					pickup_tripleshot, pickup_frenzy, pickup_bulletblast,
-					pickup_slowmo, pickup_grappling, pickup_winners,
-					pickup_airbag, pickup_invincibility, pickup_pogomode,
-					pickup_launchpad, pickup_megabounce,pickup_jolt,
-					pickup_hacker, pickup_blizzard, pickup_dragster,
-					pickup_harpoon, pickup_wreckingball,pickup_tacticalstrike]; //all pickups
+all_pickups_array = [pickup_reload, pickup_freeze, pickup_airbag, 
+					pickup_parachute, pickup_chargejump, pickup_groundpound, 
+					pickup_target, pickup_volleyball, pickup_grappling,
+					pickup_hatgun, pickup_tripleshot, pickup_emergency,
+					pickup_winners, pickup_firedash, pickup_blink,
+					pickup_jetpack, pickup_bulletblast,pickup_slowmo,
+					pickup_frenzy,pickup_invincibility,pickup_jolt,
+					pickup_launchpad, pickup_megabounce, pickup_harpoon,
+					pickup_wreckingball, pickup_dragster, pickup_hacker,
+					pickup_tacticalstrike, pickup_blizzard, pickup_pogomode]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();

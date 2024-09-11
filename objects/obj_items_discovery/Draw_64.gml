@@ -17,12 +17,12 @@ var item_selected = ((select_y-1)*select_x_max)+select_x;
 //grid
 for(xx = 0; xx < select_x_max; xx++) {
 	for(yy = 0; yy < select_y_max; yy++) {
-		draw_sprite(select_sprite,(select_x-1 = xx and select_y-1 = yy),center_x-((x_gap*select_x_max-x_gap)/2)+xx*x_gap,128+yy*y_gap+1-(24*(select = 1)));
+		draw_sprite(select_sprite,(select_x-1 = xx and select_y-1 = yy),center_x-((x_gap*select_x_max-x_gap)/2)+xx*x_gap,128+yy*y_gap+1-(24*(select = 1))-(16*(select = 2)));
 	}
 }
 
 //draw area indicators
-if select != 1 { //not passives
+if select= 3 {
 	draw_sprite(spr_item_menu_areas,0,center_x-140-36,128+36);
 	draw_sprite(spr_item_menu_areas,1,center_x+140+36,128+36+72);
 	draw_sprite(spr_item_menu_areas,2,center_x-140-36,128+36+144);
@@ -52,15 +52,15 @@ for (i = 0; i < 40; i++) {
 	//ACTIVES
 	if select = 2 and i < array_length(actives_array) {
 		if global.active_unlocked_array[i] = true {
-			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27);
+			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27-16);
 			if i = 12 or i > 19 {
-				draw_sprite(spr_synergy_animation,global.synergy_frame,xx,yy-27);
+				draw_sprite(spr_synergy_animation,global.synergy_frame,xx,yy-27-16);
 			}
 		}
-		draw_sprite(actives_array[i],(sprite_get_number(actives_array[i])-1)*(global.active_unlocked_array[i] = false) /*+ (global.active_unlocked_array[i] = true)*/,xx,yy-27);
+		draw_sprite(actives_array[i],(sprite_get_number(actives_array[i])-1)*(global.active_unlocked_array[i] = false) /*+ (global.active_unlocked_array[i] = true)*/,xx,yy-27-16);
 	
-		if (i < 20 and global.active_unlocked_array[i]= true) {
-			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_pickups[i]._name,12,99),c_white);
+		if (i < 30 and global.active_unlocked_array[i]= true) {
+			scr_Draw_Text_Outlined(xx,yy-48-16,scr_Linebreak(all_pickups[i]._name,12,99),c_white);
 		}
 	}
 
@@ -102,18 +102,20 @@ for (i = 0; i < array_length(global.all_buffs); i++) {
 	}
 }
 
-for (i = 0; i < 20; i++) {
-	var yy = 226 + floor(i / select_x_max) * y_gap;
+
+for (i = 0; i < 30; i++) {
+	var yy = 226 + floor(i / select_x_max) * y_gap-6;
 	if (select = 2) {
 		if (i = ((select_y-1)*select_x_max)+(select_x-1)) {
+			var x_offset = 154 + (((select_x_max-4)*(-x_gap))/2);
 			if select_x <= select_x_max/2 {
-				var xx = 154 - 54;
+				var xx = (center_x-364) + x_offset;
 			}else {
-				var xx = room_width - 154 + 54;
+				var xx = (center_x+360) - x_offset;
 			}
 			
-			if select_y > 3 {
-				var y_offset = -y_gap;
+			if select_y > 4 {
+				var y_offset = -y_gap * (select_y-4);
 			}else {
 				var y_offset = 0;
 			}

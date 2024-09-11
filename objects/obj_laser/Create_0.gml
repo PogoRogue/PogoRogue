@@ -1,4 +1,4 @@
-image_speed = 1;
+image_speed = 1 + (obj_player.laser_gun.level > 1);
 laser_x = obj_player.x - x;
 laser_y = obj_player.y - y;
 init_damage = damage;

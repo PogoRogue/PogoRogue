@@ -59,7 +59,7 @@ if !key_up and !key_down {
 }
 
 //select
-if key_select and centered = true and fade_away = false and global.weapon_unlocked_array[select-1] = true {
+if key_select and centered = true and fade_away = false and (global.weapon_unlocked_array[select-1] = true or test_mode = false) {
 	audio_play_sound(snd_selectOption,0,false);
 	
 	alarm[0] = 1;

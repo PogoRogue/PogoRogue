@@ -1,5 +1,5 @@
 /// @description increase global.num_of_coins
-if room != room_shop and salesman = false {
+if room != room_shop and salesman = false and pogosmith = false {
 	global.num_of_coins += 1;
 	global.current_total_coins += 1;
 	with obj_coincounter {

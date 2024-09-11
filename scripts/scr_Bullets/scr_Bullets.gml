@@ -302,7 +302,7 @@ function scr_Bullets(){
 		grav_affected: true,
 		grv: obj_player.grv,
 		num_of_bounces: 0 + global.bouncy_bullets,
-		bounce_amount: 1,
+		bounce_amount: 0.7,
 		damage: 0.8
 	};
 	

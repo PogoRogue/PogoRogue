@@ -77,11 +77,11 @@ if select = 1 {
 
 //actives
 if select = 2 {
-	select_x_max = 5;
-	select_y_max = 4;
-	select_sprite = spr_item_slot_actives;
-	x_gap = 72;
-	y_gap = 72;
+	select_x_max = 6;
+	select_y_max = 5;
+	select_sprite = spr_item_slot_actives2;
+	x_gap = 56;
+	y_gap = 56;
 	current_array = actives_array;
 	select_y_added = 0;
 }

@@ -25,10 +25,10 @@ for (i = 0; i < array_length(weapons_array); i++) {
 	//WEAPONS
 	if i < array_length(weapons_array) {
 		
-		draw_sprite(select_sprite,(select = (i+1)) + (2 * (global.weapon_unlocked_array[i] = true)),xx,yy-27);
-		draw_sprite(all_weapons[i].sprite,(sprite_get_number(all_weapons[i].sprite)-1)*(global.weapon_unlocked_array[i] = false),xx,yy-27);
+		draw_sprite(select_sprite,(select = (i+1)) + (2 * (global.weapon_unlocked_array[i] = true or test_mode = false)),xx,yy-27);
+		draw_sprite(all_weapons[i].sprite,(sprite_get_number(all_weapons[i].sprite)-1)*(global.weapon_unlocked_array[i] = false and test_mode = true),xx,yy-27);
 	
-		if (i < array_length(all_weapons)) and global.weapon_unlocked_array[i] = true {
+		if (i < array_length(all_weapons)) and (global.weapon_unlocked_array[i] = true or test_mode = false) {
 			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_weapons[i]._name,12,99),c_white);
 		}
 	}
@@ -43,7 +43,7 @@ for (i = 0; i < array_length(weapons_array); i++) {
 		var yy = (156) + floor(i / select_x_max) * y_gap; //156 + floor //center_y+8+floor
 	}
 	
-	if global.weapon_unlocked_array[i] = true {
+	if global.weapon_unlocked_array[i] = true or test_mode = false {
 		if (select = i + 1) {
 			scr_Draw_Input_UI(xx,yy+4,18,0,fnt_combo2,fa_center,fa_middle);
 			draw_set_font(fnt_itemdescription2);
@@ -73,7 +73,7 @@ for (i = 0; i < array_length(all_weapons); i++) {
 			var y_offset = 0;
 		}
 			
-		scr_Draw_Weapon_Description(xx,yy+y_offset,all_weapons[i],0,global.weapon_unlocked_array[i],all_weapons_costs[i]);
+		scr_Draw_Weapon_Description(xx,yy+y_offset,all_weapons[i],0,(global.weapon_unlocked_array[i] or test_mode = false),all_weapons_costs[i]);
 	}
 }
 

@@ -20,7 +20,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 4, //Initial number of bullets per clip (no ammo buff)
 		current_bullets: 4 + obj_player.max_ammo_buff,   //current number of bullets left
 		max_added_bullets: 5, //max number of bullets that can be added from the ammo powerup
-		max_speed: -vsp_basicjump //player cant move faster than this if full_auto = true
+		max_speed: -vsp_basicjump, //player cant move faster than this if full_auto = true
+		level: 1
 	};
 	
 	empty_gun = {
@@ -42,7 +43,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 0,
 		current_bullets: 0,
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	hat_gun = {
@@ -63,7 +65,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1,
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	bulletblast_gun = {
@@ -84,7 +87,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1,
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 
 	paintball_gun = {
@@ -106,7 +110,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 10,
 		current_bullets: 10 + obj_player.max_ammo_buff,   
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump           
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 
 	shotgun_gun = {
@@ -128,7 +133,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump          
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 
 	bubble_gun = {
@@ -150,11 +156,12 @@ function scr_Guns(){
 		init_bullets_per_bounce: 24,
 		current_bullets: 24 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 8
+		max_speed: 8,
+		level: 1
 	};
 
 	burstfire_gun = {
-		_name: "Burst Fire Gun",  
+		_name: "Burst Rifle",  
 		tagline: "Fire quick bursts of 3 bullets.",
 		sprite: spr_gun_burstfire,   
 		ammo: [burstfire_bullet],
@@ -172,7 +179,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 9,
 		current_bullets: 9 + obj_player.max_ammo_buff,  
 		max_added_bullets: 15,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};	
 	
 	grenade_gun = {
@@ -194,7 +202,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 3,
 		current_bullets: 3 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump*0.9
+		max_speed: -vsp_basicjump*0.9,
+		level: 1
 	};	
 	
 	laser_gun = {
@@ -216,7 +225,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 100,
 		current_bullets: 100 + obj_player.max_ammo_buff,  
 		max_added_bullets: 0,
-		max_speed: 5.25
+		max_speed: 5.25,
+		level: 1
 	};	
 	
 	bouncyball_gun = {
@@ -238,7 +248,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 5,
 		current_bullets: 5 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 7.25
+		max_speed: 7.25,
+		level: 1
 	};	
 	
 	missile_gun = {
@@ -260,7 +271,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 8
+		max_speed: 8,
+		level: 1
 	};
 	
 	boomerang_gun = {
@@ -282,7 +294,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 8
+		max_speed: 8,
+		level: 1
 	};
 	
 	starsucker_gun = {
@@ -304,7 +317,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 4,
 		current_bullets: 4 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump          
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	sniper_gun = {
@@ -322,11 +336,12 @@ function scr_Guns(){
 		burst_delay: 0,     
 		momentum_added: 1.25, 
 		reset_momentum: true, 
-		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
-		init_bullets_per_bounce: 2,
-		current_bullets: 2 + obj_player.max_ammo_buff,  
+		bullets_per_bounce: 3 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 3,
+		current_bullets: 3 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 9
+		max_speed: 9,
+		level: 1
 	};	
 	
 	slime_gun = {
@@ -348,7 +363,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 3,
 		current_bullets: 3 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump          
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	yoyo_gun = {
@@ -370,7 +386,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1,  
 		max_added_bullets: 0,
-		max_speed: 16
+		max_speed: 16,
+		level: 1
 	};
 	
 	javelin_gun = {
@@ -392,7 +409,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 4,
 		current_bullets: 4 + obj_player.max_ammo_buff,
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	water_gun = {
@@ -414,7 +432,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 30,
 		current_bullets: 30 + obj_player.max_ammo_buff,  
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};	
 	
 	grappling_gun = {
@@ -435,7 +454,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1,
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	}
 	
 	portal_gun = {
@@ -457,7 +477,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1 + obj_player.max_ammo_buff,  
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump*0.9
+		max_speed: -vsp_basicjump*0.9,
+		level: 1
 	};	
 	
 	machine_gun = {
@@ -479,7 +500,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 40,
 		current_bullets: 40 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	puncher_gun = {
@@ -501,7 +523,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 11
+		max_speed: 11,
+		level: 1
 	};
 	
 	sixshooter_gun = {
@@ -523,7 +546,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 6,
 		current_bullets: 6 + obj_player.max_ammo_buff,
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	plasma_gun = {
@@ -545,7 +569,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 140,
 		current_bullets: 140 + obj_player.max_ammo_buff,
 		max_added_bullets: 5,
-		max_speed: 7.5
+		max_speed: 7.5,
+		level: 1
 	};
 	
 	harpoon_gun = {
@@ -566,7 +591,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1,
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	}
 	
 	wreckingball_gun = {
@@ -588,6 +614,7 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1,  
 		max_added_bullets: 0,
-		max_speed: 16
+		max_speed: 16,
+		level: 1
 	};
 }
