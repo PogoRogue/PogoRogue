@@ -52,6 +52,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			{
 				return Get_Random_Enemy();
 			}
+			else if(Red > 245)
+			{			
+				return obj_enemy_fairy;
+			}
 			else if(Red > 228)
 			{			
 				return obj_enemy_flying;
@@ -81,6 +85,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			if(Red > 240)
 			{
 				return obj_enemy_moving;
+			}
+			else if(Red > 235)
+			{			
+				return obj_enemy_car;
 			}
 			else if(Red > 230)
 			{
