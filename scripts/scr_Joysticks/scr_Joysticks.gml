@@ -2,14 +2,14 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Joysticks(left_lr,left_ud,right_lr,right_ud,action_type,button) {
 
-	_gp_axislhl = gamepad_axis_value(0,gp_axislh) < -0.5;
-	_gp_axislhr = gamepad_axis_value(0,gp_axislh) > 0.5;
-	_gp_axislvu = gamepad_axis_value(0,gp_axislv) < -0.5;
-	_gp_axislvd = gamepad_axis_value(0,gp_axislv) > 0.5;
-	_gp_axisrhl = gamepad_axis_value(0,gp_axisrh) < -0.5;
-	_gp_axisrhr = gamepad_axis_value(0,gp_axisrh) > 0.5;
-	_gp_axisrvu = gamepad_axis_value(0,gp_axisrv) < -0.5;
-	_gp_axisrvd = gamepad_axis_value(0,gp_axisrv) > 0.5;
+	_gp_axislhl = gamepad_axis_value(0,gp_axislh) < -0.75;
+	_gp_axislhr = gamepad_axis_value(0,gp_axislh) > 0.75;
+	_gp_axislvu = gamepad_axis_value(0,gp_axislv) < -0.75;
+	_gp_axislvd = gamepad_axis_value(0,gp_axislv) > 0.75;
+	_gp_axisrhl = gamepad_axis_value(0,gp_axisrh) < -0.75;
+	_gp_axisrhr = gamepad_axis_value(0,gp_axisrh) > 0.75;
+	_gp_axisrvu = gamepad_axis_value(0,gp_axisrv) < -0.75;
+	_gp_axisrvd = gamepad_axis_value(0,gp_axisrv) > 0.75;
 	
 	_gp_axislhl_pressed = false;
 	_gp_axislhr_pressed = false;

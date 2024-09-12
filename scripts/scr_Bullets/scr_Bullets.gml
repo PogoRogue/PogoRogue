@@ -206,7 +206,7 @@ function scr_Bullets(){
 		flash_frame: 12,
 		grav_affected: false,
 		grv: obj_player.grv,
-		num_of_bounces: 3,
+		num_of_bounces: 2,
 		bounce_amount: 1,
 		damage: 4
 	};
@@ -215,10 +215,10 @@ function scr_Bullets(){
 		sprite: spr_projectile_missile,
 		gui_sprite: spr_projectile_missile_gui,
 		spd: 0,                          
-		firerate_start: 0,               
-		firerate_end: 0,                 
+		firerate_start: 1,               
+		firerate_end: 1,                 
 		firerate_mult: 0,               
-		firerate: 0,                     
+		firerate: 1,                     
 		destroy_on_impact: true,
 		screen_shake: {magnitude: 4, frames: 10},
 		destroy_time: 0,
@@ -234,10 +234,10 @@ function scr_Bullets(){
 		sprite: spr_projectile_boomerang,
 		gui_sprite: spr_projectile_boomerang_gui,
 		spd: 8,                          
-		firerate_start: 0,               
-		firerate_end: 0,                 
+		firerate_start: 1,               
+		firerate_end: 1,                 
 		firerate_mult: 0,               
-		firerate: 0,                     
+		firerate: 1,                     
 		destroy_on_impact: false,
 		screen_shake: {magnitude: 3, frames: 8},
 		destroy_time: 0,
@@ -302,7 +302,7 @@ function scr_Bullets(){
 		grav_affected: true,
 		grv: obj_player.grv,
 		num_of_bounces: 0 + global.bouncy_bullets,
-		bounce_amount: 1,
+		bounce_amount: 0.7,
 		damage: 0.8
 	};
 	
@@ -310,10 +310,10 @@ function scr_Bullets(){
 		sprite: spr_projectile_yoyo,
 		gui_sprite: spr_projectile_yoyo_gui,
 		spd: 16,                          
-		firerate_start: 0,               
-		firerate_end: 0,                 
+		firerate_start: 1,               
+		firerate_end: 1,                 
 		firerate_mult: 0,               
-		firerate: 0,                     
+		firerate: 1,                     
 		destroy_on_impact: false,
 		screen_shake: {magnitude: 5, frames: 8},
 		destroy_time: 0,
@@ -361,5 +361,157 @@ function scr_Bullets(){
 		num_of_bounces: 0,
 		bounce_amount: 1,
 		damage: 1
+	};
+	
+	grappling_bullet = {
+		sprite: spr_grapplinghook,
+		gui_sprite: spr_nothing,
+		spd: 12,                          
+		firerate_start: 1,               
+		firerate_end: 1,                 
+		firerate_mult: 0,               
+		firerate: 1,                     
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 4, frames: 4},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 4
+	};
+	
+	portal_bullet = {
+		sprite: spr_projectile_portal,
+		gui_sprite: spr_projectile_portal_gui,
+		spd: 16,                       
+		firerate_start: 1,            
+		firerate_end: 1,           
+		firerate_mult: 0,              
+		firerate: 1,                 
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 3, frames: 6},
+		destroy_time: 0,
+		flash_frame: 1,
+		grav_affected: true,
+		grv: obj_player.grv,
+		num_of_bounces: 5,
+		bounce_amount: 0.8,
+		damage: 16,
+	};
+	
+	machine_bullet = {
+		sprite: spr_projectile_machine,
+		gui_sprite: spr_projectile_machine_gui,
+		spd: 12,                         
+		firerate_start: 15, //10            
+		firerate_end: 3,                
+		firerate_mult: 0.45,                
+		firerate: 15,                     
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 5, frames: 5},
+		destroy_time: 0,
+		flash_frame: 2,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0 + global.bouncy_bullets,
+		bounce_amount: 1,
+		damage: 3
+	};
+	
+	puncher_bullet = {
+		sprite: spr_projectile_puncher,
+		gui_sprite: spr_projectile_puncher_gui,
+		spd: 11,                          
+		firerate_start: 1,               
+		firerate_end: 1,                 
+		firerate_mult: 0,               
+		firerate: 1,                     
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 5, frames: 8},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 5,
+		bounce_amount: 1,
+		damage: 24
+	};
+	
+	sixshooter_bullet = {
+		sprite: spr_projectile_sixshooter,
+		gui_sprite: spr_projectile_sixshooter_gui,
+		spd: 24,
+		firerate_start: 4,
+		firerate_end: 4,
+		firerate_mult: 0,
+		firerate: 4,
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 3.5, frames: 10},
+		destroy_time: 0,
+		flash_frame: 2,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0 + global.bouncy_bullets,
+		bounce_amount: 1,
+		damage: 6
+	};
+	
+	plasma_bullet = {
+		sprite: spr_projectile_plasma1,
+		gui_sprite: spr_projectile_plasma_gui2,
+		spd: 0,
+		firerate_start: 1,
+		firerate_end: 1,
+		firerate_mult: 0,
+		firerate: 1,
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 0, frames: 0},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0 + global.bouncy_bullets,
+		bounce_amount: 1,
+		damage: 1
+	};
+	
+	harpoon_bullet = {
+		sprite: spr_harpoon,
+		gui_sprite: spr_nothing,
+		spd: 20,                          
+		firerate_start: 1,               
+		firerate_end: 1,                 
+		firerate_mult: 0,               
+		firerate: 1,                     
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 4, frames: 4},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 8
+	};
+	
+	wreckingball_bullet = {
+		sprite: spr_wreckingball,
+		gui_sprite: spr_nothing,
+		spd: 4,                          
+		firerate_start: 1,               
+		firerate_end: 1,                 
+		firerate_mult: 0,               
+		firerate: 1,                     
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 5, frames: 8},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 8
 	};
 }

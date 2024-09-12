@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_Get_Skin_Loadout",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Get_Skin_Loadout",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

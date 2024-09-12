@@ -1,8 +1,9 @@
-alpha = 0.5;
+alpha = 0.2;
 decrease_alpha = false;
 alarm[0] = 5;
-damage = 6;
 reset = false;
+
+damage += global.damage_buff;
 
 with obj_enemy_parent {
 	if bbox_right > obj_camera.x - obj_camera.view_w_half and bbox_left < obj_camera.x + obj_camera.view_w_half

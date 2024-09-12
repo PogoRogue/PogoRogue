@@ -13,6 +13,9 @@ if obj_player.dead = false {
 			win = true;	
 			global.num_of_wins += 1;
 			scr_Save_Real("num_of_wins",global.num_of_wins);
+			with obj_runstats {
+				stop_time = true;	
+			}
 		}
 		with obj_player {
 			state = state_immobile;	

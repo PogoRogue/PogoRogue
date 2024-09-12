@@ -45,7 +45,7 @@ function scr_Generate_Sprite_Test_Layout(prebuilt_rooms, generate_starting_room,
 			}
 			else //Otherwise make a 3x3
 			{
-			room_index = 4;
+			room_index = 3; //4
 			}
 		}
 		else //Otherwise, we use a 3x3 combat room

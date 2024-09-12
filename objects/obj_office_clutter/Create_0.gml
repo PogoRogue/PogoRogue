@@ -1,0 +1,11 @@
+randomize();
+vspeed = 0;//random_range(2,3);
+hspeed = 0;
+bounces_left = 5;
+bounced = false;
+init_speed = speed;
+damaged = false;
+random_set_seed(global.seed);
+collided = false;
+angle = 0;
+rotate = true;

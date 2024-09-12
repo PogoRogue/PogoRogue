@@ -10,7 +10,7 @@ function scr_Shoot(){
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
 		var damage_multiplier = 1;
 		//sound
-		if gun._name != "Paintball Gun" and gun._name != "Bouncy Ball Blaster" and gun._name != "Burst Fire Gun" {
+		if gun._name != "Paintball Gun" and gun._name != "Bouncy Ball Blaster" and gun._name != "Burst Rifle" {
 			audio_play_sound(gun.sound,0,false);
 		}else if gun._name = "Paintball Gun" {
 			audio_play_sound(choose(snd_paintball1,snd_paintball2,snd_paintball3),0,false,1,0,random_range(0.8,1.2));
@@ -19,14 +19,24 @@ function scr_Shoot(){
 		}
 		
 		for (var i = 0; i < gun.spread_number; i++;) {
+			var number_in_spread = i;
 			var angle_ = image_angle + (i * gun.spread_angle) - ((gun.spread_number - 1) * (gun.spread_angle / 2));
+			if gun = sixshooter_gun {
+				if sixshooter_gun.spread_number = 1 {
+					var angle_ = image_angle + (gun.spread_angle);
+				}else {
+					var angle_ = image_angle + (i * 45) - ((gun.spread_number - 1) * (45 / 2));
+				}
+			}
 			var destroyOnImpact;
 			destroyOnImpact = gun.ammo[bullet_index].destroy_on_impact;
 
 			if(global.steadyhands){
 				imageAngle = angle_ - 90;
 			}else{
-				imageAngle = angle_ + random_range(-gun.inaccuracy,gun.inaccuracy)  - 90;
+				randomize();
+				imageAngle = angle_ + (random_range(-gun.inaccuracy,gun.inaccuracy)*(gun.ammo[bullet_index].firerate_end/gun.ammo[bullet_index].firerate))  - 90;
+				random_set_seed(global.seed);
 			}
 			if(global.laststand and hp <= 8){
 				damage_multiplier *= 2;
@@ -36,7 +46,7 @@ function scr_Shoot(){
 			}
 			
 			if gun.current_bullets > 0 or gun._name = "Hat Gun" or gun._name = "Bullet Blast" {
-				instance_create_depth(x,y,depth-1,obj_projectile,{
+				instance_create_depth(x,y,init_depth-1,obj_projectile,{
 					image_angle: imageAngle,
 					sprite_index: gun.ammo[bullet_index].sprite,
 					spd: gun.ammo[bullet_index].spd,
@@ -49,6 +59,8 @@ function scr_Shoot(){
 					num_of_bounces: gun.ammo[bullet_index].num_of_bounces + global.bouncy_bullets,
 					bounce_amount: gun.ammo[bullet_index].bounce_amount,
 					damage: gun.ammo[bullet_index].damage * (1 + ((global.sharpshooter = true and gun.current_bullets = gun.bullets_per_bounce) * 0.5)) * damage_multiplier,
+					spread_index: number_in_spread,
+					gun_level: gun.level
 				});
 			}
 			
@@ -63,8 +75,18 @@ function scr_Shoot(){
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 and frenzy = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+			if gun.spread_number = 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
 				gun.current_bullets -= 1;
+			}
+			
+			if gun.spread_number = 3 and gun._name = "Burst Rifle" and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+				if gun.level = 1 {
+					gun.current_bullets -= 1/3;
+				}else if gun.level = 2 {
+					gun.current_bullets -= 1/3;
+				}else if gun.level >= 3 {
+					gun.current_bullets -= 1/3;
+				}
 			}
 			
 			//allow upward flames
@@ -92,7 +114,7 @@ function scr_Shoot(){
 			}
 		
 			//check if speed slower or faster than max speed to preserve momentum
-			if (abs(speed) > gun.max_speed and vspeed < 0) {
+			if (abs(speed) > abs(gun.max_speed) and vspeed < 0) {
 				slower_than_max = false;
 				current_max = speed;
 			}else {
@@ -111,13 +133,16 @@ function scr_Shoot(){
 			motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
 		
 			//set max speed for auto weapons
-			if (speed > gun.max_speed and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
-				speed = max(gun.max_speed, current_max);
+			if (abs(speed) > abs(gun.max_speed) and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
+				speed = max(abs(gun.max_speed), abs(current_max));
 			}
 		
 		}else {
-			if audio_is_playing(snd_burstfire) {
+			if audio_is_playing(snd_burstfire) and burstfire_gun.spread_number = 1 {
 				audio_stop_sound(snd_burstfire);
+			}
+			if audio_is_playing(snd_burstfire2) and burstfire_gun.spread_number = 1 {
+				audio_stop_sound(snd_burstfire2);
 			}
 		}
 		
@@ -137,14 +162,16 @@ function scr_Shoot(){
 			//rotation_delay = rotation_speed / 10;
 		}
 		
+		
 		current_burst += 1;
 		
 		if current_burst = gun.burst_number {
 			current_burst = 0;
 		}
 		
-		if gun._name = "Burst Fire Gun" and (gun.current_bullets % gun.burst_number) != 0 and current_burst = 0 {
+		if gun._name = "Burst Rifle" and (gun.current_bullets % gun.burst_number) != 0 and current_burst = 0 {
 			gun.current_bullets = ceil(gun.current_bullets/gun.burst_number) * gun.burst_number;
+			show_debug_message(gun.current_bullets);
 		}
 		random_set_seed(global.seed);
 	}

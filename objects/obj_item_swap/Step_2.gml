@@ -24,6 +24,7 @@ if selected = false and fade_away = false and centered = true {
 }
 
 if key_select and fade_away = false and centered = true {
+	coin_string_set = true;
 	//slot 1
 	if select = 1 {
 		audio_play_sound(snd_selectOption,0,false);
@@ -34,6 +35,30 @@ if key_select and fade_away = false and centered = true {
 			item_swap = false;
 			paused_outside = true;	
 		}
+		
+		//new recycling buff
+		if global.recycling > 0 {
+			if weapons_mode = true {
+				replaced_item_cost = global.all_weapon_costs[0];
+			}else {
+				replaced_item_cost = global.all_pickup_costs[0];
+			}
+			var new_recycling_cost = 0;
+			switch(global.recycling) {
+				case 1: new_recycling_cost = round(replaced_item_cost/4); break;
+				case 2: new_recycling_cost = round(replaced_item_cost/2); break;
+				case 3: new_recycling_cost = round(replaced_item_cost/2) + round(replaced_item_cost/4); break;
+				case 4: new_recycling_cost = replaced_item_cost; break;
+			}
+			global.num_of_coins += new_recycling_cost;
+			global.current_total_coins += new_recycling_cost;
+			global.total_coins += new_recycling_cost;
+			scr_Save_Real("total_coins",global.total_coins);
+			
+			replaced_item_cost = new_recycling_cost;
+			alarm[3] = 1;
+		}
+		
 		//change gun
 		instance_activate_object(obj_player);
 		with obj_player {
@@ -59,20 +84,23 @@ if key_select and fade_away = false and centered = true {
 		}
 		
 		//experimentation buff
-		if global.experimentation = true {
+		if global.experimentation > 0 {
 			with obj_player {
-				if hp < max_hp {
+				var temp_experimentation = global.experimentation;
+				while hp < max_hp and temp_experimentation > 0 {
 					hp += 8;	
 					audio_play_sound(snd_heartPickup,0,false);
 					instance_activate_object(obj_player_health);
-					with obj_player_health {
-						heart_gain_num = other.hp;	
-					}
+					instance_create_depth(28 + ((hp-8) * 3), 32,depth-1,obj_heart_gain);
+					temp_experimentation -= 1;
+				}
+				while armor_buff < max_armor_buff and temp_experimentation > 0 {
+					armor_buff += 1;
+					audio_play_sound(snd_ArmorHeart,0,false);
+					instance_create_depth(28 + (max_hp/8 * 24) + ((armor_buff-1) * 24), 32,depth-1,obj_heart_shield_gain);
+					temp_experimentation -= 1;
 				}
 			}
-			//global.num_of_coins += experimenting_coins;
-			//global.current_total_coins += experimenting_coins;
-			//alarm[2] = 1;
 		}
 		
 		if weapons_mode = true {
@@ -117,6 +145,30 @@ if key_select and fade_away = false and centered = true {
 			item_swap = false;
 			paused_outside = true;	
 		}
+		
+		//new recycling buff
+		if global.recycling > 0 {
+			if weapons_mode = true {
+				replaced_item_cost = global.all_weapon_costs[1];
+			}else {
+				replaced_item_cost = global.all_pickup_costs[1];
+			}
+			var new_recycling_cost = 0;
+			switch(global.recycling) {
+				case 1: new_recycling_cost = round(replaced_item_cost/4); break;
+				case 2: new_recycling_cost = round(replaced_item_cost/2); break;
+				case 3: new_recycling_cost = round(replaced_item_cost/2) + round(replaced_item_cost/4); break;
+				case 4: new_recycling_cost = replaced_item_cost; break;
+			}
+			global.num_of_coins += new_recycling_cost;
+			global.current_total_coins += new_recycling_cost;
+			global.total_coins += new_recycling_cost;
+			scr_Save_Real("total_coins",global.total_coins);
+			
+			replaced_item_cost = new_recycling_cost;
+			alarm[3] = 1;
+		}
+		
 		//change gun
 		instance_activate_object(obj_player);
 		with obj_player {
@@ -134,20 +186,23 @@ if key_select and fade_away = false and centered = true {
 		}
 		
 		//experimentation buff
-		if global.experimentation = true {
+		if global.experimentation > 0 {
 			with obj_player {
-				if hp < max_hp {
+				var temp_experimentation = global.experimentation;
+				while hp < max_hp and temp_experimentation > 0 {
 					hp += 8;	
 					audio_play_sound(snd_heartPickup,0,false);
 					instance_activate_object(obj_player_health);
-					with obj_player_health {
-						heart_gain_num = other.hp;	
-					}
+					instance_create_depth(28 + ((hp-8) * 3), 32,depth-1,obj_heart_gain);
+					temp_experimentation -= 1;
+				}
+				while armor_buff < max_armor_buff and temp_experimentation > 0 {
+					armor_buff += 1;
+					audio_play_sound(snd_ArmorHeart,0,false);
+					instance_create_depth(28 + (max_hp/8 * 24) + ((armor_buff-1) * 24), 32,depth-1,obj_heart_shield_gain);
+					temp_experimentation -= 1;
 				}
 			}
-			//global.num_of_coins += experimenting_coins;
-			//global.current_total_coins += experimenting_coins;
-			//alarm[2] = 1;
 		}
 		
 		if weapons_mode = true {
@@ -192,6 +247,30 @@ if key_select and fade_away = false and centered = true {
 			item_swap = false;
 			paused_outside = true;	
 		}
+		
+		//new recycling buff
+		if global.recycling > 0 {
+			if weapons_mode = true {
+				replaced_item_cost = global.all_weapon_costs[2];
+			}else {
+				replaced_item_cost = 0;
+			}
+			var new_recycling_cost = 0;
+			switch(global.recycling) {
+				case 1: new_recycling_cost = round(replaced_item_cost/4); break;
+				case 2: new_recycling_cost = round(replaced_item_cost/2); break;
+				case 3: new_recycling_cost = round(replaced_item_cost/2) + round(replaced_item_cost/4); break;
+				case 4: new_recycling_cost = replaced_item_cost; break;
+			}
+			global.num_of_coins += new_recycling_cost;
+			global.current_total_coins += new_recycling_cost;
+			global.total_coins += new_recycling_cost;
+			scr_Save_Real("total_coins",global.total_coins);
+			
+			replaced_item_cost = new_recycling_cost;
+			alarm[3] = 1;
+		}
+		
 		//change gun
 		instance_activate_object(obj_player);
 		with obj_player {
@@ -203,20 +282,23 @@ if key_select and fade_away = false and centered = true {
 		}
 		
 		//experimentation buff
-		if global.experimentation = true {
+		if global.experimentation > 0 {
 			with obj_player {
-				if hp < max_hp {
+				var temp_experimentation = global.experimentation;
+				while hp < max_hp and temp_experimentation > 0 {
 					hp += 8;	
 					audio_play_sound(snd_heartPickup,0,false);
 					instance_activate_object(obj_player_health);
-					with obj_player_health {
-						heart_gain_num = other.hp;	
-					}
+					instance_create_depth(28 + ((hp-8) * 3), 32,depth-1,obj_heart_gain);
+					temp_experimentation -= 1;
+				}
+				while armor_buff < max_armor_buff and temp_experimentation > 0 {
+					armor_buff += 1;
+					audio_play_sound(snd_ArmorHeart,0,false);
+					instance_create_depth(28 + (max_hp/8 * 24) + ((armor_buff-1) * 24), 32,depth-1,obj_heart_shield_gain);
+					temp_experimentation -= 1;
 				}
 			}
-			//global.num_of_coins += experimenting_coins;
-			//global.current_total_coins += experimenting_coins;
-			//alarm[2] = 1;
 		}
 		
 		if weapons_mode = true {
@@ -239,12 +321,12 @@ if key_select and fade_away = false and centered = true {
 	if select = num_of_slots {
 		audio_play_sound(snd_unavailable,0,false);
 		
-		//recycling buff
-		if global.recycling = true and room != room_shop {
+		//old recycling buff
+		/*if global.recycling = true and room != room_shop {
 			global.num_of_coins += round(new_item_cost/4);
 			global.current_total_coins += round(new_item_cost/4);
 			alarm[3] = 1;
-		}
+		}*/
 		
 		with obj_pause {
 			item_swap = false;
@@ -273,6 +355,9 @@ with obj_player {
 		other.sprite_2 = pickup_2.gui_sprite;
 		other.item1_name = pickup_1._name;
 		other.item2_name = pickup_2._name;
+		other.item1_cost = global.all_pickup_costs[0];
+		other.item2_cost = global.all_pickup_costs[1];
+		other.item3_cost = 0;
 	}else if other.weapons_mode = true {
 		other.sprite_1 = gun_1.sprite;
 		other.sprite_2 = gun_2.sprite;
@@ -280,6 +365,9 @@ with obj_player {
 		other.item1_name = gun_1._name;
 		other.item2_name = gun_2._name;
 		other.item3_name = gun_3._name;
+		other.item1_cost = global.all_weapon_costs[0];
+		other.item2_cost = global.all_weapon_costs[1];
+		other.item3_cost = global.all_weapon_costs[2];
 	}
 }
 
@@ -289,5 +377,26 @@ if fade_away = false {
 		sprite_new = new_item.gui_sprite;
 	}else if weapons_mode = true {
 		sprite_new = new_item.sprite;
+	}
+}
+
+//unlock dogo skin
+var weapons_unlocked = 0;
+
+for(i = 0; i < array_length(global.weapon_unlocked_array); i++) { //weapons
+	if global.weapon_unlocked_array[i] = true {
+		weapons_unlocked++;
+	}
+}
+
+if weapons_unlocked = array_length(global.weapon_unlocked_array) {
+	//unlock skin
+	var skin = 3;
+	if global.skins_unlocked_array[skin-1] = false {
+		ini_open("itemsunlocked.ini");
+		instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
+		global.skins_unlocked_array[skin-1] = true;
+		ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
+		ini_close();	
 	}
 }

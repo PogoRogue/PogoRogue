@@ -126,7 +126,7 @@ function Create_Item_Drops(object_array)
 		var object_y = center_y + object_data[1][1];
 		var object_depth = depth + object_data[1][2];		
 		
-		var inst = instance_create_depth(object_x, object_y, object_depth, object_to_create)
+		var inst = instance_create_depth(object_x, object_y, object_depth, object_to_create);
 		
 		if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 
 		{
@@ -152,7 +152,10 @@ function scr_Get_Rand_Buff_Object()
 							obj_item_buff_dualwielder, obj_item_buff_steadyhands, obj_item_buff_tightspring,
 							obj_item_buff_magicianstouch, obj_item_buff_impatience, obj_item_buff_laststand,
 							obj_item_buff_psychicbullets, obj_item_buff_righteousrevenge, obj_item_buff_robbery,
-							obj_item_buff_recycling, obj_item_buff_juggler];
+							obj_item_buff_recycling, obj_item_buff_juggler, obj_item_buff_invincibilityup,
+							obj_item_buff_doublekill, obj_item_buff_ironproficiency, obj_item_buff_fastforward,
+							obj_item_buff_paparazzi, obj_item_buff_crit, obj_item_buff_bartime,
+							obj_item_buff_strongmuscles];
 	random_buff_drop = list_of_possible_buffs[irandom_range(0,array_length(list_of_possible_buffs)-1)];
 	return random_buff_drop;
 	random_set_seed(global.seed);
@@ -172,16 +175,17 @@ function scr_Get_Rand_Weapon_Object()
 							
 	//new list
 	var list_of_possible_weapons = [obj_item_weapon_default,obj_item_weapon_paintball,obj_item_weapon_shotgun,
-							obj_item_weapon_burstfire,obj_item_weapon_javelins,obj_item_weapon_bouncyball,
-							obj_item_weapon_grenade, obj_item_weapon_boomerang,obj_item_weapon_starsucker,
-							obj_item_weapon_water, obj_item_weapon_bubble, obj_item_weapon_yoyo,
-							obj_item_weapon_missile, obj_item_weapon_sniper, obj_item_weapon_laser,
-							obj_item_weapon_slime];
+							obj_item_weapon_burstfire,obj_item_weapon_javelins,obj_item_weapon_puncher,
+							obj_item_weapon_sixshooter, obj_item_weapon_bouncyball,obj_item_weapon_boomerang,
+							obj_item_weapon_water, obj_item_weapon_machine, obj_item_weapon_grenade,
+							obj_item_weapon_starsucker, obj_item_weapon_yoyo, obj_item_weapon_bubble,
+							obj_item_weapon_slime, obj_item_weapon_sniper, obj_item_weapon_plasma,
+							obj_item_weapon_laser, obj_item_weapon_missile];
 	
 	if global.phase <= 1 {
-		random_weapon_drop = list_of_possible_weapons[irandom_range(0,array_length(list_of_possible_weapons)-9)];
+		random_weapon_drop = list_of_possible_weapons[irandom_range(0,7)];
 	}else if global.phase = 2 {
-		random_weapon_drop = list_of_possible_weapons[irandom_range(4,array_length(list_of_possible_weapons)-5)];
+		random_weapon_drop = list_of_possible_weapons[irandom_range(4,11)];
 	}else {
 		random_weapon_drop = list_of_possible_weapons[irandom_range(8,array_length(list_of_possible_weapons)-1)];
 	}
@@ -194,18 +198,22 @@ function scr_Get_Rand_Pickup_Object()
 {
 	random_set_seed(global.seed+global.active_chest_num);
 	global.active_chest_num += 1;
-	var list_of_possible_pickups = [obj_item_pickup_reload, obj_item_pickup_freeze,obj_item_pickup_emergency, 
-							obj_item_pickup_parachute, obj_item_pickup_firedash, obj_item_pickup_groundpound, 
-							obj_item_pickup_hatgun, obj_item_pickup_chargejump,obj_item_pickup_shieldbubble,
-							obj_item_pickup_target, obj_item_pickup_blink, obj_item_pickup_jetpack,
-							obj_item_pickup_camera, obj_item_pickup_frenzy, obj_item_pickup_bulletblast,
-							obj_item_pickup_slowmo];
+	var list_of_possible_pickups = [obj_item_pickup_reload, obj_item_pickup_freeze, obj_item_pickup_airbag, 
+					obj_item_pickup_parachute, obj_item_pickup_chargejump, obj_item_pickup_groundpound, 
+					obj_item_pickup_target, obj_item_pickup_volleyball, obj_item_pickup_grappling,
+					obj_item_pickup_hatgun, obj_item_pickup_tripleshot, obj_item_pickup_emergency,
+					obj_item_pickup_winners, obj_item_pickup_firedash, obj_item_pickup_blink,
+					obj_item_pickup_jetpack, obj_item_pickup_bulletblast,obj_item_pickup_slowmo,
+					obj_item_pickup_frenzy,obj_item_pickup_invincibility,obj_item_pickup_synergy_jolt,
+					obj_item_pickup_synergy_launchpad, obj_item_pickup_synergy_megabounce, obj_item_pickup_synergy_harpoon,
+					obj_item_pickup_synergy_wreckingball, obj_item_pickup_synergy_dragster, obj_item_pickup_synergy_hacker,
+					obj_item_pickup_synergy_tacticalstrike, obj_item_pickup_synergy_blizzard, obj_item_pickup_synergy_pogomode];
 	
 	
 	if global.phase <= 1 {
-		random_pickup_drop = list_of_possible_pickups[irandom_range(0,array_length(list_of_possible_pickups)-9)];
+		random_pickup_drop = list_of_possible_pickups[irandom_range(0,7)];
 	}else if global.phase = 2 {
-		random_pickup_drop = list_of_possible_pickups[irandom_range(0,array_length(list_of_possible_pickups)-5)];
+		random_pickup_drop = list_of_possible_pickups[irandom_range(4,11)];
 	}else {
 		random_pickup_drop = list_of_possible_pickups[irandom_range(8,array_length(list_of_possible_pickups)-1)];
 	}

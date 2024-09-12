@@ -10,7 +10,7 @@ function scr_Guns(){
 		kick: 2,              //kickback to position and angle
 		sound: snd_defaultgun,    //sound effect
 		spread_number: 1,     //number of bullets per shot
-		spread_angle: 0,      //angle between bullets in spread shot
+		spread_angle: 45,      //angle between bullets in spread shot
 		full_auto: false,     //hold down mouse to shoot vs click for each shot
 		burst_number: 1,      //number of bullets in burst
 		burst_delay: 0,       //delay between bursts
@@ -20,7 +20,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 4, //Initial number of bullets per clip (no ammo buff)
 		current_bullets: 4 + obj_player.max_ammo_buff,   //current number of bullets left
 		max_added_bullets: 5, //max number of bullets that can be added from the ammo powerup
-		max_speed: -vsp_basicjump //player cant move faster than this if full_auto = true
+		max_speed: -vsp_basicjump, //player cant move faster than this if full_auto = true
+		level: 1
 	};
 	
 	empty_gun = {
@@ -42,7 +43,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 0,
 		current_bullets: 0,
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	hat_gun = {
@@ -53,7 +55,7 @@ function scr_Guns(){
 		kick: 2,
 		sound: snd_hatgun,
 		spread_number: 1,
-		spread_angle: 0,
+		spread_angle: 45,
 		full_auto: false,
 		burst_number: 1,
 		burst_delay: 0,
@@ -63,7 +65,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1,
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	bulletblast_gun = {
@@ -84,7 +87,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1,
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 
 	paintball_gun = {
@@ -96,7 +100,7 @@ function scr_Guns(){
 		kick: 2,           
 		sound: snd_paintball1, 
 		spread_number: 1,     
-		spread_angle: 0, 
+		spread_angle: 25, 
 		full_auto: true,    
 		burst_number: 1,      
 		burst_delay: 0,       
@@ -106,7 +110,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 10,
 		current_bullets: 10 + obj_player.max_ammo_buff,   
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump           
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 
 	shotgun_gun = {
@@ -128,7 +133,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump          
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 
 	bubble_gun = {
@@ -140,21 +146,22 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_bubble,
 		spread_number: 1,    
-		spread_angle: 15,    
+		spread_angle: 45,   
 		full_auto: true,     
 		burst_number: 1,     
 		burst_delay: 0,     
 		momentum_added: 0.2, 
 		reset_momentum: false, 
-		bullets_per_bounce: 25 + obj_player.max_ammo_buff,
-		init_bullets_per_bounce: 25,
-		current_bullets: 25 + obj_player.max_ammo_buff,  
+		bullets_per_bounce: 24 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 24,
+		current_bullets: 24 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 8
+		max_speed: 8,
+		level: 1
 	};
 
 	burstfire_gun = {
-		_name: "Burst Fire Gun",  
+		_name: "Burst Rifle",  
 		tagline: "Fire quick bursts of 3 bullets.",
 		sprite: spr_gun_burstfire,   
 		ammo: [burstfire_bullet],
@@ -162,7 +169,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_burstfire,
 		spread_number: 1,    
-		spread_angle: 15,    
+		spread_angle: 30,    
 		full_auto: true,     
 		burst_number: 3,     
 		burst_delay: 6,     
@@ -172,7 +179,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 9,
 		current_bullets: 9 + obj_player.max_ammo_buff,  
 		max_added_bullets: 15,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};	
 	
 	grenade_gun = {
@@ -184,7 +192,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_grenade,
 		spread_number: 1,    
-		spread_angle: 0,    
+		spread_angle: 45,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -194,7 +202,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 3,
 		current_bullets: 3 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump*0.9
+		max_speed: -vsp_basicjump*0.9,
+		level: 1
 	};	
 	
 	laser_gun = {
@@ -206,7 +215,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_laser,
 		spread_number: 1,    
-		spread_angle: 0,    
+		spread_angle: 45,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -216,19 +225,20 @@ function scr_Guns(){
 		init_bullets_per_bounce: 100,
 		current_bullets: 100 + obj_player.max_ammo_buff,  
 		max_added_bullets: 0,
-		max_speed: 5.25
+		max_speed: 5.25,
+		level: 1
 	};	
 	
 	bouncyball_gun = {
 		_name: "Bouncy Ball Blaster",  
-		tagline: "Fire bouncy balls that bounce off of walls up to 3 times, doubling in damage after each bounce.",
+		tagline: "Fire bouncy balls that bounce off of walls 2 times, doubling in damage after each bounce.",
 		sprite: spr_gun_bouncyball,   
 		ammo: [bouncyball_bullet],
 		inaccuracy: 15,       
 		kick: 2,              
 		sound: snd_bbb1,
 		spread_number: 1,    
-		spread_angle: 0,    
+		spread_angle: 45,
 		full_auto: true,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -238,7 +248,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 5,
 		current_bullets: 5 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 7.25
+		max_speed: 7.25,
+		level: 1
 	};	
 	
 	missile_gun = {
@@ -250,7 +261,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_grenade,
 		spread_number: 1,    
-		spread_angle: 0,    
+		spread_angle: 45,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -260,7 +271,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 8
+		max_speed: 8,
+		level: 1
 	};
 	
 	boomerang_gun = {
@@ -272,7 +284,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_nothing,
 		spread_number: 1,    
-		spread_angle: 0,    
+		spread_angle: 45,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -282,7 +294,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 2,
 		current_bullets: 2 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 8
+		max_speed: 8,
+		level: 1
 	};
 	
 	starsucker_gun = {
@@ -304,7 +317,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 4,
 		current_bullets: 4 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump          
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	sniper_gun = {
@@ -316,17 +330,18 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_sniper,
 		spread_number: 1,    
-		spread_angle: 0,    
+		spread_angle: 35,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
 		momentum_added: 1.25, 
 		reset_momentum: true, 
-		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
-		init_bullets_per_bounce: 2,
-		current_bullets: 2 + obj_player.max_ammo_buff,  
+		bullets_per_bounce: 3 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 3,
+		current_bullets: 3 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: 9
+		max_speed: 9,
+		level: 1
 	};	
 	
 	slime_gun = {
@@ -348,7 +363,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 3,
 		current_bullets: 3 + obj_player.max_ammo_buff,  
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump          
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	yoyo_gun = {
@@ -360,7 +376,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_nothing,
 		spread_number: 1,    
-		spread_angle: 0,    
+		spread_angle: 45,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -370,7 +386,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 1,
 		current_bullets: 1,  
 		max_added_bullets: 0,
-		max_speed: 16
+		max_speed: 16,
+		level: 1
 	};
 	
 	javelin_gun = {
@@ -382,7 +399,7 @@ function scr_Guns(){
 		kick: 2,
 		sound: snd_nothing,
 		spread_number: 1,
-		spread_angle: 0,
+		spread_angle: 45,
 		full_auto: false,
 		burst_number: 1,
 		burst_delay: 0,
@@ -392,7 +409,8 @@ function scr_Guns(){
 		init_bullets_per_bounce: 4,
 		current_bullets: 4 + obj_player.max_ammo_buff,
 		max_added_bullets: 5,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};
 	
 	water_gun = {
@@ -404,7 +422,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_bubble,
 		spread_number: 1,    
-		spread_angle: 0,    
+		spread_angle: 45,    
 		full_auto: true,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -414,6 +432,189 @@ function scr_Guns(){
 		init_bullets_per_bounce: 30,
 		current_bullets: 30 + obj_player.max_ammo_buff,  
 		max_added_bullets: 0,
-		max_speed: -vsp_basicjump
+		max_speed: -vsp_basicjump,
+		level: 1
 	};	
+	
+	grappling_gun = {
+		_name: "Grappling Helmet",
+		sprite: spr_nothing,
+		ammo: [grappling_bullet],
+		inaccuracy: 0,
+		kick: 2,
+		sound: snd_grappling_shoot,
+		spread_number: 1,
+		spread_angle: 0,
+		full_auto: false,
+		burst_number: 1,
+		burst_delay: 0,
+		momentum_added: 0,
+		reset_momentum: false,
+		bullets_per_bounce: 1,
+		init_bullets_per_bounce: 1,
+		current_bullets: 1,
+		max_added_bullets: 0,
+		max_speed: -vsp_basicjump,
+		level: 1
+	}
+	
+	portal_gun = {
+		_name: "The Portal",  
+		tagline: "Launch an extremely bouncy portal projectile and shoot again to teleport to its exact location. Teleporting or hitting an enemy instantly reloads the weapon.",
+		sprite: spr_gun_portal,   
+		ammo: [portal_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_grenade,
+		spread_number: 1,    
+		spread_angle: 0,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1.2, 
+		reset_momentum: true, 
+		bullets_per_bounce: 1,
+		init_bullets_per_bounce: 1,
+		current_bullets: 1 + obj_player.max_ammo_buff,  
+		max_added_bullets: 0,
+		max_speed: -vsp_basicjump*0.9,
+		level: 1
+	};	
+	
+	machine_gun = {
+		_name: "Machine Gun",  
+		tagline: "Highly inaccurate but with a massive magazine. It takes a bit of time to reach its full firing speed, but c'mon, it's a machine gun!",
+		sprite: spr_gun_machine,   
+		ammo: [machine_bullet],
+		inaccuracy: 20,       
+		kick: 2,              
+		sound: snd_machinegun,
+		spread_number: 1,    
+		spread_angle: 45,    
+		full_auto: true,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 0.8, 
+		reset_momentum: false, 
+		bullets_per_bounce: 40 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 40,
+		current_bullets: 40 + obj_player.max_ammo_buff,  
+		max_added_bullets: 5,
+		max_speed: -vsp_basicjump,
+		level: 1
+	};
+	
+	puncher_gun = {
+		_name: "Puncher",  
+		tagline: "Fire a large boxing glove that knocks out enemies in its path. It packs a punch! Sorry.",
+		sprite: spr_gun_puncher,   
+		ammo: [puncher_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_nothing,
+		spread_number: 1,    
+		spread_angle: 45,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1.3, 
+		reset_momentum: true, 
+		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 2,
+		current_bullets: 2 + obj_player.max_ammo_buff,  
+		max_added_bullets: 5,
+		max_speed: 11,
+		level: 1
+	};
+	
+	sixshooter_gun = {
+		_name: "Six Shooter",
+		tagline: "Six shots of pure gunslinging fun! Tap fire to shoot single shots, or hold down the shoot button to unload the remaining clip.",
+		sprite: spr_gun_sixshooter,
+		ammo: [sixshooter_bullet],
+		inaccuracy: 10,
+		kick: 2,
+		sound: snd_nothing,
+		spread_number: 1,
+		spread_angle: 45,
+		full_auto: true,
+		burst_number: 1,
+		burst_delay: 0,
+		momentum_added: 2,
+		reset_momentum: false,
+		bullets_per_bounce: 6 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 6,
+		current_bullets: 6 + obj_player.max_ammo_buff,
+		max_added_bullets: 5,
+		max_speed: -vsp_basicjump,
+		level: 1
+	};
+	
+	plasma_gun = {
+		_name: "Plasma Gun",
+		tagline: "Hold down the shoot button to charge up a powerful plasma orb! While charging, you will remain stationary in the air. The longer you charge, the more damage your \nplasma orb will do.",
+		sprite: spr_gun_plasma,
+		ammo: [plasma_bullet],
+		inaccuracy: 0,
+		kick: 2,
+		sound: snd_nothing,
+		spread_number: 1,
+		spread_angle: 45,
+		full_auto: false,
+		burst_number: 1,
+		burst_delay: 0,
+		momentum_added: 0,
+		reset_momentum: false,
+		bullets_per_bounce: 140 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 140,
+		current_bullets: 140 + obj_player.max_ammo_buff,
+		max_added_bullets: 5,
+		max_speed: 7.5,
+		level: 1
+	};
+	
+	harpoon_gun = {
+		_name: "Harpoon Helmet",
+		sprite: spr_nothing,
+		ammo: [harpoon_bullet],
+		inaccuracy: 0,
+		kick: 2,
+		sound: snd_grappling_shoot,
+		spread_number: 1,
+		spread_angle: 0,
+		full_auto: false,
+		burst_number: 1,
+		burst_delay: 0,
+		momentum_added: 0,
+		reset_momentum: false,
+		bullets_per_bounce: 1,
+		init_bullets_per_bounce: 1,
+		current_bullets: 1,
+		max_added_bullets: 0,
+		max_speed: -vsp_basicjump,
+		level: 1
+	}
+	
+	wreckingball_gun = {
+		_name: "Wrecking Ball",  
+		tagline: "",
+		sprite: spr_nothing,   
+		ammo: [wreckingball_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_nothing,
+		spread_number: 1,    
+		spread_angle: 45,    
+		full_auto: false,   
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1, 
+		reset_momentum: true, 
+		bullets_per_bounce: 1,
+		init_bullets_per_bounce: 1,
+		current_bullets: 1,  
+		max_added_bullets: 0,
+		max_speed: 16,
+		level: 1
+	};
 }

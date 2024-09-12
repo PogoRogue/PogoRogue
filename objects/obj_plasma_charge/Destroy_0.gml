@@ -1,0 +1,1 @@
+obj_player.state = obj_player.state_free;

@@ -4,11 +4,11 @@ function scr_Weapon_Stats(){
 	
 	if weapon.full_auto = true {
 		autofire = "\nAutofire: Yes";
-		if weapon.ammo[0].firerate_start < 5 {
+		if weapon.ammo[0].firerate_end < 5 {
 			firerate = "\nFire Rate: Very High";
-		}else if weapon.ammo[0].firerate_start < 8 {
+		}else if weapon.ammo[0].firerate_end < 8 {
 			firerate = "\nFire Rate: High";
-		}else if weapon.ammo[0].firerate_start < 15 {
+		}else if weapon.ammo[0].firerate_end < 15 {
 			firerate = "\nFire Rate: Medium";
 		}else {
 			firerate = "\nFire Rate: Low";

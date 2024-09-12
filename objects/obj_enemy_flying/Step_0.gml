@@ -5,7 +5,7 @@ event_inherited();
 
 if(is_dead) {
 	spd = 0;	
-} else if (place_meeting(x + speed, y, obj_ground)) {
+} else if (place_meeting(x + speed, y, obj_ground) and !place_meeting(x,y,obj_launchpad)) {
 	spd *= -1;
 	image_xscale = sign(spd);
 }

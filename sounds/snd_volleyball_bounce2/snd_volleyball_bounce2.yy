@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_volleyball_bounce2",
+  "audioGroupId":{
+    "name":"audiogroup_volleyball",
+    "path":"audiogroups/audiogroup_volleyball",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":2.107143,
+  "name":"snd_volleyball_bounce2",
+  "parent":{
+    "name":"Weapons",
+    "path":"folders/Sounds/Weapons.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_volleyball_bounce2.wav",
+  "type":0,
+  "volume":1.0,
+}

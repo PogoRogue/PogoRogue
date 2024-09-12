@@ -10,3 +10,7 @@ if x_offset <= 124 {
 		spd -= 0.25;	
 	}
 }
+
+if next_room = room_proc_gen_test {
+	global.show_tips_screen = true;	
+}

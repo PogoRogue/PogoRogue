@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Conveyor_Belt",
   "isCompatibility":false,
   "isDnD":false,

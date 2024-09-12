@@ -2,7 +2,7 @@
   "$GMObject":"",
   "%Name":"obj_fade_out_restart_game",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_fade_out_restart_game",
@@ -29,7 +29,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"","%Name":"next_room","filters":[],"listItems":[],"multiselect":false,"name":"next_room","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"room","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"next_room","filters":[],"listItems":[],"multiselect":false,"name":"next_room","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"room","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

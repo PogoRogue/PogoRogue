@@ -2,7 +2,7 @@
   "$GMObject":"",
   "%Name":"obj_chest_coin",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_chest_coin",
@@ -29,8 +29,8 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"","%Name":"min_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"min_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":1,},
-    {"$GMObjectProperty":"","%Name":"max_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"max_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"20","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"min_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"min_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"max_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"max_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"20","varType":1,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

@@ -14,17 +14,18 @@ global.player_spawn_y = 0;
 global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
 
-if room = room_gameplay_video {
+if room = room_starting_area {
 	global.num_of_coins = 2000;
+}else if room = room_test {
+	global.num_of_coins = 200;
 }else {
-	global.num_of_coins = 0;	
+	global.num_of_coins = 200;	//0
 }
 
 global.mute = false;
 global.shop_index = 0;
 global.num_of_ground_objects = 0;
 global.tiles_left_to_draw = 0;
-
 
 
 if !instance_exists(obj_controls_controller) {
@@ -36,9 +37,6 @@ if !instance_exists(obj_controls_keyboard) {
 if !instance_exists(obj_runstats) {
 	instance_create_depth(x,y,depth,obj_runstats);
 }
-
-
-
 
 //combo
 global.combo = 0;
@@ -82,7 +80,7 @@ global.flaming_coins = false;
 global.combo_time_added = 0;
 global.sharpshooter = false;
 global.added_coins = 0;
-global.experimentation = false;
+global.experimentation = 0;
 global.experimentation_coins = 25;
 global.aerial_assassin = false;
 global.super_shield = false;
@@ -98,8 +96,20 @@ global.laststand = false;
 global.psychicbullets = false;
 global.righteousrevenge = false;
 global.robbery = false;
-global.recycling = false;
+global.recycling = 0;
 global.juggler = false;
+global.iron_proficiency = false;
+global.fast_forward = 0;
+global.airbag_number = 0;
+global.win_odds = 30 + global.luck; //winner's mentality win odds 33
+global.triplethreat = false;
+global.critchance = 0;
+global.crit_percentage = 0;
+global.paparazzi = false;
+global.bar_time_added = 1;
+global.bartime = 25;
+global.strong_muscles = false;
+global.synergy_frame = 0;
 
 //items unlockable in the shop
 
@@ -114,7 +124,7 @@ scr_All_Actives_Array();
 if room = room_gameplay_video {
 	//tiling layer
 	global.ground_layer = layer_create(-1);
-	global.tilemap_ground = layer_tilemap_create(global.ground_layer,0,0,global.tileset,20000,20000);	
+	global.tilemap_ground = layer_tilemap_create(global.ground_layer,-30000,-30000,global.tileset,30000,30000);
 }
 
 
@@ -138,8 +148,8 @@ global.combat_room_num = 0;
 global.shop_number = 0;
 global.enemy_number = 0;
 global.passive_number = 0;
+global.salesman_number = 0;
 
-//set seed in other rooms 
 if room != room_proc_gen_test and room != room_shop
 and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 	//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######

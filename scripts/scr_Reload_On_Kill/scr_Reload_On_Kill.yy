@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Reload_On_Kill",
   "isCompatibility":false,
   "isDnD":false,

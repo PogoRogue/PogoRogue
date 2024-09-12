@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.133333,
+  "duration":0.0,
   "name":"snd_shotgun",
   "parent":{
     "name":"Weapons",

@@ -8,6 +8,7 @@ add_sprite_to_list = true;
 item_cost = 35;
 max_uses = 5;
 item_stats = "";
+index_add = 0; //declare this variable when there are multiple sprites for this item
 scr_Buff_Stats();
 
 if obj_player.planetary_bullets < max_uses {

@@ -17,7 +17,10 @@ alarm[0] = 10; //play music
 randomize()
 global.seed = random_get_seed();
 
+
 random_set_seed(global.seed);
 show_debug_message("Random seed: " + string(global.seed));
 global.seed_switched = false;
 global.current_music = snd_music_menu;
+
+frame = 0;

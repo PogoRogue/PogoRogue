@@ -36,3 +36,10 @@ x = -(camera_get_view_width(view_camera[0])/4);
 y = center_y-108;
 
 experimenting_coins = 25;
+replaced_item_cost = 0;
+item1_cost = 0;
+item2_cost = 0;
+item3_cost = 0;
+coin_string = ["","",""];
+coin_string_set = true;
+alarm[4] = 30;

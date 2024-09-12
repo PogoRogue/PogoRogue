@@ -1,1 +1,3 @@
-despawn = true;
+if dragster = false {
+	despawn = true;
+}

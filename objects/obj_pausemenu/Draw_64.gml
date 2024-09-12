@@ -3,6 +3,13 @@ if !instance_exists(obj_popup_restart) and !instance_exists(obj_popup_exit) and 
 	
 	var xx = camera_get_view_width(view_camera[0])/2;
 	var yy = camera_get_view_height(view_camera[0])/2;
+	switch (select) {
+		case 1: draw_sprite(spr_menu_selected_pause,frame,xx,yy-11 - 60); break;
+		case 2: draw_sprite(spr_menu_selected_pause,frame,xx,yy-11 - 30); break;
+		case 3: draw_sprite(spr_menu_selected_pause,frame,xx,yy-11); break;
+		case 4: draw_sprite(spr_menu_selected_pause,frame,xx,yy-11 + 30); break;
+		case 5: draw_sprite(spr_menu_selected_pause,frame,xx,yy-11 + 60); break;
+	}
 	draw_sprite(sprite_index,image_index,xx,yy);
 	
 	draw_set_halign(fa_center);

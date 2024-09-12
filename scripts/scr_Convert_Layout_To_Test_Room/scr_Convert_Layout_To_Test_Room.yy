@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Convert_Layout_To_Test_Room",
   "isCompatibility":false,
   "isDnD":false,

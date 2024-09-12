@@ -25,6 +25,7 @@
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"500a33ca-bb34-498c-a2d6-82f645d634a6","blendMode":0,"displayName":"default","isLocked":false,"name":"500a33ca-bb34-498c-a2d6-82f645d634a6","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"dfe89a3d-6170-4d88-91f2-c43a9d942c56","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"dfe89a3d-6170-4d88-91f2-c43a9d942c56","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_item_slot_buy",
   "nineSlice":null,

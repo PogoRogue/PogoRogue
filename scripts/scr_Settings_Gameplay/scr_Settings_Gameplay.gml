@@ -5,7 +5,7 @@ function scr_Settings_Gameplay(){
 		_text: "Tilt Speed: ",
 		_type: "slider",
 		lowest_value: 2,
-		highest_value: 4,
+		highest_value: 5,
 		increment: 0.1,
 		default_value: global.tilt_speed,
 		current_value: global.tilt_speed,
@@ -80,6 +80,23 @@ function scr_Settings_Gameplay(){
 		}
 	};
 	
+	option_showsplits = {
+		_text: "Show Splits: ",
+		_type: "checkbox",
+		default_mode: global.show_splits,
+		current_mode: global.show_splits,
+		do_on_true: function() {
+			global.show_splits = true;
+			scr_Save_Real("show_splits",global.show_splits);
+			audio_play_sound(snd_selectOption,0,false);
+		},
+		do_on_false: function() {
+			global.show_splits = false;
+			scr_Save_Real("show_splits",global.show_splits);
+			audio_play_sound(snd_selectOption,0,false);
+		}
+	};
+	
 	option_showcoins = {
 		_text: "Show Coin Counter: ",
 		_type: "checkbox",
@@ -143,9 +160,9 @@ function scr_Settings_Gameplay(){
 	};
 
 	menu_gameplay = {
-		num_of_options: 8,									
+		num_of_options: 9,									
 		options_array: [option_tiltspeed,option_screenshake,option_controllershake,
-						option_showtimer,option_showcoins,option_showpassives,
+						option_showtimer,option_showsplits,option_showcoins,option_showpassives,
 						option_deletesavedata, option_resetdefaults],
 	};
 }

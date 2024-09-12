@@ -19,9 +19,9 @@ switch(current_state) {
 		
 		at_edge = collision_point(x_dir > 0 ? bbox_right : bbox_left, bbox_bottom + 2, obj_ground_parent, true, true) != noone;
 
-		if(at_edge && !place_meeting(x + (walk_speed * x_dir), y + vspeed, obj_ground_parent)) {
+		if(at_edge && !place_meeting(x + (walk_speed * x_dir), y + vspeed, obj_ground_parent)) and hp > 0 {
 			x += walk_speed * x_dir;
-		} else {
+		} else if hp > 0 {
 			while(at_edge && !place_meeting(x + sign(walk_speed * x_dir), y, obj_ground_parent)) {
 				x += sign(walk_speed * x_dir);
 			}

@@ -28,7 +28,7 @@
   "height":22,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"e55f6c95-1a84-4ff6-a4f9-a7b4ddbfbf1c","blendMode":0,"displayName":"default","isLocked":false,"name":"e55f6c95-1a84-4ff6-a4f9-a7b4ddbfbf1c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"8c4e37ca-cacd-4d7a-9e02-72149a0b0848","blendMode":0,"displayName":"default (2)","isLocked":false,"name":"8c4e37ca-cacd-4d7a-9e02-72149a0b0848","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_projectile_bouncyball_trail",
   "nineSlice":null,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Player_Collision",
   "isCompatibility":false,
   "isDnD":false,

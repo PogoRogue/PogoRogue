@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Laser_Sight",
   "isCompatibility":false,
   "isDnD":false,

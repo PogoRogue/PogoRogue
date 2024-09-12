@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Reset_Controls_Data",
   "isCompatibility":false,
   "isDnD":false,

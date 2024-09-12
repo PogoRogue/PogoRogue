@@ -125,7 +125,9 @@ if controller = true {
 				if seed_string != "" {
 					global.seed_switched = true;
 					global.seed = real(seed_string);
-					random_set_seed(global.seed);	
+					global.random_seed = false;
+					scr_Save_Real("random_seed",global.random_seed);
+					random_set_seed(global.seed);
 					scr_Restart_Level();
 				}
 			}else if select_x2 = 2 {

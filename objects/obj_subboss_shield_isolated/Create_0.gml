@@ -16,3 +16,5 @@ red_alpha = 0;
 
 temp_hp = hp;
 immune = false;
+
+drop_coins = false;
