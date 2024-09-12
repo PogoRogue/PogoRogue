@@ -25,18 +25,24 @@ if (instance_exists(follow)) {
 	var follow_x = follow.x+lengthdir_x(21,follow.angle+90);
 	var follow_y = follow.y+lengthdir_y(21,follow.angle+90);
 	
+	if room != room_tutorial {
+		var check_distance = 2;	
+	}else {
+		var check_distance = 1.5;	
+	}
+	
 	//constrain camera in hallways
-	if collision_line(follow_x,follow_y,follow_x-hallway_w_half*2,follow_y,obj_camera_constrain_x_left,false,true) != noone 
-	and collision_line(follow_x,follow_y,follow_x+hallway_w_half*2,follow_y,obj_camera_constrain_x_right,false,true) != noone {
-		x_min = collision_line(follow_x,follow_y,follow_x-hallway_w_half*2,follow_y,obj_camera_constrain_x_left,false,true).x+hallway_w_half;
-		x_max = collision_line(follow_x,follow_y,follow_x+hallway_w_half*2,follow_y,obj_camera_constrain_x_right,false,true).x-hallway_w_half;
+	if collision_line(follow_x,follow_y,follow_x-hallway_w_half*check_distance,follow_y,obj_camera_constrain_x_left,false,true) != noone 
+	and collision_line(follow_x,follow_y,follow_x+hallway_w_half*check_distance,follow_y,obj_camera_constrain_x_right,false,true) != noone {
+		x_min = collision_line(follow_x,follow_y,follow_x-hallway_w_half*check_distance,follow_y,obj_camera_constrain_x_left,false,true).x+hallway_w_half;
+		x_max = collision_line(follow_x,follow_y,follow_x+hallway_w_half*check_distance,follow_y,obj_camera_constrain_x_right,false,true).x-hallway_w_half;
 		x_clamp = true;
-	}else if collision_line(follow_x,follow_y,follow_x-hallway_w_half*2,follow_y,obj_camera_constrain_x_left,false,true) != noone { //only left
-		x_min = collision_line(follow_x,follow_y,follow_x-hallway_w_half*2,follow_y,obj_camera_constrain_x_left,false,true).x+hallway_w_half;
+	}else if collision_line(follow_x,follow_y,follow_x-hallway_w_half*check_distance,follow_y,obj_camera_constrain_x_left,false,true) != noone { //only left
+		x_min = collision_line(follow_x,follow_y,follow_x-hallway_w_half*check_distance,follow_y,obj_camera_constrain_x_left,false,true).x+hallway_w_half;
 		x_max = max(xTo,x_min);
 		x_clamp = true;
-	}else if collision_line(follow_x,follow_y,follow_x+hallway_w_half*2,follow_y,obj_camera_constrain_x_right,false,true) != noone { //only right
-		x_max = collision_line(follow_x,follow_y,follow_x+hallway_w_half*2,follow_y,obj_camera_constrain_x_right,false,true).x-hallway_w_half;
+	}else if collision_line(follow_x,follow_y,follow_x+hallway_w_half*check_distance,follow_y,obj_camera_constrain_x_right,false,true) != noone { //only right
+		x_max = collision_line(follow_x,follow_y,follow_x+hallway_w_half*check_distance,follow_y,obj_camera_constrain_x_right,false,true).x-hallway_w_half;
 		x_min = min(xTo,x_max);
 		x_clamp = true;
 	}else {
@@ -44,17 +50,17 @@ if (instance_exists(follow)) {
 		x_max = xTo;
 		x_clamp = false;
 	}
-	if collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*2,obj_camera_constrain_y_top,false,true) != noone 
-	and collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*2,obj_camera_constrain_y_bottom,false,true) != noone {
-		y_min = collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*2,obj_camera_constrain_y_top,false,true).y+hallway_h_half;
-		y_max = collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*2,obj_camera_constrain_y_bottom,false,true).y-hallway_h_half;
+	if collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*check_distance,obj_camera_constrain_y_top,false,true) != noone 
+	and collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom,false,true) != noone {
+		y_min = collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*check_distance,obj_camera_constrain_y_top,false,true).y+hallway_h_half;
+		y_max = collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom,false,true).y-hallway_h_half;
 		y_clamp = true;
-	}else if collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*2,obj_camera_constrain_y_top,false,true) != noone { //only top
-		y_min = collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*2,obj_camera_constrain_y_top,false,true).y+hallway_h_half;
+	}else if collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*check_distance,obj_camera_constrain_y_top,false,true) != noone { //only top
+		y_min = collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*check_distance,obj_camera_constrain_y_top,false,true).y+hallway_h_half;
 		y_max = max(yTo,y_min);
 		y_clamp = true;
-	}else if collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*2,obj_camera_constrain_y_bottom,false,true) != noone { //only bottom
-		y_max = collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*2,obj_camera_constrain_y_bottom,false,true).y-hallway_h_half;
+	}else if collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom,false,true) != noone { //only bottom
+		y_max = collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom,false,true).y-hallway_h_half;
 		y_min = min(yTo,y_max);
 		y_clamp = true;
 	}else {

@@ -2,7 +2,7 @@ restart_button = 0;//keyboard_check_pressed(ord("R")); //press R key to restart 
 screenshake_button = 0;//keyboard_check_pressed(vk_backspace); //press escape key to restart room (temporary)
 mute_button = 0;//keyboard_check_pressed(ord("M")); //press M to mute audio (temporary)
 itemmenu_button = global.key_item_menu; 
-skiplevel_button = 0;//keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
+skiplevel_button = keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
 
 if (restart_button) {
 	room_persistent = false;
@@ -10,6 +10,28 @@ if (restart_button) {
 	with obj_pause {
 		item_swap = false;
 		paused_outside = true;
+	}
+}
+
+//change skin
+if keyboard_check_pressed(vk_f2) {
+	if global.current_skin < 6 {
+		global.current_skin += 1;
+	}else {
+		global.current_skin = 0;
+	}
+	with obj_player {
+		player_sprite = bouncing_array[global.current_skin];
+		falling_sprite = falling_array[global.current_skin];
+		charging_sprite = charging_array[global.current_skin];
+		portal_sprite = portal_array[global.current_skin];
+		face_sprite = face_array[global.current_skin];
+		red_sprite = red_array[global.current_skin];
+		white_sprite = white_array[global.current_skin];
+		revive_sprite = revive_array[global.current_skin];
+		revive_white_sprite = revive_white_array[global.current_skin];
+		body_sprite = body_array[global.current_skin];
+		pogostick_sprite = pogostick_array[global.current_skin];
 	}
 }
 
@@ -99,4 +121,20 @@ if instance_exists(obj_pause) {
 			audio_resume_sound(snd_laser_enemy);
 		}
 	}
+}
+
+global.synergy_frame += 0.25;
+
+if global.show_tips_screen = true and !instance_exists(obj_fade_out) and !instance_exists(obj_fade_in) {
+	global.current_tip = "";	
+}
+
+//unlock skin
+var skin = 6;
+if global.phase = 2 and global.skins_unlocked_array[skin-1] = false {
+	ini_open("itemsunlocked.ini");
+	instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
+	global.skins_unlocked_array[skin-1] = true;
+	ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
+	ini_close();	
 }

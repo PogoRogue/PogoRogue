@@ -38,6 +38,7 @@ created_items2 = false;
 drop_coins = true;
 
 num_of_coins = global.combo;
+enemy_coin_bonus = 0;
 //when invinsible, can't take damage
 invinsible=false;
 
@@ -45,3 +46,16 @@ random_set_seed(global.seed+global.enemy_number);
 random_items = scr_Random_Item_Drops();
 global.enemy_number += 1;
 random_set_seed(global.seed);
+
+shaded = false;
+locked_onto = false;
+
+megabounce_freeze = false; //dont despawn right away if killed by megabounce
+freeze_x = x;
+freeze_y = y;
+freeze_frame = 0;
+
+center_x_sprite = bbox_left + ((bbox_right - bbox_left)/2);
+center_y_sprite = bbox_top + ((bbox_top - bbox_top)/2);
+
+bounced_times = 0;

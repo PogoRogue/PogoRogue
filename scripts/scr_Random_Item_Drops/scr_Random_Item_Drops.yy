@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Random_Item_Drops",
   "isCompatibility":false,
   "isDnD":false,

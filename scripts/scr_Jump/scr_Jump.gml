@@ -1,11 +1,21 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Jump(add_to_jump){
-	speed = vsp_basicjump+add_to_jump+((vsp_basicjump/10)*global.tightspring); //bounce speed
+	
+	if launchpad = true {
+		add_to_jump = -3;	
+		launchpad = false;
+	}
+	
+	speed = vsp_basicjump+add_to_jump+((vsp_basicjump/10)*global.tightspring); //bounce spee
 	direction = angle - 90; //bounce angle
+	if speed < 0 {
+		speed = abs(speed);
+		direction = angle + 90;
+	}
 	hspeed += conveyor_speed;
 	conveyor_speed = 0;
-	sprite_index = player_sprite;
+	sprite_index = falling_sprite;
 	image_speed = 0;
 	image_index = 0; //reset animation to starting frame
 	animation_complete = false;
@@ -18,8 +28,7 @@ function scr_Jump(add_to_jump){
 				gun_temp.current_bullets = gun_temp.bullets_per_bounce;
 			}
 		}
-	}
-	else if gun.current_bullets != gun.bullets_per_bounce+obj_player.max_ammo_buff and gun != boomerang_gun { //reload bullets
+	}else if gun.current_bullets != gun.bullets_per_bounce+obj_player.max_ammo_buff and gun != boomerang_gun and gun != portal_gun { //reload bullets
 		//reload sound
 		audio_play_sound(snd_reload,0,false);
 		gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
@@ -33,6 +42,8 @@ function scr_Jump(add_to_jump){
 			instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 		}
 	}
+	
+	gun.ammo[bullet_index].firerate = gun.ammo[bullet_index].firerate_start;
 	
 	state = state_free;
 	charge = 0;
@@ -81,15 +92,29 @@ function scr_Jump(add_to_jump){
 	}
 	
 	//hat gun
-	pickup_hatgun.uses_per_bounce = pickup_hatgun.max_uses_per_bounce;
+	if pickup_hatgun.uses_per_bounce < pickup_hatgun.max_uses_per_bounce {
+		pickup_hatgun.uses_per_bounce += 1;
+	}
 	pickup_hatgun.on_cooldown = false;
+	
+	//grappling helmet
+	pickup_grappling.uses_per_bounce = pickup_grappling.max_uses_per_bounce;
+	pickup_grappling.on_cooldown = false;
+	
+	grappling_gun.current_bullets = 1;
+	
+	//harpoon helmet
+	pickup_harpoon.uses_per_bounce = pickup_harpoon.max_uses_per_bounce;
+	pickup_harpoon.on_cooldown = false;
+	
+	harpoon_gun.current_bullets = 1;
 	
 	//flames
 	allow_flames = false;
 	min_flames_speed = 5.6;
 	
 	//bounce sound
-	if !audio_is_playing(snd_groundpound) {
+	if !audio_is_playing(snd_groundpound) and room != room_shop {
 		randomize();
 		audio_play_sound(choose(snd_bounce,snd_bounce2,snd_bounce3),0,false);
 		random_set_seed(global.seed);

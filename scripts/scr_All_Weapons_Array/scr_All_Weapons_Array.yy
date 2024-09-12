@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_All_Weapons_Array",
   "isCompatibility":false,
   "isDnD":false,

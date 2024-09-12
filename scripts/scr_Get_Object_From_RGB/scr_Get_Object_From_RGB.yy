@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Get_Object_From_RGB",
   "isCompatibility":false,
   "isDnD":false,

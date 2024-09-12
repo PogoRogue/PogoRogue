@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Player_Damaged",
   "isCompatibility":false,
   "isDnD":false,

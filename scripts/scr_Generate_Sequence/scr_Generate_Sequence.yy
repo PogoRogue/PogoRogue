@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Generate_Sequence",
   "isCompatibility":false,
   "isDnD":false,

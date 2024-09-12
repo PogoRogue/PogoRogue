@@ -21,6 +21,12 @@ region_enemy_count = ds_list_create(); //Keeps track of the number of enemies in
 region_gate_objects = ds_list_create(); //Stores references to all the gates
 //These values are later used for gate logic
 
+
+
+perform_region_load_unload = false;
+load_counter = 0;
+load_counter_max = 100;
+load_counter_region_previous = -1;
 //This list keeps region_structs which track coordinates of an entire region. We later use this to load
 //And unload objects to reduce the amount of logic running at once
 region_loading_list = ds_list_create();
@@ -30,3 +36,6 @@ player_max_region = 0;
 
 display_progress_bar = false;
 kills_left = 0;
+
+above_shop = false;
+in_shop = false;

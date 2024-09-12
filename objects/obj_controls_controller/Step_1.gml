@@ -1,10 +1,12 @@
 if !gamepad_is_connected(0) and global.use_controller = true {
-	if !instance_exists(obj_seeding_prompt) {
+	if !instance_exists(obj_seeding_prompt) and !instance_exists(obj_code_prompt) {
 		with obj_pause {
-			controller_disconnected = true;
-			instance_activate_object(obj_pausemenu);
-			global.use_keyboard = true;
-			global.use_controller = false;	
+			if pause = false {
+				controller_disconnected = true;
+				instance_activate_object(obj_pausemenu);
+				global.use_keyboard = true;
+				global.use_controller = false;	
+			}
 		}
 	}else {
 		global.use_keyboard = true;
@@ -13,7 +15,7 @@ if !gamepad_is_connected(0) and global.use_controller = true {
 }
 
 if scr_Gamepad_Check_Input() > 0 {
-	if !instance_exists(obj_seeding_prompt) {
+	if !instance_exists(obj_seeding_prompt) and !instance_exists(obj_code_prompt) {
 		global.use_keyboard = false;
 		global.use_controller = true;	
 	}
@@ -24,6 +26,7 @@ if scr_Gamepad_Check_Input() > 0 {
 //get all possible controls
 if global.use_controller = true {
 	global.use_keyboard = false;
+	
 	scr_Controls_Array_Controller();
 	//player controls
 	global.key_right_player = array_key_right_player[0] || array_key_right_player[1];

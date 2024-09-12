@@ -22,7 +22,7 @@ fight_started = false;
  *
  *  segment			 0        1        2
  *	sequence	[ len: 4 | len: 3 | len: 2 ]
- *	threshold		0%      33%      66%      100%
+ *	threshold	0%      33%      66%      100%
  */
 hp_thresholds = [0, 33, 66];
 current_hp_segment = 2;

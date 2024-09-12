@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Keyboard_Get_Key_String",
   "isCompatibility":false,
   "isDnD":false,

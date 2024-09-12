@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Reset_Save_Data",
   "isCompatibility":false,
   "isDnD":false,

@@ -78,14 +78,32 @@ if win = true {
 			state = state_immobile;
 		}
 	}
-	if win_stat_added = false {
+	if win_stat_added = false and global.random_seed = true {
 		//check if time is new best
-		if global.current_time_elapsed < global.fastest_time
-		or global.fastest_time = 0 { //fastest time across all runs
-			global.fastest_time = global.current_time_elapsed;
-			scr_Save_Real("fastest_time",global.fastest_time);
+		if global.current_time_elapsed < global.fastest_time_random
+		or global.fastest_time_random = 0 { //fastest time across all runs
+			global.fastest_time_random = global.current_time_elapsed;
+			scr_Save_Real("fastest_time_random",global.fastest_time_random);
 			best_time = true;
 		}
 		win_stat_added = true;
+	}else if win_stat_added = false and global.random_seed = false {
+		//check if time is new best
+		if global.current_time_elapsed < global.fastest_time_custom
+		or global.fastest_time_custom = 0 { //fastest time across all runs
+			global.fastest_time_custom = global.current_time_elapsed;
+			scr_Save_Real("fastest_time_custom",global.fastest_time_custom);
+			best_time = true;
+		}
+		win_stat_added = true;
+	}
+	//unlock skin
+	var skin = 4;
+	if global.skins_unlocked_array[skin-1] = false {
+		ini_open("itemsunlocked.ini");
+		instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
+		global.skins_unlocked_array[skin-1] = true;
+		ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
+		ini_close();	
 	}
 }

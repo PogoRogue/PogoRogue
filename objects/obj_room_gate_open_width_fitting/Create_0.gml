@@ -24,3 +24,12 @@ middle_symbol_pos_x = (left_emitter_pos_x + (right_emmiter_pos_x + sprite_get_wi
 
 image_xscale = (right_emmiter_pos_x - left_emitter_pos_x + 32)/sprite_width;
 x = left_emitter_pos_x;
+
+closed = false;
+created_walls = false;
+gate_width = 0;
+gate_width_half = 0;
+close_distance = 0;
+
+mask_index = spr_nothing;
+depth = 10;

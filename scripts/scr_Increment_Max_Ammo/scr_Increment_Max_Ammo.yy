@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Increment_Max_Ammo",
   "isCompatibility":false,
   "isDnD":false,

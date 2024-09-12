@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "name":"Shield Bubbles",
+    "path":"folders/Sprites/Player/Shield Bubbles.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

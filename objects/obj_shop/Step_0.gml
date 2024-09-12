@@ -90,6 +90,12 @@ if created_items = false {
 
 	buff_1 = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
 	buff_2 = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
+	while instance_exists(buff_1) {
+		buff_1 = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
+	}
+	while instance_exists(buff_2) {
+		buff_2 = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
+	}
 	while (buff_2 = buff_1) { //dont want 2 of the same buff
 		buff_2 = global.all_buffs[irandom_range(0,array_length(global.all_buffs)-1)];
 	}
@@ -125,9 +131,9 @@ if created_items = false {
 		//replace passive with new passive if player already has it
 		if i = 2 and instance_exists(slot_items_array[i])
 		or i = 3 and instance_exists(slot_items_array[i]) {
-			if slot_items_array[i].max_uses = 1 or slot_items_array[i].sold_out {
-				while scr_In_Array(global.all_buff_sprites, slot_items_array[i].sprite_index) and (slot_items_array[i].max_uses = 1 or slot_items_array[i].sold_out) {
-					if scr_In_Array(global.all_buff_sprites, slot_items_array[i].sprite_index) and (slot_items_array[i].max_uses = 1 or slot_items_array[i].sold_out) {
+			if slot_items_array[i].max_uses = 1 or slot_items_array[i].sold_out or slot_items_array[i].salesman = true {
+				while scr_In_Array(global.all_buff_sprites, slot_items_array[i].sprite_index) and (slot_items_array[i].max_uses = 1 or slot_items_array[i].sold_out) or slot_items_array[i].salesman = true {
+					if scr_In_Array(global.all_buff_sprites, slot_items_array[i].sprite_index) and (slot_items_array[i].max_uses = 1 or slot_items_array[i].sold_out) or slot_items_array[i].salesman = true {
 						//destroy old item
 						slot_items_array[i].item_cost = 0;
 						instance_destroy(slot_items_array[i]);
@@ -258,10 +264,12 @@ if key_select {
 				init_num_of_coins = num_of_coins;
 			}
 			with obj_item_parent {
-				select = other.select;
-				refresh_button = other.refresh_button;
-				create_coins = false;
-				instance_destroy();
+				if salesman = false {
+					select = other.select;
+					refresh_button = other.refresh_button;
+					create_coins = false;
+					instance_destroy();
+				}
 			}
 			instance_destroy();
 			global.refreshes_used += 1;
@@ -308,10 +316,12 @@ if global.picky_buyer > 0 and global.refresh_cost != 0 {
 if spawn = true {
 	spawn = false;
 	with obj_item_parent {
-		select = other.select;
-		refresh_button = other.refresh_button;
-		create_coins = false;
-		instance_destroy();
+		if salesman = false {
+			select = other.select;
+			refresh_button = other.refresh_button;
+			create_coins = false;
+			instance_destroy();
+		}
 	}
 	instance_destroy();
 	with instance_create_depth(x,y,depth,obj_shop) {

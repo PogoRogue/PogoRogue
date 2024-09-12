@@ -38,9 +38,27 @@ function scr_Settings_Video(){
 			obj_settings.list_slider_str = string(list_of_options[current_selection][0]) + "x" + string(list_of_options[current_selection][1]);	
 		}
 	};
+	
+	option_flash = {
+		_text: "Flash: ",
+		_type: "checkbox",
+		default_mode: global.flash,
+		current_mode: global.flash,
+		do_on_true: function() {
+			global.flash = true;
+			scr_Save_Real("flash",global.flash);
+			audio_play_sound(snd_selectOption,0,false);
+		},
+		do_on_false: function() {
+			global.flash = false;
+			scr_Save_Real("flash",global.flash);
+			audio_play_sound(snd_selectOption,0,false);
+		}
+	};
 
 	menu_video = {
-		num_of_options: 2,										//number of possible options
-		options_array: [option_fullscreen,option_resolution],   //options in array
+		num_of_options: 3,										//number of possible options
+		options_array: [option_fullscreen,option_resolution, option_flash],   //options in array
 	};
+	
 }

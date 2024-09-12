@@ -15,8 +15,12 @@ function scr_Restart_Level() {
 
 		random_set_seed(global.seed);
 		show_debug_message("Random seed: " + string(global.seed));
+		global.random_seed = true;
+		scr_Save_Real("random_seed",global.random_seed);
 	}else {
 		global.seed_switched = false;
+		global.random_seed = false;
+		scr_Save_Real("random_seed",global.random_seed);
 	}
 	
 	/*if room = room_boss_1 or room = room_boss_2 {

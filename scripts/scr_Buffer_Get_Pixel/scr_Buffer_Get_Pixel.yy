@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Buffer_Get_Pixel",
   "isCompatibility":false,
   "isDnD":false,

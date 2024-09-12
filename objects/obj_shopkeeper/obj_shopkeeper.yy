@@ -1,7 +1,11 @@
 {
   "$GMObject":"",
   "%Name":"obj_shopkeeper",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_shopkeeper",
   "overriddenProperties":[],
@@ -28,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_shopkeeper",
-    "path":"sprites/spr_shopkeeper/spr_shopkeeper.yy",
+    "name":"spr_shopkeeper_new",
+    "path":"sprites/spr_shopkeeper_new/spr_shopkeeper_new.yy",
   },
   "spriteMaskId":null,
   "visible":true,

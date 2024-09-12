@@ -12,6 +12,7 @@ if key_up and !key_down and selected = false {
 	if select > 1 {
 		select -= 1;
 		audio_play_sound(snd_menuNavigation,0,false);
+		frame = 0;
 	}
 	selected = true;
 	alarm[3] = alarm3_time;
@@ -19,6 +20,7 @@ if key_up and !key_down and selected = false {
 	if select < num_of_options {
 		select += 1;
 		audio_play_sound(snd_menuNavigation,0,false);
+		frame = 0;
 	}
 	selected = true;
 	alarm[3] = alarm3_time;
@@ -35,9 +37,7 @@ if key_select and !instance_exists(obj_fade_in) {
 	
 	if select = 1 - options_decrease {
 		if global.tutorial_completed = true {
-			scr_Room_Transition(room_proc_gen_test);
-			global.total_runs += 1;
-			scr_Save_Real("total_runs",global.total_runs);
+			scr_Room_Transition(room_starting_area);
 		}else {
 			//complete tutorial before playing
 			audio_play_sound(snd_unavailable,0,false);
@@ -83,3 +83,8 @@ if y > 252 {
 	}
 	y -= move_spd;	
 }
+
+frame += (1/3);
+
+global.random_seed = true;
+scr_Save_Real("random_seed",global.random_seed);

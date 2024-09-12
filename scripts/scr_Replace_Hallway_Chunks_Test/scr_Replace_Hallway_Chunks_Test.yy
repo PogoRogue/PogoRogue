@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Replace_Hallway_Chunks_Test",
   "isCompatibility":false,
   "isDnD":false,

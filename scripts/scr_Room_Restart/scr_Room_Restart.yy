@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Room_Restart",
   "isCompatibility":false,
   "isDnD":false,

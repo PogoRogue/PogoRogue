@@ -4,7 +4,7 @@
 event_inherited();
 
 at_edge = !collision_point(x + (sign(spd)), y + (sprite_height / 2), obj_ground_parent, false, false); 
-at_wall = place_meeting(x + spd, y, obj_ground_parent);
+at_wall = place_meeting(x + spd, y, obj_ground_parent) and !place_meeting(x,y,obj_launchpad);
 
 //sprite_index = spr_enemy_moving_walk;
 

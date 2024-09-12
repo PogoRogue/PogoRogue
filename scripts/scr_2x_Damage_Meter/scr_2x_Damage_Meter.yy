@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_2x_Damage_Meter",
   "isCompatibility":false,
   "isDnD":false,

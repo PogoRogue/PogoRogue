@@ -12,6 +12,7 @@ if key_up and !key_down and selected = false {
 	if select > 1 {
 		audio_play_sound(snd_menuNavigation,0,false);
 		select -= 1;
+		frame = 0;
 	}
 	selected = true;
 	alarm[3] = alarm3_time;
@@ -19,6 +20,7 @@ if key_up and !key_down and selected = false {
 	if select < num_of_options {
 		audio_play_sound(snd_menuNavigation,0,false);
 		select += 1;
+		frame = 0;
 	}
 	selected = true;
 	alarm[3] = alarm3_time;
@@ -59,3 +61,5 @@ if instance_number(obj_pausemenu) > 1 or instance_exists(obj_fade_out){
 }
 
 image_index = select-1;
+
+frame += (1/3);

@@ -31,13 +31,24 @@ platform_on = true;
 centering = false;
 current_burst = 0;
 weapon_arrow_index = 0;
+table = false;
+launchpad = false;
+lock_unlocked = false;
+lock_unlocked_frames = 0;
+lock_alpha = 1;
 
-//portal
+//weapons
 portal_object = noone;
 portal_speed = 0;
 portal_angle_speed = 0;
 portal_rot_distance = 0;
 used_shop_portal = false;
+sixshooter_held = false;
+sixshooter_held_num = 0;
+fullauto_condtional = true;
+temp_xscale = 1;
+new_angle = 0;
+new_xscale = 1;
 
 //buffs
 damage_buff = 0;
@@ -54,6 +65,8 @@ damage_boost_timer = 0;
 landed_on_enemy = false; // for robbery 
 aerial_assassin_frenzy = false;
 aerial_assassin_frenzy_count = 0;
+iframes_add = 0;
+double_kill = 0;
 
 //pickups
 charge = 0;
@@ -76,7 +89,23 @@ freeze_alpha = 0;
 freeze_angle = 0;
 frenzy = false;
 frenzy_time = 0;
+pogomode = false;
+pogomode_time = 0;
 tutorialDash = false; // Tutorial ground handler
+grappling_hook = noone;
+invincibility = false;
+invincibility_time = 0;
+invincibility_time_max = 300 * global.bar_time_added;
+tripleshot = false;
+tripleshot_time = 0;
+tripleshot_time_max = 480 * global.bar_time_added;
+shieldbubble_obj = noone;
+harpoon_empty = false;
+harpooning = false;
+synergy_frame = 0;
+megajump_centered = false;
+end_of_charge = false;
+wearing_hat = false;
 
 //upward flames
 min_flames_speed = 5.6;
@@ -94,10 +123,40 @@ key_pickup_2 = 0;
 key_pickup_1_pressed = 0;
 key_pickup_2_pressed = 0;
 
+//skins
+bouncing_array = [spr_player_zekai,spr_player_skin1,spr_player_skin2,spr_player_skin3,spr_player_skin4,spr_player_skin5,spr_player_skin6];
+charging_array = [spr_player_zekai_charging,spr_player_skin1_charging,spr_player_skin2_charging,spr_player_skin3_charging,spr_player_skin4_charging,spr_player_skin5_charging,spr_player_skin6_charging];
+falling_array = [spr_player_zekai_falling,spr_player_skin1_falling,spr_player_skin2_falling,spr_player_skin3_falling,spr_player_skin4_falling,spr_player_skin5_falling,spr_player_skin6_falling];
+portal_array = [spr_player_zekai_portal,spr_player_skin1_portal,spr_player_skin2_portal,spr_player_skin3_portal,spr_player_skin4_portal,spr_player_skin5_portal,spr_player_skin6_portal];
+hurt1_array = [spr_player_hurtface1,spr_player_skin1_hurtface1,spr_player_skin2_hurtface1,spr_player_skin3_hurtface1,spr_player_skin4_hurtface1,spr_player_skin5_hurtface1,spr_player_skin6_hurtface1];
+hurt2_array = [spr_player_hurtface2,spr_player_skin1_hurtface2,spr_player_skin2_hurtface2,spr_player_skin3_hurtface2,spr_player_skin4_hurtface2,spr_player_skin5_hurtface2,spr_player_skin6_hurtface2];
+hurt3_array = [spr_player_hurtface3,spr_player_skin1_hurtface3,spr_player_skin2_hurtface3,spr_player_skin3_hurtface3,spr_player_skin4_hurtface3,spr_player_skin5_hurtface3,spr_player_skin6_hurtface3];
+hurt4_array = [spr_player_hurtface4,spr_player_skin1_hurtface4,spr_player_skin2_hurtface4,spr_player_skin3_hurtface4,spr_player_skin4_hurtface4,spr_player_skin5_hurtface4,spr_player_skin6_hurtface4];
+face_array = [spr_player_face,spr_player_skin1_face,spr_player_skin2_face,spr_player_skin3_face,spr_player_skin4_face,spr_player_skin5_face,spr_player_skin6_face];
+red_array = [spr_player_zekai_charging_red,spr_player_skin1_charging_red,spr_player_skin2_charging_red,spr_player_skin3_charging_red,spr_player_skin4_charging_red,spr_player_skin5_charging_red,spr_player_skin6_charging_red];
+white_array = [spr_player_zekai_falling_white,spr_player_skin1_falling_white,spr_player_skin2_falling_white,spr_player_skin3_falling_white,spr_player_skin4_falling_white,spr_player_skin5_falling_white,spr_player_skin6_falling_white];
+revive_array = [spr_player_revive_animation,spr_player_skin1_revive,spr_player_skin2_revive,spr_player_skin3_revive,spr_player_skin4_revive,spr_player_skin5_revive,spr_player_skin6_revive];
+revive_white_array = [spr_player_revive_white,spr_player_skin1_revive_white,spr_player_skin2_revive_white,spr_player_skin3_revive_white,spr_player_skin4_revive_white,spr_player_skin5_revive_white,spr_player_skin6_revive_white];
+body_array = [spr_player_zekai_body,spr_player_zekai_body,spr_player_skin2_body,spr_player_skin3_body,spr_player_skin4_body,spr_player_skin5_body,spr_player_skin6_body];
+pogostick_array = [spr_player_zekai_pogostick,spr_player_zekai_pogostick,spr_player_skin2_pogostick,spr_player_skin3_pogostick,spr_player_skin4_pogostick,spr_player_skin5_pogostick,spr_player_skin6_pogostick];
+
 //player sprite
-player_sprite = spr_player_zekai;
-falling_sprite = spr_player_zekai_falling;
-charging_sprite = spr_player_zekai_charging;
+player_sprite = bouncing_array[global.current_skin];
+falling_sprite = falling_array[global.current_skin];
+charging_sprite = charging_array[global.current_skin];
+portal_sprite = portal_array[global.current_skin];
+face_sprite = face_array[global.current_skin];
+red_sprite = red_array[global.current_skin];
+white_sprite = white_array[global.current_skin];
+revive_sprite = revive_array[global.current_skin];
+revive_white_sprite = revive_white_array[global.current_skin];
+current_hurt_array = hurt1_array;
+hurt_sprite = current_hurt_array[global.current_skin];
+body_sprite = body_array[global.current_skin];
+pogostick_sprite = pogostick_array[global.current_skin];
+hurt_yoffset = 0;
+hat_yoffset = 0;
+combo_offset = 0;
 
 // Stats
 hp = 40;
@@ -105,8 +164,10 @@ max_hp = 40; //5 hearts
 max_max_hp = 80; //10 hearts
 armor_buff = 0;
 max_armor_buff = 5;
+energy_buff = 0;
+max_energy_buff = 3;
 stomp_damage = 8;
-num_iframes = 1.5 * room_speed;
+num_iframes = (1.5 + iframes_add) * room_speed;
 current_iframes = 0;
 dead = false;
 
@@ -122,6 +183,7 @@ if global.player_spawn_x = 0 and global.player_spawn_y = 0 {
 image_speed = 0;
 
 depth = -10;
+init_depth = depth;
 
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
 with (instance_create_depth(x,y,depth-1,obj_player_mask)) {
@@ -145,7 +207,13 @@ equipped_item = noone; // The weapon that initializes the equipment is none
 state_free = function() {
 	bouncing = false;
 	can_rotate = true;
-	can_shoot = true;
+	if !instance_exists(obj_salesman_table) {
+		can_shoot = true;
+	}else {
+		if obj_salesman_table.being_used = false {
+			can_shoot = true;
+		}
+	}	
 	soundPlayed = false;
 	tutorialDash = false; // Used for tutorial ground tile state
 	
@@ -159,18 +227,11 @@ state_free = function() {
 		motion_add(0,h_grv);
 	}
 	
-	scr_Player_Collision();
-	
-	//make sure player isn't colliding with anything before checking for collisions again
-	if !(place_meeting(x,y,obj_ground)) and free = false {
-		free = true;	
-	}
-	
 	//falling animation
 	sprite_index = falling_sprite;
 	
 	if (vspeed > 5) {
-		image_index = 3;
+		image_index=3;
 	}else if (vspeed > 3) {
 		image_index = 2;
 	}else if (vspeed > 1) {
@@ -179,8 +240,15 @@ state_free = function() {
 		image_index = 0;
 	}
 	
+	scr_Player_Collision();
+	
+	//make sure player isn't colliding with anything before checking for collisions again
+	if !(place_meeting(x,y,obj_ground)) and free = false {
+		free = true;	
+	}
+	
 	//restart room if reached the top unless procgen room
-	if room != room_proc_gen_test && room != room_sprite_level_test && room != room_tutorial {
+	if room != room_proc_gen_test && room != room_sprite_level_test && room != room_tutorial && room != room_starting_area {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			scr_Room_Restart(true);
 		}
@@ -190,13 +258,27 @@ state_free = function() {
 			scr_Save_Real("tutorial_completed",global.tutorial_completed);
 			audio_stop_all();
 			gamepad_set_vibration(0,0,0);
-			scr_Game_Restart();
-			with obj_pause {
+			//scr_Game_Restart();
+			scr_Room_Transition(room_starting_area);
+			/*with obj_pause {
 				item_swap = false;
 				paused_outside = true;
-			}
+			}*/
 			state = state_immobile;
 		}
+	}else if room = room_starting_area {
+		if (bbox_bottom < 0 and mask_index != spr_nothing) {
+			state = state_immobile;
+			scr_Room_Transition(room_proc_gen_test);
+			global.total_runs += 1;
+			scr_Save_Real("total_runs",global.total_runs);
+			global.show_tips_screen = true;
+		}
+	}
+	
+	if room = room_starting_area and y > room_height + 48 and mask_index != spr_nothing {
+		state = state_immobile;
+		scr_Room_Transition(room_tutorial);
 	}
 	
 	//create upward flames if fast enough
@@ -208,6 +290,10 @@ state_free = function() {
 }
 
 state_bouncing = function() {
+	if sprite_index != player_sprite and image_index != 0 {
+		image_index = 0;
+	}
+	sprite_index = player_sprite; //set sprite
 	bouncing = true;
 	//on create
 	if floor(image_index) = 0 {
@@ -215,7 +301,6 @@ state_bouncing = function() {
 		can_shoot = true;
 	}
 	free = false;
-	sprite_index = player_sprite; //set sprite
 	
 	//animate before bouncing
 	if (floor(image_index) = sprite_get_number(sprite_index)-1) {
@@ -230,9 +315,15 @@ state_bouncing = function() {
 	//bounce after animation is complete
 	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump and pickups_array[0].on_cooldown = false);
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump and pickups_array[1].on_cooldown = false);
-	if (animation_complete and not_charging_1 and not_charging_2) {
+	if (animation_complete and not_charging_1 and not_charging_2 or animation_complete and launchpad = true) {
 		scr_Jump(0);
 		platform_on = !platform_on;
+	}
+	
+	with obj_projectile {
+		if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
+			//retract = true;
+		}
 	}
 }
 
@@ -255,8 +346,8 @@ state_chargejump = function() {
 	// Conveyor belt handling
 	scr_Conveyor_Belt();
 	
-	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump);
-	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump);
+	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump) and launchpad = false;
+	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump) and launchpad = false;
 	
 	if not_charging_1 and not_charging_2 or end_of_charge {
 		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5,true);
@@ -302,6 +393,15 @@ state_chargejump = function() {
 }
 
 state_groundpound = function() {
+	
+	if instance_exists(obj_blizzard) {
+		hspeed = -(obj_blizzard.white_alpha)*4;
+		if ground_pound_slam = true {
+			vspeed = (obj_blizzard.white_alpha);
+		}
+		scr_Player_Collision();
+	}
+			
 	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
 		sprite_index = player_sprite;
 	}
@@ -357,10 +457,25 @@ state_groundpound = function() {
 				y += sign(vspeed);
 			}
 			
+			if place_meeting(x,y+2,obj_launchpad) {
+				with instance_place(x,y+2,obj_launchpad) {
+					if animating = false and not_meeting = true {
+						animating = true;
+						missiles_left = 0;
+						player_y = other.y;
+						sprite_index = spr_launchpad_both;
+						mask_index = spr_nothing;
+						audio_play_sound(snd_launchpad,0,false);
+						audio_play_sound(snd_launchpad,0,false);
+					}
+				}
+			}
+			
+			
 			if place_meeting(x,y+vspeed,obj_ground_parent) {
 				aerial_assassin_count = 0;	
 			}
-			
+
 			scr_Enemy_Collision_Check(true);
 			pickup_groundpound.on_cooldown = true;
 			state = state_bouncing;
@@ -369,7 +484,189 @@ state_groundpound = function() {
 			audio_play_sound(snd_groundpound,0,false);
 			stomp_damage = 8;
 			soundPlayed = false;
+			
 		}
+	}
+}
+
+state_megabounce = function() {
+	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
+		sprite_index = player_sprite;
+	}
+	
+	hspeed = hspeed * 0.8;
+	
+	if !global.key_fire_projectile {
+		can_shoot = true;
+	}
+	can_rotate = false;
+	
+	if slam_speed < 15 { //15 because dont wanna glitch through 16px platforms
+		slam_speed += 1;
+	}
+	
+	if soundPlayed = false {
+		audio_play_sound(snd_slamCharge,0,false);
+		soundPlayed = true;
+	}
+	
+	ground_pound_rise = false;
+	ground_pound_slam = true;
+	
+	//slam
+	if ground_pound_slam = true {
+		if instance_exists(obj_blizzard) {
+			hspeed = -(obj_blizzard.white_alpha)*4;
+			if ground_pound_slam = true {
+				vspeed = (obj_blizzard.white_alpha);
+			}
+			scr_Player_Collision();
+		}
+		if (angle != 0)	{
+			var angle_side = sign(angle);
+			angle += rotation_speed*sign(-angle);
+			if (sign(angle) != angle_side) {
+				angle = 0;
+				current_rotation_speed = 0;
+			}
+			megajump_centered = false;
+		}else {
+			megajump_centered = true;	
+		}
+		
+		vspeed = slam_speed;
+		vsp_basicjump = -9;
+		stomp_damage = 40;
+		//switch states
+		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
+			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
+				y += sign(vspeed);
+			}
+			
+			if place_meeting(x,y+2,obj_launchpad) {
+				with instance_place(x,y+2,obj_launchpad) {
+					if animating = false and not_meeting = true {
+						animating = true;
+						missiles_left = 0;
+						player_y = other.y;
+						sprite_index = spr_launchpad_both;
+						mask_index = spr_nothing;
+						audio_play_sound(snd_launchpad,0,false);
+					}
+				}
+				launchpad = true;
+			}
+			
+			if place_meeting(x,y+vspeed,obj_ground_parent) {
+				aerial_assassin_count = 0;	
+			}
+
+			scr_Enemy_Collision_Check(true);
+			//pickup_megabounce.on_cooldown = true;
+			if launchpad = false {
+				state = state_megabounce_charge;
+			}else {
+				state = state_bouncing;	
+			}
+			vspeed = 0;
+			scr_Screen_Shake(6, 15, true);
+			audio_play_sound(snd_groundpound,0,false);
+			stomp_damage = 8;
+			soundPlayed = false;
+			
+		}
+	}
+}
+
+state_megabounce_charge = function() {
+	if (angle != 0)	and megajump_centered = false {
+		var angle_side = sign(angle);
+		angle += rotation_speed*sign(-angle);
+		if (sign(angle) != angle_side) {
+			angle = 0;
+			current_rotation_speed = 0;
+			megajump_centered = true;
+		}
+	}else if megajump_centered = false {
+			megajump_centered = true;
+	}
+	
+	if megajump_centered = true {
+		rotation_speed = original_rotation_speed/2;
+		rotation_speed = min(rotation_speed,2);
+		can_rotate = true;
+	}else {
+		can_rotate = false;
+	}
+	can_shoot = false;
+	
+	if !audio_is_playing(snd_chargejump) { //sound
+		if (charge > charge_max) {
+			audio_play_sound(snd_chargejump,0,false);
+		}else {
+			end_of_charge = true;
+		}
+	}
+	
+	if global.key_fire_projectile_pressed or charge = charge_max {
+		end_of_charge = true;
+		charge = charge_max;
+	}
+	
+	bouncing = true;
+	sprite_index = charging_sprite;
+	image_speed = 1;
+	vsp_basicjump = -6.6;
+	
+	// Conveyor belt handling
+	scr_Conveyor_Belt();
+	
+	if end_of_charge {
+		platform_on = !platform_on;
+		end_of_charge = false;
+		scr_Screen_Shake((charge/charge_max)*(-vsp_basicjump - 2)+(-2 + (-vsp_basicjump)),(charge/charge_max)*10+5,true);
+		//can_shoot = true;
+		scr_Jump(charge+1);
+		grv = 0;
+		audio_stop_sound(snd_chargejump);
+		audio_stop_sound(snd_bounce);
+		audio_stop_sound(snd_bounce2);
+		audio_stop_sound(snd_bounce3);
+		audio_play_sound(snd_chargejump_launch,0,false);
+		allow_flames = true;
+		min_flames_speed = 7.2;
+		pickup_megabounce.on_cooldown = true;
+		if !instance_exists(obj_player_flames_upward) {
+			with instance_create_depth(x,y,depth+1,obj_player_flames_upward) {
+				chargejump = true;
+				megabounce = true;
+			}
+		}
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+		angle = round(angle / original_rotation_speed)*original_rotation_speed;
+		//current_rotation_speed = 0;
+		can_rotate = true;
+	}else {
+		if (charge > charge_max) {
+			charge += charge_max/80; //80 = how many frames until max charge
+		}
+	}
+	
+	//cancel if not colliding
+	if !place_meeting(x,y+4,obj_ground_parent) and !place_meeting(x,y+4,obj_enemy_parent) 
+	and !place_meeting(x+4,y+4,obj_ground_parent) and !place_meeting(x+4,y+4,obj_enemy_parent) 
+	and !place_meeting(x-4,y+4,obj_ground_parent) and !place_meeting(x-4,y+4,obj_enemy_parent) {
+		state = state_free;
+		charge = 0;
+		bouncing = false;
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+		angle = round(angle / original_rotation_speed)*original_rotation_speed;
+		current_rotation_speed = 0;
+		sprite_index = falling_sprite;
+		image_index = 0; //reset animation to starting frame
+		animation_complete = false;
 	}
 }
 
@@ -381,6 +678,22 @@ state_firedash = function() {
 		invincible = true;
 		speed = 10;
 		direction = image_angle+90;
+		if instance_exists(obj_blizzard) and hspeed > -4 {
+			x -= (obj_blizzard.white_alpha)*4;
+			if ground_pound_slam = true {
+				y += (obj_blizzard.white_alpha)*2;
+			}
+		}
+		with obj_player_mask {
+			if place_meeting(x+parent_index.hspeed*2,y,obj_ground) {
+				parent_index.x -= parent_index.hspeed;
+				parent_index.hspeed = 0;
+			}
+			if place_meeting(x,y+parent_index.vspeed*2,obj_ground) {
+				parent_index.y -= parent_index.vspeed;
+				parent_index.vspeed = 0;
+			}
+		}
 		min_flames_speed = speed;
 		scr_Screen_Shake(4, 4, true);
 		if !instance_exists(obj_player_flames_upward) {
@@ -393,6 +706,61 @@ state_firedash = function() {
 		dash_time = max_dash_time;
 		if instance_exists(obj_player_flames_upward) {
 			obj_player_flames_upward.despawn = true;	
+		}
+	}
+}
+
+state_dragster = function() {
+	
+	//cancel on re-press 
+	if (global.key_pickup_1_pressed and pickup_1 = pickup_dragster) 
+	or (global.key_pickup_2_pressed and pickup_2 = pickup_dragster) {
+		dash_time = 5;
+	}
+	
+	tutorialDash = true;
+	can_rotate = true;
+	can_shoot = false;
+	if dash_time > 0 {
+		if instance_exists(obj_parachute_dragster) {
+			if obj_parachute_dragster.opened = true or obj_parachute_dragster.opening = true {
+				if abs(speed) > 5 { 
+					speed -= 0.5 * sign(speed);
+				}else {
+					speed = 5;	
+				}
+			}
+			invincible = true;
+			direction = image_angle+90;
+			if instance_exists(obj_blizzard) and hspeed > -8 {
+				hspeed -= (obj_blizzard.white_alpha)*2;
+				vspeed += (obj_blizzard.white_alpha);
+			}
+			with obj_player_mask {
+				if place_meeting(x+parent_index.hspeed*2,y,obj_ground) {
+					parent_index.x -= parent_index.hspeed;
+					parent_index.hspeed = 0;
+					can_rotate = false;
+				}
+				if place_meeting(x,y+parent_index.vspeed*2,obj_ground) {
+					parent_index.y -= parent_index.vspeed;
+					parent_index.vspeed = 0;
+					can_rotate = false;
+				}
+			}
+			min_flames_speed = speed;
+			scr_Screen_Shake(2, 3, true);
+			if !instance_exists(obj_player_flames_upward) {
+				instance_create_depth(x,y,depth+1,obj_player_flames_upward,{dragster: true});	
+			}
+		}
+		dash_time -= 1;
+	}else {
+		speed = speed/1.5;
+		state = state_free;
+		dash_time = max_dash_time * 12;
+		if instance_exists(obj_player_flames_upward) {
+			obj_player_flames_upward.despawn = true;
 		}
 	}
 }
@@ -426,7 +794,7 @@ state_bulletblast = function() {
 		}
 		bulletblast_frames += 1;
 		if bulletblast_frames >= bulletblast_frames_max - 2 {
-			sprite_index = spr_player_zekai_charging_red;	
+			sprite_index = red_sprite;	
 		}
 	}else {
 		old_gun = gun;
@@ -442,6 +810,26 @@ state_bulletblast = function() {
 		state = state_free;
 		x = init_x;
 		pickup_bulletblast.on_cooldown = true;
+	}
+}
+
+state_plasmacharge = function() {
+	can_rotate = true;
+	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
+		sprite_index = player_sprite;
+	}
+
+	speed = speed * 0.9;
+	if scr_Animation_Complete() and sprite_index = player_sprite {
+		sprite_index = charging_sprite;	
+	}else if sprite_index = player_sprite {
+		image_index += 1;
+	}else {
+		image_index += 0.25;	
+	}
+	scr_Player_Collision();
+	if state = state_bouncing { //dont want to cancel powerup after collision
+		state = state_plasmacharge;	
 	}
 }
 
@@ -518,10 +906,62 @@ state_shop = function() {
 	}
 }
 
+state_pogosmith = function() {
+	//angle = 0;	
+	centering = true;
+	
+	can_rotate = false;
+	can_shoot = false;
+	vspeed += grv;
+	
+	sprite_index = body_sprite;
+	mask_index = spr_player_zekai_body;
+	image_speed = 1;
+	
+	//check for collision with ground y axis
+	if (place_meeting(x,y+vspeed,obj_ground)) {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
+		}
+		aerial_assassin_count = 0;
+		speed = 0; //stop player movement while bouncing
+	}
+}
+
 state_immobile = function() {
 	can_rotate = false;
 	can_shoot = false;
 	speed = 0;
+}
+
+state_immobile_bouncing = function() {
+	vspeed += grv;
+	
+	//check for collision with ground y axis
+	if (place_meeting(x,y+vspeed,obj_ground)) {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
+		}
+		aerial_assassin_count = 0;
+		shop_bouncing = true;
+		speed = 0; //stop player movement while bouncing
+	}
+	
+	if shop_bouncing = true {
+		sprite_index = player_sprite; //set sprite
+		//animate before bouncing
+		if (floor(image_index) = sprite_get_number(sprite_index)-1) {
+			animation_complete = true;
+		}else if (animation_complete = false) {
+			image_index += 0.75;
+		}
+		if scr_Animation_Complete() = true {
+			scr_Jump(0);
+			shop_bouncing = false;
+		}
+	}
+	
+	scr_Player_Collision();
 }
 
 state_revive = function() {
@@ -572,6 +1012,20 @@ state_blink = function() {
 	}
 }
 
+state_strike = function() {
+	speed = 0;
+	can_rotate = false;
+	can_shoot = false;
+	mask_index = spr_nothing;
+	with obj_player_mask {
+		mask_index = spr_nothing;
+	}
+	
+	if image_yscale > 0 {
+		image_yscale -= 0.1;
+	}
+}
+
 state_parachute = function() {
 	//can_shoot = false;
 	can_rotate = false;
@@ -594,6 +1048,8 @@ state_parachute = function() {
 		}else if hspeed < 0 {
 			motion_add(0,h_grv);
 		}	
+		
+		
 	}else {
 		//re-center
 		if (angle != 0)	{
@@ -608,8 +1064,8 @@ state_parachute = function() {
 		//slow down
 		if vspeed >= 0 {
 			vspeed += grv/5; //falling slower
-			if vspeed > 3 {
-				vspeed = 3;
+			if vspeed > 2 {
+				vspeed = 2;
 			}
 			
 			//horizontal drag
@@ -631,6 +1087,10 @@ state_parachute = function() {
 			}	
 		}
 		
+		if instance_exists(obj_blizzard) and hspeed > -8 {
+			x -= (4*obj_blizzard.white_alpha);
+		}
+		
 		//move left and right
 		if angle = 0 {
 			if hspeed % 0.25 != 0 {
@@ -648,6 +1108,9 @@ state_parachute = function() {
 			if global.key_right_player {
 				if hspeed < 4 {
 					hspeed += 0.25;
+					if instance_exists(obj_blizzard) {
+						hspeed += 0.5;
+					}
 				}
 				if obj_parachute.angle_add < 4 {
 					obj_parachute.angle_add += 0.25;
@@ -677,9 +1140,158 @@ state_parachute = function() {
 	scr_Player_Collision();
 }
 
-state_portal = function() {
+state_grappling = function() {
+	
 	can_shoot = false;
+	
+	var not_grappling_1 = !(global.key_pickup_1) and pickups_array[0] = pickup_grappling or !(global.key_pickup_1) and pickups_array[0] = pickup_harpoon;
+	var not_grappling_2 = !(global.key_pickup_2) and pickups_array[1] = pickup_grappling or !(global.key_pickup_2) and pickups_array[1] = pickup_harpoon;
+	
+	with obj_projectile {
+		if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
+			other.grappling_hook = self;	
+		}
+	}
+	
+	if instance_exists(grappling_hook) {
+		if grappling_hook.gun_name = "Grappling Helmet" {
+			if speed <= 8 {
+				speed += 0.75;
+			}
+		}else if grappling_hook.gun_name = "Harpoon Helmet" {
+			harpooning = true;
+			invincible = true;
+			if speed <= 12 {
+				speed += 1;
+			}
+		}
+	}
+
+	if instance_exists(grappling_hook) {
+		if grappling_hook.retract = false {
+			grappling_hook.distance_traveled -= speed;
+		}
+		grappling_hook.x = grappling_hook.collision_x;
+		grappling_hook.y = grappling_hook.collision_y;
+		move_towards_point(grappling_hook.x,grappling_hook.y,speed);
+		if distance_to_point(grappling_hook.x,grappling_hook.y) <= 8 {
+			state = state_free;
+			instance_destroy(grappling_hook);
+		}
+	}
+	
+	
+	if slam_speed < 15.9 {
+		slam_speed += 0.1;
+	}
+	
+	scr_Player_Collision();
+}
+
+state_shieldbubble = function() {
 	can_rotate = false;
+	sprite_index = player_sprite;
+	if image_index < 10 {
+		image_index += 0.5;
+	}else {
+		image_speed = 0;
+		image_index = 10;
+	}
+	
+	vspeed += grv; //falling
+	vsp_basicjump = -6.8;
+	
+	
+	if instance_exists(shieldbubble_obj) {
+		//re-center
+		if (angle != 0)	{
+			var angle_side = sign(angle);
+			angle += (rotation_speed/2)*sign(-angle);
+			if (sign(angle) != angle_side) {
+				angle = 0;
+				current_rotation_speed = 0;
+			}
+		}
+		if shieldbubble_obj.bouncing = false {
+			can_shoot = true;
+			//move left and right
+			if hspeed % 0.25 != 0 {
+				hspeed = round((hspeed/0.25))*0.25
+			}
+			if global.key_left_player {
+				if hspeed > -4 {
+					hspeed -= 1;
+				}else if hspeed < -4 {
+					hspeed += 1;
+				}
+				obj_shieldbubble.decrease_arrows_alpha = true;
+			}
+			if global.key_right_player {
+				if hspeed < 4 {
+					hspeed += 1;
+				}else if hspeed > 4 {
+					hspeed -= 1;
+				}
+				obj_shieldbubble.decrease_arrows_alpha = true;
+			}
+			if global.key_down_menu {
+				if vspeed < 4 {
+					vspeed += 0.25;
+					shieldbubble_obj.bounced = true
+				}
+				//obj_shieldbubble.decrease_arrows_alpha = true;
+			}
+			if !global.key_left_player and !global.key_right_player {
+				if shieldbubble_obj.bounced = true {
+					if hspeed < 0 {
+						hspeed += 0.5;
+						if hspeed > 0 {
+							hspeed = 0;
+						}
+					}else if hspeed > 0 {
+						hspeed -= 0.5;
+						if hspeed < 0 {
+							hspeed = 0;
+						}
+					}
+				}else {
+					if hspeed < 0 {
+						hspeed += 0.25;
+					}else if hspeed > 0 {
+						hspeed -= 0.25;
+					}
+				}
+			}else if shieldbubble_obj.bounced = false {
+				shieldbubble_obj.bounced = true;
+				if shieldbubble_obj.bounced_cancel = true {
+					shieldbubble_obj.bounced_cancel = false;
+				}
+			}
+			
+			if hspeed != 0 {
+				image_xscale = sign(hspeed);
+			}
+			
+			//bounce
+		}else {
+			can_shoot = false;
+			hspeed = 0;
+			vspeed = 0;
+			speed = 0;
+			//state = state_immobile;
+		}
+	}else {
+		state = state_free;
+		can_rotate = true;
+		can_shoot = true;
+	}
+	
+	//scr_Player_Collision();
+}
+
+state_portal = function() {
+	//sprite_index = portal_sprite;
+	can_shoot = false;
 	if instance_exists(portal_object) {
 		if portal_angle_speed < 10 {
 			portal_angle_speed += 0.5;
@@ -736,9 +1348,15 @@ state_portal = function() {
 			}
 		}
 	}
+	
+	//stop splits
+	with obj_runstats {
+		stop_time = true;
+	}
 }
 
 state_shop_portal = function() {
+	//sprite_index = portal_sprite;
 	can_shoot = false;
 	can_rotate = false;
 	if instance_exists(portal_object) {
@@ -797,7 +1415,7 @@ state_shop_portal = function() {
 }
 
 state_spawn = function() {
-	sprite_index = spr_player_zekai_portal;
+	sprite_index = portal_sprite;
 	can_shoot = false;
 	can_rotate = false;
 	
@@ -809,7 +1427,7 @@ state_spawn = function() {
 	}else {
 		state = state_free;
 		y += 22;
-		sprite_index = spr_player_zekai;
+		sprite_index = bouncing_array[global.current_skin];
 	}
 }
 
@@ -848,11 +1466,12 @@ if room = room_tutorial {
 }
 weapons_equipped = num_of_weapons;
 all_guns_array = [default_gun,paintball_gun,shotgun_gun,
-				burstfire_gun,javelin_gun,bouncyball_gun,
-				grenade_gun, boomerang_gun,starsucker_gun,
-				water_gun, bubble_gun, yoyo_gun,
-				missile_gun, sniper_gun, laser_gun,
-				slime_gun]; //all guns
+				burstfire_gun,javelin_gun,puncher_gun,
+				sixshooter_gun, bouncyball_gun, boomerang_gun,
+				water_gun, machine_gun, grenade_gun,
+				starsucker_gun, yoyo_gun, bubble_gun,
+				slime_gun, sniper_gun, plasma_gun,
+				laser_gun, missile_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();
@@ -931,12 +1550,16 @@ buff_duration = 60 * 5; // buff duration timer
 scr_Pickups();
 
 num_of_pickups = 0; //number of different pickups equipped: only do 1 or 2
-all_pickups_array = [pickup_reload, pickup_freeze, pickup_emergency, 
-					pickup_parachute, pickup_firedash, pickup_groundpound, 
-					pickup_hatgun, pickup_chargejump, pickup_shieldbubble,
-					pickup_target, pickup_blink, pickup_jetpack,
-					pickup_camera, pickup_frenzy, pickup_bulletblast,
-					pickup_slowmo]; //all pickups
+all_pickups_array = [pickup_reload, pickup_freeze, pickup_airbag, 
+					pickup_parachute, pickup_chargejump, pickup_groundpound, 
+					pickup_target, pickup_volleyball, pickup_grappling,
+					pickup_hatgun, pickup_tripleshot, pickup_emergency,
+					pickup_winners, pickup_firedash, pickup_blink,
+					pickup_jetpack, pickup_bulletblast,pickup_slowmo,
+					pickup_frenzy,pickup_invincibility,pickup_jolt,
+					pickup_launchpad, pickup_megabounce, pickup_harpoon,
+					pickup_wreckingball, pickup_dragster, pickup_hacker,
+					pickup_tacticalstrike, pickup_blizzard, pickup_pogomode]; //all pickups
 
 if (random_pickup == true) { //choose random pickups
 	//randomize();
@@ -985,9 +1608,12 @@ all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
 				buff_dualwielder, buff_steadyhands, buff_tightspring,
 				buff_magicianstouch, buff_impatience, buff_laststand,
 				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
-        buff_recycling, buff_juggler];		
+				buff_recycling, buff_juggler, buff_invincibilityup,
+				buff_doublekill, buff_ironproficiency, buff_fastforward,
+				buff_paparazzi, buff_crit, buff_bartime,
+				buff_strongmuscles];
 
-//create text in proc gen room
+//create text in proc gen rooms
 if room = room_proc_gen_test || room = room_sprite_level_test {
 	alarm[2] = 10;
 }
@@ -999,4 +1625,6 @@ if global.phase != 1 {
 
 if room = room_tutorial {
 	alarm[5] = 10;
-}
+}else {
+	scr_Get_Skin_Loadout();
+}	

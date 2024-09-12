@@ -14,6 +14,22 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		var item_description = "This weapon has not been discovered yet.";
 	}
 	
+	//special cases
+	if item_name = "Grenade Launcher" {
+		item_name = "Grenade\nLauncher"
+	}
+	
+	//upgraded weapons
+	if weapon.level = 2 {
+		plus_string = "+"
+	}else if weapon.level = 3 {
+		plus_string = "++"
+	}else if weapon.level = 4 {
+		plus_string = "+++"
+	}else {
+		plus_string = ""
+	}
+	
 	//slot
 	draw_sprite(spr_itemmenu_weapon_slot,bg_spr_index,xx,yy);
 	
@@ -22,17 +38,17 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	}
 	
 	//sprites
-	draw_sprite(weapon.sprite,img_index,xx-49,yy-105);
+	draw_sprite(weapon.sprite,img_index,xx-50,yy-104);
 	
 	//draw cost
 	
-	if unlocked = true and !instance_exists(obj_item_swap) or instance_exists(obj_item_swap) and global.recycling = true {
+	if unlocked = true and !instance_exists(obj_item_swap) or instance_exists(obj_item_swap) /*and global.recycling = true*/ {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_itemdescription2);
 	
-		draw_sprite(spr_coin,0,xx-49+7,yy-105+15);
-		scr_Draw_Text_Outlined(xx-49-5,yy-105+15,item_cost,c_white);
+		//draw_sprite(spr_coin,0,xx-49+7,yy-105+15);
+		scr_Draw_Text_Outlined(xx-50,yy-101+15,item_cost,make_color_rgb(237,225,158)); //50 - 5
 	}
 	
 	//"Weapon" text
@@ -52,13 +68,14 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	draw_set_valign(fa_center);
 	draw_set_font(fnt_combo2);
 	var white = make_color_rgb(242,240,229);
-	draw_text_color(xx+26,yy-105,scr_Linebreak(item_name,16,99),white,white,white,white,draw_get_alpha());
+	
+	scr_Draw_Text_Outlined(xx+30,yy-105,scr_Linebreak(item_name  + plus_string,16,99),c_white);
 	
 	//Weapon Description
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	draw_set_font(fnt_itemdescription2);
-	draw_text_color(xx-72,yy-84,scr_Linebreak(item_description,28,99),white,white,white,white,draw_get_alpha());
+	scr_Draw_Text_Outlined(xx-72,yy-80,scr_Linebreak(item_description,28,99),c_white);
 	
 	//Get Weapon Stats
 	var line_1 = ""; //bullets per bounce
@@ -73,7 +90,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	
 		//special conditions
 		
-		if weapon._name = "Laser Gun" {
+		if weapon._name = "Laser Gun" or weapon._name = "Plasma Gun" {
 			line_1 = "Time per bounce: " + string(weapon.bullets_per_bounce/60) + "s";// + " (Max " + string((weapon.init_bullets_per_bounce + weapon.max_added_bullets)/60) + "s)";
 		}
 		
@@ -115,18 +132,20 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 			line_2 = "Damage per javelin: " + string(weapon.ammo[0].damage) + "-16" + added_damage;
 		}else if weapon._name = "Bouncy Ball Blaster" {
 			line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + "-" + string(weapon.ammo[0].damage*8) + added_damage;
+		}else if weapon._name = "Plasma Gun" {
+			line_2 = "Damage per orb: " + string(weapon.ammo[0].damage) + "-24" + added_damage;
 		}
 	
 		if weapon.full_auto = true {
 			line_3 = "Auto Fire: Yes";
-			if weapon.ammo[0].firerate_start < 5 {
+			if weapon.ammo[0].firerate_end < 5 {
 				line_4 = "Fire Rate: Very High";
-			}else if weapon.ammo[0].firerate_start < 8 {
+			}else if weapon.ammo[0].firerate_end < 8 {
 				line_4 = "Fire Rate: High";
-			}else if weapon.ammo[0].firerate_start < 15 {
+			}else if weapon.ammo[0].firerate_end < 15 {
 				line_4 = "Fire Rate: Medium";
 			}else {
-				if weapon._name != "Burst Fire Gun" {
+				if weapon._name != "Burst Rifle" {
 					line_4 = "Fire Rate: Low";
 				}else {
 					line_4 = "Fire Rate: High";
@@ -135,7 +154,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		}else {
 			line_3 = "Auto Fire: No";	
 			line_4 = "Shoot: On Press";
-			if weapon._name = "Javelins" {
+			if weapon._name = "Javelins" or weapon._name = "Plasma Gun" {
 				line_4 = "Shoot: On Release";
 			}else if weapon._name = "Yo-yo" {
 				line_4 = "Shoot: Press and Hold";
@@ -153,8 +172,8 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	//draw stats
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_text_color(xx+1,yy+6,line_1,white,white,white,white,draw_get_alpha());
-	draw_text_color(xx+1,yy+30,line_2,white,white,white,white,draw_get_alpha());
-	draw_text_color(xx+1,yy+54,line_3,white,white,white,white,draw_get_alpha());
-	draw_text_color(xx+1,yy+78,line_4,white,white,white,white,draw_get_alpha());
+	scr_Draw_Text_Outlined(xx+3,yy+7,line_1,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+31,line_2,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+55,line_3,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+79,line_4,c_white);
 }

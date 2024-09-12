@@ -1,5 +1,5 @@
 if keyboard_check_pressed(vk_anykey) or mouse_check_button_pressed(mb_any) {
-	if !instance_exists(obj_seeding_prompt) {
+	if !instance_exists(obj_seeding_prompt) and !instance_exists(obj_code_prompt) {
 		global.use_keyboard = true;
 		global.use_controller = false;
 	}

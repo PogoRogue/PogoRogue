@@ -52,6 +52,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			{
 				return Get_Random_Enemy();
 			}
+			else if(Red > 245)
+			{			
+				return obj_enemy_fairy;
+			}
 			else if(Red > 228)
 			{			
 				return obj_enemy_flying;
@@ -81,6 +85,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			if(Red > 240)
 			{
 				return obj_enemy_moving;
+			}
+			else if(Red > 235)
+			{			
+				return obj_enemy_car;
 			}
 			else if(Red > 230)
 			{
@@ -172,7 +180,19 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}
 		else if(Blue == 220)
 		{
-			return obj_spikeblock;
+			return obj_spikeblock; //down
+		}
+		else if(Blue == 215)
+		{
+			return obj_spikeblock_up; //up
+		}
+		else if(Blue == 210)
+		{
+			return obj_spikeblock_right; //right
+		}
+		else if(Blue == 205)
+		{
+			return obj_spikeblock_left; //left
 		}
 		else if(Blue == 151)
 		{
@@ -206,6 +226,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_angled_platform_right;
 		}
+		else if(Red == 40 && Green == 40 && Blue == 40)
+		{
+			return obj_salesman_table;
+		}
 		else if(Red == 30 && Green == 30 && Blue == 30)
 		{
 			return obj_room_gate_open_shop;
@@ -234,7 +258,39 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_seeding_station;
 		}
+		else if(Red == 3 && Green == 3 && Blue == 3)
+		{
+			return obj_room_gate_open; 
+		}
+		else if(Red == 2 && Green == 2 && Blue == 2)
+		{
+			return obj_shop_indicator; //fix minimap bug
+		}
+		else if(Red == 1 && Green == 1 && Blue == 1)
+		{
+			return obj_shop_indicator2; //fix minimap bug
+		}else if (Red == 102 && Green == 45 && Blue == 145)
+		{
+			return obj_background_junk; 
+		}else if (Red == 46 && Green == 49 && Blue == 146)
+		{
+			return obj_background_office;
+		}else if (Red == 29 && Green == 74 && Blue == 28)
+		{
+			randomize();
+			var random_crate = choose(obj_crate1,obj_crate1);
+			random_set_seed(global.seed);
+			return random_crate;
+		}else if (Red == 10 && Green == 64 && Blue == 60)
+		{
+			return obj_crate3;
+		}else if (Red == 39 && Green == 101 && Blue == 114)
+		{
+			return obj_randomasset1;
+		}
 	}
+	
+	
 	
 	//Color had no matches, generate nothing
 	return -1;

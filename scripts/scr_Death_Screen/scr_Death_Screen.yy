@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Death_Screen",
   "isCompatibility":false,
   "isDnD":false,

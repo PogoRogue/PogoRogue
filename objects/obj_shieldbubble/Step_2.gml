@@ -1,21 +1,31 @@
 /// @description track player position
+
 if instance_exists(obj_player) {
-	x = obj_player.x + lengthdir_x(21,obj_player.image_angle+90);
-	y = obj_player.y + lengthdir_y(21,obj_player.image_angle+90);
-	image_angle = obj_player.image_angle;
-}
-
-obj_player.shield_bubble = true;
-
-//fade out
-if fade_out = true {
-	image_alpha -= 0.025;
-	if image_alpha <= 0 {
-		instance_destroy();	
-		obj_player.shield_bubble = false;
+	if bouncing = false {
+		x = obj_player.x;
+		y = obj_player.y;
+		bounce_x = x;	
+		bounce_y = y;
+	}else {
+		obj_player.x = bounce_x;
+		obj_player.y = bounce_y;	
 	}
 }
 
-if destroy_time_live > 0 {
-	destroy_time_live -= 1;	
+with obj_shieldbubble_mask {
+	if instance_exists(parent_obj) {
+		x = parent_obj.x;
+		y = parent_obj.y;
+	}else {
+		instance_destroy();	
+	}	
+}
+
+with obj_shieldbubble_mask2 {
+	if instance_exists(parent_obj) {
+		x = parent_obj.x;
+		y = parent_obj.y;
+	}else {
+		instance_destroy();	
+	}	
 }
