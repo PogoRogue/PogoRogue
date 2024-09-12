@@ -26,7 +26,9 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 				var y_row_add = 0;
 			}else  {
 				var row_size = 12;
-				if bubble_gun.bullets_per_bounce >= row_size * 3 {
+				if bubble_gun.bullets_per_bounce >= row_size * 4 {
+					var y_row_add = 16;	
+				}else if bubble_gun.bullets_per_bounce >= row_size * 3 {
 					var y_row_add = 8;	
 				}else {
 					var y_row_add = 0;	
@@ -40,10 +42,14 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 				draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-((i-row_size)*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor((i-row_size)/gun_array[gun_num].burst_number)*4)),36+yy+y_row_add); 
 				//darkening
 				draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-((i-row_size)*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor((i-row_size)/gun_array[gun_num].burst_number)*4)),36+yy+y_row_add,1,1,0,c_black,black_alpha);
-			}else {
+			}else if i < row_size * 3 {
 				draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-((i-row_size*2)*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor((i-row_size*2)/gun_array[gun_num].burst_number)*4)),36+yy-8+y_row_add); 
 				//darkening
 				draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-((i-row_size*2)*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor((i-row_size*2)/gun_array[gun_num].burst_number)*4)),36+yy-8+y_row_add,1,1,0,c_black,black_alpha);
+			}else {
+				draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-((i-row_size*3)*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor((i-row_size*2)/gun_array[gun_num].burst_number)*4)),36+yy-16+y_row_add); 
+				//darkening
+				draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(camera_get_view_width(view_camera[0])-16)-((i-row_size*3)*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor((i-row_size*2)/gun_array[gun_num].burst_number)*4)),36+yy-16+y_row_add,1,1,0,c_black,black_alpha);
 			}
 		}
 	}

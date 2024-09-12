@@ -214,7 +214,7 @@ if (gun_name = "Boomerangs") {
 	vspd = 0;
 	image_angle += 20;
 	if spd > 0 {
-		spd -= (0.25 + (0.25 * (gun_level > 1)) + (0.2 * (gun_level > 1)));
+		spd -= (0.25 + (0.25 * (gun_level > 1)) + (0.2 * (gun_level > 2)) + (0.2 * (gun_level > 3)));
 		speed = spd;
 		direction = angle;
 		if spd <= 0 {
@@ -222,7 +222,7 @@ if (gun_name = "Boomerangs") {
 		}
 	}else {
 		speed = 0;
-		spd -= (0.15 + (0.15 * (gun_level > 1)) + (0.2 * (gun_level > 2)));
+		spd -= (0.15 + (0.15 * (gun_level > 1)) + (0.2 * (gun_level > 2)) + (0.2 * (gun_level > 3)));
 		move_towards_point(obj_player.x,obj_player.y,abs(spd));
 		//collision with player
 		if place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask) {
@@ -390,8 +390,8 @@ if (gun_name = "Star Sucker") {
 		suck_distance = 0;
 	}
 	
-	x = obj_player.x + lengthdir_x(suck_distance,image_angle-(init_angle-obj_player.angle));
-	y = obj_player.y + lengthdir_y(suck_distance,image_angle-(init_angle-obj_player.angle));
+	x = obj_player.x + lengthdir_x((22*(obj_player.starsucker_gun.level > 2)),obj_player.angle+90) + lengthdir_x(suck_distance,image_angle-(init_angle-obj_player.angle));
+	y = obj_player.y + lengthdir_y((22*(obj_player.starsucker_gun.level > 2)),obj_player.angle+90) + lengthdir_y(suck_distance,image_angle-(init_angle-obj_player.angle));
 	
 	
 	//move_towards_point(obj_player.x,obj_player.y,spd);
@@ -490,6 +490,12 @@ if (gun_name = "The Portal") {
 }
 
 if (gun_name = "Puncher") {
+	if gun_level >= 2 {
+		decrease_spd = 0.92;
+	}
+	if gun_level >= 4 {
+		decrease_spd = 0.95;
+	}
 	if maxspd_frames > 0 {
 		maxspd_frames -= 1;
 	}else {

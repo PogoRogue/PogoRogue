@@ -137,6 +137,8 @@ red_array = [spr_player_zekai_charging_red,spr_player_skin1_charging_red,spr_pla
 white_array = [spr_player_zekai_falling_white,spr_player_skin1_falling_white,spr_player_skin2_falling_white,spr_player_skin3_falling_white,spr_player_skin4_falling_white,spr_player_skin5_falling_white,spr_player_skin6_falling_white];
 revive_array = [spr_player_revive_animation,spr_player_skin1_revive,spr_player_skin2_revive,spr_player_skin3_revive,spr_player_skin4_revive,spr_player_skin5_revive,spr_player_skin6_revive];
 revive_white_array = [spr_player_revive_white,spr_player_skin1_revive_white,spr_player_skin2_revive_white,spr_player_skin3_revive_white,spr_player_skin4_revive_white,spr_player_skin5_revive_white,spr_player_skin6_revive_white];
+body_array = [spr_player_zekai_body,spr_player_zekai_body,spr_player_skin2_body,spr_player_skin3_body,spr_player_skin4_body,spr_player_skin5_body,spr_player_skin6_body];
+pogostick_array = [spr_player_zekai_pogostick,spr_player_zekai_pogostick,spr_player_skin2_pogostick,spr_player_skin3_pogostick,spr_player_skin4_pogostick,spr_player_skin5_pogostick,spr_player_skin6_pogostick];
 
 //player sprite
 player_sprite = bouncing_array[global.current_skin];
@@ -150,6 +152,8 @@ revive_sprite = revive_array[global.current_skin];
 revive_white_sprite = revive_white_array[global.current_skin];
 current_hurt_array = hurt1_array;
 hurt_sprite = current_hurt_array[global.current_skin];
+body_sprite = body_array[global.current_skin];
+pogostick_sprite = pogostick_array[global.current_skin];
 hurt_yoffset = 0;
 hat_yoffset = 0;
 combo_offset = 0;
@@ -899,6 +903,28 @@ state_shop = function() {
 			scr_Jump(0);
 			shop_bouncing = false;
 		}
+	}
+}
+
+state_pogosmith = function() {
+	//angle = 0;	
+	centering = true;
+	
+	can_rotate = false;
+	can_shoot = false;
+	vspeed += grv;
+	
+	sprite_index = body_sprite;
+	mask_index = spr_player_zekai_body;
+	image_speed = 1;
+	
+	//check for collision with ground y axis
+	if (place_meeting(x,y+vspeed,obj_ground)) {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground)) {
+			y += sign(vspeed);
+		}
+		aerial_assassin_count = 0;
+		speed = 0; //stop player movement while bouncing
 	}
 }
 

@@ -19,6 +19,17 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		item_name = "Grenade\nLauncher"
 	}
 	
+	//upgraded weapons
+	if weapon.level = 2 {
+		plus_string = "+"
+	}else if weapon.level = 3 {
+		plus_string = "++"
+	}else if weapon.level = 4 {
+		plus_string = "+++"
+	}else {
+		plus_string = ""
+	}
+	
 	//slot
 	draw_sprite(spr_itemmenu_weapon_slot,bg_spr_index,xx,yy);
 	
@@ -57,7 +68,8 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	draw_set_valign(fa_center);
 	draw_set_font(fnt_combo2);
 	var white = make_color_rgb(242,240,229);
-	scr_Draw_Text_Outlined(xx+30,yy-105,scr_Linebreak(item_name,16,99),c_white);
+	
+	scr_Draw_Text_Outlined(xx+30,yy-105,scr_Linebreak(item_name  + plus_string,16,99),c_white);
 	
 	//Weapon Description
 	draw_set_halign(fa_left);

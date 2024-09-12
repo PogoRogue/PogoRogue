@@ -238,7 +238,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_bbb1,
 		spread_number: 1,    
-		spread_angle: 45,    
+		spread_angle: 45,
 		full_auto: true,     
 		burst_number: 1,     
 		burst_delay: 0,     

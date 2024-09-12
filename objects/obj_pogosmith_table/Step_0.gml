@@ -22,6 +22,10 @@ if (colliding and key_interact) and !instance_exists(obj_fade_in) {
 }
 
 if being_used = true {
+	if !instance_exists(obj_pogostick) {
+		instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+1,obj_pogostick,{image_angle: obj_player.image_angle});	
+	}
+	obj_player.state = obj_player.state_pogosmith;
 	if instance_exists(obj_camera) {
 		obj_camera.follow = self;
 	}
@@ -59,37 +63,41 @@ if being_used = true {
 	if key_select and !(select_x = 0 and gun_1_bought = true) and !(select_x = 1 and gun_2_bought = true) and !(select_x = 2 and gun_3_bought = true) 
 	and obj_player.gun_array[other.select_x].level < 4{
 		if global.num_of_coins >= purchase_cost * obj_player.gun_array[other.select_x].level {
-			audio_play_sound(snd_chaching,0,false);
+			sprite_index = spr_pogosmith_workbench_animation;
+			image_speed = 1;
+			image_index = 0;
+			audio_play_sound(snd_pogosmith_upgrade,0,false);
 			global.num_of_coins -= purchase_cost * obj_player.gun_array[other.select_x].level;
 			//create coins
-			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth-1,obj_coin_spawner, {pogosmith_spawner: true}) {
+			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth+10,obj_coin_spawner, {pogosmith_spawner: true}) {
 				num_of_coins = other.purchase_cost * obj_player.gun_array[obj_player.current_gun].level;
 				init_num_of_coins = other.purchase_cost * obj_player.gun_array[other.select_x].level;
 			}
 			obj_player.gun_array[other.select_x].level += 1;
 			
+			
+			if test_mode = false {
+				if select_x = 0 {
+					gun_1_bought = true;
+				}else if select_x = 1 {
+					gun_2_bought = true;
+				}else if select_x = 2 {
+					gun_3_bought = true;
+				}
+			}else if test_mode = true {
+				if select_x = 0 and obj_player.gun_array[0].level >= 4 {
+					gun_1_bought = true;
+				}else if select_x = 1 and obj_player.gun_array[1].level >= 4 {
+					gun_2_bought = true;
+				}else if select_x = 2 and obj_player.gun_array[2].level >= 4 {
+					gun_3_bought = true;
+				}
+			}
+		
 			//upgrade weapon
 			scr_Upgrade_Weapon(obj_player.gun_array[other.select_x]._name,obj_player.gun_array[other.select_x].level);
 		}else {
 			audio_play_sound(snd_unavailable,0,false);	
-		}
-		
-		if test_mode = false {
-			if select_x = 0 {
-				gun_1_bought = true;
-			}else if select_x = 1 {
-				gun_2_bought = true;
-			}else if select_x = 2 {
-				gun_3_bought = true;
-			}
-		}else if test_mode = true {
-			if select_x = 0 and obj_player.gun_array[0].level >= 4 {
-				gun_1_bought = true;
-			}else if select_x = 1 and obj_player.gun_array[1].level >= 4 {
-				gun_2_bought = true;
-			}else if select_x = 2 and obj_player.gun_array[2].level >= 4 {
-				gun_3_bought = true;
-			}
 		}
 	}
 	
@@ -131,4 +139,10 @@ if being_used = true {
 		gun_3_bought = false;
 		black_alpha_3 = 0;
 	}
+}
+
+if scr_Animation_Complete() and sprite_index = spr_pogosmith_workbench_animation {
+	image_speed = 0;
+	sprite_index = spr_pogosmith_workbench;
+	image_index = 0;
 }

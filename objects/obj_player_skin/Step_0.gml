@@ -49,6 +49,8 @@ if (colliding and key_interact and unlocked = true) {
 		white_sprite = white_array[global.current_skin];
 		revive_sprite = revive_array[global.current_skin];
 		revive_white_sprite = revive_white_array[global.current_skin];
+		body_sprite = body_array[global.current_skin];
+		pogostick_sprite = pogostick_array[global.current_skin];
 		
 		//take place of skin
 		x = other.x;

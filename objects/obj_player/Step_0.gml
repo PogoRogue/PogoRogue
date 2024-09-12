@@ -189,7 +189,7 @@ if key_recenter and centering = false and angle != 0 and !key_left and !key_righ
 	centering = true;
 }
 
-if centering = true and can_rotate {
+if centering = true and can_rotate or centering = true and state = state_pogosmith {
 	can_rotate = false;
 	if angle >= rotation_speed or angle <= -rotation_speed {
 		angle += rotation_speed * -sign(angle);
@@ -354,7 +354,8 @@ if (canshoot > 0) {
 		if gun != water_gun and gun != laser_gun {
 			gun.spread_number = 3;
 		}
-	}else if gun.spread_number = 3 and tripleshot = false and !(gun._name = "Javelins" and gun.level >= 2) {
+	}else if gun.spread_number = 3 and tripleshot = false and !(gun._name = "Javelins" and gun.level >= 2)  
+	and !(gun._name = "Pistol" and gun.level >= 4) and !(gun._name = "Burst Rifle" and gun.level >= 4) {
 		gun.spread_number = 1;
 	}
 	

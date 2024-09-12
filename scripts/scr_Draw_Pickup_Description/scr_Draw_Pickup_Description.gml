@@ -25,6 +25,7 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	if item_name = "Magic Stopwatch" {
 		item_name = "Magic\nStopwatch"
 	}
+
 	
 	//slot
 	if pickup.is_synergy = true {

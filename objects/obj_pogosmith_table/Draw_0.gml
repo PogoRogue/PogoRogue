@@ -1,6 +1,6 @@
 /// @description draw UI when colliding
 draw_self();
-if (colliding) and being_used = false {
+if (colliding) and being_used = false and sprite_index != spr_pogosmith_workbench_animation {
 	image_index = 1;
 	
 	//check if we should draw controller UI or keyboard UI
@@ -27,7 +27,7 @@ if (colliding) and being_used = false {
 		}
 	}
 	scr_Draw_Text_Outlined(x,bbox_top+48,"Select Upgrade",c_white);
-}else {
+}else if sprite_index != spr_pogosmith_workbench_animation {
 	image_index = 0;	
 }
 

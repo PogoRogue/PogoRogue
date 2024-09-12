@@ -12,7 +12,7 @@ purchase_cost = 100;
 upgrade_color = make_color_rgb(242,240,229);
 cost_color = make_color_rgb(237,225,158);
 
-test_mode = false;
+test_mode = true;
 
 gun_1_bought = false;
 gun_2_bought = false;

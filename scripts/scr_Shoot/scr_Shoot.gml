@@ -82,8 +82,10 @@ function scr_Shoot(){
 			if gun.spread_number = 3 and gun._name = "Burst Rifle" and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
 				if gun.level = 1 {
 					gun.current_bullets -= 1/3;
-				}else {
-					gun.current_bullets -= 1/4;
+				}else if gun.level = 2 {
+					gun.current_bullets -= 1/3;
+				}else if gun.level >= 3 {
+					gun.current_bullets -= 1/3;
 				}
 			}
 			
