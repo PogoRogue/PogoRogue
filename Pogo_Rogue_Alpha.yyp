@@ -1332,6 +1332,7 @@
     {"id":{"name":"spr_electric_floor_off","path":"sprites/spr_electric_floor_off/spr_electric_floor_off.yy",},},
     {"id":{"name":"spr_electric_floor_on","path":"sprites/spr_electric_floor_on/spr_electric_floor_on.yy",},},
     {"id":{"name":"spr_electric_floor_powering_on","path":"sprites/spr_electric_floor_powering_on/spr_electric_floor_powering_on.yy",},},
+    {"id":{"name":"spr_enemy_car_mask","path":"sprites/spr_enemy_car_mask/spr_enemy_car_mask.yy",},},
     {"id":{"name":"spr_enemy_car_mine","path":"sprites/spr_enemy_car_mine/spr_enemy_car_mine.yy",},},
     {"id":{"name":"spr_enemy_car","path":"sprites/spr_enemy_car/spr_enemy_car.yy",},},
     {"id":{"name":"spr_enemy_explode","path":"sprites/spr_enemy_explode/spr_enemy_explode.yy",},},
