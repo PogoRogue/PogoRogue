@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Mouse_Get_Button_Sprite",
   "isCompatibility":false,
   "isDnD":false,

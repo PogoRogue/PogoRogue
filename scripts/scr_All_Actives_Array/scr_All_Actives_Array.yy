@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_All_Actives_Array",
   "isCompatibility":false,
   "isDnD":false,

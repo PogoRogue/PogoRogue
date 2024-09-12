@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Retract_Laser",
   "isCompatibility":false,
   "isDnD":false,

@@ -11,19 +11,27 @@ function scr_Buffs(){
 				with obj_player_health {
 					heart_gain_num = other.hp;	
 				}
+			}else if global.iron_proficiency = true {
+				if armor_buff < max_armor_buff {
+					armor_buff += 1;
+					audio_play_sound(snd_ArmorHeart,0,false);
+					with obj_player_health {
+						heart_shield_gain_num = other.armor_buff;	
+					}
+				}
 			}
 		}
 	}
 	
 	buff_lasersight = function() { 
 		laser_sight = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_planetarybullets = function() { 
 		if planetary_bullets < 5 {
 			planetary_bullets += 1;
-			audio_play_sound(snd_passivePowerup,0,false);
+			
 		}
 		if !instance_exists(obj_planetarybullets) {
 			instance_create_depth(x,y,depth,obj_planetarybullets);
@@ -44,7 +52,7 @@ function scr_Buffs(){
 	
 	buff_dmg = function(){
 		global.damage_buff += 1;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_max_ammo = function(){
@@ -52,17 +60,24 @@ function scr_Buffs(){
 			if gun_1.bullets_per_bounce < gun_1.init_bullets_per_bounce + gun_1.max_added_bullets {
 				gun_1.bullets_per_bounce += gun_1.burst_number;
 				gun_1.current_bullets += gun_1.burst_number;
-				audio_play_sound(snd_passivePowerup,0,false);
 			}
 			if gun_2.bullets_per_bounce < gun_2.init_bullets_per_bounce + gun_2.max_added_bullets and gun_2 != gun_1 {
 				gun_2.bullets_per_bounce += gun_2.burst_number;
 				gun_2.current_bullets += gun_2.burst_number;
-				audio_play_sound(snd_passivePowerup,0,false);
+				
 			}
 			if gun_3.bullets_per_bounce < gun_3.init_bullets_per_bounce + gun_3.max_added_bullets and gun_3 != gun_1 and gun_3 != gun_2 {
 				gun_3.bullets_per_bounce += gun_3.burst_number;
 				gun_3.current_bullets += gun_3.burst_number;
-				audio_play_sound(snd_passivePowerup,0,false);
+			}
+			//change name of six shooter when more bullets
+			switch(sixshooter_gun.bullets_per_bounce) {
+				case 7: sixshooter_gun._name = "Seven Shooter"; break;
+				case 8: sixshooter_gun._name = "Eight Shooter"; break;
+				case 9: sixshooter_gun._name = "Nine Shooter"; break; 
+				case 10: sixshooter_gun._name = "Ten Shooter"; break;
+				case 11: sixshooter_gun._name = "Eleven Shooter"; break;
+				default: sixshooter_gun._name = "Six Shooter"; break;
 			}
 		}
 	}
@@ -71,7 +86,15 @@ function scr_Buffs(){
 		with obj_player {
 			if max_hp < max_max_hp {
 				max_hp += 8;
-				audio_play_sound(snd_passivePowerup,0,false);
+				
+			}else if global.iron_proficiency = true {
+				if armor_buff < max_armor_buff {
+					armor_buff += 1;
+					audio_play_sound(snd_ArmorHeart,0,false);
+					with obj_player_health {
+						heart_shield_gain_num = other.armor_buff;	
+					}
+				}
 			}
 			if hp < max_hp {
 				hp += 8;
@@ -84,148 +107,194 @@ function scr_Buffs(){
 	
 	buff_luck = function(){
 		global.luck += 5;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_pickybuyer = function(){
 		global.picky_buyer += 1;	
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_bouncybullets = function() {
 		global.bouncy_bullets = 1;	
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_hotshells = function(){
 		global.hot_shells = true;	
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_combomaster = function(){
 		global.combo_master = true;	
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_blackfriday = function(){
 		global.sale = 0.85;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_triplethreat = function(){
 		with obj_player {
+			global.triplethreat = true;
 			num_of_weapons = 3;
 			gun_array = [gun_1, gun_2, gun_3];
-			audio_play_sound(snd_passivePowerup,0,false);
+			
 		}
 	}
 	
 	buff_flamingcoins = function(){
 		global.flaming_coins = true;	
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_combotime = function(){
 		global.combo_time_added += 150;
-		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_sharpshooter = function(){
 		global.sharpshooter = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_coinsup = function(){
 		global.added_coins += 1;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_sharptip = function(){
 		obj_player.stomp_damage += 12;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_experimentation = function(){
-		global.experimentation = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		global.experimentation += 1;
+		
 	}
 	
 	buff_aerialassassin = function(){
 		global.aerial_assassin = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_supershield = function(){
 		global.super_shield = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_revive = function(){
 		if global.revived = false {
 			global.revive = true;
 			if room != room_tutorial {
-				audio_play_sound(snd_passivePowerup,0,false);
+				
 			}
 		}
 	}
 	
 	buff_drilltipbullets = function(){
 		global.drilltipbullets = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_dualwielder = function(){
 		global.dualwielder = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_magicianstouch = function(){
 		global.magicianstouch = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_tightspring = function(){
 		global.tightspring = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_steadyhands = function(){
 		global.steadyhands = true;
-		audio_play_sound(snd_passivePowerup,0,false);
 	}
 	
 	buff_impatience = function(){
 		global.impatience = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_laststand = function(){
 		global.laststand = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_psychicbullets = function(){
 		global.psychicbullets = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_righteousrevenge = function(){
 		global.righteousrevenge = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
 	
 	buff_robbery = function(){
 		global.robbery = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		
 	}
     
 	buff_recycling = function(){
-		global.recycling = true;
-		audio_play_sound(snd_passivePowerup,0,false);
+		global.recycling += 1;
+		
 	}
 	
 	buff_juggler = function(){
 		global.juggler = true;    
-		audio_play_sound(snd_passivePowerup,0,false);
+		
+	}
+	
+	buff_invincibilityup = function(){
+		obj_player.iframes_add += 0.75;
+		
+	}
+	
+	buff_doublekill = function() { 
+		if double_kill < 3 {
+			double_kill += 1;
+			
+		}
+	}
+	
+	buff_ironproficiency = function(){
+		global.iron_proficiency = true;    
+		
+	}
+	
+	buff_fastforward = function(){
+		if global.fast_forward < 3 {
+			global.fast_forward += 1;
+		}
+		
+	}
+	
+	buff_paparazzi = function(){
+		global.paparazzi = true;
+	}
+	
+	buff_crit = function(){
+		global.critchance += 1;
+		global.crit_percentage += 5;
+	}
+	
+	buff_bartime = function(){
+		global.bar_time_added += 0.25;
+		global.bartime += 25;
+	}
+	
+	buff_strongmuscles = function(){
+		if global.strong_muscles = false {
+			global.strong_muscles = true;
+			obj_player.shotgun_gun.ammo[bullet_index].destroy_time += 10;
+			obj_player.bubble_gun.ammo[bullet_index].destroy_time += 25;
+			obj_player.puncher_gun.ammo[bullet_index].spd += 6;
+		}
 	}
 }

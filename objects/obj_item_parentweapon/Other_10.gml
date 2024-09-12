@@ -136,3 +136,25 @@ or obj_player.weapons_equipped = 0 {
 	}
 	audio_play_sound(snd_weaponPowerup,0,false);
 }
+
+
+//unlock dogo skin
+var weapons_unlocked = 0;
+
+for(i = 0; i < array_length(global.weapon_unlocked_array); i++) { //weapons
+	if global.weapon_unlocked_array[i] = true {
+		weapons_unlocked++;
+	}
+}
+
+if weapons_unlocked = array_length(global.weapon_unlocked_array) {
+	//unlock skin
+	var skin = 3;
+	if global.skins_unlocked_array[skin-1] = false {
+		ini_open("itemsunlocked.ini");
+		instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
+		global.skins_unlocked_array[skin-1] = true;
+		ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
+		ini_close();	
+	}
+}

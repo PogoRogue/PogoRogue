@@ -6,3 +6,5 @@ if(!other.is_dead) {
 	
 	scr_Reload_On_Kill();
 }
+
+mask_index = spr_nothing;

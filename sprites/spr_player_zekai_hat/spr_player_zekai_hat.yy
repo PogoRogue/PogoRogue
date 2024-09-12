@@ -27,7 +27,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":64,
+  "height":66,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"f1fcd5ee-787a-48bb-b948-e95b82193d57","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"f1fcd5ee-787a-48bb-b948-e95b82193d57","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -37,8 +37,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "name":"Hats",
+    "path":"folders/Sprites/Player/Player sprites/Hats.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -121,7 +121,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":16,
-    "yorigin":64,
+    "yorigin":66,
   },
   "swatchColours":[
     4278190335,4293259506,4290360760,4287136134,4284834660,4283384901,4283971642,4280492321,4282526517,4285154115,

@@ -14,7 +14,7 @@ function scr_Gradually_Turn(obj_to_turn,target,turn_speed,accuracy) {
 	accuracy = abs(accuracy - 1.0);
 
 	// Get the target direction and facing direction
-	var target_dir = point_direction(obj_to_turn.x, obj_to_turn.y, target.x, target.y);
+	var target_dir = point_direction(obj_to_turn.x, obj_to_turn.y, target.center_x_sprite, target.center_y_sprite);
 	var facing_dir = obj_to_turn.direction;
 
 	// Calculate the difference between target direction and facing direction

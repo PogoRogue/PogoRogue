@@ -4,7 +4,7 @@ function scr_Projectile_Bounce(name_string){
 	//bounces
 	ground_below = false;
 	with obj_player {
-		if place_meeting(x,y+16,obj_ground) or place_meeting(x,y+16,obj_ground_oneway) {
+		if place_meeting(x,y+16,obj_ground) or place_meeting(x,y+16,obj_ground_oneway) and other.gun_name != "Puncher" {
 			other.ground_below = true;
 		}
 	}
@@ -21,12 +21,17 @@ function scr_Projectile_Bounce(name_string){
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 5;
-				}else {
+				}else if (gun_name != "The Portal" ) {
 					image_angle = point_direction(x,y,x+hspd,y+vspd);
 				}
+				if gun_name = "Bouncy Ball Blaster" {
+					randomize();
+					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+					random_set_seed(global.seed);	
+				}
 			}else if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0 )
-			or (place_meeting(x,y+sign(vspd),obj_ground_oneway) and vspd > 0 and num_of_bounces > 0) { //top
-				while !place_meeting(x,y+sign(vspd),obj_ground) and !place_meeting(x,y+sign(vspd),obj_ground_oneway) {
+			or (place_meeting(x,y+sign(vspd),obj_ground_oneway) and vspd > 0 and num_of_bounces > 0 and gun_name != "Puncher") { //top
+				while !place_meeting(x,y+sign(vspd),obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) and gun_name != "Puncher") {
 					y += sign(vspd);
 				}
 				vspd *= -bounce_amount;
@@ -35,8 +40,13 @@ function scr_Projectile_Bounce(name_string){
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 5;
-				}else {
+				}else if (gun_name != "The Portal" ) {
 					image_angle = point_direction(x,y,x+hspd,y+vspd);
+				}
+				if gun_name = "Bouncy Ball Blaster" {
+					randomize();
+					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+					random_set_seed(global.seed);
 				}
 			}
 		
@@ -53,8 +63,14 @@ function scr_Projectile_Bounce(name_string){
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 3;
-				}else {
+				}else if (gun_name != "The Portal" ) {
 					image_angle = point_direction(x,y,x+hspd,y+vspd);
+				}
+				
+				if gun_name = "Bouncy Ball Blaster" {
+					randomize();
+					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+					random_set_seed(global.seed);
 				}
 	
 			}
@@ -69,8 +85,14 @@ function scr_Projectile_Bounce(name_string){
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 5;
-				}else {
+				}else if (gun_name != "The Portal" ) {
 					image_angle = point_direction(x,y,x+hspd,y+vspd);	
+				}
+				
+				if gun_name = "Bouncy Ball Blaster" {
+					randomize();
+					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+					random_set_seed(global.seed);
 				}
 	
 			}	
@@ -83,13 +105,23 @@ function scr_Projectile_Bounce(name_string){
 				}
 				vspeed *= -bounce_amount;
 				num_of_bounces -= 1;
+				if gun_name = "Bouncy Ball Blaster" {
+					randomize();
+					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+					random_set_seed(global.seed);	
+				}
 			}else if (place_meeting(x,y+vspeed,obj_ground) and vspeed > 0 and num_of_bounces > 0 )
-			or (place_meeting(x,y+sign(vspeed),obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0) { //top
-				while !place_meeting(x,y+sign(vspeed),obj_ground) and !place_meeting(x,y+sign(vspeed),obj_ground_oneway) {
+			or (place_meeting(x,y+sign(vspeed),obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0 and gun_name != "Puncher") { //top
+				while !place_meeting(x,y+sign(vspeed),obj_ground) and (!place_meeting(x,y+sign(vspeed),obj_ground_oneway) and gun_name != "Puncher") {
 					y += sign(vspeed);
 				}
 				vspeed *= -bounce_amount;
 				num_of_bounces -= 1;
+				if gun_name = "Bouncy Ball Blaster" {
+					randomize();
+					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+					random_set_seed(global.seed);
+				}
 			}
 		
 			

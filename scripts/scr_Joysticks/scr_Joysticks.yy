@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Joysticks",
   "isCompatibility":false,
   "isDnD":false,

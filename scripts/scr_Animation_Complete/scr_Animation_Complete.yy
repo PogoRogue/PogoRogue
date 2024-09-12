@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Animation_Complete",
   "isCompatibility":false,
   "isDnD":false,

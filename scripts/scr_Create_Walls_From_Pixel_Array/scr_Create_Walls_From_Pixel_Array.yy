@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Create_Walls_From_Pixel_Array",
   "isCompatibility":false,
   "isDnD":false,

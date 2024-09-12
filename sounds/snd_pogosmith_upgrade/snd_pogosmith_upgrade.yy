@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_pogosmith_upgrade",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.095782,
+  "name":"snd_pogosmith_upgrade",
+  "parent":{
+    "name":"Weapons",
+    "path":"folders/Sounds/Weapons.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_pogosmith_upgrade.wav",
+  "type":0,
+  "volume":1.0,
+}

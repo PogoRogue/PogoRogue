@@ -8,7 +8,12 @@ function scr_Settings_Initialize(){
 	if !audio_group_is_loaded(audiogroup_music) {
 	    audio_group_load(audiogroup_music);
 	}
+	
+	if !audio_group_is_loaded(audiogroup_volleyball) {
+	    audio_group_load(audiogroup_volleyball);
+	}
 
 	audio_group_set_gain(audiogroup_default,global.sound_volume/100,100);
 	audio_group_set_gain(audiogroup_music,global.music_volume/100,100);
+	audio_group_set_gain(audiogroup_volleyball,1,100);
 }

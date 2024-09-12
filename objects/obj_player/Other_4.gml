@@ -32,3 +32,11 @@ if room = room_shop or global.last_room = room_shop {
 	hspeed = 0;
 	vspeed = 0;
 }
+
+table = false;
+
+for (i = 0; i < array_length(bouncing_array); i++) {
+	if player_sprite = bouncing_array[i] {
+		global.current_skin = i;	
+	}
+}

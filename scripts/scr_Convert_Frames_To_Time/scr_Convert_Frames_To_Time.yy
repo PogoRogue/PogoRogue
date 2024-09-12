@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Convert_Frames_To_Time",
   "isCompatibility":false,
   "isDnD":false,

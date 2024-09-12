@@ -42,22 +42,22 @@ if image_index = 6 and fade_out = false {
 	scr_Screen_Shake(6,15,false);
 	//audio_play_sound(snd_sniper,0,false);
 }else if fade_out = true {
-	x = enemy_to_target.x;
-	y = enemy_to_target.y;	
+	x = enemy_to_target.center_x_sprite;
+	y = enemy_to_target.center_y_sprite;	
 }
 
 if instance_exists(enemy_to_target) and fade_out = false {
 	if speed_up < 12 {
 		speed_up += 1;	
 	}
-	if point_distance(x,y,enemy_to_target.x,enemy_to_target.y) <= 100 {
-		speed_multiply = point_distance(x,y,enemy_to_target.x,enemy_to_target.y) / 100;
+	if point_distance(x,y,enemy_to_target.center_x_sprite,enemy_to_target.center_y_sprite) <= 100 {
+		speed_multiply = point_distance(x,y,enemy_to_target.center_x_sprite,enemy_to_target.center_y_sprite) / 100;
 	}
-	if point_distance(x,y,enemy_to_target.x,enemy_to_target.y) >= speed_up*2*(speed_multiply+0.2) {
-		move_towards_point(enemy_to_target.x,enemy_to_target.y,speed_up*(speed_multiply+0.2));
+	if point_distance(x,y,enemy_to_target.center_x_sprite,enemy_to_target.center_y_sprite) >= speed_up*2*(speed_multiply+0.2) {
+		move_towards_point(enemy_to_target.center_x_sprite,enemy_to_target.center_y_sprite,speed_up*(speed_multiply+0.2));
 	}else {
-		x = enemy_to_target.x;
-		y = enemy_to_target.y;
+		x = enemy_to_target.center_x_sprite;
+		y = enemy_to_target.center_y_sprite;
 		image_speed = 1;
 		
 		if image_index = 2 or image_index = 4 {
@@ -73,8 +73,8 @@ if instance_exists(enemy_to_target) and fade_out = false {
 
 if fade_out = true {
 	if instance_exists(enemy_to_target) {
-		x = enemy_to_target.x;
-		y = enemy_to_target.y;
+		x = enemy_to_target.center_x_sprite;
+		y = enemy_to_target.center_y_sprite;
 	}
 	image_alpha -= 0.05;
 	if image_xscale > 1 {

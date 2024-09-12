@@ -6,7 +6,11 @@ total_kills = total_enemies_in_region - current_enemies_in_region;
 kills_left = enemies_required - total_kills;
 if(current_enemies_in_region <= (total_enemies_in_region - enemies_required))
 {
-	instance_create_depth(x,y,depth,obj_room_gate_open);
-	instance_destroy(self);
+	//instance_destroy(self);
+	if destroy = false {
+		destroy = true;
+		sprite_index = spr_gate_open_new;
+		image_index = 1;
+	}
 	show_debug_message("Gate Condition Met!");
 }

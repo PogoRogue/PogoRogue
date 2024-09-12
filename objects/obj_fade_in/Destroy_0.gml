@@ -1,0 +1,1 @@
+global.show_tips_screen = false;

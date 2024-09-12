@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Restart_Level",
   "isCompatibility":false,
   "isDnD":false,

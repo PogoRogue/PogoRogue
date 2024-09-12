@@ -16,7 +16,7 @@ if place_meeting(x-4,y,obj_ground) {
 	colliding_with_ground_left = false;	
 }
 if place_meeting(x+4,y,obj_ground) {
-	if instance_place(x+4,y,obj_ground).x > x {
+	if instance_place(x+4,y,obj_ground).x > x-2 {
 		colliding_with_ground_right = true;
 	}else {
 		colliding_with_ground_right = false;
@@ -48,9 +48,24 @@ if (place_meeting(x,y+parent_index.vspeed,obj_ground) and parent_index.vspeed < 
 							if other.parent_index.free = true {
 								other.parent_index.vspeed *= -0.5;
 								other._break3 = true;
-								other.parent_index.dash_time = 0;
+								if !instance_exists(obj_parachute_dragster) {
+									//other.parent_index.dash_time = 0;
+								}
 								other.top = true;
 								other.alarm[1] = 3;
+								if other.parent_index.state = other.parent_index.state_grappling {
+									if instance_exists(other.parent_index.grappling_hook) {
+										other.parent_index.grappling_hook.retract = true;
+									}
+									other.parent_index.state = other.parent_index.state_free;
+								}
+								if other.parent_index.harpooning = true {
+									other.parent_index.harpooning = false;
+									other.parent_index.invincible = false;
+									scr_Screen_Shake(6, 10, false);
+									audio_play_sound(snd_groundpound,0,false);
+									other.parent_index.vspeed *= 0.5;
+								}
 							}
 						}
 					}
@@ -87,9 +102,23 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed >
 						if place_meeting(bbox_left-other.parent_index.hspeed,y,other) and other.bbox_top < bbox_bottom - 12 {
 							other.parent_index.hspeed *= -0.35;
 							other._break = true;
-							other.parent_index.dash_time = 0;
+							if !instance_exists(obj_parachute_dragster) {
+								//other.parent_index.dash_time = 0;
+							}
 							other.right = true;
 							other.alarm[2] = 3;
+							if other.parent_index.state = other.parent_index.state_grappling {
+								if instance_exists(other.parent_index.grappling_hook) {
+									other.parent_index.grappling_hook.retract = true;
+								}
+								other.parent_index.state = other.parent_index.state_free;
+							}
+							if other.parent_index.harpooning = true {
+								other.parent_index.harpooning = false;
+								other.parent_index.invincible = false;
+								scr_Screen_Shake(6, 10, false);
+								audio_play_sound(snd_groundpound,0,false);
+							}
 						}
 					}
 					if right_corner = false and left_corner = false and bottom_right_corner = false and bottom_left_corner = false and top = false and active = true
@@ -124,9 +153,23 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed <
 						if place_meeting(bbox_right-other.parent_index.hspeed,y,other) and other.bbox_top < bbox_bottom - 12 {
 							other.parent_index.hspeed *= -0.35;
 							other._break2 = true;
-							other.parent_index.dash_time = 0;
+							if !instance_exists(obj_parachute_dragster) {
+								//other.parent_index.dash_time = 0;
+							}
 							other.left = true;
 							other.alarm[2] = 3;
+							if other.parent_index.state = other.parent_index.state_grappling {
+								if instance_exists(other.parent_index.grappling_hook) {
+									other.parent_index.grappling_hook.retract = true;
+								}
+								other.parent_index.state = other.parent_index.state_free;
+							}
+							if other.parent_index.harpooning = true {
+								other.parent_index.harpooning = false;
+								other.parent_index.invincible = false;
+								scr_Screen_Shake(6, 10, false);
+								audio_play_sound(snd_groundpound,0,false);
+							}
 						}
 					}
 					if right_corner = false and left_corner = false and bottom_right_corner = false and bottom_left_corner = false and top = false and active = true
@@ -176,7 +219,21 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed >= 0 {
 						if place_meeting(bbox_left,y,other) and other.bbox_top < bbox_bottom - 4 {
 							other.parent_index.hspeed *= -0.35;
 							other._break = true;
-							other.parent_index.dash_time = 0;
+							if !instance_exists(obj_parachute_dragster) {
+								//other.parent_index.dash_time = 0;
+							}
+							if other.parent_index.state = other.parent_index.state_grappling {
+								if instance_exists(other.parent_index.grappling_hook) {
+									other.parent_index.grappling_hook.retract = true;
+								}
+								other.parent_index.state = other.parent_index.state_free;
+							}
+							if other.parent_index.harpooning = true {
+								other.parent_index.harpooning = false;
+								other.parent_index.invincible = false;
+								scr_Screen_Shake(6, 10, false);
+								audio_play_sound(snd_groundpound,0,false);
+							}
 						}
 					}
 					if _break = true {
@@ -204,7 +261,21 @@ if (place_meeting(x,y,obj_wallbutton)) and parent_index.hspeed <= 0 {
 						if place_meeting(bbox_right,y,other) and other.bbox_top < bbox_bottom - 4 {
 							other.parent_index.hspeed *= -0.35;
 							other._break2 = true;
-							other.parent_index.dash_time = 0;
+							if !instance_exists(obj_parachute_dragster) {
+								//other.parent_index.dash_time = 0;
+							}
+							if other.parent_index.state = other.parent_index.state_grappling {
+								if instance_exists(other.parent_index.grappling_hook) {
+									other.parent_index.grappling_hook.retract = true;
+								}
+								other.parent_index.state = other.parent_index.state_free;
+							}
+							if other.parent_index.harpooning = true {
+								other.parent_index.harpooning = false;
+								other.parent_index.invincible = false;
+								scr_Screen_Shake(6, 10, false);
+								audio_play_sound(snd_groundpound,0,false);
+							}
 						}
 					}
 					if _break2 = true {
@@ -233,7 +304,21 @@ if (place_meeting(x,y,obj_wallbutton) and parent_index.vspeed < 0) {
 							if other.parent_index.free = true {
 								other.parent_index.vspeed *= -0.35;
 								other._break3 = true;
-								other.parent_index.dash_time = 0;
+								if !instance_exists(obj_parachute_dragster) {
+									//other.parent_index.dash_time = 0;
+								}
+								if other.parent_index.state = other.parent_index.state_grappling {
+									if instance_exists(other.parent_index.grappling_hook) {
+										other.parent_index.grappling_hook.retract = true;
+									}
+									other.parent_index.state = other.parent_index.state_free;
+								}
+								if other.parent_index.harpooning = true {
+									other.parent_index.harpooning = false;
+									other.parent_index.invincible = false;
+									scr_Screen_Shake(6, 10, false);
+									audio_play_sound(snd_groundpound,0,false);
+								}
 							}
 						}
 					}

@@ -17,6 +17,7 @@ else
 if(display_minimap && instance_exists(current_tag_object))
 {
 	var frame = current_tag_object.proc_gen_region;
+	
 	if(global.phase == 1)
 	{
 		if(frame >= 1)
@@ -25,17 +26,23 @@ if(display_minimap && instance_exists(current_tag_object))
 		//Need to display both the "start room" and hallway as the same region, and then every other region 
 		//will be off by one
 		}
+		if in_shop = true or above_shop = true {
+			frame = frame + 1;	
+		}
 		draw_sprite(spr_minimap_phase1, frame, display_get_gui_width() - 48, display_get_gui_height()/2);
 	}
 	else
 	{
-		draw_sprite(spr_minimap, frame, display_get_gui_width() - 48, display_get_gui_height()/2);
+		if in_shop = true or above_shop = true {
+			frame = frame + 1;	
+		}
+		draw_sprite(spr_minimap, frame, display_get_gui_width() - 48, display_get_gui_height()/2+8);
 	}
 	previous_region = frame;
 }
 else
 {
-	draw_sprite(spr_minimap, previous_region, display_get_gui_width() - 48, display_get_gui_height()/2)
+	draw_sprite(spr_minimap, previous_region, display_get_gui_width() - 48, display_get_gui_height()/2+8)
 }
 
 if(display_progress_bar)

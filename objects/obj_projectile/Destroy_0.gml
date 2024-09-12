@@ -116,3 +116,31 @@ if gun_name = "Boomerangs" {
 		audio_stop_sound(sound);
 	}
 }
+
+if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
+	obj_player.grappling_hook = noone;	
+	if audio_is_playing(snd_grappling_pull) {
+		audio_stop_sound(snd_grappling_pull);
+	}
+	if audio_is_playing(snd_grappling_rope) {
+		audio_stop_sound(snd_grappling_rope);
+	}
+	audio_play_sound(snd_reload,0,false);
+	
+	//reload
+	with obj_player {
+		if other.gun_name = "Grappling Helmet" {
+			grappling_gun.current_bullets = 1;
+			pickup_grappling.uses_per_bounce = pickup_grappling.max_uses_per_bounce;
+			pickup_grappling.on_cooldown = false;
+		}else if other.gun_name = "Harpoon Helmet" {
+			harpoon_gun.current_bullets = 1;
+			pickup_harpoon.uses_per_bounce = pickup_grappling.max_uses_per_bounce;
+			pickup_harpoon.on_cooldown = false;
+		}
+	}
+}
+
+if (gun_name = "The Portal") {
+	obj_player.portal_gun.current_bullets = 1;
+}

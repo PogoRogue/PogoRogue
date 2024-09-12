@@ -1,0 +1,1 @@
+/// @description destroy items

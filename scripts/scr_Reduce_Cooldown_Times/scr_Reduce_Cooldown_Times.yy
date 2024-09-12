@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_Reduce_Cooldown_Times",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Reduce_Cooldown_Times",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

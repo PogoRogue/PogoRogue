@@ -8,7 +8,11 @@ if(is_dead) {
 	if image_alpha <= 0.005 {
 		instance_destroy();	
 	}
-} else if (hp <= 0) {
+} else if (hp <= 0) and megabounce_freeze = false {
+	if object_get_name(object_index) != "obj_enemy_explode_walking" {
+		image_speed = 0;
+	}
+	speed = 0;
 	alarm_set(0, despawn_timer);
 	alarm_set(11, 10);
 	randomize();
@@ -48,8 +52,8 @@ if(is_dead) {
 					gun_2.current_bullets = gun_2.bullets_per_bounce + max_ammo_buff;
 					gun_3.current_bullets = gun_3.bullets_per_bounce + max_ammo_buff;
 					aerial_assassin_frenzy = true;
-					alarm[4] = 120;
-					aerial_assassin_frenzy_count = 120;
+					alarm[4] = 120 * global.bar_time_added;
+					aerial_assassin_frenzy_count = 120 * global.bar_time_added;
 					aerial_assassin_count = 0;
 				}
 			}
@@ -79,11 +83,34 @@ if(is_dead) {
 	}
 	
 	with obj_player {
+		//lower enemy kill cooldowns
 		if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count > 0 {
-			pickups_array[0].enemies_count -= 1;
+			//account for double/triple/quadruple kill passive
+			if global.combo <= 10 or obj_player.double_kill = 0 {
+				pickups_array[0].enemies_count -= 1;
+			}else if global.combo > 10 and obj_player.double_kill = 1
+			or global.combo > 10 and global.combo <= 20 and obj_player.double_kill > 1 {
+				pickups_array[0].enemies_count -= 2;
+			}else if global.combo > 20 and obj_player.double_kill = 2
+			or global.combo > 20 and global.combo <= 30 and obj_player.double_kill > 2 {
+				pickups_array[0].enemies_count -= 3;
+			}else if global.combo > 30 and obj_player.double_kill > 2 {
+				pickups_array[0].enemies_count -= 4;
+			}
 		}
 		if pickups_array[1].enemies_count_max > 0 and pickups_array[1].enemies_count > 0 {
-			pickups_array[1].enemies_count -= 1;
+			//account for double/triple/quadruple kill passive
+			if global.combo <= 10 or obj_player.double_kill = 0 {
+				pickups_array[1].enemies_count -= 1;
+			}else if global.combo > 10 and obj_player.double_kill = 1
+			or global.combo > 10 and global.combo <= 20 and obj_player.double_kill > 1 {
+				pickups_array[1].enemies_count -= 2;
+			}else if global.combo > 20 and obj_player.double_kill = 2
+			or global.combo > 20 and global.combo <= 30 and obj_player.double_kill > 2 {
+				pickups_array[1].enemies_count -= 3;
+			}else if global.combo > 30 and obj_player.double_kill > 2 {
+				pickups_array[1].enemies_count -= 4;
+			}
 		}
 		
 		//recharge jetpack
@@ -98,6 +125,14 @@ if(is_dead) {
 			if pickups_array[1].cooldown_time > pickups_array[1].max_cooldown_time {
 				pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
 			}
+		}
+	}
+	
+	with obj_heart_energy_gain {
+		if sprite_index = spr_heart_energy_animation and !scr_Animation_Complete() and image_speed = 1 {
+			sprite_index = spr_heart_energy_ui_gain;
+			image_index = 0;
+			audio_play_sound(snd_zap,0,false);
 		}
 	}
 	
@@ -132,10 +167,39 @@ if(is_dead) {
 	else {
 		show_debug_message("Enemy killed! Couldn't change region enemy count");
 	}
+	
+	
+	with obj_player {
+		//fast forward passive
+		if global.fast_forward > 0 {
+			scr_Reduce_Cooldown_Times(global.fast_forward * 60);
+		}
+		
+		if invincibility_time > 0 and invincibility = true {
+			pickup_invincibility.cooldown_time -= 300;
+		}
+		
+		if frenzy_time > 0 and frenzy = true {
+			pickup_frenzy.cooldown_time -= 60;
+		}
+		
+		if pogomode_time > 0 and pogomode = true {
+			pickup_pogomode.cooldown_time -= 60;
+		}
+	}
 
 	global.current_enemies_killed += 1;
 	global.enemies_killed += 1;
 	scr_Save_Real("enemies_killed",global.enemies_killed);
+}else if (hp <= 0) {
+	red_frames = 5;
+	x = freeze_x;
+	y = freeze_y;
+	image_index = freeze_frame;
+	speed = 0;
+	if obj_player.state = obj_player.state_free {
+		megabounce_freeze = false;
+	}
 }
 
 // Update iframes
@@ -143,3 +207,7 @@ current_iframes = max(current_iframes - 1, 0);
 
 // Update red shader frames
 red_frames = max(red_frames - 1, 0);
+
+//update center position
+center_x_sprite = bbox_left + ((bbox_right - bbox_left)/2);
+center_y_sprite = bbox_top + ((bbox_bottom - bbox_top)/2);

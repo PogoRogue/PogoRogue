@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Gradually_Turn",
   "isCompatibility":false,
   "isDnD":false,

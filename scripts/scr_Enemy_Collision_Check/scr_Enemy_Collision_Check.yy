@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Enemy_Collision_Check",
   "isCompatibility":false,
   "isDnD":false,

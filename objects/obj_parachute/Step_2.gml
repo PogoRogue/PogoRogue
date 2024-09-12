@@ -19,7 +19,7 @@ if floor(image_index) = 8 and ready_to_open = false {
 if ready_to_open = true and opening = false {
 	opening = true;
 	image_index = 8;
-	image_speed = 1;
+	image_speed = 2;
 }
 
 if scr_Animation_Complete() and opened = false {
@@ -39,7 +39,7 @@ if retract = true {
 			state = state_free;	
 		}
 	}
-	image_speed = -1;
+	image_speed = -2;
 	if floor(image_index) <= 1 {
 		instance_destroy();	
 	}

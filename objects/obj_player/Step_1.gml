@@ -1,18 +1,18 @@
 #region //angling
 if (can_rotate) {
 	if (use_mouse = false) { //use WASD/Arrow Keys to angle player
-		if (angle >= -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right)
-		or (angle >= -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) {
+		if (angle >= -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right) and !key_left
+		or (angle >= -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) and !key_right {
 			current_rotation_speed = -rotation_speed;
 			temp_rotation_speed = -3;
-		}else if (angle <= anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) 
-		or (angle <= anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) {
+		}else if (angle <= anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) and !key_right
+		or (angle <= anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) and !key_left {
 			current_rotation_speed = rotation_speed;
 			temp_rotation_speed = 3;
 		}else {
 			
-			if (angle < -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right)
-			or (angle < -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) {
+			if (angle < -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right) and !key_left
+			or (angle < -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) and !key_right {
 				
 				if (temp_rotation_speed < 0) {
 					temp_rotation_speed += temp_rotation_delay;
@@ -20,8 +20,8 @@ if (can_rotate) {
 					temp_rotation_speed -= temp_rotation_delay;
 				}
 				current_rotation_speed = temp_rotation_speed;
-			}else if (angle > anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) 
-			or (angle > anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) {
+			}else if (angle > anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) and !key_right
+			or (angle > anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) and !key_left {
 				
 				if (temp_rotation_speed > 0) {
 					temp_rotation_speed -= temp_rotation_delay;
@@ -51,8 +51,6 @@ if (can_rotate) {
 		}else if hspeed < -0.5 {
 			image_xscale = -1;
 		}
-		
-		
 	
 	}else if (dead = false) { //use mouse to angle player
 	

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Create_Collision_Walls",
   "isCompatibility":false,
   "isDnD":false,

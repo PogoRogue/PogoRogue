@@ -28,6 +28,12 @@ for (i=0;i<array_length(all_sounds);i++) {
 	audio_sound_pitch(all_sounds[i],max(room_speed/60,0.8));
 }
 
+var all_volleyball_sounds = audio_group_get_assets(audiogroup_volleyball);
+
+for (i=0;i<array_length(all_volleyball_sounds);i++) {
+	audio_sound_pitch(all_volleyball_sounds[i],max(room_speed/60,0.8));
+}
+
 global.enemy_killed = false; //resume combo meter when set to true after killing 1st enemy in room
 
 //set music
@@ -55,4 +61,10 @@ if room = room_proc_gen_test {
 if !audio_is_playing(global.current_music) {
 	audio_stop_all();
 	audio_play_sound(global.current_music,0,true);
+}
+
+if room = room_proc_gen_test {
+	global.show_tips_screen = true;	
+}else {
+	global.show_tips_screen = false;	
 }

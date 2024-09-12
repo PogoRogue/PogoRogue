@@ -6,7 +6,8 @@ select_x_max = 4; //number of columns
 select_y = 0;
 select_y_max = 4; //number of rows
 select_y_added = 0; //bindings menu scrolling
-passive_rows = 8;
+passive_rows = 10;
+global.synergy_frame = 0;
 
 selected_x = false;
 selected_y = false;
@@ -35,21 +36,29 @@ passives_array = [spr_buffitem_lasersight, spr_buffitem_planetarybullets,spr_buf
 				spr_buffitem_dualwielder, spr_buffitem_steadyhands, spr_buffitem_tightspring,
 				spr_buffitem_magicianstouch,spr_buffitem_impatience,spr_buffitem_laststand,
 				spr_buffitem_psychicbullets,spr_buffitem_righteousrevenge, spr_buffitem_robbery,
-				spr_buffitem_recycling,spr_buffitem_juggler]
+				spr_buffitem_recycling,spr_buffitem_juggler,spr_buffitem_invincibilityup,
+				spr_buffitem_doublekill,spr_buffitem_ironproficiency,spr_buffitem_fastforward,
+				spr_buffitem_paparazzi,spr_buffitem_crit,spr_buffitem_bartime,
+				spr_buffitem_strongmuscles]
 				
-actives_array = [spr_pickup_reload, spr_pickup_freeze, spr_pickup_emergency, 
-				spr_pickup_parachute, spr_pickup_firedash, spr_pickup_groundpound, 
-				spr_pickup_hatgun, spr_pickup_chargejump, spr_pickup_shieldbubble,
-				spr_pickup_target, spr_pickup_blink, spr_pickup_jetpack,
-				spr_pickup_camera, spr_pickup_frenzy, spr_pickup_bulletblast,
-				spr_pickup_slowmo];
+actives_array = [spr_pickup_reload, spr_pickup_freeze, spr_pickup_airbag, 
+				spr_pickup_parachute, spr_pickup_chargejump, spr_pickup_groundpound, 
+				spr_pickup_target, spr_pickup_volleyball, spr_pickup_grappling,
+				spr_pickup_hatgun, spr_pickup_tripleshot, spr_pickup_emergency,
+				spr_pickup_winners, spr_pickup_firedash, spr_pickup_blink,
+				spr_pickup_jetpack, spr_pickup_bulletblast,spr_pickup_slowmo,
+				spr_pickup_frenzy,spr_pickup_invincibility,spr_pickup_synergy_jolt,
+				spr_pickup_synergy_launchpad, spr_pickup_synergy_megabounce, spr_pickup_synergy_harpoon,
+				spr_pickup_synergy_wreckingball, spr_pickup_synergy_dragster, spr_pickup_synergy_hacker,
+				spr_pickup_synergy_tacticalstrike, spr_pickup_synergy_blizzard, spr_pickup_synergy_pogomode];
 				
 weapons_array = [spr_gun_default,spr_gun_paintball,spr_gun_shotgun,
-				spr_gun_burstfire,spr_gun_javelins,spr_gun_bouncyball,
-				spr_gun_grenade, spr_gun_boomerang,spr_gun_starsucker,
-				spr_gun_water, spr_gun_bubble, spr_gun_yoyo,
-				spr_gun_missile, spr_gun_sniper, spr_gun_laser,
-				spr_gun_slime];
+				spr_gun_burstfire,spr_gun_javelins,spr_gun_puncher,
+				spr_gun_sixshooter, spr_gun_bouncyball,spr_gun_boomerang,
+				spr_gun_water, spr_gun_machine, spr_gun_grenade,
+				spr_gun_starsucker, spr_gun_yoyo, spr_gun_bubble,
+				spr_gun_slime,spr_gun_sniper, spr_gun_plasma,
+				spr_gun_laser,spr_gun_missile];
 				
 current_array = passives_array;
 

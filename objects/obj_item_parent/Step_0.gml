@@ -2,21 +2,26 @@ if room = room_shop {
 	created_in_room = true;	
 }
 
-if (follow_player = true and obj_player.state != obj_player.state_blink) {
+if (follow_player = true and obj_player.state != obj_player.state_blink and obj_player.state != obj_player.state_strike) {
 	move_towards_point(obj_player.x,obj_player.y,speed);
 	speed = lerp(speed,8,0.05);	
 	image_alpha = 1;
 	mask_index = sprite_index;
-}else if obj_player.state != obj_player.state_blink {
-	if room != room_shop {	
+}else if obj_player.state != obj_player.state_blink and obj_player.state != obj_player.state_strike {
+	if room != room_shop and created_in_room = false {	
 		image_alpha = 0;
 		mask_index = spr_nothing;
 	}else {
 		image_alpha = 1;
-		mask_index = sprite_index;
+		if room = room_shop {
+			mask_index = sprite_index;
+		}else {
+			mask_index = spr_nothing;
+		}
 	}
 }else {
 	speed = 0;
+	mask_index = sprite_index;
 }
 
 if show_debug = true {
@@ -32,3 +37,5 @@ if point_distance(x,y,obj_player.x,obj_player.y) > 2000 and room != room_shop an
 	instance_destroy();	
 	show_debug_message("weapon destroyed! 5 " + string(object_get_name(object_index)));
 }
+
+//show_debug_message("Item X: " + string(x) + " Item Y: " + string(y));

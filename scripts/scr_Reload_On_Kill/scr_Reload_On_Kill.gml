@@ -29,6 +29,12 @@ function scr_Reload_On_Kill() {
 				audio_play_sound(snd_reload,0,false);
 			}
 			global.water_index += 1;
+			if !key_fire_projectile {
+				fullauto_condtional = gun != sixshooter_gun;
+				sixshooter_gun.inaccuracy = 5;
+				sixshooter_gun.max_speed = -vsp_basicjump;
+				sixshooter_held_num = 0;	
+			}
 		}
 		//reload hat gun on hat gun kill
 		if object_get_name(object_index) = "obj_projectile"  {

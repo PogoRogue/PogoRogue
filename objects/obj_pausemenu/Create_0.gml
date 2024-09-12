@@ -8,5 +8,6 @@ num_of_options = 5;
 usable = true;
 alarm2_time = 30;
 alarm3_time = 30;
+frame = 0;
 
 instance_deactivate_object(self);
