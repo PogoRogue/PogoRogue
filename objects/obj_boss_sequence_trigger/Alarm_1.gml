@@ -18,5 +18,6 @@ with(obj_player) {
 
 room_height = 600;
 
+instance_destroy(obj_boss_sequence_trial);
 instance_destroy(obj_boss_sequence_trigger);
 instance_destroy(self);
