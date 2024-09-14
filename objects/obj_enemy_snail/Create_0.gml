@@ -26,3 +26,16 @@ at_wall = false;
 hp_max = 16;
 hp = hp_max;
 stomp_defense = 0.9;
+
+randomize();
+if global.phase <= 1 {
+	//red = false;
+}else if global.phase = 2 {
+	red = choose(true,true,false);
+}else if global.phase >= 3 {
+	red = true;
+}
+if red = true {
+	sprite_index = spr_enemy_snail_red;
+}
+random_set_seed(global.seed);

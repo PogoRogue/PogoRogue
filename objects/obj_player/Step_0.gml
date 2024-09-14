@@ -189,7 +189,7 @@ if key_recenter and centering = false and angle != 0 and !key_left and !key_righ
 	centering = true;
 }
 
-if centering = true and can_rotate or centering = true and state = state_pogosmith {
+if (centering = true and can_rotate and controller_lock_in = false or centering = true and state = state_pogosmith) {
 	can_rotate = false;
 	if angle >= rotation_speed or angle <= -rotation_speed {
 		angle += rotation_speed * -sign(angle);

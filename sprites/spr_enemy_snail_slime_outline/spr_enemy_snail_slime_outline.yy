@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_enemy_snail_slime_outline",
   "bboxMode":0,
-  "bbox_bottom":7,
+  "bbox_bottom":9,
   "bbox_left":0,
-  "bbox_right":7,
+  "bbox_right":9,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":8,
+  "height":10,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"45c36cd1-728f-41e5-8a3d-a43c09d5f4c5","blendMode":0,"displayName":"default","isLocked":false,"name":"45c36cd1-728f-41e5-8a3d-a43c09d5f4c5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -75,8 +75,8 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":4,
-    "yorigin":8,
+    "xorigin":5,
+    "yorigin":10,
   },
   "swatchColours":[
     4278190335,4293259506,4290360760,4287136134,4284834660,4283384901,4283971642,4280492321,4282526517,4285154115,
@@ -95,5 +95,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":8,
+  "width":10,
 }

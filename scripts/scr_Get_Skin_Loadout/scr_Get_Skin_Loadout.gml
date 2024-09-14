@@ -7,7 +7,11 @@ function scr_Get_Skin_Loadout(){
 		gun_2 = gun_1;
 		gun_3 = gun_1;
 		gun_array = [gun_1,gun_2,gun_3];
-			
+		
+		var temp_item = instance_create_depth(0,0,depth,obj_item_weapon_yoyo);
+		global.all_weapon_costs[0] = obj_item_weapon_yoyo.item_cost;
+		instance_destroy(temp_item);
+		
 		num_of_pickups = 0;
 		pickup_1 = pickup_nothing;
 		pickup_2 = pickup_nothing;
@@ -25,6 +29,8 @@ function scr_Get_Skin_Loadout(){
 		gun_2 = gun_1;
 		gun_3 = gun_1;
 		gun_array = [gun_1,gun_2,gun_3];
+		
+		global.all_weapon_costs[0] = 0;
 			
 		num_of_pickups = 0;
 		pickup_1 = pickup_nothing;
@@ -43,11 +49,19 @@ function scr_Get_Skin_Loadout(){
 		gun_2 = gun_1;
 		gun_3 = gun_1;
 		gun_array = [gun_1,gun_2,gun_3];
+		
+		var temp_item = instance_create_depth(0,0,depth,obj_item_weapon_burstfire);
+		global.all_weapon_costs[0] = obj_item_weapon_burstfire.item_cost;
+		instance_destroy(temp_item);
 			
 		num_of_pickups = 1;
 		pickup_1 = pickup_jetpack;
 		pickup_2 = pickup_nothing;
 		pickups_array = [pickup_1,pickup_2];
+		
+		var temp_item2 = instance_create_depth(0,0,depth,obj_item_pickup_jetpack);
+		global.all_pickup_costs[0] = obj_item_pickup_jetpack.item_cost;
+		instance_destroy(temp_item2);
 		
 		// Stats
 		hp = 24;
@@ -61,11 +75,23 @@ function scr_Get_Skin_Loadout(){
 		gun_2 = gun_1;
 		gun_3 = gun_1;
 		gun_array = [gun_1,gun_2,gun_3]
+		
+		var temp_item = instance_create_depth(0,0,depth,obj_item_weapon_sixshooter);
+		global.all_weapon_costs[0] = obj_item_weapon_sixshooter.item_cost;
+		instance_destroy(temp_item);
 			
 		num_of_pickups = 2;
 		pickup_1 = pickup_reload;
 		pickup_2 = pickup_parachute;
 		pickups_array = [pickup_1,pickup_2];
+		
+		var temp_item2 = instance_create_depth(0,0,depth,obj_item_pickup_reload);
+		global.all_pickup_costs[0] = obj_item_pickup_reload.item_cost;
+		instance_destroy(temp_item2);
+		
+		var temp_item3 = instance_create_depth(0,0,depth,obj_item_pickup_parachute);
+		global.all_pickup_costs[1] = obj_item_pickup_parachute.item_cost;
+		instance_destroy(temp_item3);
 		
 		// Stats
 		hp = 32;
@@ -79,6 +105,10 @@ function scr_Get_Skin_Loadout(){
 		gun_2 = gun_1;
 		gun_3 = gun_1;
 		gun_array = [gun_1,gun_2,gun_3];
+		
+		var temp_item = instance_create_depth(0,0,depth,obj_item_weapon_puncher);
+		global.all_weapon_costs[0] = obj_item_weapon_puncher.item_cost;
+		instance_destroy(temp_item);
 			
 		num_of_pickups = 0;
 		pickup_1 = pickup_nothing;
@@ -97,6 +127,8 @@ function scr_Get_Skin_Loadout(){
 		gun_2 = gun_1;
 		gun_3 = gun_1;
 		gun_array = [gun_1,gun_2,gun_3];
+		
+		global.all_weapon_costs[0] = 0;
 			
 		num_of_pickups = 0;
 		pickup_1 = pickup_nothing;

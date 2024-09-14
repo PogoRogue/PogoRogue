@@ -37,6 +37,8 @@ lock_unlocked = false;
 lock_unlocked_frames = 0;
 lock_alpha = 1;
 
+controller_lock_in = false;
+
 //weapons
 portal_object = noone;
 portal_speed = 0;

@@ -1,6 +1,6 @@
 /// @description Get damaged
 
-if room != room_starting_area {
+//if room != room_starting_area {
 	if parent_index.state != parent_index.state_portal and parent_index.state != parent_index.state_shop_portal
 	and parent_index.harpooning = false {
 		if(!other.is_dead && parent_index.current_iframes <= 0 && other.damage > 0) {
@@ -16,4 +16,4 @@ if room != room_starting_area {
 			scr_Reload_On_Kill();
 		}
 	}
-}
+//}

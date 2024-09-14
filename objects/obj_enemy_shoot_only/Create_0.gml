@@ -7,4 +7,4 @@ event_inherited();
 hp_max = 16;
 hp = hp_max;
 
-stomp_defense = 0.4;
+stomp_defense = 0.5;

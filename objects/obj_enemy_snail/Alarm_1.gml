@@ -1,3 +1,7 @@
 /// @description drop the tar horizontally
-
-instance_create_layer(x, y + 22, "enemies", obj_enemy_snail_slime);
+if red = true {
+	var slime_object = obj_enemy_snail_slime_red;
+}else {
+	var slime_object = obj_enemy_snail_slime;
+}
+instance_create_layer(x, y + 22, "enemies", slime_object);

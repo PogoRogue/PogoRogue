@@ -119,7 +119,7 @@ function scr_Guns(){
 		tagline: "Powerful, short-range blast spread of 5 shots.",
 		sprite: spr_gun_shotgun,  
 		ammo: [shotgun_bullet],
-		inaccuracy: 0,       
+		inaccuracy: 5,       
 		kick: 2,             
 		sound: snd_shotgun,
 		spread_number: 5,     

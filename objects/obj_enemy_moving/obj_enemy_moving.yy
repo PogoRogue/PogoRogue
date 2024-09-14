@@ -38,6 +38,9 @@
     "name":"spr_walk_enemy_walk",
     "path":"sprites/spr_walk_enemy_walk/spr_walk_enemy_walk.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_walk_enemy_mask",
+    "path":"sprites/spr_walk_enemy_mask/spr_walk_enemy_mask.yy",
+  },
   "visible":true,
 }

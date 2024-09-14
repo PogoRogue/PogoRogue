@@ -11,7 +11,7 @@ random_set_seed(global.seed+global.salesman_number);
 buff_1 = obj_item_buff_lasersight;
 buff_2 = obj_item_buff_planetarybullets;
 buff_3 = obj_item_buff_armor;
-buff_3_number = choose(2,2,2,2,2,2,2+sign(global.luck),3,3+sign(global.luck),4);
+buff_3_number = choose(2,2,2,2,2,2,2,2+sign(global.luck),3,3+sign(global.luck));
 
 buff_selected = 0;
 passives_array = [noone,noone,noone];

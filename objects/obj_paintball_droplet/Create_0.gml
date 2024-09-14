@@ -19,3 +19,15 @@ if global.drilltipbullets = false {
 
 alarm[0] = 1;
 alarm[1] = 10;
+
+damage = 0;
+deal_damage = false;
+
+if obj_player.paintball_gun.level > 1 {
+	image_speed = 0.75;
+}
+
+if obj_player.paintball_gun.level > 3 {
+	damage = 2;	
+	deal_damage = true;
+}

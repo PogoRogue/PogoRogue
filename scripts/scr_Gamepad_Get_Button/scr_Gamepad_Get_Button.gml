@@ -9,21 +9,21 @@ function scr_Gamepad_Get_Button(){
 		}
 		for (var i=gp_axislh;i<=gp_axisrv;i++) {    // loop analogue axis
 			if gamepad_axis_value(0,i) !=0 {
-				if gamepad_axis_value(0,gp_axislh) < -0.75 {
+				if gamepad_axis_value(0,gp_axislh)  < -0.75 {
 					return -10000;
 				}else if gamepad_axis_value(0,gp_axislh) > 0.75 {
 					return -10001;
-				}else if gamepad_axis_value(0,gp_axislv) < -0.75 {
+				}else if gamepad_axis_value(0,gp_axislv) < -0.6 {
 					return -10002;
-				}else if gamepad_axis_value(0,gp_axislv) > 0.75 {
+				}else if gamepad_axis_value(0,gp_axislv) > 0.6 {
 					return -10003;
-				}else if gamepad_axis_value(0,gp_axisrh) < -0.75 {
+				}else if gamepad_axis_value(0,gp_axisrh)  < -0.75 {
 					return -10004;
 				}else if gamepad_axis_value(0,gp_axisrh) > 0.75 {
 					return -10005;
-				}else if gamepad_axis_value(0,gp_axisrv) < -0.75 {
+				}else if gamepad_axis_value(0,gp_axisrv) < -0.6 {
 					return -10006;
-				}else if gamepad_axis_value(0,gp_axisrv) > 0.75 {
+				}else if gamepad_axis_value(0,gp_axisrv) > 0.6 {
 					return -10007;
 				}else {
 					return 0;

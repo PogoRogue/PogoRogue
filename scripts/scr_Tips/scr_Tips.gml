@@ -20,7 +20,8 @@ function scr_Tips(){
 	"Each passive item can be discovered at any point during your run.",
 	"Weapons and active items only spawn in certain areas.",
 	"Some enemies take more damage if they are bounced on than if they are shot, and vice versa.",
-	"You will obtain more gold from kills if you have a higher combo."
+	"You will obtain more gold from kills if you have a higher combo.",
+	"Some chests might have an unwanted surprise inside. Be careful before opening them!"
 	];
 }
 //"active items can be recharged in a variety of ways. Some require a simple cooldown time, while others may be recharged after a certain number of kills, bounces, or making a payment. Some active items may have no cooldown at all!"

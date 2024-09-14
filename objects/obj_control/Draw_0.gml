@@ -15,3 +15,14 @@ with obj_cage {
 		draw_sprite(spr_cage_back,0,x,y);	
 	}
 }
+
+with obj_enemy_snail_slime {
+	other.depth = 8;
+	draw_sprite(spr_enemy_snail_slime_outline,image_index,x,y);	
+}
+
+
+with obj_enemy_snail_slime_red {
+	other.depth = 8;
+	draw_sprite(spr_enemy_snail_slime_outline,image_index,x,y);	
+}

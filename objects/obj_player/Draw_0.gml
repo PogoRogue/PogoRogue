@@ -209,7 +209,7 @@ if current_iframes > 0 and bubble = false || dead {
 	}else {
 		var temp_angle = angle;	
 	}
-	if !(state = state_bulletblast and sprite_index != player_sprite) and state != state_portal and state != state_shop_portal and state != state_spawn {
+	if !(state = state_bulletblast and sprite_index != player_sprite) and state != state_portal and state != state_shop_portal and state != state_spawn and state != state_pogosmith {
 		draw_sprite_ext(hurt_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,angle,image_blend,image_alpha);
 	}
 }else if !(sprite_index = charging_sprite) and state != state_chargejump and !(state = state_bulletblast and sprite_index != player_sprite) and state != state_spawn {
