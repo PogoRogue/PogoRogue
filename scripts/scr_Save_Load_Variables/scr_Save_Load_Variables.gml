@@ -36,8 +36,8 @@ function scr_Save_Load_Variables(){
 	global.tutorial_completed = false;
 	
 	//audio settings
-	global.sound_volume = 100;
-	global.music_volume = 100;
+	global.sound_volume = 70;
+	global.music_volume = 70;
 	
 	//video settings
 	global.fullscreen = true;

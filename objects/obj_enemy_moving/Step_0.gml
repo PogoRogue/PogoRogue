@@ -7,22 +7,22 @@ event_inherited();
 switch(current_state) {
 	case ROBOT_STATES.IDLE:
 		if(state_has_changed) {
-			sprite_index = spr_walk_enemy_idle;
+			sprite_index = idle_sprite;
 			alarm_set(2, room_speed / 2);
 		}
 		
 		break;
 	case ROBOT_STATES.WALKING:
 		if(state_has_changed) {
-			sprite_index = spr_walk_enemy_walk;
+			sprite_index = walk_sprite;
 		}
 		
-		if !position_meeting(bbox_right,bbox_bottom+2,obj_ground) and !position_meeting(bbox_right,bbox_bottom+2,obj_ground_oneway) and x_dir = 1 
-		or x_dir = 1 and place_meeting(x+(walk_speed * x_dir),y,obj_ground) {
+		if !position_meeting(bbox_right,bbox_bottom+2,obj_ground) and !position_meeting(bbox_right,bbox_bottom+2,obj_ground_oneway) and x_dir = 1
+		or image_xscale = 1 and place_meeting(x+4,y-1,obj_ground) and !place_meeting(x-4,y-1,obj_ground) {
 			x_dir *= -1;
 			current_state = ROBOT_STATES.IDLE;
 		}else if !position_meeting(bbox_left,bbox_bottom+2,obj_ground) and !position_meeting(bbox_left,bbox_bottom+2,obj_ground_oneway) and x_dir = -1 
-		or x_dir = -11 and place_meeting(x+(walk_speed * x_dir),y,obj_ground) {
+		or image_xscale = -1 and place_meeting(x-4,y-1,obj_ground) and !place_meeting(x+4,y-1,obj_ground) {
 			x_dir *= -1;
 			current_state = ROBOT_STATES.IDLE;
 		}else if !is_dead and !red_frames > 0 {

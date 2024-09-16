@@ -1,0 +1,1 @@
+firing_cooldown = false;

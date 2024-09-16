@@ -57,6 +57,12 @@ if room = room_proc_gen_test and global.current_skin = 6 {
 	actives_array = [obj_item_pickup_hatgun,obj_item_pickup_grappling];	
 	test_mode = false;
 }
+if test_mode = true{
+	if room = room_proc_gen_test {
+		instance_destroy();	
+		instance_destroy(obj_pickup_station);	
+	}	
+}
 				
 select_max = array_length(actives_array);
 

@@ -68,3 +68,24 @@ if room = room_proc_gen_test {
 }else {
 	global.show_tips_screen = false;	
 }
+
+if global.phase = 1 {
+	global.salesman_spawn_area = choose(1,2,3); //1 = last combat room, 3 = first
+	if global.salesman_spawn_area = 3 {
+		global.pogosmith_spawn_area = choose(1,2);
+	}else if global.salesman_spawn_area = 2 {
+		global.pogosmith_spawn_area = 1;
+	}else if global.salesman_spawn_area = 1 {
+		global.pogosmith_spawn_area = 2;
+	}
+}else {
+	global.salesman_spawn_area = choose(1,2); //1 = last combat room, 3 = first
+	 if global.salesman_spawn_area = 2 {
+		global.pogosmith_spawn_area = 1;
+	}else if global.salesman_spawn_area = 1 {
+		global.pogosmith_spawn_area = 2;
+	}
+}
+
+
+//Set NPC Spawn Areas

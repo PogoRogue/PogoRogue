@@ -1,5 +1,8 @@
+table_num = instance_number(obj_salesman_table);
+alarm[1] = 1;
+
 y += 16;
-instance_create_depth(x+64,y-64,depth-1,obj_salesman);
+
 colliding = false;
 being_used = false;
 created_items = true;

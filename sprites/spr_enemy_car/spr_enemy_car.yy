@@ -14,13 +14,17 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"2da6c13a-878f-4b59-81ea-64dfb38da37f","name":"2da6c13a-878f-4b59-81ea-64dfb38da37f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"8427a040-6502-424a-b161-4855a30ae232","name":"8427a040-6502-424a-b161-4855a30ae232","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e83047ff-e1b4-43de-9769-7bee6b5d6a78","name":"e83047ff-e1b4-43de-9769-7bee6b5d6a78","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"a4d70e36-4a28-4717-a9fd-f35a269d4503","name":"a4d70e36-4a28-4717-a9fd-f35a269d4503","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"3c83d171-bfa1-4df9-9619-a46636a2d162","blendMode":0,"displayName":"Wheels","isLocked":false,"name":"3c83d171-bfa1-4df9-9619-a46636a2d162","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"1870d2d1-df34-44e0-abec-4cc55c5ed82a","blendMode":0,"displayName":"default","isLocked":false,"name":"1870d2d1-df34-44e0-abec-4cc55c5ed82a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"4a3721ac-21c3-4bad-a97b-2f46b36eff1e","blendMode":0,"displayName":"default (2)","isLocked":false,"name":"4a3721ac-21c3-4bad-a97b-2f46b36eff1e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
   ],
   "name":"spr_enemy_car",
   "nineSlice":null,
@@ -50,7 +54,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":4.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -75,6 +79,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8427a040-6502-424a-b161-4855a30ae232","path":"sprites/spr_enemy_car/spr_enemy_car.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"b38864a5-dd3e-4a2e-858a-a3637de6cd99","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e83047ff-e1b4-43de-9769-7bee6b5d6a78","path":"sprites/spr_enemy_car/spr_enemy_car.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"56e5d855-ad1b-4824-a22b-3813a8cbbc26","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a4d70e36-4a28-4717-a9fd-f35a269d4503","path":"sprites/spr_enemy_car/spr_enemy_car.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"40ea3be2-2b25-400b-82a5-e651bbe92ce1","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

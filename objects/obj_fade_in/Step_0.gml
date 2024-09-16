@@ -15,7 +15,7 @@ if alpha < 1 {
 		}
 	}
 
-	if spd < 8 {
+	if spd < 12 {
 		spd += 0.25;	
 	}
 }

@@ -1,4 +1,6 @@
-instance_create_depth(x+96,y,depth-1,obj_pogosmith);
+table_num = instance_number(obj_pogosmith_table);
+alarm[1] = 1;
+
 colliding = false;
 being_used = false;
 select_x = obj_player.current_gun;
@@ -7,12 +9,12 @@ selected_x = false;
 alarm2_time = 30;
 
 angle = 0;
-purchase_cost = 100;
+purchase_cost = 75;
 
 upgrade_color = make_color_rgb(242,240,229);
 cost_color = make_color_rgb(237,225,158);
 
-test_mode = true;
+test_mode = false;
 
 gun_1_bought = false;
 gun_2_bought = false;

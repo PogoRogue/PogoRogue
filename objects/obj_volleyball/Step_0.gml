@@ -26,7 +26,7 @@ if cant_spawn = false {
 			scale = 1.25;	
 		}
 		hspeed *= -bounce_decay;
-		if distance_to_object(obj_player) < 1200 {
+		if distance_to_object(obj_player) < 768 {
 			randomize();
 			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
 			random_set_seed(global.seed);
@@ -54,7 +54,7 @@ if cant_spawn = false {
 			vspeed = 4 * sign(vspeed);
 			vspeed *= -1;
 		}
-		if distance_to_object(obj_player) < 1200 {
+		if distance_to_object(obj_player) < 768 {
 			randomize();
 			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
 			random_set_seed(global.seed);
@@ -81,7 +81,7 @@ if cant_spawn = false {
 		}else {
 			vspeed *= -1;
 		}
-		if distance_to_object(obj_player) < 1200 {
+		if distance_to_object(obj_player) < 768 {
 			randomize();
 			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
 			random_set_seed(global.seed);

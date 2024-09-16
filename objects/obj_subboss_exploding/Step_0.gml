@@ -13,7 +13,7 @@ if (is_grounded <= 0) {
 		image_speed = 1;
 		if(image_index == 4)
 		{
-			drop = true
+			drop = true;
 		}
 		vspeed=0;
 	}

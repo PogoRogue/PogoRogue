@@ -17,12 +17,12 @@ with obj_cage {
 }
 
 with obj_enemy_snail_slime {
-	other.depth = 8;
-	draw_sprite(spr_enemy_snail_slime_outline,image_index,x,y);	
+	other.depth = depth + 1;
+	draw_sprite_ext(spr_enemy_snail_slime_outline,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);	
 }
 
 
 with obj_enemy_snail_slime_red {
-	other.depth = 8;
-	draw_sprite(spr_enemy_snail_slime_outline,image_index,x,y);	
+	other.depth = depth + 1;
+	draw_sprite_ext(spr_enemy_snail_slime_outline,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);	
 }

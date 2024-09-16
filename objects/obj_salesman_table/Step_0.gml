@@ -1,4 +1,5 @@
 /// @description Player collision + button pressed
+if table_num = global.salesman_spawn_area {
 key_interact = global.key_interact;
 key_back = global.key_back;
 key_left = global.key_left_menu;
@@ -325,6 +326,8 @@ if usable = true {
 		colliding = false;
 		obj_player.table = false;
 	}
+}
+
 }
 
 /*

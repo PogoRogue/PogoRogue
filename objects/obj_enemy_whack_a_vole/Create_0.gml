@@ -14,3 +14,5 @@ spawn_count = 0; // for generating random positions
 alarm_set(0, room_speed);
 
 depth = 202;
+
+instance_destroy();

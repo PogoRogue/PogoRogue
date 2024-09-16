@@ -4,7 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
-if obj_player.y <= y and abs(distance_to_object(obj_player)) < 300 and falling = false and perching = true {
+if obj_player.y <= y and abs(distance_to_object(obj_player)) < 300 and falling = false and perching = true
+or place_meeting(x,y,obj_player_mask)  or red_frames > 0 and !is_dead and perching = true {
 	falling = true;
 	alarm[1] = 1;
 }
@@ -14,7 +15,7 @@ if falling = true {
 	y += vspd;
 }
 
-if perching = false and distance_to_point(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90)) > 16 and !is_dead {
+if perching = false and distance_to_point(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90)) > 8 and !is_dead {
 	if current_spd < follow_spd {
 		current_spd += 0.25;
 	}else {
@@ -27,7 +28,7 @@ if perching = false and distance_to_point(obj_player.x+lengthdir_x(22,obj_player
 	move_towards_point(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),current_spd);
 }
 
-if perching = false and distance_to_point(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90)) <= 16 and !is_dead {
+if perching = false and distance_to_point(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90)) <= 8 and !is_dead {
 	sprite_index = spr_enemy_bat;
 	image_speed = 1;
 	falling = false;

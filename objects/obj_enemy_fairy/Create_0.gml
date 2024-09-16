@@ -4,7 +4,7 @@
 // Only spawn 1 in 25 fairies (4%)
 random_set_seed(global.seed + global.enemy_number);
 if(irandom(24) > 0) {
-	//instance_destroy(self);
+	instance_destroy(self);
 }
 random_set_seed(global.seed);
 

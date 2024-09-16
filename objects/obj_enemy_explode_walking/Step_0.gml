@@ -4,8 +4,10 @@
 event_inherited();
 
 // Move left and right
-at_edge = !collision_point(x + (sign(spd) * 16), y + (sprite_height / 2), obj_ground_parent, false, false) && place_meeting(x, y + 1, obj_ground_parent); 
-at_wall = place_meeting(x + spd, y, obj_ground) and !place_meeting(x,y,obj_launchpad);
+//at_edge = !collision_point(x + (sign(spd) * 16), y + (sprite_height / 2), obj_ground_parent, false, false) && place_meeting(x, y + 1, obj_ground_parent); 
+at_edge = (!position_meeting(bbox_right,bbox_bottom+2,obj_ground) and !position_meeting(bbox_right,bbox_bottom+2,obj_ground_oneway) and image_xscale = 1) or (!position_meeting(bbox_left,bbox_bottom+2,obj_ground) and !position_meeting(bbox_left,bbox_bottom+2,obj_ground_oneway) and image_xscale = -1);
+//at_wall = place_meeting(x + spd, y, obj_ground) and !place_meeting(x,y,obj_launchpad);
+at_wall = place_meeting(x+spd,y,obj_ground) and !place_meeting(x-spd,y-1,obj_ground);
 
 if (!is_dead) {
 	sprite_index = spr_enemy_walking_explosion_walk;
@@ -27,6 +29,10 @@ if(is_dead) {
 }
 
 if sprite_index = spr_enemy_walking_explosion {
+	if !place_meeting(x,y+1,obj_ground) and !place_meeting(x,y+1,obj_ground_oneway)
+	or place_meeting(x,y,obj_ground_oneway) {
+		y += 1;
+	}
 	if scr_Animation_Complete() {
 		instance_destroy();	
 	}
@@ -34,7 +40,7 @@ if sprite_index = spr_enemy_walking_explosion {
 
 image_alpha = 1.0;
 
-if(!place_meeting(x + spd, y, obj_ground_parent)) {
+if(!place_meeting(x + spd, y, obj_ground)) {
 	x += spd;
 }
 

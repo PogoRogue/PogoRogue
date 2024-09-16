@@ -4,7 +4,7 @@
 event_inherited();
 
 
-is_grounded = place_meeting(x, y + 1, obj_ground) || place_meeting(x, y + 1, obj_ground_oneway);
+is_grounded = place_meeting(x, y + 1, obj_ground) and vspeed >= 0 || place_meeting(x, y + 1, obj_ground_oneway) and vspeed >= 0;
 at_wall = place_meeting(x + h_spd, y, obj_ground);
 
 if(place_meeting(x + h_spd, y, obj_ground)) {

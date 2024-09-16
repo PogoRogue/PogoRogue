@@ -4,4 +4,4 @@ if red = true {
 }else {
 	var slime_object = obj_enemy_snail_slime;
 }
-instance_create_layer(x, y + 22, "enemies", slime_object);
+instance_create_layer(x+(14*image_xscale), y + 22, "enemies", slime_object);

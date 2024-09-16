@@ -685,7 +685,13 @@ if(place_meeting(x, y, obj_enemy_snail_slime)) {
 	snail_slime_object = instance_place(x, y, obj_enemy_snail_slime);
 	vsp_basicjump = snail_slime_object.diminished_player_jump;
 	snail_slime_object.is_touching_player = true;
-	snail_slime_object.wobble = 0.4;
+	snail_slime_object.wobble = 0.5;
+	depth = snail_slime_object.depth + 5;
+}else if(place_meeting(x, y, obj_enemy_snail_slime_red)) {
+	snail_slime_object = instance_place(x, y, obj_enemy_snail_slime_red);
+	vsp_basicjump = snail_slime_object.diminished_player_jump;
+	snail_slime_object.is_touching_player = true;
+	snail_slime_object.wobble = 0.5;
 	depth = snail_slime_object.depth + 5;
 }else if depth != init_depth {
 	depth = init_depth;	

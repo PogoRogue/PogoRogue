@@ -47,6 +47,10 @@ or room = room_proc_gen_test and global.current_skin = 3 {
 	test_mode = false; //set false for builds
 }else {
 	test_mode = true; //set false for builds
+	if room = room_proc_gen_test {
+		instance_destroy();	
+		instance_destroy(obj_weapons_station);	
+	}
 }
 
 if test_mode = false {

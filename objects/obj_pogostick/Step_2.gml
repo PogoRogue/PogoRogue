@@ -1,7 +1,7 @@
 if obj_player.table = true {
-	if distance_to_point(obj_pogosmith_table.x+13,obj_pogosmith_table.y-20) > move_spd*2 and smithing = false {
+	if distance_to_point(obj_pogosmith_table.x+13,obj_pogosmith_table.y-4) > move_spd*2 and smithing = false {
 		move_spd += 0.2;
-		move_towards_point(obj_pogosmith_table.x+13,obj_pogosmith_table.y-20,move_spd);
+		move_towards_point(obj_pogosmith_table.x+13,obj_pogosmith_table.y-4,move_spd);
 		image_angle += 15;
 		image_angle = image_angle % 360;
 		
@@ -20,7 +20,7 @@ if obj_player.table = true {
 			audio_stop_sound(snd_whirling);
 		}
 		x = obj_pogosmith_table.x+13;
-		y = obj_pogosmith_table.y-20;
+		y = obj_pogosmith_table.y-4;
 	}
 }else if obj_pogosmith_table.sprite_index != spr_pogosmith_workbench_animation {
 	move_spd += 0.2;
@@ -41,7 +41,7 @@ if obj_player.table = true {
 	}
 }else {
 	x = obj_pogosmith_table.x+13;
-	y = obj_pogosmith_table.y-20;
+	y = obj_pogosmith_table.y-4;
 	image_angle = 90;
 }
 

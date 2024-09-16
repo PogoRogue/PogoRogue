@@ -20,7 +20,7 @@ current_state = ROBOT_STATES.WALKING;
 previous_state = current_state;
 state_has_changed = false;
 
-hp = 12; 
+hp = 10; 
 hp_max = hp;
 hp_percent = (hp / hp_max) * 100;
 
@@ -52,3 +52,6 @@ and (place_meeting(bbox_right,bbox_bottom+1,obj_ground) or place_meeting(bbox_ri
 if place_meeting(x,y,obj_ground) {
 	instance_destroy();	
 }
+
+walk_sprite = spr_walk_enemy_walk;
+idle_sprite = spr_walk_enemy_idle;

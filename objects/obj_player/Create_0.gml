@@ -928,6 +928,13 @@ state_pogosmith = function() {
 		aerial_assassin_count = 0;
 		speed = 0; //stop player movement while bouncing
 	}
+	if (place_meeting(x,y+vspeed,obj_ground_oneway)) {
+		while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
+			y += sign(vspeed);
+		}
+		aerial_assassin_count = 0;
+		speed = 0; //stop player movement while bouncing
+	}
 }
 
 state_immobile = function() {

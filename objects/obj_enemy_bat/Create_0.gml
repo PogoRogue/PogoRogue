@@ -8,7 +8,6 @@ perching = true;
 falling = false;
 hp = 6;
 hp_max = hp;
-bullet_defense = 0.75;
 grav = 0.21;
 vspd = 0;
 

@@ -24,8 +24,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_groundtiles3",
-    "path":"sprites/spr_groundtiles3/spr_groundtiles3.yy",
+    "name":"spr_groundtiles3_new",
+    "path":"sprites/spr_groundtiles3_new/spr_groundtiles3_new.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{

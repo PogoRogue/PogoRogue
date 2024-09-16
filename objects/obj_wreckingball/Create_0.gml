@@ -30,7 +30,7 @@ spinning = false;
 spinning_right = false;
 
 fric = 0.5; //friction
-damage = 8;
+damage = 14;
 enemies_array = [];
 sound_playable = true;
 

@@ -16,3 +16,4 @@ collided = false;
 angle = 0;
 rotate = true;
 random_set_seed(global.seed);
+depth = 100;

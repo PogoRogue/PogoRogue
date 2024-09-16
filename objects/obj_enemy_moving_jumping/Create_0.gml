@@ -19,6 +19,7 @@ enum ROBOT_STATES {
 	IDLE,
 	WALKING,
 	JUMPING,
+	FIRING,
 }
 
 // State info

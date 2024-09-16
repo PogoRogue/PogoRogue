@@ -73,6 +73,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			{
 				//return obj_enemy_shoot_only;
 				return obj_enemy_shoot_only_jumping;
+			}else if(Red > 170)
+			{
+				//return obj_enemy_shoot_only;
+				return obj_enemy_bat;
 			}
 			else if(Red > 150)
 			{
@@ -117,7 +121,7 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			}
 			else if(Red > 150)
 			{
-				return obj_enemy_moving_jumping;
+				return obj_enemy_moving2;
 			}
 		}
 	}
@@ -229,6 +233,10 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		else if(Red == 40 && Green == 40 && Blue == 40)
 		{
 			return obj_salesman_table;
+		}
+		else if(Red == 35 && Green == 35 && Blue == 35)
+		{
+			return obj_pogosmith_table;
 		}
 		else if(Red == 30 && Green == 30 && Blue == 30)
 		{

@@ -15,17 +15,20 @@ global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
 
 if room = room_starting_area {
-	global.num_of_coins = 2000;
+	global.num_of_coins = 0;
 }else if room = room_test {
 	global.num_of_coins = 200;
 }else {
-	global.num_of_coins = 200;	//0
+	global.num_of_coins = 0;	//0
 }
 
 global.mute = false;
 global.shop_index = 0;
 global.num_of_ground_objects = 0;
 global.tiles_left_to_draw = 0;
+
+global.salesman_spawn_area = 2; //1 = last combat room, 3 = first
+global.pogosmith_spawn_area = 1;
 
 
 if !instance_exists(obj_controls_controller) {

@@ -384,7 +384,7 @@ or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Ele
 		random_snd = snd_sixshooter1;
 	}
 	random_set_seed(global.seed);
-	if !audio_is_playing(random_snd) and spread_index = 0 or obj_player.sixshooter_gun.inaccuracy != 5 and spread_index = 0 {
+	if /*!audio_is_playing(random_snd) and*/ spread_index = 0 or obj_player.sixshooter_gun.inaccuracy != 5 and spread_index = 0 {
 		audio_play_sound(random_snd,0,false);
 	}
 	depth = obj_player.depth+5;
