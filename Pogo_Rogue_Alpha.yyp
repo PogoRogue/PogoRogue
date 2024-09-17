@@ -696,6 +696,7 @@
     {"id":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
     {"id":{"name":"room_splashscreens","path":"rooms/room_splashscreens/room_splashscreens.yy",},},
     {"id":{"name":"room_sprite_level_test","path":"rooms/room_sprite_level_test/room_sprite_level_test.yy",},},
+    {"id":{"name":"room_starting_area_old","path":"rooms/room_starting_area_old/room_starting_area_old.yy",},},
     {"id":{"name":"room_starting_area","path":"rooms/room_starting_area/room_starting_area.yy",},},
     {"id":{"name":"room_starting_temp2","path":"rooms/room_starting_temp2/room_starting_temp2.yy",},},
     {"id":{"name":"room_stats","path":"rooms/room_stats/room_stats.yy",},},
@@ -1975,6 +1976,7 @@
     {"id":{"name":"spr_shopkeeper_nametag","path":"sprites/spr_shopkeeper_nametag/spr_shopkeeper_nametag.yy",},},
     {"id":{"name":"spr_shopkeeper_new","path":"sprites/spr_shopkeeper_new/spr_shopkeeper_new.yy",},},
     {"id":{"name":"spr_shopkeeper","path":"sprites/spr_shopkeeper/spr_shopkeeper.yy",},},
+    {"id":{"name":"spr_sign_start","path":"sprites/spr_sign_start/spr_sign_start.yy",},},
     {"id":{"name":"spr_sign_tutorial","path":"sprites/spr_sign_tutorial/spr_sign_tutorial.yy",},},
     {"id":{"name":"spr_skin_loadouts","path":"sprites/spr_skin_loadouts/spr_skin_loadouts.yy",},},
     {"id":{"name":"spr_skinunlocked_popup","path":"sprites/spr_skinunlocked_popup/spr_skinunlocked_popup.yy",},},
@@ -2172,6 +2174,7 @@
     {"roomId":{"name":"room_credits_scrolling","path":"rooms/room_credits_scrolling/room_credits_scrolling.yy",},},
     {"roomId":{"name":"room_starting_temp2","path":"rooms/room_starting_temp2/room_starting_temp2.yy",},},
     {"roomId":{"name":"room_tutorial_old","path":"rooms/room_tutorial_old/room_tutorial_old.yy",},},
+    {"roomId":{"name":"room_starting_area_old","path":"rooms/room_starting_area_old/room_starting_area_old.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
