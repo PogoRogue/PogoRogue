@@ -129,17 +129,19 @@ function scr_Jump(add_to_jump){
 	
 	//spring
 	if place_meeting(x,y-vspeed,obj_spring) {
+		var spring_power = 1;
 		if instance_place(x,y-vspeed,obj_spring).state = instance_place(x,y-vspeed,obj_spring).state_unsprung {
 			with instance_place(x,y-vspeed,obj_spring) {
+				spring_power = spring_force;
 				state = state_springing;
 				audio_play_sound(snd_springboard,0,false);
 			}
 			state = state_free;
 			vspeed = 0;
 			if(global.tightspring) and vspeed = 0 {
-				motion_add(90,(12+abs(add_to_jump/1.5))*1.2);
+				motion_add(90,(12+abs(add_to_jump/1.5))*1.2*spring_power);
 			}else if vspeed = 0 {
-				motion_add(90,(12+abs(add_to_jump/1.5)));
+				motion_add(90,(12+abs(add_to_jump/1.5))*spring_power);
 			}
 		}
 	}
