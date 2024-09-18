@@ -2240,8 +2240,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"room_starting_area","path":"rooms/room_starting_area/room_starting_area.yy",},},
     {"roomId":{"name":"room_splashscreens","path":"rooms/room_splashscreens/room_splashscreens.yy",},},
+    {"roomId":{"name":"room_starting_area","path":"rooms/room_starting_area/room_starting_area.yy",},},
     {"roomId":{"name":"room_tutorial","path":"rooms/room_tutorial/room_tutorial.yy",},},
     {"roomId":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
     {"roomId":{"name":"room_gameplay_video","path":"rooms/room_gameplay_video/room_gameplay_video.yy",},},

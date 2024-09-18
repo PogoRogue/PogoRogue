@@ -17,8 +17,8 @@ state = state_free;
 alarm[2] = 10;
 
 //create portal
-if room != room_proc_gen_test and room != room_shop and global.last_room != room_shop
-or room != room_shop and global.last_room != room_shop {
+if room != room_proc_gen_test and room != room_shop and global.last_room != room_shop and room != room_starting_area
+or room != room_shop and global.last_room != room_shop and room != room_starting_area {
 	instance_create_depth(x,y+3,depth+10,obj_portal);
 	state = state_spawn;
 	image_xscale = 0;
@@ -39,4 +39,9 @@ for (i = 0; i < array_length(bouncing_array); i++) {
 	if player_sprite = bouncing_array[i] {
 		global.current_skin = i;	
 	}
+}
+
+if room = room_starting_area {
+	x = global.player_starting_x;
+	y = global.player_starting_y;
 }

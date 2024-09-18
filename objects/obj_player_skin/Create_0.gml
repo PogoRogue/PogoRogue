@@ -25,7 +25,7 @@ unlocked = global.skins_unlocked_array[skin_num-1];
 if unlocked = false {
 	bounce_speed = -3.5;
 }else {
-	bounce_speed = -5;
+	bounce_speed = -4.5;
 }
 
 loadout_yscale = 0;
@@ -75,3 +75,5 @@ state_shop = function() {
 }
 
 state = state_shop;
+
+alarm[0] = 1;

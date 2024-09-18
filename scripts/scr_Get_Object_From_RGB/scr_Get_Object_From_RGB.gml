@@ -235,9 +235,17 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_angled_platform_left;
 		}
+		else if(Red == 55 && Green == 55 && Blue == 55)
+		{
+			return obj_button;
+		}
 		else if(Red == 50 && Green == 50 && Blue == 50)
 		{
 			return obj_angled_platform_right;
+		}
+		else if(Red == 45 && Green == 45 && Blue == 45)
+		{
+			return obj_room_gate_open_starting;
 		}
 		else if(Red == 40 && Green == 40 && Blue == 40)
 		{

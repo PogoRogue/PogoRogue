@@ -23,3 +23,13 @@ if power_on {
 while !place_meeting(x-1,y,obj_ground) and image_xscale = 1 {
 	x -= 1;
 }
+
+if laser_up = true {
+	if laser_alpha < 1 {
+		laser_alpha += 1/room_speed;
+	}else {
+		laser_up = false;
+	}
+}else {
+	laser_alpha = 0;
+}

@@ -25,10 +25,12 @@ if (instance_exists(follow)) {
 	var follow_x = follow.x+lengthdir_x(21,follow.angle+90);
 	var follow_y = follow.y+lengthdir_y(21,follow.angle+90);
 	
-	if room != room_tutorial {
+	if room != room_tutorial and room != room_starting_area {
 		var check_distance = 2;	
-	}else {
+	}else if room = room_tutorial {
 		var check_distance = 1.5;	
+	}else if room = room_starting_area {
+		var check_distance = 1;	
 	}
 	
 	//constrain camera in hallways
@@ -83,9 +85,18 @@ if (instance_exists(follow)) {
 	}
 	
 	//center in room (unless proc gen level)
-	if (room != room_proc_gen_test && room != room_sprite_level_test) {
+	if (room != room_proc_gen_test && room != room_sprite_level_test  && room != room_starting_area) {
 		x = clamp(x,view_w_half+buff,room_width - view_w_half-buff);
 		y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
+	}else if room = room_starting_area {
+		x = clamp(x,view_w_half+buff-64,room_width - view_w_half-buff);
+		y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
+	}else if room = room_proc_gen_test {
+		if instance_exists(obj_room_gate_open_starting) {
+			if y > obj_room_gate_open_starting.y + 64-view_h_half {
+				y =	obj_room_gate_open_starting.y + 64-view_h_half;
+			}
+		}
 	}
 }
 

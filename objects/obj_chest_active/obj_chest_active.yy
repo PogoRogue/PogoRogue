@@ -32,7 +32,7 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"min_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"min_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
     {"$GMObjectProperty":"v1","%Name":"max_num_of_coins","filters":[],"listItems":[],"multiselect":false,"name":"max_num_of_coins","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
-    {"$GMObjectProperty":"v1","%Name":"random_pickup","filters":[],"listItems":[],"multiselect":false,"name":"random_pickup","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"random_pickup","filters":[],"listItems":[],"multiselect":false,"name":"random_pickup","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"custom_pickup_drop","filters":[],"listItems":[],"multiselect":false,"name":"custom_pickup_drop","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_item_pickup_firedash","path":"objects/obj_item_pickup_firedash/obj_item_pickup_firedash.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_item_pickup_firedash","varType":5,},
   ],
   "resourceType":"GMObject",

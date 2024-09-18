@@ -4,7 +4,7 @@ key_interact = global.key_interact;
 state();
 
 //close enough to switch?
-if distance_to_object(obj_player) < 128 and obj_player.x > init_x - 48 and obj_player.x <= init_x + 48 
+if distance_to_object(obj_player) < 110 and obj_player.x > init_x - 64 and obj_player.x <= init_x + 64 
 and (obj_player.state = obj_player.state_free or obj_player.state = obj_player.state_bouncing) {
 	colliding = true;
 }else {

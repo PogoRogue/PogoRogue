@@ -1,7 +1,7 @@
 /// @description Create Electric Floor
 power_on = false;
 on_time = 2;
-off_time = 4;
+off_time = 2; //4
 powering_up_time = 1;
 damage = 4;
 is_active = true;
@@ -22,3 +22,5 @@ if place_meeting(x-1,y,obj_ground) and !place_meeting(x+1,y,obj_ground) {
 laser_obj = noone;
 xx = 0;
 
+laser_alpha = 0;
+laser_up = false;

@@ -4,7 +4,11 @@ x_pos = x;
 y_pos = y;
 
 randomize();
-sprite_index = choose(spr_office_asset5,spr_office_asset6,spr_office_asset7,spr_office_asset8,spr_office_asset9);
+if room != room_starting_area {
+	sprite_index = choose(spr_office_asset5,spr_office_asset6,spr_office_asset7,spr_office_asset8,spr_office_asset9);
+}else {
+	sprite_index = spr_office_asset5;
+}
 random_set_seed(global.seed);
 
 if sprite_index = spr_office_asset5 {
@@ -21,9 +25,7 @@ if sprite_index = spr_office_asset5 {
 		}	
 		instance_create_depth(x_pos,y_pos,depth-1,obj_office_clutter,{sprite_index: clutter_sprite});
 	}
-}
-
-if sprite_index = spr_office_asset7 {
+}else if sprite_index = spr_office_asset7 {
 	for(i=0;i<3;i++) {
 		switch(i) {
 			case 0:  clutter_sprite = spr_office_table_object9; x_pos = x-12; y_pos = y-55; break;
@@ -32,4 +34,6 @@ if sprite_index = spr_office_asset7 {
 		}	
 		instance_create_depth(x_pos,y_pos,depth-1,obj_office_clutter,{sprite_index: clutter_sprite});
 	}
+}else {
+	mask_index = spr_nothing;	
 }

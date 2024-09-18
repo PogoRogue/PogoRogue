@@ -266,6 +266,8 @@ state_free = function() {
 			gamepad_set_vibration(0,0,0);
 			//scr_Game_Restart();
 			scr_Room_Transition(room_starting_area);
+			global.player_starting_x =  352;
+			global.player_starting_y = 1824;
 			/*with obj_pause {
 				item_swap = false;
 				paused_outside = true;
@@ -275,6 +277,7 @@ state_free = function() {
 	}else if room = room_starting_area {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			state = state_immobile;
+			//room_persistent = true;
 			scr_Room_Transition(room_proc_gen_test);
 			global.total_runs += 1;
 			scr_Save_Real("total_runs",global.total_runs);
@@ -1428,6 +1431,16 @@ state_shop_portal = function() {
 }
 
 state_spawn = function() {
+	if room != room_shop and global.last_room != room_shop and room = room_proc_gen_test and global.phase = 1 {
+		vspeed = -24;
+		state = state_free;
+		with obj_portal {
+			instance_destroy();	
+		}
+		image_xscale = 1;
+		image_yscale = 1;
+	}
+	
 	sprite_index = portal_sprite;
 	can_shoot = false;
 	can_rotate = false;
@@ -1641,3 +1654,8 @@ if room = room_tutorial {
 }else {
 	scr_Get_Skin_Loadout();
 }	
+
+if room = room_starting_area {
+	x = global.player_starting_x;
+	y = global.player_starting_y;
+}

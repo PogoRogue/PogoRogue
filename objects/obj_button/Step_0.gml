@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if room = room_starting_area {
+if room = room_starting_area or room = room_proc_gen_test {
 	is_active = true;	
 }
 

@@ -742,3 +742,15 @@ synergy_frame += 0.25;
 
 center_x_sprite = bbox_left + ((bbox_right - bbox_left)/2);
 center_y_sprite = bbox_top + ((bbox_top - bbox_top)/2);
+
+//return to starting area
+if room = room_proc_gen_test {
+	if instance_exists(obj_room_gate_open_starting)	{
+		if y > obj_room_gate_open_starting.y + 128 {
+			state = state_immobile;
+			scr_Room_Transition(room_starting_area);
+			global.player_starting_x =  1104;
+			global.player_starting_y = 80;
+		}
+	}
+}

@@ -28,3 +28,7 @@ with laser_obj {
 
 draw_sprite_ext(sprite_index,image_index,x+xx,y,-image_xscale,1,image_angle,c_white,1);
 
+var red = make_color_rgb(180,82,82);
+draw_set_alpha(laser_alpha);
+draw_rectangle_color(x+8*image_xscale,y+6,x+xx-(8*image_xscale),y+6,red,red,red,red,false);
+draw_set_alpha(1);

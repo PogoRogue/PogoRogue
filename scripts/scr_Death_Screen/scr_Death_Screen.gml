@@ -24,8 +24,10 @@ function scr_Death_Screen(win){
 			draw_set_halign(fa_center);
 			draw_set_valign(fa_center);
 			draw_set_font(fnt_itemdescription2);
-			if global.all_buff_numbers[i] > 1 {
-				scr_Draw_Text_Outlined(x+18+(20*(i%7))-6,y+75+4+(floor(i/7)*17),global.all_buff_numbers[i],c_white);
+			if i < array_length(global.all_buff_numbers) {
+				if global.all_buff_numbers[i] > 1 {
+					scr_Draw_Text_Outlined(x+18+(20*(i%7))-6,y+75+4+(floor(i/7)*17),global.all_buff_numbers[i],c_white);
+				}
 			}
 		}
 	}

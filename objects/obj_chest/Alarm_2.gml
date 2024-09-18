@@ -25,21 +25,23 @@ if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") {
 	new_chest = choose(obj_chest,obj_chest,obj_chest,obj_chest,obj_chest_coin,obj_chest_coin,obj_chest_weapon,obj_chest_active);
 
 	// For one in 30 chests, create a jack in the box
-	if(irandom(19) == 0) and global.phase <= 1 
-	or (irandom(11) == 0) and global.phase = 2
-	or (irandom(7) == 0) and global.phase >= 3 {
-		switch(new_chest) {
-			case obj_chest_coin:
-				new_chest = obj_enemy_jack_coin;
-				break;
-			case obj_chest_weapon:
-				new_chest = obj_enemy_jack_weapon;
-				break;
-			case obj_chest_active:
-				new_chest = obj_enemy_jack_active;
-				break;
-			default:
-				new_chest = obj_enemy_jack;
+	if room != room_tutorial {
+		if(irandom(19) == 0) and global.phase <= 1 
+		or (irandom(11) == 0) and global.phase = 2
+		or (irandom(7) == 0) and global.phase >= 3 {
+			switch(new_chest) {
+				case obj_chest_coin:
+					new_chest = obj_enemy_jack_coin;
+					break;
+				case obj_chest_weapon:
+					new_chest = obj_enemy_jack_weapon;
+					break;
+				case obj_chest_active:
+					new_chest = obj_enemy_jack_active;
+					break;
+				default:
+					new_chest = obj_enemy_jack;
+			}
 		}
 	}
 	
