@@ -12,6 +12,15 @@ if obj_player.num_of_weapons = 1 {
 	select_x_max = obj_player.num_of_weapons;
 }else if obj_player.num_of_weapons = 3 and obj_player.gun_1 != obj_player.gun_2 and obj_player.gun_1 != obj_player.gun_3 and obj_player.gun_2 != obj_player.gun_3 {
 	select_x_max = obj_player.num_of_weapons;
+}else {
+	if obj_player.gun_1 = obj_player.gun_2 and obj_player.gun_1 = obj_player.gun_3 and obj_player.gun_2 = obj_player.gun_3 {
+		select_x_max = 1;
+	}else if obj_player.gun_1 != obj_player.gun_2 and (obj_player.gun_1 = obj_player.gun_3 or obj_player.gun_2 = obj_player.gun_3) {
+		select_x_max = 2;
+	}else {
+		select_x_max = 2;
+	}
+}
 
 
 //check for player coliision
