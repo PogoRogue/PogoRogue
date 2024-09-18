@@ -17,7 +17,7 @@ if instance_exists(obj_camera) {
 			image_index = max_num_of_bounces-num_of_bounces;
 		}else if (gun_name = "Javelins") or gun_name = "Plasma Gun" {
 			if created = true {
-				damage = init_damage + ((temp_charge/temp_charge_max)*12);	
+				damage = init_damage + ((temp_charge/temp_charge_max)*16);	
 			}
 		}
 	}

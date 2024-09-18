@@ -5,14 +5,22 @@
 event_inherited();
 
 if firing = true {
-	instance_create_depth(x+(12*image_xscale),y-21,depth+1,obj_robot_laser,{h_spd: image_xscale * 24,image_xscale: image_xscale,parent: self});
+	
 	image_speed = -1;
 	firing = false;
 	firing_cooldown = true;
-	alarm[1] = 60;
+	alarm[1] = 120;
+	alarm[3] = 60;
 	image_index = 0;
 	image_speed = 1;
-	//sprite_index = spr_walk_enemy_walk_1;
+	sprite_index = spr_walk_enemy_idle_1;
+	current_state = ROBOT_STATES.IDLE;
+	draw_laser = true;
+	
+	dist_to_wall = 0;
+	while !position_meeting(x+dist_to_wall,y-22,obj_ground) {
+		dist_to_wall += image_xscale;
+	}
 }
 
 if image_xscale = 1 and firing_cooldown = false {
@@ -28,5 +36,15 @@ if image_xscale = 1 and firing_cooldown = false {
 		image_index = 0;
 		//sprite_index = spr_walk_enemy_idle_1_shooting;
 		image_speed = 1;
+	}
+}
+
+if draw_laser {
+	if laser_alpha < 1 {
+		laser_alpha += 1/60;	
+	}
+}else {
+	if laser_alpha > 0 {
+		laser_alpha -= 1/10;	
 	}
 }

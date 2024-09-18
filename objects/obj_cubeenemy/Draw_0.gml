@@ -10,6 +10,7 @@ if(!is_dead) {
 }
 
 draw_self();
+
 if shaded = true {
 	shader_reset();	
 	shaded = false;

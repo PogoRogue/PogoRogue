@@ -12,3 +12,4 @@ if(triggered) {
 	}
 	room_height = lerp(room_height, 600, 0.02);
 }
+

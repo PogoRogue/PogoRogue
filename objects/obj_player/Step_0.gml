@@ -739,3 +739,6 @@ if mask_index != spr_nothing {
 }
 
 synergy_frame += 0.25;
+
+center_x_sprite = bbox_left + ((bbox_right - bbox_left)/2);
+center_y_sprite = bbox_top + ((bbox_top - bbox_top)/2);

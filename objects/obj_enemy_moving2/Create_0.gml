@@ -13,3 +13,9 @@ firing_cooldown = false;
 
 walk_sprite = spr_walk_enemy_walk_1;
 idle_sprite = spr_walk_enemy_idle_1;
+
+draw_laser = false;
+laser_alpha = 0;
+
+dist_to_wall = 0;
+

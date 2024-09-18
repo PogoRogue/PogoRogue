@@ -1,26 +1,8 @@
 if collided = true {
+	depth = -900;
 	vspeed += 0.15;
 	if abs(speed) > 0.5 and rotate = true {
 		angle += speed;
-	}
-
-	if place_meeting(x+hspeed,y,obj_ground) and bounced = false {
-		while !place_meeting(x+sign(hspeed),y,obj_ground) {
-			x += sign(hspeed);
-		}
-		hspeed = 0;
-	}
-
-	if place_meeting(x,y+vspeed,obj_ground) and bounced = false and !place_meeting(x,y+vspeed,obj_office_table) {
-		while !place_meeting(x,y+sign(vspeed),obj_ground) {
-			y += sign(vspeed);
-		}
-		if abs(vspeed) <= 0.1 {
-			collided = false;
-		}
-		hspeed = 0;
-		vspeed = 0;
-		rotate = false;
 	}
 	
 	hspeed *= 0.99;

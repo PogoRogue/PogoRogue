@@ -23,7 +23,8 @@ function scr_Tips(){
 	"You will obtain more gold from kills if you have a higher combo.",
 	"Some chests might have an unwanted surprise inside. Be careful before opening them!",
 	"Weapons discovered in earlier areas can be upgraded more than once.",
-	"Try to kill fairies as quick as you can. They would rather die than give up their prize."
+	"Try to kill fairies as quick as you can. They would rather die than give up their prize.",
+	"If you don't like the default control bindings, you can edit them in the settings menu."
 	];
 }
 //"active items can be recharged in a variety of ways. Some require a simple cooldown time, while others may be recharged after a certain number of kills, bounces, or making a payment. Some active items may have no cooldown at all!"

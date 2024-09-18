@@ -1,6 +1,6 @@
 /// @description Player collision
 if instance_exists(obj_player_mask) {
-	if place_meeting(x+hspeed,y+vspeed,obj_player_mask) {
+	if place_meeting(x+hspeed,y+vspeed,obj_player_mask) and free = true {
 		scr_Screen_Shake(3,3,false);
 		//audio_play_sound(snd_volleyball,0,false);
 		scale = 1.25;
@@ -17,5 +17,10 @@ if instance_exists(obj_player_mask) {
 		if !audio_is_playing(snd_volleyball_hit) {
 			audio_play_sound(snd_volleyball_hit,0,false);
 		}
+		free = false;
 	}
+}
+
+if !place_meeting(x,y,obj_player_mask) {
+	free = true;	
 }

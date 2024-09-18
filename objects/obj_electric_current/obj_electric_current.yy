@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_electric_current_off",
-    "path":"sprites/spr_electric_current_off/spr_electric_current_off.yy",
+    "name":"spr_electric_current_off_1",
+    "path":"sprites/spr_electric_current_off_1/spr_electric_current_off_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

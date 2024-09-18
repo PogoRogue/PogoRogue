@@ -33,6 +33,8 @@ if perching = false and distance_to_point(obj_player.x+lengthdir_x(22,obj_player
 	image_speed = 1;
 	falling = false;
 	move_towards_point(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90),follow_spd/4);
+}else if perching = false and distance_to_point(obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90)) > 8 and !is_dead {
+	//speed = 0;	
 }
 
 if obj_player.x > x {

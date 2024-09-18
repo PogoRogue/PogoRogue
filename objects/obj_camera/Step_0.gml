@@ -109,3 +109,6 @@ if (global.allow_screenshake) {
 //update camera view
 camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
 
+if obj_player.state = obj_player.state_free and room = room_proc_gen_test {
+	follow = obj_player;
+}

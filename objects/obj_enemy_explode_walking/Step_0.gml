@@ -14,7 +14,7 @@ if (!is_dead) {
 }
 
 if (at_edge or at_wall) and place_meeting(x,y+1,obj_ground) 
-or (at_edge or at_wall) and place_meeting(x,y+1,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) {
+or (at_edge or at_wall) and place_meeting(x,y+1,obj_ground_oneway) {
 	spd *= -1;
 }
 if (spd == 0.5) { image_xscale = 1;}

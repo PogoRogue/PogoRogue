@@ -22,3 +22,5 @@ y += vsp;
 image_angle = angle + 90;
 
 depth = -2;
+
+additional_momentum = 2;

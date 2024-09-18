@@ -30,8 +30,7 @@
   "height":66,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"be3d3ebc-6c0d-45ac-9ed4-e0a5c6480968","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"be3d3ebc-6c0d-45ac-9ed4-e0a5c6480968","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"f1fcd5ee-787a-48bb-b948-e95b82193d57","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"f1fcd5ee-787a-48bb-b948-e95b82193d57","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"2dcfa7f0-699c-4dc4-8099-cd54b49b6e97","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"2dcfa7f0-699c-4dc4-8099-cd54b49b6e97","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"af8c70d7-f76c-470b-9e42-3e0b8cac3901","blendMode":0,"displayName":"default","isLocked":false,"name":"af8c70d7-f76c-470b-9e42-3e0b8cac3901","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
   ],
   "name":"spr_player_zekai_hat3",

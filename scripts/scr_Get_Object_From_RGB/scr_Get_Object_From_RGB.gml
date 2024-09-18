@@ -77,6 +77,15 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			{
 				//return obj_enemy_shoot_only;
 				return obj_enemy_bat;
+			}else if(Red > 165)
+			{
+				return obj_cubeenemy;
+				//return obj_enemy_shooter_moving;
+			}
+			else if(Red > 160)
+			{
+				return obj_cubeenemy_double;
+				//return obj_enemy_shooter_moving;
 			}
 			else if(Red > 150)
 			{
@@ -292,9 +301,15 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}else if (Red == 10 && Green == 64 && Blue == 60)
 		{
 			return obj_crate3;
-		}else if (Red == 39 && Green == 101 && Blue == 114)
+		}else if (Red == 10 && Green == 64 && Blue == 60)
 		{
-			return obj_randomasset1;
+			return obj_crate3;
+		}else if (Red == 50 && Green == 50 && Blue == 97)
+		{
+			return obj_office_table;
+		}else if (Red == 85 && Green == 30 && Blue == 125)
+		{
+			return obj_randomasset2;
 		}
 	}
 	

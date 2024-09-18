@@ -27,3 +27,5 @@ if place_meeting(x,y,obj_ground) {
 }else {
 	cant_spawn = false;	
 }
+
+free = true;

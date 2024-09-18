@@ -1,5 +1,9 @@
 /// @description Get damaged
-
+if temp_collision_enemy = noone {
+	temp_collision_enemy = other;
+	alarm[4] = 5;
+}
+/*
 //if room != room_starting_area {
 	if parent_index.state != parent_index.state_portal and parent_index.state != parent_index.state_shop_portal
 	and parent_index.harpooning = false {

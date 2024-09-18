@@ -30,7 +30,7 @@ function scr_Gradually_Turn(obj_to_turn,target,turn_speed,accuracy) {
 	}
 
 	// Gradually rotate object
-	var least_accurate_aim = 10;
+	var least_accurate_aim = 5;
 	if(angle_diff > least_accurate_aim * accuracy) and (abs(angle_diff) - abs(least_accurate_aim)) >= 5 {
 	    obj_to_turn.image_angle -= turn_speed * delta_time;
 	}

@@ -7,3 +7,18 @@ damage = 4;
 is_active = true;
 alarm[3] = room_speed * initial_delay;
 sound = audio_play_sound(snd_nothing,0,false);
+if place_meeting(x-1,y,obj_ground) and !place_meeting(x+1,y,obj_ground) {
+	image_xscale = 1;
+}else if !place_meeting(x-1,y,obj_ground) and place_meeting(x+17,y,obj_ground) {
+	image_xscale = -1;
+	x += 16;
+}else if place_meeting(x,y,obj_ground) {
+	image_xscale = -1;
+	x -= 16;
+}
+
+
+
+laser_obj = noone;
+xx = 0;
+

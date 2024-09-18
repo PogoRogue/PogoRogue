@@ -20,3 +20,9 @@ backdrop_lerp_speed = 0.05;
 
 text_scale = 0.0;
 text_lerp_speed = 0.02;
+
+free = false;
+
+alarm[2] = 60;
+
+instance_create_layer(272, 272, "enemies", obj_boss_sphere);

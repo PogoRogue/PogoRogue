@@ -204,7 +204,7 @@ if (gun_name = "Yo-yo") {
 	retract_spd = 0;
 }
 
-//javelins
+//elinelins
 if (gun_name = "Javelins") {
 	temp_charge = 0;
 	temp_charge_max = 9;

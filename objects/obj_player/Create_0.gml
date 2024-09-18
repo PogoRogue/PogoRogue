@@ -37,6 +37,10 @@ lock_unlocked = false;
 lock_unlocked_frames = 0;
 lock_alpha = 1;
 
+center_x_sprite = bbox_left + ((bbox_right - bbox_left)/2);
+center_y_sprite = bbox_top + ((bbox_top - bbox_top)/2);
+
+
 controller_lock_in = false;
 
 //weapons

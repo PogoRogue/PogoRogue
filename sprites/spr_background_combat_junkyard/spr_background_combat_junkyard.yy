@@ -12,18 +12,33 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"954aa84c-73e6-4393-93d0-0639ed4f6a01","name":"954aa84c-73e6-4393-93d0-0639ed4f6a01","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5e716da1-b1d1-44f5-9cbc-5c3c5324b33c","name":"5e716da1-b1d1-44f5-9cbc-5c3c5324b33c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"b50d87b8-9b22-4c2f-8853-48b7705d14fa","name":"b50d87b8-9b22-4c2f-8853-48b7705d14fa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e6c988a0-3f28-476c-90d2-da50bc691550","name":"e6c988a0-3f28-476c-90d2-da50bc691550","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f3981ba3-e983-40eb-a50b-c1e1238fc69b","name":"f3981ba3-e983-40eb-a50b-c1e1238fc69b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5738ccfb-9c59-400b-ba75-fa8d503b7a52","name":"5738ccfb-9c59-400b-ba75-fa8d503b7a52","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"4baf6c50-1f35-49d8-8ad0-11dd2931fa61","name":"4baf6c50-1f35-49d8-8ad0-11dd2931fa61","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f19696f7-f685-4aaf-b3b9-2393bcb3938c","name":"f19696f7-f685-4aaf-b3b9-2393bcb3938c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"12ac70e8-3a64-4cd4-a69c-706bdf222e27","name":"12ac70e8-3a64-4cd4-a69c-706bdf222e27","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e9628d32-b4ab-47c4-9b98-0ed97204268d","name":"e9628d32-b4ab-47c4-9b98-0ed97204268d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"120598fe-21bc-4aaa-a912-67dab3cd113e","name":"120598fe-21bc-4aaa-a912-67dab3cd113e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"7dbb56f0-12f7-4489-9382-b26e44c52b2b","name":"7dbb56f0-12f7-4489-9382-b26e44c52b2b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"21f60f8c-ab3b-41da-969b-c5967abdd012","name":"21f60f8c-ab3b-41da-969b-c5967abdd012","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"9efcbb75-ed53-426d-b6dd-a56f4887a1ef","name":"9efcbb75-ed53-426d-b6dd-a56f4887a1ef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":1024,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"8bc3ca17-2188-4459-8bf0-a3bb57e98b92","blendMode":0,"displayName":"default","isLocked":false,"name":"8bc3ca17-2188-4459-8bf0-a3bb57e98b92","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"b1f0f531-8c38-4220-befa-2ec11b22d49f","blendMode":0,"displayName":"Layer 3","isLocked":false,"name":"b1f0f531-8c38-4220-befa-2ec11b22d49f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"aa6f7f77-83c3-49a7-a689-621a1f8441be","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"aa6f7f77-83c3-49a7-a689-621a1f8441be","opacity":40.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
+    {"$GMImageLayer":"","%Name":"8cf29a40-dd79-447e-a2fe-e73bf2dad5bb","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"8cf29a40-dd79-447e-a2fe-e73bf2dad5bb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"ec83bb9d-f4cb-4880-805b-fd1d67d12265","blendMode":0,"displayName":"default","isLocked":false,"name":"ec83bb9d-f4cb-4880-805b-fd1d67d12265","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_background_combat_junkyard",
   "nineSlice":null,
-  "origin":0,
+  "origin":9,
   "parent":{
     "name":"Backgrounds",
     "path":"folders/Sprites/Backgrounds.yy",
@@ -49,7 +64,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":13.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -59,7 +74,7 @@
     },
     "name":"spr_background_combat_junkyard",
     "playback":1,
-    "playbackSpeed":30.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -69,14 +84,50 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"954aa84c-73e6-4393-93d0-0639ed4f6a01","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3116d31d-79ea-4055-b3ea-d75df5b23ddf","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5e716da1-b1d1-44f5-9cbc-5c3c5324b33c","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"5f29111d-a6f0-4ff8-a69a-746f34711e68","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b50d87b8-9b22-4c2f-8853-48b7705d14fa","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"427f7b6f-127b-408d-bde6-4f5c5b8a8ed2","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e6c988a0-3f28-476c-90d2-da50bc691550","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"ab86dd1f-e206-4427-be66-eb4449e8198e","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f3981ba3-e983-40eb-a50b-c1e1238fc69b","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3b47c201-8e09-4490-b9cc-35a1a2cf103a","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5738ccfb-9c59-400b-ba75-fa8d503b7a52","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"83534055-8bdb-4bb0-b4b1-384867ddf091","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4baf6c50-1f35-49d8-8ad0-11dd2931fa61","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"73cbeaaf-b939-4e5f-a729-b080d0fdd039","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f19696f7-f685-4aaf-b3b9-2393bcb3938c","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"68639b82-b54c-4f80-9094-d840788d58a1","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"12ac70e8-3a64-4cd4-a69c-706bdf222e27","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"bb09bb08-d9f7-422a-b52d-64a6696e72f8","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e9628d32-b4ab-47c4-9b98-0ed97204268d","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"ab11ea2a-4551-4f85-941d-cf234b86540f","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"120598fe-21bc-4aaa-a912-67dab3cd113e","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"50456185-5667-42f4-8cd3-b320879c5470","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7dbb56f0-12f7-4489-9382-b26e44c52b2b","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"44d3289e-32f7-4e94-9d0f-e84a2fbf8496","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"21f60f8c-ab3b-41da-969b-c5967abdd012","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"8af38c1b-f924-48a5-98e5-edf334a9bb8c","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9efcbb75-ed53-426d-b6dd-a56f4887a1ef","path":"sprites/spr_background_combat_junkyard/spr_background_combat_junkyard.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"8f0a3f84-acdb-4734-9a69-2468353d819e","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":0,
+    "yorigin":-40,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

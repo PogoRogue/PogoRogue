@@ -63,6 +63,10 @@ if(is_dead) {
 	//create coins and items
 	var center_x = x - sprite_get_xoffset(sprite_index) + ((sprite_width / 2)*image_xscale);
 	var center_y = y - sprite_get_yoffset( sprite_index) + sprite_height / 2;
+	if object_get_name(object_index) = "obj_enemy_turret" {
+			center_x = x;
+			center_y = y;	
+	}
 	if drop_coins = true {
 		with instance_create_depth(center_x,center_y,depth-1,obj_coin_spawner) {
 			if global.combo < global.combo_max_coins {

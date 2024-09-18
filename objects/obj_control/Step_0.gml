@@ -75,10 +75,13 @@ if (skiplevel_button) {
 		}	
 	}else if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
 		room_persistent = false;
-		if room != room_boss_3 {
-			global.phase++;
+		if room = room_boss_1 {
+			global.phase = 2;
 			scr_Room_Transition(room_proc_gen_test);
-		}else {
+		}else if room = room_boss_2 {
+			global.phase = 3;
+			scr_Room_Transition(room_proc_gen_test);
+		}else if room = room_boss_3 {
 			global.phase = 1;
 			room_persistent = false;
 			scr_Room_Transition(room_menu);

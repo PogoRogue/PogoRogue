@@ -5,7 +5,7 @@
   "bbox_bottom":83,
   "bbox_left":0,
   "bbox_right":58,
-  "bbox_top":0,
+  "bbox_top":29,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -19,6 +19,7 @@
   "height":84,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"4f64930d-a59b-47e6-ba98-58c2060cc81f","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"4f64930d-a59b-47e6-ba98-58c2060cc81f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
     {"$GMImageLayer":"","%Name":"c35e05e3-e6b7-4ba8-b463-4c39abcd9cc0","blendMode":0,"displayName":"default","isLocked":false,"name":"c35e05e3-e6b7-4ba8-b463-4c39abcd9cc0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_office_asset7",

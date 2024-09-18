@@ -450,7 +450,7 @@ function scr_Bullets(){
 		destroy_on_impact: true,
 		screen_shake: {magnitude: 3.5, frames: 10},
 		destroy_time: 0,
-		flash_frame: 2,
+		flash_frame: 12,
 		grav_affected: false,
 		grv: obj_player.grv,
 		num_of_bounces: 0 + global.bouncy_bullets,

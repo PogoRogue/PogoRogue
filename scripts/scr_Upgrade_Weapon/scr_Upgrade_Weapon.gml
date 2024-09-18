@@ -5,8 +5,9 @@ function scr_Upgrade_Weapon(gunname_string,level){
 		#region Level 2
 		if gunname_string = "Pistol" {
 			var temp_weapon = obj_player.default_gun;
-			temp_weapon.bullets_per_bounce += 1;
-			temp_weapon.current_bullets += 1;
+			//temp_weapon.bullets_per_bounce += 1;
+			//temp_weapon.current_bullets += 1;
+			temp_weapon.ammo[0].num_of_bounces += 1;
 		}else if gunname_string = "Paintball Gun" {
 			var temp_weapon = obj_player.paintball_gun;
 			temp_weapon.ammo[0].sprite = spr_projectile_paintball2;

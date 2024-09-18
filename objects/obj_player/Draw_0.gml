@@ -25,6 +25,8 @@ if pickups_array[0] = pickup_jetpack or pickups_array[1] = pickup_jetpack {
 		draw_sprite_ext(spr_jetpack_charging,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}else if sprite_index = portal_sprite and image_xscale > 0.1 and image_yscale > 0.1 {
 		draw_sprite_ext(spr_player_zekai_portal_jetpack,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = body_sprite  {
+		draw_sprite_ext(spr_player_jetpack_body,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}
 }
 
@@ -152,6 +154,8 @@ if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
 		draw_sprite_ext(spr_player_zekai_hat_charging,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}else if sprite_index = portal_sprite and abs(image_xscale > 0.1) and image_yscale > 0.1 {
 		draw_sprite_ext(spr_player_zekai_portal_hatgun,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = body_sprite {
+		draw_sprite_ext(spr_player_hat_body,image_index,x+lengthdir_x(hat_yoffset,angle+90), y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}
 }
 
@@ -165,6 +169,8 @@ if pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling {
 		draw_sprite_ext(spr_player_zekai_hat_charging2,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}else if sprite_index = portal_sprite and image_xscale > 0.1 and abs(image_yscale > 0.1) {
 		draw_sprite_ext(spr_player_zekai_portal_grappling,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = body_sprite {
+		draw_sprite_ext(spr_player_hat_body,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}
 }
 
@@ -185,6 +191,8 @@ if pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
 			draw_sprite_ext(spr_player_zekai_hat_charging3,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 		}else if sprite_index = portal_sprite and image_xscale > 0.1 and abs(image_yscale > 0.1) {
 			draw_sprite_ext(spr_player_zekai_portal_harpoon,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}else if sprite_index = body_sprite {
+			draw_sprite_ext(spr_player_hat3_body,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 		}
 	}else {
 		if sprite_index = player_sprite or sprite_index = revive_sprite {
@@ -195,6 +203,8 @@ if pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
 			draw_sprite_ext(spr_player_zekai_hat_charging3_empty,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 		}else if sprite_index = portal_sprite and image_xscale > 0.1 and abs(image_yscale > 0.1) {
 			draw_sprite_ext(spr_player_zekai_portal_harpoon_empty,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}else if sprite_index = body_sprite {
+			draw_sprite_ext(spr_player_hat3_body_empty,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 		}
 	}
 }
@@ -214,7 +224,7 @@ if current_iframes > 0 and bubble = false || dead {
 	}
 }else if !(sprite_index = charging_sprite) and state != state_chargejump and !(state = state_bulletblast and sprite_index != player_sprite) and state != state_spawn {
 	if state != state_chargejump {
-		if state != state_portal and state != state_shop_portal and state != state_pogosmith {
+		if state != state_portal and state != state_shop_portal and (state != state_pogosmith) {
 			draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,angle,image_blend,image_alpha);
 		}else if state != state_pogosmith {
 			draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -231,8 +241,8 @@ draw_set_color(c_white);
 
 //six shooter UI
 if sixshooter_held_num >= 10 and sixshooter_gun.inaccuracy != 25 and sixshooter_held_num < 45 and sixshooter_gun.current_bullets > 0 {
-	draw_sprite_general(spr_chargebar_sixshooter,0,0,0,sprite_get_width(spr_chargebar_sixshooter),sprite_get_height(spr_chargebar_sixshooter),x+lengthdir_x(12,image_angle+180)+lengthdir_x(4,image_angle-90),y+lengthdir_y(12,image_angle+180)+lengthdir_y(4,image_angle-90),1,1,image_angle,c_white,c_white,c_white,c_white,1);
-	draw_sprite_general(spr_chargebar_sixshooter_color,0,0,0,sprite_get_width(spr_chargebar_sixshooter_color)*((other.sixshooter_held_num-10)/(45-10)),sprite_get_height(spr_chargebar_sixshooter_color),x+lengthdir_x(12,image_angle+180)+lengthdir_x(4,image_angle-90),y+lengthdir_y(12,image_angle+180)+lengthdir_y(4,image_angle-90),1,1,image_angle,c_white,c_white,c_white,c_white,1);
+	//draw_sprite_general(spr_chargebar_sixshooter,0,0,0,sprite_get_width(spr_chargebar_sixshooter),sprite_get_height(spr_chargebar_sixshooter),x+lengthdir_x(12,image_angle+180)+lengthdir_x(4,image_angle-90),y+lengthdir_y(12,image_angle+180)+lengthdir_y(4,image_angle-90),1,1,image_angle,c_white,c_white,c_white,c_white,1);
+	//draw_sprite_general(spr_chargebar_sixshooter_color,0,0,0,sprite_get_width(spr_chargebar_sixshooter_color)*((other.sixshooter_held_num-10)/(45-10)),sprite_get_height(spr_chargebar_sixshooter_color),x+lengthdir_x(12,image_angle+180)+lengthdir_x(4,image_angle-90),y+lengthdir_y(12,image_angle+180)+lengthdir_y(4,image_angle-90),1,1,image_angle,c_white,c_white,c_white,c_white,1);
 }
 
 //lock icon

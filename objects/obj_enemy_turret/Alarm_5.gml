@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-windup = false
-w_alarm_cd = false
+if sprite_index = shooting_sprite {
+	windup = false;
+	w_alarm_cd = false;
+}

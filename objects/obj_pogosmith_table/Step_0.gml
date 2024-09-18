@@ -6,7 +6,13 @@ key_left = global.key_left_menu;
 key_right = global.key_right_menu;
 key_select = global.key_select;
 
-select_x_max = obj_player.num_of_weapons;
+if obj_player.num_of_weapons = 1 {
+	select_x_max = obj_player.num_of_weapons;
+}else if obj_player.num_of_weapons = 2 and obj_player.gun_1 != obj_player.gun_2 {
+	select_x_max = obj_player.num_of_weapons;
+}else if obj_player.num_of_weapons = 3 and obj_player.gun_1 != obj_player.gun_2 and obj_player.gun_1 != obj_player.gun_3 and obj_player.gun_2 != obj_player.gun_3 {
+	select_x_max = obj_player.num_of_weapons;
+
 
 //check for player coliision
 if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {

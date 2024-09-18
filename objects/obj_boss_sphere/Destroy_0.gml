@@ -49,5 +49,6 @@ if (room == room_boss_1) {
  instance_create_layer(608, 432, "hazards", obj_boss_door); //436
 }
 
-
-global.phase = 2;
+if global.phase = 1 {
+	global.phase = 2;
+}

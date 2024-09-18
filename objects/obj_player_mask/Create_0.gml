@@ -29,3 +29,7 @@ alarm[3] = 30;
 player_colliding = false;
 
 harpoon_dash_damage = 24;
+
+temp_collision_enemy = noone;
+
+pogostick_colliding = false;

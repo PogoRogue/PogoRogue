@@ -1,6 +1,6 @@
 /// @description Despawn
 
-instance_create_layer(272, 272, "enemies", obj_boss_sphere);
+//instance_create_layer(272, 272, "enemies", obj_boss_sphere);
 
 /*instance_create_layer(208, 304, "enemies", obj_subboss_fly_chasing);
 instance_create_layer(576, 304, "enemies", obj_subboss_shield);

@@ -28,3 +28,5 @@ double = false;
 
 normal_sprite = spr_cubelaserenemy;
 flipped_sprite = spr_cubelaserenemy_flipped;
+
+alarm[2] = 1;

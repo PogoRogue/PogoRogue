@@ -27,7 +27,7 @@ if (colliding) and being_used = false and sprite_index != spr_pogosmith_workbenc
 		}
 	}
 	scr_Draw_Text_Outlined(x,bbox_top+48,"Select Upgrade",c_white);
-}else if sprite_index != spr_pogosmith_workbench_animation {
+}else if sprite_index != spr_pogosmith_workbench_animation and !colliding and !being_used {
 	image_index = 0;	
 }
 
@@ -45,7 +45,7 @@ if being_used = true {
 			
 		if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
 			if is_string(keyboard_text) {
-				scr_Draw_Text_Outlined(x,bbox_top+40,string(keyboard_text),c_white);
+				scr_Draw_Text_Outlined(x,bbox_top+44,string(keyboard_text),c_white);
 			}else {
 				draw_sprite(keyboard_text,0,x,bbox_top+40);
 			}
@@ -58,12 +58,12 @@ if being_used = true {
 	scr_Draw_Text_Outlined(x,bbox_top+56,"Exit",c_white);
 		
 		
-	if obj_player.num_of_weapons = 1 {
+	if select_x_max = 1 {
 		draw_sprite(obj_player.gun_1.sprite,0,x,bbox_top-8);
 		draw_sprite_ext(obj_player.gun_1.sprite,0,x,bbox_top-8,1,1,0,c_black,black_alpha_1);
 		draw_sprite(spr_pogosmith_arrow,0,x,bbox_top-18);
 		var arrow_x = x;
-	}else if obj_player.num_of_weapons = 2 {
+	}else if select_x_max = 2 {
 		draw_sprite(obj_player.gun_1.sprite,0,x-18,bbox_top-8);
 		draw_sprite(obj_player.gun_2.sprite,0,x+18,bbox_top-8);
 		draw_sprite_ext(obj_player.gun_1.sprite,0,x-18,bbox_top-8,1,1,0,c_black,black_alpha_1);
@@ -74,7 +74,7 @@ if being_used = true {
 			var arrow_x = x+18;	
 		}
 		draw_sprite(spr_pogosmith_arrow,0,arrow_x,bbox_top-18);
-	}else if obj_player.num_of_weapons = 3 {
+	}else if select_x_max = 3 {
 		draw_sprite(obj_player.gun_1.sprite,0,x-36,bbox_top-8);
 		draw_sprite(obj_player.gun_2.sprite,0,x,bbox_top-8);
 		draw_sprite(obj_player.gun_3.sprite,0,x+36,bbox_top-8);

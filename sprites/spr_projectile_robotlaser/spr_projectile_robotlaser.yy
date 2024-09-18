@@ -13,14 +13,23 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"","%Name":"5e011a47-e403-4d46-998d-8597007a5732","name":"5e011a47-e403-4d46-998d-8597007a5732","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"efafcf0a-2ae6-42e4-985f-3886105a7ebe","name":"efafcf0a-2ae6-42e4-985f-3886105a7ebe","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"118d6aa1-9ed1-4222-866d-4c4b5ab98564","name":"118d6aa1-9ed1-4222-866d-4c4b5ab98564","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"bc272dc9-188a-44db-bdaa-2142ff2936b5","name":"bc272dc9-188a-44db-bdaa-2142ff2936b5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"0df03e0d-bb88-4add-9bf9-953adeff1a16","name":"0df03e0d-bb88-4add-9bf9-953adeff1a16","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"be16d837-ee14-4d02-8993-e6dcf3fe7450","name":"be16d837-ee14-4d02-8993-e6dcf3fe7450","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"ebb2d46f-63ca-4ba7-bab6-06793897bc42","name":"ebb2d46f-63ca-4ba7-bab6-06793897bc42","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"81a519cb-7d05-45ab-8ebf-75e6166f7046","name":"81a519cb-7d05-45ab-8ebf-75e6166f7046","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"820ec178-52b6-40f2-bd1e-975fc8eae260","name":"820ec178-52b6-40f2-bd1e-975fc8eae260","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"acdcecfd-028a-4a02-9f97-7eb5b270b231","name":"acdcecfd-028a-4a02-9f97-7eb5b270b231","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"bbcff262-4f64-4c7a-8ea3-11503cc92e43","name":"bbcff262-4f64-4c7a-8ea3-11503cc92e43","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"831d40a7-cdc9-482a-afe1-f9ceb59caba7","name":"831d40a7-cdc9-482a-afe1-f9ceb59caba7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"125eb227-14bb-42f2-b4ca-3a4596e74cc3","name":"125eb227-14bb-42f2-b4ca-3a4596e74cc3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"203d4c60-8e68-4e70-9e9d-220c0d5d6700","name":"203d4c60-8e68-4e70-9e9d-220c0d5d6700","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"c8fb35fa-9352-4b47-9d64-36dc358ecd06","name":"c8fb35fa-9352-4b47-9d64-36dc358ecd06","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"1c8acc64-4a07-474e-9e76-d5a56160be63","name":"1c8acc64-4a07-474e-9e76-d5a56160be63","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"97088f71-fb9d-452a-8ec7-6048f3ef9283","name":"97088f71-fb9d-452a-8ec7-6048f3ef9283","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"9a101c17-7120-4b83-aa70-76551c1a9b5f","name":"9a101c17-7120-4b83-aa70-76551c1a9b5f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":9,
+  "height":10,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"a1ab96db-d281-4f54-b84f-4c2d7978f3c9","blendMode":0,"displayName":"default","isLocked":false,"name":"a1ab96db-d281-4f54-b84f-4c2d7978f3c9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -72,7 +81,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":5.0,
+    "length":14.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -82,7 +91,7 @@
     },
     "name":"spr_projectile_robotlaser",
     "playback":1,
-    "playbackSpeed":30.0,
+    "playbackSpeed":60.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -95,17 +104,44 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5e011a47-e403-4d46-998d-8597007a5732","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"75010992-99d9-4691-bf3d-37a3cbe0a76e","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"efafcf0a-2ae6-42e4-985f-3886105a7ebe","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"60d97fee-8175-4214-999b-79c896230037","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"be16d837-ee14-4d02-8993-e6dcf3fe7450","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"8b678205-1fce-4dcc-979a-a541e1a46c41","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"118d6aa1-9ed1-4222-866d-4c4b5ab98564","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6f2f2381-d75f-4388-a351-186e761b483b","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ebb2d46f-63ca-4ba7-bab6-06793897bc42","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"03c42cc7-479c-4635-ae2e-bd24e624c17d","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bc272dc9-188a-44db-bdaa-2142ff2936b5","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b23e060a-aac6-4e1d-9e87-25325a065daf","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"81a519cb-7d05-45ab-8ebf-75e6166f7046","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"8884b68e-174e-4fb0-ad5b-6368bd752ab4","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0df03e0d-bb88-4add-9bf9-953adeff1a16","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"c9bb4ba9-211d-4da1-839c-2af745bd56fb","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"820ec178-52b6-40f2-bd1e-975fc8eae260","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"fdba1864-6c31-4afe-ae3e-882755e4c464","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"acdcecfd-028a-4a02-9f97-7eb5b270b231","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"ed671e52-22bc-4a43-ade2-c06f16ea0074","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bbcff262-4f64-4c7a-8ea3-11503cc92e43","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3f311923-42e0-4023-8652-4c0ed0764478","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"831d40a7-cdc9-482a-afe1-f9ceb59caba7","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"aa46abe9-86f1-4265-ac72-736c6789e4b4","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"125eb227-14bb-42f2-b4ca-3a4596e74cc3","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"827605a7-cc61-4367-9f3f-8fe6f60b274e","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"203d4c60-8e68-4e70-9e9d-220c0d5d6700","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"18fa518d-68b7-4585-be2e-8ba728e6a3f9","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c8fb35fa-9352-4b47-9d64-36dc358ecd06","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"9ff40bcc-39ac-40f7-ae5c-f268550c8936","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1c8acc64-4a07-474e-9e76-d5a56160be63","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2054aef1-460d-4295-a9ca-90670c52cca3","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"97088f71-fb9d-452a-8ec7-6048f3ef9283","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"b51b7115-192f-4c25-a59c-e7e71ae63873","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9a101c17-7120-4b83-aa70-76551c1a9b5f","path":"sprites/spr_projectile_robotlaser/spr_projectile_robotlaser.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"e3cef6cd-f620-4752-ba24-bba7a97bd1c9","IsCreationKey":false,"Key":13.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -130,5 +166,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":126,
+  "width":158,
 }

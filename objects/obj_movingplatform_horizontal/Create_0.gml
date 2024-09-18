@@ -1,2 +1,2 @@
 move_right = false;
-spd = 2;
+spd = 1;

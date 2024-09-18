@@ -2,6 +2,7 @@
 // @description Generates an array of random items to create as pickups for the player
 // @description CALL ONLY IN CREATE EVENT
 function scr_Random_Item_Drops(){
+
 	
 	var object_array = []; //Array to store objects we'll create later that we return
 	//Objects are stored as [object_index, [x offset, y offset, depth offset]]

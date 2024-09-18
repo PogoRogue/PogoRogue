@@ -1,5 +1,6 @@
 table_num = instance_number(obj_pogosmith_table);
 alarm[1] = 1;
+sprite_index = spr_pogosmith_workbench;
 
 colliding = false;
 being_used = false;

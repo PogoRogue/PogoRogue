@@ -12,6 +12,6 @@ grav = 0.21;
 vspd = 0;
 
 randomize();
-follow_spd = random_range(2,4);
+follow_spd = random_range(1.5,3);
 current_spd = 0;
 random_set_seed(global.seed);

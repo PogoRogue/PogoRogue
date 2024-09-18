@@ -24,8 +24,8 @@ hp = 10;
 hp_max = hp;
 hp_percent = (hp / hp_max) * 100;
 
-bullet_defense = 0.5;
-stomp_defense = 0.75;
+bullet_defense = 0.75;
+stomp_defense = 1;
 
 var break_num = 0;
 var x_init = x;

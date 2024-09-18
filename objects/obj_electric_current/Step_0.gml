@@ -2,7 +2,7 @@
 
 if(!is_active) {
 	power_on = false;
-	sprite_index = spr_electric_current_off;
+	//sprite_index = spr_electric_current_off;
 	alarm[0] = room_speed * initial_delay;
 	
 }
@@ -20,3 +20,6 @@ if power_on {
 	}
 }
 
+while !place_meeting(x-1,y,obj_ground) and image_xscale = 1 {
+	x -= 1;
+}

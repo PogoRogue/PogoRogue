@@ -1,1 +1,1 @@
-draw_sprite_ext(spr_volleyball,image_index,x,y,scale,scale,rot_angle,c_white,alpha);
+draw_sprite_ext(spr_volleyball,image_index,x,y,1,1,rot_angle,c_white,alpha);
