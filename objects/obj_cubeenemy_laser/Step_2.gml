@@ -34,6 +34,10 @@ if instance_exists(parent_index) {
 		x = start_x-16;
 		y = start_y;
 	}
+	
+	if parent_index.is_dead = true {
+		instance_destroy();	
+	}
 }
 
 with parent_index {

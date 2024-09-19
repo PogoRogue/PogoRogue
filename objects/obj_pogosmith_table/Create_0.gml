@@ -10,7 +10,7 @@ selected_x = false;
 alarm2_time = 30;
 
 angle = 0;
-purchase_cost = 75;
+purchase_cost = 50;
 
 upgrade_color = make_color_rgb(242,240,229);
 cost_color = make_color_rgb(237,225,158);

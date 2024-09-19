@@ -140,3 +140,5 @@ if (place_meeting(x,y+parent_index.vspeed-1,obj_wallbottomrightcorner) and paren
 		other.parent_index.vspeed *= 0.5;
 	}
 }
+
+hp = obj_player.hp;

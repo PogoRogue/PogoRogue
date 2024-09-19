@@ -31,7 +31,7 @@ if rotating = true {
 		}
 		dir_changed = false;
 		rotating = false;
-		alarm[1] = 45;
+		alarm[1] = 60;
 		laser_obj = instance_create_depth(x,y-20,depth-1,obj_cubeenemy_laser,{parent_index: self});
 		if double = true {
 			laser_obj2 = instance_create_depth(x,y-20,depth-1,obj_cubeenemy_laser2,{parent_index: self});

@@ -14,7 +14,7 @@ hp = 10;
 hp_max = hp;
 hp_percent = (hp / hp_max) * 100;
 
-bullet_defense = 0.4;
+bullet_defense = 0.7;
 
 y_spd = 0;
 
