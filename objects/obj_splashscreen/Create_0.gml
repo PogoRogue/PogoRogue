@@ -5,5 +5,5 @@ alpha_up = true;
 global.seed = 0;
 global.show_tips_screen = false; 
 
-global.player_starting_x =  656;
-global.player_starting_y = 1376;
+global.player_starting_x =  1096;
+global.player_starting_y = 1136;

@@ -23,6 +23,7 @@ text_lerp_speed = 0.02;
 
 free = false;
 
-alarm[2] = 60;
+alarm[2] = 100;
 
-instance_create_layer(272, 272, "enemies", obj_boss_sphere);
+alarm[3] = 60;
+instance_create_layer(512+32, 272+128, "enemies", obj_boss_sphere);

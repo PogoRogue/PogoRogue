@@ -1,4 +1,10 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_laser_boss","order":1,"path":"objects/obj_laser_boss/obj_laser_boss.yy",},
+    {"name":"spr_B1_Fly_Drop_old","order":1,"path":"sprites/spr_B1_Fly_Drop_old/spr_B1_Fly_Drop_old.yy",},
+    {"name":"spr_B1_Shield_Drop_old","order":2,"path":"sprites/spr_B1_Shield_Drop_old/spr_B1_Shield_Drop_old.yy",},
+    {"name":"spr_B1_Shield_Move_old","order":1,"path":"sprites/spr_B1_Shield_Move_old/spr_B1_Shield_Move_old.yy",},
+    {"name":"spr_shop_background_new","order":1,"path":"sprites/spr_shop_background_new/spr_shop_background_new.yy",},
+  ],
 }

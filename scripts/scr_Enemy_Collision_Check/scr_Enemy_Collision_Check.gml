@@ -66,7 +66,7 @@ function scr_Enemy_Collision_Check(condition){
 			with instance_place(x,y+1,obj_enemy_parent) {
 				if (!is_dead && current_iframes <= 0) and other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
 					if other.state != other.state_chargejump and obj_player.state != obj_player.state_megabounce and obj_player.state != obj_player.state_megabounce_charge {
-						other.state = other.state_bouncing;
+						//other.state = other.state_bouncing;
 					}
 					if (obj_player.state = obj_player.state_megabounce or obj_player.state = obj_player.state_megabounce_charge) {
 						freeze_x = x;
@@ -107,6 +107,35 @@ function scr_Enemy_Collision_Check(condition){
 					
 					if hp <= 0 {
 						other.landed_on_enemy = true; // enable for robbery 
+					}
+					
+					if other.state != other.state_chargejump and obj_player.state != obj_player.state_megabounce and obj_player.state != obj_player.state_megabounce_charge {
+						other.state = other.state_bouncing;
+						if object_get_name(object_index) = "obj_boss_brick_black"
+						or object_get_name(object_index) = "obj_boss_brick_blue"
+						or object_get_name(object_index) = "obj_boss_brick_red"
+						or object_get_name(object_index) = "obj_boss_brick_yellow" 
+						or object_get_name(object_index) = "obj_boss_sphere" {
+							with obj_boss_brick {
+								freeze = true;
+								freeze_x = x;
+								freeze_y = y;
+								freeze_frame = image_index;
+								alarm[5] = 15;
+							}
+							with obj_boss_sphere {
+								prev_spd = spd;
+								prev_hspd = hspeed;
+								prev_vspd = vspeed;
+								rotation_spd = 0;
+								freeze = true;
+								freeze_x = x;
+								freeze_y = y;
+								freeze_frame = image_index;
+								prev_spd = spd;
+								alarm[5] = 15;
+							}
+						}
 					}
 				}else if other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
 					if other.state != other.state_chargejump {
@@ -128,7 +157,7 @@ function scr_Enemy_Collision_Check(condition){
 			with instance_place(x,y+1,obj_enemy_parent) {
 				if (!is_dead && current_iframes <= 0) and other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
 					if other.state != other.state_chargejump and obj_player.state != obj_player.state_megabounce and obj_player.state != obj_player.state_megabounce_charge {
-						other.state = other.state_bouncing;
+						//other.state = other.state_bouncing;
 					}
 					if (obj_player.state = obj_player.state_megabounce or obj_player.state = obj_player.state_megabounce_charge) {
 						freeze_x = x;
@@ -169,6 +198,34 @@ function scr_Enemy_Collision_Check(condition){
 					
 					if hp <= 0 {
 						other.landed_on_enemy = true; // enable for robbery 
+					}
+					
+					if obj_player.state != obj_player.state_chargejump {
+						obj_player.state = obj_player.state_bouncing;
+						if object_get_name(object_index) = "obj_boss_brick_black"
+						or object_get_name(object_index) = "obj_boss_brick_blue"
+						or object_get_name(object_index) = "obj_boss_brick_red"
+						or object_get_name(object_index) = "obj_boss_brick_yellow" 
+						or object_get_name(object_index) = "obj_boss_sphere" {
+							with obj_boss_brick {
+								freeze = true;
+								freeze_x = x;
+								freeze_y = y;
+								freeze_frame = image_index;
+								alarm[5] = 15;
+							}
+							with obj_boss_sphere {
+								prev_spd = spd;
+								prev_hspd = hspeed;
+								prev_vspd = vspeed;
+								rotation_spd = 0;
+								freeze = true;
+								freeze_x = x;
+								freeze_y = y;
+								freeze_frame = image_index;
+								alarm[5] = 15;
+							}
+						}
 					}
 				}else if other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
 					if other.state != other.state_chargejump {

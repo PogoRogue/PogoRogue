@@ -5,7 +5,7 @@
 // Inherit the parent event
 event_inherited();
 
-depth = -7;
+depth = -10;
 
 drop_coins= false;
 drop = false
@@ -16,3 +16,7 @@ reset = false
 
 explode = false;
 red_alpha = 0;
+
+randomize();
+spd = random_range(0.5,1.25);
+random_set_seed(global.seed);

@@ -26,6 +26,7 @@ if obj_player.num_of_weapons = 1 {
 //check for player coliision
 if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 	colliding = true;
+	show_debug_message("COLLIDING");
 }else {
 	colliding = false;	
 }

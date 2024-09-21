@@ -63,7 +63,7 @@ if hp <= 0 {
 if explode = true {
 	mask_index = spr_nothing;
 	speed = 0;
-	if red_alpha < 1.25 {
+	if red_alpha < 0.75 {
 		red_alpha += 0.025;
 	}else {
 		instance_destroy();
@@ -96,18 +96,27 @@ image_speed = 1;
 
 //new collision
 
-if(place_meeting(x + hspeed+sign(hspeed), y, obj_ground)) {
-	while !place_meeting(x+sign(hspeed),y,obj_ground) {
+if(place_meeting(x+lengthdir_x(hspeed*3,direction), y+lengthdir_y(hspeed*3,direction), obj_ground)) {
+	/*while !place_meeting(x+sign(hspeed),y,obj_ground) {
 		x += sign(hspeed)	
-	}
+	}*/
 	hspeed *= -1;
+	scr_Screen_Shake(6,8,false);
 	num_of_bounces += 1;
 	//show_debug_message(num_of_bounces);
-}else if(place_meeting(x, y + vspeed+sign(vspeed), obj_ground)) {
-	while !place_meeting(x,y+sign(vspeed),obj_ground) {
+}else if place_meeting(x+lengthdir_x(vspeed*3,direction), y+lengthdir_y(vspeed*3,direction),obj_ground) {
+	/*while !place_meeting(x,y+sign(vspeed),obj_ground) {
 		y += sign(vspeed)	
-	}
+	}*/
 	vspeed *= -1;
+	scr_Screen_Shake(6,8,false);
 	num_of_bounces += 1;
 	//show_debug_message(num_of_bounces);
+}
+
+if freeze = true {
+	x = freeze_x;
+	y = freeze_y;
+	image_index = freeze_frame;
+	spd = 0;	
 }

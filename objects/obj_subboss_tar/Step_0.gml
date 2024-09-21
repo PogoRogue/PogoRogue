@@ -36,7 +36,7 @@ if(image_index == 6) {
 }
 
 if place_meeting(x,y,obj_player) {
-	depth = obj_player.depth - 10;
+	depth = obj_player.depth - 1;
 }else {
-	depth = -6;	
+	depth = -9;	
 }

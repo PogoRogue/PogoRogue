@@ -31,6 +31,7 @@ if(is_dead) {
 	{
 		image_index = 0;
 		sprite_index = spr_B1_Explode_Fuse;
+		image_speed = 1;
 	}
 }
 
@@ -39,7 +40,7 @@ if explode = true {
 	image_speed = 0;
 	speed = 0;
 	mask_index = spr_nothing;
-	if red_alpha < 1.2 {
+	if red_alpha < 0.75 {
 		red_alpha += 0.025;
 	}else {
 		instance_destroy();
@@ -54,7 +55,7 @@ current_iframes = max(current_iframes - 1, 0);
 red_frames = max(red_frames - 1, 0);
 
 if instance_exists(obj_boss_sphere) {
-	depth = obj_boss_sphere.depth + 10;
+	depth = obj_boss_sphere.depth - 10;
 }	
 
 if is_dead = true {

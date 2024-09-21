@@ -9,8 +9,12 @@ pickup_chance = 0; //percent
 weapon_chance = 0; //percent
 
 depth = -7;
-spd = 0.3;
+spd = 0; //0.3
+prev_spd = spd;
+prev_hspd = spd;
+prev_vspd = spd;
 rotation_spd = 0.5;
+rotation_spd_init = rotation_spd;
 hp = 128;
 hp_max = hp;
 draw_hp = false;
@@ -68,7 +72,7 @@ explode = false;
 red_alpha = 0;
 
 spawned = false;
-white_alpha = 0;
+white_alpha = 0.5;
 
 init_x = x;
 init_y = y;

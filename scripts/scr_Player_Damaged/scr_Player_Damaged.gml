@@ -42,8 +42,9 @@ function scr_Player_Damaged(damage){
 				}
 			}
 			current_iframes = num_iframes;
+			/*
 			hspeed = -2 * sign(hspeed);
-			vspeed = 0;
+			vspeed = 0;*/
 			
 			// righteous Revenge passive item
 			if(global.righteousrevenge == true){

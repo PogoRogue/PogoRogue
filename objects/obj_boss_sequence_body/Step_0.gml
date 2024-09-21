@@ -31,7 +31,7 @@ if hp <= 0 {
 	
 if explode = true {
 	image_alpha = 1;
-	if red_alpha < 1.25 {
+	if red_alpha < 0.75 {
 		red_alpha += 0.025;
 	}else {
 		instance_destroy();

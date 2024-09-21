@@ -82,7 +82,7 @@ if(is_dead) {
 		}
 	}
 	
-	if (created_items2 = false and heart_drop > heart_chance) {
+	if (created_items2 = false and heart_drop > heart_chance and room != room_boss_1) {
 		Create_Item_Drops(random_items);
 		created_items2 = true;
 	}
@@ -205,6 +205,13 @@ if(is_dead) {
 	if obj_player.state = obj_player.state_free {
 		megabounce_freeze = false;
 	}
+}
+
+if freeze = true {
+	x = freeze_x;
+	y = freeze_y;
+	image_index = freeze_frame;
+	speed = 0;	
 }
 
 // Update iframes

@@ -45,8 +45,8 @@ with(obj_boss_portal) {
 }
 
 if (room == room_boss_1) {
- instance_create_layer(128, 544, "hazards", obj_shop_door); //544
- instance_create_layer(608, 432, "hazards", obj_boss_door); //436
+	instance_create_layer(128+169, 544, "hazards", obj_shop_door); //544
+	instance_create_layer(608-160, 432, "hazards", obj_boss_door); //436
 }
 
 if global.phase = 1 {

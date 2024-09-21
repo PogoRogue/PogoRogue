@@ -18,8 +18,8 @@ if room = room_starting_area {
 	global.num_of_coins = 0;
 }else if room = room_test {
 	global.num_of_coins = 200;
-}else {
-	global.num_of_coins = 0;	//0
+}else if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+	global.num_of_coins = 0;
 }
 
 global.mute = false;

@@ -21,10 +21,12 @@ global.chest_number += 1;
 if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest_combat") { 
 	instance_destroy();
 }else {
-	new_chest = choose(obj_chest,obj_chest,obj_chest,obj_chest,obj_chest_coin,obj_chest_coin,obj_chest_weapon,obj_chest_active);
+	new_chest = choose(obj_chest_weapon,obj_chest_active,obj_chest_coin,obj_chest);
 
 	// For one in 30 chests, create a jack in the box
-	if(irandom(29) == 0) {
+	/*if(irandom(19) == 0) and global.phase <= 1 
+	or (irandom(11) == 0) and global.phase = 2
+	or (irandom(7) == 0) and global.phase >= 3 {
 		switch(new_chest) {
 			case obj_chest_coin:
 				new_chest = obj_enemy_jack_coin;
@@ -38,11 +40,11 @@ if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest_com
 			default:
 				new_chest = obj_enemy_jack;
 		}
-	}
+	}*/
 	
 	if new_chest != obj_chest and object_get_name(object_index) = "obj_chest_combat" {
 		instance_destroy();
-		with instance_create_depth(x,y,depth,new_chest) {
+		with instance_create_depth(x,y,depth,new_chest,{combat_room: true}) {
 			destroy_chance = 0;
 		}
 	}

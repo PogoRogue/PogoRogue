@@ -1,7 +1,7 @@
 
 // Inherit the parent event
 event_inherited();
-depth = -9;
+depth = -11;
 
 // Select target
 target_x = obj_player.x;
@@ -27,3 +27,7 @@ created_items = true;
 
 explode = false;
 red_alpha = 0;
+
+randomize();
+max_spd = random_range(1.25,2.5);
+random_set_seed(global.seed);

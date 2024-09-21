@@ -21,6 +21,9 @@ destroy_chance = 0;
 
 created_items = false;
 lock_unlocked = false;
+lock_unlocked_frames = 0;
+lock_alpha = 1;
+combat_room = true;
 
 random_set_seed(global.seed+global.chest_number);
 destroy = irandom_range(1,100);

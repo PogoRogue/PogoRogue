@@ -23,7 +23,7 @@ if cant_spawn = false {
 			}
 		}
 		if abs(hspeed) > 4 {
-			//scale = 1.25;	
+			scale = 1;	
 		}
 		hspeed *= -bounce_decay;
 		if distance_to_object(obj_player) < 768 {
@@ -47,11 +47,12 @@ if cant_spawn = false {
 				break;
 			}
 		}
-		//scale = 1.25;
-		if vspeed > 0.2 {
+		scale = 1;
+		if vspeed > 2 {
 			vspeed *= -bounce_decay;
 		}else {
-			//instance_destroy();
+			vspeed = 4 * sign(vspeed);
+			vspeed *= -1;
 		}
 		if distance_to_object(obj_player) < 768 {
 			randomize();
@@ -74,9 +75,9 @@ if cant_spawn = false {
 				break;
 			}
 		}
-		if vspeed > 4 {
+		if vspeed > 2 {
 			vspeed *= -bounce_decay;
-			//scale = 1.25;
+			scale = 1;
 		}else {
 			vspeed *= -1;
 		}

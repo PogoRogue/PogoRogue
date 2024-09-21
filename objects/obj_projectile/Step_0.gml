@@ -567,3 +567,13 @@ if (gun_name = "Plasma Gun") {
 		}
 	}
 }
+if (gun_name = "Six Shooter") or (gun_name = "Seven Shooter") or (gun_name = "Eight Shooter") 
+or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Eleven Shooter") {
+	if place_meeting(x,y,obj_ground) {
+		if global.drilltipbullets = false {
+			depth = 10;	
+		}else {
+			depth = obj_player.depth+5;
+		}
+	}
+}

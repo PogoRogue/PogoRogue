@@ -6,3 +6,5 @@ if(!instance_exists(parent)) {
 }
 
 num_segments = floor((parent.hp / parent.hp_max) * total_spaces);
+
+fragments_num += 2;

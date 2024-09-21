@@ -29,7 +29,7 @@
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"5dde415c-4bc2-45f6-a74c-fd75edfb4acb","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"5dde415c-4bc2-45f6-a74c-fd75edfb4acb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"42be3444-781e-4759-a9ed-b5304f7b17e9","blendMode":0,"displayName":"default","isLocked":false,"name":"42be3444-781e-4759-a9ed-b5304f7b17e9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
+    {"$GMImageLayer":"","%Name":"42be3444-781e-4759-a9ed-b5304f7b17e9","blendMode":0,"displayName":"default","isLocked":false,"name":"42be3444-781e-4759-a9ed-b5304f7b17e9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_airbag_propeller",
   "nineSlice":null,

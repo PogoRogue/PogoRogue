@@ -25,7 +25,7 @@
   "height":46,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"dde28f28-547c-4d3d-96ce-220ab4e503da","blendMode":0,"displayName":"default","isLocked":false,"name":"dde28f28-547c-4d3d-96ce-220ab4e503da","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"a17f8618-831d-48f9-ad13-709062774687","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"a17f8618-831d-48f9-ad13-709062774687","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_B1_Fly_Drop",
   "nineSlice":null,

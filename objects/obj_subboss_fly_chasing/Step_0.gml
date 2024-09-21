@@ -34,11 +34,11 @@ if (drop == true)
 }
 
 if explode = true {
-	path_end();
+	//path_end();
 	image_speed = 0;
 	speed = 0;
 	mask_index = spr_nothing;
-	if red_alpha < 1.2 {
+	if red_alpha < 0.75 {
 		red_alpha += 0.025;
 	}else {
 		instance_destroy();

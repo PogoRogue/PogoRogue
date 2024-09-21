@@ -1,5 +1,5 @@
 y_add = 0; //bob this amount of pixels
-y_add_spd_start = 0.4; 
+y_add_spd_start = 0.3; 
 y_add_spd = y_add_spd_start; //bob at this spee
 y_up = false; //bobbing up or down
 init_x = x;
@@ -109,10 +109,11 @@ speechbubble_obj_6 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubb
 text_array: ["I'm going to now share a dark secret that \nonly the most \nhonorable Pogoers \nshould know.",
 "Bouncing is not the \nonly way to reload \nyour weapons.",
 "For some reason \nwe dare not question, \nthese weapons reload \nthemselves when \nthey get a kill.",
-"It's like they thirst for violence. I envy such fervor, in a way...",
+"It's like they thirst for violence or something. I envy such fervor, in a way...",
 "Fortunately, you can \nuse this knowledge to \nperform some pretty \nsick moves. If speed's your thing, you can \nthank me later.",
 "And don't worry, those cute pink things \nabove my head come \nback to life I guess. \nIt's ethical...      ?",
-"Try making it to the \nnext room using only \nthe enemies. No cheating!"],
+"Try making it to the \nnext room using only \nthe enemies. No cheating!",
+"Actually, it would be pretty impressive if you managed to make it up by cheating. Do whatever you want man."],
 lines_of_text: 7, 
 parent_index: obj_drone_tutorial, 
 track_y: true,
@@ -143,8 +144,8 @@ repeat_text: true,
 repeat_to_line: 2 });
 
 speechbubble_obj_8 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
-text_array: ["You got Fire Dash! A very powerful item, indubitably.",
-"You can press the \nbutton shown below \nthe item's slot to \ntry it out.",
+text_array: ["You got Charge Jump! A very powerful item, indubitably.",
+"While bouncing, hold down the \nbutton shown below \nthe item's slot to \ntry it out.",
 "You can also press the items info button \nshown below the slots to learn more about \nan item.",],
 lines_of_text: 3, 
 parent_index: obj_drone_tutorial, 

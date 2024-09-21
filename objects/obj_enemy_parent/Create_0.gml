@@ -61,3 +61,5 @@ center_y_sprite = bbox_top + ((bbox_top - bbox_top)/2);
 bounced_times = 0;
 
 depth = -10;
+
+freeze = false;

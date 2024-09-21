@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":9,
   "bbox_left":0,
-  "bbox_right":0,
+  "bbox_right":3,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -19,6 +19,7 @@
   "height":10,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"cbe7a18e-d585-48f8-8368-0d6bd3c5062a","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"cbe7a18e-d585-48f8-8368-0d6bd3c5062a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"f02fa652-0b3e-44da-838d-969d64fcd8a7","blendMode":0,"displayName":"default","isLocked":false,"name":"f02fa652-0b3e-44da-838d-969d64fcd8a7","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_boss_health_segment_inactive",
@@ -95,5 +96,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":1,
+  "width":4,
 }

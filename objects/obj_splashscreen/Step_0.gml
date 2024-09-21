@@ -27,6 +27,10 @@ if alpha > -0.5 and alpha_up = false {
 }
 
 if splash_num > max_splash_num {
-	scr_Room_Transition(room_menu);
+	if global.tutorial_completed = true {
+		scr_Room_Transition(room_menu);
+	}else {
+		scr_Room_Transition(room_tutorial);
+	}	
 	//instance_create_depth(x,y,depth-10000,obj_darkscreen_transition);
 }

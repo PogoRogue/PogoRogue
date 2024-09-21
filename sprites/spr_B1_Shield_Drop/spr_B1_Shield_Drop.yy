@@ -5,7 +5,7 @@
   "bbox_bottom":41,
   "bbox_left":0,
   "bbox_right":31,
-  "bbox_top":2,
+  "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -25,6 +25,7 @@
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"9de5557a-47e1-4f75-a5bd-b3a3f0ea425e","blendMode":0,"displayName":"default","isLocked":false,"name":"9de5557a-47e1-4f75-a5bd-b3a3f0ea425e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"5118affa-2f06-4c7f-9e0e-9ae6b2d4e673","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"5118affa-2f06-4c7f-9e0e-9ae6b2d4e673","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_B1_Shield_Drop",
   "nineSlice":null,

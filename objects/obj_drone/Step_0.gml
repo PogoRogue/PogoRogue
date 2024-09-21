@@ -16,3 +16,9 @@ if y_add < 4 and y_up = false {
 }
 
 y = init_y + y_add;
+
+if obj_player.x < x {
+	image_xscale = 1;
+}else {
+	image_xscale = -1;
+}

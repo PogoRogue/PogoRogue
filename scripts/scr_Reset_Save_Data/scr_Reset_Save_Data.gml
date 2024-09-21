@@ -25,7 +25,7 @@ function scr_Reset_Save_Data(){
 	ini_key_delete("savegame", "fastest_time_boss4");
 	ini_key_delete("savegame", "fastest_time_boss5");
 	
-	//ini_key_delete("savegame", "tutorial_completed");
+	ini_key_delete("savegame", "tutorial_completed");
 	ini_key_delete("savegame", "credits_watched");
 	
 	ini_close();

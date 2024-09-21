@@ -7,13 +7,14 @@ key_right = global.key_right_menu;
 key_select = global.key_select;
 
 //check for player coliision
-if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) and all_out = false {
+if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) { //and all_out = false {
 	colliding = true;
+	show_debug_message("COLLIDING");
 }else {
 	colliding = false;	
 }
 
-if (colliding and key_interact) and !instance_exists(obj_fade_in) and all_out = false {
+if (colliding and key_interact) and !instance_exists(obj_fade_in) { //and all_out = false {
 	being_used = not being_used;
 	obj_player.can_rotate = true;
 	obj_player.centering = true;

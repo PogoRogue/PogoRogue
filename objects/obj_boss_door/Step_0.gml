@@ -23,6 +23,14 @@ if (colliding and key_open_door) {
 	}
 }
 
+if image_xscale < 1 {
+	image_xscale += 0.05;
+}
+
+if image_yscale < 1 {
+	image_yscale += 0.05;
+}
+
 //old code 
 /*
 if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {

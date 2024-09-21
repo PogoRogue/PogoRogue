@@ -1,0 +1,1 @@
+//instance_create_layer(512, 272, "enemies", obj_boss_sphere);

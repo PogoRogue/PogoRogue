@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_enemy_health_outline",
   "bboxMode":0,
-  "bbox_bottom":3,
+  "bbox_bottom":11,
   "bbox_left":0,
-  "bbox_right":33,
+  "bbox_right":5,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":128,
   "gridY":8,
-  "height":4,
+  "height":12,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"2f9d397a-2519-48a5-bf05-a2e2d06dc29e","blendMode":0,"displayName":"default","isLocked":false,"name":"2f9d397a-2519-48a5-bf05-a2e2d06dc29e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -96,5 +96,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":34,
+  "width":6,
 }

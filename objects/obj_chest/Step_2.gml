@@ -66,3 +66,13 @@ if (global.magicianstouch and coins_increased = false) {
 	num_of_coins = round(num_of_coins * 1.5);
 	coins_increased = true;
 }
+
+if combat_room = true {
+	if instance_exists(obj_gate_unlocked) {
+		locked = false;	
+	}else {
+		locked = true;	
+		lock_unlocked_frames = 0;
+		lock_unlocked = false;
+	}
+}
