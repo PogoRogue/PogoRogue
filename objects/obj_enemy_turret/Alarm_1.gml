@@ -15,3 +15,7 @@ if!(place_meeting(x - 20, y, obj_ground)) {
 }
 
 image_angle = rotation;
+
+if !place_meeting(x-16,y,obj_ground) and !place_meeting(x+16,y,obj_ground) {
+	instance_destroy();	
+}

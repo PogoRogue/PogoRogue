@@ -1,12 +1,12 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Enemy_Collision_Check(condition){
-	var condition2 = false;
+	var condition2 = false;/*
 	with obj_shieldbubble_mask {
 		if place_meeting(x,y+obj_player.vspeed,obj_enemy_parent) and parent_obj.not_colliding = true and obj_player.vspeed > 0 {
 		
 			with instance_place(x,y+obj_player.vspeed,obj_enemy_parent) {
-				if (!is_dead && current_iframes <= 0) and obj_player.msk_index.colliding_with_enemies = false or obj_player.vspeed > 0 {
+				if (!is_dead && current_iframes <= 0) or obj_player.vspeed > 0 {
 					if obj_player.state != obj_player.state_chargejump {
 						obj_player.state = obj_player.state_bouncing;
 					}
@@ -54,17 +54,20 @@ function scr_Enemy_Collision_Check(condition){
 				}
 			}
 		}
-	}
+	}*/
 	//duplicate code  v
-	if place_meeting(x+hspeed,y,obj_enemy_parent) and condition = true and free = true and current_iframes <= 0 {
-		if instance_place(x+hspeed,y,obj_enemy_parent).is_dead = false {
-			while !(place_meeting(x+sign(hspeed),y,obj_enemy_parent)) and (place_meeting(x+hspeed,y,obj_enemy_parent)) {
+	if place_meeting(x+hspeed,y,obj_enemy_parent) and condition = true and free = true and enemy_free = true {
+		if instance_place(x+hspeed,y,obj_enemy_parent).is_dead = false and enemy_bouncing_obj != instance_place(x+hspeed,y,obj_enemy_parent) {
+			/*while !(place_meeting(x+sign(hspeed),y,obj_enemy_parent)) and (place_meeting(x+hspeed,y,obj_enemy_parent)) {
 				x += sign(hspeed);
-			}
+			}*/
 			
 			free = false;
-			with instance_place(x,y+1,obj_enemy_parent) {
-				if (!is_dead && current_iframes <= 0) and other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
+			enemy_free = false;
+			enemy_bouncing_obj = instance_place(x+hspeed,y,obj_enemy_parent);
+			alarm[10] = 20;
+			with instance_place(x+hspeed,y,obj_enemy_parent) {
+				if (!is_dead && current_iframes <= 0) or other.vspeed > 0 {
 					if other.state != other.state_chargejump and obj_player.state != obj_player.state_megabounce and obj_player.state != obj_player.state_megabounce_charge {
 						//other.state = other.state_bouncing;
 					}
@@ -137,7 +140,7 @@ function scr_Enemy_Collision_Check(condition){
 							}
 						}
 					}
-				}else if other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
+				}else if other.vspeed > 0 {
 					if other.state != other.state_chargejump {
 						other.state = other.state_bouncing;
 					}
@@ -147,15 +150,18 @@ function scr_Enemy_Collision_Check(condition){
 		}
 	}
 	//Duplicate code. sorry future isaac
-	if place_meeting(x,y+vspeed,obj_enemy_parent) and condition = true and free = true and current_iframes <= 0 {
-		if instance_place(x,y+vspeed,obj_enemy_parent).is_dead = false {
-			while !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) and (place_meeting(x,y+vspeed,obj_enemy_parent)) {
+	if place_meeting(x,y+vspeed,obj_enemy_parent) and condition = true and free = true and enemy_free = true {
+		if instance_place(x,y+vspeed,obj_enemy_parent).is_dead = false and enemy_bouncing_obj != instance_place(x,y+vspeed,obj_enemy_parent) {
+			/*while !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) and (place_meeting(x,y+vspeed,obj_enemy_parent)) {
 				y += sign(vspeed);
-			}
+			}*/
 			
 			free = false;
-			with instance_place(x,y+1,obj_enemy_parent) {
-				if (!is_dead && current_iframes <= 0) and other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
+			enemy_free = false;
+			enemy_bouncing_obj = instance_place(x,y+vspeed,obj_enemy_parent);
+			alarm[10] = 20;
+			with instance_place(x,y+vspeed,obj_enemy_parent) {
+				if (!is_dead && current_iframes <= 0) or other.vspeed > 0 {
 					if other.state != other.state_chargejump and obj_player.state != obj_player.state_megabounce and obj_player.state != obj_player.state_megabounce_charge {
 						//other.state = other.state_bouncing;
 					}
@@ -227,7 +233,7 @@ function scr_Enemy_Collision_Check(condition){
 							}
 						}
 					}
-				}else if other.msk_index.colliding_with_enemies = false or other.vspeed > 0 {
+				}else if other.vspeed > 0 {
 					if other.state != other.state_chargejump {
 						other.state = other.state_bouncing;
 					}

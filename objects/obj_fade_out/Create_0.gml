@@ -12,3 +12,7 @@ scr_Tips();
 randomize();
 global.current_tip = global.tips_array[irandom_range(0,array_length(global.tips_array)-1)];
 random_set_seed(global.seed);
+
+if room != room_starting_area and room != room_menu {
+	audio_group_set_gain(audiogroup_music, 0, 1000);
+}

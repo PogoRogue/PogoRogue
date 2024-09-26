@@ -19,4 +19,4 @@ with obj_boss_sphere {
 	spd = 0.4;
 	vspeed = spd;
 	hspeed = -spd;
-}	
+}

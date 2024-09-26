@@ -1,7 +1,8 @@
 /// @description Get damaged
-if temp_collision_enemy = noone {
+if temp_collision_enemy = noone and obj_player.enemy_free = true {
 	temp_collision_enemy = other;
-	alarm[4] = 5;
+	alarm[4] = 1;
+	obj_player.enemy_free = false;
 }
 /*
 //if room != room_starting_area {

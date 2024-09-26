@@ -10,7 +10,7 @@ or room = room_proc_gen_test and global.current_skin = 3) or object_get_name(obj
 }else {
 	test_mode = true; //set false for builds
 	if room = room_proc_gen_test {
-		instance_destroy();	
+		//instance_destroy();	
 	}
 }
 

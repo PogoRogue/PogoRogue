@@ -19,7 +19,7 @@ if(is_dead) {
 	spd = 0;	
 }
 
-if(sprite_index != spr_enemy_shooter_cannon) {
+if(sprite_index != spr_enemy_shooter_cannon2) {
 	x += spd;	
 }
 

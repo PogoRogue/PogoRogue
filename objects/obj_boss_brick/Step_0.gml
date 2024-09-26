@@ -44,7 +44,7 @@ if spawned = true {
 			red_alpha += 0.025;
 		}else {
 			instance_destroy();
-			instance_create_layer(x, y, "enemies", obj_explosion);
+			instance_create_depth(x, y, "enemies", obj_explosion);
 		}
 	}else {
 		// Inherit the parent event

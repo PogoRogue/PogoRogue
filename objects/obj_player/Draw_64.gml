@@ -1,5 +1,7 @@
 /// @description draw weapon text and ammo GUI and coins
 
+if global.draw_ui = true {
+
 //weapon text
 display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
 draw_set_font(fnt_combo2);
@@ -630,3 +632,5 @@ if invincibility_time > 0 {
 
 //slot machine
 //draw_sprite(spr_slotmachine,0,384,100);
+
+}

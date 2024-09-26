@@ -4,7 +4,7 @@ function scr_Player_Damaged(damage){
 	
 	with obj_player {
 		var armored = false;
-		if !instance_exists(obj_shieldbubble) and invincible = false and invincibility = false and pogomode = false {
+		if !instance_exists(obj_shieldbubble) and invincible = false and invincibility = false and pogomode = false and other != enemy_hurt_obj {
 			if energy_buff > 0 {
 				energy_buff -= 1;
 				armored = true;
@@ -42,6 +42,8 @@ function scr_Player_Damaged(damage){
 				}
 			}
 			current_iframes = num_iframes;
+			enemy_hurt_obj = other;
+			alarm[11] = 20;
 			/*
 			hspeed = -2 * sign(hspeed);
 			vspeed = 0;*/

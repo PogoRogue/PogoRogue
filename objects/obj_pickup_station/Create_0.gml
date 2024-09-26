@@ -10,6 +10,6 @@ if room = room_proc_gen_test and global.current_skin = 6 {
 }
 if test_mode = true{
 	if room = room_proc_gen_test {
-		instance_destroy();	
+		//instance_destroy();	
 	}	
 }

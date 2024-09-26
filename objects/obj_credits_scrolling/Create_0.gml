@@ -43,8 +43,8 @@ cg_artists_text = ["CG Artists", "Christian Almond\nZekai Lu"];
 promotional_artists_text = ["Promotional Artists", "Daming Li\nKim Nguyen"];
 art_polish_text = ["Art Polish Team", "Daming Li\nKim Nguyen\nZekai Lu\nZiteng Zhao"];
 
-music_text = ["Music Composer", "Daisy Dai"];
-sound_text = ["Sound Designer", "Josiah Lin (LilLin)"];
+music_text = ["Music Composers", "Daisy Dai\nIsaac White"];
+sound_text = ["Sound Designers", "Josiah Lin (LilLin)\nIsaac White"];
 audio_dir_text = ["Audio Director","Josiah Lin (LilLin)"];
 
 marketing_text = ["Marketing Manager", "Cleveland Parker"];

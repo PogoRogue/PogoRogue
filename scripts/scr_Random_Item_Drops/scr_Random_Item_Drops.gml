@@ -14,7 +14,7 @@ function scr_Random_Item_Drops(){
 	
 	//heart
 	if (heart_drop <= heart_chance) and room != room_boss_1 and room != room_boss_2 and room != room_boss_3  {
-		//randomize();
+		random_set_seed(global.seed + global.enemy_number + global.fairy_amount);
 		var heart_type = choose(obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_max_hp);
 				
 		var object_type = heart_type;
@@ -44,7 +44,7 @@ function scr_Random_Item_Drops(){
 		//only one powerup per chest
 		pickup_chance = -1;
 		weapon_chance = -1;
-		with obj_item_buff_heart {
+		/*with obj_item_buff_heart {
 			instance_destroy();	
 		}
 		with obj_item_buff_armor {
@@ -52,7 +52,7 @@ function scr_Random_Item_Drops(){
 		}
 		with obj_item_buff_max_hp {
 			instance_destroy();	
-		}
+		}*/
 	}
 	
 	//weapon
@@ -71,7 +71,7 @@ function scr_Random_Item_Drops(){
 		pickup_chance = -1;
 		num_of_coins = 0;
 		heart_chance = -1;
-		with obj_item_buff_heart {
+		/*with obj_item_buff_heart {
 			//instance_destroy();	
 		}
 		with obj_item_buff_armor {
@@ -79,7 +79,7 @@ function scr_Random_Item_Drops(){
 		}
 		with obj_item_buff_max_hp {
 			instance_destroy();	
-		}
+		}*/
 	}
 	
 	//pickup
@@ -96,7 +96,7 @@ function scr_Random_Item_Drops(){
 
 		num_of_coins = 0;
 		heart_chance = -1;
-		with obj_item_buff_heart {
+		/*with obj_item_buff_heart {
 			instance_destroy();	
 		}
 		with obj_item_buff_armor {
@@ -104,7 +104,7 @@ function scr_Random_Item_Drops(){
 		}
 		with obj_item_buff_max_hp {
 			instance_destroy();	
-		}
+		}*/
 	}
 	
 	return object_array;
@@ -212,11 +212,11 @@ function scr_Get_Rand_Pickup_Object()
 	
 	
 	if global.phase <= 1 {
-		random_pickup_drop = list_of_possible_pickups[irandom_range(0,7)];
+		random_pickup_drop = list_of_possible_pickups[irandom_range(0,11)];
 	}else if global.phase = 2 {
-		random_pickup_drop = list_of_possible_pickups[irandom_range(4,11)];
+		random_pickup_drop = list_of_possible_pickups[irandom_range(8,15)];
 	}else {
-		random_pickup_drop = list_of_possible_pickups[irandom_range(8,array_length(list_of_possible_pickups)-1)];
+		random_pickup_drop = list_of_possible_pickups[irandom_range(12,19)];
 	}
 
 	return random_pickup_drop;

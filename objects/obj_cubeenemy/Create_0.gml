@@ -30,3 +30,4 @@ normal_sprite = spr_cubelaserenemy;
 flipped_sprite = spr_cubelaserenemy_flipped;
 
 alarm[2] = 1;
+rot_spd = 2;

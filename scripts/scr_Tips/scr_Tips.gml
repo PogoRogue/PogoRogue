@@ -21,10 +21,13 @@ function scr_Tips(){
 	"Weapons and active items only spawn in certain areas.",
 	"Some enemies take more damage if they are bounced on than if they are shot, and vice versa.",
 	"You will obtain more gold from kills if you have a higher combo.",
-	"Some chests might have an unwanted surprise inside. Be careful before opening them!",
+	"Some chests might have an unwanted surprise inside. Be cautious before opening them!",
 	"Weapons discovered in earlier areas can be upgraded more than once.",
 	"Try to kill fairies as quick as you can. They would rather die than give up their prize.",
-	"If you don't like the default control bindings, you can edit them in the settings menu."
+	"If you don't like the default control bindings, you can edit them in the settings menu.",
+	"Your combo lasts between phases.",
+	"If you're having trouble bouncing directly onto a chest, use your weapons to help!",
+	"If you're taking a lot of damage, it might be a good idea to slow down even if it means sacrificing a combo."
 	];
 }
 //"active items can be recharged in a variety of ways. Some require a simple cooldown time, while others may be recharged after a certain number of kills, bounces, or making a payment. Some active items may have no cooldown at all!"

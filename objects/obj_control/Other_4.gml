@@ -60,7 +60,9 @@ if room = room_proc_gen_test {
 //music test
 if !audio_is_playing(global.current_music) {
 	audio_stop_all();
-	audio_play_sound(global.current_music,0,true);
+	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+		alarm[1] = 30;
+	}
 }
 
 if room = room_proc_gen_test {

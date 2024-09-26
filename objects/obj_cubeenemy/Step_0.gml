@@ -13,7 +13,8 @@ if rotation_dir = 1 and image_angle = 0 {
 if rotating = true {
 	if image_angle > -90 and image_angle < 90 and !(dir_changed = true and image_angle = 0) {
 		if !place_meeting(x,y,obj_player) and !is_dead {
-			image_angle += 5 * -rotation_dir;
+			image_angle += 3 * -rotation_dir;
+			rot_spd += 0.1;
 		}
 	}else  {
 		image_angle = 0;
@@ -31,11 +32,14 @@ if rotating = true {
 		}
 		dir_changed = false;
 		rotating = false;
-		alarm[1] = 60;
+		alarm[1] = 120;
+		if scr_In_Camera_View(200) {
 		laser_obj = instance_create_depth(x,y-20,depth-1,obj_cubeenemy_laser,{parent_index: self});
-		if double = true {
-			laser_obj2 = instance_create_depth(x,y-20,depth-1,obj_cubeenemy_laser2,{parent_index: self});
+			if double = true {
+				laser_obj2 = instance_create_depth(x,y-20,depth-1,obj_cubeenemy_laser2,{parent_index: self});
+			}
 		}
+		rot_spd = 2;
 	}
 	
 	//colliding with ground mid turn

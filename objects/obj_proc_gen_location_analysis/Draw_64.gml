@@ -6,7 +6,7 @@ draw_set_font(fnt_combo2);
 
 if(display_player_chunk && instance_exists(current_tag_object))
 {
-	draw_text(display_get_gui_width()/2 - 20, 20, player_location_string);
+	//draw_text(display_get_gui_width()/2 - 20, 20, player_location_string);
 	previous_tag_message = player_location_string;
 }
 else
@@ -68,7 +68,7 @@ if(display_progress_bar)
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
 		draw_set_font(fnt_item_popup);
-		if obj_player.dead = false {
+		if obj_player.dead = false and global.draw_ui = true {
 			scr_Draw_Text_Outlined(392-(string_width("  " + str_kills)/2),96,string(kills_left),make_color_rgb(180,82,82));
 			scr_Draw_Text_Outlined(390,96,"  " + str_kills,c_white);
 		}

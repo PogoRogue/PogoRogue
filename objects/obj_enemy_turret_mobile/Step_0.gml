@@ -17,13 +17,26 @@ if(is_dead) {
 	spd = 0;	
 }
 
-// Apply velocity
-if(is_vertical) {
-	if(!place_meeting(x, y + spd, obj_ground_parent) && dist_from_start < range) {
-		y += spd;
-	}
-} else {
-	if(!place_meeting(x + spd, y, obj_ground_parent) && dist_from_start < range) {
-		x += spd;
+if scr_In_Camera_View(128) {
+
+	// Apply velocity
+	if(is_vertical) {
+		if(!position_meeting(x, (y + (24*sign(spd))) + spd, obj_ground_parent) && (!position_meeting(x, (y + (32*sign(spd))) + spd, obj_enemy_turret_mobile)) && dist_from_start < range) {
+			y += spd;
+		}else if place_meeting(x, (y + (24*sign(spd))) + spd, obj_ground_parent) {
+			while !place_meeting(x, (y + (24*sign(spd))) + sign(spd), obj_ground_parent) {
+				y += sign(spd);
+			}
+			spd = 0;
+		}else if (!position_meeting(x, (y + (32*sign(spd))) + spd, obj_enemy_turret_mobile)) {
+			while !place_meeting(x, (y + (32*sign(spd))) + sign(spd), obj_enemy_turret_mobile) {
+				y += sign(spd);
+			}
+			spd = 0;
+		}
+	} else {
+		if(!place_meeting(x + spd, y, obj_ground_parent) && dist_from_start < range) {
+			x += spd;
+		}
 	}
 }

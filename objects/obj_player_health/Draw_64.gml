@@ -1,7 +1,7 @@
 /// @description Draw health cells either full or empty
 
 display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
-
+if global.draw_ui = true {
 for(var _i = 0; _i < max_hp; _i += 8) {
 	if (_i < hp) {
 		draw_sprite(spr_heart_ui, 0, 28 + (_i * 3), 32);
@@ -34,6 +34,7 @@ for(var _j = 0; _j < armor_buff; _j += 1) {
 	}
 }
 
+
 //energy
 
 for(var _k = 0; _k < energy_buff; _k += 1) {
@@ -60,4 +61,6 @@ if heart_energy_lost_num > 0  {
 	//instance_create_depth(28 + (max_hp/8 * 24) + (armor_buff*24) + (_k * 24), 32,depth-1,obj_heart_energy_lost);
 	show_debug_message("energy lost!");
 	heart_energy_lost_num = 0;	
+}
+
 }

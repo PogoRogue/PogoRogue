@@ -26,3 +26,8 @@ with obj_enemy_snail_slime_red {
 	other.depth = depth + 1;
 	draw_sprite_ext(spr_enemy_snail_slime_outline,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);	
 }
+
+with obj_enemy_snail_slime_pink {
+	other.depth = depth + 1;
+	draw_sprite_ext(spr_enemy_snail_slime_outline,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);	
+}

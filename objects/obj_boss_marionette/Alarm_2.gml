@@ -17,9 +17,9 @@ switch(ability) {
 		break;
 	case BOSS3_ABILITIES.SHIELD:
 		if(!instance_exists(obj_shield_plus)) {
-			var _shield = instance_create_depth(x, y, depth - 15, obj_shield_plus);
+			/*var _shield = instance_create_depth(x, y, depth - 15, obj_shield_plus);
 			_shield.parent = self;
-			_shield.depth = depth - 8;
+			_shield.depth = depth - 8;*/
 		}
 		break;
 }

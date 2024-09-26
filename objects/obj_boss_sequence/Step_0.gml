@@ -17,7 +17,7 @@ if(!fight_started) {
 	}
 			
 	with(obj_electric_current) {
-		is_active = false;
+		alarm[0] = 1;
 	}
 	image_index = 5;
 	exit;
@@ -75,7 +75,7 @@ switch(current_state) {
 			}
 			
 			with(obj_electric_current) {
-				is_active = false;
+				alarm[0] = 1;
 			}
 			
 			sequence_index = 0;
@@ -107,6 +107,7 @@ switch(current_state) {
 			
 			with(obj_electric_current) {
 				is_active = true;
+				alarm[0] = room_speed * on_time;
 			}
 		}
 		
@@ -165,7 +166,7 @@ switch(current_state) {
 			}
 			
 			with(obj_electric_current) {
-				is_active = false;
+				alarm[0] = 1;
 			}
 			
 			alarm_set(2, vulnerable_duration);
@@ -185,7 +186,7 @@ switch(current_state) {
 			}
 			
 			with(obj_electric_current) {
-				is_active = false;
+				alarm[0] = 1;
 			}
 			
 			with(obj_button) {
@@ -193,8 +194,9 @@ switch(current_state) {
 			}
 			
 			current_frame = 5;
-			
-			body.sprite_index = spr_sequence_defeated;
+			if instance_exists(body) {
+				body.sprite_index = spr_sequence_defeated;
+			}
 		}
 	break;
 }

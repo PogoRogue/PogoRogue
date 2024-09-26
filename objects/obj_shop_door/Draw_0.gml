@@ -1,6 +1,6 @@
 /// @description draw UI when colliding
 draw_self();
-if (colliding) {
+if (colliding) and global.draw_ui {
 	//check if we should draw controller UI or keyboard U
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);

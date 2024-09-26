@@ -37,6 +37,29 @@ state_waiting = function() {
 		image_index = 0;
 		
 	}
+	
+	if object_get_name(object_index) = "obj_spikeblock_right" {
+		if !place_meeting(x+1,y,obj_ground) and !place_meeting(x-1,y,obj_ground) 
+		and  place_meeting(x+17,y,obj_ground) 
+		or place_meeting(x+1,y,obj_ground) and !place_meeting(x-1,y,obj_ground) { 
+			if !place_meeting(x+1,y,obj_ground) {
+				x += 16;
+			}
+			instance_create_depth(x,y,depth,obj_spikeblock_left)
+			instance_destroy();
+		}
+	}
+	if object_get_name(object_index) = "obj_spikeblock_left" {
+		if !place_meeting(x+1,y,obj_ground) and !place_meeting(x-1,y,obj_ground) 
+		and  place_meeting(x-17,y,obj_ground)
+		or !place_meeting(x+1,y,obj_ground) and place_meeting(x-1,y,obj_ground) {
+			if !place_meeting(x-1,y,obj_ground) {
+				x -= 16;
+			}
+			instance_create_depth(x,y,depth,obj_spikeblock_right)
+			instance_destroy();
+		}
+	}
 }
 
 state_slamming = function() {

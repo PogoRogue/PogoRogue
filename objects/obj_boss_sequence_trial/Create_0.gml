@@ -17,5 +17,5 @@ current_frame = 2;
 image_speed = 0;
 
 with(obj_electric_current) {
-	is_active = false;
+	alarm[0] = 1;
 }

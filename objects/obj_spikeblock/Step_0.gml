@@ -24,3 +24,4 @@ if vertical = true {
 		arrow_index = 3 + (4 * (floor(image_index) % 2 = 1));
 	}
 }
+depth = 0;

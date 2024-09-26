@@ -42,3 +42,5 @@ global.chest_number += 1;
 alarm[2] = 1;
 
 random_set_seed(global.seed);
+
+depth = 20;

@@ -152,6 +152,7 @@ global.shop_number = 0;
 global.enemy_number = 0;
 global.passive_number = 0;
 global.salesman_number = 0;
+global.fairy_amount = 0;
 
 if room != room_proc_gen_test and room != room_shop
 and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
@@ -163,3 +164,5 @@ and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 	show_debug_message("Random seed: " + string(global.seed));
 	global.seed_switched = false;
 }
+
+global.draw_ui = true;

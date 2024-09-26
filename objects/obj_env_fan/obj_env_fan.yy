@@ -2,8 +2,10 @@
   "$GMObject":"",
   "%Name":"obj_env_fan",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_env_fan",
@@ -13,8 +15,8 @@
     "path":"folders/Objects/Environmental.yy",
   },
   "parentObjectId":{
-    "name":"obj_generated_object_parent",
-    "path":"objects/obj_generated_object_parent/obj_generated_object_parent.yy",
+    "name":"obj_ground",
+    "path":"objects/obj_ground/obj_ground.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_env_fan2",
-    "path":"sprites/spr_env_fan2/spr_env_fan2.yy",
+    "name":"spr_env_fan_new",
+    "path":"sprites/spr_env_fan_new/spr_env_fan_new.yy",
   },
   "spriteMaskId":null,
   "visible":true,

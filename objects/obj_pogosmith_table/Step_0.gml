@@ -39,6 +39,7 @@ if (colliding and key_interact) and !instance_exists(obj_fade_in) {
 }
 
 if being_used = true {
+	obj_player.table = true;
 	if !instance_exists(obj_pogostick) {
 		instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+1,obj_pogostick,{image_angle: obj_player.image_angle});	
 	}

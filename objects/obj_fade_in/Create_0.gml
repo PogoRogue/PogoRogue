@@ -9,3 +9,5 @@ if room = room_menu or room = room_items or room = room_settings or room = room_
 }
 
 alarm[0] = 11;
+
+audio_group_set_gain(audiogroup_music, global.music_volume/100, 1);

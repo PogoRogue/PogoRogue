@@ -3,6 +3,7 @@ screenshake_button = 0;//keyboard_check_pressed(vk_backspace); //press escape ke
 mute_button = 0;//keyboard_check_pressed(ord("M")); //press M to mute audio (temporary)
 itemmenu_button = global.key_item_menu; 
 skiplevel_button = keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
+disable_ui_button = keyboard_check_pressed(vk_f3);
 
 if (restart_button) {
 	room_persistent = false;
@@ -33,6 +34,10 @@ if keyboard_check_pressed(vk_f2) {
 		body_sprite = body_array[global.current_skin];
 		pogostick_sprite = pogostick_array[global.current_skin];
 	}
+}
+
+if disable_ui_button {
+	global.draw_ui = not global.draw_ui;
 }
 
 if (mute_button) {

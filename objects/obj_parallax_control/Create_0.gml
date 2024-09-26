@@ -61,8 +61,8 @@ if global.phase = 2 and room != room_shop or room = room_boss_2 {
 }else  {
 	
 	background_map[? layer_get_id("bg_background3")] = 0.8;
-	background_map[? layer_get_id("bg_background2")] = 0.7;
-	background_map[? layer_get_id("bg_background")] = 0.6;
+	background_map[? layer_get_id("bg_background2")] = 0.8;
+	background_map[? layer_get_id("bg_background")] = 0.8;
 	background_map[? layer_get_id("bg_midground")] = 0.4;
 	background_map[? layer_get_id("bg_foreground")] = 0.2;
 	

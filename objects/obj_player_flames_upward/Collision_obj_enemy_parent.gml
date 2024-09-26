@@ -1,5 +1,5 @@
 /// @description damage enemy
-
+other.depth = depth+1;
 if(!other.is_dead && !array_contains(damaged_list, other)) {
 	other.hp -= damage;
 	other.red_frames = 10;

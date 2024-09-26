@@ -1,5 +1,5 @@
 /// @description Spawn Explosion
 if(explode){
-    instance_create_layer(x,y,"Instances",obj_explosion);
+    instance_create_depth(x,y,-200,obj_explosion);
 }
 

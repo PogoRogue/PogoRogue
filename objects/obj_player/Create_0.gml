@@ -36,6 +36,9 @@ launchpad = false;
 lock_unlocked = false;
 lock_unlocked_frames = 0;
 lock_alpha = 1;
+enemy_hurt_obj = noone;
+enemy_bouncing_obj = noone;
+enemy_free = true;
 
 center_x_sprite = bbox_left + ((bbox_right - bbox_left)/2);
 center_y_sprite = bbox_top + ((bbox_top - bbox_top)/2);
@@ -251,6 +254,15 @@ state_free = function() {
 	//make sure player isn't colliding with anything before checking for collisions again
 	if !(place_meeting(x,y,obj_ground)) and free = false {
 		free = true;	
+	}
+	
+	//enemy free
+	if enemy_free = false and !place_meeting(x,y,obj_enemy_parent) {
+		with obj_player_mask {
+			if !place_meeting(x,y,obj_enemy_parent) {
+				other.enemy_free = true;
+			}
+		}
 	}
 	
 	//restart room if reached the top unless procgen room
@@ -1659,3 +1671,4 @@ if room = room_starting_area {
 	x = global.player_starting_x;
 	y = global.player_starting_y;
 }
+

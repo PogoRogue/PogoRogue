@@ -14,3 +14,8 @@ if room = room_shop {
 damage = 5;
 init_damage = damage;
 colliding_with_enemies = false;
+
+
+if room = room_boss_2 {
+	instance_destroy();
+}

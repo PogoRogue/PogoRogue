@@ -30,12 +30,19 @@ stomp_defense = 0.9;
 randomize();
 if global.phase <= 1 {
 	//red = false;
+	pink = choose(true,false);
 }else if global.phase = 2 {
-	red = choose(true,true,false);
+	red = choose(true,false);
 }else if global.phase >= 3 {
-	red = true;
+	red = choose(true,false);
+	if red = false {
+		pink = true;
+	}
 }
 if red = true {
 	sprite_index = spr_enemy_snail_red;
+}
+if pink = true {
+	sprite_index = spr_enemy_snail_pink;
 }
 random_set_seed(global.seed);

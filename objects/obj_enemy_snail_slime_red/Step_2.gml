@@ -34,6 +34,10 @@ if distance_to_object(obj_player) > 2000 and !obj_player.dead {
 	instance_destroy();	
 }
 
+if !instance_exists(parent_index) and  parent_index != noone{
+	//instance_destroy();
+}
+
 /*
 if place_meeting(x,y,obj_player) {
 	depth = obj_player.depth - 10;

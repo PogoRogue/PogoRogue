@@ -1,10 +1,23 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"obj_enemy_snail_slime_pink","order":2,"path":"objects/obj_enemy_snail_slime_pink/obj_enemy_snail_slime_pink.yy",},
     {"name":"obj_laser_boss","order":1,"path":"objects/obj_laser_boss/obj_laser_boss.yy",},
+    {"name":"obj_volleyball_small","order":1,"path":"objects/obj_volleyball_small/obj_volleyball_small.yy",},
+    {"name":"spr_2x2_Combat_Phase3_copy","order":1,"path":"sprites/spr_2x2_Combat_Phase3_copy/spr_2x2_Combat_Phase3_copy.yy",},
     {"name":"spr_B1_Fly_Drop_old","order":1,"path":"sprites/spr_B1_Fly_Drop_old/spr_B1_Fly_Drop_old.yy",},
     {"name":"spr_B1_Shield_Drop_old","order":2,"path":"sprites/spr_B1_Shield_Drop_old/spr_B1_Shield_Drop_old.yy",},
     {"name":"spr_B1_Shield_Move_old","order":1,"path":"sprites/spr_B1_Shield_Move_old/spr_B1_Shield_Move_old.yy",},
+    {"name":"spr_enemy_fairy_fly_blue","order":4,"path":"sprites/spr_enemy_fairy_fly_blue/spr_enemy_fairy_fly_blue.yy",},
+    {"name":"spr_enemy_fairy_fly_green","order":5,"path":"sprites/spr_enemy_fairy_fly_green/spr_enemy_fairy_fly_green.yy",},
+    {"name":"spr_enemy_fairy_vanish_blue","order":6,"path":"sprites/spr_enemy_fairy_vanish_blue/spr_enemy_fairy_vanish_blue.yy",},
+    {"name":"spr_enemy_fairy_vanish_green","order":7,"path":"sprites/spr_enemy_fairy_vanish_green/spr_enemy_fairy_vanish_green.yy",},
+    {"name":"spr_enemy_shooter_cannon2","order":1,"path":"sprites/spr_enemy_shooter_cannon2/spr_enemy_shooter_cannon2.yy",},
+    {"name":"spr_enemy_snail_pink","order":2,"path":"sprites/spr_enemy_snail_pink/spr_enemy_snail_pink.yy",},
+    {"name":"spr_enemy_snail_slime_pink","order":3,"path":"sprites/spr_enemy_snail_slime_pink/spr_enemy_snail_slime_pink.yy",},
+    {"name":"spr_env_fan_new","order":1,"path":"sprites/spr_env_fan_new/spr_env_fan_new.yy",},
+    {"name":"spr_projectile_bouncyball_mask","order":1,"path":"sprites/spr_projectile_bouncyball_mask/spr_projectile_bouncyball_mask.yy",},
     {"name":"spr_shop_background_new","order":1,"path":"sprites/spr_shop_background_new/spr_shop_background_new.yy",},
+    {"name":"spr_volleyball_small","order":1,"path":"sprites/spr_volleyball_small/spr_volleyball_small.yy",},
   ],
 }

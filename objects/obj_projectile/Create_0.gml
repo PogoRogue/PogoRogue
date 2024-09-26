@@ -433,6 +433,10 @@ if (gun_name = "Plasma Gun") {
 	create_trail_num = 0;
 }
 
+if gun_name = "Bouncy Ball Blaster" {
+	mask_index = spr_projectile_bouncyball_mask;
+}
+
 scr_Projectile_Bounce("Javelins");
 scr_Projectile_Bounce("Six Shooter");
 scr_Projectile_Bounce("Seven Shooter");

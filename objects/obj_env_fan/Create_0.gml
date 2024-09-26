@@ -1,4 +1,9 @@
-/// @description Create Air Effect
+/// @description Insert description here
+// You can write your code in this editor
 
-air = instance_create_depth(x,y,depth,obj_env_air_effect);
-air.image_angle = self.image_angle;
+
+
+alarm[0] = 10;
+
+air = noone;
+air2 = noone;
