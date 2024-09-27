@@ -14,6 +14,6 @@ global.current_tip = global.tips_array[irandom_range(0,array_length(global.tips_
 random_set_seed(global.seed);
 
 if room != room_starting_area and room != room_menu and room != room_stats
-and room != room_settings and room != room_items {
+and room != room_settings and room != room_items and next_room != room {
 	audio_group_set_gain(audiogroup_music, 0, 1000);
 }

@@ -13,7 +13,9 @@ switch(ability) {
 		_burst.repeats = 0;
 		_burst.amount = 12;
 		_burst.spd = 2;
-		audio_play_sound(snd_bulletblast_enemy,0,false);
+		centering = false;
+		//audio_play_sound(snd_bulletblast_enemy,0,false);
+		scr_Screen_Shake(15,10,false);
 		break;
 	case BOSS3_ABILITIES.SHIELD:
 		if(!instance_exists(obj_shield_plus)) {

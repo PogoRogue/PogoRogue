@@ -167,6 +167,7 @@ switch(current_state) {
 			with(obj_boss_marionette) {
 				sprite_index = spr_boss_marionette_death;
 				image_index = 0;
+				image_speed = 1;
 				damage = 0;
 			}
 		}

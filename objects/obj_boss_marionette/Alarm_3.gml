@@ -9,3 +9,5 @@ _shock1.hspeed = -4;
 _shock2.hspeed = 4;
 
 audio_play_sound(snd_groundpound_enemy,0,false);
+
+scr_Screen_Shake(6, 15, false);

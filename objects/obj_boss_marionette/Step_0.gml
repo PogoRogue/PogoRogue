@@ -8,13 +8,25 @@ image_alpha = 1.0;
 hp_percent = (hp / hp_max) * 100;
 is_hurt = previous_hp != hp;
 
-if(is_dead || (ability != BOSS3_ABILITIES.SHIELD && (alarm[2] < room_speed * 0.5 || alarm[2] > ability_cooldown - (room_speed * 0.5)))) {
+if(is_dead || (ability != BOSS3_ABILITIES.SHIELD && (alarm[2] < room_speed * 0.5 || alarm[2] > ability_cooldown - (room_speed * 0.5)))) and centering = false {
 	image_angle = lerp(image_angle, 0, 0.1);
+	if ability = BOSS3_ABILITIES.BULLET_BLAST and !audio_is_playing(snd_bulletblast_enemy) {
+		centering = true;
+	}
 } else {
 	angle_accelerration = swingspeed * dcos(angle);
 	angle_velocity += angle_accelerration;
 	angle += angle_velocity;
 	image_angle = lerp(image_angle, angle + 90, 0.1);
+}
+
+if centering = true {
+	if !audio_is_playing(snd_bulletblast_enemy) {
+		audio_play_sound(snd_bulletblast_enemy,0,false);
+		image_angle = lerp(image_angle, 0, 0.1);	
+		alarm[2] = 75;
+	}
+	centering = false;
 }
 
 if(alarm[2] < room_speed*0.5 && ability == BOSS3_ABILITIES.GROUND_POUND) and !audio_is_playing(snd_slamCharge_enemy) {

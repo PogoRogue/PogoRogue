@@ -12,7 +12,7 @@ if(parent != noone) {
     y = parent.y + lengthdir_y(64, parent.image_angle);
 }
 
-current_angle += angle_increment;
+current_angle += angle_increment/4;
 
 end_x = x + lengthdir_x(collision_range, current_angle);
 end_y = y + lengthdir_y(collision_range, current_angle);
@@ -34,3 +34,5 @@ if(_collision != noone) {
 		damage = 0;
 	}
 }
+
+scr_Screen_Shake(2,1,false);

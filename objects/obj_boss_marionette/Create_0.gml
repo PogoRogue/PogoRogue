@@ -18,6 +18,7 @@ vsp = 0;
 collision_detected = false;
 despawn_timer = 2 * room_speed;
 limb_alpha = 1.0;
+centering = false;
 
 
 enum BOSS3_ABILITIES {

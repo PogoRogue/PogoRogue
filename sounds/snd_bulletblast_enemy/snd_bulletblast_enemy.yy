@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.698979,
+  "duration":1.866667,
   "name":"snd_bulletblast_enemy",
   "parent":{
     "name":"Powerups",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_bulletblast_enemy.wav",
   "type":0,
-  "volume":0.75,
+  "volume":1.0,
 }
