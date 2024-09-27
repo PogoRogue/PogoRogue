@@ -19,17 +19,20 @@ if(!fight_started) {
 	with(obj_electric_current) {
 		alarm[0] = 1;
 	}
-	image_index = 5;
+	current_sprite = 7;
+	
+	mask_index = spr_nothing;
 	exit;
 }
 
 // Force an inactive state if the boss is dead or doesn't exist
 if(!instance_exists(body) || body.is_dead) {
 	current_state = BOSS2_STATES.INACTIVE;
+	depth = obj_player.depth+10;
 }
 
 // Set current hp segment
-if(instance_exists(body)) {
+if(instance_exists(body)) and current_state = BOSS2_STATES.IDLE {
 	if(body.hp_percent > hp_thresholds[2]) {
 		current_hp_segment = 2;
 	} else if(body.hp_percent > hp_thresholds[1]) {
@@ -88,6 +91,7 @@ switch(current_state) {
 	break;
 	case BOSS2_STATES.ATTACKING: // Attacking code goes here
 		// Check for sequence match
+		sprite_index = spr_boss2_sequence_lights;
 		if(state_has_changed) {
 			alarm_set(4, (12 - (2 * sequence_length)) * room_speed);
 			
@@ -111,7 +115,7 @@ switch(current_state) {
 			}
 		}
 		
-		if(sequence_index >= 1 && player_sequence[sequence_index - 1] != current_sequence[sequence_index - 1]) {
+		if(sequence_index >= 1 && player_sequence[sequence_index - 1] != current_sequence[sequence_index - 1]) and image_speed = 0 {
 			// Create a new sequence
 			sequence_failed = true;
 			current_frame = 6;
@@ -134,11 +138,23 @@ switch(current_state) {
 		}
 	break;
 	case BOSS2_STATES.VULNERABLE: // Vulnerable code goes here
-		current_frame = 5;
+		//current_frame = 5;
+		if sprite_index != spr_boss2_sequence_lights_unlocked {
+			sprite_index = spr_boss2_sequence_lights_unlocked;
+			image_index = 0;
+			image_speed = 1;
+		}
 
-		if(body.hp_percent < previous_hp_percent - 34) {
+		if(body.hp_percent < hp_thresholds[current_hp_segment]) { //previous_hp_percent - 34
+			body.hp_percent = hp_thresholds[current_hp_segment];
 			previous_hp_percent = body.hp_percent;
+			body.hp = body.hp_percent * 3;
 			current_state = BOSS2_STATES.IDLE;
+			if sprite_index != spr_boss2_sequence_lights_unlocked {
+				sprite_index = spr_boss2_sequence_lights_unlocked;
+				image_index = 7;
+				image_speed = -1;
+			}
 			alarm_set(2, 0);
 			alarm_set(5, idle_pause_duration);
 			body.sprite_index = spr_sequence_open_door;
@@ -173,7 +189,7 @@ switch(current_state) {
 			
 			body.sprite_index = spr_sequence_close_door;
 		}
-	break;
+		break;
 	case BOSS2_STATES.INACTIVE: // Inactive code goes here
 		if(state_has_changed) {			
 			with(obj_spikeswing) {
@@ -192,8 +208,12 @@ switch(current_state) {
 			with(obj_button) {
 				is_active = false;
 			}
-			
-			current_frame = 5;
+			if sprite_index != spr_boss2_sequence_lights_unlocked and spawned = false and reset = false {
+				sprite_index = spr_boss2_sequence_lights_unlocked;
+				image_index = 7;
+				image_speed = 0;
+			}
+			//current_frame = 5;
 			if instance_exists(body) {
 				body.sprite_index = spr_sequence_defeated;
 			}
@@ -203,22 +223,76 @@ switch(current_state) {
 
 state_has_changed = previous_state != current_state;
 previous_state = current_state;
-image_index = current_frame;
+if sprite_index != spr_boss2_sequence_lights_unlocked {
+	image_index = current_frame;
+}
 
 if spawned = true {
 	if white_alpha > 0 {
 		white_alpha -= 0.05;
 	}
 }else {
+	if reset = false and spawned = false {
+		sprite_index = spr_boss2_sequence_lights_unlocked;
+		image_index = 8;
+		image_speed = -1;
+		reset = true;
+	}
 	if white_alpha < 1 {
-		white_alpha += 0.05;
+		//white_alpha += 0.05;
 	}else {
 		spawned = true;
+		sprite_index = spr_boss2_sequence_lights;
+	}
+	
+	if image_index <= 1 {
+		spawned = true;
+		sprite_index = spr_boss2_sequence_lights;
 	}
 }
 
-if instance_exists(obj_boss_sequence_slime) and image_index != 5 {
+if image_index <= 1 and image_speed = -1 {
+	sprite_index = spr_boss2_sequence_lights;
+}
+
+if instance_exists(obj_boss_sequence_slime) and sprite_index != spr_boss2_sequence_lights_unlocked {
 	depth = obj_boss_sequence_slime.depth - 1;
-}else if image_index = 5 {
-	depth = obj_player.depth + 10;
+}else if sprite_index = spr_boss2_sequence_lights_unlocked {
+	if (scr_Animation_Complete() or image_index >= 7) and image_speed = 1 {
+		image_speed = 0;
+		image_index = 7;
+	}
+	if (image_speed = -1 and current_state != BOSS2_STATES.IDLE) {
+		depth = obj_player.depth + 10;
+	}else {
+		depth = obj_boss_sequence_slime.depth - 1;	
+	}
+}else {
+	depth = obj_boss_sequence_slime.depth - 1;
+}
+if abs(image_index) >= 7 and image_speed = 1 {
+	image_speed = 0;
+	image_index = 7;
+}
+
+if sprite_index != spr_boss2_sequence_lights_unlocked {
+	image_index = current_frame;
+}
+show_debug_message(image_index);
+show_debug_message(sprite_get_name(sprite_index));
+
+if sprite_index = spr_boss2_sequence_lights_unlocked {
+	//mask_index = spr_nothing;	
+}
+
+if(!instance_exists(body) || body.is_dead) {
+	depth = obj_player.depth+10;
+}
+
+if floor(image_index = 7) and image_speed = 0 and sprite_index = spr_boss2_sequence_lights_unlocked {
+	mask_index = spr_nothing;	
+}else if floor(image_index = 5 )and image_speed = 0 and sprite_index = spr_boss2_sequence_lights {
+	mask_index = spr_nothing;	
+}else {
+	mask_index = sprite_index;	
 }

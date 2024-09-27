@@ -5,3 +5,4 @@
 event_inherited();
 
 depth = 49;
+show_debug_message("CREATED");

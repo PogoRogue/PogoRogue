@@ -17,3 +17,4 @@ parent = noone;
 
 projectile_sprite = spr_enemy_projectile_slime;
 
+show_debug_message("pattern");

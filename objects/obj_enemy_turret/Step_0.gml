@@ -39,7 +39,7 @@ if(!is_dead && dist_to_player < range) {
 			sprite_index = shooting_sprite;
 		}
 		
-		if sprite_index = shooting_sprite and image_index = 16 { //(weapon_cooldown <= 0 and windup == false) and can_shoot {
+		if sprite_index = shooting_sprite and floor(image_index) = 16 { //(weapon_cooldown <= 0 and windup == false) and can_shoot {
 			// Create bullet
 			var _xx = x + lengthdir_x(48, image_angle);
 			var _yy = y + lengthdir_y(48, image_angle);
@@ -58,8 +58,9 @@ if(!is_dead && dist_to_player < range) {
 	}
 	if scr_Animation_Complete() and sprite_index = shooting_sprite {
 		sprite_index = default_sprite;
-		image_index = 0	
+		image_index = 0;
 	}
+	show_debug_message("ACTIVE");
 }else {
 	// When player is out of range, reset cooldown
 	weapon_cooldown = cooldown_length;

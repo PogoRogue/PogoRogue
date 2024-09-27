@@ -91,8 +91,8 @@ function scr_Save_Load_Variables(){
 	global.credits_watched = ini_read_real("savegame", "credits_watched", false);
 	global.tutorial_completed = ini_read_real("savegame", "tutorial_completed", false);
 	
-	global.sound_volume = ini_read_real("savegame", "sound_volume", 100);
-	global.music_volume = ini_read_real("savegame", "music_volume", 100);
+	global.sound_volume = ini_read_real("savegame", "sound_volume", 70);
+	global.music_volume = ini_read_real("savegame", "music_volume", 70);
 	
 	global.fullscreen = ini_read_real("savegame", "fullscreen", true);
 	global.resolution_num = ini_read_real("savegame", "resolution_num", 4);

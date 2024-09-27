@@ -1,6 +1,6 @@
 /// @description Handle each state
 
-if(is_done) {
+if(is_done) and image_speed = 0 {
 	exit;
 }
 
@@ -41,7 +41,11 @@ switch(current_state) {
 			if(array_equals(player_sequence, current_sequence)) {
 				// Allow the player through
 				sequence_index = 0;
-				current_frame = 3;
+				if sprite_index != spr_boss2_sequence_lights_trial_unlocked and opened = false {
+					sprite_index = spr_boss2_sequence_lights_trial_unlocked;
+					image_index = 0;
+					image_speed = 1;
+				}
 				audio_play_sound(snd_door, 0, false);
 				is_done = true;
 			}
@@ -49,8 +53,28 @@ switch(current_state) {
 	break;
 }
 
-image_index = current_frame;
+if opened = false and sprite_index = spr_boss2_sequence_lights_trial_unlocked {
+	opened = true;	
+	image_index = 0;
+	image_speed = 1;
+}
 
-if image_index = 3 {
+if abs(image_index) >= 7 {
+	image_speed = 0;
+	image_index = 7;
+}
+
+if sprite_index != spr_boss2_sequence_lights_trial_unlocked and opened = false {
+	image_index = current_frame;
+}
+
+if opened = true {
+	sprite_index = spr_boss2_sequence_lights_trial_unlocked;
+}
+
+show_debug_message(image_index);
+show_debug_message(sprite_get_name(sprite_index));
+
+if sprite_index = spr_boss2_sequence_lights_trial_unlocked {
 	mask_index = spr_nothing;	
 }

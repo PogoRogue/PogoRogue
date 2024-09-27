@@ -14,3 +14,4 @@ pattern = obj_slime_pattern;
 default_sprite = spr_slime_turret_head;
 body_sprite = spr_slime_turret_body;
 shooting_sprite = spr_slime_turret_shoot;
+depth = 450;

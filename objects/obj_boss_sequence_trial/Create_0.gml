@@ -19,3 +19,5 @@ image_speed = 0;
 with(obj_electric_current) {
 	alarm[0] = 1;
 }
+
+opened = false;
