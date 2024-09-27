@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_spikeblock_slam",
+  "%Name":"snd_fairy_poof",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.530979,
-  "name":"snd_spikeblock_slam",
+  "duration":0.677917,
+  "name":"snd_fairy_poof",
   "parent":{
-    "name":"Environmental",
-    "path":"folders/Sounds/Environmental.yy",
+    "name":"Enemies",
+    "path":"folders/Sounds/Enemies.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_spikeblock_slam.wav",
+  "soundFile":"snd_fairy_poof.wav",
   "type":0,
   "volume":1.0,
 }

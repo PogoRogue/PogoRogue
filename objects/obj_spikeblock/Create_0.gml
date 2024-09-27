@@ -28,6 +28,9 @@ state_waiting = function() {
 	}else if image_speed = 0 {
 		image_speed = 1;
 		image_index = 0;
+		if !audio_is_playing(snd_spikeblock_charge) and scr_In_Camera_View(128) {
+			audio_play_sound(snd_spikeblock_charge,0,false);
+		}
 	}
 	
 	if scr_Animation_Complete() {
@@ -90,8 +93,7 @@ state_slamming = function() {
 			}	
 			state = state_slammed;
 			//check if in view before making slam noise
-			if bbox_right > obj_camera.x - obj_camera.view_w_half and bbox_left < obj_camera.x + obj_camera.view_w_half
-			and bbox_bottom > obj_camera.y - obj_camera.view_h_half and bbox_top < obj_camera.y + obj_camera.view_h_half {
+			if scr_In_Camera_View(128) {
 				if !audio_is_playing(snd_spikeblock_slam) {
 					audio_play_sound(snd_spikeblock_slam,0,false);
 				}
@@ -109,8 +111,7 @@ state_slamming = function() {
 			}
 			state = state_slammed;
 			//check if in view before making slam noise
-			if bbox_right > obj_camera.x - obj_camera.view_w_half and bbox_left < obj_camera.x + obj_camera.view_w_half
-			and bbox_bottom > obj_camera.y - obj_camera.view_h_half and bbox_top < obj_camera.y + obj_camera.view_h_half {
+			if scr_In_Camera_View(128) {
 				if !audio_is_playing(snd_spikeblock_slam) {
 					audio_play_sound(snd_spikeblock_slam,0,false);
 				}

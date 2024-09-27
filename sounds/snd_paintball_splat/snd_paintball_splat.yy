@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_spikeblock_slam",
+  "%Name":"snd_paintball_splat",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.530979,
-  "name":"snd_spikeblock_slam",
+  "duration":0.544292,
+  "name":"snd_paintball_splat",
   "parent":{
-    "name":"Environmental",
-    "path":"folders/Sounds/Environmental.yy",
+    "name":"Weapons",
+    "path":"folders/Sounds/Weapons.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_spikeblock_slam.wav",
+  "soundFile":"snd_paintball_splat.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.8,
 }

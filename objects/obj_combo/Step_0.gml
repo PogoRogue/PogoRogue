@@ -7,6 +7,9 @@ if global.combo_length > 0 and room != room_boss_1 and room != room_boss_2 and r
 		global.combo_length = global.combo_max;
 	}
 }else if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and obj_player.table = false {
+	if global.combo > 0 {
+		audio_play_sound(snd_combo_lost,0,false);
+	}
 	global.combo = 0;
 }else if obj_player.table = false {
 	global.combo_length = global.combo_max;

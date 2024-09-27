@@ -1,4 +1,4 @@
-function scr_Gradually_Turn(obj_to_turn,target,turn_speed,accuracy) {
+ function scr_Gradually_Turn(obj_to_turn,target,turn_speed,accuracy) {
 	// <obj_to_turn> takes an object
 	// <target> takes an object
 	// <turn_speed> takes a number

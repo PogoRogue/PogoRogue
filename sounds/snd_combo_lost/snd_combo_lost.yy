@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_spikeblock_slam",
+  "%Name":"snd_combo_lost",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.530979,
-  "name":"snd_spikeblock_slam",
+  "duration":0.662132,
+  "name":"snd_combo_lost",
   "parent":{
-    "name":"Environmental",
-    "path":"folders/Sounds/Environmental.yy",
+    "name":"Character",
+    "path":"folders/Sounds/Character.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_spikeblock_slam.wav",
+  "soundFile":"snd_combo_lost.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.5,
 }

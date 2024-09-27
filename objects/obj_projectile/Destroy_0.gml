@@ -88,6 +88,9 @@ if (gun_name = "Water Gun") {
 }
 
 if (gun_name = "Paintball Gun") {
+	if scr_In_Camera_View(64) {
+	audio_play_sound(snd_paintball_splat,0,false);
+	}
 	for(i = 0; i < 360; i += 45) {
 		with instance_create_depth(x,y,depth-1,obj_paintball_droplet) {
 			speed = other.spd/3;
