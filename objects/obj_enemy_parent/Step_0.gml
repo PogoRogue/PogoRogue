@@ -29,6 +29,30 @@ if(is_dead) {
 	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 { 
 		global.combo += 1;
 		global.combo_length = global.combo_max;
+		
+		var current_audio = snd_nothing;
+		switch (global.combo) {
+			case 1: current_audio = snd_combo1; break;
+			case 2: current_audio = snd_combo2; break;
+			case 3: current_audio = snd_combo3; break;
+			case 4: current_audio = snd_combo4; break;
+			case 5: current_audio = snd_combo5; break;
+			case 6: current_audio = snd_combo6; break;
+			case 7: current_audio = snd_combo7; break;
+			case 8: current_audio = snd_combo8; break;
+			case 9: current_audio = snd_combo9; break;
+			case 10: current_audio = snd_combo10; break;
+			default: current_audio = snd_nothing;
+		}
+		
+		if !audio_is_playing(current_audio) and current_audio != snd_nothing {
+			audio_play_sound(current_audio,0,false);	
+		}
+		
+		if global.combo > 10 {
+			audio_play_sound(snd_combo10,0,false);	
+		}
+		
 		if global.combo > 0 and global.combo % 10 = 0 and global.combo_master = true { //combo master powerup
 			with obj_player {
 				if hp < max_hp {

@@ -17,9 +17,6 @@ weapon_y = y + lengthdir_y(48, image_angle);
 
 
 var _half_second = room_speed * 0.5;
-if boss.weapon = BOSS3_WEAPONS.LASER {
-	_half_second = room_speed * 1;
-}
 draw_laser =  alarm[1] < _half_second
 		  || (alarm[1] > _half_second + 4 && alarm[1] < _half_second + 8)
 		  || (alarm[1] > _half_second + 12 && alarm[1] < _half_second + 16);

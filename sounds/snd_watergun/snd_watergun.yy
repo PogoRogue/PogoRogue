@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.266667,
+  "duration":21.540188,
   "name":"snd_watergun",
   "parent":{
     "name":"Weapons",

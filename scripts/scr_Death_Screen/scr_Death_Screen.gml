@@ -40,9 +40,9 @@ function scr_Death_Screen(win){
 	
 	scr_Draw_Text_Outlined(x-78-52,y-75,"Best Combo:  ",c_white);
 	scr_Draw_Text_Outlined(x-78-52,y-37,"Enemies Killed:  ",c_white);
-	scr_Draw_Text_Outlined(x-78-52,y,"Coins Collected:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y,"Coins:  ",c_white);
 	scr_Draw_Text_Outlined(x-78-52,y+37,"Time:  ",c_white);
-	scr_Draw_Text_Outlined(x-78-52,y+74,"Area Reached:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y+74,"Area:  ",c_white);
 	scr_Draw_Text_Outlined(x-78-52,y+110,"Seed:  ",c_white);
 	
 	draw_set_halign(fa_right);
@@ -51,7 +51,15 @@ function scr_Death_Screen(win){
 	scr_Draw_Text_Outlined(x-78+52,y-37,string(global.current_enemies_killed),c_white);
 	scr_Draw_Text_Outlined(x-78+52,y,string(global.current_total_coins),c_white);
 	scr_Draw_Text_Outlined(x-78+52,y+37,scr_Convert_Frames_To_Time(global.current_time_elapsed),c_white);
-	scr_Draw_Text_Outlined(x-78+52,y+74,string(global.current_area_reached),c_white);
+	if room = room_proc_gen_test {
+		scr_Draw_Text_Outlined(x-78+52,y+74," " + string(global.current_area_reached),c_white);
+	}else if room = room_boss_1 {
+		scr_Draw_Text_Outlined(x-78+52,y+74," Boss 1",c_white);
+	}else if room = room_boss_2 {
+		scr_Draw_Text_Outlined(x-78+52,y+74," Boss 2",c_white);
+	}else if room = room_boss_3 {
+		scr_Draw_Text_Outlined(x-78+52,y+74," Boss 3",c_white);
+	} 
 	scr_Draw_Text_Outlined(x-78+52,y+110,string(current_seed),c_white);
 	
 	draw_set_halign(fa_center);

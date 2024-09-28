@@ -1,5 +1,5 @@
 /// @description Player collision + button pressed
-if table_num = global.pogosmith_spawn_area {
+
 key_interact = global.key_interact;
 key_back = global.key_back;
 key_left = global.key_left_menu;
@@ -163,5 +163,4 @@ if scr_Animation_Complete() and sprite_index = spr_pogosmith_workbench_animation
 	image_speed = 0;
 	sprite_index = spr_pogosmith_workbench;
 	image_index = 0;
-}
 }

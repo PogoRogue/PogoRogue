@@ -25,8 +25,8 @@ function scr_Get_Skin_Loadout(){
 		max_armor_buff = 5;
 	}else if global.current_skin = 3 {
 		num_of_weapons = 1;
-		gun_1 = default_gun;
-		gun_2 = gun_1;
+		gun_1 = boomerang_gun;
+		gun_2 = default_gun;
 		gun_3 = gun_1;
 		gun_array = [gun_1,gun_2,gun_3];
 		
@@ -110,8 +110,8 @@ function scr_Get_Skin_Loadout(){
 		global.all_weapon_costs[0] = obj_item_weapon_puncher.item_cost;
 		instance_destroy(temp_item);
 			
-		num_of_pickups = 0;
-		pickup_1 = pickup_nothing;
+		num_of_pickups = 1;
+		pickup_1 = pickup_hatgun;
 		pickup_2 = pickup_nothing;
 		pickups_array = [pickup_1,pickup_2];
 		
@@ -122,9 +122,9 @@ function scr_Get_Skin_Loadout(){
 		armor_buff = 0;
 		max_armor_buff = 5;
 	}else {
-		num_of_weapons = 1;
-		gun_1 = default_gun;
-		gun_2 = gun_1;
+		num_of_weapons = 2;
+		gun_1 = paintball_gun;
+		gun_2 = default_gun;
 		gun_3 = gun_1;
 		gun_array = [gun_1,gun_2,gun_3];
 		

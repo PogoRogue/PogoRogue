@@ -27,6 +27,8 @@ with obj_subboss_shield_isolated {
 	instance_create_layer(x, y, "enemies", obj_explosion);
 }
 
+audio_group_set_gain(audiogroup_music, 0, 1000);
+
 //instance_destroy(obj_subboss_exploding);
 //instance_destroy(obj_subboss_fly_chasing);
 //instance_destroy(obj_subboss_shield);

@@ -38,6 +38,7 @@ if (destroy_on_impact and num_of_bounces <= 0 and destroyable = true) {
 		}else if gun_name = "Water Gun" {
 			alarm[0] = 1;
 			//sprite_index = spr_projectile_water_droplet;
+			
 		}else if gun_name = "Puncher" {
 			alarm[0] = 20;
 			spd = 0;
@@ -447,6 +448,16 @@ if (gun_name = "Water Gun") {
 		alarm[0] = 1;
 	}
 	image_xscale = 1;
+	
+	if global.key_fire_projectile and obj_player.water_gun.current_bullets > 0  {
+		if !audio_is_playing(snd_watergun) {
+			audio_play_sound(snd_watergun,0,false);
+		}
+	}else {
+		if audio_is_playing(snd_watergun) {
+			audio_stop_sound(snd_watergun);	
+		}
+	}
 }
 
 if (gun_name = "Paintball Gun") {

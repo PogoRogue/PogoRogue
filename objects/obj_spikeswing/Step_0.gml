@@ -23,3 +23,13 @@ x += hsp;
 y += vsp;
 
 image_angle = angle + 90 + (additional_momentum * sign(angle_velocity));
+
+if (image_angle > 355 and image_angle <= 365 
+or image_angle > -5 and image_angle <= 5)
+and sound_played = false {
+	if scr_In_Camera_View(128) and !audio_is_playing(snd_wreckingball_woosh) {
+		audio_play_sound(snd_wreckingball_woosh,0,false);
+		sound_played = true;
+		alarm[1] = 60;
+	}
+}
