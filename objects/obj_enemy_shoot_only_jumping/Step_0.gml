@@ -33,6 +33,9 @@ if(!is_dead && distance_to_object(player) <= jump_range) {
 			image_index = 0;
 			jump_cooldown = cooldown_length;
 			alarm_set(1, 1.4 * room_speed);
+			if !is_dead { 
+				audio_play_sound(snd_craig_charge,0,false);
+			}
 		}
 	}
 }

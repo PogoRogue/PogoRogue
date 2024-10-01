@@ -57,6 +57,11 @@ function scr_Jump(add_to_jump){
 				pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
 				pickups_array[0].on_cooldown = false;
 				pickups_array[0].bounce_reset = pickups_array[0].bounce_reset_max;
+				
+				if pickups_array[0] != pickup_hatgun and pickups_array[0] != pickup_grappling 
+				and pickups_array[0] != pickup_harpoon {
+					audio_play_sound(snd_recharge1,0,false);
+				}
 			}
 		}else {
 			if global.impatience = false {
@@ -78,6 +83,11 @@ function scr_Jump(add_to_jump){
 				pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
 				pickups_array[1].on_cooldown = false;
 				pickups_array[1].bounce_reset = pickups_array[1].bounce_reset_max;
+				
+				if pickups_array[1] != pickup_hatgun and pickups_array[1] != pickup_grappling 
+				and pickups_array[1] != pickup_harpoon {
+					audio_play_sound(snd_recharge2,0,false);
+				}
 			}
 		}else {
 			if global.impatience = false {

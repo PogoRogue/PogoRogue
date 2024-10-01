@@ -9,3 +9,5 @@ if room = room_boss_1 or room = room_boss_2 {
 	image_xscale = 0;
 	image_yscale = 0;
 }
+
+angle = 0;

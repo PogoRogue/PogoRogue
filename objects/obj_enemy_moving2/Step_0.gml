@@ -15,7 +15,10 @@ if firing = true {
 	image_speed = 1;
 	sprite_index = spr_walk_enemy_idle_1;
 	current_state = ROBOT_STATES.IDLE;
-	draw_laser = true;
+	if draw_laser = false {
+		draw_laser = true;
+		
+	}
 	
 	dist_to_wall = 0;
 	while !position_meeting(x+dist_to_wall,y-22,obj_ground) {

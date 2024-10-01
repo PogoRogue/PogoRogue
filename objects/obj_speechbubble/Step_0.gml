@@ -180,3 +180,7 @@ if bubble_num = 9 and current_line >= lines_of_text and awake {
 if y_offset < 0 {
 	y_offset = 0;
 }
+
+if room = room_starting_area or room = room_proc_gen_test {
+	depth = obj_player.depth + 7
+}

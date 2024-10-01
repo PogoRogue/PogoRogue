@@ -25,7 +25,7 @@ function scr_Tips(){
 	"Weapons discovered in earlier areas can be upgraded more than once.",
 	"Try to kill fairies as quick as you can. They would rather die than give up their prize.",
 	"If you don't like the default control bindings, you can edit them in the settings menu.",
-	"Your combo lasts between phases.",
+	"You don't lose your combo in the shop, during boss fights, or while interacting with NPCs.",
 	"If you're having trouble bouncing directly onto a chest, use your weapons to help!",
 	"If you're taking a lot of damage, it might be a good idea to slow down even if it means sacrificing a combo."
 	];

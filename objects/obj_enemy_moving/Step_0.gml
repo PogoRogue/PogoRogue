@@ -49,3 +49,9 @@ image_xscale = x_dir > 0 ? 1 : -1;
 
 state_has_changed = previous_state != current_state;
 previous_state = current_state;
+
+if distance_to_object(obj_player) < player_range and played_sound = false {
+	played_sound = true;
+	audio_play_sound(snd_robot,0,false);
+	alarm[4] = 180;
+}

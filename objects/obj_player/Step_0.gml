@@ -59,6 +59,53 @@ if current_iframes <= 0 {
 	bubble = false;	
 }
 
+//recentering
+if table = true or state = state_pogosmith {
+
+	if (centering = true or state = state_pogosmith) {
+		can_rotate = false;
+		if angle >= rotation_speed or angle <= -rotation_speed {
+			angle += rotation_speed * -sign(angle);
+		}else {
+			angle = 0;
+			can_rotate = true;
+			centering = false;
+		}
+	
+		//stop if right or left key
+		if !instance_exists(obj_salesman_table) and !instance_exists(obj_pogosmith_table) { 
+			if key_left or key_right or state = state_bouncing {
+				can_rotate = true;
+				centering = false;
+			}
+		}else {
+			if instance_exists(obj_salesman_table) and instance_exists(obj_pogosmith_table) {
+				if obj_salesman_table.being_used = false and obj_pogosmith_table.being_used = false {
+					if key_left or key_right or state = state_bouncing {
+						can_rotate = true;
+						centering = false;
+					}
+				}
+			}else if instance_exists(obj_salesman_table) {
+				if obj_salesman_table.being_used = false {
+					if key_left or key_right or state = state_bouncing {
+						can_rotate = true;
+						centering = false;
+					}
+				}
+			}else if instance_exists(obj_pogosmith_table) {
+				if obj_pogosmith_table.being_used = false {
+					if key_left or key_right or state = state_bouncing {
+						can_rotate = true;
+						centering = false;
+					}
+				}
+			}
+		}
+	}
+}
+
+
 //run state machine
 state();
 
@@ -107,11 +154,37 @@ for (i = 0; i <= 1; i++) {
 	if pickups_array[i].reload_on_bounce = false {
 		if pickups_array[i].on_cooldown and pickups_array[i].cooldown_time > 0 and pickups_array[i].enemies_count_max = 0 {
 			pickups_array[i].cooldown_time -= 1;
+			if pickups_array[i].cooldown_time <= 0 {
+				if pickups_array[i] != pickup_parachute and pickups_array[i] != pickup_wreckingball
+				and pickups_array[i] != pickup_winners and pickups_array[i] != pickup_hacker {
+					if i = 0 {
+						audio_play_sound(snd_recharge1,0,false);	
+					}else {
+						audio_play_sound(snd_recharge2,0,false);
+					}
+				}
+			}
 		}else if pickups_array[i].on_cooldown and pickups_array[i].enemies_count_max = 0 {
 			pickups_array[i].on_cooldown = false;
 			pickups_array[i].cooldown_time = pickups_array[i].max_cooldown_time;
+			if pickups_array[i] != pickup_parachute and pickups_array[i] != pickup_wreckingball
+			and pickups_array[i] != pickup_winners and pickups_array[i] != pickup_hacker {
+				if i = 0 {
+					audio_play_sound(snd_recharge1,0,false);	
+				}else {
+					audio_play_sound(snd_recharge2,0,false);
+				}
+			}
 		}else if pickups_array[i].on_cooldown and pickups_array[i].enemies_count <= 0 {
 			pickups_array[i].on_cooldown = false;
+			if pickups_array[i] != pickup_parachute and pickups_array[i] != pickup_wreckingball
+			and pickups_array[i] != pickup_winners and pickups_array[i] != pickup_hacker {
+				if i = 0 {
+					audio_play_sound(snd_recharge1,0,false);	
+				}else {
+					audio_play_sound(snd_recharge2,0,false);
+				}
+			}
 		}
 	}
 }
@@ -184,52 +257,6 @@ if state != state_portal and state != state_shop_portal {
 }
 #endregion
 
-//recentering
-if key_recenter and centering = false and angle != 0 and !key_left and !key_right and can_rotate {
-	centering = true;
-}
-
-if (centering = true and can_rotate and controller_lock_in = false or centering = true and state = state_pogosmith) {
-	can_rotate = false;
-	if angle >= rotation_speed or angle <= -rotation_speed {
-		angle += rotation_speed * -sign(angle);
-	}else {
-		angle = 0;
-		can_rotate = true;
-		centering = false;
-	}
-	
-	//stop if right or left key
-	if !instance_exists(obj_salesman_table) and !instance_exists(obj_pogosmith_table) { 
-		if key_left or key_right or state = state_bouncing {
-			can_rotate = true;
-			centering = false;
-		}
-	}else {
-		if instance_exists(obj_salesman_table) and instance_exists(obj_pogosmith_table) {
-			if obj_salesman_table.being_used = false and obj_pogosmith_table.being_used = false {
-				if key_left or key_right or state = state_bouncing {
-					can_rotate = true;
-					centering = false;
-				}
-			}
-		}else if instance_exists(obj_salesman_table) {
-			if obj_salesman_table.being_used = false {
-				if key_left or key_right or state = state_bouncing {
-					can_rotate = true;
-					centering = false;
-				}
-			}
-		}else if instance_exists(obj_pogosmith_table) {
-			if obj_pogosmith_table.being_used = false {
-				if key_left or key_right or state = state_bouncing {
-					can_rotate = true;
-					centering = false;
-				}
-			}
-		}
-	}
-}
 
 #region shooting
 
@@ -585,15 +612,6 @@ if (dead = true and global.revive = false and state != state_revive) {
 	state = state_dead;
 	with obj_player_mask {
 		mask_index = spr_nothing;
-	}
-	
-	if y > obj_camera.y + (obj_camera.view_h_half) + 48 {
-		state = state_immobile;
-	}else if room = room_boss_3 {
-		mask_index = spr_nothing;
-		with obj_player_mask {
-			mask_index = spr_nothing;
-		}
 	}
 }
 

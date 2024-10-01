@@ -35,8 +35,9 @@ if(!is_dead && dist_to_player < range) {
 		// Fire when ready 
 		weapon_cooldown--;
 		
-		if(weapon_cooldown <= 0 and w_alarm_cd == false and windup == true) {
+		if(weapon_cooldown <= 0 and w_alarm_cd == false and windup == true) and sprite_index != shooting_sprite {
 			sprite_index = shooting_sprite;
+			audio_play_sound(snd_turret_charge,0,false);
 		}
 		
 		if sprite_index = shooting_sprite and floor(image_index) = 16 { //(weapon_cooldown <= 0 and windup == false) and can_shoot {
@@ -47,6 +48,7 @@ if(!is_dead && dist_to_player < range) {
 				var _bullet = instance_create_depth(_xx, _yy, -9, obj_enemy_projectile_bullet);
 				_bullet.direction = other.direction;
 				_bullet.speed = bullet_speed;
+				audio_play_sound(snd_turret_shoot,0,false);
 			} else {
 				var _pattern = instance_create_depth(_xx, _yy, -9, pattern);
 				_pattern.parent = self;

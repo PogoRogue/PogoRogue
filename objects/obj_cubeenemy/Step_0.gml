@@ -33,8 +33,9 @@ if rotating = true {
 		dir_changed = false;
 		rotating = false;
 		alarm[1] = 120;
-		if scr_In_Camera_View(200) {
-		laser_obj = instance_create_depth(x,y-20,depth-1,obj_cubeenemy_laser,{parent_index: self});
+		if scr_In_Camera_View(128) {
+			sound = audio_play_sound(snd_laser_hazard,0,false);	
+			laser_obj = instance_create_depth(x,y-20,depth-1,obj_cubeenemy_laser,{parent_index: self});
 			if double = true {
 				laser_obj2 = instance_create_depth(x,y-20,depth-1,obj_cubeenemy_laser2,{parent_index: self});
 			}
@@ -99,3 +100,7 @@ if place_meeting(x,y+vspd,obj_ground_oneway) {
 }
 
 y += vspd;
+
+if !instance_exists(laser_obj) {
+	audio_stop_sound(sound);	
+}

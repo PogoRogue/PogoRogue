@@ -45,3 +45,5 @@ if room = room_starting_area {
 	x = global.player_starting_x;
 	y = global.player_starting_y;
 }
+
+aspect_ratio = 1;

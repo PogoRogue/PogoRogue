@@ -26,9 +26,9 @@ if (place_meeting(x+hspeed+sign(hspeed),y,obj_ground)or place_meeting(x+hspeed+s
 		scale = 1;	
 	}
 	hspeed *= -(bounce_decay-0.1);
-	if distance_to_object(obj_player) < 768 {
+	if scr_In_Camera_View(128) {
 		randomize();
-		//audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
+		audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
 		random_set_seed(global.seed);
 		if distance_to_object(obj_player) > 384 {
 			audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
@@ -58,9 +58,9 @@ if (place_meeting(x,y+vspeed,obj_ground) or place_meeting(x,y+vspeed,obj_basketb
 		vspeed *= -1;
 
 	}
-	if distance_to_object(obj_player) < 768 {
+	if scr_In_Camera_View(128) {
 		randomize();
-		//audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
+		audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
 		random_set_seed(global.seed);
 		if distance_to_object(obj_player) > 384 {
 			audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
@@ -88,9 +88,9 @@ if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_grou
 	}else {
 		vspeed *= -1;	
 	}
-	if distance_to_object(obj_player) < 768 {
+	if scr_In_Camera_View(128) {
 		randomize();
-		//audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
+		audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
 		random_set_seed(global.seed);
 		if distance_to_object(obj_player) > 384 {
 			audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);

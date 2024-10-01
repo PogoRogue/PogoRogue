@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.107143,
+  "duration":2.582979,
   "name":"snd_volleyball_bounce2",
   "parent":{
     "name":"Weapons",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_volleyball_bounce2.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.4,
 }

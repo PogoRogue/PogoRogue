@@ -9,7 +9,7 @@ max_uses = 0;
 item_stats = "";
 
 if scr_In_Array(global.all_buffs, object_index) {
-	scr_Buff_Replace();
+	//scr_Buff_Replace();
 }
 
 if obj_player.hp >= obj_player.max_hp {

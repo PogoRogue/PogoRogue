@@ -18,6 +18,7 @@ if lock_unlocked = true {
 		lock_alpha -= 0.1;
 	}else {
 		lock_unlocked = false;
+		locked = false;
 	}
 	
 	//sprite

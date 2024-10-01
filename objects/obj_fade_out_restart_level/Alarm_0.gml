@@ -41,3 +41,7 @@ if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
 }
 
 global.door_color = "purple";
+
+global.room_width = 768;
+global.room_height = 432;
+camera_set_view_size(view_camera[0],global.room_width,global.room_height);

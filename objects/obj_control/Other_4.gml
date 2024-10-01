@@ -1,5 +1,17 @@
 /// @description Reset variables
 
+if room = room_tutorial {
+	global.music_volume_multiplier = 0.2;
+	audio_group_set_gain(audiogroup_music, global.music_volume_multiplier*((exp(0.24*((10 / 100) * global.music_volume))-1)/10), 2000);
+}else if room = room_starting_area {
+	global.music_volume_multiplier = 0.2;
+	audio_group_set_gain(audiogroup_music, global.music_volume_multiplier*((exp(0.24*((10 / 100) * global.music_volume))-1)/10), 2000);
+}else {
+	global.music_volume_multiplier = 1;
+	audio_group_set_gain(audiogroup_music, ((exp(0.24*((10 / 100) * global.music_volume))-1)/10), 2000);
+}
+
+
 //create pause object
 if !instance_exists(obj_pause) {
 	instance_create_depth(0,0,depth,obj_pause);	
@@ -66,7 +78,9 @@ if !audio_is_playing(global.current_music) {
 }
 
 if room = room_proc_gen_test {
-	global.show_tips_screen = true;	
+	if global.last_room != room_shop and global.shop_num <= global.current_shop_num {
+		//global.show_tips_screen = true;	
+	}
 }else {
 	global.show_tips_screen = false;	
 }
@@ -95,5 +109,12 @@ if room = room_proc_gen_test {
 	global.salesman_spawn_area = 1;
 }
 
+global.room_width = 768;
+global.room_height = 432;
+camera_set_view_size(view_camera[0],global.room_width,global.room_height);
 
-//Set NPC Spawn Areas
+//create "now entering" text
+if (room = room_proc_gen_test or room = room_starting_area or room = room_tutorial)
+and global.last_room != room_shop {
+	instance_create_depth(x,y,depth,obj_nowentering_text);
+}

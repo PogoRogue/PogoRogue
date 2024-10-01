@@ -1,4 +1,5 @@
 #region //angling
+key_recenter = global.key_recenter;
 var haxis = gamepad_axis_value(0, gp_axislh);
 var vaxis = gamepad_axis_value(0, gp_axislv);
 if controller_lock_in = false {
@@ -158,11 +159,61 @@ if controller_lock_in = false {
 angle = clamp(angle,-51,51); //cant tilt too far
 //show_debug_message(controller_lock_in);
 
+
 if (abs(haxis) = 1 or abs(vaxis) = 1) and vaxis < 0 {
 	//controller_lock_in = true;
 }else {
 	controller_lock_in = false;
 }
+
+
+//recentering
+if key_recenter and centering = false and angle != 0 and !key_left and !key_right and can_rotate {
+	centering = true;
+}
+
+if (centering = true and can_rotate and controller_lock_in = false or centering = true and state = state_pogosmith) {
+	can_rotate = false;
+	if angle >= rotation_speed or angle <= -rotation_speed {
+		angle += rotation_speed * -sign(angle);
+	}else {
+		angle = 0;
+		can_rotate = true;
+		centering = false;
+	}
+	
+	//stop if right or left key
+	if !instance_exists(obj_salesman_table) and !instance_exists(obj_pogosmith_table) { 
+		if key_left or key_right or state = state_bouncing {
+			can_rotate = true;
+			centering = false;
+		}
+	}else {
+		if instance_exists(obj_salesman_table) and instance_exists(obj_pogosmith_table) {
+			if obj_salesman_table.being_used = false and obj_pogosmith_table.being_used = false {
+				if key_left or key_right or state = state_bouncing {
+					can_rotate = true;
+					centering = false;
+				}
+			}
+		}else if instance_exists(obj_salesman_table) {
+			if obj_salesman_table.being_used = false {
+				if key_left or key_right or state = state_bouncing {
+					can_rotate = true;
+					centering = false;
+				}
+			}
+		}else if instance_exists(obj_pogosmith_table) {
+			if obj_pogosmith_table.being_used = false {
+				if key_left or key_right or state = state_bouncing {
+					can_rotate = true;
+					centering = false;
+				}
+			}
+		}
+	}
+}
+
 
 
 show_debug_message(angle);

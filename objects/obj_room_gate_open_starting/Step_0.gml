@@ -12,4 +12,5 @@ if scr_Animation_Complete() and image_speed = 1 {
 if floor(image_index) <= 1 and image_speed = -1 {
 	image_index = 0;
 	image_speed = 0;
+	audio_play_sound(snd_gate_closed,0,false);
 }

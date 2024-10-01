@@ -14,6 +14,7 @@ if(!is_open && hp < hp_max) {
 	instance_create_depth(x, y, depth, obj_enemy_jack_hitbox);
 	is_open = true;
 	body_subimg = 0;
+	audio_play_sound(snd_mimic,0,false);
 }
 
 

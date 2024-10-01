@@ -29,6 +29,8 @@ if(!fight_started) {
 if(!instance_exists(body) || body.is_dead) {
 	current_state = BOSS2_STATES.INACTIVE;
 	depth = obj_player.depth+10;
+	mask_index = spr_nothing;
+	//instance_destroy();
 }
 
 // Set current hp segment
@@ -285,14 +287,28 @@ if sprite_index = spr_boss2_sequence_lights_unlocked {
 	//mask_index = spr_nothing;	
 }
 
-if(!instance_exists(body) || body.is_dead) {
-	depth = obj_player.depth+10;
-}
-
 if floor(image_index = 7) and image_speed = 0 and sprite_index = spr_boss2_sequence_lights_unlocked {
 	mask_index = spr_nothing;	
 }else if floor(image_index = 5 )and image_speed = 0 and sprite_index = spr_boss2_sequence_lights {
 	mask_index = spr_nothing;	
+}else if (instance_exists(body)){
+	if  !body.is_dead {
+		mask_index = sprite_index;	
+	}
+}
+
+if(!instance_exists(body)) {
+	sprite_index = spr_boss2_sequence_lights_unlocked;
+	image_index = 7;
+	image_speed = 0;
+	mask_index = spr_nothing;
+	depth = obj_player.depth+10;
 }else {
-	mask_index = sprite_index;	
+	if body.is_dead {
+		sprite_index = spr_boss2_sequence_lights_unlocked;
+		image_index = 7;
+		image_speed = 0;
+		mask_index = spr_nothing;
+		depth = obj_player.depth+10;
+	}
 }

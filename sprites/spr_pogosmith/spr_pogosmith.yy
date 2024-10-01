@@ -28,7 +28,7 @@
   ],
   "name":"spr_pogosmith",
   "nineSlice":null,
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"NPCs",
     "path":"folders/Sprites/NPCs.yy",
@@ -95,7 +95,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":21,
+    "xorigin":26,
     "yorigin":40,
   },
   "swatchColours":[

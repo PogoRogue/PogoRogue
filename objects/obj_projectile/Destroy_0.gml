@@ -19,7 +19,7 @@ if (gun_name = "Grenade Launcher") or (gun_name = "Missile Launcher") {
 //give player a boost
 if (gun_name = "Star Sucker") {
 	with obj_player {
-		if state != state_freeze {
+		if state != state_freeze and state != state_parachute {
 			speed = 0;
 			motion_add(angle - 90, vsp_basicjump*1.1);
 		}
@@ -39,7 +39,7 @@ if (gun_name = "Yo-yo") {
 				gun_1.current_bullets += 1;
 			}
 			//add momentum
-			if state != state_freeze {
+			if state != state_freeze and state != state_parachute {
 				speed = 0;
 				motion_add(angle - 90, vsp_basicjump * gun_1.momentum_added);
 			}
@@ -48,7 +48,7 @@ if (gun_name = "Yo-yo") {
 				gun_2.current_bullets += 1;
 			}
 			//add momentum
-			if state != state_freeze {
+			if state != state_freeze and state != state_parachute {
 				speed = 0;
 				motion_add(angle - 90, vsp_basicjump * gun_2.momentum_added);
 			}
@@ -57,7 +57,7 @@ if (gun_name = "Yo-yo") {
 				gun_3.current_bullets += 1;
 			}
 			//add momentum
-			if state != state_freeze {
+			if state != state_freeze and state != state_parachute {
 				speed = 0;
 				motion_add(angle - 90, vsp_basicjump * gun_3.momentum_added);
 			}
@@ -147,3 +147,11 @@ if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
 if (gun_name = "The Portal") {
 	obj_player.portal_gun.current_bullets = 1;
 }
+
+show_debug_message("DESTROYED");
+
+show_debug_message("DESTROYED");
+show_debug_message("DESTROYED");
+show_debug_message("DESTROYED");
+show_debug_message("DESTROYED");show_debug_message("DESTROYED");
+show_debug_message("DESTROYED");

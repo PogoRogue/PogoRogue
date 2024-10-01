@@ -5,4 +5,5 @@ power_on = true;
 alarm[2] = round(room_speed * on_time);
 if room != room_proc_gen_test {
 	laser_obj = instance_create_depth(x,y,depth-1,obj_laser_boss);
+	sound = audio_play_sound(snd_laser_hazard,0,false);
 }

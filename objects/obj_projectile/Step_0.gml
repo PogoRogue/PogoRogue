@@ -1,5 +1,16 @@
 x += hspd;
+
 y += vspd;
+if place_meeting(x,y,obj_ground) and gun_name != "Javelins" and gun_name != "Plasma Gun" and gun_name != "Laser Gun" and destroy_on_impact {
+	if global.drilltipbullets = false and num_of_bounces > 0 {
+		depth = instance_place(x,y,obj_ground).depth + 20;
+	}else if num_of_bounces > 0 {
+		depth = init_depth;
+	}
+}else {
+	depth = init_depth;
+}
+
 
 //cant damage enemies if out of view
 if instance_exists(obj_camera) {
@@ -29,7 +40,7 @@ if instance_exists(obj_camera) {
 }
 
 //destroy when touching ground
-if (destroy_on_impact and num_of_bounces <= 0 and destroyable = true) {
+if (destroy_on_impact and (num_of_bounces <= 0) and destroyable = true) {
 	if (place_meeting(x,y,obj_ground)) and global.drilltipbullets = false
 	or (place_meeting(x,y,obj_boss_sequence)) and global.drilltipbullets = false and instance_place(x,y,obj_boss_sequence).image_index != 5 {
 		if gun_name = "Paintball Gun" {
@@ -40,7 +51,7 @@ if (destroy_on_impact and num_of_bounces <= 0 and destroyable = true) {
 			//sprite_index = spr_projectile_water_droplet;
 			
 		}else if gun_name = "Puncher" {
-			alarm[0] = 20;
+			//alarm[0] = 20;
 			spd = 0;
 			hspd = 0;
 			vspd = 0;
@@ -61,58 +72,8 @@ if (gun_name = "Grenade Launcher") {
 	image_angle -= hspd*2;
 }
 
-//bounces
-//bottom
-if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) {
-	while !place_meeting(x,y+sign(vspd),obj_ground) {
-		y += sign(vspd);
-	}
-	vspd *= -bounce_amount;
-	num_of_bounces -= 1;
-	if (gun_name = "Grenade Launcher") {
-		audio_play_sound(snd_grenade_bounce, 0, false);
-		image_index = 1;
-		alarm[1] = 5;
-	}else if (gun_name != "The Portal") {
-		image_angle = point_direction(x,y,x+hspd,y+vspd);
-	}
-	
-	if gun_name = "Bouncy Ball Blaster" {
-		randomize();
-		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
-		random_set_seed(global.seed);	
-	}
-	
-}else if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0 )
-or (place_meeting(x,y+vspd,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) /*and gun_name != "Puncher"*/ { //top
-	while !place_meeting(x,y+sign(vspd),obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) /*and gun_name != "Puncher"*/) {
-		y += sign(vspd);
-	}
-	vspd *= -bounce_amount;
-	num_of_bounces -= 1;
-	if (gun_name = "Grenade Launcher") {
-		audio_play_sound(snd_grenade_bounce, 0, false);
-		image_index = 1;
-		alarm[1] = 5;
-	}else if (gun_name != "The Portal") {
-		image_angle = point_direction(x,y,x+hspd,y+vspd);
-	}
-	
-	if gun_name = "Bouncy Ball Blaster" {
-		randomize();
-		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
-		random_set_seed(global.seed);
-	}
-
-	
-}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false /*and gun_name != "Puncher"*/) 
-or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) 
-or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) {
-	instance_destroy();
-}
-
 //left
-if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) {
+if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) and free = true and !(place_meeting(x,y+vspd,obj_ground)){
 	while !place_meeting(x+sign(hspd),y,obj_ground) {
 		x += sign(hspd);
 	}
@@ -131,10 +92,10 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) {
 		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 		random_set_seed(global.seed);
 	}
+	
+	y += vspd;
 
-}
-//right
-if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0 ) { 
+}else if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0 ) and free = true and !(place_meeting(x,y+vspd,obj_ground)) {  //right
 	while !place_meeting(x+sign(hspd),y,obj_ground) {
 		x += sign(hspd);
 	}
@@ -154,7 +115,59 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0 ) {
 		random_set_seed(global.seed);
 	}
 	
+	y += vspd;
+	
+}else if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) and free = true and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground)) or gun_name != "Plasma Gun") {
+	while !place_meeting(x,y+sign(vspd),obj_ground) {
+		y += sign(vspd);
+	}
+	vspd *= -bounce_amount;
+	num_of_bounces -= 1;
+	if (gun_name = "Grenade Launcher") {
+		audio_play_sound(snd_grenade_bounce, 0, false);
+		image_index = 1;
+		alarm[1] = 5;
+	}else if (gun_name != "The Portal") {
+		image_angle = point_direction(x,y,x+hspd,y+vspd);
+	}
+	
+	if gun_name = "Bouncy Ball Blaster" {
+		randomize();
+		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+		random_set_seed(global.seed);	
+	}
+	
+	x += hspd;
+	
+}else if (place_meeting(x,y+vspd+1,obj_ground) and vspd > 0 and num_of_bounces > 0 ) and free = true and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground)) or gun_name != "Plasma Gun")
+or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) /*and gun_name != "Puncher"*/ and free = true  and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground_oneway)) or gun_name != "Plasma Gun"){ //top
+	while !place_meeting(x,y+sign(vspd)+1,obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) /*and gun_name != "Puncher"*/) {
+		y += sign(vspd);
+	}
+	vspd *= -bounce_amount;
+	num_of_bounces -= 1;
+	if (gun_name = "Grenade Launcher") {
+		audio_play_sound(snd_grenade_bounce, 0, false);
+		image_index = 1;
+		alarm[1] = 5;
+	}else if (gun_name != "The Portal") {
+		image_angle = point_direction(x,y,x+hspd,y+vspd);
+	}
+	
+	if gun_name = "Bouncy Ball Blaster" {
+		randomize();
+		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
+		random_set_seed(global.seed);
+	}
+	
+	x += hspd;
+
+}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false /*and gun_name != "Puncher"*/) 
+or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) 
+or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) {
+	alarm[0] = 1;
 }
+
 
 
 
@@ -523,7 +536,7 @@ if (gun_name = "Puncher") {
 				if image_alpha > 0 {
 					image_alpha -= 0.05;	
 				}else {
-					instance_destroy();	
+					alarm[0] = 1;
 				}
 			}
 		}

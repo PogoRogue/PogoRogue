@@ -13,4 +13,3 @@ jump_height = -7.5;
 h_spd = 0;
 at_wall = false;
 
-

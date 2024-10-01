@@ -18,6 +18,7 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 
 if (colliding and key_open_door) {
 	if obj_player.state != obj_player.state_shop_portal {
+		audio_play_sound(snd_portal,0,false);
 		obj_player.speed = 0;
 		obj_player.portal_object = self;
 		obj_player.portal_speed = obj_player.speed/2;

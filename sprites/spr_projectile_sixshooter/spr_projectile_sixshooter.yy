@@ -3,8 +3,8 @@
   "%Name":"spr_projectile_sixshooter",
   "bboxMode":2,
   "bbox_bottom":19,
-  "bbox_left":0,
-  "bbox_right":93,
+  "bbox_left":32,
+  "bbox_right":61,
   "bbox_top":12,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -13,6 +13,7 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"","%Name":"5e011a47-e403-4d46-998d-8597007a5732","name":"5e011a47-e403-4d46-998d-8597007a5732","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"fd3a84f0-00ac-44bd-9d2c-a830c8c45b45","name":"fd3a84f0-00ac-44bd-9d2c-a830c8c45b45","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -23,7 +24,7 @@
   ],
   "name":"spr_projectile_sixshooter",
   "nineSlice":null,
-  "origin":9,
+  "origin":4,
   "parent":{
     "name":"Projectiles",
     "path":"folders/Sprites/Projectiles.yy",
@@ -49,7 +50,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -59,7 +60,7 @@
     },
     "name":"spr_projectile_sixshooter",
     "playback":1,
-    "playbackSpeed":30.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -71,11 +72,14 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5e011a47-e403-4d46-998d-8597007a5732","path":"sprites/spr_projectile_sixshooter/spr_projectile_sixshooter.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"75010992-99d9-4691-bf3d-37a3cbe0a76e","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fd3a84f0-00ac-44bd-9d2c-a830c8c45b45","path":"sprites/spr_projectile_sixshooter/spr_projectile_sixshooter.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"836e34e8-705d-4e7f-a0c6-dc64bdd12c7e","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":94,
+    "xorigin":32,
     "yorigin":16,
   },
   "swatchColours":[
@@ -95,5 +99,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":96,
+  "width":64,
 }

@@ -4,7 +4,7 @@ key_interact = global.key_interact;
 state();
 
 //close enough to switch?
-if distance_to_object(obj_player) < 110 and obj_player.x > init_x - 64 and obj_player.x <= init_x + 64 
+if (distance_to_object(obj_player) < 96 or distance_to_object(obj_player) < 110 and obj_player.y < y) and obj_player.x > init_x - 64 and obj_player.x <= init_x + 64 
 and (obj_player.state = obj_player.state_free or obj_player.state = obj_player.state_bouncing) {
 	colliding = true;
 }else {
@@ -20,7 +20,8 @@ if skin_num != 0 {
 if unlocked = false {
 	bounce_speed = -3.5;
 }else {
-	bounce_speed = -5;
+	bounce_speed = -5.5;
+	depth = -2;
 }
 
 //switch

@@ -109,7 +109,7 @@ function scr_Shoot(){
 			
 			if state = state_parachute {
 				with obj_parachute {
-					retract = true;	
+					//retract = true;	
 				}
 			}
 		
@@ -121,20 +121,22 @@ function scr_Shoot(){
 				slower_than_max = true;	
 				current_max = 0;
 			}
+			
+			if state != state_parachute {
+				//reset/preserve momentum
+				if (gun.reset_momentum and slower_than_max) {
+					speed = 0;
+				}else if (gun.reset_momentum) {
+					speed = current_max + (vsp_basicjump*gun.momentum_added);	
+				}
 		
-			//reset/preserve momentum
-			if (gun.reset_momentum and slower_than_max) {
-				speed = 0;
-			}else if (gun.reset_momentum) {
-				speed = current_max + (vsp_basicjump*gun.momentum_added);	
-			}
+				//add momentum
+				motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
 		
-			//add momentum
-			motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
-		
-			//set max speed for auto weapons
-			if (abs(speed) > abs(gun.max_speed) and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
-				speed = max(abs(gun.max_speed), abs(current_max));
+				//set max speed for auto weapons
+				if (abs(speed) > abs(gun.max_speed) and gun.full_auto = true) { //player cant exceed certain speed if full_auto = true
+					speed = max(abs(gun.max_speed), abs(current_max));
+				}
 			}
 		
 		}else {

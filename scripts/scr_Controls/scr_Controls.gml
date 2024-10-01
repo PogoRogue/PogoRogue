@@ -12,12 +12,12 @@ function scr_Controls(){
 	
 	//KEYBOARD
 	//gameplay
-	global.player_right_keys = [ord("D"),vk_right];
-	global.player_left_keys = [ord("A"),vk_left];
+	global.player_right_keys = [vk_right,-1];
+	global.player_left_keys = [vk_left,-1];
 	global.shoot_keys = [vk_space,-1];
-	global.recenter_keys = [ord("W"),vk_up];
-	global.pickup1_keys = [mb_left,vk_shift];
-	global.pickup2_keys = [mb_right,vk_lcontrol];
+	global.recenter_keys = [vk_up,ord("W")];
+	global.pickup1_keys = [ord("A"),vk_shift];
+	global.pickup2_keys = [ord("D"),vk_lcontrol];
 	global.interact_keys = [ord("E"),-1];
 	global.weapon1_keys = [ord("1"),-1];
 	global.weapon2_keys = [ord("2"),-1];
@@ -28,10 +28,10 @@ function scr_Controls(){
 	global.item_keys = [vk_tab,-1];
 	
 	//menu
-	global.menu_right_keys = [ord("D"),vk_right];
-	global.menu_left_keys = [ord("A"),vk_left];
-	global.menu_down_keys = [ord("S"),vk_down];
-	global.menu_up_keys = [ord("W"),vk_up];
+	global.menu_right_keys = [vk_right,ord("D")];
+	global.menu_left_keys = [vk_left,ord("A")];
+	global.menu_down_keys = [vk_down,ord("S")];
+	global.menu_up_keys = [vk_up,ord("W")];
 	global.select_keys = [vk_enter,vk_space];
 	global.back_keys = [vk_escape,-1];
 
@@ -41,10 +41,10 @@ function scr_Controls(){
 	
 	//GAMEPAD
 	//gameplay
-	global.player_right_buttons = [-10001,-1];
-	global.player_left_buttons = [-10000,-1];
+	global.player_right_buttons = [-10001,gp_padr];
+	global.player_left_buttons = [-10000,gp_padl];
 	global.shoot_buttons = [gp_shoulderrb,-1];
-	global.recenter_buttons = [-10002,-1];
+	global.recenter_buttons = [-10002,gp_padu];
 	global.pickup1_buttons = [gp_face1,-1];
 	global.pickup2_buttons = [gp_face2,-1];
 	global.interact_buttons = [gp_face4,-1];

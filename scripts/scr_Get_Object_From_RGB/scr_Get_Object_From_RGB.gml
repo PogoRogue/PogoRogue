@@ -277,11 +277,13 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}
 		else if(Red == 10 && Green == 10 && Blue == 10)
 		{
-			return obj_weapons_station;
+			return obj_table_selection;
 		}
 		else if(Red == 5 && Green == 5 && Blue == 5)
 		{
 			return obj_seeding_station;
+		}else if (Red == 4 && Green == 4 && Blue == 4) {
+			return obj_camera_constrain_y_bottom_long;
 		}
 		else if(Red == 3 && Green == 3 && Blue == 3)
 		{
@@ -318,6 +320,9 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}else if (Red == 85 && Green == 30 && Blue == 125)
 		{
 			return obj_randomasset2;
+		}else if (Red == 39 && Green == 101 && Blue == 114)
+		{
+			return obj_randomasset1;
 		}
 	}
 	

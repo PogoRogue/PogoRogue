@@ -1,10 +1,44 @@
 /// @description Update camera
+cam = view_camera[0];
+view_w_half = camera_get_view_width(cam) * 0.5;
+view_h_half = camera_get_view_height(cam) * 0.5;
+
+if room = room_menu {
+	follow = noonel
+}
+
+
 
 //Update destination
-if (instance_exists(follow)) {
+if (instance_exists(follow)) and instance_exists(obj_player) {  
 	//update destination
-	xTo = follow.x;
-	yTo = follow.y - 48;
+	if follow = obj_player {
+		xTo = follow.x;
+		yTo = follow.y - 48;
+	}
+	
+	if obj_player.state = obj_player.state_shop_portal 
+	or follow = obj_shop_door {
+	//or room != room_proc_gen_test {
+		xTo = follow.x+4;
+		yTo = follow.y-68;
+		
+		if room != room_shop and room != room_boss_1 and room != room_boss_2 {
+			x += (xTo - x) / readjust_speed;
+			y += (yTo - y) / readjust_speed;
+		}
+	}
+	
+	if obj_player.state = obj_player.state_portal
+	or follow = obj_boss_door {
+		xTo = follow.x+51;
+		yTo = follow.y+51;
+		
+		if room != room_shop and room != room_boss_1 and room != room_boss_2 {
+			x += (xTo - x) / readjust_speed;
+			y += (yTo - y) / readjust_speed;
+		}
+	}
 	
 	if room = room_gameplay_video or room = room_boss_1 {
 		var hallway_w_half = 280;
@@ -71,32 +105,43 @@ if (instance_exists(follow)) {
 		y_clamp = false;
 	}
 	
-	if x_clamp {
-		var xTo2 = clamp(xTo,x_min,x_max);
-		x += (xTo2 - x) / readjust_speed;
-	}else {
-		x += (xTo - x) / readjust_speed;
-	}
-	if y_clamp {
-		var yTo2 = clamp(yTo,y_min,y_max);
-		y += (yTo2 - y) / readjust_speed;
-	}else {
-		y += (yTo - y) / readjust_speed;
-	}
+	
 	
 	//center in room (unless proc gen level)
-	if (room != room_proc_gen_test && room != room_sprite_level_test  && room != room_starting_area) {
-		x = clamp(x,view_w_half+buff,room_width - view_w_half-buff);
-		y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
-	}else if room = room_starting_area {
-		x = clamp(x,view_w_half+buff-64,room_width - view_w_half-buff);
-		y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
-	}else if room = room_proc_gen_test {
-		if instance_exists(obj_room_gate_open_starting) {
-			if y > obj_room_gate_open_starting.y + 64-view_h_half {
-				y =	obj_room_gate_open_starting.y + 64-view_h_half;
+	
+	
+		
+	if obj_player.state != obj_player.state_portal and obj_player.state != obj_player.state_shop_portal
+	or room = room_shop or room = room_boss_1 or room = room_boss_2 {
+		if x_clamp {
+		var xTo2 = clamp(xTo,x_min,x_max);
+			x += (xTo2 - x) / readjust_speed;
+		}else {
+			x += (xTo - x) / readjust_speed;
+		}
+		if y_clamp {
+			var yTo2 = clamp(yTo,y_min,y_max);
+			y += (yTo2 - y) / readjust_speed;
+		}else {
+			y += (yTo - y) / readjust_speed;
+		}
+		if (room != room_proc_gen_test && room != room_sprite_level_test  && room != room_starting_area) {
+			x = clamp(x,view_w_half+buff,room_width - view_w_half-buff);
+			y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
+		}else if room = room_starting_area and follow = obj_player {
+			x = clamp(x,view_w_half+buff-64,room_width - view_w_half-buff);
+			y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
+		}else if room = room_proc_gen_test {
+			if instance_exists(obj_room_gate_open_starting) {
+				if y > obj_room_gate_open_starting.y + 64-view_h_half {
+					y =	obj_room_gate_open_starting.y + 64-view_h_half;
+				}
 			}
 		}
+	}
+	
+	if obj_player.dead = true {
+		follow = noone;
 	}
 }
 
@@ -120,6 +165,8 @@ if (global.allow_screenshake) {
 //update camera view
 camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
 
-if obj_player.state = obj_player.state_free and room = room_proc_gen_test {
-	follow = obj_player;
+if instance_exists(obj_player) {
+	if obj_player.state = obj_player.state_free and room = room_proc_gen_test {
+		follow = obj_player;
+	}
 }

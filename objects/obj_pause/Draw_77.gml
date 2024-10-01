@@ -12,7 +12,7 @@ if (pause) { //draw frozen image to screen while paused
 	surface_reset_target();
 }
 
-if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_out) and !instance_exists(obj_fade_in)
+if (global.key_pause and global.room_width = 768) and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_out) and !instance_exists(obj_fade_in)
 || paused_outside and !instance_exists(obj_fade_out) and !instance_exists(obj_fade_in)
 || controller_disconnected and !instance_exists(obj_items) and !instance_exists(obj_settings) and !instance_exists(obj_fade_in) and !instance_exists(obj_fade_out) {
 	
@@ -41,6 +41,7 @@ if global.key_pause and !instance_exists(obj_items) and !instance_exists(obj_set
 			instance_activate_object(obj_choosemenu_weapon);
 			instance_activate_object(obj_choosemenu_active);
 			instance_activate_object(obj_seeding_prompt);
+			instance_activate_object(obj_seed_prompt_3x3);
 			instance_activate_object(obj_code_prompt);
 			item_swap = true;
 		}else {

@@ -373,6 +373,9 @@ if (gun_name = "Puncher") {
 	y_prev_array = [0,0,0,0,0];
 	trail = true;
 	enemies_array = [];
+	
+	destroy_on_impact = false;
+	destroyable = false;
 }
 
 if (gun_name = "Six Shooter") or (gun_name = "Seven Shooter") or (gun_name = "Eight Shooter") 
@@ -388,9 +391,11 @@ or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Ele
 		audio_play_sound(random_snd,0,false);
 	}
 	depth = obj_player.depth+5;
-	x = obj_player.x + lengthdir_x(94,image_angle);
-	y = obj_player.y + lengthdir_y(94,image_angle);
+	//x = obj_player.x + lengthdir_x(62,image_angle);
+	//y = obj_player.y + lengthdir_y(62,image_angle);
 	show_debug_message(image_angle);
+	
+	mask_index = sprite_index;
 }
 
 //destroy projectile after 30 seconds if still exists
@@ -434,14 +439,22 @@ if (gun_name = "Plasma Gun") {
 }
 
 if gun_name = "Bouncy Ball Blaster" {
-	mask_index = spr_projectile_bouncyball_mask;
+	//mask_index = spr_projectile_bouncyball_mask;
 }
 
-scr_Projectile_Bounce("Javelins");
-scr_Projectile_Bounce("Six Shooter");
-scr_Projectile_Bounce("Seven Shooter");
-scr_Projectile_Bounce("Eight Shooter");
-scr_Projectile_Bounce("Nine Shooter");
-scr_Projectile_Bounce("Ten Shooter");
-scr_Projectile_Bounce("Eleven Shooter");
-scr_Projectile_Bounce("Puncher");
+free = true //dont bounce if colliding w/ ground on spawn
+
+if gun_name != "Plasma Gun" {
+	scr_Projectile_Bounce("Javelins");
+	scr_Projectile_Bounce("Six Shooter");
+	scr_Projectile_Bounce("Seven Shooter");
+	scr_Projectile_Bounce("Eight Shooter");
+	scr_Projectile_Bounce("Nine Shooter");
+	scr_Projectile_Bounce("Ten Shooter");
+	scr_Projectile_Bounce("Eleven Shooter");
+	scr_Projectile_Bounce("Puncher");
+}else {
+	destroyable = true;	
+}
+
+init_depth = depth;

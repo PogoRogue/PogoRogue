@@ -15,7 +15,7 @@ global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
 
 if room = room_starting_area {
-	global.num_of_coins = 0;
+	global.num_of_coins = 10000;
 }else if room = room_test {
 	global.num_of_coins = 200;
 }else if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
@@ -166,3 +166,5 @@ and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 }
 
 global.draw_ui = true;
+global.room_width = 768;
+global.room_height = 432;

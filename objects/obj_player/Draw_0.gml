@@ -227,7 +227,7 @@ if current_iframes > 0 and bubble = false || dead {
 		if state != state_portal and state != state_shop_portal and (state != state_pogosmith) {
 			draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,angle,image_blend,image_alpha);
 		}else if state != state_pogosmith {
-			draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+			//draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 		}
 	}
 }
@@ -247,7 +247,7 @@ if sixshooter_held_num >= 10 and sixshooter_gun.inaccuracy != 25 and sixshooter_
 
 //lock icon
 if state = state_shop or table = true or (state = state_immobile and room = room_tutorial) {
-	var distance = 62;
+	var distance = 72; //62
 	distance += combo_offset;
 			
 	if instance_exists(obj_shieldbubble) {
@@ -258,10 +258,18 @@ if state = state_shop or table = true or (state = state_immobile and room = room
 		distance += 18;
 	}
 	
+	if room = room_shop or room = room_proc_gen_test {
+		draw_set_valign(fa_center);
+		draw_set_font(fnt_combo2);
+		scr_Draw_Text_Outlined_Transformed(x + lengthdir_x(distance-22,angle+90),y + lengthdir_y(distance-22,angle+90),"x" + string(global.num_of_coins),make_color_rgb(237,225,158),1,1,angle,1);
+	}
+	
 	//sprite
 	if image_xscale = 1 {
 		draw_sprite_ext(spr_lockicon,1,x + lengthdir_x(distance,angle+90) + lengthdir_x(1,angle+180),y + lengthdir_y(distance,angle+90)+ lengthdir_y(1,angle+180),1,1,angle,c_white,1);	
+		draw_sprite_ext(spr_lockicon,1,x + lengthdir_x(distance,angle+90) + lengthdir_x(1,angle+180),y + lengthdir_y(distance,angle+90)+ lengthdir_y(1,angle+180),1,1,angle,c_white,1);	
 	}else {
+		draw_sprite_ext(spr_lockicon,1,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,c_white,1);	
 		draw_sprite_ext(spr_lockicon,1,x + lengthdir_x(distance,angle+90),y + lengthdir_y(distance,angle+90),1,1,angle,c_white,1);	
 	}
 }

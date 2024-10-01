@@ -26,7 +26,7 @@ if sprite_index = player_sprite {
 //hat offset
 if skin_num = 1 {
 	text_offset = 3;
-	popup_offset = 0;
+	popup_offset = 10;
 }else if skin_num = 2 {
 	text_offset = 5;
 	popup_offset = 22;

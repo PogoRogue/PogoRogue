@@ -7,3 +7,7 @@ global.show_tips_screen = false;
 
 global.player_starting_x =  1096;
 global.player_starting_y = 1136;
+
+
+global.music_volume_multiplier = 1;
+global.last_item_menu = 1;

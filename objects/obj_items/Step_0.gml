@@ -256,3 +256,5 @@ if !key_up and !key_down {
 if key_back {
 	alarm[0] = 1;
 }
+
+global.last_item_menu = select;

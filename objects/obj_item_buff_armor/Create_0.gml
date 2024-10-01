@@ -10,7 +10,7 @@ item_stats = "";
 scr_Buff_Stats();
 
 if scr_In_Array(global.all_buffs, object_index) {
-	scr_Buff_Replace();
+	//scr_Buff_Replace();
 }
 
 if obj_player.armor_buff >= obj_player.max_armor_buff {

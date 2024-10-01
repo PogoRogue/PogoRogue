@@ -78,3 +78,8 @@ if laser_up = true {
 }else {
 	laser_alpha = 0;
 }
+
+
+if !instance_exists(laser_obj) and  audio_is_playing(sound) {
+	audio_stop_sound(sound);
+}

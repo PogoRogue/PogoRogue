@@ -3,7 +3,7 @@ options_decrease = 0;
 
 select = 1;
 selected = false;
-num_of_options = 7-options_decrease;
+num_of_options = 6-options_decrease;
 usable = true;
 room_persistent = false;
 move_spd = 0;
@@ -24,3 +24,7 @@ global.seed_switched = false;
 global.current_music = snd_music_menu;
 
 frame = 0;
+
+
+global.player_starting_x =  1096;
+global.player_starting_y = 1136;

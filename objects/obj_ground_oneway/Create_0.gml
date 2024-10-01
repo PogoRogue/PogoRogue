@@ -5,3 +5,7 @@ alarm[0] = 1; //check collisions for tiles
 tileset = global.tileset;
 
 drawn_tiles = false;
+
+if room = room_proc_gen_test {
+	depth = 99;
+}

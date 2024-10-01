@@ -31,19 +31,19 @@ if (gun_name = "Laser Gun" ) {
 		
 		if (gun = laser_gun) {
 			//reset/preserve momentum
-			if (gun.reset_momentum and slower_than_max) {
+			if (gun.reset_momentum and slower_than_max and state != state_parachute) {
 				speed = 0;
-			}else if (gun.reset_momentum) {
+			}else if (gun.reset_momentum and state != state_parachute) {
 				speed = current_max + (vsp_basicjump*gun.momentum_added);	
 			}
 		
 			//add momentum
-			if (other.laser_boost) and other.spread_index = 0 or (obj_player.laser_gun.level > 1) {
+			if (((other.laser_boost) and other.spread_index = 0 or (obj_player.laser_gun.level > 1)) and state != state_parachute) {
 				motion_add(angle - 90, vsp_basicjump * gun.momentum_added);
 			}
 		
 			//set max speed for auto weapons
-			if (speed > gun.max_speed) { //player cant exceed certain speed if full_auto = true
+			if (speed > gun.max_speed and state != state_parachute) { //player cant exceed certain speed if full_auto = true
 				speed = max(gun.max_speed, current_max);
 			}
 		}
@@ -80,7 +80,7 @@ if (gun_name = "Laser Gun" ) {
 		}
 		
 		//delete if not free
-		if (state != state_free and state != state_freeze) {
+		if (state != state_free and state != state_freeze and state != state_parachute) {
 			scr_Retract_Laser();
 			other.laser_boost = false;
 		}

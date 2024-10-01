@@ -2,8 +2,8 @@ restart_button = 0;//keyboard_check_pressed(ord("R")); //press R key to restart 
 screenshake_button = 0;//keyboard_check_pressed(vk_backspace); //press escape key to restart room (temporary)
 mute_button = 0;//keyboard_check_pressed(ord("M")); //press M to mute audio (temporary)
 itemmenu_button = global.key_item_menu; 
-skiplevel_button = keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
-disable_ui_button = keyboard_check_pressed(vk_f3);
+skiplevel_button =keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
+disable_ui_button = 0;//keyboard_check_pressed(vk_f3);
 
 if (restart_button) {
 	room_persistent = false;
@@ -15,7 +15,7 @@ if (restart_button) {
 }
 
 //change skin
-if keyboard_check_pressed(vk_f2) {
+if skiplevel_button {//keyboard_check_pressed(vk_f2) {
 	if global.current_skin < 6 {
 		global.current_skin += 1;
 	}else {
@@ -136,7 +136,6 @@ global.synergy_frame += 0.25;
 if global.show_tips_screen = true and !instance_exists(obj_fade_out) and !instance_exists(obj_fade_in) {
 	global.current_tip = "";	
 }
-
 //unlock skin
 var skin = 6;
 if global.phase = 2 and global.skins_unlocked_array[skin-1] = false {

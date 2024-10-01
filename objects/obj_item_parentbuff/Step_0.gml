@@ -9,3 +9,8 @@ if room != room_shop {
 		scr_Buff_Replace();
 	}
 }
+
+if room = room_boss_1 or room = room_boss_2 or room = room_boss_2 {
+	//instance_destroy();
+	follow_player = false;
+}

@@ -1319,6 +1319,7 @@ state_shieldbubble = function() {
 
 state_portal = function() {
 	//sprite_index = portal_sprite;
+	sprite_index = portal_sprite;
 	can_shoot = false;
 	if instance_exists(portal_object) {
 		if portal_angle_speed < 10 {
@@ -1331,6 +1332,20 @@ state_portal = function() {
 			portal_speed += 0.1;
 		}
 		
+		if aspect_ratio > 0.01 {
+			aspect_ratio -= 0.0075;	
+		}else {
+			aspect_ratio = 0;
+		}
+		
+		global.room_width = 768*aspect_ratio;
+		global.room_height = 432*aspect_ratio;
+		
+		//obj_camera.xTo = portal_object.x;
+		//obj_camera.yTo =  portal_object.x - 64
+		obj_camera.follow = portal_object;
+		camera_set_view_size(view_camera[0],global.room_width,global.room_height);
+		
 		image_angle += portal_angle_speed;
 		x = x + lengthdir_x(portal_rot_distance*image_yscale,image_angle);
 		y = y  + lengthdir_y(portal_rot_distance*image_yscale,image_angle);
@@ -1339,8 +1354,10 @@ state_portal = function() {
 			portal_rot_distance += 0.25;	
 		}
 		
-		if image_yscale > 0 {
-			image_yscale -= 0.015;
+		
+		
+		if image_yscale > 0.6 {
+			image_yscale -= 0.005;
 			image_xscale = sign(image_xscale) *image_yscale;
 			image_angle += portal_angle_speed;
 		}else { //go in portal
@@ -1374,6 +1391,12 @@ state_portal = function() {
 					scr_Room_Transition(room_menu);	
 				}
 			}
+			
+			if image_xscale > 0.1 {
+				image_yscale -= 0.001;
+				image_xscale = sign(image_xscale) *image_yscale;
+				image_angle += portal_angle_speed;
+			}
 		}
 	}
 	
@@ -1383,8 +1406,10 @@ state_portal = function() {
 	}
 }
 
+aspect_ratio = 1;
+
 state_shop_portal = function() {
-	//sprite_index = portal_sprite;
+	sprite_index = portal_sprite;
 	can_shoot = false;
 	can_rotate = false;
 	if instance_exists(portal_object) {
@@ -1398,6 +1423,21 @@ state_shop_portal = function() {
 			portal_speed += 0.1;
 		}
 		
+		if aspect_ratio > 0.01 {
+			aspect_ratio -= 0.0075;	
+		}else {
+			aspect_ratio = 0;
+		}
+		
+		global.room_width = 768*aspect_ratio;
+		global.room_height = 432*aspect_ratio;
+		
+		//obj_camera.xTo = portal_object.x;
+		//obj_camera.yTo =  portal_object.x - 64
+		obj_camera.follow = portal_object;
+
+		camera_set_view_size(view_camera[0],global.room_width,global.room_height);
+		
 		image_angle += portal_angle_speed;
 		x = x + lengthdir_x(portal_rot_distance*image_yscale,image_angle);
 		y = y  + lengthdir_y(portal_rot_distance*image_yscale,image_angle);
@@ -1406,8 +1446,8 @@ state_shop_portal = function() {
 			portal_rot_distance += 0.25;	
 		}
 		
-		if image_yscale > 0 {
-			image_yscale -= 0.015;
+		if image_yscale > 0.6 {
+			image_yscale -= 0.005;
 			image_xscale = sign(image_xscale) *image_yscale;
 			image_angle += portal_angle_speed;
 		}else { //go in portal
@@ -1438,6 +1478,11 @@ state_shop_portal = function() {
 					}
 				}
 			}
+		}
+		if image_xscale > 0.1 {
+			image_yscale -= 0.001;
+			image_xscale = sign(image_xscale) *image_yscale;
+			image_angle += portal_angle_speed;
 		}
 	}
 }
@@ -1470,6 +1515,15 @@ state_spawn = function() {
 }
 
 state_dead = function() {
+	if y > obj_camera.y + (obj_camera.view_h_half) + 128 {
+		state = state_immobile;
+	}else if room = room_boss_3 {
+		mask_index = spr_nothing;
+		with obj_player_mask {
+			mask_index = spr_nothing;
+		}
+	}
+	
 	if y < 100000 {
 		vspeed += grv; //falling
 	}else {
@@ -1636,20 +1690,20 @@ if (num_of_pickups = 1) {
 //buffs
 scr_Buffs();
 
-all_buffs_array = [buff_lasersight, buff_planetarybullets,buff_dmg,
-				buff_max_ammo, buff_luck, buff_pickybuyer,
-				buff_bouncybullets, buff_hotshells, buff_combomaster,
-				buff_blackfriday, buff_triplethreat, buff_flamingcoins,
-				buff_combotime, buff_sharpshooter, buff_coinsup,
-				buff_sharptip, buff_experimentation, buff_aerialassassin,
-				buff_supershield, buff_revive, buff_drilltipbullets, 
-				buff_dualwielder, buff_steadyhands, buff_tightspring,
-				buff_magicianstouch, buff_impatience, buff_laststand,
-				buff_psychicbullets, buff_righteousrevenge, buff_robbery, 
-				buff_recycling, buff_juggler, buff_invincibilityup,
-				buff_doublekill, buff_ironproficiency, buff_fastforward,
-				buff_paparazzi, buff_crit, buff_bartime,
-				buff_strongmuscles];
+all_buffs_array = [buff_luck,buff_aerialassassin,buff_max_ammo,
+					buff_bartime,buff_blackfriday,buff_coinsup,
+					buff_combomaster,buff_combotime,buff_crit,
+					buff_dmg,buff_doublekill,buff_drilltipbullets,
+					buff_dualwielder,buff_experimentation,buff_fastforward,
+					buff_flamingcoins,buff_hotshells,buff_impatience,
+					buff_invincibilityup,buff_ironproficiency,buff_juggler,
+					buff_lasersight,buff_laststand,buff_magicianstouch,
+					buff_paparazzi,buff_pickybuyer,buff_planetarybullets,
+					buff_psychicbullets,buff_recycling,buff_revive,
+					buff_righteousrevenge, buff_robbery, buff_bouncybullets,
+					buff_sharptip,buff_sharpshooter,buff_steadyhands,
+					buff_strongmuscles,buff_supershield,buff_tightspring,
+					buff_triplethreat];
 
 //create text in proc gen rooms
 if room = room_proc_gen_test || room = room_sprite_level_test {

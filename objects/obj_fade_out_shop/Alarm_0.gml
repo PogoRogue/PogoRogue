@@ -9,3 +9,7 @@ with obj_player {
 	image_xscale = 1;
 	image_yscale = 1;
 }
+
+global.room_width = 768;
+global.room_height = 432;
+camera_set_view_size(view_camera[0],global.room_width,global.room_height);

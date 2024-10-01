@@ -2,9 +2,14 @@
 instance_destroy();
 instance_create_depth(x,y,depth,obj_fade_in);
 
-if next_room = room_proc_gen_test and room = room_starting_area
-or next_room = room_tutorial and room = room_starting_area {
+if next_room = room_tutorial and room = room_starting_area or next_room = room_proc_gen_test and room = room_starting_area
+or next_room = room_credits or room = room_tutorial and next_room = room_starting_area 
+or next_room = room_menu{
 	instance_deactivate_all(false);	
+}
+
+if room = room_shop {
+	global.show_tips_screen = false;	
 }
 
 
@@ -21,3 +26,7 @@ with obj_player {
 if next_room = room_menu {
 	instance_deactivate_all(false);	
 }
+
+global.room_width = 768;
+global.room_height = 432;
+camera_set_view_size(view_camera[0],global.room_width,global.room_height);

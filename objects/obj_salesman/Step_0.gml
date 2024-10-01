@@ -16,3 +16,11 @@ if y_add < 4 and y_up = false {
 }
 
 y = init_y + y_add;
+
+if distance_to_object(obj_player) < 128 {
+	if obj_player.x < x {
+		image_xscale = 1;
+	}else {
+		image_xscale = -1;
+	}
+}

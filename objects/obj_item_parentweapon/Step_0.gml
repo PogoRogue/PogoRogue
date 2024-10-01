@@ -14,3 +14,8 @@ if instance_exists(obj_player) and room != room_shop {
 		}
 	}
 }
+
+if room = room_boss_1 or room = room_boss_2 or room = room_boss_2 {
+	//instance_destroy();
+	follow_player = false;
+}

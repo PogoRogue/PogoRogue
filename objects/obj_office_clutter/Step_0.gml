@@ -33,6 +33,7 @@ if place_meeting(x,y,obj_player) and collided = false {
 	vspeed = random_range(-abs(hspeed),-2);
 	random_set_seed(global.seed);
 	collided = true;
+	audio_play_sound(snd_box,0,false);
 }
 
 if place_meeting(x,y,obj_player_mask) and collided = false {
@@ -45,6 +46,7 @@ if place_meeting(x,y,obj_player_mask) and collided = false {
 	vspeed = random_range(-abs(hspeed),-2);
 	random_set_seed(global.seed);
 	collided = true;
+	audio_play_sound(snd_box,0,false);
 }
 
 if place_meeting(x,y,obj_projectile) and collided = false {
@@ -57,4 +59,5 @@ if place_meeting(x,y,obj_projectile) and collided = false {
 	vspeed = random_range(-abs(hspeed),-2);
 	random_set_seed(global.seed);
 	collided = true;
+	audio_play_sound(snd_box,0,false);
 }

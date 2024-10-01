@@ -14,6 +14,6 @@ function scr_Settings_Initialize(){
 	}
 
 	audio_group_set_gain(audiogroup_default,global.sound_volume/100,100);
-	audio_group_set_gain(audiogroup_music,global.music_volume/100,100);
-	audio_group_set_gain(audiogroup_volleyball,1,100);
+	audio_group_set_gain(audiogroup_music,global.music_volume_multiplier*((exp(0.24*((10 / 100) * global.music_volume))-1)/10),100);
+	audio_group_set_gain(audiogroup_volleyball,global.sound_volume/100,100);
 }

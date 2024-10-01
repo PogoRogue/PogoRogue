@@ -31,3 +31,5 @@ flipped_sprite = spr_cubelaserenemy_flipped;
 
 alarm[2] = 1;
 rot_spd = 2;
+
+sound = audio_play_sound(snd_nothing,0,false);

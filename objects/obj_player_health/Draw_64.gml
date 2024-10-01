@@ -1,6 +1,7 @@
 /// @description Draw health cells either full or empty
-
-display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
+if obj_player.aspect_ratio = 1 {
+	display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
+}
 if global.draw_ui = true {
 for(var _i = 0; _i < max_hp; _i += 8) {
 	if (_i < hp) {

@@ -58,3 +58,7 @@ if fade_out = true {
 		instance_destroy();
 	}
 }
+
+if room = room_starting_area {
+	depth = 201;	
+}

@@ -10,12 +10,12 @@ if(!is_active) {
 if power_on {
 	if bbox_right > obj_camera.x - obj_camera.view_w_half and bbox_left < obj_camera.x + obj_camera.view_w_half 
 	and bbox_top > obj_camera.y - obj_camera.view_h_half and bbox_bottom < obj_camera.y + obj_camera.view_h_half {
-		if !audio_is_playing(snd_electricity) {
-			sound = audio_play_sound(snd_electricity,0,false);	
+		if !audio_is_playing(snd_laser_hazard) {
+			sound = audio_play_sound(snd_laser_hazard,0,false);	
 		}
 	}
 }else {
-	if audio_is_playing(snd_electricity) {
+	if audio_is_playing(snd_laser_hazard) {
 		audio_stop_sound(sound);	
 	}
 }

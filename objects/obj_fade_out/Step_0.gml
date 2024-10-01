@@ -11,6 +11,7 @@ if x_offset <= 124 {
 	}
 }
 
-if next_room = room_proc_gen_test {
+if next_room = room_proc_gen_test and room != room_shop and global.last_room != room_shop
+and global.shop_num <= global.current_shop_num {
 	global.show_tips_screen = true;	
 }

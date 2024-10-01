@@ -55,3 +55,6 @@ if place_meeting(x,y,obj_ground) {
 
 walk_sprite = spr_walk_enemy_walk;
 idle_sprite = spr_walk_enemy_idle;
+
+played_sound = false;
+player_range = 200;

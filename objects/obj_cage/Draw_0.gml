@@ -10,7 +10,7 @@ if image_alpha = 1 {
 		}
 	}
 
-	if is_colliding {
+	if is_colliding and !instance_exists(speechbubble_obj) {
 	
 		image_index = 1;
 	
@@ -18,7 +18,8 @@ if image_alpha = 1 {
 		draw_set_valign(fa_bottom);
 		draw_set_font(fnt_itemdescription2);
 	
-		scr_Draw_Text_Outlined(other.x,other.y-sprite_get_height(spr_cage),scr_Linebreak(global.howtounlock_array[skin_num-1],15,99),c_white);
+		scr_Draw_Text_Outlined(other.x,other.y-sprite_get_height(spr_cage)-16,scr_Linebreak(global.howtounlock_array[skin_num-1],15,99),c_white);
+		scr_Draw_Input_Prompt(other.x,other.y-sprite_get_height(spr_cage)-3,6,"Talk",make_color_rgb(237,225,158));
 	}else {
 		image_index = 0;	
 	}

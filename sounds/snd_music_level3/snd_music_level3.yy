@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":71.111115,
+  "duration":68.57143,
   "name":"snd_music_level3",
   "parent":{
     "name":"Music",

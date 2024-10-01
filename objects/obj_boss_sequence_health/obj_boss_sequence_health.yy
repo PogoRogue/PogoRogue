@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_health_outline_sequence",
-    "path":"sprites/spr_boss_health_outline_sequence/spr_boss_health_outline_sequence.yy",
+    "name":"spr_boss_health_outline_sphere",
+    "path":"sprites/spr_boss_health_outline_sphere/spr_boss_health_outline_sphere.yy",
   },
   "spriteMaskId":null,
   "visible":true,

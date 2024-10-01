@@ -99,7 +99,8 @@ if win = true {
 				weapon_chance = 0;
 				pickup_chance = 0;
 				with instance_create_depth(x,y+33,depth-1,obj_item_buff_heart) {
-					follow_player = true;	
+					slot_machine = true;
+					follow_player = true;
 				}
 			}else if item1 = 1 { //armored heart
 				heart_chance = 100;
@@ -107,7 +108,10 @@ if win = true {
 				weapon_chance = 0;
 				pickup_chance = 0;
 				random_items = scr_Random_Item_Drops();
-				instance_create_depth(x,y+33,depth-1,obj_item_buff_armor);
+				with instance_create_depth(x,y+33,depth-1,obj_item_buff_armor) {
+					slot_machine = true;
+					follow_player = true;
+				}
 			}else if item1 = 2 { //weapon
 				heart_chance = 0;
 				buff_chance = 0;
@@ -121,9 +125,7 @@ if win = true {
 					Create_Item_Drops(random_items);
 					y -= 33;
 				}else {
-					with instance_create_depth(x,y+33,depth-2,custom_weapon_drop) {
-						follow_player = true;
-					}	
+					instance_create_depth(x,y+33,depth-2,custom_weapon_drop,{slot_machine: true,follow_player: true});
 				}
 			}else if item1 = 3 { //active
 				heart_chance = 0;
@@ -140,9 +142,7 @@ if win = true {
 				}else {
 					var center_x = x;
 					var center_y = y ;
-					with instance_create_depth(x,y+37,depth-2,custom_pickup_drop) {
-						follow_player = true;
-					}	
+					instance_create_depth(x,y+37,depth-2,custom_pickup_drop,{slot_machine: true,follow_player: true});
 				}
 			}else if item1 = 4 { //passive
 				heart_chance = 0;
@@ -153,6 +153,10 @@ if win = true {
 				random_items = scr_Random_Item_Drops();
 				y += 25;
 				Create_Item_Drops(random_items);
+				with instance_nearest(x,y,obj_item_parentbuff) {
+					slot_machine = true;
+					follow_player = true;
+				}
 				y -= 25;
 			}
 		}

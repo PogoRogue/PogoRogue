@@ -1,4 +1,5 @@
-if obj_player.table = true {
+if (obj_player.table = true or obj_player.state = obj_player.state_pogosmith)
+and obj_pogosmith_table.being_used = true {
 	if distance_to_point(obj_pogosmith_table.x+13,obj_pogosmith_table.y-4) > move_spd*2 and smithing = false {
 		move_spd += 0.2;
 		move_towards_point(obj_pogosmith_table.x+13,obj_pogosmith_table.y-4,move_spd);

@@ -37,9 +37,11 @@ if key_select and !instance_exists(obj_fade_in) {
 	
 	if select = 1 - options_decrease {
 		if global.tutorial_completed = true {
+			audio_group_set_gain(audiogroup_music, 0, 1000);
 			scr_Room_Transition(room_starting_area);
 			global.player_starting_x =  1096;
 			global.player_starting_y = 1136;
+			instance_destroy(obj_camera);
 		}else {
 			//complete tutorial before playing
 			audio_play_sound(snd_unavailable,0,false);
@@ -50,23 +52,17 @@ if key_select and !instance_exists(obj_fade_in) {
 			}
 		}
 	}else if select = 2 - options_decrease {
-		if sprite_index = spr_menu_tutorial {
-			scr_Room_Transition(room_tutorial);
-		}else {
-			scr_Room_Transition(room_gameplay_video);
-		}
-	}else if select = 3 - options_decrease {
 		scr_Room_Transition(room_items);
 		//room_persistent = true;
-	}else if select = 4 - options_decrease {
+	}else if select = 3 - options_decrease {
 		scr_Room_Transition(room_stats);
 		//room_persistent = true;
-	}else if select = 5 - options_decrease {
+	}else if select = 4 - options_decrease {
 		scr_Room_Transition(room_settings);
 		//room_persistent = true;
-	}else if select = 6 - options_decrease {
+	}else if select = 5 - options_decrease {
 		scr_Room_Transition(room_credits);
-	}else if select = 7 - options_decrease {
+	}else if select = 6 - options_decrease {
 		usable = false;
 		instance_create_depth(x,y,depth-1,obj_popup_exit);
 	}

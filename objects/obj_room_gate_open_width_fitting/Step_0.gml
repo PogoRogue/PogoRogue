@@ -4,6 +4,7 @@ if closed = false and (obj_player.y < y - 1 or obj_player.x < x and obj_player.y
 	gate_width = (right_emmiter_pos_x+32) - left_emitter_pos_x;
 	gate_width_half = gate_width/2;
 	close_distance = gate_width;
+	audio_play_sound(snd_gate_sliding,0,false);
 }
 
 if closed = true {

@@ -11,7 +11,7 @@ function scr_Projectile_Bounce(name_string){
 	
 	if gun_name != "Missile Launcher" {
 		if ground_below = true and gun_name != name_string {
-			if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) {
+			if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) and !(place_meeting(x,y,obj_ground)) {
 				while !place_meeting(x,y+sign(vspd),obj_ground) {
 					y += sign(vspd);
 				}
@@ -29,8 +29,8 @@ function scr_Projectile_Bounce(name_string){
 					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 					random_set_seed(global.seed);	
 				}
-			}else if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0 )
-			or (place_meeting(x,y+sign(vspd),obj_ground_oneway) and vspd > 0 and num_of_bounces > 0 and gun_name != "Puncher") { //top
+			}else if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0 ) and !(place_meeting(x,y,obj_ground))
+			or (place_meeting(x,y+sign(vspd),obj_ground_oneway) and vspd > 0 and num_of_bounces > 0 and gun_name != "Puncher") and !(place_meeting(x,y,obj_ground_oneway)) { //top
 				while !place_meeting(x,y+sign(vspd),obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) and gun_name != "Puncher") {
 					y += sign(vspd);
 				}
@@ -53,7 +53,7 @@ function scr_Projectile_Bounce(name_string){
 			
 		}else if gun_name != name_string {
 			//left
-			if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) {
+			if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) and !place_meeting(x,y+vspd,obj_ground)  {
 				while !place_meeting(x+sign(hspd),y,obj_ground) {
 					x += sign(hspd);
 				}
@@ -75,7 +75,7 @@ function scr_Projectile_Bounce(name_string){
 	
 			}
 			//right
-			if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0 ) { 
+			if ((place_meeting(x+hspd,y,obj_ground)) and hspd < 0 and num_of_bounces > 0 ) and !place_meeting(x,y+vspd,obj_ground) { 
 				while !place_meeting(x+sign(hspd),y,obj_ground) {
 					x += sign(hspd);
 				}
@@ -110,8 +110,8 @@ function scr_Projectile_Bounce(name_string){
 					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 					random_set_seed(global.seed);	
 				}
-			}else if (place_meeting(x,y+vspeed,obj_ground) and vspeed > 0 and num_of_bounces > 0 )
-			or (place_meeting(x,y+sign(vspeed),obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0 and gun_name != "Puncher") { //top
+			}else if (place_meeting(x,y+vspeed,obj_ground) and vspeed > 0 and num_of_bounces > 0 ) and !(place_meeting(x,y,obj_ground))
+			or (place_meeting(x,y+sign(vspeed),obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0 and gun_name != "Puncher")  and !(place_meeting(x,y,obj_ground_oneway)){ //top
 				while !place_meeting(x,y+sign(vspeed),obj_ground) and (!place_meeting(x,y+sign(vspeed),obj_ground_oneway) and gun_name != "Puncher") {
 					y += sign(vspeed);
 				}

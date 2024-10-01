@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_health_outline_marionette",
-    "path":"sprites/spr_boss_health_outline_marionette/spr_boss_health_outline_marionette.yy",
+    "name":"spr_boss_health_outline_sphere",
+    "path":"sprites/spr_boss_health_outline_sphere/spr_boss_health_outline_sphere.yy",
   },
   "spriteMaskId":null,
   "visible":true,

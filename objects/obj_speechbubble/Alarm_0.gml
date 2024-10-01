@@ -5,7 +5,9 @@ if (current_text != scrolling_text) and retract = false {
 	scrolling_text += string_char_at(current_text,current_character);
 	play_sound = not play_sound;
 	if play_sound = true {
-		audio_play_sound(snd_dialogue,0,false);
+		randomize();
+		audio_play_sound(choose(snd_droney1,snd_droney2,snd_droney3,snd_droney4,snd_droney5),0,false);
+		random_set_seed(global.seed);
 	}
 }
 

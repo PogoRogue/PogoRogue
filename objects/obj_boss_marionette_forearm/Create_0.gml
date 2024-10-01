@@ -7,7 +7,7 @@ target = instance_nearest(x, y, obj_player);
 weapon_x = x + lengthdir_x(48, image_angle);
 weapon_y = y + lengthdir_y(48, image_angle);
 
-cooldown = room_speed * 7;
+cooldown = room_speed * 3;
 alarm_set(1, cooldown * 2);
 draw_laser = false;
 

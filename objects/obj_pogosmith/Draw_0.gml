@@ -10,9 +10,9 @@ switch(floor(image_index)) {
 }
 
 if instance_exists(speechbubble_obj) {
-	if speechbubble_obj.bubble_index = 0 {
-		draw_sprite(spr_pogosmith_nametag,0,x+6,y-40+y_offset);
-	}
+	//if speechbubble_obj.bubble_index = 0 {
+		draw_sprite(spr_pogosmith_nametag,0,x,y-40+y_offset);
+	//}
 }else {
-	draw_sprite(spr_pogosmith_nametag,0,x+6,y-40+y_offset);
+	draw_sprite(spr_pogosmith_nametag,0,x,y-40+y_offset);
 }

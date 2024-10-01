@@ -1,3 +1,5 @@
 /// @description Create width fitting gate
-instance_create_depth(x,y,depth,obj_room_gate_open_width_fitting);
-instance_destroy(self);
+if mask_index != spr_gate_open_mask {
+	instance_create_depth(x,y,depth,obj_room_gate_open_width_fitting);
+	instance_destroy(self);
+}

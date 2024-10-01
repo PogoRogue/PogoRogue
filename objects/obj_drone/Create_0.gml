@@ -4,11 +4,14 @@ y_add_spd = y_add_spd_start; //bob at this speed
 y_up = true; //bobbing up or down
 init_y = y;
 global.salesman_number += 1;
-depth = -5;
+//depth = -5;
 
 //create speech bubble
-speechbubble_obj = instance_create_depth(x-1,bbox_top-17,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
-	text_array: ["Droney is a real name, I \nswear!!!","I have a twin named Tony.",],
-	lines_of_text: 2, 
+speechbubble_obj = instance_create_depth(x,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
+	text_array: ["Good timing dude! I just \nfinished installing \nthe basketball \nhoops.", 
+	"We should play \na game of \nP.O.G.O. \nsometime!", 
+	"I have to say, being a drone \nmight give me \na bit of an \nadvantage \nthough."],
+	lines_of_text: 3, 
 	parent_index: obj_drone, 
-	track_y: true});
+	track_y: true,
+	size2: true});

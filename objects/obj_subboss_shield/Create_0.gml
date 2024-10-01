@@ -43,11 +43,13 @@ laser_up = false;
 initial_delay = 2;
 
 power_on = false;
-on_time = random_range(3,5);
-off_time = random_range(3,5); //4
+on_time = random_range(2,3.75);
+off_time = random_range(2.5,5); //4
 powering_up_time = 1;
 damage = 4;
 is_active = true;
 alarm[5] = room_speed * initial_delay;
 
 laser_obj = noone;
+
+sound = audio_play_sound(snd_nothing,0,false);

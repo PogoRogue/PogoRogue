@@ -15,7 +15,8 @@ function scr_Settings_Audio(){
 				global.sound_volume = menu_audio.options_array[0].current_value;
 				var volume = (exp(0.24*((10 / 100) * global.sound_volume))-1)/10;
 				scr_Save_Real("sound_volume",global.sound_volume);
-				audio_group_set_gain(audiogroup_default,volume,100);
+				audio_group_set_gain(audiogroup_default,volume,1);
+				audio_group_set_gain(audiogroup_volleyball,volume,1);
 				if menu_audio.options_array[0].current_value > menu_audio.options_array[0].lowest_value {
 					audio_play_sound(snd_menuNavigation,0,false);
 				}
@@ -37,7 +38,7 @@ function scr_Settings_Audio(){
 				global.music_volume = menu_audio.options_array[1].current_value;
 				var volume2 = (exp(0.24*((10 / 100) * global.music_volume))-1)/10;
 				scr_Save_Real("music_volume",global.music_volume);
-				audio_group_set_gain(audiogroup_music,volume2,100);
+				audio_group_set_gain(audiogroup_music,global.music_volume_multiplier*volume2,1);
 				audio_play_sound(snd_menuNavigation,0,false);
 			}
 		},

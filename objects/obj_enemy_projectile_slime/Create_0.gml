@@ -6,3 +6,5 @@ event_inherited();
 
 depth = 49;
 show_debug_message("CREATED");
+
+audio_play_sound(snd_bubble,0,false);

@@ -28,8 +28,11 @@ if obj_player.gun != obj_player.javelin_gun or obj_player.dead = true or obj_pla
 		temp_charge_max = other.charge_max;
 		
 		with obj_player {
-			speed = 0;
-			motion_add(angle - 90, vsp_basicjump * (0.8 + ((other.temp_charge/other.temp_charge_max)*0.7)));
+			
+			if state != state_freeze and state != state_parachute {
+				speed = 0;
+				motion_add(angle - 90, vsp_basicjump * (0.8 + ((other.temp_charge/other.temp_charge_max)*0.7)));
+			}
 			
 			if frenzy = false and aerial_assassin_frenzy = false and pogomode = false {
 				gun.current_bullets -= 1/gun.spread_number;

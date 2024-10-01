@@ -17,3 +17,5 @@ if (room == room_boss_2) {
 }
 
 instance_create_layer(x, y, "enemies", obj_explosion);
+
+audio_group_set_gain(audiogroup_music, 0, 1000);

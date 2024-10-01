@@ -26,7 +26,7 @@ function scr_Draw_Enemy_Health(){
 	}
 	
 	if(_num_segments > 0 && hp < hp_max) {
-		draw_sprite(spr_enemy_health_segment_end, 0, _i, _y);
+		//draw_sprite(spr_enemy_health_segment_end, 0, _x+_i, _y);
 	}
 	depth = prev_depth;
 }

@@ -1,4 +1,4 @@
-center_x = camera_get_view_width(view_camera[0])/2;
+center_x = 768/2;
 
 //draw UI
 if select_y = 0 {
@@ -88,6 +88,8 @@ if select = 1 {
 			}
 		}
 	}
+	
+	scr_Draw_Input_Prompt(center_x,(128+5*60)-18,19,"Back",make_color_rgb(180,82,82));
 }
 
 //ACTIVES
@@ -124,6 +126,15 @@ if select = 2 {
 		}
 		scr_Draw_Pickup_Description(xx1-12,yy,pickup_1,1,true,global.all_pickup_costs[0]);
 		scr_Draw_Pickup_Description(xx2+12,yy,pickup_2,2,true,global.all_pickup_costs[1]);
+	}
+	if num_of_pickups > 1 {
+		scr_Draw_Input_Prompt(center_x,yy+40,19,"Back",make_color_rgb(180,82,82));
+	}else if num_of_pickups = 1 { 
+		if pickup_1.is_synergy = false {
+			scr_Draw_Input_Prompt(center_x,yy+40,19,"Back",make_color_rgb(180,82,82));
+		}else {
+			scr_Draw_Input_Prompt(center_x,yy+84,19,"Back",make_color_rgb(180,82,82));
+		}
 	}
 }
 
@@ -212,5 +223,8 @@ if select = 3 {
 		scr_Draw_Weapon_Description(xx1-24,yy,gun_1,1,true,global.all_weapon_costs[0]);
 		scr_Draw_Weapon_Description(center_x,yy,gun_2,2,true,global.all_weapon_costs[1]);
 		scr_Draw_Weapon_Description(xx3+24,yy,gun_3,3,true,global.all_weapon_costs[2]);
+	}
+	if num_of_weapons >= 1 {
+		scr_Draw_Input_Prompt(center_x,yy+112,19,"Back",make_color_rgb(180,82,82));
 	}
 }

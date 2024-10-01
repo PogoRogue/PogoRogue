@@ -14,5 +14,7 @@ if move_up = true {
 		if move_spd != 0 {
 			move_spd += 0.1;
 		}
-	}	
+	}else  {
+		instance_destroy();	
+	}
 }

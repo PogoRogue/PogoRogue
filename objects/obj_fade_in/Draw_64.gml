@@ -19,9 +19,13 @@ if global.show_tips_screen = true {
 	var yy = 432-29-20;
 	draw_sprite(spr_tipscreen,0,xx,yy);
 	
-	draw_set_halign(fa_left);
 	draw_set_valign(fa_center);
+	var colo = make_color_rgb(242,240,229);	
+	draw_set_halign(fa_right);
+	draw_set_font(fnt_combo2);
+	scr_Draw_Text_Outlined(384-(30+x_offset+26),yy,"Generating level...",colo);
+	draw_set_halign(fa_left);
 	draw_set_font(fnt_itemdescription2);
-	var colo = make_color_rgb(237,225,158);	
+	colo = make_color_rgb(237,225,158);	
 	scr_Draw_Text_Outlined(xx,yy,scr_Linebreak("TIP:  " + global.current_tip,45,99),colo);
 }

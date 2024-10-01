@@ -88,7 +88,7 @@ function scr_Death_Screen(win){
 	
 	if global.area_2_reached = 1 or global.area_3_reached = 1 { //area
 		draw_set_font(fnt_itemdescription2);
-		scr_Draw_Text_Outlined(x-78,y+89,"(New Best!)",make_color_rgb(237,225,158));
+		//scr_Draw_Text_Outlined(x-78,y+89,"(New Best!)",make_color_rgb(237,225,158));
 	}
 }
 
