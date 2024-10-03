@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"White (Blink)",
-    "path":"folders/Sprites/Player/Player sprites/Skins/White (Blink).yy",
+    "name":"White (Falling)",
+    "path":"folders/Sprites/Player/Player sprites/Skins/White (Falling).yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

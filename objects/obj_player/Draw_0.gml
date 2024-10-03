@@ -122,11 +122,13 @@ if ground_pound_slam = true or harpooning = true {
 		//draw face during slam
 		draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90)+lengthdir_x(x_add*i,y_angle),y+lengthdir_y(hurt_yoffset,angle-90)+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
 		//draw hat during slam
-		if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
+		if (pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun)
+		and !(pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon) {
 			draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
 		}
 		//draw grappling helmet during slam
-		if pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling {
+		if (pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling)
+		and !(pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon) {
 			draw_sprite_ext(spr_player_zekai_hat_falling2,image_index,x+lengthdir_x(x_add*i,y_angle),y+(lengthdir_y(slam_trail_distance*i,y_angle)),image_xscale,image_yscale,image_angle,c_white,slam_alpha);
 		}
 		//draw harpoon helmet during slam
@@ -137,15 +139,43 @@ if ground_pound_slam = true or harpooning = true {
 	draw_self();
 }
 
+
+//hurt skin
+if current_iframes > 0 and bubble = false || dead {
+	if angle < 0 {
+		var temp_angle = 360 - abs(angle);	
+	}else {
+		var temp_angle = angle;	
+	}
+	if !(state = state_bulletblast and sprite_index != player_sprite) and state != state_portal and state != state_shop_portal and state != state_spawn and state != state_pogosmith {
+		draw_sprite_ext(hurt_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,angle,image_blend,image_alpha);
+	}
+}else if !(sprite_index = charging_sprite) and state != state_chargejump and !(state = state_bulletblast and sprite_index != player_sprite) and state != state_spawn {
+	if state != state_chargejump {
+		if state != state_portal and state != state_shop_portal and (state != state_pogosmith) {
+			draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,angle,image_blend,image_alpha);
+		}else if state != state_pogosmith {
+			//draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}
+	}
+}
+
 //invincibility
-if invincibility = true and global.current_skin = 0 
-or pogomode = true and global.current_skin = 0 {
-	//scr_Draw_Skin(spr_player_zekai_invincible,spr_player_zekai_invincible_falling,spr_player_zekai_invincible_charging,spr_player_zekai_invincible_portal);
+
+if invincibility_white_alpha > 0 {
+	if sprite_index = player_sprite {
+		draw_sprite_ext(white_bouncing_array[global.current_skin],image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,invincibility_white_alpha);
+	}else if sprite_index = falling_sprite {
+		draw_sprite_ext(white_falling_array[global.current_skin],image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,invincibility_white_alpha);
+	}else if sprite_index = charging_sprite {
+		draw_sprite_ext(white_charging_array[global.current_skin],image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,invincibility_white_alpha);
+	}
 }
 
 
 //draw hat gun
-if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
+if (pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun) 
+and !(pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon) {
 	if sprite_index = player_sprite or sprite_index = revive_sprite {
 		draw_sprite_ext(spr_player_zekai_hat,image_index,x+lengthdir_x(hat_yoffset,angle+90), y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}else if sprite_index = falling_sprite {
@@ -160,7 +190,8 @@ if pickups_array[0] = pickup_hatgun or pickups_array[1] = pickup_hatgun {
 }
 
 //draw grappling helmet
-if pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling {
+if (pickups_array[0] = pickup_grappling or pickups_array[1] = pickup_grappling) 
+and !(pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon) {
 	if sprite_index = player_sprite or sprite_index = revive_sprite {
 		draw_sprite_ext(spr_player_zekai_hat2,image_index,x+lengthdir_x(hat_yoffset,angle+90),y+lengthdir_y(hat_yoffset,angle+90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 	}else if sprite_index = falling_sprite {
@@ -211,26 +242,6 @@ if pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
 
 //laser sight
 scr_Laser_Sight();
-
-//hurt skin
-if current_iframes > 0 and bubble = false || dead {
-	if angle < 0 {
-		var temp_angle = 360 - abs(angle);	
-	}else {
-		var temp_angle = angle;	
-	}
-	if !(state = state_bulletblast and sprite_index != player_sprite) and state != state_portal and state != state_shop_portal and state != state_spawn and state != state_pogosmith {
-		draw_sprite_ext(hurt_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,angle,image_blend,image_alpha);
-	}
-}else if !(sprite_index = charging_sprite) and state != state_chargejump and !(state = state_bulletblast and sprite_index != player_sprite) and state != state_spawn {
-	if state != state_chargejump {
-		if state != state_portal and state != state_shop_portal and (state != state_pogosmith) {
-			draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,angle,image_blend,image_alpha);
-		}else if state != state_pogosmith {
-			//draw_sprite_ext(face_sprite,0,x+lengthdir_x(hurt_yoffset,angle-90),y+lengthdir_y(hurt_yoffset,angle-90),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-		}
-	}
-}
 
 shader_reset();
 }else {

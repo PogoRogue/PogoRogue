@@ -136,7 +136,7 @@ function scr_Items_Unlocked(){
 									global.skins_unlocked_5,global.skins_unlocked_6];
 									
 	global.skins_names = ["Rogo","KunKun","Nona","Dogo","Robo","Bandit","3D"];
-	global.howtounlock_array = ["Defeat a boss to unlock!","Max out your hearts to unlock!","Discover every weapon to unlock!","Beat the game to unlock!","Achieve a combo of 50+ to unlock!","Defeat 2 bosses in one run to unlock!"];
+	global.howtounlock_array = ["Defeat 2 bosses in one run to unlock!","Max out your hearts to unlock!","Discover every weapon to unlock!","Beat the game to unlock!","Achieve a combo of 50+ to unlock!","Defeat a boss to unlock!"];
 
 	//save values
 	for(i = 0; i < array_length(global.passive_unlocked_array); i++) { //passives

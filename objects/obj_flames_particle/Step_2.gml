@@ -1,4 +1,4 @@
-if scr_Animation_Complete() {
+if floor(image_index) >= sprite_get_number(sprite_index)-3 {
 	instance_destroy();	
 }
 if distance_traveled_frames < 12 {

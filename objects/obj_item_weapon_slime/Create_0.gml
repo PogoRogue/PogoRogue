@@ -5,4 +5,4 @@ item_tagline = weapon.tagline; //add to description
 
 scr_Weapon_Stats();
 
-item_cost = 160;
+item_cost = 130;

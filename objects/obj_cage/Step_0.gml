@@ -27,10 +27,11 @@ if is_colliding = true and key_interact and !instance_exists(speechbubble_obj) {
 		text_array: ["What kind of \ngod would \nallow 6 of his creations to \nbe subjected \nto such a \ncruel fate?", "To confine one \nto a space so \nrestrictive not only degrades \nthe body, but corrodes \nthe very fiber \nof one's soul...", "Oops... I mean, bark! bark! \nbark! bark! \nbark! bark!", "bark! bark! \nbark! bark! \nbark! bark!"],
 		lines_of_text: 4, 
 		size2: true,
+		chars_per_line: 22,
 		parent_index: instance_nearest(x,y+128,obj_cage)});	
 	}else if skin_num = 4 {
 		speechbubble_obj = instance_create_depth(x-1,y - 128,depth-1,obj_speechbubble,{text_color: make_color_rgb(184,181,185), 
-		text_array: ["Beep Boop.","Boop Beep.", "ERROR: Out of \ndialogue \noptions.", "Self-destruct \nin 10, 9, 8, 7, 6, 5.......","4.....","3...........","2................................","................................","................................","................................","1................................","Dude, why are \nyou still \nstanding \nhere?","You got some kinda death \nwish or \nsomething?","Okay, fine. It \nwas a prank. \nYou got me."],
+		text_array: ["Beep Boop.","Boop Beep.", "ERROR: Out of \ndialogue \noptions.", "Self-destruct \nin 10, 9, 8, 7, 6, 5.......","4.....","3...........","2................................","................................","................................","................................","1................................","Dude, why are \nyou still \nhere?","You got some kinda death \nwish or \nsomething?","Okay, fine. It \nwas a prank. \nYou got me."],
 		lines_of_text: 14, 
 		parent_index: instance_nearest(x,y+128,obj_cage)});	
 	}else if skin_num = 5 {

@@ -5,6 +5,6 @@ synergy_item = obj_player.pickup_jolt;
 item_name = "Emergency Treatment";
 cooldown_text = "\n\n" + pickup.cooldown_text;
 item_description = pickup.tagline + cooldown_text;
-item_cost = 70;
+item_cost = 90;
 
 image_index = 2;

@@ -1,5 +1,5 @@
 /// @description draw weapon text and ammo GUI and coins
-
+//draw_set_alpha(0.5);
 if global.draw_ui = true {
 
 //weapon text
@@ -594,7 +594,7 @@ if global.use_controller = true {
 			
 	if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
 		if is_string(keyboard_text) {
-			draw_text(78,124,keyboard_text);
+			scr_Draw_Text_Outlined(78,124,keyboard_text,c_white);
 		}else {
 			draw_sprite(keyboard_text,0,79,124);
 		}
@@ -636,3 +636,4 @@ if invincibility_time > 0 {
 //draw_sprite(spr_slotmachine,0,384,100);
 
 }
+draw_set_alpha(1);

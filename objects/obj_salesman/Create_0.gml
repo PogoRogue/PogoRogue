@@ -4,18 +4,14 @@ y_add_spd = y_add_spd_start; //bob at this speed
 y_up = true; //bobbing up or down
 init_y = y;
 global.salesman_number += 1;
+colliding = false;
 //depth = -5;
 
 speechbubble_obj = noone;
 
 //create speech bubble
 if room = room_starting_area {
-	speechbubble_obj = instance_create_depth(x-1,bbox_top-40,depth-1,obj_speechbubble,{text_color: make_color_rgb(138,176,96), 
-	text_array: ["hey dude. you \nshould totally \nstop by my shop later or \nsomething.","you don't have to though... \nwhatever \nworks best for \nyou man.", "it's totally \ncool either \nway..."],
-	lines_of_text: 3, 
-	
-	parent_index: obj_salesman, 
-	track_y: true});
+	speechbubble_obj = noone;
 }else {
 	if global.phase <= 1 {
 		randomize();

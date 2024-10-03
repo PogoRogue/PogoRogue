@@ -5,7 +5,7 @@ synergy_item = obj_player.pickup_megabounce;
 item_name = "Mega Slam";
 cooldown_text = "\n\n" + pickup.cooldown_text;
 item_description = pickup.tagline + cooldown_text;
-item_cost = 115;
+item_cost = 120;
 synergy_child1 = obj_player.pickup_groundpound;
 synergy_child2 = obj_player.pickup_chargejump;
 

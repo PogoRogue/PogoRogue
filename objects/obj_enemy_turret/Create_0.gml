@@ -33,3 +33,4 @@ can_shoot = false;
 // Inherit the parent event
 event_inherited();
 
+break_away = false;

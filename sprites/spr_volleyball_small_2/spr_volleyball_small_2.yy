@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"spr_volleyball_small_2",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":32,
   "bbox_left":1,
   "bbox_right":32,

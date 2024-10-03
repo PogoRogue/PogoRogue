@@ -32,7 +32,7 @@ if (drop == true) {
 			speed = min(4.0, distance_to_point(new_x, new_y))  * spd_mult;
 		}
 		
-	} else {
+	} else if room = room_boss_1 {
 		image_angle = lerp(image_angle, 0, 0.01);
 		hspeed = lerp(image_angle, 0, 0.01);
 		vspeed = 1.2 * sin(spd);

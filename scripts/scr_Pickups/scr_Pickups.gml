@@ -576,7 +576,7 @@ function scr_Pickups(){
 	
 	pickup_parachute = {
 		_name: "Parachute",
-		tagline: "Open a parachute, slowing down your momentum as you fall.",
+		tagline: "Open a parachute, slowing you down as you \nfall. While your parachute is open, you may fire your weapon and remaing falling.",
 		gui_sprite: spr_pickup_parachute,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
@@ -668,7 +668,8 @@ function scr_Pickups(){
 		cost: 25,
 		is_synergy: false,
 		on_call: function() {
-			if global.num_of_coins >= obj_player.pickup_winners.cost and !instance_exists(obj_slot_machine) {
+			if global.num_of_coins >= obj_player.pickup_winners.cost and !instance_exists(obj_slot_machine)
+			and !instance_exists(obj_slot_machine2) {
 				with obj_player {
 					instance_create_depth(x,y,depth,obj_slot_machine);
 					instance_create_depth(obj_player.x+lengthdir_x(34,obj_player.angle+90),obj_player.y+lengthdir_y(34,obj_player.angle+90),obj_player.depth,obj_coin25);
@@ -711,8 +712,8 @@ function scr_Pickups(){
 	_name: "Invincibility",
 	tagline: "You are invincible to all forms of damage for 5s. Getting a kill during this time lowers its cooldown time \nby 5s.",
 	gui_sprite: spr_pickup_invincibility,
-	max_cooldown_time: 1800,
-	cooldown_time: 1800,
+	max_cooldown_time: 18,
+	cooldown_time: 18,
 	cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
 	on_cooldown: false,
 	states_to_call_in: all_states,
@@ -734,6 +735,7 @@ function scr_Pickups(){
 					invincibility_time = 300 * global.bar_time_added;
 					alarm[6] = 300 * global.bar_time_added;
 					audio_play_sound(snd_invincible,0,false);
+					invincibility_white_alpha = 1.25;
 				}
 			}
 		}
@@ -1061,7 +1063,8 @@ function scr_Pickups(){
 		base_item_sprite_2: spr_pickup_winners,
 		item_cost: 185, //only for synergies (item 1 + item 2 costs)
 		on_call: function() {
-			if global.num_of_coins >= obj_player.pickup_hacker.cost and !instance_exists(obj_slot_machine2) and !instance_exists(obj_slowmo) {
+			if global.num_of_coins >= obj_player.pickup_hacker.cost and !instance_exists(obj_slot_machine2) 
+			and !instance_exists(obj_slowmo) and !instance_exists(obj_slot_machine) {
 				if !instance_exists(obj_slowmo) {
 					instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_slowmo,{hacker: true});
 				}

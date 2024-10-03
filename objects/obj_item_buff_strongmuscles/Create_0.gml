@@ -5,7 +5,7 @@ item_name = "Strong Muscles";
 item_tagline = "Limited-range projectiles now travel further.";
 item_description = item_tagline;
 add_sprite_to_list = true;
-item_cost = 35;
+item_cost = 30;
 max_uses = 1;
 item_stats = "";
 scr_Buff_Stats();

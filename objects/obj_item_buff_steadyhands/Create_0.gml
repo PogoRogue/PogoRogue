@@ -5,7 +5,7 @@ item_name = "Steady Hands";
 item_tagline = "Reduces all weapon inaccuracy.";
 item_description = item_tagline;
 add_sprite_to_list = true;
-item_cost = 20;
+item_cost = 30;
 max_uses = 1;
 item_stats = "";
 scr_Buff_Stats();

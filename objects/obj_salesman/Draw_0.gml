@@ -5,4 +5,8 @@ if instance_exists(speechbubble_obj) {
 	//}
 }else {
 	draw_sprite(spr_salesman_nametag,0,x,y-23);
+	
+	if colliding {
+		scr_Draw_Input_Prompt(x,y-49,6,"Talk",make_color_rgb(242,240,229));	
+	}
 }

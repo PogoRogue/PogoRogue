@@ -8,3 +8,5 @@ double = true;
 
 normal_sprite = spr_cubelaserenemy2;
 flipped_sprite = spr_cubelaserenemy2_flipped;
+
+vspd = 0;

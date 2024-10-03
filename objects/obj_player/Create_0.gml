@@ -144,6 +144,9 @@ hurt4_array = [spr_player_hurtface4,spr_player_skin1_hurtface4,spr_player_skin2_
 face_array = [spr_player_face,spr_player_skin1_face,spr_player_skin2_face,spr_player_skin3_face,spr_player_skin4_face,spr_player_skin5_face,spr_player_skin6_face];
 red_array = [spr_player_zekai_charging_red,spr_player_skin1_charging_red,spr_player_skin2_charging_red,spr_player_skin3_charging_red,spr_player_skin4_charging_red,spr_player_skin5_charging_red,spr_player_skin6_charging_red];
 white_array = [spr_player_zekai_falling_white,spr_player_skin1_falling_white,spr_player_skin2_falling_white,spr_player_skin3_falling_white,spr_player_skin4_falling_white,spr_player_skin5_falling_white,spr_player_skin6_falling_white];
+white_falling_array = [spr_player_zekai_falling_white_1,spr_player_skin1_falling_white_1,spr_player_skin2_falling_white_1,spr_player_skin3_falling_white_1,spr_player_skin4_falling_white_1,spr_player_skin5_falling_white_1,spr_player_skin6_falling_white_1];
+white_bouncing_array = [spr_player_zekai_white,spr_player_skin1_white,spr_player_skin2_white,spr_player_skin3_white,spr_player_skin4_white,spr_player_skin5_white,spr_player_skin6_white];
+white_charging_array = [spr_player_zekai_charging_white,spr_player_skin1_charging_white,spr_player_skin2_charging_white,spr_player_skin3_charging_white,spr_player_skin4_charging_white,spr_player_skin5_charging_white,spr_player_skin6_charging_white];
 revive_array = [spr_player_revive_animation,spr_player_skin1_revive,spr_player_skin2_revive,spr_player_skin3_revive,spr_player_skin4_revive,spr_player_skin5_revive,spr_player_skin6_revive];
 revive_white_array = [spr_player_revive_white,spr_player_skin1_revive_white,spr_player_skin2_revive_white,spr_player_skin3_revive_white,spr_player_skin4_revive_white,spr_player_skin5_revive_white,spr_player_skin6_revive_white];
 body_array = [spr_player_zekai_body,spr_player_zekai_body,spr_player_skin2_body,spr_player_skin3_body,spr_player_skin4_body,spr_player_skin5_body,spr_player_skin6_body];
@@ -157,6 +160,9 @@ portal_sprite = portal_array[global.current_skin];
 face_sprite = face_array[global.current_skin];
 red_sprite = red_array[global.current_skin];
 white_sprite = white_array[global.current_skin];
+white_falling_sprite = white_falling_array[global.current_skin];
+white_bouncing_sprite = white_bouncing_array[global.current_skin];
+white_charging_sprite = white_charging_array[global.current_skin];
 revive_sprite = revive_array[global.current_skin];
 revive_white_sprite = revive_white_array[global.current_skin];
 current_hurt_array = hurt1_array;
@@ -166,6 +172,7 @@ pogostick_sprite = pogostick_array[global.current_skin];
 hurt_yoffset = 0;
 hat_yoffset = 0;
 combo_offset = 0;
+invincibility_white_alpha = 0;
 
 // Stats
 hp = 40;
@@ -1524,7 +1531,7 @@ state_dead = function() {
 		}
 	}
 	
-	if y < 100000 {
+	if y < obj_camera.y + (obj_camera.view_h_half) + 128 {
 		vspeed += grv; //falling
 	}else {
 		speed = 0;

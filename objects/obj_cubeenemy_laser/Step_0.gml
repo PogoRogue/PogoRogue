@@ -9,5 +9,5 @@ if floor(image_index) <= 1 and sprite_index = spr_laser_middle_animation and ima
 }
 
 if place_meeting(x,y,obj_ground) {
-	depth = 10;
+	//depth = 10;
 }

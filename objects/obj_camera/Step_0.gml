@@ -11,8 +11,13 @@ if room = room_menu {
 if (instance_exists(follow)) and instance_exists(obj_player) {  
 	//update destination
 	if follow = obj_player {
-		xTo = follow.x;
-		yTo = follow.y - 48;
+		if room != room_boss_3 {
+			xTo = follow.x;
+			yTo = follow.y - 48;
+		}else {
+			xTo = follow.x;
+			yTo = follow.y - 48;
+		}
 	}else if follow.object_index = obj_blink_box_strike {
 		xTo = follow.x;
 		yTo = follow.y;

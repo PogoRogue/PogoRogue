@@ -137,7 +137,7 @@ if global.show_tips_screen = true and !instance_exists(obj_fade_out) and !instan
 	global.current_tip = "";	
 }
 //unlock skin
-var skin = 1;
+var skin = 6;
 if global.phase = 2 and global.skins_unlocked_array[skin-1] = false {
 	ini_open("itemsunlocked.ini");
 	instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
@@ -145,7 +145,7 @@ if global.phase = 2 and global.skins_unlocked_array[skin-1] = false {
 	ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
 	ini_close();	
 }
-skin = 6;
+skin = 1;
 if global.phase = 3 and global.skins_unlocked_array[skin-1] = false {
 	ini_open("itemsunlocked.ini");
 	instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});

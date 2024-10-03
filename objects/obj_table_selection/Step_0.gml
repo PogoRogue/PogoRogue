@@ -33,6 +33,12 @@ if item_changed = true {
 				gun_array = [gun_1,gun_2,gun_3];
 				audio_play_sound(snd_weaponPowerup,0,false);
 				
+				var temp_item = instance_create_depth(0,0,depth,obj_item_weapon_paintball);
+				global.all_weapon_costs[0] = obj_item_weapon_javelins.item_cost;
+				instance_destroy(temp_item);
+				
+				global.all_weapon_costs[1] = 25;
+				
 				ini_open("itemsunlocked.ini");
 				if global.weapon_unlocked_array[1] = false {
 					instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
@@ -48,6 +54,12 @@ if item_changed = true {
 				gun_array = [gun_1,gun_2,gun_3];
 				audio_play_sound(snd_weaponPowerup,0,false);
 				
+				var temp_item = instance_create_depth(0,0,depth,obj_item_weapon_boomerang);
+				global.all_weapon_costs[0] = obj_item_weapon_boomerang.item_cost;
+				instance_destroy(temp_item);
+				
+				global.all_weapon_costs[1] = 25;
+				
 				ini_open("itemsunlocked.ini");
 				if global.weapon_unlocked_array[8] = false {
 					instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
@@ -61,6 +73,10 @@ if item_changed = true {
 				pickup_2 = pickup_nothing;
 				pickups_array = [pickup_1,pickup_2];
 				audio_play_sound(snd_activePowerup,0,false);
+				
+				var temp_item = instance_create_depth(0,0,depth,obj_item_pickup_hatgun);
+				global.all_pickup_costs[0] = obj_item_pickup_hatgun.item_cost;
+				instance_destroy(temp_item);
 				
 				ini_open("itemsunlocked.ini");
 				if global.active_unlocked_array[9] = false {
@@ -81,6 +97,12 @@ if item_changed = true {
 				gun_array = [gun_1,gun_2,gun_3];
 				audio_play_sound(snd_weaponPowerup,0,false);
 				
+				var temp_item = instance_create_depth(0,0,depth,obj_item_weapon_shotgun);
+				global.all_weapon_costs[0] = obj_item_weapon_shotgun.item_cost;
+				instance_destroy(temp_item);
+				
+				global.all_weapon_costs[1] = 25;
+				
 				ini_open("itemsunlocked.ini");
 				if global.weapon_unlocked_array[2] = false {
 					instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
@@ -96,6 +118,12 @@ if item_changed = true {
 				gun_array = [gun_1,gun_2,gun_3];
 				audio_play_sound(snd_weaponPowerup,0,false);
 				
+				var temp_item = instance_create_depth(0,0,depth,obj_item_weapon_bouncyball);
+				global.all_weapon_costs[0] = obj_item_weapon_bouncyball.item_cost;
+				instance_destroy(temp_item);
+				
+				global.all_weapon_costs[1] = 25;
+				
 				ini_open("itemsunlocked.ini");
 				if global.weapon_unlocked_array[7] = false {
 					instance_create_depth(x,y,depth,obj_item_text_newdiscovery);
@@ -109,6 +137,10 @@ if item_changed = true {
 				pickup_2 = pickup_nothing;
 				pickups_array = [pickup_1,pickup_2];
 				audio_play_sound(snd_activePowerup,0,false);
+				
+				var temp_item = instance_create_depth(0,0,depth,obj_item_pickup_grappling);
+				global.all_pickup_costs[0] = obj_item_pickup_grappling.item_cost;
+				instance_destroy(temp_item);
 				
 				ini_open("itemsunlocked.ini");
 				if global.active_unlocked_array[8] = false {

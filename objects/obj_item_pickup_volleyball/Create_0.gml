@@ -5,6 +5,6 @@ synergy_item = obj_player.pickup_wreckingball;
 item_name = "Volleyball";
 cooldown_text = "\n\n" + pickup.cooldown_text;
 item_description = pickup.tagline + cooldown_text;
-item_cost = 60;
+item_cost = 70;
 
 image_index = 2;

@@ -10,3 +10,5 @@ spawned2 = false;
 alarm[1] = 2;
 
 damage = 8;
+
+depth = -20;

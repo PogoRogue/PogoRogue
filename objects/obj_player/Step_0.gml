@@ -776,11 +776,15 @@ center_y_sprite = bbox_top + ((bbox_top - bbox_top)/2);
 //return to starting area
 if room = room_proc_gen_test {
 	if instance_exists(obj_room_gate_open_starting)	{
-		if y > obj_room_gate_open_starting.y + 128 {
+		if y > obj_room_gate_open_starting.y + 128 and !dead {
 			state = state_immobile;
 			scr_Room_Transition(room_starting_area);
 			global.player_starting_x =  1104;
 			global.player_starting_y = 80;
 		}
 	}
+}
+
+if invincibility_white_alpha > 0 {
+	invincibility_white_alpha -= 0.05;	
 }

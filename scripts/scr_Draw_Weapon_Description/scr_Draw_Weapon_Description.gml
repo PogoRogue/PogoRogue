@@ -131,7 +131,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		}else if weapon._name = "Javelins" {
 			line_2 = "Damage per javelin: " + string(weapon.ammo[0].damage) + "-16" + added_damage;
 		}else if weapon._name = "Bouncy Ball Blaster" {
-			line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + "-" + string(weapon.ammo[0].damage*8) + added_damage;
+			line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + "-" + string(weapon.ammo[0].damage*4) + added_damage;
 		}else if weapon._name = "Plasma Gun" {
 			line_2 = "Damage per orb: " + string(weapon.ammo[0].damage) + "-24" + added_damage;
 		}

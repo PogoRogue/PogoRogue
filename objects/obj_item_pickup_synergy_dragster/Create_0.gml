@@ -5,7 +5,7 @@ synergy_item = obj_player.pickup_dragster;
 item_name = "Dragster";
 cooldown_text = "\n\n" + pickup.cooldown_text;
 item_description = pickup.tagline + cooldown_text;
-item_cost = 115;
+item_cost = 140;
 synergy_child1 = obj_player.pickup_parachute;
 synergy_child2 = obj_player.pickup_firedash;
 

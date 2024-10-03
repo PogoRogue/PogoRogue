@@ -6,3 +6,7 @@ destroy_on_impact = true;
 attach_to_player = 0;
 boss_projectile=false;
 mask_index = sprite_index;
+vspd = 0;
+hspd = 0;
+init_damage = damage;
+init_sprite = sprite_index;

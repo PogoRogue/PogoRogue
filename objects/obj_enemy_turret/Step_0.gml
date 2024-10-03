@@ -71,6 +71,29 @@ if(!is_dead && dist_to_player < range) {
 	image_index = 0;
 }
 
+if is_dead {
+	image_alpha = 0;	
+	if break_away = false {
+		instance_create_depth(x,y,depth,obj_turret_breakaway_head,{
+			sprite_index: sprite_index,
+			image_angle: image_angle,
+			image_index: image_index,
+			image_speed: 0,
+			image_xscale: image_xscale,
+			image_yscale: image_yscale,
+		});
+		instance_create_depth(x,y,depth,obj_turret_breakaway_body,{
+			sprite_index: body_sprite,
+			image_angle: rotation,
+			image_index: 0,
+			image_speed: 0,
+			image_xscale: 1,
+			image_yscale: 1,
+		});
+		break_away = true;
+	}
+}
+
 
 
 // Inherit the parent event

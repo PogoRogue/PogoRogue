@@ -1,5 +1,5 @@
 function scr_Death_Screen(win){
-	draw_sprite(spr_deathscreen,win,x,y);
+	draw_sprite(spr_deathscreen_new,win,x,y);
 	
 	//weapons
 	for(i = 0; i < array_length(global.all_weapons_used); i++) {
