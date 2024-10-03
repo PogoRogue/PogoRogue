@@ -32,13 +32,13 @@ tryagain = false;
 randomize();
 win = false;
 win_number = irandom_range(1,100);
-if win_number <= 100 {//global.win_odds {
+if win_number <= global.win_odds {
 	win = true;
 }
 twoinarow = false;
 twoinarow_number = irandom_range(1,100);
 twoinarow_odds = 40;
-if twoinarow_number <= 100{// twoinarow_odds {
+if twoinarow_number <= twoinarow_odds {
 	twoinarow = true;
 }
 

@@ -24,7 +24,7 @@ if salesman = true and created_in_room = true {
 	}
 }
 
-if room != init_room and salesman = true and room != room_shop {
+if room != init_room and salesman = true and room != room_shop and slot_machine = false {
 	instance_destroy();
 }
 

@@ -2,7 +2,7 @@ restart_button = 0;//keyboard_check_pressed(ord("R")); //press R key to restart 
 screenshake_button = 0;//keyboard_check_pressed(vk_backspace); //press escape key to restart room (temporary)
 mute_button = 0;//keyboard_check_pressed(ord("M")); //press M to mute audio (temporary)
 itemmenu_button = global.key_item_menu; 
-skiplevel_button =keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
+skiplevel_button = keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
 disable_ui_button = 0;//keyboard_check_pressed(vk_f3);
 
 if (restart_button) {
@@ -15,7 +15,7 @@ if (restart_button) {
 }
 
 //change skin
-if skiplevel_button {//keyboard_check_pressed(vk_f2) {
+/*if keyboard_check_pressed(vk_f2) {
 	if global.current_skin < 6 {
 		global.current_skin += 1;
 	}else {
@@ -34,7 +34,7 @@ if skiplevel_button {//keyboard_check_pressed(vk_f2) {
 		body_sprite = body_array[global.current_skin];
 		pogostick_sprite = pogostick_array[global.current_skin];
 	}
-}
+}*/
 
 if disable_ui_button {
 	global.draw_ui = not global.draw_ui;
@@ -137,8 +137,16 @@ if global.show_tips_screen = true and !instance_exists(obj_fade_out) and !instan
 	global.current_tip = "";	
 }
 //unlock skin
-var skin = 6;
+var skin = 1;
 if global.phase = 2 and global.skins_unlocked_array[skin-1] = false {
+	ini_open("itemsunlocked.ini");
+	instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
+	global.skins_unlocked_array[skin-1] = true;
+	ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
+	ini_close();	
+}
+skin = 6;
+if global.phase = 3 and global.skins_unlocked_array[skin-1] = false {
 	ini_open("itemsunlocked.ini");
 	instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
 	global.skins_unlocked_array[skin-1] = true;

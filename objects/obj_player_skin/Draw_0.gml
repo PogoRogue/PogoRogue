@@ -56,6 +56,15 @@ if colliding = true and unlocked = true {
 	draw_sprite_ext(spr_skin_loadouts,skin_num,x,y-80-text_offset+16-60,loadout_yscale,loadout_yscale,0,c_white,1);
 }
 
+if skin_num = 6 {
+	//hat gun
+	if sprite_index = player_sprite {
+		draw_sprite_ext(spr_player_zekai_hat,image_index,x, y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}else if sprite_index = falling_sprite {
+		draw_sprite_ext(spr_player_zekai_hat_falling,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}
+}	
+
 //names
 if unlocked = true {
 	draw_set_halign(fa_center);

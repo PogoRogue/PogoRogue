@@ -1,3 +1,5 @@
+randomize();
+
 if handle_frame < sprite_get_number(spr_slotmachine_handle) and handle_done = false and pull_handle = true { 
 	handle_frame += 0.25;
 	if handle_frame >= 5 and spin = false {
@@ -117,11 +119,22 @@ if win = true {
 				random_items = scr_Random_Item_Drops();
 			
 				if random_weapon = true {
-					y += 33;
-					Create_Item_Drops(random_items);
-					y -= 33;
+					//y += 33;
+					//Create_Item_Drops(random_items);
+					for(var i = 0; i < array_length(random_items); i++) {
+						var object_data = random_items[i];
+						var object_to_create = object_data[0];
+						with instance_create_depth(x, y, depth+2, object_to_create) {
+							slot_machine = true;
+							follow_player = true;
+						}
+					}
+					//y -= 33;
 				}else {
-					instance_create_depth(x,y+33,depth-2,custom_weapon_drop, {slot_machine: true,follow_player: true});
+					with instance_create_depth(x,y+33,depth-2,custom_weapon_drop) {
+						slot_machine = true;
+						follow_player = true;
+					}
 				}
 			}else if item1 = 4 { //active
 				heart_chance = 0;
@@ -132,13 +145,24 @@ if win = true {
 				random_items = scr_Random_Item_Drops();
 			
 				if random_pickup == true {
-					y += 37;
-					Create_Item_Drops(random_items);	
-					y -= 37;
+					//y += 37;
+					for(var i = 0; i < array_length(random_items); i++) {
+						var object_data = random_items[i];
+						var object_to_create = object_data[0];
+						with instance_create_depth(x, y, depth+2, object_to_create) {
+							slot_machine = true;
+							follow_player = true;
+						}
+					}
+					//Create_Item_Drops(random_items);	
+					//y -= 37;
 				}else {
 					var center_x = x;
-					var center_y = y ;
-					instance_create_depth(x,y+37,depth-2,custom_pickup_drop, {slot_machine: true,follow_player: true});
+					var center_y = y;
+					with instance_create_depth(x,y+37,depth-2,custom_pickup_drop) {
+						slot_machine = true;
+						follow_player = true;
+					}
 				}
 			}else if item1 = 5 { //passive
 				heart_chance = 0;
@@ -147,13 +171,17 @@ if win = true {
 				pickup_chance = 0;
 
 				random_items = scr_Random_Item_Drops();
-				y += 25;
-				Create_Item_Drops(random_items);
-				with instance_nearest(x,y,obj_item_parentbuff) {
-					slot_machine = true;
-					follow_player = true;
+				//y += 25;
+				//Create_Item_Drops(random_items);
+				for(var i = 0; i < array_length(random_items); i++) {
+					var object_data = random_items[i];
+					var object_to_create = object_data[0];
+					with instance_create_depth(x, y, depth+2, object_to_create) {
+						slot_machine = true;
+						follow_player = true;
+					}
 				}
-				y -= 25;
+				//y -= 25;
 			}
 		}
 	}
@@ -212,3 +240,5 @@ if num_of_spins > 0 and spin = true {
 	item2_y = 0;
 	item3_y = 0;
 }
+
+random_set_seed(global.seed);

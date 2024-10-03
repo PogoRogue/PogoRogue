@@ -6,8 +6,8 @@ draw_set_alpha(image_alpha);
 x = (obj_camera.x - obj_camera.view_w_half) + player_x;
 y = (obj_camera.y - obj_camera.view_h_half) + player_y-y_subtract;
 
-player_x = (camera_get_view_width(view_camera[0])/2) + (obj_player.x - obj_camera.x) + lengthdir_x(22,obj_player.angle + 90);
-player_y = (camera_get_view_height(view_camera[0])/2) + (obj_player.y - obj_camera.y) + lengthdir_y(22,obj_player.angle + 90);
+player_x = (768/2) + (obj_player.x - obj_camera.x) + lengthdir_x(22,obj_player.angle + 90);
+player_y = (432/2) + (obj_player.y - obj_camera.y) + lengthdir_y(22,obj_player.angle + 90);
 
 //draw_self();
 

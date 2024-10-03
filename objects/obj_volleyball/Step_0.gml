@@ -31,9 +31,9 @@ if cant_spawn = false {
 			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
 			random_set_seed(global.seed);
 			if distance_to_object(obj_player) > 384 {
-				audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
+				//audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
 			}else {
-				audio_group_set_gain(audiogroup_volleyball,1,100);	
+				//audio_group_set_gain(audiogroup_volleyball,1,100);	
 			}
 		}
 	}
@@ -59,9 +59,9 @@ if cant_spawn = false {
 			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
 			random_set_seed(global.seed);
 			if distance_to_object(obj_player) > 384 {
-				audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
+				//audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
 			}else {
-				audio_group_set_gain(audiogroup_volleyball,1,100);	
+				//audio_group_set_gain(audiogroup_volleyball,1,100);	
 			}
 		}
 	}
@@ -86,9 +86,9 @@ if cant_spawn = false {
 			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
 			random_set_seed(global.seed);
 			if distance_to_object(obj_player) > 384 {
-				audio_group_set_gain(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
+				//(audiogroup_volleyball,(1-((distance_to_object(obj_player)-384)/(416+400))),100);
 			}else {
-				audio_group_set_gain(audiogroup_volleyball,1,100);	
+				//audio_group_set_gain(audiogroup_volleyball,1,100);	
 			}
 		}
 		

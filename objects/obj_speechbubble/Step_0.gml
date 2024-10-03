@@ -94,8 +94,8 @@ if activated = true {
 	}
 	
 	if size2 = false {
-		if bubble_index >= 7 and bubble_index < 9 {
-			y_offset += num_of_lines;
+		if bubble_index >= 5 and bubble_index < 9 {
+			y_offset += num_of_lines/2;
 		}
 	}else {
 		if bubble_index >= 8 and bubble_index < 12 {
@@ -103,7 +103,7 @@ if activated = true {
 		}
 	}
 	
-	if bubble_index >= 2 + (11*size2) {
+	if bubble_index >= 6 + (7*size2) {
 		if type_text = false {
 			type_text = true;
 			alarm[0] = 2;

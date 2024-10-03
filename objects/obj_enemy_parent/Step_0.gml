@@ -26,7 +26,7 @@ if(is_dead) {
 	scr_Screen_Shake(6, 10, false);
 	
 	//combo
-	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 { 
+	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and room != room_tutorial { 
 		global.combo += 1;
 		global.combo_length = global.combo_max;
 		

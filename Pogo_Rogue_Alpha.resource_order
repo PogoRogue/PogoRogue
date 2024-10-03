@@ -90,6 +90,7 @@
     {"name":"spr_junkyard_asset9","order":2,"path":"sprites/spr_junkyard_asset9/spr_junkyard_asset9.yy",},
     {"name":"spr_junkyard_assets","order":1,"path":"sprites/spr_junkyard_assets/spr_junkyard_assets.yy",},
     {"name":"spr_menuart2","order":1,"path":"sprites/spr_menuart2/spr_menuart2.yy",},
+    {"name":"spr_player_skin1_icon","order":1,"path":"sprites/spr_player_skin1_icon/spr_player_skin1_icon.yy",},
     {"name":"spr_projectile_bouncyball_mask","order":1,"path":"sprites/spr_projectile_bouncyball_mask/spr_projectile_bouncyball_mask.yy",},
     {"name":"spr_sequence_progress2","order":3,"path":"sprites/spr_sequence_progress2/spr_sequence_progress2.yy",},
     {"name":"spr_shop_background_new","order":1,"path":"sprites/spr_shop_background_new/spr_shop_background_new.yy",},

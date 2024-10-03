@@ -1,4 +1,4 @@
-if(!other.is_dead) and other != obj_boss_sequence_body {
+if(!other.is_dead) and other.object_index != obj_boss_sequence_body {
 	var enemy_object = other;
 	if !scr_In_Array(enemies_array,enemy_object) {
 		array_resize(enemies_array,array_length(enemies_array)+1);

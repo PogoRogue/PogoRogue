@@ -53,3 +53,8 @@ alarm[5] = room_speed * initial_delay;
 laser_obj = noone;
 
 sound = audio_play_sound(snd_nothing,0,false);
+
+heart_chance = 0;
+buff_chance = 0;
+weapon_chance = 0;
+pickup_chance = 0;

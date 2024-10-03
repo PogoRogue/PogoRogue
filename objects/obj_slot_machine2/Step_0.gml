@@ -1,3 +1,5 @@
+randomize();
+
 if obj_player.pickups_array[0] = obj_player.pickup_hacker {
 	key = 1;
 }else if obj_player.pickups_array[1] = obj_player.pickup_hacker {
@@ -12,7 +14,7 @@ if key = 1 {
 	button_num = 5;
 }
 
-if handle_frame < sprite_get_number(spr_slotmachine_handle) and handle_done = false and pull_handle = true { 
+if floor(handle_frame) < sprite_get_number(spr_slotmachine_handle)-1 and handle_done = false and pull_handle = true { 
 	handle_frame += 0.25;
 	if handle_frame >= 5 and spin = false {
 		if !audio_is_playing(snd_slotmachine_spinning) {
@@ -121,9 +123,16 @@ if win = true {
 				random_items = scr_Random_Item_Drops();
 			
 				if random_weapon = true {
-					y += 33;
-					Create_Item_Drops(random_items);
-					y -= 33;
+					//y += 33;
+					for(var i = 0; i < array_length(random_items); i++) {
+						var object_data = random_items[i];
+						var object_to_create = object_data[0];
+						with instance_create_depth(x, y, depth+2, object_to_create) {
+							slot_machine = true;
+							follow_player = true;
+						}
+					}
+					//y -= 33;
 				}else {
 					instance_create_depth(x,y+33,depth-2,custom_weapon_drop,{slot_machine: true,follow_player: true});
 				}
@@ -136,9 +145,16 @@ if win = true {
 				random_items = scr_Random_Item_Drops();
 			
 				if random_pickup == true {
-					y += 37;
-					Create_Item_Drops(random_items);	
-					y -= 37;
+					//y += 37;
+					for(var i = 0; i < array_length(random_items); i++) {
+						var object_data = random_items[i];
+						var object_to_create = object_data[0];
+						with instance_create_depth(x, y, depth+2, object_to_create) {
+							slot_machine = true;
+							follow_player = true;
+						}
+					}
+					//y -= 37;
 				}else {
 					var center_x = x;
 					var center_y = y ;
@@ -151,13 +167,16 @@ if win = true {
 				pickup_chance = 0;
 
 				random_items = scr_Random_Item_Drops();
-				y += 25;
-				Create_Item_Drops(random_items);
-				with instance_nearest(x,y,obj_item_parentbuff) {
-					slot_machine = true;
-					follow_player = true;
+				//y += 25;
+				for(var i = 0; i < array_length(random_items); i++) {
+					var object_data = random_items[i];
+					var object_to_create = object_data[0];
+					with instance_create_depth(x, y, depth+2, object_to_create) {
+						slot_machine = true;
+						follow_player = true;
+					}
 				}
-				y -= 25;
+				//y -= 25;
 			}
 		}
 	}
@@ -275,3 +294,4 @@ if key_hack and spin = true {
 		}
 	}
 }
+random_set_seed(global.seed);

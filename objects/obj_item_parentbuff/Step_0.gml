@@ -10,7 +10,11 @@ if room != room_shop {
 	}
 }
 
-if room = room_boss_1 or room = room_boss_2 or room = room_boss_2 {
+if (room = room_boss_1 or room = room_boss_2 or room = room_boss_3) and slot_machine = false {
 	//instance_destroy();
 	follow_player = false;
+}
+
+if slot_machine = true {
+	follow_player = true;
 }

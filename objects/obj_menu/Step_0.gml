@@ -36,7 +36,7 @@ if key_select and !instance_exists(obj_fade_in) {
 	}
 	
 	if select = 1 - options_decrease {
-		if global.tutorial_completed = true {
+		if global.tutorial_completed = true or global.tutorial_completed = false {
 			audio_group_set_gain(audiogroup_music, 0, 1000);
 			scr_Room_Transition(room_starting_area);
 			global.player_starting_x =  1096;

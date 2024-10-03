@@ -31,3 +31,8 @@ red_alpha = 0;
 randomize();
 max_spd = random_range(1.25,2.5);
 random_set_seed(global.seed);
+
+heart_chance = 0;
+buff_chance = 0;
+weapon_chance = 0;
+pickup_chance = 0;

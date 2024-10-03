@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 //laser
-if !is_dead {
+if !is_dead and room = room_boss_1 {
 	var red = make_color_rgb(180,82,82);
 	draw_set_alpha(laser_alpha);
 	draw_line_width_color(x+lengthdir_x(0,image_angle+90),y+lengthdir_y(0,image_angle+90),x+lengthdir_x(2500,image_angle+90),y+lengthdir_y(2500,image_angle+90),2,red,red);

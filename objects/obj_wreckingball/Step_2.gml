@@ -69,7 +69,8 @@ if rope_length < rope_length_max and !retract {
 	rope_length += 8;
 }
 
-if obj_player.state = obj_player.state_portal or obj_player.state = obj_player.state_shop_portal {
+if obj_player.state = obj_player.state_portal or obj_player.state = obj_player.state_shop_portal 
+or obj_player.table = true or obj_player.state = obj_player.state_pogosmith {
 	retract = true;	
 }
 

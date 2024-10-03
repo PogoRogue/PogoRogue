@@ -40,7 +40,7 @@ if skin_num = 1 {
 	text_offset = 3;
 	popup_offset = 10;
 }else if skin_num = 6 {
-	text_offset = 1;
+	text_offset = -8;
 	popup_offset = 9;
 }else {
 	text_offset = 1;

@@ -13,6 +13,7 @@ switch (select) {
 draw_sprite(sprite_index,image_index,x,y);
 
 //darken play button
+/*
 if global.tutorial_completed = false {
 	if select = 1 - options_decrease {
 		draw_sprite(spr_menu_tutorial_darken,0,x,y);

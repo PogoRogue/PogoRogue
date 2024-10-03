@@ -29,7 +29,7 @@ if(collide_with_walls) {
 // Check if hitting player to deal damage
 var _collision = collision_line(x, y, end_x, end_y, obj_player_mask, true, true);
 if(_collision != noone) {
-	if(damage > 0) {
+	if(damage > 0) and obj_player.current_iframes <= 0 {
 		scr_Player_Damaged(damage);
 		damage = 0;
 	}

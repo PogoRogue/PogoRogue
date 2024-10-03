@@ -1,7 +1,7 @@
 /// @description Create Electric Floor
 power_on = false;
 on_time = 2;
-off_time = 2; //4
+off_time = 3; //4
 powering_up_time = 1;
 damage = 4;
 is_active = true;

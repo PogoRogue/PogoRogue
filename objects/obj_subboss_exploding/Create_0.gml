@@ -20,3 +20,8 @@ red_alpha = 0;
 randomize();
 spd = random_range(0.5,1.25);
 random_set_seed(global.seed);
+
+heart_chance = 0;
+buff_chance = 0;
+weapon_chance = 0;
+pickup_chance = 0;

@@ -1828,6 +1828,7 @@
     {"id":{"name":"spr_player_skin1_hurtface2","path":"sprites/spr_player_skin1_hurtface2/spr_player_skin1_hurtface2.yy",},},
     {"id":{"name":"spr_player_skin1_hurtface3","path":"sprites/spr_player_skin1_hurtface3/spr_player_skin1_hurtface3.yy",},},
     {"id":{"name":"spr_player_skin1_hurtface4","path":"sprites/spr_player_skin1_hurtface4/spr_player_skin1_hurtface4.yy",},},
+    {"id":{"name":"spr_player_skin1_icon","path":"sprites/spr_player_skin1_icon/spr_player_skin1_icon.yy",},},
     {"id":{"name":"spr_player_skin1_portal","path":"sprites/spr_player_skin1_portal/spr_player_skin1_portal.yy",},},
     {"id":{"name":"spr_player_skin1_revive_white","path":"sprites/spr_player_skin1_revive_white/spr_player_skin1_revive_white.yy",},},
     {"id":{"name":"spr_player_skin1_revive","path":"sprites/spr_player_skin1_revive/spr_player_skin1_revive.yy",},},

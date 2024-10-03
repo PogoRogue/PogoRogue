@@ -19,26 +19,26 @@ if key_left or key_right or key_up or key_down {
 }
 
 if draw_respawn = false and obj_player.image_yscale = 0 {
-	if place_meeting(x-move_speed,y,obj_camera_constrain_x_left) and key_left {
-		while !place_meeting(x-1,y,obj_camera_constrain_x_left) {
+	if (place_meeting(x-move_speed,y,obj_ground)) and key_left {
+		while !place_meeting(x-1,y,obj_ground){
 			x -= 1;
 		}
 		key_left = 0;
 	}
-	if place_meeting(x+move_speed,y,obj_camera_constrain_x_right) and key_right {
-		while !place_meeting(x+1,y,obj_camera_constrain_x_right) {
+	if (place_meeting(x+move_speed,y,obj_ground)) and key_right {
+		while !place_meeting(x+1,y,obj_ground) {
 			x += 1;
 		}
 		key_right = 0;
 	}
-	if place_meeting(x,y-move_speed,obj_camera_constrain_y_top) and key_up {
-		while !place_meeting(x,y-1,obj_camera_constrain_y_top) {
+	if ( place_meeting(x,y-move_speed,obj_ground)) and key_up {
+		while !place_meeting(x,y-1,obj_ground) {
 			y -= 1;
 		}
 		key_up = 0;
 	}
-	if place_meeting(x,y+move_speed,obj_camera_constrain_y_bottom) and key_down {
-		while !place_meeting(x,y+1,obj_camera_constrain_y_bottom) {
+	if (place_meeting(x,y+move_speed,obj_ground)) and key_down {
+		while !place_meeting(x,y+1,obj_ground){
 			y += 1;
 		}
 		key_down = 0;

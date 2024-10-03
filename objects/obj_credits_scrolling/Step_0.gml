@@ -12,8 +12,7 @@ if key_back and !instance_exists(obj_fade_in) and global.credits_watched = true 
 
 yy -= 0.5;
 
-if key_down and global.credits_watched = true
-or key_down and room = room_credits {
+if key_down {
 	yy -= 2.5;
 }
 

@@ -2,13 +2,13 @@ if activated = true or retract = true {
 	if bubble_index >= 5 + (3*size2) {
 		//draw middle piece
 		for (i = 0; i <= y_offset*2; i += 1) {
-			draw_sprite(middle_sprite,floor(bubble_index),x,y+y_offset - i);
+			draw_sprite_ext(middle_sprite,floor(bubble_index),x,y+y_offset - i,1,1,0,c_white,1);
 		}
 	}else if size2 = true {
 		y_offset = 0;
 	}
-	draw_sprite(bottom_sprite,floor(bubble_index),x,y+y_offset);
-	draw_sprite(top_sprite,floor(bubble_index),x,y-y_offset);
+	draw_sprite(bottom_sprite,floor(bubble_index),x,y+y_offset-2);
+	draw_sprite(top_sprite,floor(bubble_index),x,y-y_offset+2);
 }
 
 draw_set_halign(fa_center);

@@ -16,6 +16,6 @@ init_damage = damage;
 colliding_with_enemies = false;
 
 
-if room = room_boss_2 {
+if room = room_boss_2 and object_get_name(object_index) != obj_coin25 {
 	instance_destroy();
 }

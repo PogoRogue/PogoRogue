@@ -23,9 +23,9 @@ for(xx = 0; xx < select_x_max; xx++) {
 
 //draw area indicators
 if select= 3 {
-	draw_sprite(spr_item_menu_areas,0,center_x-140-36,128+36);
-	draw_sprite(spr_item_menu_areas,1,center_x+140+36,128+36+72);
-	draw_sprite(spr_item_menu_areas,2,center_x-140-36,128+36+144);
+	//draw_sprite(spr_item_menu_areas,0,center_x-140-36,128+36);
+	//draw_sprite(spr_item_menu_areas,1,center_x+140+36,128+36+72);
+	//draw_sprite(spr_item_menu_areas,2,center_x-140-36,128+36+144);
 }
 
 draw_set_font(fnt_itemdescription2);

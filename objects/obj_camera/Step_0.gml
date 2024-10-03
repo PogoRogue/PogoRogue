@@ -4,10 +4,8 @@ view_w_half = camera_get_view_width(cam) * 0.5;
 view_h_half = camera_get_view_height(cam) * 0.5;
 
 if room = room_menu {
-	follow = noonel
+	follow = noone;
 }
-
-
 
 //Update destination
 if (instance_exists(follow)) and instance_exists(obj_player) {  
@@ -15,6 +13,12 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 	if follow = obj_player {
 		xTo = follow.x;
 		yTo = follow.y - 48;
+	}else if follow.object_index = obj_blink_box_strike {
+		xTo = follow.x;
+		yTo = follow.y;
+		
+		x += (xTo - x) / readjust_speed;
+		y += (yTo - y) / readjust_speed;
 	}
 	
 	if obj_player.state = obj_player.state_shop_portal 
@@ -128,7 +132,7 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 		if (room != room_proc_gen_test && room != room_sprite_level_test  && room != room_starting_area) {
 			x = clamp(x,view_w_half+buff,room_width - view_w_half-buff);
 			y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
-		}else if room = room_starting_area and follow = obj_player {
+		}else if room = room_starting_area {
 			x = clamp(x,view_w_half+buff-64,room_width - view_w_half-buff);
 			y = clamp(y,view_h_half+buff,room_height - view_h_half-buff);
 		}else if room = room_proc_gen_test {
@@ -169,4 +173,16 @@ if instance_exists(obj_player) {
 	if obj_player.state = obj_player.state_free and room = room_proc_gen_test {
 		follow = obj_player;
 	}
+}
+
+if instance_exists(obj_blink_box_strike) {
+	follow = obj_blink_box_strike;
+}
+
+if obj_player.state = obj_player.state_portal and instance_exists(obj_boss_door) {
+	follow = obj_boss_door;
+}
+
+if obj_player.state = obj_player.state_shop_portal and instance_exists(obj_shop_door) {
+	follow = obj_shop_door;
 }

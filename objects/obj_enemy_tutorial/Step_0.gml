@@ -36,11 +36,11 @@ if(is_dead) {
 		add_to_combo = false;
 		
 		switch global.combo {
-			case 1: audio_play_sound(snd_combo1,0,false);
-			case 2: audio_play_sound(snd_combo2,0,false);	
-			case 3: audio_play_sound(snd_combo3,0,false);	
-			case 4: audio_play_sound(snd_combo4,0,false);	
-			case 5: audio_play_sound(snd_combo5,0,false);	
+			case 1: audio_play_sound(snd_combo1,0,false); break;
+			case 2: audio_play_sound(snd_combo2,0,false); break;
+			case 3: audio_play_sound(snd_combo3,0,false); break;
+			case 4: audio_play_sound(snd_combo4,0,false); break;
+			case 5: audio_play_sound(snd_combo5,0,false); break;
 		}
 		
 		with instance_create_depth(x+sprite_width/2,y+sprite_height/2,depth+1,obj_coin_spawner) {

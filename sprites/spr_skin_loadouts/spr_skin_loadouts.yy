@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_skin_loadouts",
   "bboxMode":0,
-  "bbox_bottom":110,
+  "bbox_bottom":111,
   "bbox_left":0,
   "bbox_right":80,
   "bbox_top":8,

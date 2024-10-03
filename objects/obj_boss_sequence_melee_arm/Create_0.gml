@@ -10,3 +10,8 @@ draw_hp = false;
 if instance_exists(obj_player) {
 	depth = obj_player.depth - 11;	
 }
+
+heart_chance = 0;
+buff_chance = 0;
+weapon_chance = 0;
+pickup_chance = 0;
