@@ -1,10 +1,10 @@
 /// @description Reset variables
 
 if room = room_tutorial {
-	global.music_volume_multiplier = 0.2;
+	global.music_volume_multiplier = 0.3;
 	audio_group_set_gain(audiogroup_music, global.music_volume_multiplier*((exp(0.24*((10 / 100) * global.music_volume))-1)/10), 2000);
 }else if room = room_starting_area {
-	global.music_volume_multiplier = 0.2;
+	global.music_volume_multiplier = 0.3;
 	audio_group_set_gain(audiogroup_music, global.music_volume_multiplier*((exp(0.24*((10 / 100) * global.music_volume))-1)/10), 2000);
 }else {
 	global.music_volume_multiplier = 1;

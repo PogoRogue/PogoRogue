@@ -44,7 +44,10 @@ if colliding and key_interact and !instance_exists(speechbubble_obj) {
 	track_y: true});
 }else if distance_to_object(obj_player) > 240 and room = room_starting_area {
 	with (speechbubble_obj) {	
-		retract = true;
+		if retract = false {
+			retract = true;
+			audio_play_sound(snd_speechbubble_close,0,false);
+		}
 		destroy_on_retract = true;
 		activated = false;
 		type_text = false;

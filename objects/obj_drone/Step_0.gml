@@ -33,9 +33,9 @@ if distance_to_object(obj_player) < 100 {
 
 if colliding and key_interact and !instance_exists(speechbubble_obj) {
 	speechbubble_obj = instance_create_depth(x,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
-	text_array: ["Good timing dude! I just finished installing the basketball hoops.", 
+	text_array: ["Good timing dude! \nI just finished \ninstalling the \nbasketball hoops.", 
 	"We should play a game of P.O.G.O. sometime!", 
-	"I have to say, being a drone might give me a bit of an advantage though."],
+	"I have to say, being a drone might give me a \nbit of an advantage \nthough."],
 	lines_of_text: 3, 
 	parent_index: obj_drone, 
 	track_y: true,
@@ -43,7 +43,10 @@ if colliding and key_interact and !instance_exists(speechbubble_obj) {
 	chars_per_line: 22});
 }else if distance_to_object(obj_player) > 240 {
 	with (speechbubble_obj) {	
-		retract = true;
+		if retract = false {
+			retract = true;
+			audio_play_sound(snd_speechbubble_close,0,false);
+		}
 		destroy_on_retract = true;
 		activated = false;
 		type_text = false;

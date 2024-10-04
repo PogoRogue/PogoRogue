@@ -14,8 +14,8 @@
   "name":"obj_menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Control Objects",
-    "path":"folders/Objects/Control Objects.yy",
+    "name":"UI",
+    "path":"folders/Objects/Control Objects/UI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

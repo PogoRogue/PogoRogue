@@ -175,7 +175,8 @@ if (global.allow_screenshake) {
 camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
 
 if instance_exists(obj_player) {
-	if obj_player.state = obj_player.state_free and room = room_proc_gen_test {
+	if obj_player.state = obj_player.state_free and (room = room_proc_gen_test
+	or  room = room_tutorial or  room = room_boss_1 or  room = room_boss_2 or  room = room_boss_3) {
 		follow = obj_player;
 	}
 }

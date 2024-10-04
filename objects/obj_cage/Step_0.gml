@@ -13,7 +13,7 @@ if global.skins_unlocked_array[skin_num-1] = true {
 if is_colliding = true and key_interact and !instance_exists(speechbubble_obj) {
 	if skin_num = 1 {
 		speechbubble_obj = instance_create_depth(x-1,y - 128,depth-1,obj_speechbubble,{text_color: make_color_rgb(184,181,185),
-		text_array: ["We've got a \nclass-action \nlawsuit on \nour hands if \nyou can get \nus out of here.", "The problem \nis, I can't \nremember \nwho put us \nin here....."],
+		text_array: ["We've got a \nclass-action \nlawsuit on \nour hands if \nyou can get \nall of us out.", "The problem \nis, I can't \nremember \nwho put us \nin here....."],
 		lines_of_text: 2,
 		parent_index: instance_nearest(x,y+128,obj_cage),
 		});
@@ -24,7 +24,7 @@ if is_colliding = true and key_interact and !instance_exists(speechbubble_obj) {
 		parent_index: instance_nearest(x,y+128,obj_cage)});	
 	}else if skin_num = 3 {
 		speechbubble_obj = instance_create_depth(x-1,y - 128,depth-1,obj_speechbubble,{text_color: make_color_rgb(184,181,185), 
-		text_array: ["What kind of \ngod would \nallow 6 of his creations to \nbe subjected \nto such a \ncruel fate?", "To confine one \nto a space so \nrestrictive not only degrades \nthe body, but corrodes \nthe very fiber \nof one's soul...", "Oops... I mean, bark! bark! \nbark! bark! \nbark! bark!", "bark! bark! \nbark! bark! \nbark! bark!"],
+		text_array: ["What kind of god \nwould allow 6 of its \ncreations to be \nsubjected to such \na cruel fate?", "To confine one to a \nspace so restrictive \nnot only degrades the \nbody, but corrodes \nthe very fiber of \none's soul...", "Oops... I mean, bark! \nbark! bark! bark! \nbark! bark! bark!", "bark! bark! bark! \nbark! bark! bark! \nbark! bark! bark!"],
 		lines_of_text: 4, 
 		size2: true,
 		chars_per_line: 22,
@@ -48,7 +48,10 @@ if is_colliding = true and key_interact and !instance_exists(speechbubble_obj) {
 	
 }else if distance_to_object(obj_player) > 128 and instance_exists(speechbubble_obj) and is_colliding = false {
 	with (speechbubble_obj) {	
-		retract = true;
+		if retract = false {
+			retract = true;
+			audio_play_sound(snd_speechbubble_close,0,false);
+		}
 		destroy_on_retract = true;
 		activated = false;
 		type_text = false;

@@ -17,3 +17,5 @@ enemies_array = [];
 despawn = false;
 
 free = true;
+
+depth = 10;

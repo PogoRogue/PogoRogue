@@ -485,6 +485,9 @@ or gun_array[current_gun] != water_gun and gun_3 = water_gun {
 		}else if water_gun.level >= 4 {
 			water_gun.current_bullets += 1;
 		}
+		if !audio_is_playing(snd_watergun_refill) {
+			audio_play_sound(snd_watergun_refill,0,false);
+		}
 	}else if water_gun.current_bullets < water_gun.bullets_per_bounce+max_ammo_buff {
 		if water_gun.level = 1 {
 			water_gun.current_bullets += 1/10;
@@ -495,8 +498,14 @@ or gun_array[current_gun] != water_gun and gun_3 = water_gun {
 		}if water_gun.level >= 4 {
 			water_gun.current_bullets += 1/3;
 		}
+		if !audio_is_playing(snd_watergun_refill) {
+			audio_play_sound(snd_watergun_refill,0,false);
+		}
 	}else {
 		water_gun.current_bullets = water_gun.bullets_per_bounce+max_ammo_buff;
+		if audio_is_playing(snd_watergun_refill) {
+			audio_stop_sound(snd_watergun_refill);
+		}
 	}
 }
 
@@ -632,6 +641,7 @@ if(dead && current_iframes <= 0 and global.revive = false) {
 	state = state_revive;
 	revive_alpha = 1;
 	current_iframes = max(current_iframes - 1, 0);
+	audio_play_sound(snd_revive,0,false);
 	
 	if room != room_tutorial {
 		//change revive item sprite

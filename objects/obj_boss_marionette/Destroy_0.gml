@@ -16,6 +16,8 @@ if obj_player.dead = false {
 			with obj_runstats {
 				stop_time = true;	
 			}
+			
+			audio_play_sound(snd_victory,0,false);
 		}
 		with obj_player {
 			state = state_immobile;	
@@ -26,3 +28,6 @@ if obj_player.dead = false {
 		}
 	}
 }
+
+
+audio_group_set_gain(audiogroup_music, 0, 1000);

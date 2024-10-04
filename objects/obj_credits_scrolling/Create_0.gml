@@ -125,3 +125,4 @@ if global.credits_watched = true {
 
 audio_group_stop_all(audiogroup_music);
 audio_play_sound(snd_music_credits,0,true);
+audio_group_set_gain(audiogroup_music, ((exp(0.24*((10 / 100) * global.music_volume))-1)/10), 1);

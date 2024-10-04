@@ -3,6 +3,7 @@ next_button = global.key_interact;
 //spawn
 if distance_to_object(obj_player) < spawn_distance and activated = false and alarm_retracted = false and destroy_on_retract = false and awake = true {
 	activated = true;
+	audio_play_sound(snd_speechbubble_open,0,false);
 	animation_speed = 0.5;
 	retract = false;
 	alarm[1] = alarm1_time; //retract
@@ -38,6 +39,7 @@ if (distance_to_object(obj_player) > retract_distance and retract_distance != 0)
 	animation_speed = 0.5;
 	scrolling_text = "";
 	current_character = 0;
+	audio_play_sound(snd_speechbubble_close,0,false);
 }
 
 if (next_button and retract_distance = 0) and activated = true and retract = false and current_line >= lines_of_text and scrolling_text = current_text {
@@ -49,6 +51,7 @@ if (next_button and retract_distance = 0) and activated = true and retract = fal
 		animation_speed = 0.5;
 		scrolling_text = "";
 		current_character = 0;
+		audio_play_sound(snd_speechbubble_close,0,false);
 	}else if scrolling_text = current_text { //repeat
 		alarm[0] = 2;
 		scrolling_text = "";

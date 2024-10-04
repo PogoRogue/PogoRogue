@@ -7,3 +7,6 @@ alarm[0] = 10;
 
 air = noone;
 air2 = noone;
+
+
+instance_destroy();

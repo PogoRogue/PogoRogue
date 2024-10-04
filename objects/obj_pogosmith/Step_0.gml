@@ -19,8 +19,8 @@ if room = room_starting_area {
 
 if colliding and key_interact and !instance_exists(speechbubble_obj) {
 	speechbubble_obj = instance_create_depth(x-1,bbox_top-17,depth-1,obj_speechbubble,{text_color: make_color_rgb(211,160,104), 
-	text_array: ["The Smith family legacy goes back for generations.","My great grandmother is actually known as the great grandmother of Pogosmithing.",
-	"It's a shame that she died in a tragic unicycling accident. I try to honor her with my work.", "I've even begun taking unicycling lessons to make sure I don't meet the same fate."],
+	text_array: ["The Smith family \nlegacy goes back \nfor generations.","My great grandmother \nis actually known as \nthe great grandmother \nof Pogosmithing.",
+	"It's a shame that she died in a tragic \nunicycling accident. \nI try to honor her \nwith my work.", "I've even begun taking unicycling lessons to \nmake sure I don't \nmeet the same fate."],
 	lines_of_text: 4, 
 	size2: true,
 	chars_per_line: 22,
@@ -28,7 +28,10 @@ if colliding and key_interact and !instance_exists(speechbubble_obj) {
 	track_y: true});
 }else if distance_to_object(obj_player) > 240 and room = room_starting_area {
 	with (speechbubble_obj) {	
-		retract = true;
+		if retract = false {
+			retract = true;
+			audio_play_sound(snd_speechbubble_close,0,false);
+		}
 		destroy_on_retract = true;
 		activated = false;
 		type_text = false;

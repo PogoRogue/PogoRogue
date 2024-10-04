@@ -28,3 +28,8 @@ frame = 0;
 
 global.player_starting_x =  1096;
 global.player_starting_y = 1136;
+
+if audio_is_playing(snd_music_level1) {
+	audio_stop_sound(snd_music_level1);
+}
+audio_group_set_gain(audiogroup_music, ((exp(0.24*((10 / 100) * global.music_volume))-1)/10), 1);

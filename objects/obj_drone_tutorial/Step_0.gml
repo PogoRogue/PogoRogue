@@ -80,7 +80,10 @@ if current_speechbubble = 10 and (global.combo >= 5) { //COMBO
 if current_speechbubble = 1 and (obj_player.num_of_weapons != 0 or instance_exists(obj_item_weapon_default)) //PISTOL
 or retract_current_bubble and current_speechbubble < array_length(speechbubble_array) {
 	with speechbubble_array[current_speechbubble] {
-		retract = true;
+		if retract = false {
+			retract = true;
+			audio_play_sound(snd_speechbubble_close,0,false);
+		}
 		destroy_on_retract = true;
 		activated = false;
 		type_text = false;
@@ -94,7 +97,10 @@ or retract_current_bubble and current_speechbubble < array_length(speechbubble_a
 if current_speechbubble = 6 and (obj_player.num_of_pickups != 0 or instance_exists(obj_item_pickup_firedash)) //FIRE DASH
 or retract_current_bubble and current_speechbubble < array_length(speechbubble_array) {
 	with speechbubble_array[current_speechbubble] {
-		retract = true;
+		if retract = false {
+			retract = true;
+			audio_play_sound(snd_speechbubble_close,0,false);
+		}
 		destroy_on_retract = true;
 		activated = false;
 		type_text = false;
@@ -108,6 +114,10 @@ or retract_current_bubble and current_speechbubble < array_length(speechbubble_a
 if current_speechbubble = 8 and (obj_player.num_of_weapons != 1 or instance_exists(obj_item_weapon_paintball)) //PAINTBALL GUN
 or retract_current_bubble and current_speechbubble < array_length(speechbubble_array) {
 	with speechbubble_array[current_speechbubble] {
+		if retract = false {
+			retract = true;
+			audio_play_sound(snd_speechbubble_close,0,false);
+		}
 		retract = true;
 		destroy_on_retract = true;
 		activated = false;
