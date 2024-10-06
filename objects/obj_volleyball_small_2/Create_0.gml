@@ -18,4 +18,4 @@ despawn = false;
 
 free = true;
 
-depth = 10;
+//depth = 10;

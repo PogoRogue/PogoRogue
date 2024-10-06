@@ -8,9 +8,20 @@ if sign(image_xscale) > 0 {
 		}else if !position_meeting(x+(i*16)-1,y,obj_conveyor_belt) and position_meeting(x+(i*16)+17,y,obj_conveyor_belt) {
 			tile_frame[i] = 1;
 			xx[i] = x+(i*16);
+			
+			with instance_create_depth(bbox_left,bbox_top,depth-3,obj_walltopleftcorner) {
+				image_xscale = 1;
+				image_yscale = 1;
+			}
 		}else if position_meeting(x+(i*16)-1,y,obj_conveyor_belt) and !position_meeting(x+(i*16)+17,y,obj_conveyor_belt) {
 			tile_frame[i] = 3;
 			xx[i] = x+(i*16);
+			
+			//top right corner
+			with instance_create_depth(bbox_right,bbox_top,depth-3,obj_walltoprightcorner) {
+				image_xscale = 1;
+				image_yscale = 1;
+			}
 		}
 	}
 }else {
@@ -21,9 +32,20 @@ if sign(image_xscale) > 0 {
 		}else if !position_meeting(x-(i*16)-17,y,obj_conveyor_belt) and position_meeting(x-(i*16)+1,y,obj_conveyor_belt) {
 			tile_frame[i] = 5;
 			xx[i] = x-(i*16)-16;
+			
+			with instance_create_depth(bbox_left,bbox_top,depth-3,obj_walltopleftcorner) {
+				image_xscale = 1;
+				image_yscale = 1;
+			}
 		}else if position_meeting(x-(i*16)-17,y,obj_conveyor_belt) and !position_meeting(x-(i*16)+1,y,obj_conveyor_belt) {
 			tile_frame[i] = 7;
 			xx[i] = x-(i*16)-16;
+			
+			//top right corner
+			with instance_create_depth(bbox_right,bbox_top,depth-3,obj_walltoprightcorner) {
+				image_xscale = 1;
+				image_yscale = 1;
+			}
 		}
 	}
 }

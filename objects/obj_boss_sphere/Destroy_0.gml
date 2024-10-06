@@ -5,26 +5,26 @@ instance_destroy(obj_boss_sphere_health);
 
 with obj_boss_brick {
 	instance_destroy();
-	instance_create_layer(x, y, "enemies", obj_explosion);
+	instance_create_layer(x, y, "enemies", obj_explosion,{mask_index: spr_nothing});
 }
 	
 // Destroy all deached bricks
 	
 with obj_subboss_exploding {
 	instance_destroy();
-	instance_create_layer(x, y, "enemies", obj_explosion);
+	instance_create_layer(x, y, "enemies", obj_explosion,{mask_index: spr_nothing, damage: 0});
 }
 with obj_subboss_fly_chasing {
 	instance_destroy();
-	instance_create_layer(x, y, "enemies", obj_explosion);
+	instance_create_layer(x, y, "enemies", obj_explosion,{mask_index: spr_nothing, damage: 0});
 }
 with obj_subboss_shield {
 	instance_destroy();
-	instance_create_layer(x, y, "enemies", obj_explosion);
+	instance_create_layer(x, y, "enemies", obj_explosion,{mask_index: spr_nothing, damage: 0});
 }
 with obj_subboss_shield_isolated {
 	instance_destroy();
-	instance_create_layer(x, y, "enemies", obj_explosion);
+	instance_create_layer(x, y, "enemies", obj_explosion,{mask_index: spr_nothing, damage: 0});
 }
 
 audio_group_set_gain(audiogroup_music, 0, 1000);
@@ -34,7 +34,7 @@ audio_group_set_gain(audiogroup_music, 0, 1000);
 //instance_destroy(obj_subboss_shield);
 instance_destroy(obj_subboss_tar);
 
-instance_create_layer(x, y, "enemies", obj_explosion);
+instance_create_layer(x, y, "enemies", obj_explosion,{mask_index: spr_nothing, damage: 0});
 audio_play_sound(snd_explosion, 0, false);	
 
 //create coins

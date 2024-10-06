@@ -47,6 +47,7 @@ if global.use_controller = true {
 	global.key_weapon_3 = array_key_weapon_3[0] || array_key_weapon_3[1];
 	global.key_weapon_up = array_key_weapon_up[0] || array_key_weapon_up[1];
 	global.key_weapon_down = array_key_weapon_down[0] || array_key_weapon_down[1];
+	global.key_aim = array_key_aim[0] || array_key_aim[1];
 
 	//menus
 	global.key_right_menu = array_key_right_menu[0] || array_key_right_menu[1];

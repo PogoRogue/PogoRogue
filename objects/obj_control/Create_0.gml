@@ -15,7 +15,7 @@ global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
 
 if room = room_starting_area {
-	global.num_of_coins = 100;
+	global.num_of_coins = 0;
 }else if room = room_test {
 	global.num_of_coins = 200;
 }else if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
@@ -104,7 +104,7 @@ global.juggler = false;
 global.iron_proficiency = false;
 global.fast_forward = 0;
 global.airbag_number = 0;
-global.win_odds = 30 + global.luck; //winner's mentality win odds 33
+global.win_odds = 25 + global.luck; //winner's mentality win odds 33
 global.triplethreat = false;
 global.critchance = 0;
 global.crit_percentage = 0;

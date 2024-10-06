@@ -31,7 +31,8 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 	colliding = false;	
 }
 
-if (colliding and key_interact) and !instance_exists(obj_fade_in) {
+if (colliding and key_interact) and !instance_exists(obj_fade_in) and (being_used = false) 
+or global.use_keyboard = true and being_used = true and key_interact {
 	being_used = not being_used;
 	obj_player.can_rotate = true;
 	obj_player.centering = true;
@@ -50,7 +51,7 @@ if being_used = true {
 	obj_player.can_rotate = false;
 	obj_player.can_shoot = false;
 	
-	if distance_to_object(obj_player) > 128 or key_back {
+	if distance_to_object(obj_player) > 128 or (key_back and global.use_keyboard = false) {
 		being_used = false;
 		if instance_exists(obj_camera) {
 			obj_camera.follow = obj_player;
@@ -121,12 +122,26 @@ if being_used = true {
 	
 	if gun_1_bought = true {
 		black_alpha_1 = 0.5;	
+	}else if purchase_cost * obj_player.gun_array[0].level > global.num_of_coins {
+		black_alpha_1 = 0.5;	
+	}else {
+		black_alpha_1 = 0;	
 	}
+	
 	if gun_2_bought = true {
 		black_alpha_2 = 0.5;	
+	}else if purchase_cost * obj_player.gun_array[1].level > global.num_of_coins {
+		black_alpha_2 = 0.5;	
+	}else {
+		black_alpha_2 = 0;	
 	}
+	
 	if gun_3_bought = true {
 		black_alpha_3 = 0.5;	
+	}else if purchase_cost * obj_player.gun_array[2].level > global.num_of_coins {
+		black_alpha_3 = 0.5;	
+	}else {
+		black_alpha_3 = 0;	
 	}
 	
 	

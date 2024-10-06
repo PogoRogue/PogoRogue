@@ -1,5 +1,6 @@
 #region //angling
 key_recenter = global.key_recenter;
+key_aim = global.key_aim;
 var haxis = gamepad_axis_value(0, gp_axislh);
 var vaxis = gamepad_axis_value(0, gp_axislv);
 if controller_lock_in = false {
@@ -47,7 +48,16 @@ if controller_lock_in = false {
 			
 				}
 			}
-			angle += current_rotation_speed;
+			
+			if !key_aim {
+				angle += current_rotation_speed;
+			}else {
+				if abs(current_rotation_speed/2) >= 2 {
+					angle += current_rotation_speed/1.75;
+				}else {
+					angle += sign(current_rotation_speed)*2;
+				}
+			}
 		
 	
 			if hspeed > 0.5 {
@@ -123,7 +133,15 @@ if controller_lock_in = false {
 			
 				}
 			}
-			angle += current_rotation_speed;
+			if !key_aim {
+				angle += current_rotation_speed;
+			}else {
+				if abs(current_rotation_speed/2) >= 2 {
+					angle += current_rotation_speed/1.75;
+				}else {
+					angle += sign(current_rotation_speed)*2;
+				}
+			}
 		
 	
 			if hspeed > 0.5 {

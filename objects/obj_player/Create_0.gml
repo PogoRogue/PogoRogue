@@ -181,7 +181,7 @@ max_max_hp = 80; //10 hearts
 armor_buff = 0;
 max_armor_buff = 5;
 energy_buff = 0;
-max_energy_buff = 3;
+max_energy_buff = 4;
 stomp_damage = 8;
 num_iframes = (1.5 + iframes_add) * room_speed;
 current_iframes = 0;
@@ -198,7 +198,7 @@ if global.player_spawn_x = 0 and global.player_spawn_y = 0 {
 
 image_speed = 0;
 
-depth = -10;
+depth = -101;
 init_depth = depth;
 
 //we probably want 2 separate collision masks, one for the very bottom of the pogo stick, and the other for colliding with the sides/bottom of walls
@@ -1001,7 +1001,7 @@ state_immobile_bouncing = function() {
 
 state_revive = function() {
 	can_rotate = false;
-	can_shoot = false;
+	can_shoot = true;
 	sprite_index = player_sprite;
 	image_index = 0;
 	hspeed = hspeed * 0.9;
@@ -1350,7 +1350,7 @@ state_portal = function() {
 		
 		//obj_camera.xTo = portal_object.x;
 		//obj_camera.yTo =  portal_object.x - 64
-		obj_camera.follow = portal_object;
+		obj_camera.follow = instance_nearest(x,y,obj_boss_door);
 		camera_set_view_size(view_camera[0],global.room_width,global.room_height);
 		
 		image_angle += portal_angle_speed;
@@ -1441,7 +1441,7 @@ state_shop_portal = function() {
 		
 		//obj_camera.xTo = portal_object.x;
 		//obj_camera.yTo =  portal_object.x - 64
-		obj_camera.follow = portal_object;
+		obj_camera.follow = instance_nearest(x,y,obj_shop_door);
 
 		camera_set_view_size(view_camera[0],global.room_width,global.room_height);
 		
@@ -1733,3 +1733,13 @@ if room = room_starting_area {
 	y = global.player_starting_y;
 }
 
+if global.current_skin = 1 and global.phase <= 1  {
+	with instance_create_depth(x,y,depth,obj_item_buff_lasersight) {
+		event_user(0);
+	}
+	with instance_create_depth(x,y,depth,obj_item_buff_triplethreat) {
+		event_user(0);
+	}
+	laser_sight = true;
+	num_of_weapons = 3;
+}

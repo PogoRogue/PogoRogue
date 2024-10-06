@@ -21,8 +21,7 @@
   "height":16,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"99425990-0058-4472-b56c-ae0bc44618e6","blendMode":0,"displayName":"default","isLocked":false,"name":"99425990-0058-4472-b56c-ae0bc44618e6","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"f3fb3109-5434-4124-b027-a21b517b98bb","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"f3fb3109-5434-4124-b027-a21b517b98bb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"853637ae-5b28-40e6-8c1a-30e1be0c3ead","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"853637ae-5b28-40e6-8c1a-30e1be0c3ead","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_buffitem_triplethreat",
   "nineSlice":null,

@@ -36,14 +36,10 @@ function scr_Get_Skin_Loadout(){
 		global.all_weapon_costs[0] = obj_item_weapon_javelins.item_cost;
 		instance_destroy(temp_item);
 		
-		num_of_pickups = 1;
-		pickup_1 = pickup_tripleshot;
+		num_of_pickups = 0;
+		pickup_1 = pickup_nothing;
 		pickup_2 = pickup_nothing;
 		pickups_array = [pickup_1,pickup_2];
-		
-		var temp_item2 = instance_create_depth(0,0,depth,obj_item_pickup_tripleshot);
-		global.all_pickup_costs[0] = obj_item_pickup_tripleshot.item_cost;
-		instance_destroy(temp_item2);
 		
 		// Stats
 		hp = 48;
@@ -51,6 +47,9 @@ function scr_Get_Skin_Loadout(){
 		max_max_hp = 80; //10 hearts
 		armor_buff = 0;
 		max_armor_buff = 5;
+		
+		instance_create_depth(x,y,depth,obj_item_buff_lasersight);
+		instance_create_depth(x,y,depth,obj_item_buff_triplethreat);
 	}else if global.current_skin = 2 {
 		num_of_weapons = 1;
 		gun_1 = yoyo_gun;
@@ -199,6 +198,21 @@ function scr_Get_Skin_Loadout(){
 		max_max_hp = 80; //10 hearts
 		armor_buff = 0;
 		max_armor_buff = 5;
+	}
+	
+	if global.current_skin != 1 and room = room_starting_area {
+		global.all_buff_sprites = []; //buffs equipped in side bar
+		global.all_buff_sprites_index = []; //image index of each buff sprite
+		global.all_buff_numbers = []; //how many of each buff you have
+		global.all_buff_names = []; //names of each buff currently equipped
+		global.all_buff_descriptions = []; //descriptions of each buff currently equipped
+		global.all_buff_stats = []; //stats (mainly stackability) of each buff currently equipped
+		global.all_buff_costs = []; //cost of each buff currently equipped	
+		
+		laser_sight = false;
+		global.triplethreat = false;
+		num_of_weapons = 2;
+		gun_array = [gun_1, gun_2, gun_3];
 	}
 	
 	current_gun = 0;

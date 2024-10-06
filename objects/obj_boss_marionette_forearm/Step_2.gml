@@ -5,9 +5,11 @@ if(!instance_exists(parent)) {
 	exit;
 }
 
-scr_Gradually_Turn(self.id,obj_player,15,0.2);
+//scr_Gradually_Turn(self.id,obj_player,5,0.2);
 
-image_angle = point_direction(x, y, target.x, target.y + 128);
+if !instance_exists(obj_enemy_laser) {
+	image_angle = point_direction(x, y, target.x, target.y + 96);
+}
 
 x = parent.x + lengthdir_x(length_diff, parent.image_angle);
 y = parent.y + lengthdir_y(length_diff, parent.image_angle);

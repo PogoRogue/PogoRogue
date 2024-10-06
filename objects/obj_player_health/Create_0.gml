@@ -21,4 +21,4 @@ heart_shield_gain_num = 0;
 heart_shield_lost_num = 0;
 heart_energy_gain_num = 0;
 heart_energy_lost_num = 0;
-energy_to_gain = 3;
+energy_to_gain = 4;

@@ -5,3 +5,9 @@ if room != room_tutorial and room != room_starting_area {
 	
 	depth = 100;
 }
+
+if room = room_starting_area {
+	depth += 101;	
+}
+
+alarm[0] = 2;

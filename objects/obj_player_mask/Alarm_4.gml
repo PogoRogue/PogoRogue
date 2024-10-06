@@ -10,7 +10,7 @@ if instance_exists(temp_collision_enemy) {
 		if pogostick_colliding = false {
 			if temp_collision_enemy.red_frames >= 0 {
 				if parent_index.state != parent_index.state_portal and parent_index.state != parent_index.state_shop_portal
-				and parent_index.harpooning = false {
+				and parent_index.harpooning = false and parent_index.state != parent_index.state_revive{
 					if(!temp_collision_enemy.is_dead && parent_index.current_iframes <= 0 && temp_collision_enemy.damage > 0) {
 						scr_Player_Damaged(temp_collision_enemy.damage);
 						show_debug_message(object_get_name(temp_collision_enemy.object_index));

@@ -31,3 +31,21 @@ image_index = sprite_get_number(spr_enemy_tutorial_respawn)-1;
 image_speed = -1;
 spawned = false;
 show_red = false;
+
+damage = 0;
+/*
+//top left corner
+with instance_create_depth(bbox_left,bbox_top,depth-3,obj_walltopleftcorner) {
+	image_xscale = 1;
+	image_yscale = 1;
+}
+
+//top right corner
+with instance_create_depth(bbox_right,bbox_top,depth-3,obj_walltoprightcorner) {
+	image_xscale = 1;
+	image_yscale = 1;
+}*/
+	
+if room = room_starting_area {
+	depth = 400;	
+}

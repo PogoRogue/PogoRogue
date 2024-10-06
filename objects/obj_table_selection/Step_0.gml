@@ -34,7 +34,7 @@ if item_changed = true {
 				audio_play_sound(snd_weaponPowerup,0,false);
 				
 				var temp_item = instance_create_depth(0,0,depth,obj_item_weapon_paintball);
-				global.all_weapon_costs[0] = obj_item_weapon_javelins.item_cost;
+				global.all_weapon_costs[0] = obj_item_weapon_paintball.item_cost;
 				instance_destroy(temp_item);
 				
 				global.all_weapon_costs[1] = 25;

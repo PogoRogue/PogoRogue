@@ -30,6 +30,7 @@ global.key_weapon_2 = 0;
 global.key_weapon_3 = 0;
 global.key_weapon_up = 0;
 global.key_weapon_down = 0;
+global.key_aim = 0;
 
 //menus
 global.key_right_menu = 0;

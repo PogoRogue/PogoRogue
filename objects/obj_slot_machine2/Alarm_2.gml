@@ -123,7 +123,7 @@ if num_of_spins > 0 {
 }else {
 	if item1 = item2 and item2 = item3 {
 		jackpot = true;
-		global.win_odds = 30 + global.luck;
+		global.win_odds = 25 + global.luck;
 		jackpot_sound = audio_play_sound(snd_slotmachine_jackpot,0,false);
 		audio_stop_sound(snd_slotmachine_spinning);
 		if item3_locked = false {

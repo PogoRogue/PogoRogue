@@ -38,7 +38,7 @@ if num_of_spins > 0 {
 	}
 	if item1_index = item2_index and item2_index = item3_index {
 		jackpot = true;
-		global.win_odds = 30 + global.luck;
+		global.win_odds = 25 + global.luck;
 	}else if tryagain = false {
 		tryagain = true;
 		global.win_odds += 5;

@@ -6,5 +6,5 @@ if energy_to_gain > 0 {
 	energy_to_gain -= 1;
 	instance_create_depth(28 + (max_hp/8 * 24) + (armor_buff*24) + ((energy_to_gain-1) * 24), 32,depth-1,obj_heart_energy_gain);
 }else {
-	energy_to_gain = 3;
+	energy_to_gain = 4;
 }

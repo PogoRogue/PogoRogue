@@ -112,6 +112,12 @@ function scr_Shoot(){
 					//retract = true;	
 				}
 			}
+			
+			if state = state_revive {
+				vsp_basicjump = -6.6;
+				state = state_free;
+				obj_camera.follow = obj_player;
+			}
 		
 			//check if speed slower or faster than max speed to preserve momentum
 			if (abs(speed) > abs(gun.max_speed) and vspeed < 0) {

@@ -15,7 +15,7 @@ function scr_Player_Damaged(damage){
 				
 				if global.paparazzi = true {
 					audio_play_sound(snd_camera,0,false);
-					instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup,{damage: 3});
+					instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup,{damage: 5+global.damage_buff});
 				}
 			}else if armor_buff > 0 {
 				armor_buff -= 1;

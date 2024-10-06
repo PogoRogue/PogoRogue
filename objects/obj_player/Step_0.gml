@@ -317,15 +317,15 @@ if sixshooter_held = true and gun = sixshooter_gun {
 			}
 			shoot = true;
 		}
-	}else if !key_fire_projectile and sixshooter_held_num < 45 {
+	}else if !key_fire_projectile {
 		sixshooter_held_num = 0;
 		sixshooter_held = false;
 		fullauto_condtional = gun != sixshooter_gun;
 		sixshooter_gun.inaccuracy = 5;
 		sixshooter_gun.max_speed = -vsp_basicjump;
 		sixshooter_gun.spread_angle = 0;
-	}else if !key_fire_projectile and sixshooter_gun.inaccuracy = 25 {
-		sixshooter_held_num += 1;
+	}/*else if !key_fire_projectile and sixshooter_gun.inaccuracy = 25 {
+		sixshooter_held_num = 0;
 		if sixshooter_held_num >= 30 {
 			if fullauto_condtional = false {
 				fullauto_condtional = true;
@@ -347,7 +347,7 @@ if sixshooter_held = true and gun = sixshooter_gun {
 			}
 			shoot = true;
 		}
-	}
+	}*/
 }else {
 	fullauto_condtional = gun != sixshooter_gun;
 	sixshooter_gun.inaccuracy = 5;

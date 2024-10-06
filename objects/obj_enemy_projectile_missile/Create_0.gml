@@ -7,3 +7,5 @@ event_inherited();
 blink_frames = 0;
 blink_delay = room_speed / 2;
 alarm_set(1, blink_delay);
+
+depth = obj_player.depth + 2;

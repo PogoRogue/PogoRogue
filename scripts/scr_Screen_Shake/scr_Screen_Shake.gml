@@ -6,20 +6,41 @@ function scr_Screen_Shake(magnitude, frames, vibrate_controller) {
 	var controller_vibration_zero = (global.controller_vibration != 0);
 	var screenshake = (global.screenshake+25)/80*screenshake_zero;
 	var controller_vibration = (global.controller_vibration+25)/80*controller_vibration_zero;
-
-	with (obj_camera) {
-		if (magnitude * screenshake > shake_remain) {
-			shake_magnitude = magnitude * screenshake;
-			shake_remain = magnitude * screenshake;
-			shake_length = frames * screenshake;
+	
+	if instance_exists(obj_player) {
+		if obj_player.dead = false {
+			with (obj_camera) {
+				if (magnitude * screenshake > shake_remain) {
+					shake_magnitude = magnitude * screenshake;
+					shake_remain = magnitude * screenshake;
+					shake_length = frames * screenshake;
 			
-		}
+				}
 		
-		if (magnitude * controller_vibration > shake_remain_controller) and (vibrate_controller = true) {
-			shake_magnitude_controller = magnitude * controller_vibration;
-			shake_remain_controller = magnitude * controller_vibration;
-			shake_length_controller = frames * controller_vibration;
-			controller_vibrate = controller_vibration;
+				if (magnitude * controller_vibration > shake_remain_controller) and (vibrate_controller = true) {
+					shake_magnitude_controller = magnitude * controller_vibration;
+					shake_remain_controller = magnitude * controller_vibration;
+					shake_length_controller = frames * controller_vibration;
+					controller_vibrate = controller_vibration;
+				}
+			}
+		}
+	}else {
+		//duplicate code
+		with (obj_camera) {
+			if (magnitude * screenshake > shake_remain) {
+				shake_magnitude = magnitude * screenshake;
+				shake_remain = magnitude * screenshake;
+				shake_length = frames * screenshake;
+			
+			}
+		
+			if (magnitude * controller_vibration > shake_remain_controller) and (vibrate_controller = true) {
+				shake_magnitude_controller = magnitude * controller_vibration;
+				shake_remain_controller = magnitude * controller_vibration;
+				shake_length_controller = frames * controller_vibration;
+				controller_vibrate = controller_vibration;
+			}
 		}
 	}
 }

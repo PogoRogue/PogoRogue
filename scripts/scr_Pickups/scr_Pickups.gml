@@ -92,7 +92,7 @@ function scr_Pickups(){
 	
 	pickup_hatgun = {
 		_name: "Hat Gun",
-		tagline: "Shoot a bullet from your head. Each bounce, reload one bullet to a maximum of 3.",
+		tagline: "Shoot bullets from your head.",
 		gui_sprite: spr_pickup_hatgun,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
@@ -264,7 +264,7 @@ function scr_Pickups(){
 	
 	pickup_slowmo = {
 		_name: "Magic Stopwatch",
-		tagline: "Slow down time for 15 seconds, allowing high-precision movement. Slow mo can be canceled on \nre-press.",
+		tagline: "Slow down time for 15 seconds, allowing for high-precision movement. Slow mo can be canceled on \nre-press.",
 		gui_sprite: spr_pickup_slowmo,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
@@ -403,7 +403,7 @@ function scr_Pickups(){
 	
 	pickup_freeze = {
 		_name: "Freeze",
-		tagline: "Reload your current weapon and instantly freeze your movement, allowing you to fire on enemies below. Unfreeze after 3s or on re-press.",
+		tagline: "Reload your current weapon and instantly freeze your movement, allowing you to fire on enemies below. Unfreeze after 3s or on \nre-press.",
 		gui_sprite: spr_pickup_freeze,
 		max_cooldown_time: -1,
 		cooldown_time: -1 ,
@@ -480,11 +480,11 @@ function scr_Pickups(){
 	
 	pickup_target = {
 		_name: "Targeted Assassination",
-		tagline: "Summon a giant crosshair that kills a random enemy on screen, or deals 20% damage to bosses.",
+		tagline: "Summon a giant crosshair that kills a random enemy on screen.",
 		gui_sprite: spr_pickup_target,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 6 kills",
+		cooldown_text: "Cooldown: Every 8 kills",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -494,7 +494,7 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 6,
+		enemies_count_max: 8,
 		text_color: make_color_rgb(180,82,82),
 		cost: 0,
 		is_synergy: false,
@@ -507,7 +507,7 @@ function scr_Pickups(){
 	
 	pickup_emergency = {
 		_name: "Emergency Treatment",
-		tagline: "Instantly generates an armored heart.",
+		tagline: "Instantly generates an armored heart and a temporary energy heart. Getting a kill zaps life back into your energy heart",
 		gui_sprite: spr_pickup_emergency,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
@@ -549,7 +549,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_blink,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 8 kills",
+		cooldown_text: "Cooldown: Every 6 kills",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -559,7 +559,7 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 8,
+		enemies_count_max: 6,
 		text_color: make_color_rgb(138,176,96),
 		cost: 0,
 		is_synergy: false,
@@ -576,7 +576,7 @@ function scr_Pickups(){
 	
 	pickup_parachute = {
 		_name: "Parachute",
-		tagline: "Open a parachute, slowing you down as you \nfall. While your parachute is open, you may fire your weapon and remaing falling.",
+		tagline: "Open a parachute that straightens you out and slows you down. While your parachute is open, you may move horizontally and fire \nyour weapon.",
 		gui_sprite: spr_pickup_parachute,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
@@ -681,7 +681,7 @@ function scr_Pickups(){
 	
 	pickup_airbag = {
 		_name: "Airbag",
-		tagline: "Create a bouncy floating airbag below you. It reloads your weapon when \nbounced on. Every 10th airbag, gain a heart on \nbounce. Beep.",
+		tagline: "Create a bouncy floating airbag below you. It reloads your weapon \nwhen bounced on. Every 10th airbag, gain a \nheart on bounce. Beep.",
 		gui_sprite: spr_pickup_airbag,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
@@ -712,8 +712,8 @@ function scr_Pickups(){
 	_name: "Invincibility",
 	tagline: "You are invincible to all forms of damage for 5s. Getting a kill during this time lowers its cooldown time \nby 5s.",
 	gui_sprite: spr_pickup_invincibility,
-	max_cooldown_time: 18,
-	cooldown_time: 18,
+	max_cooldown_time: 1800,
+	cooldown_time: 1800,
 	cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
 	on_cooldown: false,
 	states_to_call_in: all_states,
@@ -775,7 +775,7 @@ function scr_Pickups(){
 	
 	pickup_volleyball = {
 		_name: "Volleyball",
-		tagline: "Create a giant bouncy volleyball above your head. It can be spiked by the player when collided with and it damages enemies on conact.",
+		tagline: "Create a giant bouncy volleyball above your head. It can be bounced around when collided with and damages enemies on \ncontact.",
 		gui_sprite: spr_pickup_volleyball,
 		max_cooldown_time: -1,
 		cooldown_time: -1 ,
@@ -814,7 +814,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_synergy_harpoon,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: On None",
+		cooldown_text: "Cooldown: None",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze,state_parachute,state_groundpound],
 		key_held: false,
@@ -984,7 +984,7 @@ function scr_Pickups(){
 	
 	pickup_jolt = {
 		_name: "Jolt",
-		tagline: "Instantly reload all of your weapons, and generate 3 temporary energy hearts. Getting a kill zaps life back into an energy heart.",
+		tagline: "Instantly reload all of your weapons, and generate 4 temporary energy hearts. Getting a kill zaps life back into an energy heart.",
 		gui_sprite: spr_pickup_synergy_jolt,
 		max_cooldown_time: 2400,
 		cooldown_time: 2400,
@@ -1028,7 +1028,7 @@ function scr_Pickups(){
 					}
 				
 					//armored heart
-					energy_buff = max_energy_buff;
+					energy_buff += 4;
 					audio_play_sound(snd_zap,0,false);
 					with obj_player_health {
 						heart_energy_gain_num = other.energy_buff;	
@@ -1079,7 +1079,7 @@ function scr_Pickups(){
 	
 	pickup_blizzard = {
 		_name: "Blizzard",
-		tagline: "Summon a windy, icy blizzard that cuts through all enemies around you. It doesn't hurt you because you're built different.",
+		tagline: "Summon a windy, icy blizzard that cuts through all enemies around you. It doesn't hurt you because you're built different, but it \ncan move you.",
 		gui_sprite: spr_pickup_synergy_blizzard,
 		max_cooldown_time: 2400,
 		cooldown_time: 2400,
@@ -1177,7 +1177,7 @@ function scr_Pickups(){
 	
 	pickup_tacticalstrike = {
 		_name: "Stealth Strike",
-		tagline: "Go into Blink form for 5s with a longer range. While in this state, you are equipped with 3 missiles to strike enemies with.",
+		tagline: "Go into Blink form for 5s with 3 missiles to strike enemies with. The camera is no longer constrained, but you can't go through walls.",
 		gui_sprite: spr_pickup_synergy_tacticalstrike,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
@@ -1191,7 +1191,7 @@ function scr_Pickups(){
 		bounce_reset: 1,
 		bounce_reset_max: 1,
 		enemies_count: 0,
-		enemies_count_max: 12,
+		enemies_count_max: 10,
 		text_color: make_color_rgb(86,123,121),
 		cost: 0,
 		is_synergy: true,

@@ -11,6 +11,7 @@ cooldown = room_speed * 3;
 alarm_set(1, cooldown * 2);
 draw_laser = false;
 
+
 // If this is the second arm, offset the cooldown
 if(arm_num == 1) {
 	alarm_set(1, cooldown * 3.5);

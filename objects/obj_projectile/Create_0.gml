@@ -391,8 +391,10 @@ or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Ele
 		audio_play_sound(random_snd,0,false);
 	}
 	depth = obj_player.depth+5;
-	//x = obj_player.x + lengthdir_x(62,image_angle);
-	//y = obj_player.y + lengthdir_y(62,image_angle);
+	if obj_player.sixshooter_gun.spread_number > 1 {
+		x = obj_player.x + lengthdir_x(32,image_angle);
+		y = obj_player.y + lengthdir_y(32,image_angle);
+	}
 	show_debug_message(image_angle);
 	
 	mask_index = sprite_index;

@@ -27,7 +27,8 @@ function scr_Tips(){
 	"If you don't like the default control bindings, you can edit them in the settings menu.",
 	"You don't lose your combo in the shop, during boss fights, or while interacting with NPCs.",
 	"If you're having trouble bouncing directly onto a chest, use your weapons to help!",
-	"If you're taking a lot of damage, it might be a good idea to slow down even if it means sacrificing a combo."
+	"If you're taking a lot of damage, it might be a good idea to slow down even if it means sacrificing a combo.",
+	"Pinball bumpers reload your weapon if you hit them with the bottom of your pogo stick."
 	];
 }
 //"active items can be recharged in a variety of ways. Some require a simple cooldown time, while others may be recharged after a certain number of kills, bounces, or making a payment. Some active items may have no cooldown at all!"

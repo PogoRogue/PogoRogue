@@ -198,17 +198,25 @@ if select = 4 { //bindings
 					draw_set_halign(fa_left);
 					scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i)-(select_y_added*item_height),menu_bindings.options_array[i]._text,color);
 				}
+				
+				if i = 15 {
+					var i_offset = 6;
+				}else if i > 15 {
+					var i_offset = -1;
+				}else {
+					var i_offset = 0;	
+				}
 
 				//icon sprites
 				if global.use_controller = true and i != 0 {
 					var subtract_rectangle_length = 32*(select_y_added = 0);
 					var white = make_color_rgb(242,240,229);
 					draw_rectangle_color(camera_get_view_width(view_camera[0])/2+79,option_1_y-8+subtract_rectangle_length,camera_get_view_width(view_camera[0])/2+80,option_1_y+(item_height*7)+8,white,white,white,white,false);
-					draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[i-1][0]),(i = select_y-1 and bindings_x = 1),camera_get_view_width(view_camera[0])/2+62,option_1_y+(item_height*i)-(select_y_added*item_height));
-					draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[i-1][1]),(i = select_y-1 and bindings_x = 2),camera_get_view_width(view_camera[0])/2+98,option_1_y+(item_height*i)-(select_y_added*item_height));
+					draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[i-1+i_offset][0]),(i = select_y-1 and bindings_x = 1),camera_get_view_width(view_camera[0])/2+62,option_1_y+(item_height*i)-(select_y_added*item_height));
+					draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[i-1+i_offset][1]),(i = select_y-1 and bindings_x = 2),camera_get_view_width(view_camera[0])/2+98,option_1_y+(item_height*i)-(select_y_added*item_height));
 				}
 				
-				if (i = 15) {
+				if (i = 16) {
 					//draw line separating gameplay buttons from menu buttons
 					draw_rectangle_color(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i)-(select_y_added*item_height)-16,camera_get_view_width(view_camera[0])/2+104,option_1_y+(item_height*i)-(select_y_added*item_height)-15,white,white,white,white,false);	
 				}
@@ -222,10 +230,10 @@ if select = 4 { //bindings
 					var binding2_x = camera_get_view_width(view_camera[0])/2+90;
 					var binding_y = option_1_y+(item_height*i)-(select_y_added*item_height);
 					//binding 1
-					if !scr_In_Array(global.mouse_button_array,global.keyboard_array[i-1][0]) {
-						if scr_In_Array(global.keyboard_sprites_array,global.keyboard_array[i-1][0]) {		
+					if !scr_In_Array(global.mouse_button_array,global.keyboard_array[i-1+i_offset][0]) {
+						if scr_In_Array(global.keyboard_sprites_array,global.keyboard_array[i-1+i_offset][0]) {		
 							//sprite
-							var sprite = scr_Keyboard_Get_Key_String(global.keyboard_array[i-1][0]);
+							var sprite = scr_Keyboard_Get_Key_String(global.keyboard_array[i-1+i_offset][0]);
 							draw_sprite(sprite,(i = select_y-1 and bindings_x = 1),binding1_x-sprite_get_width(sprite)/2,binding_y);
 						}else {
 							//color 
@@ -240,18 +248,18 @@ if select = 4 { //bindings
 							draw_set_font(fnt_combo2);
 							draw_set_halign(fa_right);
 							draw_set_valign(fa_center);
-							scr_Draw_Text_Outlined(binding1_x,binding_y,scr_Keyboard_Get_Key_String(global.keyboard_array[i-1][0]),color);
+							scr_Draw_Text_Outlined(binding1_x,binding_y,scr_Keyboard_Get_Key_String(global.keyboard_array[i-1+i_offset][0]),color);
 							draw_set_color(c_white);
 						}
 					}else {
-						var sprite = scr_Mouse_Get_Button_Sprite(global.keyboard_array[i-1][0]);
+						var sprite = scr_Mouse_Get_Button_Sprite(global.keyboard_array[i-1+i_offset][0]);
 						draw_sprite(sprite,(i = select_y-1 and bindings_x = 1),binding1_x-sprite_get_width(sprite)/2,binding_y);	
 					}
 					//binding 2
-					if !scr_In_Array(global.mouse_button_array,global.keyboard_array[i-1][1]) {
-						if scr_In_Array(global.keyboard_sprites_array,global.keyboard_array[i-1][1]) {		
+					if !scr_In_Array(global.mouse_button_array,global.keyboard_array[i-1+i_offset][1]) {
+						if scr_In_Array(global.keyboard_sprites_array,global.keyboard_array[i-1+i_offset][1]) {		
 							//sprite
-							var sprite = scr_Keyboard_Get_Key_String(global.keyboard_array[i-1][1]);
+							var sprite = scr_Keyboard_Get_Key_String(global.keyboard_array[i-1+i_offset][1]);
 							draw_sprite(sprite,(i = select_y-1 and bindings_x = 2),binding2_x+sprite_get_width(sprite)/2,binding_y);
 						}else {
 							//color 
@@ -266,11 +274,11 @@ if select = 4 { //bindings
 							draw_set_font(fnt_combo2);
 							draw_set_halign(fa_left);
 							draw_set_valign(fa_center);
-							scr_Draw_Text_Outlined(binding2_x,binding_y,scr_Keyboard_Get_Key_String(global.keyboard_array[i-1][1]),color);
+							scr_Draw_Text_Outlined(binding2_x,binding_y,scr_Keyboard_Get_Key_String(global.keyboard_array[i-1+i_offset][1]),color);
 							draw_set_color(c_white);
 						}
 					}else {
-						var sprite = scr_Mouse_Get_Button_Sprite(global.keyboard_array[i-1][1]);
+						var sprite = scr_Mouse_Get_Button_Sprite(global.keyboard_array[i-1+i_offset][1]);
 						draw_sprite(sprite,(i = select_y-1 and bindings_x = 2),binding2_x+sprite_get_width(sprite)/2,binding_y);	
 					}
 				}

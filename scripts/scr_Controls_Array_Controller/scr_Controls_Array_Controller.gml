@@ -23,6 +23,7 @@ function scr_Controls_Array_Controller(){
 		array_key_weapon_3 = [scr_Gamepad_Get_Action(global.weapon3_buttons[0],"pressed"),scr_Gamepad_Get_Action(global.weapon3_buttons[1],"pressed")];
 		array_key_weapon_up = [scr_Gamepad_Get_Action(global.nextweapon_buttons[0],"pressed"),scr_Gamepad_Get_Action(global.nextweapon_buttons[1],"pressed")];
 		array_key_weapon_down = [scr_Gamepad_Get_Action(global.prevweapon_buttons[0],"pressed"),scr_Gamepad_Get_Action(global.prevweapon_buttons[1],"pressed")];
+		array_key_aim = [scr_Gamepad_Get_Action(global.aim_buttons[0],"check"),scr_Gamepad_Get_Action(global.aim_buttons[1],"check")];
 
 		//menus
 		array_key_right_menu = [scr_Gamepad_Get_Action(global.menu_right_buttons[0],"check"),scr_Gamepad_Get_Action(global.menu_right_buttons[1],"check")];

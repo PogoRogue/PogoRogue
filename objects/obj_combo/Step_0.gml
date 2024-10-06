@@ -64,23 +64,25 @@ if global.combo = 0 {
 	}
 }
 
-//check if combo is new best
-if global.combo > global.best_combo { //best combo across all runs
-	global.best_combo = global.combo;
-	scr_Save_Real("best_combo",global.best_combo);
-}
+if room != room_starting_area {
+	//check if combo is new best
+	if global.combo > global.best_combo { //best combo across all runs
+		global.best_combo = global.combo;
+		scr_Save_Real("best_combo",global.best_combo);
+	}
 
-if global.combo > global.current_best_combo {
-	global.current_best_combo =  global.combo;	
-}
+	if global.combo > global.current_best_combo {
+		global.current_best_combo =  global.combo;	
+	}
 
-var skin = 5;
-if global.combo >= 50 and global.skins_unlocked_array[skin-1] = false {
-	ini_open("itemsunlocked.ini");
-	instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
-	global.skins_unlocked_array[skin-1] = true;
-	ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
-	ini_close();	
+	var skin = 5;
+	if global.combo >= 50 and global.skins_unlocked_array[skin-1] = false {
+		ini_open("itemsunlocked.ini");
+		instance_create_depth(x,y,depth,obj_skinunlocked_popup,{skin_num: skin});
+		global.skins_unlocked_array[skin-1] = true;
+		ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
+		ini_close();	
+	}
 }
 
 //tutorial unlock gate

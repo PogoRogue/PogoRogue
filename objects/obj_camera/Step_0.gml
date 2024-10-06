@@ -27,7 +27,7 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 	}
 	
 	if obj_player.state = obj_player.state_shop_portal 
-	or follow = obj_shop_door {
+	or follow.object_index = obj_shop_door {
 	//or room != room_proc_gen_test {
 		xTo = follow.x+4;
 		yTo = follow.y-68;
@@ -39,7 +39,7 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 	}
 	
 	if obj_player.state = obj_player.state_portal
-	or follow = obj_boss_door {
+	or follow.object_index = obj_boss_door {
 		xTo = follow.x+51;
 		yTo = follow.y+51;
 		
@@ -176,7 +176,8 @@ camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
 
 if instance_exists(obj_player) {
 	if obj_player.state = obj_player.state_free and (room = room_proc_gen_test
-	or  room = room_tutorial or  room = room_boss_1 or  room = room_boss_2 or  room = room_boss_3) {
+	or  room = room_tutorial or  room = room_boss_1 or  room = room_boss_2 or  room = room_boss_3
+	or room = room_starting_area) {
 		follow = obj_player;
 	}
 }

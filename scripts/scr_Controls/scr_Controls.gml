@@ -16,8 +16,8 @@ function scr_Controls(){
 	global.player_left_keys = [vk_left,-1];
 	global.shoot_keys = [vk_space,-1];
 	global.recenter_keys = [vk_up,ord("W")];
-	global.pickup1_keys = [ord("A"),vk_shift];
-	global.pickup2_keys = [ord("D"),vk_lcontrol];
+	global.pickup1_keys = [ord("A"),-1];
+	global.pickup2_keys = [ord("D"),-1];
 	global.interact_keys = [ord("E"),-1];
 	global.weapon1_keys = [ord("1"),-1];
 	global.weapon2_keys = [ord("2"),-1];
@@ -26,6 +26,7 @@ function scr_Controls(){
 	global.prevweapon_keys = [-1,-1];
 	global.pause_keys = [vk_escape,ord("P")];
 	global.item_keys = [vk_tab,-1];
+	global.aim_keys = [vk_shift,-1];
 	
 	//menu
 	global.menu_right_keys = [vk_right,ord("D")];
@@ -37,7 +38,8 @@ function scr_Controls(){
 
 	global.keyboard_array = [global.player_right_keys,global.player_left_keys,global.shoot_keys,global.recenter_keys,global.pickup1_keys,
 	global.pickup2_keys,global.interact_keys,global.weapon1_keys,global.weapon2_keys,global.weapon3_keys,global.nextweapon_keys,global.prevweapon_keys,
-	global.pause_keys,global.item_keys,global.menu_right_keys,global.menu_left_keys,global.menu_down_keys,global.menu_up_keys,global.select_keys,global.back_keys];
+	global.pause_keys,global.item_keys,global.menu_right_keys,global.menu_left_keys,global.menu_down_keys,global.menu_up_keys,global.select_keys,global.back_keys,
+	global.aim_keys];
 	
 	//GAMEPAD
 	//gameplay
@@ -55,6 +57,7 @@ function scr_Controls(){
 	global.prevweapon_buttons = [gp_shoulderl,-1];
 	global.pause_buttons = [gp_start,-1];
 	global.item_buttons = [gp_select,-1];
+	global.aim_buttons = [gp_shoulderlb,-1];
 	
 	//menu
 	global.menu_right_buttons = [-10001,gp_padr];
@@ -66,7 +69,8 @@ function scr_Controls(){
 
 	global.gamepad_array = [global.player_right_buttons,global.player_left_buttons,global.shoot_buttons,global.recenter_buttons,global.pickup1_buttons,
 	global.pickup2_buttons,global.interact_buttons,global.weapon1_buttons,global.weapon2_buttons,global.weapon3_buttons,global.nextweapon_buttons,global.prevweapon_buttons,
-	global.pause_buttons,global.item_buttons,global.menu_right_buttons,global.menu_left_buttons,global.menu_down_buttons,global.menu_up_buttons,global.select_buttons,global.back_buttons];
+	global.pause_buttons,global.item_buttons,global.menu_right_buttons,global.menu_left_buttons,global.menu_down_buttons,global.menu_up_buttons,global.select_buttons,global.back_buttons,
+	global.aim_buttons];
 
 	//save values
 	for(i = 0; i < array_length(global.keyboard_array); i++) {
@@ -100,6 +104,7 @@ function scr_Controls(){
 	global.prevweapon_keys = global.keyboard_array[11];
 	global.pause_keys = global.keyboard_array[12];
 	global.item_keys = global.keyboard_array[13];
+	global.aim_keys = global.keyboard_array[20];
 	
 	//menu
 	global.menu_right_keys = global.keyboard_array[14];
@@ -111,7 +116,7 @@ function scr_Controls(){
 	
 	global.keyboard_gameplay_array = [global.player_right_keys,global.player_left_keys,global.shoot_keys,global.recenter_keys,global.pickup1_keys,
 	global.pickup2_keys,global.interact_keys,global.weapon1_keys,global.weapon2_keys,global.weapon3_keys,global.nextweapon_keys,global.prevweapon_keys,
-	global.pause_keys,global.item_keys];
+	global.pause_keys,global.item_keys,global.aim_keys];
 	
 	global.keyboard_menu_array = [global.menu_right_keys,global.menu_left_keys,global.menu_down_keys,global.menu_up_keys,global.select_keys,global.back_keys];
 	
@@ -131,6 +136,7 @@ function scr_Controls(){
 	global.prevweapon_buttons = global.gamepad_array[11];
 	global.pause_buttons = global.gamepad_array[12];
 	global.item_buttons = global.gamepad_array[13];
+	global.aim_buttons = global.gamepad_array[20];
 	
 	//menu
 	global.menu_right_buttons = global.gamepad_array[14];
@@ -142,7 +148,7 @@ function scr_Controls(){
 	
 	global.gamepad_gameplay_array = [global.player_right_buttons,global.player_left_buttons,global.shoot_buttons,global.recenter_buttons,global.pickup1_buttons,
 	global.pickup2_buttons,global.interact_buttons,global.weapon1_buttons,global.weapon2_buttons,global.weapon3_buttons,global.nextweapon_buttons,global.prevweapon_buttons,
-	global.pause_buttons,global.item_buttons];
+	global.pause_buttons,global.item_buttons,global.aim_buttons];
 	
 	global.gamepad_menu_array = [global.menu_right_buttons,global.menu_left_buttons,global.menu_down_buttons,global.menu_up_buttons,global.select_buttons,global.back_buttons];
 

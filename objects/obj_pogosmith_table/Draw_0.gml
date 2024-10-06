@@ -33,14 +33,15 @@ if (colliding) and being_used = false and sprite_index != spr_pogosmith_workbenc
 
 if being_used = true {
 	obj_player.table = true;
+	var current_button = 6 + (13*global.use_controller);
 	//draw back button
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_itemdescription2);
+	draw_set_font(fnt_combo2);
 	if global.use_controller = true {
-		draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[19][0]),0,x,bbox_top+40);
+		draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[current_button][0]),0,x,bbox_top+40);
 	}else {
-		var keyboard_array_value = global.keyboard_array[19][0];
+		var keyboard_array_value = global.keyboard_array[current_button][0];
 		var keyboard_text = scr_Keyboard_Get_Key_String(keyboard_array_value);
 			
 		if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
@@ -80,7 +81,7 @@ if being_used = true {
 		draw_sprite(obj_player.gun_3.sprite,0,x+36,bbox_top-8);
 		draw_sprite_ext(obj_player.gun_1.sprite,0,x-36,bbox_top-8,1,1,0,c_black,black_alpha_1);
 		draw_sprite_ext(obj_player.gun_2.sprite,0,x,bbox_top-8,1,1,0,c_black,black_alpha_2);
-		draw_sprite_ext(obj_player.gun_3.sprite,0,x-36,bbox_top-8,1,1,0,c_black,black_alpha_3);
+		draw_sprite_ext(obj_player.gun_3.sprite,0,x+36,bbox_top-8,1,1,0,c_black,black_alpha_3);
 		if select_x = 0 {
 			var arrow_x = x-36;
 		}else if select_x = 1 {

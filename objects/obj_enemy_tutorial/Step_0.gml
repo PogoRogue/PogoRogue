@@ -4,7 +4,7 @@
 //event_inherited();
 if(is_dead) {
 	alpha *= 0.9;
-	mask_index = spr_nothing;
+	//mask_index = spr_nothing;
 	spd = 0;
 	speed = 0;
 	if alpha <= 0.005 {
@@ -41,6 +41,15 @@ if(is_dead) {
 			case 3: audio_play_sound(snd_combo3,0,false); break;
 			case 4: audio_play_sound(snd_combo4,0,false); break;
 			case 5: audio_play_sound(snd_combo5,0,false); break;
+			case 6: audio_play_sound(snd_combo6,0,false); break;
+			case 7: audio_play_sound(snd_combo7,0,false); break;
+			case 8: audio_play_sound(snd_combo8,0,false); break;
+			case 9: audio_play_sound(snd_combo9,0,false); break;
+			case 10: audio_play_sound(snd_combo10,0,false); break;
+		}
+		
+		if global.combo > 10 {
+			audio_play_sound(snd_combo10,0,false);
 		}
 		
 		with instance_create_depth(x+sprite_width/2,y+sprite_height/2,depth+1,obj_coin_spawner) {
@@ -49,6 +58,9 @@ if(is_dead) {
 			}else {
 				num_of_coins = 5;
 			}
+		}
+		if room = room_starting_area {
+			alarm_set(0, room_speed);	
 		}
 	}else if init_add_to_combo = false and y != 2272 {
 		alarm_set(0, room_speed);

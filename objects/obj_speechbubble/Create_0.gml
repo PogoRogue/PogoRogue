@@ -64,5 +64,5 @@ destroy_on_retract = false;
 repeated = false;
 
 if room = room_starting_area or room = room_proc_gen_test {
-	depth = obj_player.depth + 7;
+	depth = -15;
 }

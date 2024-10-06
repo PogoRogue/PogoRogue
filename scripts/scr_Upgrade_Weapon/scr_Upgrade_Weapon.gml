@@ -119,6 +119,13 @@ function scr_Upgrade_Weapon(gunname_string,level){
 			temp_weapon.spread_number = 11;
 		}else if gunname_string = "Burst Rifle" {
 			var temp_weapon = obj_player.burstfire_gun;
+			temp_weapon.bullets_per_bounce += round(temp_weapon.bullets_per_bounce / temp_weapon.burst_number);
+			temp_weapon.current_bullets += round(temp_weapon.bullets_per_bounce / temp_weapon.burst_number);
+			temp_weapon.burst_number = 5;
+			temp_weapon.current_burst = 0;
+			temp_weapon.sound = snd_burstfire3;
+			temp_weapon.burst_delay = 4;
+			/*
 			temp_weapon.bullets_per_bounce += 3;
 			temp_weapon.current_bullets += 3;
 			temp_weapon.burst_number = 5;
@@ -126,7 +133,7 @@ function scr_Upgrade_Weapon(gunname_string,level){
 			temp_weapon.sound = snd_burstfire3;
 			temp_weapon.bullets_per_bounce += 5;
 			temp_weapon.current_bullets +=  5;
-			temp_weapon.burst_delay = 4;
+			temp_weapon.burst_delay = 4;*/
 		}else if gunname_string = "Javelins" {
 			var temp_weapon = obj_player.javelin_gun;
 		}else if gunname_string = "Puncher" {

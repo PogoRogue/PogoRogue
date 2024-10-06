@@ -3,7 +3,7 @@
 function scr_Guns(){
 	default_gun = {
 		_name: "Pistol",  //name of gun
-		tagline: "Your starting weapon. It's pretty decent.", //short description of weapon
+		tagline: "A very basic 4-shot pistol. It gets the job done.", //short description of weapon
 		sprite: spr_gun_default,   //gun sprite
 		ammo: [default_bullet],//array of ammo
 		inaccuracy: 0,        //random bullet angle inaccuracy
@@ -93,7 +93,7 @@ function scr_Guns(){
 
 	paintball_gun = {
 		_name: "Paintball Gun",  
-		tagline: "Fire colorful paintballs at a high speed with high control.",
+		tagline: "Fire colorful paintballs at a high speed with high-precision movement.",
 		sprite: spr_gun_paintball,   
 		ammo: [paintball_bullet],     
 		inaccuracy: 5,     
@@ -116,7 +116,7 @@ function scr_Guns(){
 
 	shotgun_gun = {
 		_name: "Shotgun",  
-		tagline: "Powerful, short-range blast spread of 5 shots.",
+		tagline: "2 powerful, short-range blast spread of 5 shots.",
 		sprite: spr_gun_shotgun,  
 		ammo: [shotgun_bullet],
 		inaccuracy: 5,       
@@ -139,7 +139,7 @@ function scr_Guns(){
 
 	bubble_gun = {
 		_name: "Bubble Gun",  
-		tagline: "Extremely fast, high-control bubble shooter. Bubbles pop after a short time.",
+		tagline: "Extremely fast bubble shooter with some of the best movement control you'll find. Bubbles pop \nafter a short time.",
 		sprite: spr_gun_bubble,   
 		ammo: [bubble_bullet],
 		inaccuracy: 35,       
@@ -185,7 +185,7 @@ function scr_Guns(){
 	
 	grenade_gun = {
 		_name: "Grenade Launcher",  
-		tagline: "Fire oddly elastic grenades that explode after one bounce.",
+		tagline: "Fire elastic grenades that explode after one bounce or on enemy contact.",
 		sprite: spr_gun_grenade,   
 		ammo: [grenade_bullet],
 		inaccuracy: 0,       
@@ -323,7 +323,7 @@ function scr_Guns(){
 	
 	sniper_gun = {
 		_name: "Sniper Rifle",  
-		tagline: "Powerful, long-range hitscan blast.",
+		tagline: "3 powerful, long-range hitscan laser blasts.",
 		sprite: spr_gun_sniper,
 		ammo: [sniper_bullet],
 		inaccuracy: 0,       
@@ -346,7 +346,7 @@ function scr_Guns(){
 	
 	slime_gun = {
 		_name: "Slime Blaster",  
-		tagline: "Unleash a wide blast of slime chunks onto enemies below.",
+		tagline: "Unleash a large blast of slime chunks onto unsuspecting enemies below.",
 		sprite: spr_gun_slime,  
 		ammo: [slime_bullet],
 		inaccuracy: 15,       
@@ -399,7 +399,7 @@ function scr_Guns(){
 		kick: 2,
 		sound: snd_nothing,
 		spread_number: 1,
-		spread_angle: 45,
+		spread_angle: 25,
 		full_auto: false,
 		burst_number: 1,
 		burst_delay: 0,
@@ -483,7 +483,7 @@ function scr_Guns(){
 	
 	machine_gun = {
 		_name: "Machine Gun",  
-		tagline: "Highly inaccurate but with a massive magazine. It takes a bit of time to reach its full firing speed, but c'mon, it's a machine gun!",
+		tagline: "Highly inaccurate but with a massive magazine and rapid fire rate. It takes a bit of time to reach its full firing speed, but c'mon, it's a machine gun!",
 		sprite: spr_gun_machine,   
 		ammo: [machine_bullet],
 		inaccuracy: 20,       
@@ -506,7 +506,7 @@ function scr_Guns(){
 	
 	puncher_gun = {
 		_name: "Puncher",  
-		tagline: "Fire a large boxing glove that knocks out enemies in its path. It packs a punch! Sorry.",
+		tagline: "Fire a large boxing glove that knocks out enemies in its path. It packs a punch! Do you get the joke?",
 		sprite: spr_gun_puncher,   
 		ammo: [puncher_bullet],
 		inaccuracy: 0,       
@@ -536,7 +536,7 @@ function scr_Guns(){
 		kick: 2,
 		sound: snd_nothing,
 		spread_number: 1,
-		spread_angle: 30,
+		spread_angle: 25,
 		full_auto: true,
 		burst_number: 1,
 		burst_delay: 0,

@@ -8,3 +8,5 @@ controller = instance_nearest(x, y, obj_boss_sequence);
 parent = instance_nearest(x, y, obj_boss_sequence_body);
 total_spaces = 512;
 num_segments = 0;
+
+depth = -100;

@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"spr_junkyard_asset8",
-  "bboxMode":2,
-  "bbox_bottom":15,
+  "bboxMode":0,
+  "bbox_bottom":31,
   "bbox_left":0,
   "bbox_right":63,
   "bbox_top":0,

@@ -27,7 +27,7 @@ hp_max = 16;
 hp = hp_max;
 stomp_defense = 0.9;
 
-randomize();
+random_set_seed(global.seed + global.enemy_number);
 if global.phase <= 1 {
 	//red = false;
 	pink = choose(true,false);

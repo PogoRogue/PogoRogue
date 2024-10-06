@@ -22,6 +22,7 @@ function scr_Controls_Array_Keyboard(){
 	array_key_weapon_3 = [scr_Keyboard_Get_Action(global.weapon3_keys[0],"pressed"),scr_Keyboard_Get_Action(global.weapon3_keys[1],"pressed")];
 	array_key_weapon_up = [scr_Keyboard_Get_Action(global.nextweapon_keys[0],"pressed"),scr_Keyboard_Get_Action(global.nextweapon_keys[1],"pressed")]; 
 	array_key_weapon_down = [scr_Keyboard_Get_Action(global.prevweapon_keys[0],"pressed"),scr_Keyboard_Get_Action(global.prevweapon_keys[1],"pressed")];
+	array_key_aim = [scr_Keyboard_Get_Action(global.aim_keys[0],"check"),scr_Keyboard_Get_Action(global.aim_keys[1],"check")];
 
 	//menus
 	array_key_right_menu = [scr_Keyboard_Get_Action(global.menu_right_keys[0],"check"),scr_Keyboard_Get_Action(global.menu_right_keys[1],"check")];

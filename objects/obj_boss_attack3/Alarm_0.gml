@@ -11,8 +11,8 @@ while(cur_amt < amount) {
 	_bullet.speed = 3;
 	_bullet.homing=true;
 	_bullet.hm_spd=0.2;
-	_bullet.max_spd=7.5;
-	_bullet.lifetime=2*room_speed;
+	_bullet.max_spd=6;
+	_bullet.lifetime=round(1.75*room_speed);
 	_bullet.hm_range=250;
 	_bullet.explode=true;
 	if(rand) {

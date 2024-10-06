@@ -30,10 +30,17 @@ function scr_Player_Collision(){
 	
 	//check for collision with one way ground
 	if place_meeting(x,y+vspeed,obj_ground_oneway) and vspeed > 0 {
+		var prev_y = y;
+		var temp_num = 0;
 		var oneway_ground = instance_place(x,y+vspeed,obj_ground_oneway);
-		if !place_meeting(x,y-1,oneway_ground) {
+		if !place_meeting(x,y-1,oneway_ground) or place_meeting(x,y+1,obj_spring)  {
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_oneway)) {
 				y += sign(vspeed);
+				temp_num += 1;
+				if temp_num > 1000 {
+					y = prev_y;
+					break;	
+				}
 			}
 			state = state_bouncing;
 			speed = 0; //stop player movement while bouncing
@@ -53,7 +60,7 @@ function scr_Player_Collision(){
 	}*/
 	
 	//check for collision with ground x axis
-	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
+	if (place_meeting(x+hspeed,y,obj_ground)) and free = true and abs(angle) > 25 {
 		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
 			x += sign(hspeed);
 		}

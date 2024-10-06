@@ -29,7 +29,7 @@ if (gun_name = "Laser Gun" ) {
 			current_max = 0;
 		}
 		
-		if (gun = laser_gun) {
+		if (gun = laser_gun) and (key_fire_projectile) {
 			//reset/preserve momentum
 			if (gun.reset_momentum and slower_than_max and state != state_parachute) {
 				speed = 0;

@@ -109,6 +109,38 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		if weapon._name = "Javelins" {
 			line_1 = "Javelins per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
+		
+		if weapon._name = "Shotgun" {
+			line_1 = "Shots per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Slime Blaster" {
+			line_1 = "Shots per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Grenade Launcher" {
+			line_1 = "Grenades per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Star Sucker" {
+			line_1 = "Sucks per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Bubble Gun" {
+			line_1 = "Bubbles per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Puncher" {
+			line_1 = "Punches per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Paintball Gun" {
+			line_1 = "Paintballs per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Bouncy Ball Blaster" {
+			line_1 = "Bouncy balls per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
 	
 		//additional damage buff
 		if global.damage_buff > 0 {
@@ -137,19 +169,25 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		}
 	
 		if weapon.full_auto = true {
+			var not_sixshooter = (weapon._name != "Six Shooter"
+			and weapon._name != "Seven Shooter" and weapon._name != "Eight Shooter"
+			and weapon._name != "Nine Shooter" and weapon._name != "Ten Shooter"
+			and weapon._name != "Eleven Shooter");
 			line_3 = "Auto Fire: Yes";
-			if weapon.ammo[0].firerate_end < 5 {
+			if weapon.ammo[0].firerate_end < 5 and not_sixshooter {
 				line_4 = "Fire Rate: Very High";
-			}else if weapon.ammo[0].firerate_end < 8 {
+			}else if weapon.ammo[0].firerate_end < 8 and not_sixshooter{
 				line_4 = "Fire Rate: High";
-			}else if weapon.ammo[0].firerate_end < 15 {
+			}else if weapon.ammo[0].firerate_end < 15 and not_sixshooter {
 				line_4 = "Fire Rate: Medium";
-			}else {
+			}else if not_sixshooter{
 				if weapon._name != "Burst Rifle" {
 					line_4 = "Fire Rate: Low";
 				}else {
-					line_4 = "Fire Rate: High";
+					line_4 = "Fire Rate: Medium";
 				}
+			}else {
+				line_4 = "Shoot: Tap, or burst if held.";
 			}
 		}else {
 			line_3 = "Auto Fire: No";	

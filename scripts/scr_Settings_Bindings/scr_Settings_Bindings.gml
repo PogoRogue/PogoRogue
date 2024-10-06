@@ -182,6 +182,18 @@ function scr_Settings_Bindings(){
 		}
 	};
 	
+	option_aim = {
+		_text: "Slow Aim",
+		_type: "doonpress",
+		do_on_press: function() {
+			with obj_settings {
+				audio_play_sound(snd_selectOption,0,false);
+				usable = false;
+				instance_create_depth(x,y,depth-1,obj_popup_rebind);
+			}
+		}
+	};
+	
 	option_right_menu = {
 		_text: "Menu Right",
 		_type: "doonpress",
@@ -255,12 +267,12 @@ function scr_Settings_Bindings(){
 	};
 
 	menu_bindings = {
-		num_of_options: 21,									
+		num_of_options: 22,									
 		options_array: [option_resetdefaults,option_right_player,option_left_player,option_shoot,
 						option_recenter,option_pickup1,option_pickup2,
 						option_interact,option_weapon1,option_weapon2,
 						option_weapon3,option_nextweapon,option_prevweapon,
-						option_pause,option_item,option_right_menu,option_left_menu,
+						option_pause,option_item,option_aim,option_right_menu,option_left_menu,
 						option_down_menu,option_up_menu,option_select,option_back],
 	};
 }

@@ -47,3 +47,4 @@ if room = room_starting_area {
 }
 
 aspect_ratio = 1;
+

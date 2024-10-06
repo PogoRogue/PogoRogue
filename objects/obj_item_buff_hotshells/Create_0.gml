@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_hotshells;
 item_name = "Hot Shells";
-item_tagline = "Bullet casings have \na 50% chance of exploding on enemy contact.";
+item_tagline = "Bullet casings have \na 50% chance of exploding on enemy \ncontact.";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 20;

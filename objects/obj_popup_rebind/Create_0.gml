@@ -9,6 +9,12 @@ array_index2 = obj_settings.bindings_x-1;
 old_button_sprite = spr_button_empty;
 old_text = "";
 
+if array_index1 = 14 {
+	array_index1 = 20;
+}else if array_index1 > 14 {
+	array_index1 -= 1;
+}
+
 //gamepad
 //icon sprites
 if (gamepad = true) {
