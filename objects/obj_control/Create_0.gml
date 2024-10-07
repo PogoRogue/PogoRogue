@@ -166,5 +166,6 @@ and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
 }
 
 global.draw_ui = true;
+global.ui_alpha = 1;
 global.room_width = 768;
 global.room_height = 432;

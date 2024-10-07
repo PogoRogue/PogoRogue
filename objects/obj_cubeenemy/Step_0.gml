@@ -33,6 +33,7 @@ if rotating = true {
 		dir_changed = false;
 		rotating = false;
 		alarm[1] = 120;
+		
 		if scr_In_Camera_View(128) {
 			sound = audio_play_sound(snd_laser_hazard,0,false);	
 			laser_obj = instance_create_depth(x,y-20,depth-1,obj_cubeenemy_laser,{parent_index: self});
@@ -79,6 +80,25 @@ if rotating = true {
 			}
 		}
 	}
+	
+	if (!position_meeting(x+(32*rotation_dir),y+1,obj_ground) and !position_meeting(x+(32*rotation_dir),y+1,obj_ground_oneway)
+	or place_meeting(x+(41*rotation_dir),y-1,obj_ground)) and image_angle = 0 {
+		rotation_dir *= -1;
+		
+		x += 40 * rotation_dir;
+		if sprite_index = normal_sprite {
+			sprite_index = flipped_sprite;
+		}else if sprite_index = flipped_sprite {
+			sprite_index = normal_sprite;
+		}
+		if rotation_dir = 1 and image_angle = 0 {
+			image_xscale = 1;
+		}else if image_angle = 0 {
+			image_xscale = -1;
+		}
+	}
+}else {
+	
 }
 
 if !place_meeting(x,y+1,obj_ground) and !place_meeting(x,y+1,obj_ground_oneway) and !is_dead {

@@ -8,6 +8,8 @@ if floor(image_index) <= 1 and sprite_index = spr_laser_middle_animation and ima
 	instance_destroy();
 }
 
-if place_meeting(x,y,obj_ground) {
-	//depth = 10;
+if place_meeting(x,y,obj_ground) and !place_meeting(x,y,obj_ground_oneway) {
+	depth = 10;
+}else {
+	depth = -20;	
 }

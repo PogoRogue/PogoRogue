@@ -50,6 +50,9 @@ if(!is_dead && dist_to_player < range) {
 				_bullet.speed = bullet_speed;
 				audio_play_sound(snd_turret_shoot,0,false);
 			} else {
+				if !audio_is_playing(snd_turret_slime) and !instance_exists(pattern) {
+					audio_play_sound(snd_turret_slime,0,false);
+				}
 				var _pattern = instance_create_depth(_xx, _yy, -9, pattern);
 				_pattern.parent = self;
 				_pattern.dir_central = other.direction;

@@ -183,7 +183,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_aim = {
-		_text: "Slow Aim",
+		_text: "Slow Tilt",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {

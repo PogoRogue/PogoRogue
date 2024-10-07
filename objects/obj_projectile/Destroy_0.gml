@@ -147,11 +147,3 @@ if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
 if (gun_name = "The Portal") {
 	obj_player.portal_gun.current_bullets = 1;
 }
-
-show_debug_message("DESTROYED");
-
-show_debug_message("DESTROYED");
-show_debug_message("DESTROYED");
-show_debug_message("DESTROYED");
-show_debug_message("DESTROYED");show_debug_message("DESTROYED");
-show_debug_message("DESTROYED");

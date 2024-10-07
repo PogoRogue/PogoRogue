@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.078479,
+  "duration":0.0,
   "name":"snd_spikeblock_charge",
   "parent":{
     "name":"Environmental",

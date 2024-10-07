@@ -14,3 +14,4 @@ while(place_meeting(x, y, obj_ground_parent)) {
 }
 
 at_wall = false;
+damage = 8;

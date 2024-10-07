@@ -22,3 +22,5 @@ scr_Create_Flames();
 released = false;
 
 audio_play_sound(snd_dragster,0,false);
+
+depth = obj_player.depth + 8;

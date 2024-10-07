@@ -50,6 +50,7 @@ function scr_Save_Load_Variables(){
 	global.tilt_speed = 4;
 	global.screenshake = 60;
 	global.controller_vibration = 60;
+	global.invert_controls = false;
 	global.show_timer = false;
 	global.show_splits = false;
 	global.show_coins = true;
@@ -103,6 +104,7 @@ function scr_Save_Load_Variables(){
 	global.tilt_speed = ini_read_real("savegame", "tilt_speed", 4);
 	global.screenshake = ini_read_real("savegame", "screenshake", 80);
 	global.controller_vibration = ini_read_real("savegame", "controller_vibration", 80);
+	global.invert_controls = ini_read_real("savegame", "invert_controls", false);
 	global.show_timer = ini_read_real("savegame", "show_timer", true);
 	global.show_splits = ini_read_real("savegame", "show_splits", false);
 	global.show_coins = ini_read_real("savegame", "show_coins", true);

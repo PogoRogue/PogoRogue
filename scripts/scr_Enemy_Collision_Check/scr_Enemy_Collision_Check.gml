@@ -86,6 +86,23 @@ function scr_Enemy_Collision_Check(condition){
 					red_frames = 10;
 					bounced_times += 1;
 					
+					if room = room_tutorial and object_index = obj_dummy_special {
+						var current_audio = snd_nothing;
+						
+						switch (bounced_times) {
+							case 1: current_audio = snd_combo6; break;
+							case 2: current_audio = snd_combo7; break;
+							case 3: current_audio = snd_combo8; break;
+							case 4: current_audio = snd_combo9; break;
+							case 5: current_audio = snd_combo10; break;
+							default: current_audio = snd_combo10;
+						}	
+						
+						if current_audio != snd_nothing {
+							audio_play_sound(current_audio,0,false,0.4);	
+						}
+					}
+					
 					randomize();
 					audio_play_sound(choose(snd_enemyhurt,snd_enemyhurt2,snd_enemyhurt3),0,false);
 					random_set_seed(global.seed);
@@ -179,6 +196,23 @@ function scr_Enemy_Collision_Check(condition){
 					hp -= other.stomp_damage * stomp_defense;
 					red_frames = 10;
 					bounced_times += 1;
+					
+					if room = room_tutorial and object_index = obj_dummy_special {
+						var current_audio = snd_nothing;
+						
+						switch (bounced_times) {
+							case 1: current_audio = snd_combo6; break;
+							case 2: current_audio = snd_combo7; break;
+							case 3: current_audio = snd_combo8; break;
+							case 4: current_audio = snd_combo9; break;
+							case 5: current_audio = snd_combo10; break;
+							default: current_audio = snd_combo10;
+						}	
+						
+						if current_audio != snd_nothing {
+							audio_play_sound(current_audio,0,false,0.4);	
+						}
+					}
 					
 					randomize();
 					audio_play_sound(choose(snd_enemyhurt,snd_enemyhurt2,snd_enemyhurt3),0,false);

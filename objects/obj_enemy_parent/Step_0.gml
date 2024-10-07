@@ -2,7 +2,10 @@
 
 if(is_dead) {
 	image_alpha *= 0.9;
-	mask_index = spr_nothing;
+	if (obj_player.state != obj_player.state_megabounce_charge or megabounce_freeze = false)
+	and sprite_index != spr_enemy_walking_explosion {
+		mask_index = spr_nothing;
+	}
 	spd = 0;
 	speed = 0;
 	if image_alpha <= 0.005 {
@@ -166,7 +169,10 @@ if(is_dead) {
 	}
 	
 	is_dead = true;
-	mask_index = spr_nothing;
+	if (obj_player.state != obj_player.state_megabounce_charge or megabounce_freeze = false)
+	and sprite_index != spr_enemy_walking_explosion {
+		mask_index = spr_nothing;
+	}
 	
 	if(proc_gen_tag != -1 && instance_exists(obj_proc_gen_location_analysis))
 	{

@@ -1,23 +1,25 @@
 #region //angling
 key_recenter = global.key_recenter;
 key_aim = global.key_aim;
+
+invert = global.invert_controls;
 var haxis = gamepad_axis_value(0, gp_axislh);
 var vaxis = gamepad_axis_value(0, gp_axislv);
 if controller_lock_in = false {
 	if (can_rotate) {
 		if (use_mouse = false) { //use WASD/Arrow Keys to angle player
 			if (angle >= -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right) and !key_left
-			or (angle >= -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) and !key_right {
+			or (angle >= -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_right) and !key_right {
 				current_rotation_speed = -rotation_speed;
 				temp_rotation_speed = -3;
 			}else if (angle <= anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) and !key_right
-			or (angle <= anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) and !key_left {
+			or (angle <= anglemax and key_right and invert) and !(msk_index.colliding_with_ground_left) and !key_left {
 				current_rotation_speed = rotation_speed;
 				temp_rotation_speed = 3;
 			}else {
 			
 				if (angle < -anglemax and key_right and !invert) and !(msk_index.colliding_with_ground_right) and !key_left
-				or (angle < -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_left) and !key_right {
+				or (angle < -anglemax and key_left and invert) and !(msk_index.colliding_with_ground_right) and !key_right {
 				
 					if (temp_rotation_speed < 0) {
 						temp_rotation_speed += temp_rotation_delay;
@@ -26,7 +28,7 @@ if controller_lock_in = false {
 					}
 					current_rotation_speed = temp_rotation_speed;
 				}else if (angle > anglemax and key_left and !invert) and !(msk_index.colliding_with_ground_left) and !key_right
-				or (angle > anglemax and key_right and invert) and !(msk_index.colliding_with_ground_right) and !key_left {
+				or (angle > anglemax and key_right and invert) and !(msk_index.colliding_with_ground_left) and !key_left {
 				
 					if (temp_rotation_speed > 0) {
 						temp_rotation_speed -= temp_rotation_delay;

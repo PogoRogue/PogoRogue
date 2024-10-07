@@ -1,5 +1,5 @@
 /// @description draw weapon text and ammo GUI and coins
-//draw_set_alpha(0.5);
+draw_set_alpha(global.ui_alpha);
 if global.draw_ui = true {
 
 //weapon text

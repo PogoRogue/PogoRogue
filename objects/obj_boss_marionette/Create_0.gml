@@ -37,7 +37,7 @@ enum BOSS3_WEAPONS {
 }
 
 ability = BOSS3_ABILITIES.NONE;
-weapon = BOSS3_WEAPONS.PISTOL;
+weapon = BOSS3_WEAPONS.PISTOL; //PISTOL
 ability_cooldown =  8 * room_speed;
 controller = instance_nearest(x, y, obj_boss_marionette_controller);
 

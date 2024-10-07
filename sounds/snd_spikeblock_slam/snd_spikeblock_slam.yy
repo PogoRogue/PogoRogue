@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.530979,
+  "duration":1.220998,
   "name":"snd_spikeblock_slam",
   "parent":{
     "name":"Environmental",

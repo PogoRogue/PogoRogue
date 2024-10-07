@@ -25,12 +25,12 @@ if(is_dead) {
 	if (sprite_index == spr_enemy_walking_explosion_walk) {
 		image_index = 0;
 		sprite_index = spr_enemy_walking_explosion;
+		mask_index = sprite_index;
 	}
 }
 
 if sprite_index = spr_enemy_walking_explosion {
-	if !place_meeting(x,y+1,obj_ground) and !place_meeting(x,y+1,obj_ground_oneway)
-	or place_meeting(x,y,obj_ground_oneway) {
+	if !place_meeting(x,y+1,obj_ground) and !place_meeting(x,y+1,obj_ground_oneway) {
 		y += 1;
 	}
 	if scr_Animation_Complete() {

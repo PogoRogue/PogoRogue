@@ -2,7 +2,10 @@
 // You can write your code in this editor
 alarm_set(1,round(cooldown*3));
 
-var _player_dir = point_direction(weapon_x, weapon_y, target.x, target.y+ 128);
+var _player_dir = point_direction(weapon_x, weapon_y, target.x, target.y);
+if boss.weapon = BOSS3_WEAPONS.LASER {
+	_player_dir = point_direction(weapon_x, weapon_y, target.x, target.y+64)
+}
 switch(boss.weapon) {
 	case BOSS3_WEAPONS.NONE:
 		break;
@@ -25,7 +28,7 @@ switch(boss.weapon) {
 		scr_Screen_Shake(4,10,false);
 		break;
 	case BOSS3_WEAPONS.LASER:
-		var _gun = instance_create_depth(weapon_x, weapon_y, depth - 100, obj_enemy_laser, {start_angle: _player_dir/* - (15 * sign(weapon_x - x))*/, end_angle: _player_dir /*- (15 * sign(weapon_x - x))/*_player_dir + (10 * sign(weapon_x - x))*/, duration: 1});
+		var _gun = instance_create_depth(weapon_x, weapon_y, depth - 100, obj_enemy_laser, {start_angle: image_angle/* - (15 * sign(weapon_x - x))*/, end_angle: image_angle /*- (15 * sign(weapon_x - x))/*_player_dir + (10 * sign(weapon_x - x))*/, duration: 1});
 		_gun.parent = self;
 		break;
 }

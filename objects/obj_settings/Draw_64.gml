@@ -1,4 +1,5 @@
 center_x = camera_get_view_width(view_camera[0])/2;
+item_height = 32;
 
 //draw UI
 if select_y = 0 {
@@ -20,11 +21,11 @@ if temp_select_y_max > 8 {
 	temp_select_y_max = 8;
 }
 for (xx = camera_get_view_width(view_camera[0])/2 - 128; xx < camera_get_view_width(view_camera[0])/2 + 128; xx += 16) {
-	for (yy = option_1_y-32; yy < option_1_y+(temp_select_y_max*item_height); yy += 16) {
+	for (yy = option_1_y-32; yy < option_1_y+(temp_select_y_max*32); yy += 16) {
 		if (xx = camera_get_view_width(view_camera[0])/2 - 128) {
 			if (yy = option_1_y-32) {
 				var tile_data = 1;
-			}else if (yy = option_1_y+(temp_select_y_max*item_height)-16) {
+			}else if (yy = option_1_y+(temp_select_y_max*32)-16) {
 				var tile_data = 9;
 			}else {
 				var tile_data = 5;
@@ -32,7 +33,7 @@ for (xx = camera_get_view_width(view_camera[0])/2 - 128; xx < camera_get_view_wi
 		}else if (xx = camera_get_view_width(view_camera[0])/2 + 128 - 16) {
 			if (yy = option_1_y-32) {
 				var tile_data = 3;
-			}else if (yy = option_1_y+(temp_select_y_max*item_height)-16) {
+			}else if (yy = option_1_y+(temp_select_y_max*32)-16) {
 				var tile_data = 11;
 			}else {
 				var tile_data = 7;
@@ -40,7 +41,7 @@ for (xx = camera_get_view_width(view_camera[0])/2 - 128; xx < camera_get_view_wi
 		}else {
 			if (yy = option_1_y-32) {
 				var tile_data = 2;
-			}else if (yy = option_1_y+(temp_select_y_max*item_height)-16) {
+			}else if (yy = option_1_y+(temp_select_y_max*32)-16) {
 				var tile_data = 10;
 			}else {
 				var tile_data = 6;
@@ -113,6 +114,7 @@ if select = 2 { //video
 }
 
 if select = 3 { //gameplay
+	item_height = 28;
 	for(i = 0; i < menu_gameplay.num_of_options; i++) {
 		var color = c_white;
 		if i = select_y-1 {
@@ -133,7 +135,7 @@ if select = 3 { //gameplay
 		}else {
 			draw_set_halign(fa_center);
 			if i = menu_gameplay.num_of_options-1 {
-				scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i)-16-4,menu_gameplay.options_array[i]._text,color);
+				scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i)-16,menu_gameplay.options_array[i]._text,color);
 			}else if i = menu_gameplay.num_of_options-2 {
 				scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2,option_1_y+(item_height*i)-4,menu_gameplay.options_array[i]._text,color);
 			}else {
@@ -161,6 +163,7 @@ if select = 3 { //gameplay
 		}
 	}
 }
+item_height = 32;
 
 if select = 4 { //bindings
 	for(i = 0; i < menu_bindings.num_of_options; i++) {

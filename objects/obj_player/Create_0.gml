@@ -19,7 +19,7 @@ animation_complete = false; //bounce animation before jumping
 use_mouse = false; //use mouse to control instead of WASD/Arrow keys?
 mouse_sensitivity = 200; //the lower the value, the more sensitive the player is to mouse movement and vice versa
 mouse_reanglespeed = 6; //the lower the value, the faster the player will reangle itself and vice versa
-invert = false;
+invert = global.invert_controls;
 free = true; //pogo not colliding with wall, this variable ensures the player doesn't get stuck in walls
 not_colliding = true; //prevent glitches with wall collision
 conveyor_speed = 0;
@@ -341,9 +341,10 @@ state_bouncing = function() {
 	scr_Conveyor_Belt();
 	
 	//bounce after animation is complete
+	var ground_colliding = (place_meeting(x,y+4,obj_ground_parent) or place_meeting(x+4,y+4,obj_ground_parent) or place_meeting(x-4,y+4,obj_ground_parent));
 	var not_charging_1 = !(key_pickup_1 and pickups_array[0] = pickup_chargejump and pickups_array[0].on_cooldown = false);
 	var not_charging_2 = !(key_pickup_2 and pickups_array[1] = pickup_chargejump and pickups_array[1].on_cooldown = false);
-	if (animation_complete and not_charging_1 and not_charging_2 or animation_complete and launchpad = true) {
+	if (animation_complete and !ground_colliding or animation_complete and not_charging_1 and not_charging_2 or animation_complete and launchpad = true) {
 		scr_Jump(0);
 		platform_on = !platform_on;
 	}
@@ -356,6 +357,23 @@ state_bouncing = function() {
 }
 
 state_chargejump = function() {
+	//cancel if not colliding
+	if !place_meeting(x,y+4,obj_ground_parent)
+	and !place_meeting(x+4,y+4,obj_ground_parent)
+	and !place_meeting(x-4,y+4,obj_ground_parent) {
+		state = state_free;
+		charge = 0;
+		bouncing = false;
+		rotation_speed = original_rotation_speed;
+		rotation_delay = rotation_speed / 10;
+		angle = round(angle / original_rotation_speed)*original_rotation_speed;
+		current_rotation_speed = 0;
+		sprite_index = falling_sprite;
+		image_index = 0; //reset animation to starting frame
+		animation_complete = false;
+		
+	}else {
+	
 	can_rotate = true;
 	var end_of_charge = false;
 	if !audio_is_playing(snd_chargejump) { //sound
@@ -403,20 +421,6 @@ state_chargejump = function() {
 		}
 	}
 	
-	//cancel if not colliding
-	if !place_meeting(x,y+4,obj_ground_parent) and !place_meeting(x,y+4,obj_enemy_parent) 
-	and !place_meeting(x+4,y+4,obj_ground_parent) and !place_meeting(x+4,y+4,obj_enemy_parent) 
-	and !place_meeting(x-4,y+4,obj_ground_parent) and !place_meeting(x-4,y+4,obj_enemy_parent) {
-		state = state_free;
-		charge = 0;
-		bouncing = false;
-		rotation_speed = original_rotation_speed;
-		rotation_delay = rotation_speed / 10;
-		angle = round(angle / original_rotation_speed)*original_rotation_speed;
-		current_rotation_speed = 0;
-		sprite_index = falling_sprite;
-		image_index = 0; //reset animation to starting frame
-		animation_complete = false;
 	}
 }
 
@@ -567,6 +571,15 @@ state_megabounce = function() {
 		stomp_damage = 40;
 		//switch states
 		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
+			if place_meeting(x,y+vspeed,obj_enemy_parent) {
+				with instance_place(x,y+vspeed,obj_enemy_parent) {
+					freeze_x = x;
+					freeze_y = y;
+					freeze_frame = image_index;
+					megabounce_freeze = true;
+					other.pickup_megabounce.cooldown_time = 0;	
+				}
+			}
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
 				y += sign(vspeed);
 			}
@@ -1499,7 +1512,7 @@ state_spawn = function() {
 		vspeed = -24;
 		state = state_free;
 		with obj_portal {
-			instance_destroy();	
+			//instance_destroy();	
 		}
 		image_xscale = 1;
 		image_yscale = 1;

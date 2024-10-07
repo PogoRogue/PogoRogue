@@ -8,7 +8,7 @@ buff_chance = 0; //percent
 pickup_chance = 0; //percent
 weapon_chance = 0; //percent
 
-depth = -7;
+depth = -5;
 spd = 0; //0.3
 prev_spd = spd;
 prev_hspd = spd;

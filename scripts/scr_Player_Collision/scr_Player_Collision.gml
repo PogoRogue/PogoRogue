@@ -60,7 +60,7 @@ function scr_Player_Collision(){
 	}*/
 	
 	//check for collision with ground x axis
-	if (place_meeting(x+hspeed,y,obj_ground)) and free = true and abs(angle) > 25 {
+	if (place_meeting(x+hspeed,y,obj_ground)) and free = true {
 		while !(place_meeting(x+sign(hspeed),y,obj_ground)) {
 			x += sign(hspeed);
 		}

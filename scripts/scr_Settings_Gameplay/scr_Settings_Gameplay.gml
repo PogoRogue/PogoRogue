@@ -63,6 +63,23 @@ function scr_Settings_Gameplay(){
 		},
 	};
 	
+	option_invert = {
+		_text: "Invert Tilt Controls: ",
+		_type: "checkbox",
+		default_mode: global.invert_controls,
+		current_mode: global.invert_controls,
+		do_on_true: function() {
+			global.invert_controls = true;
+			scr_Save_Real("invert_controls",global.invert_controls);
+			audio_play_sound(snd_selectOption,0,false);
+		},
+		do_on_false: function() {
+			global.invert_controls = false;
+			scr_Save_Real("invert_controls",global.invert_controls);
+			audio_play_sound(snd_selectOption,0,false);
+		}
+	};
+	
 	option_showtimer = {
 		_text: "Show Timer: ",
 		_type: "checkbox",
@@ -160,8 +177,8 @@ function scr_Settings_Gameplay(){
 	};
 
 	menu_gameplay = {
-		num_of_options: 9,									
-		options_array: [option_tiltspeed,option_screenshake,option_controllershake,
+		num_of_options: 10,									
+		options_array: [option_tiltspeed,option_screenshake,option_controllershake, option_invert,
 						option_showtimer,option_showsplits,option_showcoins,option_showpassives,
 						option_deletesavedata, option_resetdefaults],
 	};

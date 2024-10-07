@@ -1,7 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Tips(){
-	global.tips_array = ["Tilt speed can be adjusted in gameplay settings.",
+	global.tips_array = ["Tilt speed can be adjusted in the gameplay settings.",
+	"You can invert your tilt controls in the gameplay settings.",
 	"Don't forget that you can re-center your pogo stick! It may come in handy in tight situations.",
 	"Use the training area to practice with the items you have discovered.",
 	"Passive items last for the entire run.",
@@ -28,7 +29,8 @@ function scr_Tips(){
 	"You don't lose your combo in the shop, during boss fights, or while interacting with NPCs.",
 	"If you're having trouble bouncing directly onto a chest, use your weapons to help!",
 	"If you're taking a lot of damage, it might be a good idea to slow down even if it means sacrificing a combo.",
-	"Pinball bumpers reload your weapon if you hit them with the bottom of your pogo stick."
+	"Pinball bumpers reload your weapon if you hit them with the bottom of your pogo stick.",
+	"You don't have to kill every enemy, but you'll miss out on some coins!"
 	];
 }
 //"active items can be recharged in a variety of ways. Some require a simple cooldown time, while others may be recharged after a certain number of kills, bounces, or making a payment. Some active items may have no cooldown at all!"

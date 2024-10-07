@@ -12,7 +12,7 @@ switch(current_state) {
 		break;
 	case BOSS3_STATES.ATTACK_1:
 		if(state_has_changed) {
-			body.weapon = BOSS3_WEAPONS.PISTOL;
+			body.weapon = BOSS3_WEAPONS.PISTOL; //PISTOL
 			body.ability = BOSS3_ABILITIES.GROUND_POUND;
 		}
 		
@@ -20,6 +20,9 @@ switch(current_state) {
 		
 		if(body.hp_percent <= 75) {			
 			current_state = BOSS3_STATES.CHASE_1;
+			with instance_nearest(obj_boss_marionette.x,obj_boss_marionette.y,obj_camera_constrain_y_top) {
+				instance_destroy();
+			}
 		}
 		
 		break;
@@ -63,7 +66,11 @@ switch(current_state) {
 		}
 		
 		if(body.hp_percent <= 50) {
-			current_state = BOSS3_STATES.CHASE_2;
+			current_state = BOSS3_STATES.CHASE_2
+			
+			with instance_nearest(obj_boss_marionette.x,obj_boss_marionette.y,obj_camera_constrain_y_top) {
+				instance_destroy();
+			}
 		}
 		
 		break;
@@ -112,6 +119,10 @@ switch(current_state) {
 		
 		if(body.hp_percent <= 25) {
 			current_state = BOSS3_STATES.CHASE_3;
+			
+			with instance_nearest(obj_boss_marionette.x,obj_boss_marionette.y,obj_camera_constrain_y_top) {
+				instance_destroy();
+			}
 		}
 		
 		break;

@@ -102,7 +102,7 @@ if(place_meeting(x+lengthdir_x(hspeed*3,direction), y+lengthdir_y(hspeed*3,direc
 	}*/
 	hspeed *= -1;
 	scr_Screen_Shake(6,8,false);
-	audio_play_sound(snd_groundpound,0,false);
+	audio_play_sound(snd_boss1_slam,0,false);
 	num_of_bounces += 1;
 	//show_debug_message(num_of_bounces);
 }else if place_meeting(x+lengthdir_x(vspeed*3,direction), y+lengthdir_y(vspeed*3,direction),obj_ground) {
@@ -111,7 +111,7 @@ if(place_meeting(x+lengthdir_x(hspeed*3,direction), y+lengthdir_y(hspeed*3,direc
 	}*/
 	vspeed *= -1;
 	scr_Screen_Shake(6,8,false);
-	audio_play_sound(snd_groundpound,0,false);
+	audio_play_sound(snd_boss1_slam,0,false);
 	num_of_bounces += 1;
 	//show_debug_message(num_of_bounces);
 }
@@ -122,3 +122,5 @@ if freeze = true {
 	image_index = freeze_frame;
 	spd = 0;	
 }
+
+depth = -5;

@@ -19,7 +19,8 @@ if(instance_exists(controller)) {
 	}
 }
 
-if place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask) {
+if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask))
+and sprite_index != spr_boss2_slime_full {
 	depth = obj_player.depth - 5;	
 }else {
 	if instance_exists(obj_boss_sequence_body) {

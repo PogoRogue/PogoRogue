@@ -17,7 +17,7 @@ heart_chance = 50 ;
 buff_chance = 40 + (global.luck*2);
 weapon_chance = 60 + global.luck;
 pickup_chance = 60 + global.luck;
-destroy_chance = 80; //when active, change to ~80
+destroy_chance = 85; //when active, change to ~80
 
 lock_unlocked = false;
 lock_unlocked_frames = 0;

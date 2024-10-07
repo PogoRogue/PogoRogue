@@ -1,4 +1,5 @@
 /// @description Draw health cells either full or empty
+draw_set_alpha(global.ui_alpha);
 if obj_player.aspect_ratio = 1 {
 	display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
 }
@@ -65,3 +66,4 @@ if heart_energy_lost_num > 0  {
 }
 
 }
+draw_set_alpha(1);

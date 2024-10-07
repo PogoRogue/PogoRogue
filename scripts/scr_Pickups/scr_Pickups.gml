@@ -50,11 +50,15 @@ function scr_Pickups(){
 		is_synergy: false,
 		on_call: function() {
 			with obj_player {
-				if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump and launchpad = false and !place_meeting(x,y+4,obj_launchpad) {
-					obj_player.state = obj_player.state_chargejump;
-					obj_player.rotation_speed = obj_player.rotation_speed * 0.65;
-					if obj_player.rotation_speed < 2 {
-						obj_player.rotation_speed = 2;
+				if place_meeting(x,y+4,obj_ground_parent)
+				or place_meeting(x+4,y+4,obj_ground_parent)
+				or place_meeting(x-4,y+4,obj_ground_parent) {
+					if (obj_player.animation_complete) and obj_player.state != obj_player.state_chargejump and launchpad = false and !place_meeting(x,y+4,obj_launchpad) {
+						obj_player.state = obj_player.state_chargejump;
+						obj_player.rotation_speed = obj_player.rotation_speed * 0.65;
+						if obj_player.rotation_speed < 2 {
+							obj_player.rotation_speed = 2;
+						}
 					}
 				}
 			}

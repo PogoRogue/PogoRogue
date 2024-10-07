@@ -5,7 +5,14 @@ event_inherited();
 
 if(is_dead) {
 	current_state = CAR_STATES.IDLE;
+}else {
+	if scr_In_Camera_View(128) and !audio_is_playing(snd_carengine) {
+		engine_sound = audio_play_sound(snd_carengine,0,false);	
+	}else if audio_is_playing(engine_sound) and !scr_In_Camera_View(128) {
+		audio_stop_sound(engine_sound)
+	}
 }
+
 
 switch(current_state) {
 	case CAR_STATES.IDLE:

@@ -39,3 +39,4 @@ if global.key_fire_projectile_released and released = false {
 obj_player.tutorialDash = false;
 
 image_alpha = 1;
+depth = obj_player.depth + 8;

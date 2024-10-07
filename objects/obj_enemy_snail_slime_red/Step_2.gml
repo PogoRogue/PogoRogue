@@ -30,17 +30,23 @@ if(is_despawning) {
 	//image_alpha *= 0.9;
 }
 
-if distance_to_object(obj_player) > 2000 and !obj_player.dead {
+if distance_to_object(obj_player) > 2000 and !obj_player.dead and mask_index != spr_nothing {
 	instance_destroy();	
 }
 
 if obj_player.state != obj_player.state_bouncing
 and obj_player.state != obj_player.state_chargejump
-and obj_player.state != obj_player.state_megabounce_charge
-and !place_meeting(x,y,obj_player){
+and obj_player.state != obj_player.state_megabounce_charge {
 	damage = 0;
-}else {
+	mask_index = spr_nothing
+}else if (obj_player.state = obj_player.state_bouncing
+or obj_player.state = obj_player.state_chargejump
+or obj_player.state = obj_player.state_megabounce_charge) {
 	damage = 8;
+	mask_index = sprite_index;
+	if !place_meeting(x,y,obj_player) {
+		mask_index = spr_nothing;
+	}
 }
 
 if !instance_exists(parent_index) and  parent_index != noone{

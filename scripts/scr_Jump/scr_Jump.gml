@@ -7,6 +7,10 @@ function scr_Jump(add_to_jump){
 		launchpad = false;
 	}
 	
+	if place_meeting(x,y+vspeed,obj_enemy_snail_slime_pink) {
+		add_to_jump -= 3;	
+	}
+	
 	speed = vsp_basicjump+add_to_jump+((vsp_basicjump/10)*global.tightspring); //bounce spee
 	direction = angle - 90; //bounce angle
 	if speed < 0 {
