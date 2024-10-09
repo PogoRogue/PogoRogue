@@ -8,4 +8,4 @@ parent = instance_nearest(x, y, obj_boss_sphere);
 total_spaces = 512;
 num_segments = 0;
 
-fragments_num = 0;
+fragments_num = 512;

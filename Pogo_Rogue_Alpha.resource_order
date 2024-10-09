@@ -33,6 +33,7 @@
     {"name":"obj_basketball","order":3,"path":"objects/obj_basketball/obj_basketball.yy",},
     {"name":"obj_black_bars","order":4,"path":"objects/obj_black_bars/obj_black_bars.yy",},
     {"name":"obj_camera_constrain_y_bottom_long","order":1,"path":"objects/obj_camera_constrain_y_bottom_long/obj_camera_constrain_y_bottom_long.yy",},
+    {"name":"obj_camera_constrain_y_top_long","order":2,"path":"objects/obj_camera_constrain_y_top_long/obj_camera_constrain_y_top_long.yy",},
     {"name":"obj_camera","order":16,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"obj_choosemenu_active","order":24,"path":"objects/obj_choosemenu_active/obj_choosemenu_active.yy",},
     {"name":"obj_choosemenu_weapon","order":22,"path":"objects/obj_choosemenu_weapon/obj_choosemenu_weapon.yy",},

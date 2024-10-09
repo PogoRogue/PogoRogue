@@ -259,6 +259,9 @@ if sixshooter_held_num >= 10 and sixshooter_gun.inaccuracy != 25 and sixshooter_
 //lock icon
 if state = state_shop or table = true or (state = state_immobile and room = room_tutorial) {
 	var distance = 72; //62
+	if room = room_tutorial {
+		distance = 62;	
+	}
 	distance += combo_offset;
 			
 	if instance_exists(obj_shieldbubble) {

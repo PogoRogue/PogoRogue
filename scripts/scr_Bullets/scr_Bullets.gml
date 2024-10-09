@@ -189,7 +189,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 0,
 		bounce_amount: 1,
-		damage: 0.2 //per frame
+		damage: 0.25 //per frame
 	};
 	
 	bouncyball_bullet = {
@@ -436,7 +436,7 @@ function scr_Bullets(){
 		grv: obj_player.grv,
 		num_of_bounces: 5,
 		bounce_amount: 1,
-		damage: 16
+		damage: 20
 	};
 	
 	sixshooter_bullet = {

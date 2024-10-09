@@ -77,3 +77,5 @@ state_shop = function() {
 state = state_shop;
 
 alarm[0] = 1;
+
+init_depth = depth;

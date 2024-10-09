@@ -49,12 +49,13 @@ for (i=0;i<array_length(all_volleyball_sounds);i++) {
 global.enemy_killed = false; //resume combo meter when set to true after killing 1st enemy in room
 
 //set music
-if room = room_proc_gen_test {
+if room = room_proc_gen_test  {
 	switch (global.phase) {
 		case 1: global.current_music = snd_music_level1; break;
-		case 2: global.current_music = snd_music_level2; global.area_2_reached += 1; scr_Save_Real("area_2_reached",global.area_2_reached); break;	
-		case 3: global.current_music = snd_music_level3; global.area_3_reached += 1; scr_Save_Real("area_3_reached",global.area_3_reached); break;	
+		case 2: global.current_music = snd_music_level2; break;	
+		case 3: global.current_music = snd_music_level3; break;	
 	}
+	
 }else if room = room_boss_1 {
 	global.current_music = snd_music_boss1
 }else if room = room_boss_2 {

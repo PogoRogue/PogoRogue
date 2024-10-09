@@ -30,4 +30,6 @@ rocket_2 = noone;
 rockets_spawned = false;
 not_meeting_enemy = true;
 
+alarm[1] = 900;
+
 audio_play_sound(snd_blink_respawn,0,false);

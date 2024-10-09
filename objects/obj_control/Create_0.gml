@@ -22,6 +22,9 @@ if room = room_starting_area {
 	global.num_of_coins = 0;
 }
 
+area2reached = false;
+area3reached = false;
+
 global.mute = false;
 global.shop_index = 0;
 global.num_of_ground_objects = 0;

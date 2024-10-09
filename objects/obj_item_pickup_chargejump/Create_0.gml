@@ -8,3 +8,7 @@ item_description = pickup.tagline + cooldown_text;
 item_cost = 60;
 
 image_index = 2;
+
+if room = room_tutorial {
+	global.last_item_menu = 2;	
+}

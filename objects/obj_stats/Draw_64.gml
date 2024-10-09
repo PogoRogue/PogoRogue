@@ -1,9 +1,10 @@
 //text
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
-draw_set_font(fnt_combo2);
+draw_set_font(fnt_item_popup);
 draw_set_alpha(1); //alpha
 scr_Draw_Text_Outlined(384,72,"Stats", c_white);
+draw_set_font(fnt_combo2);
 
 //background tiles
 draw_set_color(c_white);

@@ -35,7 +35,7 @@ if global.phase = 3 {
 //update best stats
 
 //check if coins is new best
-if global.current_total_coins > global.best_coins { //best coins across all runs
+if global.current_total_coins > global.best_coins and room != room_starting_area and room != room_tutorial { //best coins across all runs
 	global.best_coins = global.current_total_coins;
 	scr_Save_Real("best_coins",global.best_coins);
 }

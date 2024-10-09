@@ -274,6 +274,7 @@
     {"id":{"name":"obj_camera_constrain_x_right","path":"objects/obj_camera_constrain_x_right/obj_camera_constrain_x_right.yy",},},
     {"id":{"name":"obj_camera_constrain_y_bottom_long","path":"objects/obj_camera_constrain_y_bottom_long/obj_camera_constrain_y_bottom_long.yy",},},
     {"id":{"name":"obj_camera_constrain_y_bottom","path":"objects/obj_camera_constrain_y_bottom/obj_camera_constrain_y_bottom.yy",},},
+    {"id":{"name":"obj_camera_constrain_y_top_long","path":"objects/obj_camera_constrain_y_top_long/obj_camera_constrain_y_top_long.yy",},},
     {"id":{"name":"obj_camera_constrain_y_top","path":"objects/obj_camera_constrain_y_top/obj_camera_constrain_y_top.yy",},},
     {"id":{"name":"obj_camera_pickup","path":"objects/obj_camera_pickup/obj_camera_pickup.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},

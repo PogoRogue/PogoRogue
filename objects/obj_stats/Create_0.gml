@@ -22,6 +22,7 @@ for(i = 0; i < array_length(global.active_unlocked_array); i++) { //actives
 	}
 }
 
+instance_create_depth(-100,-100,depth,obj_control);
 instance_create_depth(-100,-100,depth,obj_player);
 for(i = 0; i < array_length(global.active_unlocked_array); i++) { //actives
 	if global.active_unlocked_array[i] = true {
@@ -34,6 +35,7 @@ for(i = 0; i < array_length(global.active_unlocked_array); i++) { //actives
 }
 instance_destroy(obj_player_mask);
 instance_destroy(obj_player);
+instance_destroy(obj_control);
 
 for(i = 0; i < array_length(global.weapon_unlocked_array); i++) { //weapons
 	if global.weapon_unlocked_array[i] = true {

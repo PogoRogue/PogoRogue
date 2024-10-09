@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_laser_robot.wav",
   "type":0,
-  "volume":0.6,
+  "volume":0.4,
 }

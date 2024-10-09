@@ -37,7 +37,7 @@ if win_number <= global.win_odds {
 }
 twoinarow = false;
 twoinarow_number = irandom_range(1,100);
-twoinarow_odds = 40;
+twoinarow_odds = 30;
 if twoinarow_number <= twoinarow_odds {
 	twoinarow = true;
 }

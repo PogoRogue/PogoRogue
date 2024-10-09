@@ -6,6 +6,9 @@ with instance_create_depth(x,y,depth-1,obj_coin_spawner) {
 
 instance_destroy(obj_boss_sequence_health);
 
+global.area_3_reached += 1
+scr_Save_Real("area_3_reached",global.area_3_reached); 
+
 
 // Inherit the parent event
 event_inherited();

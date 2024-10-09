@@ -15,6 +15,7 @@ damage = 8;
 enemy_object = noone;
 enemies_array = [];
 despawn = false;
+depth -= 10;
 
 free = true;
 

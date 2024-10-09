@@ -74,104 +74,51 @@ if y_subtract < 256 {
 }
 
 //create object on jackpot
-if win = true {
-	if jackpot = true {
-		if jackpot_index = 6 or ((jackpot_index = 2 or jackpot_index = 4 or jackpot_index = 6) and item1 = 0) or ((jackpot_index = 2 or jackpot_index = 4 or jackpot_index = 6) and item1 = 1) {
-			//heart
-			if item1 = 0 {
-				heart_chance = 100;
-				buff_chance = 0;
-				weapon_chance = 0;
-				pickup_chance = 0;
-				with instance_create_depth(x,y+33,depth-1,obj_item_buff_heart) {
-					slot_machine = true;
-					follow_player = true;
-				};
+if jackpot = true {
+	if jackpot_index = 6 or ((jackpot_index = 2 or jackpot_index = 4 or jackpot_index = 6) and item1 = 0) or ((jackpot_index = 2 or jackpot_index = 4 or jackpot_index = 6) and item1 = 1) {
+		//heart
+		if item1 = 0 {
+			heart_chance = 100;
+			buff_chance = 0;
+			weapon_chance = 0;
+			pickup_chance = 0;
+			with instance_create_depth(x,y+33,depth-1,obj_item_buff_heart) {
+				slot_machine = true;
+				follow_player = true;
+			};
 				
-			}else if item1 = 1 { //armored heart
-				heart_chance = 100;
-				buff_chance = 0;
-				weapon_chance = 0;
-				pickup_chance = 0;
-				random_items = scr_Random_Item_Drops();
-				with instance_create_depth(x,y+33,depth-1,obj_item_buff_armor) {
-					slot_machine = true;
-					follow_player = true;
-				};
-			}else if item1 = 2 { //coin
-				heart_chance = 0;
-				buff_chance = 0;
-				weapon_chance = 0;
-				pickup_chance = 0;
-				//random_items = scr_Random_Item_Drops();
-				//Create_Item_Drops(random_items);
-				coin_spawner = instance_create_depth(x,y+25,depth+1,obj_coin_spawner);
-				with coin_spawner {
-					num_of_coins = 100;
-				}
-				blink_max = 10.9;
-			}else if item1 = 3 { //weapon
-				heart_chance = 0;
-				buff_chance = 0;
-				weapon_chance = 100;
-				pickup_chance = 0;
+		}else if item1 = 1 { //armored heart
+			heart_chance = 100;
+			buff_chance = 0;
+			weapon_chance = 0;
+			pickup_chance = 0;
+			random_items = scr_Random_Item_Drops();
+			with instance_create_depth(x,y+33,depth-1,obj_item_buff_armor) {
+				slot_machine = true;
+				follow_player = true;
+			};
+		}else if item1 = 2 { //coin
+			heart_chance = 0;
+			buff_chance = 0;
+			weapon_chance = 0;
+			pickup_chance = 0;
+			//random_items = scr_Random_Item_Drops();
+			//Create_Item_Drops(random_items);
+			coin_spawner = instance_create_depth(x,y+25,depth+1,obj_coin_spawner);
+			with coin_spawner {
+				num_of_coins = 100;
+			}
+			blink_max = 10.9;
+		}else if item1 = 3 { //weapon
+			heart_chance = 0;
+			buff_chance = 0;
+			weapon_chance = 100;
+			pickup_chance = 0;
 
-				random_items = scr_Random_Item_Drops();
+			random_items = scr_Random_Item_Drops();
 			
-				if random_weapon = true {
-					//y += 33;
-					//Create_Item_Drops(random_items);
-					for(var i = 0; i < array_length(random_items); i++) {
-						var object_data = random_items[i];
-						var object_to_create = object_data[0];
-						with instance_create_depth(x, y, depth+2, object_to_create) {
-							slot_machine = true;
-							follow_player = true;
-						}
-					}
-					//y -= 33;
-				}else {
-					with instance_create_depth(x,y+33,depth-2,custom_weapon_drop) {
-						slot_machine = true;
-						follow_player = true;
-					}
-				}
-			}else if item1 = 4 { //active
-				heart_chance = 0;
-				buff_chance = 0;
-				weapon_chance = 0;
-				pickup_chance = 100;
-
-				random_items = scr_Random_Item_Drops();
-			
-				if random_pickup == true {
-					//y += 37;
-					for(var i = 0; i < array_length(random_items); i++) {
-						var object_data = random_items[i];
-						var object_to_create = object_data[0];
-						with instance_create_depth(x, y, depth+2, object_to_create) {
-							slot_machine = true;
-							follow_player = true;
-						}
-					}
-					//Create_Item_Drops(random_items);	
-					//y -= 37;
-				}else {
-					var center_x = x;
-					var center_y = y;
-					with instance_create_depth(x,y+37,depth-2,custom_pickup_drop) {
-						slot_machine = true;
-						follow_player = true;
-					}
-				}
-			}else if item1 = 5 { //passive
-				heart_chance = 0;
-				buff_chance = 100;
-				weapon_chance = 0;
-				pickup_chance = 0;
-
-				random_items = scr_Random_Item_Drops();
-				//y += 25;
+			if random_weapon = true {
+				//y += 33;
 				//Create_Item_Drops(random_items);
 				for(var i = 0; i < array_length(random_items); i++) {
 					var object_data = random_items[i];
@@ -181,8 +128,59 @@ if win = true {
 						follow_player = true;
 					}
 				}
-				//y -= 25;
+				//y -= 33;
+			}else {
+				with instance_create_depth(x,y+33,depth-2,custom_weapon_drop) {
+					slot_machine = true;
+					follow_player = true;
+				}
 			}
+		}else if item1 = 4 { //active
+			heart_chance = 0;
+			buff_chance = 0;
+			weapon_chance = 0;
+			pickup_chance = 100;
+
+			random_items = scr_Random_Item_Drops();
+			
+			if random_pickup == true {
+				//y += 37;
+				for(var i = 0; i < array_length(random_items); i++) {
+					var object_data = random_items[i];
+					var object_to_create = object_data[0];
+					with instance_create_depth(x, y, depth+2, object_to_create) {
+						slot_machine = true;
+						follow_player = true;
+					}
+				}
+				//Create_Item_Drops(random_items);	
+				//y -= 37;
+			}else {
+				var center_x = x;
+				var center_y = y;
+				with instance_create_depth(x,y+37,depth-2,custom_pickup_drop) {
+					slot_machine = true;
+					follow_player = true;
+				}
+			}
+		}else if item1 = 5 { //passive
+			heart_chance = 0;
+			buff_chance = 100;
+			weapon_chance = 0;
+			pickup_chance = 0;
+
+			random_items = scr_Random_Item_Drops();
+			//y += 25;
+			//Create_Item_Drops(random_items);
+			for(var i = 0; i < array_length(random_items); i++) {
+				var object_data = random_items[i];
+				var object_to_create = object_data[0];
+				with instance_create_depth(x, y, depth+2, object_to_create) {
+					slot_machine = true;
+					follow_player = true;
+				}
+			}
+			//y -= 25;
 		}
 	}
 }

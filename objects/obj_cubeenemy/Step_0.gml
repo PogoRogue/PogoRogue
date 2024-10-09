@@ -121,6 +121,6 @@ if place_meeting(x,y+vspd,obj_ground_oneway) {
 
 y += vspd;
 
-if !instance_exists(laser_obj) {
+if !instance_exists(laser_obj) and !instance_exists(laser_obj2) {
 	audio_stop_sound(sound);	
 }

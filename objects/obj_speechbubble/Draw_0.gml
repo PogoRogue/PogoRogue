@@ -46,7 +46,7 @@ if current_text = scrolling_text and (current_line < lines_of_text or current_li
 			
 		if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
 			if is_string(keyboard_text) {
-				scr_Draw_Text_Outlined(x+_x,y-(38)-y_offset-text_y_offset,string(keyboard_text) + " " + _text,c_white);
+				scr_Draw_Text_Outlined(x+_x,y-(38)-y_offset-text_y_offset,string(keyboard_text) + " " + _text, _col);
 			}else {
 				scr_Draw_Text_Outlined(x+10+_x,y-(41)-y_offset-text_y_offset,_text,_col);
 				draw_sprite(keyboard_text,0,x-10-_x,y-(42)-y_offset-text_y_offset);

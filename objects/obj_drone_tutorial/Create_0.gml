@@ -40,8 +40,8 @@ speechbubble_obj_1 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubb
 	
 speechbubble_obj_2 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
 	text_array: ["Huh. That was surprisingly easy.",
-	"To tilt your Pogo \nStick, move the Left \nJoystick sideways, or \npress the Left \nand Right Arrow \nKeys.",
-	"To re-center yourself, press Up.",
+	"To tilt your Pogo \nStick, move the Left \nJoystick sideways, or \npress the Left and \nRight Arrow Keys.",
+	"To re-center yourself, press up.",
 	"You can adjust your tilt speed in the \nGameplay Settings.",
 	"Try bouncing around \nfor a little bit. \nWhen you're ready, \nbounce on over to the \ntop of that blue chest."],
 	lines_of_text: 5, 
@@ -189,13 +189,13 @@ repeat_text: true,
 repeat_to_line: 2 });
 
 speechbubble_obj_11 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
-text_array: ["Well done. You're \nalmost ready to \njoin the squad!",
-"Killing enemies before your combo meter \nexpires increases your combo and refills \nyour meter.",
-"Taking damage greatly \nreduces your combo \nmeter. Try not to \ntake damage. Many \nstruggle with this concept.",
+text_array: ["Well done. You're \nalmost ready to \njoin the squad! \nLet's go over the \ncombo system now.",
 "When you have a higher combo, enemies will \ndrop more coins.",
-"Coins can be used to \npurchase weapons, items, or health.",
-"Speaking of, I carefully hid a couple \nitem chests for you. \nOne even has a new \nitem type inside!",
-"For your final test, try and earn a \n5x combo. Enemies ususally only drop up \nto 5 coins."],
+"Coins can be used to \npurchase weapons, \nitems, or health.",
+"Killing enemies before your combo meter \nexpires increases your combo and refills \nthe meter.",
+"Taking damage greatly \nreduces your combo \nmeter. Try not to \ntake damage. Many \nstruggle with this concept.",
+"Because enemies \nususally only drop \nup to 5 coins, you \nmust earn a 5x \ncombo for your \nfinal test.",
+"I also carefully \nhid a couple of \nitem chests for you. \nOne even has a new \nitem type inside!"],
 lines_of_text: 7, 
 parent_index: obj_drone_tutorial, 
 track_y: true,
@@ -236,4 +236,4 @@ for (i=0;i<array_length(speechbubble_array);i++) {
 
 current_bubble_exists = true;
 
-depth = -10;
+depth = -15;

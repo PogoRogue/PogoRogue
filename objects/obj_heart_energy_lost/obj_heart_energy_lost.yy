@@ -13,7 +13,7 @@
     "name":"obj_heart_gain",
     "path":"objects/obj_heart_gain/obj_heart_gain.yy",
   },
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,

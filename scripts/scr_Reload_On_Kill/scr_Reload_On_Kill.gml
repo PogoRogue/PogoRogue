@@ -48,6 +48,30 @@ function scr_Reload_On_Kill() {
 		randomize();
 		audio_play_sound(choose(snd_enemyhurt,snd_enemyhurt2,snd_enemyhurt3),0,false);
 		random_set_seed(global.seed);
+		
+		//recharge jetpack
+		with obj_player {
+			if pickups_array[0] = pickup_jetpack {
+				if global.impatience = false {
+					pickups_array[0].cooldown_time += pickups_array[0].max_cooldown_time/4;
+				}else {
+					pickups_array[0].cooldown_time += pickups_array[0].max_cooldown_time/3;
+				}
+				if pickups_array[0].cooldown_time > pickups_array[0].max_cooldown_time {
+					pickups_array[0].cooldown_time = pickups_array[0].max_cooldown_time;
+				}
+			}
+			if pickups_array[1] = pickup_jetpack {
+				if global.impatience = false {
+					pickups_array[1].cooldown_time += pickups_array[1].max_cooldown_time/4;
+				}else {
+					pickups_array[1].cooldown_time += pickups_array[1].max_cooldown_time/3;
+				}
+				if pickups_array[1].cooldown_time > pickups_array[1].max_cooldown_time {
+					pickups_array[1].cooldown_time = pickups_array[1].max_cooldown_time;
+				}
+			}
+		}
 	}else {
 		randomize();
 		audio_play_sound(choose(snd_enemyhurt,snd_enemyhurt2,snd_enemyhurt3),0,false);

@@ -53,4 +53,7 @@ if (room == room_boss_1) {
 
 if global.phase = 1 {
 	global.phase = 2;
+	
+	global.area_2_reached += 1
+	scr_Save_Real("area_2_reached",global.area_2_reached); 
 }

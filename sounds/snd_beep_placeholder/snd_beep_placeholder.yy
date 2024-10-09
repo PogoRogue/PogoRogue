@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.130594,
+  "duration":0.09619,
   "name":"snd_beep_placeholder",
   "parent":{
     "name":"Menu",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_beep_placeholder.mp3",
+  "soundFile":"snd_beep_placeholder.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.8,
 }

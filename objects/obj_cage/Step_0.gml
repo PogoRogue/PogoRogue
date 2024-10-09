@@ -13,7 +13,7 @@ if global.skins_unlocked_array[skin_num-1] = true {
 if is_colliding = true and key_interact and !instance_exists(speechbubble_obj) {
 	if skin_num = 1 {
 		speechbubble_obj = instance_create_depth(x-1,y - 128,depth-1,obj_speechbubble,{text_color: make_color_rgb(184,181,185),
-		text_array: ["We've got a \nclass-action \nlawsuit on \nour hands if \nyou can get \nall of us out.", "The problem \nis, I can't \nremember \nwho put us \nin here....."],
+		text_array: ["We've got a \nclass-action \nlawsuit on \nour hands if \nyou can get \nall of us out.", "The problem \nis, we can't \nremember \nwho put us \nin here....."],
 		lines_of_text: 2,
 		parent_index: instance_nearest(x,y+128,obj_cage),
 		});

@@ -284,6 +284,8 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 			return obj_seeding_station;
 		}else if (Red == 4 && Green == 4 && Blue == 4) {
 			return obj_camera_constrain_y_bottom_long;
+		}else if (Red == 4 && Green == 5 && Blue == 4) {
+			return obj_camera_constrain_y_top_long;
 		}
 		else if(Red == 3 && Green == 3 && Blue == 3)
 		{

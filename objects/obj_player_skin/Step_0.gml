@@ -19,6 +19,7 @@ if skin_num != 0 {
 
 if unlocked = false {
 	bounce_speed = -3.5;
+	depth = init_depth;
 }else {
 	bounce_speed = -5.5;
 	depth = -2;
