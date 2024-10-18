@@ -20,10 +20,10 @@ function scr_Get_Skin_Loadout(){
 		pickups_array = [pickup_1,pickup_2]
 		
 		// Stats
-		hp = 40;
-		max_hp = 40; //4 hearts
+		hp = 48;
+		max_hp = 48; //5 hearts
 		max_max_hp = 80; //10 hearts
-		armor_buff = 0;
+		armor_buff = 1;
 		max_armor_buff = 5;
 	}else if global.current_skin = 1 {
 		num_of_weapons = 1;
@@ -91,8 +91,8 @@ function scr_Get_Skin_Loadout(){
 		pickups_array = [pickup_1,pickup_2]
 		
 		// Stats
-		hp = 32;
-		max_hp = 32; //4 hearts
+		hp = 40;
+		max_hp = 40; //5 hearts
 		max_max_hp = 80; //10 hearts
 		armor_buff = 0;
 		max_armor_buff = 5;
@@ -176,7 +176,7 @@ function scr_Get_Skin_Loadout(){
 		hp = 32;
 		max_hp = 32; //4 hearts
 		max_max_hp = 80; //10 hearts
-		armor_buff = 0;
+		armor_buff = 2;
 		max_armor_buff = 5;
 	}else {
 		num_of_weapons = 2;

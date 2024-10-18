@@ -35,4 +35,19 @@ if make = true {
 			}
 		}
 	}
+	
+	//achievements
+	if basket_num = 1 {
+		if global.steam_api = true {//Free throw
+			if !steam_get_achievement("ACHIEVEMENT_FREETHROW") {
+				steam_set_achievement("ACHIEVEMENT_FREETHROW");
+			}
+		}
+	}else if basket_num = 2 { //Ball is life
+		if global.steam_api = true {
+			if !steam_get_achievement("ACHIEVEMENT_BALLISLIFE") {
+				steam_set_achievement("ACHIEVEMENT_BALLISLIFE");
+			}
+		}
+	}
 }

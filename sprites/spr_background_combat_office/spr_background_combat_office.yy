@@ -19,7 +19,7 @@
   "height":1056,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"97c46d43-63de-4bba-8a6f-25fdaeb6eaef","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"97c46d43-63de-4bba-8a6f-25fdaeb6eaef","opacity":40.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
+    {"$GMImageLayer":"","%Name":"97c46d43-63de-4bba-8a6f-25fdaeb6eaef","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"97c46d43-63de-4bba-8a6f-25fdaeb6eaef","opacity":40.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"420a1ee4-591b-4de8-a173-f705836fc907","blendMode":0,"displayName":"default","isLocked":false,"name":"420a1ee4-591b-4de8-a173-f705836fc907","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_background_combat_office",

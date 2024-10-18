@@ -153,3 +153,105 @@ if global.phase = 3 and global.skins_unlocked_array[skin-1] = false {
 	ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
 	ini_close();	
 }
+
+//Steam achievements
+if global.phase = 2 { //3D
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_3D") {
+			steam_set_achievement("ACHIEVEMENT_3D");
+		}
+	}	
+}
+
+if global.phase = 3 { //KunKun
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_KUNKUN") {
+			steam_set_achievement("ACHIEVEMENT_KUNKUN");
+		}
+	}	
+}
+
+if global.combo >= 50 and room = room_proc_gen_test { //Bandit
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_BANDIT") {
+			steam_set_achievement("ACHIEVEMENT_BANDIT");
+		}
+	}
+}
+
+//Dogo
+var weapons_unlocked = 0;
+
+for(i = 0; i < array_length(global.weapon_unlocked_array); i++) { //weapons
+	if global.weapon_unlocked_array[i] = true {
+		weapons_unlocked++;
+	}
+}
+
+if weapons_unlocked = array_length(global.weapon_unlocked_array) {
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_DOGO") {
+			steam_set_achievement("ACHIEVEMENT_DOGO");
+		}
+	}
+}
+
+//free at last
+var num_of_skins = 0;
+for (i = 0; i < array_length(global.skins_unlocked_array); i++) {
+	if global.skins_unlocked_array[i] = true {
+		num_of_skins += 1;
+	}
+}
+
+if num_of_skins = array_length(global.skins_unlocked_array) {
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_FREEATLAST") {
+			steam_set_achievement("ACHIEVEMENT_FREEATLAST");
+		}
+	}
+}
+
+//combo achievements
+if global.combo >= 10 and room = room_proc_gen_test { //10x
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_10X") {
+			steam_set_achievement("ACHIEVEMENT_10X");
+		}
+	}
+}
+
+if global.combo >= 25 and room = room_proc_gen_test { //25x
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_25X") {
+			steam_set_achievement("ACHIEVEMENT_25X");
+		}
+	}
+}
+
+if global.combo >= 100 and room = room_proc_gen_test { //100x
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_100X") {
+			steam_set_achievement("ACHIEVEMENT_100X");
+		}
+	}
+}
+
+if global.combo >= 200 and room = room_proc_gen_test { //200x
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_200X") {
+			steam_set_achievement("ACHIEVEMENT_200X");
+		}
+	}
+}
+
+//pogobot revolution
+if global.skin_beaten_0 = true and  global.skin_beaten_1 = true and global.skin_beaten_2 = true 
+and global.skin_beaten_3 = true and global.skin_beaten_4 = true and global.skin_beaten_5 = true 
+and global.skin_beaten_6 = true {
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_REVOLUTION") {
+			steam_set_achievement("ACHIEVEMENT_REVOLUTION");
+		}
+	}
+}

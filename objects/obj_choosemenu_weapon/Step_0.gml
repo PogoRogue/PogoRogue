@@ -190,5 +190,6 @@ if weapons_unlocked = array_length(global.weapon_unlocked_array) {
 		ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
 		ini_close();	
 	}
+	
 }
 

@@ -8,7 +8,7 @@ event_inherited();
 spd = 1;
 at_edge = false;
 explosion_defense = 0.0;
-mine_delay = room_speed * 2.5;
+mine_delay = room_speed * 3.5;
 alarm_set(1, mine_delay);
 x_dir = 1;
 

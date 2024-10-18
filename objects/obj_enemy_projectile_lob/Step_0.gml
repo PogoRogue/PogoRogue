@@ -3,7 +3,7 @@
 y_spd -= grav;
 y -= y_spd;
 
-if(y > initial_y) and hspeed = 0 {
+if(y > initial_y) {
 	instance_destroy(self);	
 }
 

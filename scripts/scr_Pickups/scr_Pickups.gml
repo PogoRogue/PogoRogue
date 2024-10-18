@@ -127,6 +127,7 @@ function scr_Pickups(){
 				image_angle -= 180;
 				gun = old_gun;
 			}
+			
 			uses_per_bounce -= 1;
 			if uses_per_bounce <= 0 {
 				on_cooldown = true;

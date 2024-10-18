@@ -7,4 +7,4 @@
 event_inherited();
 
 action_cd = false
-bullet_defense = 0.15;
+bullet_defense = 0.25;

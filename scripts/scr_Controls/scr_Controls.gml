@@ -12,12 +12,12 @@ function scr_Controls(){
 	
 	//KEYBOARD
 	//gameplay
-	global.player_right_keys = [vk_right,-1];
-	global.player_left_keys = [vk_left,-1];
+	global.player_right_keys = [vk_right,ord("D")];
+	global.player_left_keys = [vk_left,ord("A")];
 	global.shoot_keys = [vk_space,-1];
 	global.recenter_keys = [vk_up,ord("W")];
-	global.pickup1_keys = [ord("A"),-1];
-	global.pickup2_keys = [ord("D"),-1];
+	global.pickup1_keys =  [mb_left,-1];
+	global.pickup2_keys = [mb_right,-1];
 	global.interact_keys = [ord("E"),-1];
 	global.weapon1_keys = [ord("1"),-1];
 	global.weapon2_keys = [ord("2"),-1];

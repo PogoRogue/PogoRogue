@@ -14,7 +14,7 @@ if ready = true {
 			instance_destroy();	
 		}
 	}else {
-		var distance = abs(64 - (64-y_subtract));
+		var distance = abs(80 - (80-y_subtract));
 
 		if(distance <= 32){
 			spd_multiply = distance / 32;

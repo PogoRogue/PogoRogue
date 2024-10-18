@@ -26,6 +26,12 @@ if obj_player.dead = false {
 		with obj_player_mask {
 			mask_index = spr_nothing;
 		}
+		
+		if global.steam_api = true {
+			if !steam_get_achievement("ACHIEVEMENT_ROBO") {
+				steam_set_achievement("ACHIEVEMENT_ROBO");
+			}
+		}
 	}
 }
 

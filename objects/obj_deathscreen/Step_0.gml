@@ -106,4 +106,50 @@ if win = true {
 		ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
 		ini_close();	
 	}
+	
+	//combo god achievement
+	if global.combo_broken = false  { //200x
+		if global.steam_api = true {
+			if !steam_get_achievement("ACHIEVEMENT_COMBOGOD") {
+				steam_set_achievement("ACHIEVEMENT_COMBOGOD");
+			}
+		}
+	}
+	
+	//close call achievement
+	if instance_exists(obj_player) {
+		if obj_player.hp <= 8 and obj_player.armor_buff = 0 { //200x
+			if global.steam_api = true {
+				if !steam_get_achievement("ACHIEVEMENT_CLOSECALL") {
+					steam_set_achievement("ACHIEVEMENT_CLOSECALL");
+				}
+			}
+		}
+	}
+	
+	//pogobot revolution
+	ini_open("savedata.ini");
+	if global.current_skin = 0 {
+		global.skin_beaten_0 = true;
+		ini_write_real("savegame", "skin_beaten_0", global.skin_beaten_0);
+	}else if global.current_skin = 1 {
+		global.skin_beaten_1 = true;
+		ini_write_real("savegame", "skin_beaten_1", global.skin_beaten_1);
+	}else if global.current_skin = 2 {
+		global.skin_beaten_2 = true;
+		ini_write_real("savegame", "skin_beaten_2", global.skin_beaten_2);
+	}else if global.current_skin = 3 {
+		global.skin_beaten_3 = true;
+		ini_write_real("savegame", "skin_beaten_3", global.skin_beaten_3);
+	}else if global.current_skin = 4 {
+		global.skin_beaten_4 = true;
+		ini_write_real("savegame", "skin_beaten_4", global.skin_beaten_4);
+	}else if global.current_skin = 5 {
+		global.skin_beaten_5 = true;
+		ini_write_real("savegame", "skin_beaten_5", global.skin_beaten_5);
+	}else if global.current_skin = 6 {
+		global.skin_beaten_6 = true;
+		ini_write_real("savegame", "skin_beaten_6", global.skin_beaten_6);
+	}else 
+	ini_close();	
 }

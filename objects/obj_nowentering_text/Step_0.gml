@@ -14,7 +14,7 @@ if ready = true {
 			instance_destroy();	
 		}
 	}else {
-		var distance = abs(64 - (64-y_subtract));
+		var distance = abs(56 - (56-y_subtract));
 
 		if(distance <= 32){
 			spd_multiply = distance / 32;
@@ -28,3 +28,9 @@ if ready = true {
 		}
 	}
 }
+
+with obj_player {
+	if distance_to_object(obj_shop_door) < 500 {
+		instance_destroy(other);	
+	}
+}	

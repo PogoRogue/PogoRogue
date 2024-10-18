@@ -9,7 +9,7 @@ var str_width = string_width("Now Entering:\n" + entering_string);
 var added_width = 0;
 
 if draw = true {
-	scr_Draw_Text_Outlined((768/2),64-y_subtract,"Now Entering:\n" + entering_string,c_white);
+	scr_Draw_Text_Outlined((768/2),56-y_subtract,"Now Entering:\n" + entering_string,c_white);
 }
 
 draw_set_alpha(1);

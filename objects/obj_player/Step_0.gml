@@ -371,6 +371,13 @@ if !key_fire_projectile and state = state_bouncing {
 	sixshooter_held = false;
 }
 
+//hat gun triple shot
+if hat_gun.spread_number = 1 and tripleshot = true {
+	hat_gun.spread_number = 3;
+}else if tripleshot = false {
+	hat_gun.spread_number = 1;
+}
+
 if (canshoot > 0) {
 	canshoot -= 1;
 }else if (shoot) {
@@ -516,6 +523,11 @@ if gun_1._name != "Burst Rifle" and gun_2._name != "Burst Rifle" and gun_3._name
 }
 
 //switch between weapons
+
+if gun_array[current_gun] != burstfire_gun and gun_array[current_gun]._name != "Burst Rifle" {
+	current_burst = 0;
+}
+
 if global.key_weapon_up and current_burst = 0 {
 	if (current_gun) < weapons_equipped-1 {
 		current_gun += 1;

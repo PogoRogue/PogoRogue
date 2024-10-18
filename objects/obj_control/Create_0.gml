@@ -172,3 +172,4 @@ global.draw_ui = true;
 global.ui_alpha = 1;
 global.room_width = 768;
 global.room_height = 432;
+global.combo_broken = false;

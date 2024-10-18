@@ -11,7 +11,7 @@ var added_width = 0;
 
 if draw = true {
 	for (i= 0; i < string_length(item_string); i++) {
-		scr_Draw_Text_Outlined((768/2)-(str_width/2)+added_width,64-((3/(abs(current_effect_char-i)*2))*(abs(current_effect_char-i) <= 3))-y_subtract,string_array[i],c_white);
+		scr_Draw_Text_Outlined((768/2)-(str_width/2)+added_width,80-((3/(abs(current_effect_char-i)*2))*(abs(current_effect_char-i) <= 3))-y_subtract,string_array[i],c_white);
 		added_width += string_width(string_array[i]);
 	}
 	if new_discovery = true {
@@ -20,7 +20,7 @@ if draw = true {
 		draw_set_font(fnt_itemdescription2);
 		draw_set_alpha(1);
 
-		scr_Draw_Text_Outlined((768/2),80-y_subtract,"New discovery!",make_color_rgb(237,225,158));
+		scr_Draw_Text_Outlined((768/2),96-y_subtract,"New discovery!",make_color_rgb(237,225,158));
 
 		draw_set_alpha(1);
 		draw_set_color(c_white);	

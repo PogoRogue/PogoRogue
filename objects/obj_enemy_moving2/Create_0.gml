@@ -20,7 +20,13 @@ laser_alpha = 0;
 dist_to_wall = 0;
 
 random_set_seed(global.seed + global.enemy_number);
-blue = choose(true,false);
+if global.phase = 2 {
+	blue = choose(true,false,false);
+}else if global.phase = 3 {
+	blue = choose(true,true,false);
+} else {
+	blue = false;	
+}
 if blue = false and global.phase = 2 {
 	instance_destroy();
 	instance_create_depth(x,y,depth,obj_enemy_moving);

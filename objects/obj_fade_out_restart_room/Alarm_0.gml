@@ -2,6 +2,7 @@
 room_restart();
 if deactivate_all = true {
 	instance_deactivate_all(false);	
+	instance_activate_object(obj_steam);
 }
 global.room_width = 768;
 global.room_height = 432;

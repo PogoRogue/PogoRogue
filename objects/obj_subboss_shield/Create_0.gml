@@ -43,8 +43,8 @@ laser_up = false;
 initial_delay = 2;
 
 power_on = false;
-on_time = random_range(2,3.75);
-off_time = random_range(2.5,5); //4
+on_time = 2;
+off_time = 5;
 powering_up_time = 1;
 damage = 4;
 is_active = true;

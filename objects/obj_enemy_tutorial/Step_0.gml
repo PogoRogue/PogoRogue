@@ -70,9 +70,42 @@ if(is_dead) {
 		if room = room_starting_area {
 			alarm_set(0, room_speed);	
 		}
+		
+		with obj_player {
+			//lower enemy kill cooldowns
+			if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count > 0 {
+				//account for double/triple/quadruple kill passive
+				if global.combo <= 10 or obj_player.double_kill = 0 {
+					pickups_array[0].enemies_count -= 1;
+				}else if global.combo > 10 and obj_player.double_kill = 1
+				or global.combo > 10 and global.combo <= 20 and obj_player.double_kill > 1 {
+					pickups_array[0].enemies_count -= 2;
+				}else if global.combo > 20 and obj_player.double_kill = 2
+				or global.combo > 20 and global.combo <= 30 and obj_player.double_kill > 2 {
+					pickups_array[0].enemies_count -= 3;
+				}else if global.combo > 30 and obj_player.double_kill > 2 {
+					pickups_array[0].enemies_count -= 4;
+				}
+			}
+			if pickups_array[1].enemies_count_max > 0 and pickups_array[1].enemies_count > 0 {
+				//account for double/triple/quadruple kill passive
+				if global.combo <= 10 or obj_player.double_kill = 0 {
+					pickups_array[1].enemies_count -= 1;
+				}else if global.combo > 10 and obj_player.double_kill = 1
+				or global.combo > 10 and global.combo <= 20 and obj_player.double_kill > 1 {
+					pickups_array[1].enemies_count -= 2;
+				}else if global.combo > 20 and obj_player.double_kill = 2
+				or global.combo > 20 and global.combo <= 30 and obj_player.double_kill > 2 {
+					pickups_array[1].enemies_count -= 3;
+				}else if global.combo > 30 and obj_player.double_kill > 2 {
+					pickups_array[1].enemies_count -= 4;
+				}
+			}
+		}
 	}else if init_add_to_combo = false and y != 2272 {
 		alarm_set(0, room_speed);
 	}
+
 }else {
 	red_frames = 0;
 }

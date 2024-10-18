@@ -14,6 +14,7 @@ if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
 	}
 	room_persistent = false;
 	instance_deactivate_all(false);
+	instance_activate_object(obj_steam);
 	room_restart();
 	audio_play_sound(snd_selectOption,0,false);
 	global.tileset = tl_ground;

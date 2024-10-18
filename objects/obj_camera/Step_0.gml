@@ -115,6 +115,30 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 			y_max = yTo;
 			y_clamp = false;
 		}
+		
+		if collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*check_distance,obj_camera_constrain_y_top_hallway,false,true) != noone 
+		and collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom_hallway,false,true) != noone {
+			y_min = collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*check_distance,obj_camera_constrain_y_top_hallway,false,true).y+hallway_h_half;
+			y_max = collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom_hallway,false,true).y-hallway_h_half;
+			y_clamp = true;
+		}else if collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*check_distance,obj_camera_constrain_y_top_hallway,false,true) != noone { //only top
+			y_min = collision_line(follow_x,follow_y,follow_x,follow_y-hallway_h_half*check_distance,obj_camera_constrain_y_top_hallway,false,true).y+hallway_h_half;
+			y_max = max(yTo,y_min);
+			y_clamp = true;
+		}else if collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom_hallway,false,true) != noone { //only bottom
+			y_max = collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom_hallway,false,true).y-hallway_h_half;
+			y_min = min(yTo,y_max);
+			y_clamp = true;
+		}else {
+			y_min = yTo;
+			y_max = yTo;
+			y_clamp = false;
+		}
+		
+		if collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom_long,false,true) != noone {
+			y_max = collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom_long,false,true).y-hallway_h_half;
+			y_clamp = true;
+		}
 	}
 	
 	//center in room (unless proc gen level)

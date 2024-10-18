@@ -1364,7 +1364,9 @@ state_portal = function() {
 		//obj_camera.xTo = portal_object.x;
 		//obj_camera.yTo =  portal_object.x - 64
 		obj_camera.follow = instance_nearest(x,y,obj_boss_door);
-		camera_set_view_size(view_camera[0],global.room_width,global.room_height);
+		if room != room_proc_gen_test {
+			camera_set_view_size(view_camera[0],global.room_width,global.room_height);
+		}
 		
 		image_angle += portal_angle_speed;
 		x = x + lengthdir_x(portal_rot_distance*image_yscale,image_angle);
@@ -1376,11 +1378,12 @@ state_portal = function() {
 		
 		
 		
-		if image_yscale > 0.6 {
+		if image_yscale > 0.6 - (0.3 * (room = room_proc_gen_test)) {
 			image_yscale -= 0.005;
 			image_xscale = sign(image_xscale) *image_yscale;
 			image_angle += portal_angle_speed;
-		}else { //go in portal
+		}
+		if image_yscale <= 0.6 { //go in portal
 			if (room == room_proc_gen_test) {
 				room_persistent = false;
 				switch (global.phase) {
@@ -1456,7 +1459,9 @@ state_shop_portal = function() {
 		//obj_camera.yTo =  portal_object.x - 64
 		obj_camera.follow = instance_nearest(x,y,obj_shop_door);
 
-		camera_set_view_size(view_camera[0],global.room_width,global.room_height);
+		if room != room_proc_gen_test {
+			camera_set_view_size(view_camera[0],global.room_width,global.room_height);
+		}
 		
 		image_angle += portal_angle_speed;
 		x = x + lengthdir_x(portal_rot_distance*image_yscale,image_angle);
@@ -1466,11 +1471,12 @@ state_shop_portal = function() {
 			portal_rot_distance += 0.25;	
 		}
 		
-		if image_yscale > 0.6 {
+		if image_yscale > 0.6 - (0.3 * (room = room_proc_gen_test)) {
 			image_yscale -= 0.005;
 			image_xscale = sign(image_xscale) *image_yscale;
 			image_angle += portal_angle_speed;
-		}else { //go in portal
+		}
+		if image_yscale <= 0.6 { //go in portal
 			if (room != room_shop) {
 				if used_shop_portal = false {
 					with portal_object {

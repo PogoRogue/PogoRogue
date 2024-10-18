@@ -1,11 +1,9 @@
-randomize();
 angle_speed = 5;
 grav = 0.21;
 hspeed = 0;
 vspeed = -2;
 bounce_decay = 1;
 rot_angle = 0;
-random_set_seed(global.seed);
 spawning = false;
 image_index = 1;
 alpha = 1;
@@ -19,4 +17,5 @@ depth -= 10;
 
 free = true;
 
-//depth = 10;
+starting_x = x;
+starting_y = y;

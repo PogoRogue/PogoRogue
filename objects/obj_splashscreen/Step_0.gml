@@ -34,3 +34,16 @@ if splash_num > max_splash_num {
 	}	
 	//instance_create_depth(x,y,depth-10000,obj_darkscreen_transition);
 }
+//steam_clear_achievement("ACHIEVEMENT_REVOLUTION");
+/*steam_clear_achievement("ACHIEVEMENT_10X");
+steam_clear_achievement("ACHIEVEMENT_25X");
+steam_clear_achievement("ACHIEVEMENT_100X");
+steam_clear_achievement("ACHIEVEMENT_200X");
+steam_clear_achievement("ACHIEVEMENT_FREETHROW");
+steam_clear_achievement("ACHIEVEMENT_BALLISLIFE");
+/*steam_clear_achievement("ACHIEVEMENT_3D");
+steam_clear_achievement("ACHIEVEMENT_BANDIT");
+steam_clear_achievement("ACHIEVEMENT_DOGO");
+steam_clear_achievement("ACHIEVEMENT_ROBO");
+steam_clear_achievement("ACHIEVEMENT_KUNKUN");
+steam_clear_achievement("ACHIEVEMENT_NONA");

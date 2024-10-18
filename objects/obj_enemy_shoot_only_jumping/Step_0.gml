@@ -18,7 +18,7 @@ if(is_grounded) {
 	h_spd *= 0.8;
 }
 
-if(!place_meeting(x + h_spd, y, obj_ground)) {
+if(!place_meeting(x + h_spd, y, obj_ground)) and !is_dead {
 	x += h_spd;
 }
 

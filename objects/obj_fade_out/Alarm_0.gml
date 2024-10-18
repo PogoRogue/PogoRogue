@@ -6,6 +6,7 @@ if next_room = room_tutorial and room = room_starting_area or next_room = room_p
 or next_room = room_credits or room = room_tutorial and next_room = room_starting_area 
 or next_room = room_menu{
 	instance_deactivate_all(false);	
+	instance_activate_object(obj_steam);
 }
 
 if room = room_shop {
@@ -25,6 +26,7 @@ with obj_player {
 
 if next_room = room_menu {
 	instance_deactivate_all(false);	
+	instance_activate_object(obj_steam);
 }
 
 global.room_width = 768;

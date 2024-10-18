@@ -326,6 +326,22 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		{
 			return obj_randomasset1;
 		}
+		else if (Red == 20 && Green == 25 && Blue == 25)
+		{
+			return obj_camera_constrain_y_top_hallway;
+		}
+		else if (Red == 25 && Green == 19 && Blue == 25)
+		{
+			return obj_camera_constrain_y_top_hallway_destroyer;
+		}
+		else if (Red == 19 && Green == 25 && Blue == 19)
+		{
+			return obj_camera_constrain_y_bottom_hallway;
+		}
+		else if (Red == 21 && Green == 25 && Blue == 19)
+		{
+			return obj_camera_constrain_y_bottom_hallway_destroyer;
+		}
 	}
 	
 	

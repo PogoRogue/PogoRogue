@@ -10,7 +10,7 @@ function scr_Guns(){
 		kick: 2,              //kickback to position and angle
 		sound: snd_defaultgun,    //sound effect
 		spread_number: 1,     //number of bullets per shot
-		spread_angle: 45,      //angle between bullets in spread shot
+		spread_angle: 20,      //angle between bullets in spread shot
 		full_auto: false,     //hold down mouse to shoot vs click for each shot
 		burst_number: 1,      //number of bullets in burst
 		burst_delay: 0,       //delay between bursts
@@ -55,7 +55,7 @@ function scr_Guns(){
 		kick: 2,
 		sound: snd_hatgun,
 		spread_number: 1,
-		spread_angle: 45,
+		spread_angle: 20,
 		full_auto: false,
 		burst_number: 1,
 		burst_delay: 0,
@@ -116,7 +116,7 @@ function scr_Guns(){
 
 	shotgun_gun = {
 		_name: "Shotgun",  
-		tagline: "2 powerful, short-range blast spread of 5 shots.",
+		tagline: "2 powerful, short-range blast spreads of 5 shots.",
 		sprite: spr_gun_shotgun,  
 		ammo: [shotgun_bullet],
 		inaccuracy: 5,       
@@ -215,7 +215,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_laser,
 		spread_number: 1,    
-		spread_angle: 45,    
+		spread_angle: 30,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -284,7 +284,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_nothing,
 		spread_number: 1,    
-		spread_angle: 45,    
+		spread_angle: 30,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -330,7 +330,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_sniper,
 		spread_number: 1,    
-		spread_angle: 35,    
+		spread_angle: 30,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -376,7 +376,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_nothing,
 		spread_number: 1,    
-		spread_angle: 45,    
+		spread_angle: 35,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -490,7 +490,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_machinegun,
 		spread_number: 1,    
-		spread_angle: 45,    
+		spread_angle: 35,    
 		full_auto: true,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -513,7 +513,7 @@ function scr_Guns(){
 		kick: 2,              
 		sound: snd_nothing,
 		spread_number: 1,    
-		spread_angle: 45,    
+		spread_angle: 35,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     
@@ -559,7 +559,7 @@ function scr_Guns(){
 		kick: 2,
 		sound: snd_nothing,
 		spread_number: 1,
-		spread_angle: 45,
+		spread_angle: 35,
 		full_auto: false,
 		burst_number: 1,
 		burst_delay: 0,

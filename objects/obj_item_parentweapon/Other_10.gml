@@ -12,8 +12,8 @@ or obj_player.weapons_equipped = 0 {
 			num_of_weapons = 2;
 			gun_2 = other.weapon;
 			gun_array = [gun_1,gun_2,gun_3];
-			gun =  obj_player.gun_array[1];
-			current_gun = 1;
+			//gun =  obj_player.gun_array[1];
+			//current_gun = 1;
 		}
 		
 		ini_open("itemsunlocked.ini");
@@ -49,8 +49,8 @@ or obj_player.weapons_equipped = 0 {
 			num_of_weapons = 3;
 			gun_2 = other.weapon;
 			gun_array = [gun_1,gun_2,gun_3];
-			gun =  obj_player.gun_array[1];
-			current_gun = 1;
+			//gun =  obj_player.gun_array[1];
+			//current_gun = 1;
 		}
 		
 		ini_open("itemsunlocked.ini");
@@ -73,8 +73,8 @@ or obj_player.weapons_equipped = 0 {
 			num_of_weapons = 3;
 			gun_3 = other.weapon;
 			gun_array = [gun_1,gun_2,gun_3];
-			gun =  obj_player.gun_array[2];
-			current_gun = 2;
+			//gun =  obj_player.gun_array[2];
+			//current_gun = 2;
 		}
 		
 		ini_open("itemsunlocked.ini");

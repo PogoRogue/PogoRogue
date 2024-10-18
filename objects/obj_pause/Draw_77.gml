@@ -29,6 +29,7 @@ if (global.key_pause and global.room_width = 768) and !instance_exists(obj_items
 		
 		//deactivate everything other than this surface
 		instance_deactivate_all(true);
+		instance_activate_object(obj_steam);
 		instance_activate_object(obj_fade_in);	
 		instance_activate_object(obj_fade_out);	
 		instance_activate_object(obj_control);	

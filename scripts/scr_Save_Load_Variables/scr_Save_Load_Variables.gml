@@ -1,7 +1,17 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Save_Load_Variables(){
+	
 	//declare variables
+	
+	//skin beaten
+	global.skin_beaten_0 = false;
+	global.skin_beaten_1 = false;
+	global.skin_beaten_2 = false;
+	global.skin_beaten_3 = false;
+	global.skin_beaten_4 = false;
+	global.skin_beaten_5 = false;
+	global.skin_beaten_6 = false;
 	
 	//STATS
 	
@@ -60,6 +70,15 @@ function scr_Save_Load_Variables(){
 	
 	//load existing data, set default value if doesn't exist
 	ini_open("savedata.ini");
+	
+	//skin beaten
+	global.skin_beaten_0 = ini_read_real("savegame", "skin_beaten_0", false);
+	global.skin_beaten_1 = ini_read_real("savegame", "skin_beaten_1", false);
+	global.skin_beaten_2 = ini_read_real("savegame", "skin_beaten_2", false);
+	global.skin_beaten_3 = ini_read_real("savegame", "skin_beaten_3", false);
+	global.skin_beaten_4 = ini_read_real("savegame", "skin_beaten_4", false);
+	global.skin_beaten_5 = ini_read_real("savegame", "skin_beaten_5", false);
+	global.skin_beaten_6 = ini_read_real("savegame", "skin_beaten_6", false);
 	
 	//runs
 	global.total_runs = ini_read_real("savegame", "total_runs", 0);

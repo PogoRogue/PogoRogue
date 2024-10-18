@@ -5,7 +5,7 @@ item_tagline = "Increases the player's max HP by 1 heart up to a max of 10.";
 item_description = item_tagline;
 add_sprite_to_list = false;
 item_cost = 50;
-max_uses = 5;
+max_uses = 0;
 item_stats = "";
 scr_Buff_Stats();
 

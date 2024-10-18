@@ -19,11 +19,15 @@ switch(current_state) {
 		
 		if !position_meeting(bbox_right,bbox_bottom+2,obj_ground) and !position_meeting(bbox_right,bbox_bottom+2,obj_ground_oneway) and x_dir = 1
 		or image_xscale = 1 and place_meeting(x+4,y-1,obj_ground) and !place_meeting(x-4,y-1,obj_ground) {
-			x_dir *= -1;
+			if !is_dead {
+				x_dir *= -1;
+			}
 			current_state = ROBOT_STATES.IDLE;
 		}else if !position_meeting(bbox_left,bbox_bottom+2,obj_ground) and !position_meeting(bbox_left,bbox_bottom+2,obj_ground_oneway) and x_dir = -1 
 		or image_xscale = -1 and place_meeting(x-4,y-1,obj_ground) and !place_meeting(x+4,y-1,obj_ground) {
-			x_dir *= -1;
+			if !is_dead {
+				x_dir *= -1;
+			}
 			current_state = ROBOT_STATES.IDLE;
 		}else if !is_dead and !red_frames > 0 {
 			x += walk_speed * x_dir;	

@@ -18,3 +18,11 @@ if armor_buff = 5 and (hp/8) = 10 and global.skins_unlocked_array[skin-1] = fals
 	ini_write_real("itemsunlocked", "skin " + string(skin), global.skins_unlocked_array[skin-1]);
 	ini_close();	
 }
+
+if armor_buff = 5 and (hp/8) = 10 {
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_NONA") {
+			steam_set_achievement("ACHIEVEMENT_NONA");
+		}
+	}
+}
