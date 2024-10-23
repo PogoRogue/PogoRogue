@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_Change_Actives_Loadout",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Change_Actives_Loadout",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

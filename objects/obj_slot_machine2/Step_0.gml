@@ -21,6 +21,7 @@ if floor(handle_frame) < sprite_get_number(spr_slotmachine_handle)-1 and handle_
 			audio_play_sound(snd_slotmachine_spinning,0,true);
 		}
 		spin = true;
+		global.spins_used += 1;
 		alarm[2] = spin_time;
 		item1_index = 0;//irandom_range(0,sprite_get_number(spr_slotmachine_slot_items)-1);
 		item2_index = 0;//irandom_range(0,sprite_get_number(spr_slotmachine_slot_items)-1);

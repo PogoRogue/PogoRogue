@@ -173,3 +173,18 @@ global.ui_alpha = 1;
 global.room_width = 768;
 global.room_height = 432;
 global.combo_broken = false;
+global.spins_used = 0;
+
+global.synergy_slot_equipped1 = false;
+global.synergy_slot_equipped2 = false;
+global.synergy_slot_equipped3 = false;
+global.synergy_slot_equipped4 = false;
+
+global.parent_synergy1 = 0;
+global.parent_synergy2 = 0;
+global.item_1_pickup = 0;
+global.item_2_pickup = 0;
+global.item_3_pickup = 0;
+global.item_4_pickup = 0;
+
+alarm[3] = 1;

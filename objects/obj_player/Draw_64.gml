@@ -16,7 +16,7 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	var yy = 48 * gun_num; //add y for other weapons bullets
 	var black_alpha = 0.5 * (gun != gun_array[gun_num]); //darkening for bottom ammo
 	for(i = 0; i < gun_array[gun_num].bullets_per_bounce+max_ammo_buff; i++) {
-		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != machine_gun and gun_array[gun_num] != bubble_gun) and (gun_array[gun_num] != laser_gun) and (gun_array[gun_num] != water_gun) and (gun_array[gun_num] != plasma_gun) {
+		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != machine_gun and gun_array[gun_num] != bubble_gun and gun_array[gun_num] != burstfire_gun) and (gun_array[gun_num] != laser_gun) and (gun_array[gun_num] != water_gun) and (gun_array[gun_num] != plasma_gun) {
 			draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(768-16)-(i*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor(i/gun_array[gun_num].burst_number)*4)),36+yy); 
 			//darkening
 			draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(768-16)-(i*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor(i/gun_array[gun_num].burst_number)*4)),36+yy,1,1,0,c_black,black_alpha);
@@ -24,11 +24,11 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 			draw_sprite(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*i)-((i >= gun_array[gun_num].init_bullets_per_bounce and (i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce+max_ammo_buff))*10),(768-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),36+yy); 
 			//darkening
 			draw_sprite_ext(ammo.gui_sprite,((i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*10)+((i+gun_array[gun_num].current_bullets>=gun_array[gun_num].bullets_per_bounce+max_ammo_buff)*i),(768-16)-(i*(sprite_get_width(ammo.gui_sprite)+4)),36+yy,1,1,0,c_black,black_alpha);
-		}else if (gun_array[gun_num] = machine_gun or gun_array[gun_num] = bubble_gun) {
+		}else if (gun_array[gun_num] = machine_gun or gun_array[gun_num] = bubble_gun or gun_array[gun_num] = burstfire_gun) {
 			if (gun_array[gun_num] = machine_gun) {
 				var row_size = 20;
 				var y_row_add = 0;
-			}else  {
+			}else if (gun_array[gun_num] = bubble_gun) {
 				var row_size = 12;
 				if bubble_gun.bullets_per_bounce >= row_size * 4 {
 					var y_row_add = 16;	
@@ -36,6 +36,31 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 					var y_row_add = 8;	
 				}else {
 					var y_row_add = 0;	
+				}
+			}else {
+				var row_size = 12;
+				if burstfire_gun.burst_number < 5 {
+					if burstfire_gun.bullets_per_bounce >= row_size * 4 {
+						var y_row_add = 24;	
+					}else if burstfire_gun.bullets_per_bounce >= row_size * 3 {
+						var y_row_add = 16;	
+					}else if burstfire_gun.bullets_per_bounce >= row_size * 2 {
+						var y_row_add = 8;	
+					}else {
+						var y_row_add = 0;	
+					}
+				}else {
+					row_size = 15;
+					
+					if burstfire_gun.bullets_per_bounce >= row_size * 4 {
+						var y_row_add = 24;	
+					}else if burstfire_gun.bullets_per_bounce >= row_size * 3 {
+						var y_row_add = 16;	
+					}else if burstfire_gun.bullets_per_bounce >= row_size * 2 {
+						var y_row_add = 8;	
+					}else {
+						var y_row_add = 0;	
+					}
 				}
 			}
 			if i < row_size {

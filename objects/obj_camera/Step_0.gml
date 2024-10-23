@@ -129,10 +129,6 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 			y_max = collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom_hallway,false,true).y-hallway_h_half;
 			y_min = min(yTo,y_max);
 			y_clamp = true;
-		}else {
-			y_min = yTo;
-			y_max = yTo;
-			y_clamp = false;
 		}
 		
 		if collision_line(follow_x,follow_y,follow_x,follow_y+hallway_h_half*check_distance,obj_camera_constrain_y_bottom_long,false,true) != noone {

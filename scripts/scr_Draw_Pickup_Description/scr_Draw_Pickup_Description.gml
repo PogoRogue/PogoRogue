@@ -15,7 +15,7 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 		var item_description = "This item has not been discovered yet.";
 		var item_stats = "Cooldown: ???";
 	}
-	if pickup.is_synergy = false {
+	if !(pickup.synergy_equipped = true and instance_exists(obj_items)) and pickup.is_synergy = false {
 		var slot_sprite = spr_itemmenu_pickup_slot;
 	}else {
 		var slot_sprite = spr_itemmenu_pickup_slot_synergy;
@@ -28,7 +28,7 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 
 	
 	//slot
-	if pickup.is_synergy = true {
+	if pickup.synergy_equipped = true and instance_exists(obj_items) or pickup.is_synergy {
 		if instance_exists(obj_items) or instance_exists(obj_item_swap) {
 			draw_sprite(slot_sprite,bg_spr_index+2,xx,yy);
 		}else {
@@ -43,15 +43,17 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	}
 	
 	//sprites
-	if pickup.is_synergy = true and img_index < 2 and unlocked = true {
+	if (pickup.synergy_equipped = true and instance_exists(obj_items) or pickup.is_synergy) and img_index < 2 and unlocked = true {
 		draw_sprite(spr_synergy_animation,global.synergy_frame,xx-50,yy-98);
 		draw_sprite(pickup.gui_sprite,img_index,xx-50,yy-98);
-		if instance_exists(obj_items) or instance_exists(obj_item_swap) {
-			draw_sprite(pickup.base_item_sprite_1,3,xx-32+2,yy+46);
-			draw_sprite(pickup.base_item_sprite_2,3,xx+32+2,yy+46);
-		}else {
-			draw_sprite(pickup.base_item_sprite_1,3,xx-32+2,yy-153);
-			draw_sprite(pickup.base_item_sprite_2,3,xx+32+2,yy-153);
+		if pickup.is_synergy {
+			if instance_exists(obj_items) or instance_exists(obj_item_swap) {
+				draw_sprite(pickup.base_item_sprite_1,3,xx-32+2,yy+46);
+				draw_sprite(pickup.base_item_sprite_2,3,xx+32+2,yy+46);
+			}else {
+				draw_sprite(pickup.base_item_sprite_1,3,xx-32+2,yy-153);
+				draw_sprite(pickup.base_item_sprite_2,3,xx+32+2,yy-153);
+			}
 		}
 		
 	}

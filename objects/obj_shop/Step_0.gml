@@ -108,9 +108,49 @@ if created_items = false {
 
 	pickup_1 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
 	pickup_2 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+	
+	instance_create_depth(x,y,depth,pickup_1,{create_coins: false});
+	instance_create_depth(x,y,depth,pickup_2,{create_coins: false});
+	
+	if global.parent_synergy1.is_synergy = true {//and instance_exists(pickup_1) and instance_exists(pickup_2) {
+		while (pickup_1.sprite_index = global.parent_synergy1.base_item_sprite_1) 
+		or (pickup_1.sprite_index = global.parent_synergy1.base_item_sprite_2) {
+			instance_destroy(pickup_1);
+			pickup_1 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+			instance_create_depth(x,y,depth,pickup_1,{create_coins: false});
+		}
+		
+		while (pickup_2.sprite_index = global.parent_synergy1.base_item_sprite_1) 
+		or (pickup_2.sprite_index = global.parent_synergy1.base_item_sprite_2) {
+			instance_destroy(pickup_2);
+			pickup_2 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+			instance_create_depth(x,y,depth,pickup_2,{create_coins: false});
+		}
+	}
+	
+	if global.parent_synergy2.is_synergy = true {//and instance_exists(pickup_1) and instance_exists(pickup_2) {
+		while (pickup_1.sprite_index = global.parent_synergy2.base_item_sprite_1) 
+		or (pickup_1.sprite_index = global.parent_synergy2.base_item_sprite_2) {
+			instance_destroy(pickup_1);
+			pickup_1 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+			instance_create_depth(x,y,depth,pickup_1,{create_coins: false});
+		}
+		
+		while (pickup_2.sprite_index = global.parent_synergy2.base_item_sprite_1) 
+		or (pickup_2.sprite_index = global.parent_synergy2.base_item_sprite_2) {
+			instance_destroy(pickup_2);
+			pickup_2 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+			instance_create_depth(x,y,depth,pickup_2,{create_coins: false});
+		}
+	}
+	
+	instance_destroy(pickup_1);
+	instance_destroy(pickup_2);
+	
 	while (pickup_2 = pickup_1) { //dont want 2 of the same pickup
 		pickup_2 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
 	}
+	
 
 	slot_items_array = [default_item_1, default_item_2, buff_1, buff_2, weapon_1, weapon_2, pickup_1, pickup_2];
 	
@@ -173,14 +213,47 @@ if created_items = false {
 		//replace pickup with new pickup if player already has it
 		if i = 6 and instance_exists(slot_items_array[i])
 		or i = 7 and instance_exists(slot_items_array[i]) {
-			while (obj_player.pickups_array[0] = slot_items_array[i].pickup or obj_player.pickups_array[1] = slot_items_array[i].pickup) {
-				if obj_player.pickups_array[0] = slot_items_array[i].pickup or obj_player.pickups_array[1] = slot_items_array[i].pickup {
+			while (obj_player.pickups_array[0] = slot_items_array[i].pickup or obj_player.pickups_array[1] = slot_items_array[i].pickup) 
+			or (slot_items_array[i].sprite_index = global.parent_synergy1.base_item_sprite_1) 
+			or (slot_items_array[i].sprite_index = global.parent_synergy1.base_item_sprite_2)
+			or (slot_items_array[i].sprite_index = global.parent_synergy2.base_item_sprite_1)
+			or (slot_items_array[i].sprite_index = global.parent_synergy2.base_item_sprite_2) {
+				if obj_player.pickups_array[0] = slot_items_array[i].pickup or obj_player.pickups_array[1] = slot_items_array[i].pickup
+				or (slot_items_array[i].sprite_index = global.parent_synergy1.base_item_sprite_1) 
+				or (slot_items_array[i].sprite_index = global.parent_synergy1.base_item_sprite_2)
+				or (slot_items_array[i].sprite_index = global.parent_synergy2.base_item_sprite_1)
+				or (slot_items_array[i].sprite_index = global.parent_synergy2.base_item_sprite_2){
 					//destroy old item
 					slot_items_array[i].item_cost = 0;
 					instance_destroy(slot_items_array[i]);
 				}
 				
 				slot_items_array[i] = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+	
+				/*if global.parent_synergy1.is_synergy = true {//and instance_exists(pickup_1) and instance_exists(pickup_2) {
+					while (slot_items_array[6].sprite_index = global.parent_synergy1.base_item_sprite_1) 
+					or (slot_items_array[6].sprite_index = global.parent_synergy1.base_item_sprite_2) {
+						slot_items_array[6] = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+					}
+		
+					while (slot_items_array[7].sprite_index = global.parent_synergy1.base_item_sprite_1) 
+					or (slot_items_array[7].sprite_index = global.parent_synergy1.base_item_sprite_2) {
+						slot_items_array[7] = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+					}
+				}
+	
+				if global.parent_synergy2.is_synergy = true {//and instance_exists(pickup_1) and instance_exists(pickup_2) {
+					while (slot_items_array[6].sprite_index = global.parent_synergy2.base_item_sprite_1) 
+					or (slot_items_array[6].sprite_index = global.parent_synergy2.base_item_sprite_2) {
+						slot_items_array[6] = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+					}
+		
+					while (slot_items_array[7].sprite_index = global.parent_synergy2.base_item_sprite_1) 
+					or (slot_items_array[7].sprite_index = global.parent_synergy2.base_item_sprite_2) {
+						slot_items_array[7] = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+					}
+				}*/
+					
 				while slot_items_array[6] = slot_items_array[7] { //change if 2 of same item
 					slot_items_array[i] = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
 				}
@@ -286,6 +359,15 @@ if key_select {
 			}
 		}else {
 			audio_play_sound(snd_unavailable,0,false);	
+		}
+	}
+}
+
+//picky buyer steam achievement
+if global.refreshes_used >= 6 {
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_PICKYBUYER") {
+			steam_set_achievement("ACHIEVEMENT_PICKYBUYER");
 		}
 	}
 }

@@ -64,11 +64,13 @@ if key_select and fade_away = false and centered = true {
 		
 		//change gun
 		instance_activate_object(obj_player);
+		instance_activate_object(obj_player_mask);
 		with obj_player {
 			if other.pickups_mode = true {
 				global.all_pickup_costs[0] = other.new_item_cost;
 				
 				pickup_1 = other.new_item;
+				pickup_1.synergy_equipped = pickup_1.is_synergy;
 				pickups_array = [pickup_1, pickup_2];
 			}else if other.weapons_mode = true  {
 				global.all_weapon_costs[0] = other.new_item_cost;
@@ -176,11 +178,12 @@ if key_select and fade_away = false and centered = true {
 		
 		//change gun
 		instance_activate_object(obj_player);
+		instance_activate_object(obj_player_mask);
 		with obj_player {
 			if other.pickups_mode = true {
 				global.all_pickup_costs[1] = other.new_item_cost;
-				
 				pickup_2 = other.new_item;
+				pickup_2.synergy_equipped = pickup_2.is_synergy;
 				pickups_array = [pickup_1, pickup_2];
 			}else if other.weapons_mode = true  {
 				global.all_weapon_costs[1] = other.new_item_cost;
@@ -280,6 +283,7 @@ if key_select and fade_away = false and centered = true {
 		
 		//change gun
 		instance_activate_object(obj_player);
+		instance_activate_object(obj_player_mask);
 		with obj_player {
 			global.all_weapon_costs[2] = other.new_item_cost;
 				

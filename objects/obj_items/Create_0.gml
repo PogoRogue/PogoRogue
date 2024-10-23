@@ -10,6 +10,14 @@ actives_swap = false;
 weapons_swap = false;
 weapons_swap1 = false;
 weapons_swap2 = false;
+synergy_slot_x = 1;
+synergy_slot_x_min = 1;
+synergy_slot_x_max = 4;
+
+instance_activate_object(obj_player);
+
+all_pickups_costs = [];
+
 
 selected_x = false;
 selected_y = false;
@@ -22,8 +30,6 @@ with obj_pause {
 		paused_outside = true;	
 	}
 }
-
-instance_activate_object(obj_player);
 with obj_player {
 	//weapons
 	other.gun_1 = gun_1;

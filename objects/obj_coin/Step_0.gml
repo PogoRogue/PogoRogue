@@ -2,8 +2,10 @@
 
 if room != room_shop {
 	if salesman = false and pogosmith = false {
-		follow_object = obj_player;
-		follow_object2 = obj_player_mask;
+		if instance_exists(obj_player) {
+			follow_object = obj_player;
+			follow_object2 = obj_player_mask;
+		}
 	}else if salesman = true {
 		follow_object = obj_salesman;
 		follow_object2 = obj_salesman;
@@ -12,19 +14,23 @@ if room != room_shop {
 		follow_object2 = obj_pogosmith;
 	}
 }else {
-	follow_object = obj_shopkeeper;	
-	follow_object2 = obj_shopkeeper;
+	if instance_exists(obj_shopkeeper) {
+		follow_object = obj_shopkeeper;	
+		follow_object2 = obj_shopkeeper;
+	}
 }
 
-if obj_player.state != obj_player.state_blink and obj_player.state != obj_player.state_strike or salesman = true or pogosmith = true {
-	if (instance_exists(follow_object)) {
-		move_towards_point(follow_object.x,follow_object.y,spd);
-		spd = lerp(spd,max_spd,0.05);
-	}
-}else {
-	speed = 0;
-	spd = 0;
-}	
+if instance_exists(obj_player) {
+	if obj_player.state != obj_player.state_blink and obj_player.state != obj_player.state_strike or salesman = true or pogosmith = true {
+		if (instance_exists(follow_object)) {
+			move_towards_point(follow_object.x,follow_object.y,spd);
+			spd = lerp(spd,max_spd,0.05);
+		}
+	}else {
+		speed = 0;
+		spd = 0;
+	}	
+}
 
 //destroy on contact
 if (instance_exists(follow_object) and instance_exists(follow_object2)) {

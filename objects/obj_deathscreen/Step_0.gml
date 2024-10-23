@@ -127,6 +127,38 @@ if win = true {
 		}
 	}
 	
+	var hours = floor(global.current_time_elapsed/216000); //convert milliseconds to hours
+	var minutes = floor((global.current_time_elapsed - (hours*216000))/3600); //convert milliseconds to minutes
+	var seconds = floor((global.current_time_elapsed - (hours*216000) - (minutes*3600))/60); //convert milliseconds to seconds
+	var milliseconds = round((global.current_time_elapsed - (hours*216000) - (minutes*3600) - (seconds*60))*(100/60));
+	
+	//speedy achievement
+	if minutes < 15  {
+		if global.steam_api = true {
+			if !steam_get_achievement("ACHIEVEMENT_SPEEDY") {
+				steam_set_achievement("ACHIEVEMENT_SPEEDY");
+			}
+		}
+	}
+	
+	//speedster achievement
+	if minutes < 12 or (minutes < 13 and seconds < 30) {
+		if global.steam_api = true {
+			if !steam_get_achievement("ACHIEVEMENT_SPEEDSTER") {
+				steam_set_achievement("ACHIEVEMENT_SPEEDSTER");
+			}
+		}
+	}
+	
+	//speed demon achievement
+	if minutes < 10  {
+		if global.steam_api = true {
+			if !steam_get_achievement("ACHIEVEMENT_SPEEDDEMON") {
+				steam_set_achievement("ACHIEVEMENT_SPEEDDEMON");
+			}
+		}
+	}
+	
 	//pogobot revolution
 	ini_open("savedata.ini");
 	if global.current_skin = 0 {

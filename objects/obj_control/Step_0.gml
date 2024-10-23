@@ -136,6 +136,7 @@ global.synergy_frame += 0.25;
 if global.show_tips_screen = true and !instance_exists(obj_fade_out) and !instance_exists(obj_fade_in) {
 	global.current_tip = "";	
 }
+
 //unlock skin
 var skin = 6;
 if global.phase = 2 and global.skins_unlocked_array[skin-1] = false {
@@ -252,6 +253,15 @@ and global.skin_beaten_6 = true {
 	if global.steam_api = true {
 		if !steam_get_achievement("ACHIEVEMENT_REVOLUTION") {
 			steam_set_achievement("ACHIEVEMENT_REVOLUTION");
+		}
+	}
+}
+
+//gambler steam achievement
+if global.spins_used >= 10 {
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_GAMBLER") {
+			steam_set_achievement("ACHIEVEMENT_GAMBLER");
 		}
 	}
 }

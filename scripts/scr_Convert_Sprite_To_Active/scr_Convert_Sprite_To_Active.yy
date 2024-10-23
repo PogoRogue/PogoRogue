@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_Convert_Sprite_To_Active",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Convert_Sprite_To_Active",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

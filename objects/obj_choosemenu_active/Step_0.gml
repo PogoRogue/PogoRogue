@@ -68,20 +68,24 @@ if key_select and centered = true and fade_away = false and global.active_unlock
 	
 	//change item
 	instance_activate_object(obj_player);
+	instance_activate_object(obj_player_mask);
 	with obj_player {
 		if num_of_pickups = 0 or other.test_mode = false {
 			global.all_pickup_costs[0] = other.all_pickups_costs[other.select-1];
 			num_of_pickups = 1;
 			pickup_1 = other.all_actives[other.select-1];
+			pickup_1.synergy_equipped = pickup_1.is_synergy;
 			pickups_array = [pickup_1, pickup_2];
 		}else if num_of_pickups = 1 {
 			global.all_pickup_costs[1] = other.all_pickups_costs[other.select-1];
 			num_of_pickups = 2;
 			pickup_2 = other.all_actives[other.select-1];
+			pickup_2.synergy_equipped = pickup_2.is_synergy;
 			pickups_array = [pickup_1, pickup_2];
 		}else if num_of_pickups = 2 {
 			global.all_pickup_costs[0] = other.all_pickups_costs[other.select-1];
 			pickup_1 = other.all_actives[other.select-1];
+			pickup_1.synergy_equipped = pickup_1.is_synergy;
 			pickups_array = [pickup_1, pickup_2];
 		}
 	}

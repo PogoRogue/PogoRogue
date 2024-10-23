@@ -37,3 +37,5 @@ if (room = room_boss_1 or room = room_boss_2 or room = room_boss_3) and slot_mac
 if slot_machine = true {
 	follow_player = true;
 }
+
+pickup.synergy_equipped = false;

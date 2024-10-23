@@ -7,7 +7,7 @@ if num_of_coins > 0 {
 	num_of_coins -= 1;
 }else {
 	instance_destroy();
-	if room = room_shop {
+	if room = room_shop and instance_exists(obj_shop) {
 		obj_shop.cant_move = false;	
 	}
 }

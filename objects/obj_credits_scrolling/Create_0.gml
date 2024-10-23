@@ -80,7 +80,7 @@ outro_4_text = ["","From everyone here at Bounce Back Games,\nWe can't thank you
 outro_5_text = ["",spr_photo_team];
 
 if room = room_credits_scrolling {
-	credits_text_array = [ft1_lead_designer_text,ft1_artists_text,ft1_designers_text,ft1_engineers_text,ft1_player_engineer_text,ft1_player_producers_text,
+	credits_text_array = [ft1_artists_text,ft1_designers_text,ft1_engineers_text,ft1_player_engineer_text,ft1_player_producers_text,ft1_lead_designer_text,
 						ft2_artists_text,ft2_designers_text,ft2_engineers_text,ft2_player_producers_text,
 						ft3_artists_text,ft3_designers_text,ft3_engineers_text,ft3_player_producers_text,
 						ui_artists_text,ui_designers_text,ui_engineers_text,
@@ -92,7 +92,7 @@ if room = room_credits_scrolling {
 						ta_text,professors_text,
 						classmates_text,outro_1_text,outro_2_text,outro_3_text,outro_4_text,outro_5_text];
 }else {
-	credits_text_array = [ft1_lead_designer_text,ft1_artists_text,ft1_designers_text,ft1_engineers_text,ft1_player_engineer_text,ft1_player_producers_text,
+	credits_text_array = [ft1_artists_text,ft1_designers_text,ft1_engineers_text,ft1_player_engineer_text,ft1_player_producers_text,ft1_lead_designer_text,
 					ft2_artists_text,ft2_designers_text,ft2_engineers_text,ft2_player_producers_text,
 					ft3_artists_text,ft3_designers_text,ft3_engineers_text,ft3_procgen_text,ft3_player_producers_text,
 					ui_artists_text,ui_designers_text,ui_engineers_text,

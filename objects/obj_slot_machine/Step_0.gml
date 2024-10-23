@@ -5,6 +5,10 @@ if handle_frame < sprite_get_number(spr_slotmachine_handle) and handle_done = fa
 	if handle_frame >= 5 and spin = false {
 		audio_play_sound(snd_slotmachine_spinning,0,false);
 		spin = true;
+		if spinsused_added = false {
+			global.spins_used += 1;
+			spinsused_added = true;
+		}
 		alarm[2] = spin_time;
 		item1_index = 0;//irandom_range(0,sprite_get_number(spr_slotmachine_slot_items)-1);
 		item2_index = 0;//irandom_range(0,sprite_get_number(spr_slotmachine_slot_items)-1);

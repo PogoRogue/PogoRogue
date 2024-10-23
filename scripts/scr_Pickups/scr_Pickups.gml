@@ -25,6 +25,9 @@ function scr_Pickups(){
 		text_color: make_color_rgb(255,255,255),     //what color this item's text should show up as
 		cost: 0,                                //how many coins this item costs to use
 		is_synergy: false,						//is this item a synergy or not?
+		synergy_equipped: false,                //has this item's synergy been found already? Can we switch back to it?
+		base_item_sprite_1: spr_pickup_empty,
+		base_item_sprite_2: spr_pickup_empty,
 		on_call: function() { }                 //specific actions to do when this event is called           
 	};
 	
@@ -48,6 +51,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(180,82,82),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			with obj_player {
 				if place_meeting(x,y+4,obj_ground_parent)
@@ -85,6 +89,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(167,123,91),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			obj_player.state = obj_player.state_groundpound;
 			obj_player.ground_pound_rise = true;
@@ -114,6 +119,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(207,138,203),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			with obj_player {
 				old_gun = gun;
@@ -155,6 +161,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(207,138,203),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			if !instance_exists(obj_shieldbubble) {
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-2,obj_shieldbubble);
@@ -183,6 +190,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(211,160,104),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			if obj_player.state = obj_player.state_freeze {
 				obj_player.pickup_freeze.on_cooldown = true;
@@ -215,6 +223,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(138,176,96),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			if cooldown_time > 0 {
 				cooldown_time -= 1;
@@ -287,6 +296,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(123,114,67),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			if !instance_exists(obj_slowmo) {
 				instance_create_depth(obj_player.x,obj_player.y,obj_player.depth+2,obj_slowmo);
@@ -314,6 +324,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(207,138,203),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			obj_player.can_rotate = false;
 			obj_player.can_shoot = false;
@@ -346,6 +357,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(184,181,185),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			
 			with obj_player {
@@ -397,6 +409,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(237,225,158),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			audio_play_sound(snd_camera,0,false);
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_camera_pickup);
@@ -426,6 +439,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(104,194,211),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			with obj_player {
 				audio_play_sound(snd_freeze,0,false);
@@ -468,6 +482,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(86,123,121),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			with obj_player {
 				if frenzy = false {
@@ -503,6 +518,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(180,82,82),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			instance_create_depth(obj_player.x,obj_player.y,obj_player.depth-1000,obj_crosshair);
 			on_cooldown = true;
@@ -530,6 +546,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(242,240,229),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			with obj_player {
 				//armored heart
@@ -568,6 +585,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(138,176,96),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			obj_player.state = obj_player.state_blink;
 			if !instance_exists(obj_blink_box) and !instance_exists(obj_blink_box) {
@@ -599,6 +617,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(178,180,126),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			if !instance_exists(obj_parachute) {
 				with obj_player {
@@ -632,6 +651,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(138,176,96),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			with obj_player {
 				old_gun = gun;
@@ -672,6 +692,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(237,225,158),
 		cost: 25,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			if global.num_of_coins >= obj_player.pickup_winners.cost and !instance_exists(obj_slot_machine)
 			and !instance_exists(obj_slot_machine2) {
@@ -704,6 +725,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(242,240,229),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			
 			with obj_player {
@@ -733,6 +755,7 @@ function scr_Pickups(){
 	text_color: make_color_rgb(237,225,158),
 	cost: 0,
 	is_synergy: false,
+	synergy_equipped: false,
 	on_call: function() {
 			with obj_player {
 				if invincibility = false {
@@ -766,6 +789,7 @@ function scr_Pickups(){
 	text_color: make_color_rgb(211,160,104),
 	cost: 0,
 	is_synergy: false,
+	synergy_equipped: false,
 	on_call: function() {
 			with obj_player {
 				if tripleshot = false {
@@ -798,6 +822,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(242,240,229),
 		cost: 0,
 		is_synergy: false,
+		synergy_equipped: false,
 		on_call: function() {
 			with obj_player {
 				if pickup_volleyball.on_cooldown = false {
@@ -833,6 +858,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(75,128,202),
 		cost: 0,
 		is_synergy: true,
+		synergy_equipped: true,
 		base_item_sprite_1: spr_pickup_hatgun,
 		base_item_sprite_2: spr_pickup_grappling,
 		item_cost: 160, //only for synergies (item 1 + item 2 costs)
@@ -876,6 +902,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(237,225,158),
 		cost: 0,
 		is_synergy: true,
+		synergy_equipped: true,
 		base_item_sprite_1: spr_pickup_frenzy,
 		base_item_sprite_2: spr_pickup_invincibility,
 		item_cost: 190, //only for synergies (item 1 + item 2 costs)
@@ -937,6 +964,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(207,138,203),
 		cost: 0,
 		is_synergy: true,
+		synergy_equipped: true,
 		base_item_sprite_1: spr_pickup_airbag,
 		base_item_sprite_2: spr_pickup_target,
 		item_cost: 140, //only for synergies (item 1 + item 2 costs)
@@ -970,6 +998,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(180,82,82),
 		cost: 0,
 		is_synergy: true,
+		synergy_equipped: true,
 		base_item_sprite_1: spr_pickup_groundpound,
 		base_item_sprite_2: spr_pickup_chargejump,
 		item_cost: 115, //only for synergies (item 1 + item 2 costs)
@@ -1007,6 +1036,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(211,160,104),
 		cost: 0,
 		is_synergy: true,
+		synergy_equipped: true,
 		base_item_sprite_1: spr_pickup_reload,
 		base_item_sprite_2: spr_pickup_emergency,
 		item_cost: 115, //only for synergies (item 1 + item 2 costs)
@@ -1064,6 +1094,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(138,176,96),
 		cost: 25,
 		is_synergy: true,
+		synergy_equipped: true,
 		base_item_sprite_1: spr_pickup_slowmo,
 		base_item_sprite_2: spr_pickup_winners,
 		item_cost: 185, //only for synergies (item 1 + item 2 costs)
@@ -1102,6 +1133,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(104,194,211),
 		cost: 0,
 		is_synergy: true,
+		synergy_equipped: true,
 		base_item_sprite_1: spr_pickup_freeze,
 		base_item_sprite_2: spr_pickup_bulletblast,
 		item_cost: 155, //only for synergies (item 1 + item 2 costs)
@@ -1132,6 +1164,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(184,181,185),
 		cost: 0,
 		is_synergy: true,
+		synergy_equipped: true,
 		base_item_sprite_1: spr_pickup_parachute,
 		base_item_sprite_2: spr_pickup_firedash,
 		item_cost: 115, //only for synergies (item 1 + item 2 costs)
@@ -1168,6 +1201,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(134,129,136),
 		cost: 0,
 		is_synergy: true,
+		synergy_equipped: true,
 		base_item_sprite_1: spr_pickup_volleyball,
 		base_item_sprite_2: spr_pickup_tripleshot,
 		item_cost: 145, //only for synergies (item 1 + item 2 costs)
@@ -1200,6 +1234,7 @@ function scr_Pickups(){
 		text_color: make_color_rgb(86,123,121),
 		cost: 0,
 		is_synergy: true,
+		synergy_equipped: true,
 		base_item_sprite_1: spr_pickup_jetpack,
 		base_item_sprite_2: spr_pickup_blink,
 		item_cost: 225, //only for synergies (item 1 + item 2 costs)

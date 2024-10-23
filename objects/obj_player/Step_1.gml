@@ -234,6 +234,13 @@ if (centering = true and can_rotate and controller_lock_in = false or centering 
 	}
 }
 
+if pickup_1 != pickup_nothing and pickup_2 = pickup_nothing {
+	num_of_pickups = 1;
+}
+
+if pickup_1 != pickup_nothing and pickup_2 != pickup_nothing {
+	num_of_pickups = 2;
+}
 
 
 show_debug_message(angle);

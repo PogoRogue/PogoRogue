@@ -34,7 +34,8 @@ function scr_Tips(){
 	"Bouncing on an enemy may seem intimidating, but it is a great way to deal damage. Every enemy can be bounced on.",
 	"Killing an enemy will always reload your current weapon unless it reloads by itself.",
 	"Often the easiest way to aim is through positioning, rather than precise tilt of the pogo stick.",
-	"Each character comes with its own unique starting loadout."
+	"Each character comes with its own unique starting loadout.",
+	"If you find a synergy item, you can always equip/unequip either of the 2 active items that formed it."
 	];
 }
 //"active items can be recharged in a variety of ways. Some require a simple cooldown time, while others may be recharged after a certain number of kills, bounces, or making a payment. Some active items may have no cooldown at all!"

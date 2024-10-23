@@ -535,6 +535,8 @@ if global.key_weapon_up and current_burst = 0 {
 		current_gun = 0;
 	}
 	
+	audio_play_sound(snd_menuNavigation,0,false);
+	
 	gun = gun_array[current_gun];
 	weapon_arrow_index = 0;
 }
@@ -545,6 +547,8 @@ if global.key_weapon_down and current_burst = 0 {
 	}else {
 		current_gun = weapons_equipped-1;
 	}
+	
+	audio_play_sound(snd_menuNavigation,0,false);
 	
 	gun = gun_array[current_gun];
 	weapon_arrow_index = 0;
