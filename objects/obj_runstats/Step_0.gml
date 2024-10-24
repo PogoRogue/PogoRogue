@@ -89,6 +89,8 @@ if stop_time = true and time_stopped = false {
 		global.new_best_split = global.current_time_elapsed_area1;
 		scr_Save_Real("fastest_time_area1",global.fastest_time_area1);
 		instance_create_depth(x,y,depth,obj_newbest_split)
+		
+		
 	}else if (global.current_time_elapsed_area2 < global.fastest_time_area2
 	or global.fastest_time_area2 = 0) and global.current_time_elapsed_area2 > 100
 	and room = room_proc_gen_test { //area 2

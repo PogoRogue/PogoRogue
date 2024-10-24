@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_achievement_combogod",
+  "%Name":"spr_achievement_corporatemaster",
   "bboxMode":0,
-  "bbox_bottom":63,
+  "bbox_bottom":255,
   "bbox_left":0,
-  "bbox_right":63,
+  "bbox_right":255,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,17 +12,17 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"28dcbca4-3702-4481-9762-bda6c2624a98","name":"28dcbca4-3702-4481-9762-bda6c2624a98","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"3f086050-1a60-4ae7-8aaf-faeeaa646776","name":"3f086050-1a60-4ae7-8aaf-faeeaa646776","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
-  "gridX":8,
-  "gridY":8,
-  "height":64,
+  "gridX":0,
+  "gridY":0,
+  "height":256,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"508e9526-262d-4a9a-9d7f-3f430a287fdf","blendMode":0,"displayName":"icon","isLocked":false,"name":"508e9526-262d-4a9a-9d7f-3f430a287fdf","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"3919dba8-ca3d-438f-a45c-e60c12007f29","blendMode":0,"displayName":"default","isLocked":false,"name":"3919dba8-ca3d-438f-a45c-e60c12007f29","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"9e78b0b5-7843-4f6a-85a9-29431776c6bc","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"9e78b0b5-7843-4f6a-85a9-29431776c6bc","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"c9020b7d-c868-4638-b3db-4ca6dd9e3e17","blendMode":0,"displayName":"default","isLocked":false,"name":"c9020b7d-c868-4638-b3db-4ca6dd9e3e17","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_achievement_combogod",
+  "name":"spr_achievement_corporatemaster",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -34,7 +34,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"spr_achievement_combogod",
+    "%Name":"spr_achievement_corporatemaster",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -58,7 +58,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_achievement_combogod",
+    "name":"spr_achievement_corporatemaster",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -70,8 +70,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"28dcbca4-3702-4481-9762-bda6c2624a98","path":"sprites/spr_achievement_combogod/spr_achievement_combogod.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8e2884d0-2d52-4474-a501-47a223f2fcbc","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3f086050-1a60-4ae7-8aaf-faeeaa646776","path":"sprites/spr_achievement_corporatemaster/spr_achievement_corporatemaster.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a415ad35-491c-4d33-92f6-4c2d4bbb3558","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -96,5 +96,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":64,
+  "width":256,
 }

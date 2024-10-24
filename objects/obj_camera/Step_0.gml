@@ -204,11 +204,14 @@ if instance_exists(obj_player) {
 if instance_exists(obj_blink_box_strike) {
 	follow = obj_blink_box_strike;
 }
-
-if obj_player.state = obj_player.state_portal and instance_exists(obj_boss_door) {
-	follow = obj_boss_door;
+if instance_exists(obj_player) {
+	if obj_player.state = obj_player.state_portal and instance_exists(obj_boss_door) {
+		follow = obj_boss_door;
+	}
 }
 
-if obj_player.state = obj_player.state_shop_portal and instance_exists(obj_shop_door) {
-	follow = obj_shop_door;
+if instance_exists(obj_player) {
+	if obj_player.state = obj_player.state_shop_portal and instance_exists(obj_shop_door) {
+		follow = obj_shop_door;
+	}
 }

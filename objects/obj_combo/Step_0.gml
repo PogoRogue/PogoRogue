@@ -13,6 +13,15 @@ and obj_player.state != obj_player.state_portal and obj_player.state != obj_play
 	if global.combo > 0 {
 		audio_play_sound(snd_combo_lost,0,false);
 		global.combo_broken = true;
+		if global.phase = 1 {
+			global.combo_broken_area1 = true;
+		}
+		if global.phase = 2 {
+			global.combo_broken_area2 = true;	
+		}
+		if global.phase = 3 {
+			global.combo_broken_area3 = true;	
+		}
 	}
 	global.combo = 0;
 }else if obj_player.table = false {

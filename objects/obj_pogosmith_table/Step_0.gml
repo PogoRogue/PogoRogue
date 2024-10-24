@@ -86,6 +86,15 @@ if being_used = true {
 			image_speed = 1;
 			image_index = 0;
 			audio_play_sound(snd_pogosmith_upgrade,0,false);
+			global.pogosmith_used += 1;
+			//gambler steam achievement
+			if global.pogosmith_used >= 6 {
+				if global.steam_api = true {
+					if !steam_get_achievement("ACHIEVEMENT_WEAPONS") {
+						steam_set_achievement("ACHIEVEMENT_WEAPONS");
+					}
+				}
+			}
 			global.num_of_coins -= purchase_cost * obj_player.gun_array[other.select_x].level;
 			//create coins
 			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth+10,obj_coin_spawner, {pogosmith_spawner: true}) {

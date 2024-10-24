@@ -112,7 +112,7 @@ if created_items = false {
 	instance_create_depth(x,y,depth,pickup_1,{create_coins: false});
 	instance_create_depth(x,y,depth,pickup_2,{create_coins: false});
 	
-	if global.parent_synergy1.is_synergy = true {//and instance_exists(pickup_1) and instance_exists(pickup_2) {
+	if global.parent_synergy1.is_synergy = true and instance_exists(pickup_1) and instance_exists(pickup_2) {
 		while (pickup_1.sprite_index = global.parent_synergy1.base_item_sprite_1) 
 		or (pickup_1.sprite_index = global.parent_synergy1.base_item_sprite_2) {
 			instance_destroy(pickup_1);
@@ -128,7 +128,7 @@ if created_items = false {
 		}
 	}
 	
-	if global.parent_synergy2.is_synergy = true {//and instance_exists(pickup_1) and instance_exists(pickup_2) {
+	if global.parent_synergy2.is_synergy = true and instance_exists(pickup_1) and instance_exists(pickup_2) {
 		while (pickup_1.sprite_index = global.parent_synergy2.base_item_sprite_1) 
 		or (pickup_1.sprite_index = global.parent_synergy2.base_item_sprite_2) {
 			instance_destroy(pickup_1);
@@ -142,6 +142,12 @@ if created_items = false {
 			pickup_2 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
 			instance_create_depth(x,y,depth,pickup_2,{create_coins: false});
 		}
+	}
+	if instance_exists(pickup_1) {
+		pickup_1.create_coins = false;
+	}
+	if instance_exists(pickup_2) {
+		pickup_2.create_coins = false;
 	}
 	
 	instance_destroy(pickup_1);
@@ -225,6 +231,7 @@ if created_items = false {
 				or (slot_items_array[i].sprite_index = global.parent_synergy2.base_item_sprite_2){
 					//destroy old item
 					slot_items_array[i].item_cost = 0;
+					slot_items_array[i].create_coins = false;
 					instance_destroy(slot_items_array[i]);
 				}
 				
