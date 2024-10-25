@@ -39,7 +39,9 @@ passives_array = [spr_buffitem_luck,spr_buffitem_aerialassassin,spr_buffitem_amm
 				spr_buffitem_righteousrevenge, spr_buffitem_robbery, spr_buffitem_bouncybullets,
 				spr_buffitem_sharptip,spr_buffitem_sharpshooter,spr_buffitem_steadyhands,
 				spr_buffitem_strongmuscles,spr_buffitem_supershield,spr_buffitem_tightspring,
-				spr_buffitem_triplethreat]
+				spr_buffitem_triplethreat,spr_buffitem_treasurehunter,spr_nothing,
+				spr_nothing,spr_nothing,spr_nothing,
+				spr_nothing,spr_nothing,spr_nothing]
 				
 actives_array = [spr_pickup_reload, spr_pickup_freeze, spr_pickup_airbag, 
 				spr_pickup_parachute, spr_pickup_chargejump, spr_pickup_groundpound, 
@@ -58,7 +60,8 @@ weapons_array = [spr_gun_default,spr_gun_paintball,spr_gun_shotgun,
 				spr_gun_water, spr_gun_machine, spr_gun_grenade,
 				spr_gun_starsucker, spr_gun_yoyo, spr_gun_bubble,
 				spr_gun_slime,spr_gun_sniper, spr_gun_plasma,
-				spr_gun_laser,spr_gun_missile];
+				spr_gun_laser,spr_gun_missile,spr_nothing,
+				spr_nothing,spr_nothing,spr_nothing,];
 				
 current_array = passives_array;
 

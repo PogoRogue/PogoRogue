@@ -18,7 +18,8 @@ function scr_All_Weapons_Array(){
 							obj_item_weapon_water, obj_item_weapon_machine, obj_item_weapon_grenade,
 							obj_item_weapon_starsucker, obj_item_weapon_yoyo, obj_item_weapon_bubble,
 							obj_item_weapon_slime, obj_item_weapon_sniper, obj_item_weapon_plasma,
-							obj_item_weapon_laser, obj_item_weapon_missile];
+							obj_item_weapon_laser, obj_item_weapon_missile,obj_item_weapon_default,
+							obj_item_weapon_default,obj_item_weapon_default,obj_item_weapon_default];
 	
 	if global.phase <= 1 and room != room_items {
 		global.all_weapons = [obj_item_weapon_paintball,obj_item_weapon_shotgun,

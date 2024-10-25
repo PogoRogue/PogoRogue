@@ -156,7 +156,7 @@ function scr_Get_Rand_Buff_Object()
 						obj_item_buff_righteousrevenge, obj_item_buff_robbery, obj_item_buff_rubberbullets,
 						obj_item_buff_sharptip,obj_item_buff_sharpshooter,obj_item_buff_steadyhands,
 						obj_item_buff_strongmuscles,obj_item_buff_supershield,obj_item_buff_tightspring,
-						obj_item_buff_triplethreat];
+						obj_item_buff_triplethreat,obj_item_buff_treasurehunter];
 	random_buff_drop = list_of_possible_buffs[irandom_range(0,array_length(list_of_possible_buffs)-1)];
 	return random_buff_drop;
 	random_set_seed(global.seed);

@@ -18,6 +18,8 @@ if object_get_name(object_index) = "obj_chest" { //dont move special chests
 
 global.chest_number += 1;
 
+destroy_chance = 85 - global.treasure_hunter_num;
+
 if room != room_tutorial {
 if (destroy <= destroy_chance and object_get_name(object_index) = "obj_chest") { 
 	instance_destroy();

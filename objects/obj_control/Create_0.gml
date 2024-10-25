@@ -115,6 +115,8 @@ global.paparazzi = false;
 global.bar_time_added = 1;
 global.bartime = 25;
 global.strong_muscles = false;
+global.treasure_hunter_num = 0;
+
 global.synergy_frame = 0;
 
 //items unlockable in the shop

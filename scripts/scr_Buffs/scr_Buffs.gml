@@ -297,4 +297,10 @@ function scr_Buffs(){
 			obj_player.puncher_gun.ammo[bullet_index].spd += 6;
 		}
 	}
+	
+	buff_treasurehunter = function(){
+		global.treasure_hunter_num = 7;
+	}
+	
+
 }

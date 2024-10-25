@@ -17,7 +17,7 @@ var item_selected = ((select_y-1)*select_x_max)+select_x;
 //grid
 for(xx = 0; xx < select_x_max; xx++) {
 	for(yy = 0; yy < select_y_max; yy++) {
-		draw_sprite(select_sprite,(select_x-1 = xx and select_y-1 = yy),center_x-((x_gap*select_x_max-x_gap)/2)+xx*x_gap,128+yy*y_gap+1-(24*(select = 1))-(16*(select = 2)));
+		draw_sprite(select_sprite,(select_x-1 = xx and select_y-1 = yy),center_x-((x_gap*select_x_max-x_gap)/2)+xx*x_gap,128+yy*y_gap+1-(24*(select = 1))-(16*(select = 2))-(8*(select = 3)));
 	}
 }
 
@@ -33,7 +33,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 	
 //item sprites
-for (i = 0; i < 40; i++) {
+for (i = 0; i < 48; i++) {
 	var xx = (center_x - ((x_gap*select_x_max-x_gap)/2)) + (i % select_x_max) * x_gap;
 	var yy = 156 + floor(i / select_x_max) * y_gap - (24*(select = 1));
 	//PASSIVES
@@ -41,10 +41,10 @@ for (i = 0; i < 40; i++) {
 		if global.passive_unlocked_array[i] = true {
 			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27);
 		}
-		draw_sprite(passives_array[i],(sprite_get_number(passives_array[i])-1)*(global.passive_unlocked_array[i] = false) /*+ (global.passive_unlocked_array[i] = true)*/,xx,yy-27);
+		draw_sprite(passives_array[i],(sprite_get_number(passives_array[i])-1)*(global.passive_unlocked_array[i] = false) /*+ (global.passive_unlocked_array[i] = true)*/,xx,yy-27-2);
 
 		if (i < array_length(global.all_buffs) and global.passive_unlocked_array[i]= true) {
-			scr_Draw_Text_Outlined(xx,yy-49,scr_Linebreak(all_buff_names[i],12,99),c_white);
+			scr_Draw_Text_Outlined(xx,yy-47,scr_Linebreak(all_buff_names[i],12,99),c_white);
 		}
 	}
 	
@@ -67,11 +67,11 @@ for (i = 0; i < 40; i++) {
 	//WEAPONS
 	if select = 3 and i < array_length(weapons_array) {
 		if global.weapon_unlocked_array[i] = true {
-			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27);
+			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27-8);
 		}
-		draw_sprite(weapons_array[i],(sprite_get_number(weapons_array[i])-1)*(global.weapon_unlocked_array[i] = false) /*+ (global.weapon_unlocked_array[i] = true)*/,xx,yy-27);
+		draw_sprite(weapons_array[i],(sprite_get_number(weapons_array[i])-1)*(global.weapon_unlocked_array[i] = false) /*+ (global.weapon_unlocked_array[i] = true)*/,xx,yy-27-8);
 	
-		if (i < 20 and global.weapon_unlocked_array[i]= true) {
+		if (i < 24 and global.weapon_unlocked_array[i]= true) {
 			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_weapons[i]._name,12,99),c_white);
 		}
 	}
@@ -97,7 +97,13 @@ for (i = 0; i < array_length(global.all_buffs); i++) {
 			}else {
 				var xx = room_width - 74;
 			}
-			scr_Draw_Passive_Description(xx,yy,all_buff_sprites[i],all_buff_sprites_index[i],all_buff_names[i],all_buff_descriptions[i],all_buff_stats[i],global.passive_unlocked_array[i],all_buff_costs[i]);
+			
+			if select_y > 5 {
+				var y_offset = -y_gap * (select_y-5);
+			}else {
+				var y_offset = 0;
+			}
+			scr_Draw_Passive_Description(xx,yy+y_offset,all_buff_sprites[i],all_buff_sprites_index[i],all_buff_names[i],all_buff_descriptions[i],all_buff_stats[i],global.passive_unlocked_array[i],all_buff_costs[i]);
 		}
 	}
 }
@@ -125,7 +131,7 @@ for (i = 0; i < 30; i++) {
 	}
 }
 
-for (i = 0; i < 20; i++) {
+for (i = 0; i < 24; i++) {
 	var xx = (center_x - ((x_gap*select_x_max-x_gap)/2)) + (i % select_x_max) * x_gap;
 	var yy = 226 + floor(i / select_x_max) * y_gap;
 	if (select = 3) {
@@ -137,7 +143,7 @@ for (i = 0; i < 20; i++) {
 			}
 			
 			if select_y > 2 {
-				var y_offset = -y_gap * (select_y-2);
+				var y_offset = -y_gap * (select_y-2) + 32;
 			}else {
 				var y_offset = 0;
 			}
@@ -152,8 +158,10 @@ draw_set_font(fnt_combo2);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 if select = 1 {
-	var y_text_offset = 39;
+	var y_text_offset = 22; //39
+}else if select = 2 {
+	var y_text_offset = 46;
 }else {
-	var y_text_offset = 31;
+	var y_text_offset = 70;
 }
 scr_Draw_Text_Outlined(room_width/2,416-y_text_offset,string(total_items_unlocked) + "/" + string(array_length(global.all_buffs) + array_length(global.all_weapons_list) + array_length(global.all_pickups_list)) + " Items Found",make_color_rgb(237,225,158));
