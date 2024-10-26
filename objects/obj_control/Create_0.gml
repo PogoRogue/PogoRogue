@@ -116,7 +116,12 @@ global.bar_time_added = 1;
 global.bartime = 25;
 global.strong_muscles = false;
 global.treasure_hunter_num = 0;
-
+global.energydrink = false;
+global.capitalist = false;
+global.capitalist_damage = 0;
+global.cactusmode = false;
+global.cactusmode_on = false;
+	
 global.synergy_frame = 0;
 
 //items unlockable in the shop

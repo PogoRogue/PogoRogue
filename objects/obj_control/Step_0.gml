@@ -265,3 +265,9 @@ if global.spins_used >= 10 {
 		}
 	}
 }
+
+if global.capitalist = true and global.num_of_coins > 200 {
+	global.capitalist_damage = 1 + ((global.num_of_coins-200)/200);
+}else {
+	global.capitalist_damage = 1;
+}

@@ -39,8 +39,8 @@ passives_array = [spr_buffitem_luck,spr_buffitem_aerialassassin,spr_buffitem_amm
 				spr_buffitem_righteousrevenge, spr_buffitem_robbery, spr_buffitem_bouncybullets,
 				spr_buffitem_sharptip,spr_buffitem_sharpshooter,spr_buffitem_steadyhands,
 				spr_buffitem_strongmuscles,spr_buffitem_supershield,spr_buffitem_tightspring,
-				spr_buffitem_triplethreat,spr_buffitem_treasurehunter,spr_nothing,
-				spr_nothing,spr_nothing,spr_nothing,
+				spr_buffitem_triplethreat,spr_buffitem_treasurehunter,spr_buffitem_energydrink,
+				spr_buffitem_capitalist,spr_buffitem_cactus,spr_nothing,
 				spr_nothing,spr_nothing,spr_nothing]
 				
 actives_array = [spr_pickup_reload, spr_pickup_freeze, spr_pickup_airbag, 

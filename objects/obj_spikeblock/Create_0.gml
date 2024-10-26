@@ -12,6 +12,7 @@ init_waiting_time = waiting_time;
 meeting_with_player = false;
 on_screen = false;
 arrow_index = 0;
+prev_mask_index = mask_index;
 
 image_speed = 0;
 image_index = 0;

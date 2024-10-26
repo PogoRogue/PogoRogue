@@ -26,3 +26,12 @@ if armor_buff = 5 and (hp/8) = 10 {
 		}
 	}
 }
+
+//cactus mode 
+if global.cactusmode = true {	
+	if (hp/8) + armor_buff + energy_buff <= 3 {
+		global.cactusmode_on = true;	
+	}else {
+		global.cactusmode_on = false;
+	}
+}

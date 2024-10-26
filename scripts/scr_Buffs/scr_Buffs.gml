@@ -298,9 +298,19 @@ function scr_Buffs(){
 		}
 	}
 	
-	buff_treasurehunter = function(){
+	buff_treasurehunter = function() {
 		global.treasure_hunter_num = 7;
 	}
 	
-
+	buff_energydrink = function() {
+		global.energydrink = true;
+	}
+	
+	buff_capitalist = function() {
+		global.capitalist = true;
+	}
+	
+	buff_cactusmode = function() {
+		global.cactusmode = true;
+	}
 }
