@@ -121,6 +121,8 @@ global.capitalist = false;
 global.capitalist_damage = 0;
 global.cactusmode = false;
 global.cactusmode_on = false;
+global.mirrormode = false;
+global.mirrormode_on = false;
 	
 global.synergy_frame = 0;
 

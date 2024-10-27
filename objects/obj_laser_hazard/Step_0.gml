@@ -3,7 +3,11 @@ if scr_Animation_Complete() and sprite_index = spr_laser_middle_animation and im
 	//image_index = sprite_get_number(sprite_index)-1;
 	alarm[0] = 15;
 	sprite_index = spr_laser;
-	damage = 8;
+	if global.mirrormode_on = true  {
+		damage = 0;
+	} else if global.mirrormode_on = false {
+		damage = 8;
+	}
 }
 
 if floor(image_index) <= 1 and sprite_index = spr_laser_middle_animation and image_speed = -1 {

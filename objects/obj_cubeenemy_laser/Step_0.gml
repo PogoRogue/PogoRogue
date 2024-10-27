@@ -13,3 +13,9 @@ if place_meeting(x,y,obj_ground) and !place_meeting(x,y,obj_ground_oneway) {
 }else {
 	depth = -20;	
 }
+
+if global.mirrormode_on = true  {
+	damage = 0;
+} else if global.mirrormode_on = false {
+	damage = 8;
+}

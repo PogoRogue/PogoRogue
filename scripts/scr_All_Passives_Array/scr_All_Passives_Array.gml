@@ -30,6 +30,6 @@ function scr_All_Passives_Array(){
 						obj_item_buff_sharptip,obj_item_buff_sharpshooter,obj_item_buff_steadyhands,
 						obj_item_buff_strongmuscles,obj_item_buff_supershield,obj_item_buff_tightspring,
 						obj_item_buff_triplethreat,obj_item_buff_treasurehunter,obj_item_buff_energydrink,
-						obj_item_buff_capitalist,obj_item_buff_cactusmode,obj_item_buff_luck,
+						obj_item_buff_capitalist,obj_item_buff_cactusmode,obj_item_buff_mirrormode,
 						obj_item_buff_luck,obj_item_buff_luck,obj_item_buff_luck];
 }

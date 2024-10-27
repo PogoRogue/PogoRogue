@@ -313,4 +313,8 @@ function scr_Buffs(){
 	buff_cactusmode = function() {
 		global.cactusmode = true;
 	}
+	
+	buff_mirrormode = function() {
+		global.mirrormode = true;
+	}
 }

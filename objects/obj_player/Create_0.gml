@@ -1730,7 +1730,7 @@ all_buffs_array = [buff_luck,buff_aerialassassin,buff_max_ammo,
 					buff_sharptip,buff_sharpshooter,buff_steadyhands,
 					buff_strongmuscles,buff_supershield,buff_tightspring,
 					buff_triplethreat,buff_treasurehunter,buff_energydrink,
-					buff_capitalist,buff_cactusmode];
+					buff_capitalist,buff_cactusmode,buff_mirrormode];
 
 //create text in proc gen rooms
 if room = room_proc_gen_test || room = room_sprite_level_test {

@@ -35,3 +35,11 @@ if global.cactusmode = true {
 		global.cactusmode_on = false;
 	}
 }
+
+if global.mirrormode = true {	
+	if (hp/8) + armor_buff + energy_buff <= 3 {
+		global.mirrormode_on = true;	
+	}else {
+		global.mirrormode_on = false;
+	}
+}
