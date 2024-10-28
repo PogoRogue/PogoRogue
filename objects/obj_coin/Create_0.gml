@@ -3,7 +3,12 @@
 //randomize();
 start_spd = 0; //starting speed
 spd = start_spd;
-max_spd = random_range(5,7); //max speed
+max_spd = random_range(6,8); //max speed
+
+if global.flaming_coins = true {
+	max_spd = random_range(4,5);
+	sprite_index = spr_coin_flaming;
+}
 follow_object = noone; //obj_player;
 follow_object2 = noone; //obj_player_mask;
 

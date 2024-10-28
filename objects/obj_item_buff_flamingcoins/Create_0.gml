@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_flamingcoins;
 item_name = "Flaming Coins";
-item_tagline = "Coins damage enemies on contact.";
+item_tagline = "Coins travel slower and damage enemies on contact.";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 20;

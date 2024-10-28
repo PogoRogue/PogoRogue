@@ -25,6 +25,10 @@ if sprite_index = spr_heart_energy_animation {
 		}
 	}
 	
+	if room = room_shop {
+		image_speed = 0;	
+	}
+	
 	if scr_Animation_Complete() {
 		instance_destroy();
 		instance_create_depth(x,y,depth,obj_heart_energy_lost);

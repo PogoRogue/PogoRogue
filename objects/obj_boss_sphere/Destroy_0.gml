@@ -57,3 +57,9 @@ if global.phase = 1 {
 	global.area_2_reached += 1
 	scr_Save_Real("area_2_reached",global.area_2_reached); 
 }
+
+if global.steam_api = true {
+	if !steam_get_achievement("ACHIEVEMENT_CONSTRUCTUS") {
+		steam_set_achievement("ACHIEVEMENT_CONSTRUCTUS");
+	}
+}	

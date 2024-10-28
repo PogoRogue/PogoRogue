@@ -22,3 +22,9 @@ if (room == room_boss_2) {
 instance_create_layer(x, y, "enemies", obj_explosion);
 
 audio_group_set_gain(audiogroup_music, 0, 1000);
+
+if global.steam_api = true {
+	if !steam_get_achievement("ACHIEVEMENT_SLIMON") {
+		steam_set_achievement("ACHIEVEMENT_SLIMON");
+	}
+}	

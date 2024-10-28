@@ -2,6 +2,11 @@
 cam = view_camera[0];
 view_w_half = camera_get_view_width(cam) * 0.5;
 view_h_half = camera_get_view_height(cam) * 0.5;
+if global.use_keyboard = true {
+	key_lock_camera = keyboard_check(ord("Z"));
+}else {
+	key_lock_camera = gamepad_button_check(0,gp_face3);
+}
 
 if room = room_menu {
 	follow = noone;
@@ -139,8 +144,9 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 	
 	//center in room (unless proc gen level)
 		
-	if obj_player.state != obj_player.state_portal and obj_player.state != obj_player.state_shop_portal
-	or room = room_shop or room = room_boss_1 or room = room_boss_2 or room = room_proc_gen_test {
+	if (obj_player.state != obj_player.state_portal and obj_player.state != obj_player.state_shop_portal
+	or room = room_shop or room = room_boss_1 or room = room_boss_2 or room = room_proc_gen_test)
+	and !(room = room_tutorial and key_lock_camera) {
 		if x_clamp {
 		var xTo2 = clamp(xTo,x_min,x_max);
 			x += (xTo2 - x) / readjust_speed;
