@@ -197,6 +197,49 @@ if weapons_unlocked = array_length(global.weapon_unlocked_array) {
 	}
 }
 
+//active
+var actives_unlocked = 0;
+
+for(i = 0; i < array_length(global.active_unlocked_array); i++) { //weapons
+	if global.active_unlocked_array[i] = true {
+		actives_unlocked++;
+	}
+}
+
+if actives_unlocked = array_length(global.active_unlocked_array) {
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_ACTIVE") {
+			steam_set_achievement("ACHIEVEMENT_ACTIVE");
+		}
+	}
+}
+
+//passive
+var passives_unlocked = 0;
+
+for(i = 0; i < array_length(global.passive_unlocked_array); i++) { //weapons
+	if global.passive_unlocked_array[i] = true {
+		passives_unlocked++;
+	}
+}
+
+if passives_unlocked = array_length(global.passive_unlocked_array) {
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_PASSIVE") {
+			steam_set_achievement("ACHIEVEMENT_PASSIVE");
+		}
+	}
+}
+
+//item expert
+if weapons_unlocked + actives_unlocked + passives_unlocked >= array_length(global.active_unlocked_array) + array_length(global.weapon_unlocked_array)+ array_length(global.passive_unlocked_array){
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_ITEMEXPERT") {
+			steam_set_achievement("ACHIEVEMENT_ITEMEXPERT");
+		}
+	}
+}
+
 //free at last
 var num_of_skins = 0;
 for (i = 0; i < array_length(global.skins_unlocked_array); i++) {
