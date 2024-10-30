@@ -16,7 +16,11 @@ if (colliding) {
 		temp_x_offset = 23;
 	}
 	
-	var xx = x + 48;
+	if !scr_In_Array(global.boss_rooms, room) {
+		var xx = x + 48;
+	}else {
+		var xx = x;
+	}
 	var yy = bbox_top+28;
 	var button_num = 6;
 	var text = "Proceed";

@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"buttons",
-    "path":"folders/Sprites/Enemy/Boss Sequence/buttons.yy",
+    "name":"Boss Mole",
+    "path":"folders/Sprites/Enemy/Boss Mole.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

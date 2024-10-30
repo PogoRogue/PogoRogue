@@ -1346,7 +1346,11 @@ state_portal = function() {
 			portal_angle_speed += 0.5;
 		}
 			
-		move_towards_point(portal_object.x+48,portal_object.y+52,portal_speed);
+		if !scr_In_Array(global.boss_rooms, room) {
+			move_towards_point(portal_object.x+48,portal_object.y+52,portal_speed);
+		}else {
+			move_towards_point(portal_object.x,portal_object.y,portal_speed);
+		}
 		
 		if portal_speed < 8 {
 			portal_speed += 0.1;
@@ -1439,8 +1443,12 @@ state_shop_portal = function() {
 		if portal_angle_speed < 10 {
 			portal_angle_speed += 0.5;
 		}
-			
-		move_towards_point(portal_object.x,portal_object.y-60,portal_speed);
+		
+		if !scr_In_Array(global.boss_rooms, room) {
+			move_towards_point(portal_object.x,portal_object.y-60,portal_speed);
+		}else {
+			move_towards_point(portal_object.x,portal_object.y,portal_speed);
+		}
 		
 		if portal_speed < 8 {
 			portal_speed += 0.1;
