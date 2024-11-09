@@ -16,3 +16,15 @@ if !instance_exists(obj_boss_mole_parent) and mole_defeated = false {
 	
 	mole_defeated = true;
 }
+
+current_moles_left = instance_number(obj_boss_mole_parent);
+
+if current_moles_left = 0 {
+	//stop splits
+	with obj_runstats {
+		stop_time = true;
+	}	
+}
+
+
+show_debug_message(next_state_array);

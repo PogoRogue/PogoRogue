@@ -297,7 +297,7 @@ state_free = function() {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			state = state_immobile;
 			//room_persistent = true;
-			scr_Room_Transition(room_boss_1B); //room_proc_gen_test
+			scr_Room_Transition(room_boss_2B); //room_proc_gen_test
 			global.total_runs += 1;
 			scr_Save_Real("total_runs",global.total_runs);
 			global.show_tips_screen = true;
@@ -483,6 +483,9 @@ state_groundpound = function() {
 		can_rotate = true; //allow rotation again
 		vsp_basicjump = -9;
 		stomp_damage = 40;
+		if room = room_boss_1B {
+			stomp_damage = 20;
+		}
 		//switch states
 		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
@@ -569,6 +572,10 @@ state_megabounce = function() {
 		vspeed = slam_speed;
 		vsp_basicjump = -9;
 		stomp_damage = 40;
+		if room = room_boss_1B {
+			stomp_damage = 20;
+		}
+		
 		//switch states
 		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
 			if place_meeting(x,y+vspeed,obj_enemy_parent) {
@@ -1392,7 +1399,7 @@ state_portal = function() {
 				room_persistent = false;
 				switch (global.phase) {
 					case 1:
-						scr_Room_Transition(room_boss_1);
+						scr_Room_Transition(global.boss_1_room);
 						break;
 					case 2:
 						scr_Room_Transition(room_boss_2);

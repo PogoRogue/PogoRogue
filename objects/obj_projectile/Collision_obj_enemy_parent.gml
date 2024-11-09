@@ -119,11 +119,40 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 		}
 	}
 	
+	if object_get_name(other.object_index) = "obj_boss_basketball" {
+		with other {
+			var proj_obj = other;
+			if !scr_In_Array(projectile_array,proj_obj) {
+				scr_Screen_Shake(3,3,false);
+				//audio_play_sound(snd_volleyball,0,false);
+				scale = 1.25;
+				speed = 8;
+				direction = point_direction(proj_obj.x,proj_obj.y,x,y);
+				var prev_spd = speed;
+				var prev_dir = direction;
+				speed = prev_spd;
+				direction = prev_dir;
+				hspeed += proj_obj.hspeed/3;
+				hspeed += proj_obj.hspd/3;
+				vspeed += proj_obj.vspeed/3;
+				vspeed += proj_obj.vspd/3;
+				array_resize(projectile_array,array_length(projectile_array)+1)
+				projectile_array[array_length(projectile_array)-1] = proj_obj;
+
+				if !audio_is_playing(snd_volleyball_hit) {
+					audio_play_sound(snd_volleyball_hit,0,false);
+				}
+				free = false;
+			}
+		}
+	}
+	
 	if (destroy_on_impact) or (gun_name = "Missile Launcher") or (gun_name = "Bullet Blast") or (gun_name = "Javelins") {
 		alarm[0] = 1;
 		//instance_destroy();
 	}
 
 	colliding_with_enemy = true;
+	
 }
 }

@@ -14,11 +14,19 @@ global.player_spawn_y = 0;
 global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
 
+global.boss_rooms = [room_boss_1,room_boss_2,room_boss_3,room_boss_1B,room_boss_2B];
+global.first_boss_rooms = [room_boss_1,room_boss_1B];
+global.second_boss_rooms = [room_boss_2,room_boss_2B];
+
+random_set_seed(global.seed);
+global.boss_1_room = choose(room_boss_1,room_boss_1B);
+global.boss_2_room = choose(room_boss_2,room_boss_2B);
+
 if room = room_starting_area {
 	global.num_of_coins = 0;
 }else if room = room_test {
 	global.num_of_coins = 200;
-}else if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+}else if !scr_In_Array(global.boss_rooms,room) {
 	global.num_of_coins = 0;
 }
 
@@ -168,7 +176,7 @@ global.fairy_amount = 0
 global.mole_number = 0;
 
 if room != room_proc_gen_test and room != room_shop
-and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+and !scr_In_Array(global.boss_rooms,room) {
 	//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######
 	randomize();
 	global.seed = random_get_seed();
@@ -203,4 +211,4 @@ global.pogosmith_used = 0;
 
 alarm[3] = 1;
 
-global.boss_rooms = [room_boss_1,room_boss_2,room_boss_3,room_boss_1B,room_boss_2B];
+global.tennis_balls_left = 8;

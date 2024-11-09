@@ -2,7 +2,7 @@ restart_button = 0;//keyboard_check_pressed(ord("R")); //press R key to restart 
 screenshake_button = 0;//keyboard_check_pressed(vk_backspace); //press escape key to restart room (temporary)
 mute_button = 0;//keyboard_check_pressed(ord("M")); //press M to mute audio (temporary)
 itemmenu_button = global.key_item_menu; 
-skiplevel_button = 0;//keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
+skiplevel_button = keyboard_check_pressed(vk_f1); // skip room shortcut (temporary)
 disable_ui_button = 0;//keyboard_check_pressed(vk_f3);
 
 if (restart_button) {
@@ -69,7 +69,7 @@ if (skiplevel_button) {
 		room_persistent = false;
 		switch (global.phase) {
 			case 1:
-				scr_Room_Transition(room_boss_1);
+				scr_Room_Transition(global.boss_1_room);
 				break;
 			case 2:
 				scr_Room_Transition(room_boss_2);
@@ -78,7 +78,7 @@ if (skiplevel_button) {
 				scr_Room_Transition(room_boss_3);
 				break;
 		}	
-	}else if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
+	}else if scr_In_Array(global.boss_rooms,room) {
 		room_persistent = false;
 		if room = room_boss_1 {
 			global.phase = 2;

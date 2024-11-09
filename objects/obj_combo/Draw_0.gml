@@ -14,7 +14,7 @@ if low_combo_meter = true {
 
 if global.combo > 0 {
 	with obj_player {
-		if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+		if !scr_In_Array(global.boss_rooms,room) {
 			var distance = 48;
 			distance += obj_player.combo_offset;
 			

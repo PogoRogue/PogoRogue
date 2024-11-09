@@ -2,6 +2,12 @@ if room = room_shop {
 	created_in_room = true;	
 }
 
+if room = room_boss_1B and created_in_room = true {
+	mask_index = spr_nothing;	
+}else if room = room_shop and mask_index = spr_nothing and created_in_room = true {
+	mask_index = sprite_index;	
+}
+
 if (follow_player = true and obj_player.state != obj_player.state_blink and obj_player.state != obj_player.state_strike) {
 	move_towards_point(obj_player.x,obj_player.y,speed);
 	speed = lerp(speed,8,0.05);	

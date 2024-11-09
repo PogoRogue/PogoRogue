@@ -1,14 +1,14 @@
 /// @description shoot enemy
 
 if image_index = 6 and fade_out = false {
-	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+	if !scr_In_Array(global.boss_rooms,room) {
 		with enemy_to_target {
 			hp = 0;
 			with obj_player {
 				scr_Reload_On_Kill();	
 			}
 		}
-	}else if room = room_boss_1 or room = room_boss_2  or room = room_boss_3 {
+	}else if scr_In_Array(global.boss_rooms,room) {
 		with enemy_to_target {
 			if object_get_name(object_index) = "obj_boss_sequence_body" or object_get_name(object_index) = "obj_boss_sphere" 
 			or object_get_name(object_index) = "obj_boss_marionette" {
@@ -47,7 +47,7 @@ if image_index = 6 and fade_out = false {
 }
 
 if instance_exists(enemy_to_target) and fade_out = false {
-	if speed_up < 12 {
+	if speed_up < 16 {
 		speed_up += 1;	
 	}
 	if point_distance(x,y,enemy_to_target.center_x_sprite,enemy_to_target.center_y_sprite) <= 100 {

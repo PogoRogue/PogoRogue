@@ -1,0 +1,29 @@
+/// @description Instantiate variables
+
+sprite_index = spr_nothing;
+mask_index = spr_nothing;
+
+draw_cutin = false;
+triggered = false;
+player_freed = false;
+
+screen_width = 768;
+screen_height = 432;
+
+lerp_destination = 0.0;
+
+alpha = 0;
+alpha_lerp_speed = 0.01;
+
+backdrop_scale = 0.0;
+backdrop_lerp_speed = 0.05;
+
+text_scale = 0.0;
+text_lerp_speed = 0.02;
+
+free = false;
+
+alarm[2] = 100;
+
+alarm[3] = 120;
+//instance_create_layer(512+32, 272+128, "enemies", obj_boss_sphere);

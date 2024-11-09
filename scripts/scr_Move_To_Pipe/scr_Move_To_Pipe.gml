@@ -5,6 +5,7 @@ function scr_Move_To_Pipe(mole_to_move,pipe_num) {
 		if pipe_number = pipe_num {
 			mole_to_move.x = x;
 			mole_to_move.y = y;
+			mole_to_move.current_pipe = pipe_number;
 			switch (pipe_number) {
 				case 1: mole_to_move.poke_direction = "up"; break;
 				case 2: mole_to_move.poke_direction = "up"; break;

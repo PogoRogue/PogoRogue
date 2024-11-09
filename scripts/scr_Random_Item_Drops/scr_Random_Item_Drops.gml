@@ -13,7 +13,7 @@ function scr_Random_Item_Drops(){
 	pickup_drop = irandom_range(1,100);
 	
 	//heart
-	if (heart_drop <= heart_chance) and room != room_boss_1 and room != room_boss_2 and room != room_boss_3  {
+	if (heart_drop <= heart_chance) and !scr_In_Array(global.boss_rooms,room)  {
 		random_set_seed(global.seed + global.enemy_number + global.fairy_amount);
 		var heart_type = choose(obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_max_hp);
 				
@@ -129,7 +129,7 @@ function Create_Item_Drops(object_array)
 		
 		var inst = instance_create_depth(object_x, object_y, object_depth, object_to_create);
 		
-		if (room != room_boss_1 and room != room_boss_2 and room != room_boss_3) or inst.slot_machine = true
+		if (!scr_In_Array(global.boss_rooms,room)) or inst.slot_machine = true
 		{
 			with (inst)
 			{
@@ -184,9 +184,9 @@ function scr_Get_Rand_Weapon_Object()
 							obj_item_weapon_slime, obj_item_weapon_sniper, obj_item_weapon_plasma,
 							obj_item_weapon_laser, obj_item_weapon_missile];
 	
-	if global.phase <= 1 and room != room_boss_3 or room = room_boss_1 {
+	if global.phase <= 1 and room != room_boss_3 or scr_In_Array(global.first_boss_rooms,room) {
 		random_weapon_drop = list_of_possible_weapons[irandom_range(0,7)];
-	}else if global.phase = 2 and room != room_boss_3  or room = room_boss_2 {
+	}else if global.phase = 2 and room != room_boss_3  or scr_In_Array(global.second_boss_rooms,room) {
 		random_weapon_drop = list_of_possible_weapons[irandom_range(4,11)];
 	}else if global.phase = 3 or room = room_boss_3 {
 		random_weapon_drop = list_of_possible_weapons[irandom_range(8,array_length(list_of_possible_weapons)-1)];
@@ -214,9 +214,9 @@ function scr_Get_Rand_Pickup_Object()
 					obj_item_pickup_synergy_tacticalstrike, obj_item_pickup_synergy_blizzard, obj_item_pickup_synergy_pogomode];
 	
 	
-	if global.phase <= 1 and room != room_boss_3 or room = room_boss_1 {
+	if global.phase <= 1 and room != room_boss_3 or scr_In_Array(global.first_boss_rooms,room) {
 		random_pickup_drop = list_of_possible_pickups[irandom_range(0,11)];
-	}else if global.phase = 2 and room != room_boss_3  or room = room_boss_2 {
+	}else if global.phase = 2 and room != room_boss_3  or scr_In_Array(global.second_boss_rooms,room) {
 		random_pickup_drop = list_of_possible_pickups[irandom_range(8,15)];
 	}else if global.phase = 3 or room = room_boss_3 {
 		random_pickup_drop = list_of_possible_pickups[irandom_range(12,19)];

@@ -10,7 +10,7 @@ if room != room_shop {
 	}
 }
 
-if (room = room_boss_1 or room = room_boss_2 or room = room_boss_3) and slot_machine = false {
+if (scr_In_Array(global.boss_rooms,room)) and slot_machine = false {
 	//instance_destroy();
 	follow_player = false;
 }

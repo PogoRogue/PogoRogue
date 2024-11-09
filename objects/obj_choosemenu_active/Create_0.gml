@@ -1,5 +1,7 @@
 if global.phase > 1 {
-	instance_destroy();	
+	if room != room_boss_2B {
+		instance_destroy();	
+	}
 }
 
 depth -= 1000;

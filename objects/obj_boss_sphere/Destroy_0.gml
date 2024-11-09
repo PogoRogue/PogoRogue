@@ -57,3 +57,8 @@ if global.phase = 1 {
 	global.area_2_reached += 1
 	scr_Save_Real("area_2_reached",global.area_2_reached); 
 }
+
+//stop splits
+with obj_runstats {
+	stop_time = true;
+}

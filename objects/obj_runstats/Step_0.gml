@@ -2,7 +2,20 @@
 if instance_exists(obj_player) {
 	with obj_pause {
 		if pause = false and obj_player.dead = false and room != room_shop and !instance_exists(obj_deathscreen) and other.stop_time = false and obj_player.state != obj_player.state_shop_portal {
-			global.current_time_elapsed += 1;
+			if !scr_In_Array(global.boss_rooms,room) {
+				global.current_time_elapsed += 1;
+			}else if room = room_boss_1 and global.phase = 1 {
+				global.current_time_elapsed += 1;
+			}else if room = room_boss_1B and global.phase = 1 {
+				global.current_time_elapsed += 1;
+			}else if room = room_boss_2 and global.phase = 2 {
+				global.current_time_elapsed += 1;
+			}else if room = room_boss_2B and global.phase = 2 {
+				global.current_time_elapsed += 1;
+			}else if room = room_boss_3 {
+				global.current_time_elapsed += 1;
+			}
+			
 			if room = room_proc_gen_test {
 				if global.phase = 1 {
 					global.current_time_elapsed_area1 += 1;
@@ -11,10 +24,14 @@ if instance_exists(obj_player) {
 				}else if global.phase = 3 {
 					global.current_time_elapsed_area3 += 1;
 				}
-			}else if room = room_boss_1 {
+			}else if room = room_boss_1 and global.phase = 1 {
 				global.current_time_elapsed_boss1 += 1;
-			}else if room = room_boss_2 {
+			}else if room = room_boss_1B and global.phase = 1 {
+				global.current_time_elapsed_boss2 += 1;
+			}else if room = room_boss_2 and global.phase = 2 {
 				global.current_time_elapsed_boss3 += 1;
+			}else if room = room_boss_2B and global.phase = 2 {
+				global.current_time_elapsed_boss4 += 1;
 			}else if room = room_boss_3 {
 				global.current_time_elapsed_boss5 += 1;
 			}
@@ -107,26 +124,28 @@ if stop_time = true and time_stopped = false {
 		instance_create_depth(x,y,depth,obj_newbest_split)
 	}else if (global.current_time_elapsed_boss1 < global.fastest_time_boss1
 	or global.fastest_time_boss1 = 0) and global.current_time_elapsed_boss1 > 100 
-	and room = room_boss_1 { //boss 1
+	and room = room_boss_1 { //CONSTRUCTUS
 		global.fastest_time_boss1 = global.current_time_elapsed_boss1;
 		global.new_best_split = global.current_time_elapsed_boss1;
 		scr_Save_Real("fastest_time_boss1",global.fastest_time_boss1);
 		instance_create_depth(x,y,depth,obj_newbest_split)
 	}else if (global.current_time_elapsed_boss2 < global.fastest_time_boss2
-	or global.fastest_time_boss2 = 0) and global.current_time_elapsed_boss2 > 100 { //boss 2
+	or global.fastest_time_boss2 = 0) and global.current_time_elapsed_boss2 > 100 
+	and room = room_boss_1B { //MOLE
 		global.fastest_time_boss2 = global.current_time_elapsed_boss2;
 		global.new_best_split = global.current_time_elapsed_boss2;
 		scr_Save_Real("fastest_time_boss2",global.fastest_time_boss2);
 		instance_create_depth(x,y,depth,obj_newbest_split)
 	}else if (global.current_time_elapsed_boss3 < global.fastest_time_boss3
 	or global.fastest_time_boss3 = 0) and global.current_time_elapsed_boss3 > 100
-	and room = room_boss_2 { //boss 3
+	and room = room_boss_2 { //SLIMON
 		global.fastest_time_boss3 = global.current_time_elapsed_boss3;
 		global.new_best_split = global.current_time_elapsed_boss3;
 		scr_Save_Real("fastest_time_boss3",global.fastest_time_boss3);
 		instance_create_depth(x,y,depth,obj_newbest_split)
 	}else if (global.current_time_elapsed_boss4 < global.fastest_time_boss4
-	or global.fastest_time_boss4 = 0) and global.current_time_elapsed_boss4 > 100 { //boss 4
+	or global.fastest_time_boss4 = 0) and global.current_time_elapsed_boss4 > 100 
+	and room = room_boss_2B { //boss 4
 		global.fastest_time_boss4 = global.current_time_elapsed_boss4;
 		global.new_best_split = global.current_time_elapsed_boss4;
 		scr_Save_Real("fastest_time_boss4",global.fastest_time_boss4);

@@ -1,5 +1,26 @@
 // Inherit the parent event
 event_inherited();
+pipe1 = noone; pipe2 = noone; pipe3 = noone; pipe4 = noone; pipe5 = noone;
+pipe6 = noone; pipe7 = noone; pipe8 = noone; pipe9 = noone; pipe10 = noone;
+with obj_pipe {
+	switch (pipe_number) {
+		case 1: other.pipe1 = self; break;
+		case 2: other.pipe2 = self; break;
+		case 3: other.pipe3 = self; break;
+		case 4: other.pipe4 = self; break;
+		case 5: other.pipe5 = self; break;
+		case 6: other.pipe6 = self; break;
+		case 7: other.pipe7 = self; break;
+		case 8: other.pipe8 = self; break;
+		case 9: other.pipe9 = self; break;
+		case 10: other.pipe10 = self; break;
+	}
+}
+
+hspd = 0;
+vspd = 0;
+jump_spd = -9.5;
+
 red_frames = 0;
 
 drop_coins= false;
@@ -17,12 +38,33 @@ reached_end = false;
 pause_time = 60;
 pause_time_poke = 120;
 delay = 0;
+grav = 0.18;
+current_pipe = 0;
+can_fall = true;
+shoot_spd = 8;
+bounced_on = false;
+is_bomb = false;
+bullet_speed = 4;
+jump_shot = false;
 depth = 501;
 
 hp = 96;
 hp_max = hp;
 draw_hp = false;
-stomp_defense = 2;
+stomp_defense = 3;
+shoot_defense = 1.5;
+died = false;
+death_x = x;
+death_y = y;
+current_bomb_hp = hp;
+
+freeze = false;
+megabounce_freeze = false; //dont despawn right away if killed by megabounce
+freeze_x = x;
+freeze_y = y;
+freeze_frame = image_index;
+
+init_sprite = sprite_index;
 
 // Healthbar dimensions
 view_width = camera_get_view_width(view_camera[0]);
@@ -33,18 +75,27 @@ hp_percent = (hp / hp_max) * 100;
 state_waiting = function() {
 	if state_switched = true {
 		state_switched = false;
+		is_bomb = false;
+		image_alpha = 1;
 	}
 }
 
 state_poke = function() {
+	if megabounce_freeze = false {
+		freeze = false;
+	}
 	if state_switched = true {
 		state_switched = false;
 		dist_to_travel = dist_to_travel_poke;
 		reached_end = false;
 		pause_time = pause_time_poke;
+		
+		if bounced_on = true {
+			bounced_on = false;
+		}
 	}
 	
-	if delay <= 0 {
+	if delay <= 0 and megabounce_freeze = false {
 		if reached_end = false { // poking out
 			if dist_to_travel > 0 {
 				if poke_direction = "up" {
@@ -61,11 +112,69 @@ state_poke = function() {
 				dist_to_travel = 0;
 				if pause_time > 0 {
 					pause_time -= 1;
+				}else if poke_direction != "down" {
+					if is_bomb = false {
+						reached_end = true;
+					}else {
+						if floor(image_index) >= 9 {
+							reached_end = true;
+							image_alpha = 0;
+							//explosion code here
+							instance_create_depth(x,y,depth-1,obj_explosion);
+							if poke_direction = "up" {
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 30});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 60});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 90});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 120});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 150});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 180});
+							}else if poke_direction = "left" {
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 30});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 60});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 90});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 270});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 300});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 330});
+							}else if poke_direction = "right" {
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 90});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 120});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 150});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 180});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 210});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 240});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 270});
+							}
+						}
+					}
 				}else {
-					reached_end = true;
+					if is_bomb = false {
+						if can_fall = true {
+							state = state_fall;	
+							state_switched = true;
+						}else {
+							reached_end = true;
+						}
+					}else {
+						if floor(image_index) >= 9 {
+							reached_end = true;
+							image_alpha = 0;
+							//explosion code here
+							instance_create_depth(x,y,depth-1,obj_explosion);
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 180});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 210});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 240});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 270});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 300});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 330});
+						}
+					}
 				}
 			}
 		}else { //retreating back in
+			
 			if dist_to_travel < dist_to_travel_poke {
 				if poke_direction = "up" {
 					y += 2;
@@ -83,7 +192,7 @@ state_poke = function() {
 				state = state_waiting;
 			}
 		}
-	}else { //delay
+	}else if delay > 0 { //delay
 		delay -= 1;
 	}
 }
@@ -91,8 +200,32 @@ state_poke = function() {
 state_fall = function() {
 	if state_switched = true {
 		state_switched = false;
+		vspd = 0;
 		image_xscale = 1; image_yscale = -1; image_angle = 0;
 	}
+	
+	if place_meeting(x,y,pipe1) and y > pipe1.y
+	or place_meeting(x,y,pipe2) and y > pipe2.y
+	or place_meeting(x,y,pipe3) and y > pipe3.y {
+		state_switched = true;
+		state = state_waiting;
+	}else { //delay
+		delay -= 1;
+	}
+	
+	if (place_meeting(x,y,pipe1)
+	or place_meeting(x,y,pipe2)
+	or place_meeting(x,y,pipe3)) {
+		if vspd > 1 {
+			vspd -= 1;	
+		}else {
+			vspd = 1;
+		}
+	}else if freeze = false {
+		vspd += grav;
+	}
+		
+	y += vspd;
 	
 }
 
@@ -100,12 +233,129 @@ state_jump = function() {
 	if state_switched = true {
 		state_switched = false;
 		image_xscale = 1; image_yscale = -1; image_angle = 0;
+		vspd = jump_spd;
+		jump_shot = false;
+		if bounced_on = true {
+			state = state_waiting;
+			state_switched = true;
+			bounced_on = false;
+		}
+	}
+	
+	if delay <= 0 {
+		
+	
+		if (place_meeting(x,y,pipe1) and y > pipe1.y
+		or place_meeting(x,y,pipe2) and y > pipe2.y
+		or place_meeting(x,y,pipe3) and y > pipe3.y)
+		and vspd > 0 {
+			state_switched = true;
+			state = state_waiting;
+		}
+		
+		if (place_meeting(x,y,pipe1)
+		or place_meeting(x,y,pipe2)
+		or place_meeting(x,y,pipe3)) and vspd > 0 {
+			if vspd > 1 {
+				vspd -= 1;	
+			}else {
+				vspd = 1;
+			}
+		}else if freeze = false {
+			vspd += grav;
+		}
+		
+		if vspd >= 0 and jump_shot = false {
+			jump_shot = true;	
+			instance_create_depth(x,y-20,depth-1,obj_boss_mole_projectile,{speed: bullet_speed, 
+			direction: point_direction(x,y-20,obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90))});
+		}
+		
+		y += vspd;
+	}else { //delay
+		delay -= 1;
 	}
 }
 
 state_shoot = function() {
 	if state_switched = true {
 		state_switched = false;
+		shoot_spd = 8;
+		if bounced_on = true {
+			state = state_waiting;
+			state_switched = true;
+			bounced_on = false;
+		}
+	}
+	
+	if delay <= 0 {
+		if poke_direction = "up" {
+			if (place_meeting(x,y,pipe6) and y < pipe6.y
+			or place_meeting(x,y,pipe7) and y < pipe7.y
+			or place_meeting(x,y,pipe8) and y < pipe8.y) {
+				state_switched = true;
+				state = state_waiting;
+			}
+			
+			if (place_meeting(x,y,pipe6)
+			or place_meeting(x,y,pipe7)
+			or place_meeting(x,y,pipe8)) {
+				if shoot_spd > 1 {
+					shoot_spd -= 1;
+				}
+			}
+			
+			y -= shoot_spd;
+		}else if poke_direction = "down" {
+			if (place_meeting(x,y,pipe1) and y > pipe1.y
+			or place_meeting(x,y,pipe2) and y > pipe2.y
+			or place_meeting(x,y,pipe3) and y > pipe3.y) {
+				state_switched = true;
+				state = state_waiting;
+			}
+			
+			if (place_meeting(x,y,pipe1)
+			or place_meeting(x,y,pipe2) 
+			or place_meeting(x,y,pipe3)) {
+				if shoot_spd > 1 {
+					shoot_spd -= 1;
+				}
+			}
+			
+			y += shoot_spd;
+		}else if poke_direction = "left" {
+			if (x > pipe4.x
+			or  x > pipe5.x) {
+				state_switched = true;
+				state = state_waiting;
+			}
+			
+			if (place_meeting(x,y,pipe4)
+			or place_meeting(x,y,pipe5)) {
+				if shoot_spd > 1 {
+					shoot_spd -= 1;
+				}
+			}
+			
+			x += shoot_spd;
+		}else if poke_direction = "right" {
+			if x < pipe9.x
+			or x < pipe10.x {
+				state_switched = true;
+				state = state_waiting;
+			}
+			
+			if (place_meeting(x,y,pipe9)
+			or place_meeting(x,y,pipe10)) {
+				if shoot_spd > 1 {
+					shoot_spd -= 1;
+				}
+			}
+			
+			x -= shoot_spd;
+		}
+	}else { //delay
+		delay -= 1;
 	}
 }
 

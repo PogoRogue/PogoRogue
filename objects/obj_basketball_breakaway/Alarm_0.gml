@@ -1,0 +1,18 @@
+if sprite_index = spr_boss_basketball_left
+or sprite_index = spr_boss_soccerball_left {
+	direction = image_angle+180;
+	speed = random_range(1,3);
+}else if sprite_index = spr_boss_basketball_right 
+or sprite_index = spr_boss_soccerball_right {
+	direction = image_angle;
+	speed = random_range(1,3);
+}else if sprite_index = spr_boss_volleyball_left {
+	direction = image_angle+180;
+	speed = random_range(1,3);
+}else if sprite_index = spr_boss_volleyball_right {
+	direction = image_angle;
+	speed = random_range(1,3);
+}else if sprite_index = spr_boss_volleyball_top {
+	direction = image_angle+90;
+	speed = random_range(1,3);
+}

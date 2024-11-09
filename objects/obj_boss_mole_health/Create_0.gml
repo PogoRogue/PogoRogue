@@ -17,3 +17,5 @@ temp_hp_max = 1;
 
 x2 = x;
 x3 = x;
+
+depth = -200;

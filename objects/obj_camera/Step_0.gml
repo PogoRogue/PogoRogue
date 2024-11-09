@@ -37,10 +37,10 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 			yTo = follow.y-8;
 		}
 		
-		if room != room_shop and room != room_boss_1 and room != room_boss_2 {
+		//if room != room_shop and room != room_boss_1 and room != room_boss_2 {
 			//x += (xTo - x) / readjust_speed;
 			//y += (yTo - y) / readjust_speed;
-		}
+		//}
 	}
 	
 	if obj_player.state = obj_player.state_portal
@@ -54,10 +54,10 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 			yTo = follow.y-3;
 		}
 		
-		if room != room_shop and room != room_boss_1 and room != room_boss_2 {
+		//if room != room_shop and room != room_boss_1 and room != room_boss_2 {
 			//x += (xTo - x) / readjust_speed;
 			//y += (yTo - y) / readjust_speed;
-		}
+		//}
 	}
 	
 	if room = room_gameplay_video or room = room_boss_1 {

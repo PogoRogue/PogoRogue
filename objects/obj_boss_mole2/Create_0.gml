@@ -5,3 +5,4 @@
 event_inherited();
 
 sprite_index = spr_mole2;
+init_sprite = sprite_index;

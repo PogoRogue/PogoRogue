@@ -20,7 +20,7 @@ current_iframes = 0;
 red_frames = 0;
 
 //drop chances
-if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and room != room_tutorial {
+if !scr_In_Array(global.boss_rooms,room) and room != room_tutorial {
 	heart_chance = 5 + (global.luck/2); //percent
 	buff_chance = 2 + (global.luck/2); //percent
 	pickup_chance = (global.luck/2); //percent

@@ -1,5 +1,5 @@
 /// @description go to next room
-if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
+if scr_In_Array(global.boss_rooms,room) {
 	room_persistent = false;
 	instance_activate_all();
 	global.phase = 1;
@@ -27,7 +27,7 @@ if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
 		with instance_create_depth(x,y,depth,obj_restart_game2) {
 			alarm[0] = 1;	
 		}
-	}else if global.last_room = room_boss_1 or global.last_room = room_boss_2 {
+	}else if scr_In_Array(global.first_boss_rooms,global.last_room) or scr_In_Array(global.second_boss_rooms,global.last_room) {
 		room_persistent = false;
 		instance_activate_all();
 		room = global.last_room;
