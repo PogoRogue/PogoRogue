@@ -14,6 +14,8 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"63383477-c55f-4b29-92de-c03abdcd3080","name":"63383477-c55f-4b29-92de-c03abdcd3080","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"6318260c-6d12-4ea0-840a-3a1a4497196f","name":"6318260c-6d12-4ea0-840a-3a1a4497196f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e1cfe4ea-815c-45ab-a7fc-1c6352423696","name":"e1cfe4ea-815c-45ab-a7fc-1c6352423696","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"90603d0c-fa5e-4c15-9eae-015bb13f418d","name":"90603d0c-fa5e-4c15-9eae-015bb13f418d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -51,7 +53,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":4.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -76,6 +78,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6318260c-6d12-4ea0-840a-3a1a4497196f","path":"sprites/spr_boss_tennisball/spr_boss_tennisball.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"0376d928-b3dc-4489-a6f5-1ba756f5be30","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e1cfe4ea-815c-45ab-a7fc-1c6352423696","path":"sprites/spr_boss_tennisball/spr_boss_tennisball.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"5bb856e0-fbcd-42c9-8cd8-d97c172f7e23","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"90603d0c-fa5e-4c15-9eae-015bb13f418d","path":"sprites/spr_boss_tennisball/spr_boss_tennisball.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"9ac0ad25-2fda-48b7-9bdb-db78e080dbe0","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

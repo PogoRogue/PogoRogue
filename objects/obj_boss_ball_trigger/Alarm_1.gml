@@ -10,8 +10,10 @@ instance_create_layer(576, 447, "enemies", obj_subboss_tar);*/
 with(obj_player) {
 	state = state_free;
 }
-		
+
+instance_create_depth(x, y, -20, obj_boss_ball_health);
 instance_destroy(self);
+
 
 /*with obj_boss_sphere {
 	spd = 0.4;

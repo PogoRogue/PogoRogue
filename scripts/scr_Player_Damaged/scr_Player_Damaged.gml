@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Player_Damaged(damage){
 	
-	if damage > 0 {
+	if damage > 0 and obj_player.current_iframes <= 0 {
 		with obj_player {
 			var armored = false;
 			if !instance_exists(obj_shieldbubble) and invincible = false and invincibility = false and pogomode = false and other != enemy_hurt_obj {

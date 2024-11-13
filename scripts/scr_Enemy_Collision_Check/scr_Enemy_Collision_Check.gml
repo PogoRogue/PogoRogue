@@ -225,12 +225,20 @@ function scr_Enemy_Collision_Check(condition){
 						
 						if object_get_name(object_index) = "obj_boss_basketball" and megabounce_freeze = false {
 							with obj_boss_basketball {
-								freeze = true;
-								freeze_x = x;
-								freeze_y = y;
-								freeze_frame = image_index;
-								alarm[5] = 15;
-								scr_Screen_Shake(6,12,false);
+								if spin_mode = false {
+									prev_spd2 = speed;
+									next_direction = direction;
+									freeze = true;
+									freeze_x = x;
+									freeze_y = y;
+									freeze_frame = image_index;
+									alarm[5] = 15;
+									scr_Screen_Shake(6,12,false);
+								}
+							}
+							if spin_mode = false {
+								scr_Player_Damaged(damage);
+								prev_spd2 = 14;
 								next_direction = point_direction(obj_player_mask.x,obj_player_mask.y,x,y);
 							}
 						}
@@ -409,12 +417,20 @@ function scr_Enemy_Collision_Check(condition){
 						}
 						if object_get_name(object_index) = "obj_boss_basketball" and megabounce_freeze = false {
 							with obj_boss_basketball {
-								freeze = true;
-								freeze_x = x;
-								freeze_y = y;
-								freeze_frame = image_index;
-								alarm[5] = 15;
-								scr_Screen_Shake(6,12,false);
+								if spin_mode = false {
+									prev_spd2 = speed;
+									next_direction = direction;
+									freeze = true;
+									freeze_x = x;
+									freeze_y = y;
+									freeze_frame = image_index;
+									alarm[5] = 15;
+									scr_Screen_Shake(6,12,false);
+								}
+							}
+							if spin_mode = false {
+								scr_Player_Damaged(damage);
+								prev_spd2 = 14;
 								next_direction = point_direction(obj_player_mask.x,obj_player_mask.y,x,y);
 							}
 						}

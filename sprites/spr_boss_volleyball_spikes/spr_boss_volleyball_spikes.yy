@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_boss_volleyball_spikes",
   "bboxMode":0,
-  "bbox_bottom":59,
+  "bbox_bottom":70,
   "bbox_left":7,
   "bbox_right":64,
   "bbox_top":1,
@@ -22,9 +22,9 @@
     {"$GMSpriteFrame":"","%Name":"3baa8c36-9f2c-4f77-ba4f-6184147b5699","name":"3baa8c36-9f2c-4f77-ba4f-6184147b5699","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"bbb34ac8-f8d2-4349-b453-e675a69c45c0","name":"bbb34ac8-f8d2-4349-b453-e675a69c45c0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"19233c2c-48e7-4022-a68c-eba6ad77973d","name":"19233c2c-48e7-4022-a68c-eba6ad77973d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"73a1b1f8-c86f-4786-9bd9-f37f7e78a69b","name":"73a1b1f8-c86f-4786-9bd9-f37f7e78a69b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d95c164a-0d7f-44c3-b08e-e396f9ce4765","name":"d95c164a-0d7f-44c3-b08e-e396f9ce4765","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"6c225110-a9cf-413d-8d77-fc4510f8b90c","name":"6c225110-a9cf-413d-8d77-fc4510f8b90c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"0ddf3a88-ada3-4005-9359-e4638008d026","name":"0ddf3a88-ada3-4005-9359-e4638008d026","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"4aacfaf3-16ef-4334-bdfb-8b6282be322b","name":"4aacfaf3-16ef-4334-bdfb-8b6282be322b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":8,
   "gridY":8,
@@ -39,8 +39,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Boss Basketball",
-    "path":"folders/Sprites/Enemy/Boss Basketball.yy",
+    "name":"Volleyball",
+    "path":"folders/Sprites/Enemy/Boss Basketball/Volleyball.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -113,14 +113,14 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"19233c2c-48e7-4022-a68c-eba6ad77973d","path":"sprites/spr_boss_volleyball_spikes/spr_boss_volleyball_spikes.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"fc7f6712-2cf9-4374-8cf9-5f1fbfc53cb1","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"73a1b1f8-c86f-4786-9bd9-f37f7e78a69b","path":"sprites/spr_boss_volleyball_spikes/spr_boss_volleyball_spikes.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"25c168d7-922f-4034-8855-3439d4307427","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d95c164a-0d7f-44c3-b08e-e396f9ce4765","path":"sprites/spr_boss_volleyball_spikes/spr_boss_volleyball_spikes.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"048df136-d18e-4970-8ec4-c0b9b6803504","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6c225110-a9cf-413d-8d77-fc4510f8b90c","path":"sprites/spr_boss_volleyball_spikes/spr_boss_volleyball_spikes.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"9238bda6-46e6-4221-8c98-f879b0e43757","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"9238bda6-46e6-4221-8c98-f879b0e43757","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0ddf3a88-ada3-4005-9359-e4638008d026","path":"sprites/spr_boss_volleyball_spikes/spr_boss_volleyball_spikes.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"52891629-9842-43a6-b029-2d20765a18af","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4aacfaf3-16ef-4334-bdfb-8b6282be322b","path":"sprites/spr_boss_volleyball_spikes/spr_boss_volleyball_spikes.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"4b88650c-37de-47cb-90c2-80b451fa5a8b","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

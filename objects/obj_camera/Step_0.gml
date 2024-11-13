@@ -60,7 +60,7 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 		//}
 	}
 	
-	if room = room_gameplay_video or room = room_boss_1 {
+	if room = room_gameplay_video or room = room_boss_1 or room = room_boss_2B {
 		var hallway_w_half = 280;
 		var hallway_h_half = 176;
 	}else {

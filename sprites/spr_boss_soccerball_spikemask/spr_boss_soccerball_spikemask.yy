@@ -22,6 +22,7 @@
     {"$GMImageLayer":"","%Name":"0ce4e734-157f-41bc-83de-2bc2ef3400fb","blendMode":0,"displayName":"spike","isLocked":false,"name":"0ce4e734-157f-41bc-83de-2bc2ef3400fb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"769c1cf4-98ed-43a0-9af6-21eb3e956ed8","blendMode":0,"displayName":"Eyes","isLocked":false,"name":"769c1cf4-98ed-43a0-9af6-21eb3e956ed8","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
     {"$GMImageLayer":"","%Name":"0f9311a4-595c-4046-a6a8-0974ea8a1e87","blendMode":0,"displayName":"default","isLocked":false,"name":"0f9311a4-595c-4046-a6a8-0974ea8a1e87","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
+    {"$GMImageLayer":"","%Name":"9555021b-4223-463b-a009-b2cf3101dea6","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"9555021b-4223-463b-a009-b2cf3101dea6","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
   ],
   "name":"spr_boss_soccerball_spikemask",
   "nineSlice":null,

@@ -67,7 +67,7 @@
     },
     "name":"spr_boss_basketball_spikes_only",
     "playback":1,
-    "playbackSpeed":20.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

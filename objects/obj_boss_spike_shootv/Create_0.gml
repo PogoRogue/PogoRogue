@@ -1,0 +1,9 @@
+alarm[0] = 1;
+launched = false;
+new_direction = 0;
+direction_set = false;
+prev_mask_index = mask_index;
+created = false;
+damage = 8;
+retract = false;
+retracted = false;

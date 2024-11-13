@@ -1402,7 +1402,7 @@ state_portal = function() {
 						scr_Room_Transition(global.boss_1_room);
 						break;
 					case 2:
-						scr_Room_Transition(room_boss_2);
+						scr_Room_Transition(global.boss_2_room);
 						break;
 					case 3:
 						scr_Room_Transition(room_boss_3);

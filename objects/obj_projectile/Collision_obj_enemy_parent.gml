@@ -122,7 +122,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 	if object_get_name(other.object_index) = "obj_boss_basketball" {
 		with other {
 			var proj_obj = other;
-			if !scr_In_Array(projectile_array,proj_obj) {
+			if !scr_In_Array(projectile_array,proj_obj) and spin_mode = false {
 				scr_Screen_Shake(3,3,false);
 				//audio_play_sound(snd_volleyball,0,false);
 				scale = 1.25;

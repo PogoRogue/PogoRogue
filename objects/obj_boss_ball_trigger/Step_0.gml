@@ -14,7 +14,7 @@ if(triggered) {
 	with(obj_player) {
 		state = state_immobile;
 	}
-	room_height = lerp(room_height, 600, 0.02);
+	//room_height = lerp(room_height, 600, 0.02);
 }
 
 if backdrop_scale > 0.8 and (key_select1 or key_select2 or key_select3) and draw_cutin = true {
