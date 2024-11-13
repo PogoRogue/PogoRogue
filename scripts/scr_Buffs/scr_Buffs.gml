@@ -47,6 +47,20 @@ function scr_Buffs(){
 					heart_shield_gain_num = other.armor_buff;	
 				}
 			}
+			if global.energydrink = true { 
+				energy_buff += 1;
+				if energy_buff > 5 {
+					energy_buff = 5;	
+				}
+				audio_play_sound(snd_zap,0,false);
+				with obj_player_health {
+					heart_energy_gain_num += 1;	
+					energy_to_gain += 1;
+					if alarm[0] <= 0 {
+						alarm[0] = 1;
+					}
+				}
+			}
 		}
 	}
 	

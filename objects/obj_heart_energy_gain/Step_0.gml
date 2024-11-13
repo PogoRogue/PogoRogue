@@ -1,6 +1,6 @@
 if scr_Animation_Complete() and sprite_index = spr_heart_energy_ui_gain {
 	image_speed = 0;
-	if heart_number = obj_player.max_energy_buff {
+	if heart_number = obj_player.energy_buff { //max_energy_buff
 		with obj_heart_energy_gain {
 			spawned = true;
 		}
@@ -19,20 +19,31 @@ if sprite_index = spr_heart_energy_animation {
 	}else if obj_player.energy_buff < heart_number {
 		instance_destroy();
 		instance_create_depth(x,y,depth,obj_heart_energy_lost);
-		if heart_number = 1 {
-			obj_player.pickup_jolt.on_cooldown = true;
-			obj_player.pickup_jolt.cooldown_time = obj_player.pickup_jolt.max_cooldown_time;	
+		if global.zap_used = true and global.zap_hearts_lost >= 0 {
+			global.zap_hearts_lost += 1;
 		}
+		
+		if (heart_number = 1 or global.zap_used = true and global.zap_hearts_lost >= 4) {
+			global.zap_hearts_lost = -1;
+		}
+	}else if obj_player.energy_buff > heart_number {
+		image_index = 0;
+		image_speed = 0;
 	}
 	
 	if scr_Animation_Complete() {
 		instance_destroy();
 		instance_create_depth(x,y,depth,obj_heart_energy_lost);
+		if global.zap_used = true and global.zap_hearts_lost >= 0 {
+			global.zap_hearts_lost += 1;
+		}
+		
 		obj_player.energy_buff -= 1;
-		if heart_number = 1 {
-			obj_player.pickup_jolt.on_cooldown = true;
-			obj_player.pickup_jolt.cooldown_time = obj_player.pickup_jolt.max_cooldown_time;	
+		if (heart_number = 1 or global.zap_used = true and global.zap_hearts_lost >= 4) {
+			global.zap_hearts_lost = -1;
 		}
 	}
 }
+
+
 

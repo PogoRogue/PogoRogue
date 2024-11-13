@@ -43,3 +43,13 @@ if global.mirrormode = true {
 		global.mirrormode_on = false;
 	}
 }
+
+if global.zap_used = true and global.zap_hearts_lost = -1 and obj_player.pickup_jolt.on_cooldown = false {
+	if obj_player.pickups_array[0] = obj_player.pickup_jolt 
+	or obj_player.pickups_array[1] = obj_player.pickup_jolt {
+		obj_player.pickup_jolt.on_cooldown = true;
+		obj_player.pickup_jolt.cooldown_time = obj_player.pickup_jolt.max_cooldown_time;
+		global.zap_hearts_lost = 0;
+		global.zap_used = false;
+	}
+}

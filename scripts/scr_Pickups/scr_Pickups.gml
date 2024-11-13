@@ -558,6 +558,34 @@ function scr_Pickups(){
 							heart_shield_gain_num = other.armor_buff;	
 						}
 					}
+					
+					if global.energydrink = true { 
+						energy_buff += 2;
+						if energy_buff > 5 {
+							energy_buff = 5;	
+						}
+						audio_play_sound(snd_zap,0,false);
+						with obj_player_health {
+							heart_energy_gain_num += 2;	
+							energy_to_gain += 2;
+							if alarm[0] <= 0 {
+								alarm[0] = 1;
+							}
+						}
+					}else {
+						energy_buff += 1;
+						if energy_buff > 5 {
+							energy_buff = 5;	
+						}
+						audio_play_sound(snd_zap,0,false);
+						with obj_player_health {
+							heart_energy_gain_num += 1;	
+							energy_to_gain += 1;
+							if alarm[0] <= 0 {
+								alarm[0] = 1;
+							}
+						}
+					}
 				}
 			}
 			enemies_count = enemies_count_max;
@@ -1041,7 +1069,7 @@ function scr_Pickups(){
 		base_item_sprite_2: spr_pickup_emergency,
 		item_cost: 115, //only for synergies (item 1 + item 2 costs)
 		on_call: function() {
-			if obj_player.energy_buff = 0 {
+			if obj_player.energy_buff = 0 or global.zap_used = false {
 				with obj_player {
 					if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun { //reload bullets
 						//reload sound
@@ -1063,10 +1091,16 @@ function scr_Pickups(){
 					}
 				
 					//armored heart
+					global.zap_used = true;
+					global.zap_hearts_lost = 0;
 					energy_buff += 4;
+					if energy_buff > 5 {
+						energy_buff = 5;	
+					}
 					audio_play_sound(snd_zap,0,false);
 					with obj_player_health {
-						heart_energy_gain_num = other.energy_buff;	
+						heart_energy_gain_num += 4;	
+						energy_to_gain += 4;
 						alarm[0] = 1;
 					}
 				}

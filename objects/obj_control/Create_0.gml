@@ -131,6 +131,9 @@ global.cactusmode = false;
 global.cactusmode_on = false;
 global.mirrormode = false;
 global.mirrormode_on = false;
+global.portable_charger = false;
+global.zap_used = false;
+global.zap_hearts_lost = 0;
 	
 global.synergy_frame = 0;
 
