@@ -31,17 +31,17 @@ passives_array = [spr_buffitem_luck,spr_buffitem_aerialassassin,spr_buffitem_amm
 				spr_buffitem_combomaster,spr_buffitem_combotime,spr_buffitem_crit,
 				spr_buffitem_damage,spr_buffitem_doublekill,spr_buffitem_drilltipbullets,
 				spr_buffitem_dualwielder,spr_buffitem_experimentation,spr_buffitem_fastforward,
-				spr_buffitem_flamingcoins,spr_buffitem_hotshells,spr_buffitem_impatience,
+				spr_buffitem_flamingcoins,spr_buffitem_illegalshipment,spr_buffitem_impatience,
 				spr_buffitem_invincibilityup,spr_buffitem_ironproficiency,spr_buffitem_juggler,
 				spr_buffitem_lasersight,spr_buffitem_laststand,spr_buffitem_magicianstouch,
 				spr_buffitem_paparazzi,spr_buffitem_pickybuyer,spr_buffitem_planetarybullets,
 				spr_buffitem_psychicbullets,spr_buffitem_recycling,spr_buffitem_revive,
 				spr_buffitem_righteousrevenge, spr_buffitem_robbery, spr_buffitem_bouncybullets,
 				spr_buffitem_sharptip,spr_buffitem_sharpshooter,spr_buffitem_steadyhands,
-				spr_buffitem_strongmuscles,spr_buffitem_supershield,spr_buffitem_tightspring,
+				spr_buffitem_strongmuscles,spr_buffitem_supershield,spr_buffitem_snackbreak,
 				spr_buffitem_triplethreat,spr_buffitem_treasurehunter,spr_buffitem_energydrink,
 				spr_buffitem_capitalist,spr_buffitem_cactus,spr_buffitem_mirror,
-				spr_nothing,spr_nothing,spr_nothing]
+				spr_buffitem_adrenalinerush,spr_buffitem_aura,spr_buffitem_portablecharger]
 				
 actives_array = [spr_pickup_reload, spr_pickup_freeze, spr_pickup_airbag, 
 				spr_pickup_parachute, spr_pickup_chargejump, spr_pickup_groundpound, 

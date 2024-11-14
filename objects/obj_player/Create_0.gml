@@ -1736,16 +1736,17 @@ all_buffs_array = [buff_luck,buff_aerialassassin,buff_max_ammo,
 					buff_combomaster,buff_combotime,buff_crit,
 					buff_dmg,buff_doublekill,buff_drilltipbullets,
 					buff_dualwielder,buff_experimentation,buff_fastforward,
-					buff_flamingcoins,buff_hotshells,buff_impatience,
+					buff_flamingcoins,buff_illegalshipment,buff_impatience,
 					buff_invincibilityup,buff_ironproficiency,buff_juggler,
 					buff_lasersight,buff_laststand,buff_magicianstouch,
 					buff_paparazzi,buff_pickybuyer,buff_planetarybullets,
 					buff_psychicbullets,buff_recycling,buff_revive,
 					buff_righteousrevenge, buff_robbery, buff_bouncybullets,
 					buff_sharptip,buff_sharpshooter,buff_steadyhands,
-					buff_strongmuscles,buff_supershield,buff_tightspring,
+					buff_strongmuscles,buff_supershield,buff_snackbreak,
 					buff_triplethreat,buff_treasurehunter,buff_energydrink,
-					buff_capitalist,buff_cactusmode,buff_mirrormode];
+					buff_capitalist,buff_cactusmode,buff_mirrormode,
+					buff_adrenalinerush,buff_aura,buff_portablecharger];
 
 //create text in proc gen rooms
 if room = room_proc_gen_test || room = room_sprite_level_test {

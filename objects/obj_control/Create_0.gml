@@ -134,6 +134,12 @@ global.mirrormode_on = false;
 global.portable_charger = false;
 global.zap_used = false;
 global.zap_hearts_lost = 0;
+global.adrenalinerush = 0;
+global.aura_num = 0;
+global.illegalshipment = false;
+global.portablecharger = false;
+global.snackbreak_num = 0;
+global.snackbreak_used = false;
 	
 global.synergy_frame = 0;
 

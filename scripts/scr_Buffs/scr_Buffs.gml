@@ -331,4 +331,24 @@ function scr_Buffs(){
 	buff_mirrormode = function() {
 		global.mirrormode = true;
 	}
+	
+	buff_adrenalinerush = function() {
+		global.adrenalinerush += 1;
+	}
+	
+	buff_aura = function() {
+		global.aura_num += 1;
+	}
+	
+	buff_illegalshipment = function() {
+		global.illegalshipment = true;
+	}
+	
+	buff_portablecharger = function() {
+		global.portablecharger = true;
+	}
+	
+	buff_snackbreak = function() {
+		global.snackbreak_num += 1;
+	}
 }
