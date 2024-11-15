@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_Portable_Charger_Jump",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Portable_Charger_Jump",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

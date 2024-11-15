@@ -883,6 +883,8 @@
     {"id":{"name":"scr_Pickups","path":"scripts/scr_Pickups/scr_Pickups.yy",},},
     {"id":{"name":"scr_Player_Collision","path":"scripts/scr_Player_Collision/scr_Player_Collision.yy",},},
     {"id":{"name":"scr_Player_Damaged","path":"scripts/scr_Player_Damaged/scr_Player_Damaged.yy",},},
+    {"id":{"name":"scr_Portable_Charger_Jump","path":"scripts/scr_Portable_Charger_Jump/scr_Portable_Charger_Jump.yy",},},
+    {"id":{"name":"scr_Portable_Charger_Kill","path":"scripts/scr_Portable_Charger_Kill/scr_Portable_Charger_Kill.yy",},},
     {"id":{"name":"scr_Projectile_Bounce","path":"scripts/scr_Projectile_Bounce/scr_Projectile_Bounce.yy",},},
     {"id":{"name":"scr_Random_Item_Drops","path":"scripts/scr_Random_Item_Drops/scr_Random_Item_Drops.yy",},},
     {"id":{"name":"scr_Reduce_Cooldown_Times","path":"scripts/scr_Reduce_Cooldown_Times/scr_Reduce_Cooldown_Times.yy",},},

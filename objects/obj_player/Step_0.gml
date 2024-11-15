@@ -151,9 +151,49 @@ if room != room_shop and table = false {
 
 //cooldowns
 for (i = 0; i <= 1; i++) {
+	//portable charger passive
+	if global.portablecharger {
+		if pickups_array[i].synergy_equipped = true {
+			if pickups_array[i].is_synergy = true {
+				var item1 = scr_Convert_Sprite_To_Active(pickups_array[i].base_item_sprite_1);
+				var item2 = scr_Convert_Sprite_To_Active(pickups_array[i].base_item_sprite_2);
+						
+				if item1.on_cooldown and item1.cooldown_time > 0 and item1.enemies_count_max = 0 and item1 != pickup_jetpack {
+					item1.cooldown_time -= 1;
+				}
+				if item2.on_cooldown and item2.cooldown_time > 0 and item2.enemies_count_max = 0 and item2 != pickup_jetpack {
+					item2.cooldown_time -= 1;
+				}
+			}else {
+				if i = 0 {
+					var item1 = scr_Convert_Sprite_To_Active(global.parent_synergy1.gui_sprite);
+					if pickups_array[i] = global.item_1_pickup {
+						var item2 = scr_Convert_Sprite_To_Active(global.parent_synergy1.base_item_sprite_2);
+					}else if pickups_array[i] = global.item_2_pickup {
+						var item2 = scr_Convert_Sprite_To_Active(global.parent_synergy1.base_item_sprite_1);
+					}
+				}else {
+					var item1 = scr_Convert_Sprite_To_Active(global.parent_synergy2.gui_sprite);
+					if pickups_array[i] = global.item_3_pickup {
+						var item2 = scr_Convert_Sprite_To_Active(global.parent_synergy2.base_item_sprite_2);
+					}else if pickups_array[i] = global.item_4_pickup {
+						var item2 = scr_Convert_Sprite_To_Active(global.parent_synergy2.base_item_sprite_1);
+					}
+				}
+						
+				if item1.on_cooldown and item1.cooldown_time > 0 and item1.enemies_count_max = 0 and item1 != pickup_jetpack {
+					item1.cooldown_time -= 1;
+				}
+				if item2.on_cooldown and item2.cooldown_time > 0 and item2.enemies_count_max = 0 and item2 != pickup_jetpack {
+					item2.cooldown_time -= 1;
+				}	
+			}
+		}
+	}
 	if pickups_array[i].reload_on_bounce = false {
 		if pickups_array[i].on_cooldown and pickups_array[i].cooldown_time > 0 and pickups_array[i].enemies_count_max = 0 {
 			pickups_array[i].cooldown_time -= 1;
+			
 			if pickups_array[i].cooldown_time <= 0 {
 				if pickups_array[i] != pickup_parachute and pickups_array[i] != pickup_wreckingball
 				and pickups_array[i] != pickup_winners and pickups_array[i] != pickup_hacker {

@@ -76,6 +76,16 @@ function scr_Player_Damaged(damage){
 				random_set_seed(global.seed);
 			
 				//lower enemy kill cooldowns
+				
+				//portable charger
+				if global.adrenalinerush = 1 {
+					scr_Portable_Charger_Kill(1);
+				}else if global.adrenalinerush = 2 {
+					scr_Portable_Charger_Kill(3);
+				}else if global.adrenalinerush = 3 {
+					scr_Portable_Charger_Kill(6);
+				}
+					
 				if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count > 0 {
 					//account for double/triple/quadruple kill passive
 					if global.adrenalinerush = 1 {

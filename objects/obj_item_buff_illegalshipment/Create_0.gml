@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_illegalshipment;
 item_name = "Illegal Shipment";
-item_tagline = "The shop can now sell synergy items.";
+item_tagline = "The shop can now occasionally sell synergy items.";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 45;

@@ -115,6 +115,18 @@ if(is_dead) {
 	}
 	
 	with obj_player {
+		//portable charger
+		if global.combo <= 10 or obj_player.double_kill = 0 {
+			scr_Portable_Charger_Kill(1);
+		}else if global.combo > 10 and obj_player.double_kill = 1
+		or global.combo > 10 and global.combo <= 20 and obj_player.double_kill > 1 {
+			scr_Portable_Charger_Kill(2);
+		}else if global.combo > 20 and obj_player.double_kill = 2
+		or global.combo > 20 and global.combo <= 30 and obj_player.double_kill > 2 {
+			scr_Portable_Charger_Kill(3);
+		}else if global.combo > 30 and obj_player.double_kill > 2 {
+			scr_Portable_Charger_Kill(4);
+		}
 		//lower enemy kill cooldowns
 		if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count > 0 {
 			//account for double/triple/quadruple kill passive

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_Portable_Charger_Kill",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Portable_Charger_Kill",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

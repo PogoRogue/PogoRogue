@@ -315,6 +315,8 @@
     {"name":"scr_Change_Actives_Loadout","order":2,"path":"scripts/scr_Change_Actives_Loadout/scr_Change_Actives_Loadout.yy",},
     {"name":"scr_Convert_Sprite_To_Active","order":1,"path":"scripts/scr_Convert_Sprite_To_Active/scr_Convert_Sprite_To_Active.yy",},
     {"name":"scr_Move_To_Pipe","order":1,"path":"scripts/scr_Move_To_Pipe/scr_Move_To_Pipe.yy",},
+    {"name":"scr_Portable_Charger_Jump","order":3,"path":"scripts/scr_Portable_Charger_Jump/scr_Portable_Charger_Jump.yy",},
+    {"name":"scr_Portable_Charger_Kill","order":4,"path":"scripts/scr_Portable_Charger_Kill/scr_Portable_Charger_Kill.yy",},
     {"name":"snd_bombbeep","order":18,"path":"sounds/snd_bombbeep/snd_bombbeep.yy",},
     {"name":"snd_bombplaced","order":16,"path":"sounds/snd_bombplaced/snd_bombplaced.yy",},
     {"name":"snd_boss1_slam","order":19,"path":"sounds/snd_boss1_slam/snd_boss1_slam.yy",},

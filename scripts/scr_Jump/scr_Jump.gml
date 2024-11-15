@@ -53,6 +53,8 @@ function scr_Jump(add_to_jump){
 	charge = 0;
 	bouncing = false;
 	
+	scr_Portable_Charger_Jump();
+	
 	if pickups_array[0].reload_on_bounce = true and pickups_array[0].on_cooldown = true {
 		if pickups_array[0] != pickup_jetpack {
 			pickups_array[0].bounce_reset -= 1;
