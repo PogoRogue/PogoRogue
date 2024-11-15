@@ -38,4 +38,6 @@ if slot_machine = true {
 	follow_player = true;
 }
 
-pickup.synergy_equipped = false;
+if !pickup.is_synergy {
+	pickup.synergy_equipped = false;
+}

@@ -13,7 +13,7 @@ index_add = 0; //declare this variable when there are multiple sprites for this 
 if global.adrenalinerush = 1 {
 	item_tagline = "Taking damage reduces kill cooldowns by 3.";
 }else if global.adrenalinerush >= 2 {
-	item_tagline = "Taking damage reduces kill cooldowns completely.";
+	item_tagline = "Taking damage reduces kill cooldowns by 6.";
 }
 
 scr_Buff_Stats();

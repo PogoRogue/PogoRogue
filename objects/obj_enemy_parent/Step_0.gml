@@ -239,3 +239,34 @@ red_frames = max(red_frames - 1, 0);
 //update center position
 center_x_sprite = bbox_left + ((bbox_right - bbox_left)/2);
 center_y_sprite = bbox_top + ((bbox_bottom - bbox_top)/2);
+
+//aura passive
+if(proc_gen_tag != -1 && instance_exists(obj_proc_gen_location_analysis)) and hp = hp_max and aura_used < global.aura_num
+{
+	//Decrease enemy count for region
+	var location_obj = instance_nearest(x,y,obj_proc_gen_location_analysis);
+	with(location_obj)
+	{
+		//Check gate open condition
+		var gate_list_val2 = ds_list_find_value(region_gate_objects, other.proc_gen_tag);
+		if(gate_list_val2 != 0) //Do something only if there's a gate for this region
+		{
+			if global.aura_num = 1 {
+				if other.hp > other.hp_max * 0.8 {
+					other.hp = other.hp_max * 0.8;
+				}
+				aura_used = 1;
+			}else if global.aura_num = 2 {
+				if other.hp > other.hp_max * 0.6 {
+					other.hp = other.hp_max * 0.6;
+				}
+				aura_used = 2;
+			}else if global.aura_num = 3 {
+				if other.hp > other.hp_max * 0.4 {
+					other.hp = other.hp_max * 0.4;
+				}
+				aura_used = 3;
+			}
+		}
+	}		
+}

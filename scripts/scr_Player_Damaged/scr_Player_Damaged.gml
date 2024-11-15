@@ -74,6 +74,28 @@ function scr_Player_Damaged(damage){
 				randomize();
 				audio_play_sound(choose(snd_hurt,snd_hurt2,snd_hurt3),0,false);
 				random_set_seed(global.seed);
+			
+				//lower enemy kill cooldowns
+				if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count > 0 {
+					//account for double/triple/quadruple kill passive
+					if global.adrenalinerush = 1 {
+						pickups_array[0].enemies_count -= 1;
+					}else if global.adrenalinerush = 2 {
+						pickups_array[0].enemies_count -= 3;
+					}else if global.adrenalinerush = 3 {
+						pickups_array[0].enemies_count -= 6;
+					}
+				}
+				if pickups_array[1].enemies_count_max > 0 and pickups_array[1].enemies_count > 0 {
+					//account for double/triple/quadruple kill passive
+					if global.adrenalinerush = 1 {
+						pickups_array[1].enemies_count -= 1;
+					}else if global.adrenalinerush = 2 {
+						pickups_array[1].enemies_count -= 3;
+					}else if global.adrenalinerush = 3 {
+						pickups_array[1].enemies_count -= 6;
+					}
+				}
 			}else if invincible = false and invincibility = false and pogomode = false {
 				current_iframes = num_iframes;
 				hspeed = -2 * sign(hspeed);

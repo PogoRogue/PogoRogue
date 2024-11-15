@@ -109,38 +109,88 @@ if created_items = false {
 	pickup_1 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
 	pickup_2 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
 	
+	if global.illegalshipment = true {
+		if global.phase = 1 {
+		var synergy_array = [obj_item_pickup_synergy_jolt,
+					obj_item_pickup_synergy_launchpad, obj_item_pickup_synergy_megabounce, obj_item_pickup_synergy_harpoon,
+					obj_item_pickup_synergy_wreckingball];
+		}else if global.phase = 2 {
+			var synergy_array = [obj_item_pickup_synergy_jolt,
+					obj_item_pickup_synergy_launchpad, obj_item_pickup_synergy_megabounce, obj_item_pickup_synergy_harpoon,
+					obj_item_pickup_synergy_wreckingball, obj_item_pickup_synergy_dragster,obj_item_pickup_synergy_tacticalstrike];
+		}else if global.phase = 3 {
+			var synergy_array = [obj_item_pickup_synergy_jolt,
+					obj_item_pickup_synergy_launchpad, obj_item_pickup_synergy_megabounce, obj_item_pickup_synergy_harpoon,
+					obj_item_pickup_synergy_wreckingball, obj_item_pickup_synergy_dragster, obj_item_pickup_synergy_hacker,
+					obj_item_pickup_synergy_tacticalstrike, obj_item_pickup_synergy_blizzard, obj_item_pickup_synergy_pogomode];
+		}else {
+			var synergy_array = [obj_item_pickup_synergy_jolt,
+					obj_item_pickup_synergy_launchpad, obj_item_pickup_synergy_megabounce, obj_item_pickup_synergy_harpoon,
+					obj_item_pickup_synergy_wreckingball];
+		}
+		random_set_seed(global.seed+global.refreshes_used+global.shop_number);
+		var synergy_chance = irandom_range(1,5);
+		if synergy_chance = 1 {
+			var active_replace = choose(1,2);
+			var new_item = synergy_array[irandom_range(0,array_length(synergy_array)-1)];
+			var temp_temp_synergy = instance_create_depth(x,y,depth,new_item,{create_coins: false});
+			if active_replace = 1 {
+				pickup_1 = new_item;
+			}else if active_replace = 2 {
+				pickup_2 = new_item;
+			}
+		}
+		random_set_seed(global.seed);
+	}
+	
 	instance_create_depth(x,y,depth,pickup_1,{create_coins: false});
 	instance_create_depth(x,y,depth,pickup_2,{create_coins: false});
 	
-	if global.parent_synergy1.is_synergy = true and instance_exists(pickup_1) and instance_exists(pickup_2) {
-		while (pickup_1.sprite_index = global.parent_synergy1.base_item_sprite_1) 
-		or (pickup_1.sprite_index = global.parent_synergy1.base_item_sprite_2) {
-			instance_destroy(pickup_1);
-			pickup_1 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
-			instance_create_depth(x,y,depth,pickup_1,{create_coins: false});
-		}
+	
+	if global.parent_synergy1 != 0 {
+		if global.parent_synergy1.is_synergy = true and instance_exists(pickup_1) and instance_exists(pickup_2) {
+			if instance_exists(pickup_1) {
+				while instance_exists(pickup_1) and ( (pickup_1.sprite_index = global.parent_synergy1.base_item_sprite_1) 
+				or (pickup_1.sprite_index = global.parent_synergy1.base_item_sprite_2)
+				or (pickup_1.sprite_index = global.parent_synergy1.gui_sprite) ) {
+					instance_destroy(pickup_1);
+					pickup_1 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+					instance_create_depth(x,y,depth,pickup_1,{create_coins: false});
+				}
+			}
 		
-		while (pickup_2.sprite_index = global.parent_synergy1.base_item_sprite_1) 
-		or (pickup_2.sprite_index = global.parent_synergy1.base_item_sprite_2) {
-			instance_destroy(pickup_2);
-			pickup_2 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
-			instance_create_depth(x,y,depth,pickup_2,{create_coins: false});
+			if instance_exists(pickup_2) {
+				while instance_exists(pickup_2) and ( (pickup_2.sprite_index = global.parent_synergy1.base_item_sprite_1) 
+				or (pickup_2.sprite_index = global.parent_synergy1.base_item_sprite_2)
+				or (pickup_2.sprite_index = global.parent_synergy1.gui_sprite) ) {
+					instance_destroy(pickup_2);
+					pickup_2 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+					instance_create_depth(x,y,depth,pickup_2,{create_coins: false});
+				}
+			}
 		}
 	}
 	
-	if global.parent_synergy2.is_synergy = true and instance_exists(pickup_1) and instance_exists(pickup_2) {
-		while (pickup_1.sprite_index = global.parent_synergy2.base_item_sprite_1) 
-		or (pickup_1.sprite_index = global.parent_synergy2.base_item_sprite_2) {
-			instance_destroy(pickup_1);
-			pickup_1 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
-			instance_create_depth(x,y,depth,pickup_1,{create_coins: false});
-		}
-		
-		while (pickup_2.sprite_index = global.parent_synergy2.base_item_sprite_1) 
-		or (pickup_2.sprite_index = global.parent_synergy2.base_item_sprite_2) {
-			instance_destroy(pickup_2);
-			pickup_2 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
-			instance_create_depth(x,y,depth,pickup_2,{create_coins: false});
+	if global.parent_synergy2 != 0 {
+		if global.parent_synergy2.is_synergy = true and instance_exists(pickup_1) and instance_exists(pickup_2) {
+			if instance_exists(pickup_1) {
+				while instance_exists(pickup_1) and ( (pickup_1.sprite_index = global.parent_synergy2.base_item_sprite_1) 
+				or (pickup_1.sprite_index = global.parent_synergy2.base_item_sprite_2) 
+				or (pickup_1.sprite_index = global.parent_synergy2.gui_sprite) ) {
+					instance_destroy(pickup_1);
+					pickup_1 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+					instance_create_depth(x,y,depth,pickup_1,{create_coins: false});
+				}
+			}
+			if instance_exists(pickup_2) {
+				while instance_exists(pickup_2) and ( (pickup_2.sprite_index = global.parent_synergy2.base_item_sprite_1) 
+				or (pickup_2.sprite_index = global.parent_synergy2.base_item_sprite_2) 
+				or (pickup_2.sprite_index = global.parent_synergy2.gui_sprite) ) {
+					instance_destroy(pickup_2);
+					pickup_2 = global.all_pickups[irandom_range(0,array_length(global.all_pickups)-1)];
+					instance_create_depth(x,y,depth,pickup_2,{create_coins: false});
+				}
+			}
 		}
 	}
 	if instance_exists(pickup_1) {
@@ -339,9 +389,11 @@ if key_select {
 		
 		if global.num_of_coins >= global.refresh_cost {
 			audio_play_sound(snd_refreshShop,0,false);
-			with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_player_mask.depth-1,obj_coin_spawner) {
-				num_of_coins = global.refresh_cost;
-				init_num_of_coins = num_of_coins;
+			if instance_exists(obj_shop) {
+				with instance_create_depth(obj_player_mask.x,obj_player_mask.y,obj_shop.depth-155,obj_coin_spawner) {
+					num_of_coins = global.refresh_cost;
+					init_num_of_coins = num_of_coins;
+				}
 			}
 			with obj_item_parent {
 				if salesman = false {

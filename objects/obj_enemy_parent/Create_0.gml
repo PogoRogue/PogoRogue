@@ -63,3 +63,4 @@ bounced_times = 0;
 depth = -10;
 
 freeze = false;
+aura_used = 0;
