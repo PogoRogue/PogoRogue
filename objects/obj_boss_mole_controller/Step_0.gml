@@ -14,6 +14,12 @@ if !instance_exists(obj_boss_mole_parent) and mole_defeated = false {
 		scr_Save_Real("area_3_reached",global.area_3_reached); 
 	}
 	
+	if global.steam_api = true {
+		if !steam_get_achievement("ACHIEVEMENT_MOLES") {
+			steam_set_achievement("ACHIEVEMENT_MOLES");
+		}
+	}
+	
 	mole_defeated = true;
 }
 

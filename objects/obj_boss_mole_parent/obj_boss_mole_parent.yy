@@ -41,6 +41,9 @@
     "name":"spr_mole1",
     "path":"sprites/spr_mole1/spr_mole1.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_mole1",
+    "path":"sprites/spr_mole1/spr_mole1.yy",
+  },
   "visible":true,
 }

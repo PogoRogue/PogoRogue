@@ -320,3 +320,10 @@ if lock_unlocked = true {
 }else {
 	lock_unlocked_frames = 0;
 }
+
+if state = state_magnet {
+	draw_sprite_ext(spr_player_zekai_magnet,magnet_index,x,y,1,1,angle,c_white,image_alpha);
+}else if magnet_index > 0 {
+	magnet_index -= 0.5;
+	draw_sprite_ext(spr_player_zekai_magnet,magnet_index,x,y,1,1,angle,c_white,image_alpha);
+}

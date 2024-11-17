@@ -73,6 +73,19 @@ top_border = view_height - 20;
 hp_percent = (hp / hp_max) * 100;
 
 state_waiting = function() {
+	if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+		sprite_index = spr_mole1;
+		image_speed = 0;
+		image_index = 0;
+	}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+		sprite_index = spr_mole2;
+		image_speed = 0;
+		image_index = 0;
+	}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+		sprite_index = spr_mole3;
+		image_speed = 0;
+		image_index = 0;
+	}
 	if state_switched = true {
 		state_switched = false;
 		is_bomb = false;
@@ -81,6 +94,19 @@ state_waiting = function() {
 }
 
 state_poke = function() {
+	if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+		sprite_index = spr_mole1;
+		image_speed = 0;
+		image_index = 0;
+	}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+		sprite_index = spr_mole2;
+		image_speed = 0;
+		image_index = 0;
+	}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+		sprite_index = spr_mole3;
+		image_speed = 0;
+		image_index = 0;
+	}
 	if megabounce_freeze = false {
 		freeze = false;
 	}
@@ -116,35 +142,44 @@ state_poke = function() {
 					if is_bomb = false {
 						reached_end = true;
 					}else {
-						if floor(image_index) >= 9 {
+						if object_get_name(object_index) = "obj_boss_mole1" {
+							var projectile_sprite = spr_mole1_projectile;
+						}else if object_get_name(object_index) = "obj_boss_mole2" {
+							var projectile_sprite = spr_mole2_projectile;
+						}else if object_get_name(object_index) = "obj_boss_mole3" {
+							var projectile_sprite = spr_mole3_projectile;
+						}else {
+							var projectile_sprite = spr_mole1_projectile;
+						}
+						if floor(image_index) >= 11 {
 							reached_end = true;
 							image_alpha = 0;
 							//explosion code here
-							instance_create_depth(x,y,depth-1,obj_explosion);
+							instance_create_depth(x,y,610,obj_explosion);
 							if poke_direction = "up" {
-								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0});
-								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 30});
-								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 60});
-								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 90});
-								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 120});
-								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 150});
-								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 180});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0, sprite_index: projectile_sprite});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 30, sprite_index: projectile_sprite});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 60, sprite_index: projectile_sprite});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 90, sprite_index: projectile_sprite});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 120, sprite_index: projectile_sprite});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 150, sprite_index: projectile_sprite});
+								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 180, sprite_index: projectile_sprite});
 							}else if poke_direction = "left" {
-								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0});
-								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 30});
-								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 60});
-								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 90});
-								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 270});
-								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 300});
-								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 330});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0, sprite_index: projectile_sprite});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 30, sprite_index: projectile_sprite});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 60, sprite_index: projectile_sprite});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 90, sprite_index: projectile_sprite});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 270, sprite_index: projectile_sprite});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 300, sprite_index: projectile_sprite});
+								instance_create_depth(x+20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 330, sprite_index: projectile_sprite});
 							}else if poke_direction = "right" {
-								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 90});
-								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 120});
-								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 150});
-								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 180});
-								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 210});
-								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 240});
-								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 270});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 90, sprite_index: projectile_sprite});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 120, sprite_index: projectile_sprite});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 150, sprite_index: projectile_sprite});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 180, sprite_index: projectile_sprite});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 210, sprite_index: projectile_sprite});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 240, sprite_index: projectile_sprite});
+								instance_create_depth(x-20,y,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 270, sprite_index: projectile_sprite});
 							}
 						}
 					}
@@ -157,18 +192,27 @@ state_poke = function() {
 							reached_end = true;
 						}
 					}else {
-						if floor(image_index) >= 9 {
+						if object_get_name(object_index) = "obj_boss_mole1" {
+							var projectile_sprite = spr_mole1_projectile;
+						}else if object_get_name(object_index) = "obj_boss_mole2" {
+							var projectile_sprite = spr_mole2_projectile;
+						}else if object_get_name(object_index) = "obj_boss_mole3" {
+							var projectile_sprite = spr_mole3_projectile;
+						}else {
+							var projectile_sprite = spr_mole1_projectile;
+						}
+						if floor(image_index) >= 11 {
 							reached_end = true;
 							image_alpha = 0;
 							//explosion code here
-							instance_create_depth(x,y,depth-1,obj_explosion);
-							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0});
-							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 180});
-							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 210});
-							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 240});
-							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 270});
-							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 300});
-							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 330});
+							instance_create_depth(x,y,610,obj_explosion);
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0, sprite_index: projectile_sprite});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 180, sprite_index: projectile_sprite});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 210, sprite_index: projectile_sprite});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 240, sprite_index: projectile_sprite});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 270, sprite_index: projectile_sprite});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 300, sprite_index: projectile_sprite});
+							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 330, sprite_index: projectile_sprite});
 						}
 					}
 				}
@@ -198,10 +242,25 @@ state_poke = function() {
 }
 
 state_fall = function() {
-	if state_switched = true {
-		state_switched = false;
-		vspd = 0;
-		image_xscale = 1; image_yscale = -1; image_angle = 0;
+	if sprite_index != spr_mole1_kicking and sprite_index != spr_mole2_kicking and sprite_index != spr_mole3_kicking {
+		if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+			sprite_index = spr_mole1_falling;
+			image_speed = 0;
+			image_index = 0;
+		}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+			sprite_index = spr_mole2_falling;
+			image_speed = 0;
+			image_index = 0;
+		}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+			sprite_index = spr_mole3_falling;
+			image_speed = 0;
+			image_index = 0;
+		}
+		if state_switched = true {
+			state_switched = false;
+			vspd = 0;
+			image_xscale = 1; image_yscale = -1; image_angle = 0;
+		}
 	}
 	
 	if place_meeting(x,y,pipe1) and y > pipe1.y
@@ -221,6 +280,16 @@ state_fall = function() {
 		}else {
 			vspd = 1;
 		}
+		if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+			sprite_index = spr_mole1_kicking;
+			image_speed = 1;
+		}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+			sprite_index = spr_mole2_kicking;
+			image_speed = 1;
+		}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+			sprite_index = spr_mole3_kicking;
+			image_speed = 1;
+		}
 	}else if freeze = false {
 		vspd += grav;
 	}
@@ -230,6 +299,22 @@ state_fall = function() {
 }
 
 state_jump = function() {
+	if sprite_index != spr_mole1_firing and sprite_index != spr_mole2_firing and sprite_index != spr_mole3_firing {
+		if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+			sprite_index = spr_mole1_dashing;
+			image_speed = 0;
+			image_index = 0;
+		}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+			sprite_index = spr_mole2_dashing;
+			image_speed = 0;
+			image_index = 0;
+		}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+			sprite_index = spr_mole3_dashing;
+			image_speed = 0;
+			image_index = 0;
+		}
+	}
+	
 	if state_switched = true {
 		state_switched = false;
 		image_xscale = 1; image_yscale = -1; image_angle = 0;
@@ -265,10 +350,57 @@ state_jump = function() {
 			vspd += grav;
 		}
 		
-		if vspd >= 0 and jump_shot = false {
-			jump_shot = true;	
-			instance_create_depth(x,y-20,depth-1,obj_boss_mole_projectile,{speed: bullet_speed, 
-			direction: point_direction(x,y-20,obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90))});
+		if sprite_index != spr_mole1_firing and sprite_index != spr_mole2_firing and sprite_index != spr_mole3_firing {
+			if vspd > -1 and vspd < 0 {
+				if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+					sprite_index = spr_mole1_firing;
+					image_speed = 1;
+					image_index = 0;
+				}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+					sprite_index = spr_mole2_firing;
+					image_speed = 1;
+					image_index = 0;
+				}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+					sprite_index = spr_mole3_firing;
+					image_speed = 1;
+					image_index = 0;
+				}
+			}
+		}
+		
+		if (sprite_index = spr_mole1_firing or sprite_index = spr_mole2_firing or sprite_index = spr_mole3_firing) 
+		{
+			if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+				var projectile_sprite = spr_mole1_projectile;
+			}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+				var projectile_sprite = spr_mole2_projectile;
+			}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+				var projectile_sprite = spr_mole3_projectile;
+			}else {
+				var projectile_sprite = spr_mole1_projectile;
+			}
+			
+			if jump_shot = false and (floor(image_index) = 6 or floor(image_index) = 7) and hp > 0 {
+				jump_shot = true;	
+				instance_create_depth(x,y-1,depth - 1,obj_boss_mole_projectile,{speed: bullet_speed, sprite_index: projectile_sprite,
+				direction: point_direction(x,y-20,obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90))});
+			}
+			
+			if scr_Animation_Complete() or floor(image_index) >= 16 {
+				if sprite_index = spr_mole1_firing {
+					sprite_index = spr_mole1_dashing;
+					image_speed = 0;
+					image_index = 0;
+				}else if sprite_index = spr_mole2_firing {
+					sprite_index = spr_mole2_dashing;
+					image_speed = 0;
+					image_index = 0;
+				}else if sprite_index = spr_mole3_firing {
+					sprite_index = spr_mole3_dashing;
+					image_speed = 0;
+					image_index = 0;
+				}
+			}
 		}
 		
 		y += vspd;
@@ -278,6 +410,22 @@ state_jump = function() {
 }
 
 state_shoot = function() {
+	if sprite_index != spr_mole1_kicking and sprite_index != spr_mole2_kicking and sprite_index != spr_mole3_kicking {
+		if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+			sprite_index = spr_mole1_dashing;
+			image_speed = 0;
+			image_index = 0;
+		}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+			sprite_index = spr_mole2_dashing;
+			image_speed = 0;
+			image_index = 0;
+		}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+			sprite_index = spr_mole3_dashing;
+			image_speed = 0;
+			image_index = 0;
+		}
+	}
+	
 	if state_switched = true {
 		state_switched = false;
 		shoot_spd = 8;
@@ -300,6 +448,16 @@ state_shoot = function() {
 			if (place_meeting(x,y,pipe6)
 			or place_meeting(x,y,pipe7)
 			or place_meeting(x,y,pipe8)) {
+				if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+					sprite_index = spr_mole1_kicking;
+					image_speed = 1;
+				}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+					sprite_index = spr_mole2_kicking;
+					image_speed = 1;
+				}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+					sprite_index = spr_mole3_kicking;
+					image_speed = 1;
+				}
 				if shoot_spd > 1 {
 					shoot_spd -= 1;
 				}
@@ -317,6 +475,16 @@ state_shoot = function() {
 			if (place_meeting(x,y,pipe1)
 			or place_meeting(x,y,pipe2) 
 			or place_meeting(x,y,pipe3)) {
+				if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+					sprite_index = spr_mole1_kicking;
+					image_speed = 1;
+				}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+					sprite_index = spr_mole2_kicking;
+					image_speed = 1;
+				}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+					sprite_index = spr_mole3_kicking;
+					image_speed = 1;
+				}
 				if shoot_spd > 1 {
 					shoot_spd -= 1;
 				}
@@ -332,6 +500,16 @@ state_shoot = function() {
 			
 			if (place_meeting(x,y,pipe4)
 			or place_meeting(x,y,pipe5)) {
+				if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+					sprite_index = spr_mole1_kicking;
+					image_speed = 1;
+				}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+					sprite_index = spr_mole2_kicking;
+					image_speed = 1;
+				}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+					sprite_index = spr_mole3_kicking;
+					image_speed = 1;
+				}
 				if shoot_spd > 1 {
 					shoot_spd -= 1;
 				}
@@ -347,6 +525,16 @@ state_shoot = function() {
 			
 			if (place_meeting(x,y,pipe9)
 			or place_meeting(x,y,pipe10)) {
+				if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
+					sprite_index = spr_mole1_kicking;
+					image_speed = 1;
+				}else if object_get_name(object_index) = "obj_boss_mole2" and !is_bomb {
+					sprite_index = spr_mole2_kicking;
+					image_speed = 1;
+				}else if object_get_name(object_index) = "obj_boss_mole3" and !is_bomb {
+					sprite_index = spr_mole3_kicking;
+					image_speed = 1;
+				}
 				if shoot_spd > 1 {
 					shoot_spd -= 1;
 				}

@@ -514,4 +514,80 @@ function scr_Bullets(){
 		bounce_amount: 1,
 		damage: 8
 	};
+	
+	snow_bullet = {
+		sprite: spr_projectile_snowcannon,
+		gui_sprite: spr_projectile_snowcannon_gui,
+		spd:8,
+		firerate_start: 1,
+		firerate_end: 1,
+		firerate_mult: 0,
+		firerate: 1,
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 5.5, frames: 12},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: true,
+		grv: obj_player.grv,
+		num_of_bounces: 0 + global.bouncy_bullets,
+		bounce_amount: 1,
+		damage: 16
+	};
+	
+	balloon_bullet = {
+		sprite: spr_projectile_balloon,
+		gui_sprite: spr_projectile_balloon_gui,
+		spd: 4,
+		firerate_start: 1,
+		firerate_end: 1,
+		firerate_mult: 0,
+		firerate: 1,
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 0, frames: 0},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: true,
+		grv: -obj_player.grv,
+		num_of_bounces: 0 + global.bouncy_bullets,
+		bounce_amount: 1,
+		damage: 1
+	};
+	
+	frisbee_bullet = {
+		sprite: spr_projectile_frisbee,
+		gui_sprite: spr_projectile_frisbee_gui,
+		spd: 8,
+		firerate_start: 1,
+		firerate_end: 1,
+		firerate_mult: 0,
+		firerate: 1,
+		destroy_on_impact: false,
+		screen_shake: {magnitude: 4.5, frames: 8},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0 + global.bouncy_bullets,
+		bounce_amount: 1,
+		damage: 12
+	};
+	
+	dart_bullet = {
+		sprite: spr_projectile_dart,
+		gui_sprite: spr_projectile_dart_gui,
+		spd: 0,                          
+		firerate_start: 1,               
+		firerate_end: 1,                 
+		firerate_mult: 0,               
+		firerate: 1,                     
+		destroy_on_impact: true,
+		screen_shake: {magnitude: 4, frames: 6},
+		destroy_time: 0,
+		flash_frame: 12,
+		grav_affected: false,
+		grv: obj_player.grv,
+		num_of_bounces: 0,
+		bounce_amount: 1,
+		damage: 6
+	};
 }

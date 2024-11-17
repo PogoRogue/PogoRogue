@@ -89,6 +89,39 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
 			}
 		}
+	}else if gun_name = "Snow Cannon" {
+		enemy_object = other;
+		if !scr_In_Array(enemies_array,enemy_object) {
+			array_resize(enemies_array,array_length(enemies_array)+1);
+			enemies_array[array_length(enemies_array)-1] = enemy_object;
+			if !scr_In_Array(global.boss_rooms,room) {
+				if enemy_object.hp > 1 {
+					enemy_object.hp = 1;
+					//freeze implementation here
+				}else {
+					enemy_object.hp = 0;
+				}
+			}else {
+				enemy_object.hp -= ((20 + global.damage_buff - (global.damage_buff)) * global.capitalist_damage) * enemy_object.bullet_defense * crit_dmg_mult;
+			}
+			enemy_object.red_frames = 10;
+			scr_Reload_On_Kill();
+			if crit_chance > 100 - global.crit_percentage {
+				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
+			}
+		}
+	}else if gun_name = "Magnetic Disks" {
+		enemy_object = other;
+		if !scr_In_Array(enemies_array,enemy_object) {
+			array_resize(enemies_array,array_length(enemies_array)+1);
+			enemies_array[array_length(enemies_array)-1] = enemy_object;
+			enemy_object.hp -= ((damage + global.damage_buff - (global.damage_buff)) * global.capitalist_damage) * enemy_object.bullet_defense * crit_dmg_mult;
+			enemy_object.red_frames = 10;
+			scr_Reload_On_Kill();
+			if crit_chance > 100 - global.crit_percentage {
+				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
+			}
+		}
 	}else if gun_name = "Harpoon Helmet" and damage > 0 {
 		enemy_object = other;
 		if !scr_In_Array(enemies_array,enemy_object) {
@@ -147,7 +180,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 		}
 	}
 	
-	if (destroy_on_impact) or (gun_name = "Missile Launcher") or (gun_name = "Bullet Blast") or (gun_name = "Javelins") {
+	if (destroy_on_impact) or (gun_name = "Missile Launcher") or (gun_name = "Tracker Darts") or (gun_name = "Bullet Blast") or (gun_name = "Javelins") {
 		alarm[0] = 1;
 		//instance_destroy();
 	}

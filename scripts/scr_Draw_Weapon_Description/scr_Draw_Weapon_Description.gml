@@ -98,8 +98,20 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 			line_1 = "Boomerangs: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 		
+		if weapon._name = "Snow Cannon" {
+			line_1 = "Snowballs per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Magnetic Disks" {
+			line_1 = "Disks per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
 		if weapon._name = "Missile Launcher" {
 			line_1 = "Missiles per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
+		if weapon._name = "Tracker Darts" {
+			line_1 = "Darts per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 		
 		if weapon._name = "Yo-yo" {

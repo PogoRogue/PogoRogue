@@ -95,6 +95,17 @@ function scr_Upgrade_Weapon(gunname_string,level){
 		}else if gunname_string = "Missile Launcher" {
 			var temp_weapon = obj_player.missile_gun;
 			temp_weapon.ammo[0].damage += 8;
+		}else if gunname_string = "Snow Cannon" {
+			var temp_weapon = obj_player.snow_gun;
+		}else if gunname_string = "Balloon Gun" {
+			var temp_weapon = obj_player.balloon_gun;
+		}else if gunname_string = "Magnetic Disks" {
+			var temp_weapon = obj_player.frisbee_gun;
+			temp_weapon.ammo[0].sprite = spr_projectile_frisbee_large;
+			temp_weapon.ammo[0].damage += 4;
+			temp_weapon.ammo[0].spd += 2;
+		}else if gunname_string = "Tracker Darts" {
+			var temp_weapon = obj_player.dart_gun;
 		}
 		#endregion
 	}else if level = 3 {
@@ -191,6 +202,15 @@ function scr_Upgrade_Weapon(gunname_string,level){
 			temp_weapon.firerate_start = 1;
 			temp_weapon.firerate_end = 1;
 			temp_weapon.firerate = 1;        
+		}else if gunname_string = "Snow Cannon" {
+			var temp_weapon = obj_player.snow_gun;
+		}else if gunname_string = "Balloon Gun" {
+			var temp_weapon = obj_player.balloon_gun;
+		}else if gunname_string = "Magnetic Disks" {
+			var temp_weapon = obj_player.frisbee_gun;
+			temp_weapon.spread_number = 2;
+		}else if gunname_string = "Tracker Darts" {
+			var temp_weapon = obj_player.dart_gun;
 		}
 		#endregion
 	}else if level = 4 {
@@ -250,6 +270,10 @@ function scr_Upgrade_Weapon(gunname_string,level){
 			var temp_weapon = obj_player.water_gun;
 			temp_weapon.bullets_per_bounce = 60;
 			temp_weapon.current_bullets = round(temp_weapon.current_bullets);
+		}else if gunname_string = "Snow Cannon" {
+			var temp_weapon = obj_player.snow_gun;
+		}else if gunname_string = "Balloon Gun" {
+			var temp_weapon = obj_player.balloon_gun;
 		}
 		#endregion
 	}

@@ -18,25 +18,25 @@ function scr_All_Weapons_Array(){
 							obj_item_weapon_water, obj_item_weapon_machine, obj_item_weapon_grenade,
 							obj_item_weapon_starsucker, obj_item_weapon_yoyo, obj_item_weapon_bubble,
 							obj_item_weapon_slime, obj_item_weapon_sniper, obj_item_weapon_plasma,
-							obj_item_weapon_laser, obj_item_weapon_missile,obj_item_weapon_default,
-							obj_item_weapon_default,obj_item_weapon_default,obj_item_weapon_default];
+							obj_item_weapon_laser, obj_item_weapon_missile,obj_item_weapon_snow,
+							obj_item_weapon_balloon,obj_item_weapon_frisbees,obj_item_weapon_darts];
 	
 	if global.phase <= 1 and room != room_items {
 		global.all_weapons = [obj_item_weapon_paintball,obj_item_weapon_shotgun,
 							obj_item_weapon_burstfire,obj_item_weapon_javelins,obj_item_weapon_puncher,
 							obj_item_weapon_sixshooter, obj_item_weapon_bouncyball,obj_item_weapon_boomerang,
-							obj_item_weapon_water];
+							obj_item_weapon_water,obj_item_weapon_snow,obj_item_weapon_balloon];
 	}else if global.phase = 2 and room != room_items {
 		global.all_weapons = [obj_item_weapon_paintball,obj_item_weapon_shotgun,
 							obj_item_weapon_burstfire,obj_item_weapon_javelins,obj_item_weapon_puncher,
 							obj_item_weapon_sixshooter, obj_item_weapon_bouncyball,obj_item_weapon_boomerang,
-							obj_item_weapon_water, obj_item_weapon_machine, obj_item_weapon_grenade,
-							obj_item_weapon_starsucker, obj_item_weapon_yoyo, obj_item_weapon_bubble];
+							obj_item_weapon_water, obj_item_weapon_snow, obj_item_weapon_balloon, obj_item_weapon_machine, obj_item_weapon_grenade,
+							obj_item_weapon_starsucker, obj_item_weapon_yoyo, obj_item_weapon_bubble,obj_item_weapon_frisbees,obj_item_weapon_darts];
 	}else if room != room_items {
 		global.all_weapons = [obj_item_weapon_puncher,
 							obj_item_weapon_sixshooter, obj_item_weapon_bouncyball,obj_item_weapon_boomerang,
-							obj_item_weapon_water, obj_item_weapon_machine, obj_item_weapon_grenade,
-							obj_item_weapon_starsucker, obj_item_weapon_yoyo, obj_item_weapon_bubble,
+							obj_item_weapon_water, obj_item_weapon_snow,obj_item_weapon_balloon, obj_item_weapon_machine, obj_item_weapon_grenade,
+							obj_item_weapon_starsucker, obj_item_weapon_yoyo, obj_item_weapon_bubble,obj_item_weapon_frisbees,obj_item_weapon_darts,
 							obj_item_weapon_slime, obj_item_weapon_sniper, obj_item_weapon_plasma,
 							obj_item_weapon_laser, obj_item_weapon_missile];
 	}else {

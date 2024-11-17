@@ -260,6 +260,12 @@ if size = 1 {
 					global.area_3_reached += 1
 					scr_Save_Real("area_3_reached",global.area_3_reached); 
 				}
+				
+				if global.steam_api = true {
+					if !steam_get_achievement("ACHIEVEMENT_BALLS") {
+						steam_set_achievement("ACHIEVEMENT_BALLS");
+					}
+				}
 			}
 		}
 	}

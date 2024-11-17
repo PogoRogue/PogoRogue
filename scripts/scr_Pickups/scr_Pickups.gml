@@ -361,7 +361,7 @@ function scr_Pickups(){
 		on_call: function() {
 			
 			with obj_player {
-				if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun { //reload bullets
+				if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun and gun_1 != frisbee_gun { //reload bullets
 					//reload sound
 					audio_play_sound(snd_reload,0,false);
 					gun_1.current_bullets = gun_1.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
@@ -369,7 +369,7 @@ function scr_Pickups(){
 					other.cooldown_time = other.max_cooldown_time;
 					other.on_cooldown = true;
 				}
-				if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun { //reload bullets
+				if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun and gun_2 != frisbee_gun { //reload bullets
 					//reload sound
 					audio_play_sound(snd_reload,0,false);
 					gun_2.current_bullets = gun_2.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
@@ -377,7 +377,7 @@ function scr_Pickups(){
 					other.cooldown_time = other.max_cooldown_time;
 					other.on_cooldown = true;
 				}
-				if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun { //reload bullets
+				if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun and gun_3 != frisbee_gun { //reload bullets
 					//reload sound
 					audio_play_sound(snd_reload,0,false);
 					gun_3.current_bullets = gun_3.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
@@ -451,7 +451,7 @@ function scr_Pickups(){
 				freeze_time = 180;
 				freeze_angle = angle;
 				//reload current weapon
-				if gun_array[current_gun]._name != "Boomerangs" {
+				if gun_array[current_gun]._name != "Boomerangs" and gun_array[current_gun]._name != "Magnetic Disks" {
 					gun_array[current_gun].current_bullets = gun_array[current_gun].bullets_per_bounce + max_ammo_buff;
 				}
 			}
@@ -1071,19 +1071,19 @@ function scr_Pickups(){
 		on_call: function() {
 			if obj_player.energy_buff = 0 or global.zap_used = false {
 				with obj_player {
-					if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun { //reload bullets
+					if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun and gun_1 != frisbee_gun { //reload bullets
 						//reload sound
 						audio_play_sound(snd_reload,0,false);
 						gun_1.current_bullets = gun_1.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
 						instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 					}
-					if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun { //reload bullets
+					if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun and gun_2 != frisbee_gun { //reload bullets
 						//reload sound
 						audio_play_sound(snd_reload,0,false);
 						gun_2.current_bullets = gun_2.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
 						instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 					}
-					if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun { //reload bullets
+					if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun and gun_3 != frisbee_gun { //reload bullets
 						//reload sound
 						audio_play_sound(snd_reload,0,false);
 						gun_3.current_bullets = gun_3.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	

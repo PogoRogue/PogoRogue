@@ -436,7 +436,7 @@ if (canshoot > 0) {
 	//lerp firerate to end while shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_end, ammo.firerate_mult);
 	
-	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_chargejump and table = false) {
+	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_chargejump and table = false and state != state_magnet) {
 		scr_Shoot();
 	
 		var delay = gun.burst_delay;
@@ -455,6 +455,18 @@ if (canshoot > 0) {
 			gun.current_bullets -= 1;
 		}
 	}else {
+		if ((gun.current_bullets) <= 0 and table = false) and gun._name = "Magnetic Disks" {
+			with obj_projectile {
+				if gun_name = "Magnetic Disks" {
+					if summoned = false {
+						obj_player.state = obj_player.state_magnet;
+						obj_player.magnet_index = 0;
+						summoned = true;
+						enemies_array = [];
+					}
+				}
+			}
+		}
 		if (audio_is_playing(snd_watergun)) {
 			audio_stop_sound(snd_watergun);
 		}

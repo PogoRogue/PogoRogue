@@ -591,6 +591,105 @@ if (gun_name = "Plasma Gun") {
 		}
 	}
 }
+
+if (gun_name = "Snow Cannon") {
+	image_angle += 10;
+}
+
+if (gun_name = "Magnetic Disks") {
+	if stuck = false or summoned = true {
+		image_angle += 10;
+	}
+	if place_meeting(x+hspd,y+vspd,obj_ground) and summoned = false and stuck = false {
+		while !place_meeting(x+sign(hspd),y+sign(vspd),obj_ground) {
+			x+=hspd;
+			y+=vspd;
+		}
+		hspd = 0;
+		vspd = 0;
+		stuck = true;
+	}
+	
+	if summoned = true {
+		if summon_speed < 24 {
+			summon_speed += 1;
+		}
+		move_towards_point(obj_player.x,obj_player.y,summon_speed);
+		if place_meeting(x+hspeed,y+vspeed,obj_player) or place_meeting(x+hspd,y+vspd,obj_player_mask) {
+			instance_destroy();
+			with obj_player {
+				if frisbee_gun.current_bullets < frisbee_gun.bullets_per_bounce+max_ammo_buff
+				frisbee_gun.current_bullets	+= 1;
+				if state != state_freeze and state != state_parachute {
+					var disks = 0;
+					with obj_projectile {
+						if gun_name = "Magnetic Disks" {
+							disks += 1;
+						}
+					}
+					if disks = 0 { //frisbee_gun.current_bullets = frisbee_gun.bullets_per_bounce+max_ammo_buff {
+						speed = 0;
+						motion_add(angle - 90, vsp_basicjump*1.1);
+					}
+					scr_Screen_Shake(3,6,true);
+				}
+			}
+		}
+	}
+}
+
+//missile
+if (gun_name = "Tracker Darts") {
+	//speed up
+	if speed < 6 {
+		speed += 0.15;	
+	}
+	
+	//lock on to enemy
+	if collision_circle(x,y,128,obj_enemy_parent,false,true) != noone {
+		closest_enemy = instance_nearest(x,y,obj_enemy_parent);
+	}else {
+		closest_enemy = noone;
+	}
+	
+	//rotate
+	if closest_enemy != noone {
+		//num_of_bounces = 0;
+		damage = init_damage;
+		scr_Gradually_Turn(self.id,closest_enemy,45,1);
+		direction = image_angle;
+		if place_meeting(x,y,closest_enemy) {
+			instance_destroy();	
+		}
+	}else {
+		direction = image_angle;
+		
+		if place_meeting(x,y+vspeed,obj_ground) and num_of_bounces > 0  {
+			while !place_meeting(x,y+sign(vspeed),obj_ground) {
+				y += sign(vspeed);
+			}
+			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
+			direction = image_angle;
+			num_of_bounces -= 1;
+		}
+		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces <= 0 and global.drilltipbullets = false {
+			instance_destroy();	
+		}else if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0  {
+			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
+			direction = image_angle;
+			num_of_bounces -= 1;
+		}
+		if place_meeting(x+hspeed,y,obj_ground) and num_of_bounces > 0  {
+			while !place_meeting(x+sign(hspeed),y,obj_ground) {
+				x += sign(hspeed);
+			}
+			image_angle = point_direction(x,y,x-hspeed,y+vspeed);
+			direction = image_angle;
+			num_of_bounces -= 1;
+		}
+	}
+}
+
 if (gun_name = "Six Shooter") or (gun_name = "Seven Shooter") or (gun_name = "Eight Shooter") 
 or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Eleven Shooter") {
 	if place_meeting(x,y,obj_ground) {

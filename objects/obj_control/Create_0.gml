@@ -23,7 +23,7 @@ global.boss_1_room = choose(room_boss_1,room_boss_1B);
 global.boss_2_room = choose(room_boss_2,room_boss_2B);
 
 if room = room_starting_area {
-	global.num_of_coins = 0;
+	global.num_of_coins = 1000;
 }else if room = room_test {
 	global.num_of_coins = 200;
 }else if !scr_In_Array(global.boss_rooms,room) {

@@ -881,6 +881,49 @@ state_plasmacharge = function() {
 	}
 }
 
+magnet_index = 0;
+state_magnet = function() {
+	can_rotate = true;
+	if sprite_index != player_sprite and sprite_index != charging_sprite {
+		sprite_index = player_sprite;
+	}
+
+	speed = speed * 0.9;
+	if scr_Animation_Complete() and sprite_index = player_sprite {
+		sprite_index = charging_sprite;	
+	}else if sprite_index = player_sprite {
+		image_index += 1;
+	}else {
+		image_index += 0.25;	
+	}
+	scr_Player_Collision();
+	if state = state_bouncing { //dont want to cancel powerup after collision
+		state = state_magnet;
+	}
+	
+	var num_of_disks = 0;
+	var num_of_summons = 0;
+	with obj_projectile {
+		if gun_name = "Magnetic Disks" {
+			num_of_disks += 1;
+			if summoned = true {
+				num_of_summons += 1;	
+			}
+		}
+	}
+	
+	if magnet_index < 30 {
+		magnet_index += 0.5;
+	}else {
+		magnet_index = 5;
+	}
+	
+	if num_of_disks = 0 or frisbee_gun.current_bullets > 0 and num_of_summons = 0 {
+		state = state_free;	
+		magnet_index = 6;
+	}
+}
+
 state_freeze = function() {
 	
 	if pickup_1 = pickup_freeze {  
@@ -1604,7 +1647,8 @@ all_guns_array = [default_gun,paintball_gun,shotgun_gun,
 				water_gun, machine_gun, grenade_gun,
 				starsucker_gun, yoyo_gun, bubble_gun,
 				slime_gun, sniper_gun, plasma_gun,
-				laser_gun, missile_gun]; //all guns
+				laser_gun, missile_gun,snow_gun,
+				balloon_gun,frisbee_gun,dart_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();

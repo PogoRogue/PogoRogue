@@ -70,7 +70,7 @@ if died = true {
 
 if red_frames > 0 and freeze = false  {
 	if other.is_bomb = true {
-		image_index = 10;
+		image_index = 11;
 		image_alpha = 0;
 		pause_time = 0;
 	}
@@ -86,7 +86,7 @@ if is_bomb = true {
 	sprite_index = spr_mole_bomb;
 	hp = current_bomb_hp;
 }else {
-	sprite_index = init_sprite;
+	//sprite_index = init_sprite;
 }
 
 depth = 501;

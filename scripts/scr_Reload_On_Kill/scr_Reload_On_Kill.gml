@@ -22,7 +22,7 @@ function scr_Reload_On_Kill() {
 						gun_temp.current_bullets = gun_temp.bullets_per_bounce;
 					}
 				}
-			}else if gun.current_bullets < gun.bullets_per_bounce+obj_player.max_ammo_buff and gun != boomerang_gun {
+			}else if gun.current_bullets < gun.bullets_per_bounce+obj_player.max_ammo_buff and gun != boomerang_gun and gun != frisbee_gun {
 				gun.current_bullets = gun.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
 	
 				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);

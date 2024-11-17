@@ -444,6 +444,47 @@ if gun_name = "Bouncy Ball Blaster" {
 	//mask_index = spr_projectile_bouncyball_mask;
 }
 
+//Plasma Gun
+if (gun_name = "Snow Cannon") {
+	//damage = 0;
+	init_damage = damage;
+	colliding_with_enemy = false;
+	enemies_array = [];
+}
+
+if (gun_name = "Magnetic Disks") {
+	summoned = false;
+	stuck = false;
+	summon_speed = 0;
+	
+	if (obj_player.frisbee_gun.current_bullets % 2) = 0 {
+		image_index = 0;
+	}else {
+		image_index = 1;
+	}
+	
+	init_damage = damage;
+	colliding_with_enemy = false;
+	enemies_array = [];
+}
+
+//missile
+if (gun_name = "Tracker Darts") {
+	if spread_index = 0 {
+		sound = audio_play_sound(snd_rocketwhoosh,0,false);
+	}
+	temp_angle = image_angle;
+	if collision_circle(x,y,128,obj_enemy_parent,false,true) != noone {
+		if(!boss_projectile){
+		    closest_enemy = instance_nearest(x,y,obj_enemy_parent);
+		}else{
+			closest_enemy = instance_nearest(x,y,obj_player);
+		}
+	}else {
+		closest_enemy = noone;
+	}
+}
+
 free = true //dont bounce if colliding w/ ground on spawn
 
 if gun_name != "Plasma Gun" {
