@@ -641,12 +641,12 @@ if (gun_name = "Magnetic Disks") {
 //missile
 if (gun_name = "Tracker Darts") {
 	//speed up
-	if speed < 6 {
-		speed += 0.15;	
+	if speed < 6 + (6 * (gun_level > 1)) {
+		speed += 0.15 + (0.15 * (gun_level > 1));	
 	}
 	
 	//lock on to enemy
-	if collision_circle(x,y,128,obj_enemy_parent,false,true) != noone {
+	if collision_circle(x,y,160,obj_enemy_parent,false,true) != noone {
 		closest_enemy = instance_nearest(x,y,obj_enemy_parent);
 	}else {
 		closest_enemy = noone;
@@ -659,7 +659,7 @@ if (gun_name = "Tracker Darts") {
 		scr_Gradually_Turn(self.id,closest_enemy,45,1);
 		direction = image_angle;
 		if place_meeting(x,y,closest_enemy) {
-			instance_destroy();	
+			//instance_destroy();	
 		}
 	}else {
 		direction = image_angle;
@@ -668,13 +668,6 @@ if (gun_name = "Tracker Darts") {
 			while !place_meeting(x,y+sign(vspeed),obj_ground) {
 				y += sign(vspeed);
 			}
-			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
-			direction = image_angle;
-			num_of_bounces -= 1;
-		}
-		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces <= 0 and global.drilltipbullets = false {
-			instance_destroy();	
-		}else if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0  {
 			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
 			direction = image_angle;
 			num_of_bounces -= 1;

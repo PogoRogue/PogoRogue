@@ -354,6 +354,7 @@
     {"id":{"name":"obj_cubeenemy_laser2","path":"objects/obj_cubeenemy_laser2/obj_cubeenemy_laser2.yy",},},
     {"id":{"name":"obj_cubeenemy","path":"objects/obj_cubeenemy/obj_cubeenemy.yy",},},
     {"id":{"name":"obj_darkscreen_transition","path":"objects/obj_darkscreen_transition/obj_darkscreen_transition.yy",},},
+    {"id":{"name":"obj_dart_stuck","path":"objects/obj_dart_stuck/obj_dart_stuck.yy",},},
     {"id":{"name":"obj_deathscreen","path":"objects/obj_deathscreen/obj_deathscreen.yy",},},
     {"id":{"name":"obj_draw_input","path":"objects/obj_draw_input/obj_draw_input.yy",},},
     {"id":{"name":"obj_drone_tutorial","path":"objects/obj_drone_tutorial/obj_drone_tutorial.yy",},},

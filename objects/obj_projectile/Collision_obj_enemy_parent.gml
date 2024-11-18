@@ -182,6 +182,29 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 	
 	if (destroy_on_impact) or (gun_name = "Missile Launcher") or (gun_name = "Tracker Darts") or (gun_name = "Bullet Blast") or (gun_name = "Javelins") {
 		alarm[0] = 1;
+		if (gun_name = "Tracker Darts") {
+			if dart_created = false {
+				var enemy = other;
+				with instance_create_depth(x,y,-5,obj_dart_stuck)	{
+					other_depth = other.depth;
+					depth = -5;
+					image_angle = other.image_angle;
+					damage = other.damage;
+					parent_obj = enemy;
+					if instance_exists(parent_obj) {
+						parent_x_diff = x - parent_obj.x;
+						parent_y_diff = y - parent_obj.y;
+						if object_get_name(parent_obj.object_index) = "obj_boss_basketball" {
+							basketball_stuck = true;
+							parent_angle_init = parent_obj.rot_angle;
+							parent_dir_init = point_direction(parent_obj.x,parent_obj.y,x,y);
+							parent_dist_init = point_distance(parent_obj.x,parent_obj.y,x,y);
+						}
+					}
+				}
+				dart_created = true;
+			}
+		}
 		//instance_destroy();
 	}
 

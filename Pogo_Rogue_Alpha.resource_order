@@ -126,6 +126,7 @@
     {"name":"obj_cubeenemy_laser2","order":14,"path":"objects/obj_cubeenemy_laser2/obj_cubeenemy_laser2.yy",},
     {"name":"obj_cubeenemy","order":6,"path":"objects/obj_cubeenemy/obj_cubeenemy.yy",},
     {"name":"obj_darkscreen_transition","order":12,"path":"objects/obj_darkscreen_transition/obj_darkscreen_transition.yy",},
+    {"name":"obj_dart_stuck","order":50,"path":"objects/obj_dart_stuck/obj_dart_stuck.yy",},
     {"name":"obj_deathscreen","order":11,"path":"objects/obj_deathscreen/obj_deathscreen.yy",},
     {"name":"obj_draw_input","order":21,"path":"objects/obj_draw_input/obj_draw_input.yy",},
     {"name":"obj_dummy_ground","order":9,"path":"objects/obj_dummy_ground/obj_dummy_ground.yy",},

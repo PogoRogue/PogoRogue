@@ -114,6 +114,18 @@ if (gun_name = "Javelins") {
 	}
 }
 
+if (gun_name = "Tracker Darts") {
+	if dart_created = false and place_meeting(x,y,obj_ground) {
+		with instance_create_depth(x,y,-5,obj_dart_stuck)	{
+			other_depth = other.depth;
+			depth = -5;
+			image_angle = other.image_angle;
+			damage = other.damage;
+			grounded = true;
+		}
+	}
+}
+
 if gun_name = "Boomerangs" {
 	if audio_is_playing(sound) {
 		audio_stop_sound(sound);

@@ -474,7 +474,7 @@ if (gun_name = "Tracker Darts") {
 		sound = audio_play_sound(snd_rocketwhoosh,0,false);
 	}
 	temp_angle = image_angle;
-	if collision_circle(x,y,128,obj_enemy_parent,false,true) != noone {
+	if collision_circle(x,y,160,obj_enemy_parent,false,true) != noone {
 		if(!boss_projectile){
 		    closest_enemy = instance_nearest(x,y,obj_enemy_parent);
 		}else{
@@ -483,6 +483,7 @@ if (gun_name = "Tracker Darts") {
 	}else {
 		closest_enemy = noone;
 	}
+	dart_created = false;
 }
 
 free = true //dont bounce if colliding w/ ground on spawn

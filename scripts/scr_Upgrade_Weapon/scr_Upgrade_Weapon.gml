@@ -106,6 +106,7 @@ function scr_Upgrade_Weapon(gunname_string,level){
 			temp_weapon.ammo[0].spd += 2;
 		}else if gunname_string = "Tracker Darts" {
 			var temp_weapon = obj_player.dart_gun;
+			temp_weapon.ammo[0].spd += 2;
 		}
 		#endregion
 	}else if level = 3 {
@@ -211,6 +212,8 @@ function scr_Upgrade_Weapon(gunname_string,level){
 			temp_weapon.spread_number = 2;
 		}else if gunname_string = "Tracker Darts" {
 			var temp_weapon = obj_player.dart_gun;
+			temp_weapon.spread_number = 2;
+			temp_weapon.ammo[0].damage -= 2;
 		}
 		#endregion
 	}else if level = 4 {
