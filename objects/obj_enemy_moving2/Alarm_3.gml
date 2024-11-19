@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if !is_dead { 
+if !is_dead and snowball_freeze = false { 
 	if red_frames = 0 {
 		instance_create_depth(x-(3*image_xscale),y-21,depth+1,obj_robot_laser,{h_spd: image_xscale * 16,image_xscale: image_xscale,parent: self});
 		//instance_create_depth(x-(2*image_xscale),y-20,depth-1,obj_robot_laser,{h_spd: image_xscale * 16,image_xscale: image_xscale,parent: self});

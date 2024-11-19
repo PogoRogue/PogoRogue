@@ -1,5 +1,6 @@
 /// @description Damage enemy
 //crit chance
+
 randomize();
 if gun_name != "Laser Gun" and gun_name != "Water Gun" {
 	var crit_chance = irandom_range(1,100);
@@ -89,15 +90,22 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
 			}
 		}
-	}else if gun_name = "Snow Cannon" {
+	}else if gun_name = "Snow Cannon"  {
+		
 		enemy_object = other;
 		if !scr_In_Array(enemies_array,enemy_object) {
 			array_resize(enemies_array,array_length(enemies_array)+1);
 			enemies_array[array_length(enemies_array)-1] = enemy_object;
 			if !scr_In_Array(global.boss_rooms,room) {
-				if enemy_object.hp > 1 {
+				if enemy_object.hp > damage {
 					enemy_object.hp = 1;
 					//freeze implementation here
+					enemy_object.snowball_x = enemy_object.x;
+					enemy_object.snowball_y = enemy_object.y;
+					enemy_object.snowball_frame = enemy_object.image_index;
+					enemy_object.snowball_sprite = enemy_object.sprite_index;
+					enemy_object.snowball_freeze = true;
+					exit;
 				}else {
 					enemy_object.hp = 0;
 				}

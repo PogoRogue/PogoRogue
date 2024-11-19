@@ -9,7 +9,7 @@ target_y = obj_player.y;
 
 // Create pathway object if it doesn't exist
 if(!instance_exists(obj_setup_pathway)) {
-	instance_create_layer(0, 0, "enemies", obj_setup_pathway);
+	//instance_create_layer(0, 0, "enemies", obj_setup_pathway);
 }
 
 

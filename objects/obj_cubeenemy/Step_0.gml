@@ -10,7 +10,7 @@ if rotation_dir = 1 and image_angle = 0 {
 	image_xscale = -1;
 }
 
-if rotating = true {
+if rotating = true and snowball_freeze = false {
 	if image_angle > -90 and image_angle < 90 and !(dir_changed = true and image_angle = 0) {
 		if !place_meeting(x,y,obj_player) and !is_dead {
 			image_angle += 3 * -rotation_dir;
@@ -101,7 +101,7 @@ if rotating = true {
 	
 }
 
-if !place_meeting(x,y+1,obj_ground) and !place_meeting(x,y+1,obj_ground_oneway) and !is_dead {
+if !place_meeting(x,y+1,obj_ground) and !place_meeting(x,y+1,obj_ground_oneway) and !is_dead  and snowball_freeze = false {
 	vspd += grav;
 }
 

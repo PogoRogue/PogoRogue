@@ -1,4 +1,8 @@
 /// @description Draw self
+if(snowball_freeze = true and shaded = false and !is_dead) {
+	shader_set(sh_tint_blue);
+	shaded = true;
+}
 
 if(red_frames > 0 and shaded = false) {
 	shader_set(sh_tint_red);

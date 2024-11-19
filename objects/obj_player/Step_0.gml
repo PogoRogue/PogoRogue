@@ -429,7 +429,8 @@ if (canshoot > 0) {
 			gun.spread_number = 3;
 		}
 	}else if gun.spread_number = 3 and tripleshot = false and !(gun._name = "Javelins" and gun.level >= 2)  
-	and !(gun._name = "Pistol" and gun.level >= 4) and !(gun._name = "Burst Rifle" and gun.level >= 4) {
+	and !(gun._name = "Pistol" and gun.level >= 4) and !(gun._name = "Burst Rifle" and gun.level >= 4)
+	and !(gun._name = "Snow Cannon" and gun.level >= 4){
 		gun.spread_number = 1;
 	}
 	
@@ -437,7 +438,18 @@ if (canshoot > 0) {
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_end, ammo.firerate_mult);
 	
 	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_chargejump and table = false and state != state_magnet) {
+	
+	if gun._name != "Snow Cannon" {
 		scr_Shoot();
+	}else if state != state_snowball {
+		if state != state_freeze and state != state_parachute {
+			snowball_released = false;
+			state = state_snowball;	
+			snowball_frames = 0;
+		}else {
+			scr_Shoot();
+		}
+	}
 	
 		var delay = gun.burst_delay;
 		
@@ -451,7 +463,7 @@ if (canshoot > 0) {
 		}
 		
 		//decrease ammo count for spread weapons
-		if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+		if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" and  gun._name != "Snow Cannon" {
 			gun.current_bullets -= 1;
 		}
 	}else {

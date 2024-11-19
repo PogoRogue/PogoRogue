@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if !is_dead { 
+if !is_dead and snowball_freeze = false { 
 
 	var red = make_color_rgb(180,82,82);
 	draw_set_alpha(laser_alpha);
@@ -13,7 +13,7 @@ if !is_dead {
 // Inherit the parent event
 event_inherited();
 
-if !is_dead { 
+if !is_dead and snowball_freeze = false { 
 	
 	var red = make_color_rgb(180,82,82);
 	draw_set_alpha(laser_alpha);

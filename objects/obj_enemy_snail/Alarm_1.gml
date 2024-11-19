@@ -6,4 +6,6 @@ if red = true {
 }else {
 	var slime_object = obj_enemy_snail_slime;
 }
-instance_create_layer(x+(14*image_xscale), y + 22, "enemies", slime_object,{parent_index: self});
+if snowball_freeze = false {
+	instance_create_layer(x+(14*image_xscale), y + 22, "enemies", slime_object,{parent_index: self});
+}

@@ -518,7 +518,7 @@ function scr_Bullets(){
 	snow_bullet = {
 		sprite: spr_projectile_snowcannon,
 		gui_sprite: spr_projectile_snowcannon_gui,
-		spd:8,
+		spd:6,
 		firerate_start: 1,
 		firerate_end: 1,
 		firerate_mult: 0,
@@ -528,10 +528,10 @@ function scr_Bullets(){
 		destroy_time: 0,
 		flash_frame: 12,
 		grav_affected: true,
-		grv: obj_player.grv,
+		grv: 0.15,
 		num_of_bounces: 0 + global.bouncy_bullets,
 		bounce_amount: 1,
-		damage: 16
+		damage: 4
 	};
 	
 	balloon_bullet = {

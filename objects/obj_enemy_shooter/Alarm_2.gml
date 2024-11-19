@@ -1,3 +1,5 @@
 /// @description Reset animation
 
-sprite_index = spr_enemy_shooter;
+if snowball_freeze = false {
+	sprite_index = spr_enemy_shooter;
+}	

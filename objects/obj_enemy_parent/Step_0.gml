@@ -242,6 +242,15 @@ if freeze = true {
 	speed = 0;	
 }
 
+if snowball_freeze = true {
+	x = snowball_x;
+	y = snowball_y;
+	sprite_index = snowball_sprite;
+	image_index = snowball_frame;
+	image_speed = 0;
+	speed = 0;	
+}
+
 // Update iframes
 current_iframes = max(current_iframes - 1, 0);
 

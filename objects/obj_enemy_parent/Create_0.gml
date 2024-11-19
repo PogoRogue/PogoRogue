@@ -50,6 +50,12 @@ random_set_seed(global.seed);
 shaded = false;
 locked_onto = false;
 
+snowball_freeze = false;
+snowball_x = x;
+snowball_y = y;
+snowball_frame = 0;
+snowball_sprite = sprite_index;
+
 megabounce_freeze = false; //dont despawn right away if killed by megabounce
 freeze_x = x;
 freeze_y = y;

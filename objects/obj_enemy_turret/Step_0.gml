@@ -3,7 +3,7 @@
 dist_to_player = distance_to_object(player);
 
 // Check if the player is within range
-if(!is_dead && dist_to_player < range) {
+if(!is_dead && dist_to_player < range) and !snowball_freeze {
 	// Only update if player is in the field of view as well
 	//can_see_player = !collision_line(x, y, player.x, player.y, obj_ground, false, true);
 	can_see_player = true;
@@ -66,7 +66,7 @@ if(!is_dead && dist_to_player < range) {
 		image_index = 0;
 	}
 	show_debug_message("ACTIVE");
-}else {
+}else if !snowball_freeze {
 	// When player is out of range, reset cooldown
 	weapon_cooldown = cooldown_length;
 	can_shoot = false;

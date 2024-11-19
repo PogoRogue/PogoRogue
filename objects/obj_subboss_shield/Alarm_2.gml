@@ -11,9 +11,10 @@ if(is_active) {
 	alarm[2] = round(room_speed * (powering_up_time + on_time + off_time));
 }
 
-
-with laser_obj {
-	sprite_index = spr_laser_middle_animation;
-	image_index = sprite_get_number(spr_laser_middle_animation)-1;
-	image_speed = - 1;
+if snowball_freeze = false {
+	with laser_obj {
+		sprite_index = spr_laser_middle_animation;
+		image_index = sprite_get_number(spr_laser_middle_animation)-1;
+		image_speed = - 1;
+	}
 }

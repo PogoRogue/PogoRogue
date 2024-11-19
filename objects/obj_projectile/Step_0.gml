@@ -1,7 +1,8 @@
-x += hspd;
 
+x += hspd;
 y += vspd;
-if place_meeting(x,y,obj_ground) and gun_name != "Javelins" and gun_name != "Plasma Gun" and gun_name != "Laser Gun" and destroy_on_impact {
+
+if place_meeting(x,y,obj_ground) and gun_name != "Javelins" and gun_name != "Plasma Gun" and gun_name != "Snow Cannon" and gun_name != "Laser Gun" and destroy_on_impact {
 	if global.drilltipbullets = false and num_of_bounces > 0 {
 		depth = instance_place(x,y,obj_ground).depth + 20;
 	}else if num_of_bounces > 0 {
@@ -140,7 +141,7 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) a
 	x += hspd;
 	
 }else if (place_meeting(x,y+vspd+1,obj_ground) and vspd > 0 and num_of_bounces > 0 ) and free = true and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground)) or gun_name != "Plasma Gun")
-or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) /*and gun_name != "Puncher"*/ and free = true  and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground_oneway)) or gun_name != "Plasma Gun"){ //top
+or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) /*and gun_name != "Puncher"*/ and free = true  and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground_oneway)) or gun_name != "Plasma Gun") { //top
 	while !place_meeting(x,y+sign(vspd)+1,obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) /*and gun_name != "Puncher"*/) {
 		y += sign(vspd);
 	}
@@ -162,7 +163,7 @@ or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_g
 	
 	x += hspd;
 
-}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false /*and gun_name != "Puncher"*/) 
+}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false and gun_name != "Snow Cannon" /*and gun_name != "Puncher"*/) 
 or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) 
 or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) {
 	alarm[0] = 1;
@@ -207,7 +208,7 @@ if (gun_name = "Missile Launcher") {
 		}
 		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces <= 0 and global.drilltipbullets = false {
 			instance_destroy();	
-		}else if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0  {
+		}else if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0   {
 			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
 			direction = image_angle;
 			num_of_bounces -= 1;
@@ -593,7 +594,12 @@ if (gun_name = "Plasma Gun") {
 }
 
 if (gun_name = "Snow Cannon") {
+	colliding_with_enemy = false;
 	image_angle += 10;
+	destroy_on_impact = false;
+	show_debug_message("hspd: " + string(hspd));
+	show_debug_message("vspd: " + string(vspd));
+	
 }
 
 if (gun_name = "Magnetic Disks") {
@@ -618,8 +624,6 @@ if (gun_name = "Magnetic Disks") {
 		if place_meeting(x+hspeed,y+vspeed,obj_player) or place_meeting(x+hspd,y+vspd,obj_player_mask) {
 			instance_destroy();
 			with obj_player {
-				if frisbee_gun.current_bullets < frisbee_gun.bullets_per_bounce+max_ammo_buff
-				frisbee_gun.current_bullets	+= 1;
 				if state != state_freeze and state != state_parachute {
 					var disks = 0;
 					with obj_projectile {
@@ -635,6 +639,21 @@ if (gun_name = "Magnetic Disks") {
 				}
 			}
 		}
+	}
+	
+	trail = not trail;
+	
+	if trail = false {
+		x_prev_array[4] = x_prev_array[3];
+		y_prev_array[4] = y_prev_array[3];
+		x_prev_array[3] = x_prev_array[2];
+		y_prev_array[3] = y_prev_array[2];
+		x_prev_array[2] = x_prev_array[1];
+		y_prev_array[2] = y_prev_array[1];
+		x_prev_array[1] = x_prev_array[0];
+		y_prev_array[1] = y_prev_array[0];
+		x_prev_array[0] = x;
+		y_prev_array[0] = y;
 	}
 }
 

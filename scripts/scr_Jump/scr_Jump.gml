@@ -26,7 +26,7 @@ function scr_Jump(add_to_jump){
 	if(global.dualwielder == true){
 		for(var i = 0; i < array_length(gun_array); i++){
 			var gun_temp = gun_array[i];
-			if gun_temp.current_bullets != gun_temp.bullets_per_bounce {
+			if gun_temp.current_bullets != gun_temp.bullets_per_bounce and gun_temp != frisbee_gun {
 				audio_play_sound(snd_reload,0,false);
 				instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);	
 				gun_temp.current_bullets = gun_temp.bullets_per_bounce;

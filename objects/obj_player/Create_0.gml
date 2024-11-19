@@ -58,6 +58,9 @@ fullauto_condtional = true;
 temp_xscale = 1;
 new_angle = 0;
 new_xscale = 1;
+snowball_frames = 0;
+snowball_frames_max = 50;
+snowball_released = false;
 
 //buffs
 damage_buff = 0;
@@ -921,6 +924,58 @@ state_magnet = function() {
 	if num_of_disks = 0 or frisbee_gun.current_bullets > 0 and num_of_summons = 0 {
 		state = state_free;	
 		magnet_index = 6;
+	}
+}
+
+state_snowball = function() {
+	can_rotate = true;
+	if sprite_index != player_sprite and sprite_index != charging_sprite {
+		sprite_index = player_sprite;
+	}
+
+	speed = speed * 0.9;
+	if scr_Animation_Complete() and sprite_index = player_sprite {
+		sprite_index = charging_sprite;	
+	}else if sprite_index = player_sprite {
+		image_index += 1;
+	}else {
+		image_index += 0.25;	
+	}
+	scr_Player_Collision();
+	if state = state_bouncing { //dont want to cancel powerup after collision
+		state = state_snowball;
+	}
+	
+	if snowball_frames < snowball_frames_max {
+		snowball_frames += 1;
+	}
+	
+	if !key_fire_projectile {
+		snowball_released = true;
+	}
+	
+	if sprite_index = charging_sprite and (!key_fire_projectile or snowball_released = true) and snowball_frames >= 20 - ((snow_gun.level > 1) * 10)
+	or snowball_frames >= snowball_frames_max {
+		state = state_free;
+		//shoot snowball here
+		if gun._name = "Snow Cannon" {
+			scr_Shoot();
+			
+			//decrease ammo count for spread weapons
+			if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+				gun.current_bullets -= 1;
+			}
+			
+			if gun.level = 3 and snowball_frames >= snowball_frames_max {
+
+			}else if gun.level = 4 and snowball_frames >= snowball_frames_max {
+
+			}
+		}
+	}
+	
+	if gun._name != "Snow Cannon" {
+		state = state_free;
 	}
 }
 

@@ -35,7 +35,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
     "name":"spr_B1_Fly_Drop",
     "path":"sprites/spr_B1_Fly_Drop/spr_B1_Fly_Drop.yy",

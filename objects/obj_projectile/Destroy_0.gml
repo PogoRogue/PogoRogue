@@ -159,3 +159,10 @@ if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
 if (gun_name = "The Portal") {
 	obj_player.portal_gun.current_bullets = 1;
 }
+
+if (gun_name = "Magnetic Disks") {
+	with obj_player {
+		if frisbee_gun.current_bullets < frisbee_gun.bullets_per_bounce+max_ammo_buff
+		frisbee_gun.current_bullets	+= 1;
+	}
+}

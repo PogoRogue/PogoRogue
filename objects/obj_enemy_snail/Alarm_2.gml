@@ -9,7 +9,7 @@ if red = true {
 	var slime_object = obj_enemy_snail_slime;
 }
 
-if(state == SNAIL_STATES.VERTICAL_LEFT) {
+if(state == SNAIL_STATES.VERTICAL_LEFT) and snowball_freeze = false {
 	var _slime = instance_create_layer(x - 22, y+(14*image_xscale), "enemies", slime_object,{parent_index: self});
 	_slime.image_angle -= 90;
 } else if(state == SNAIL_STATES.VERTICAL_RIGHT) {

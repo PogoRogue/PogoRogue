@@ -20,7 +20,7 @@ if (drop == false)
 }
 
 //enemy faces player
-if (drop == true)
+if (drop == true) and snowball_freeze = false
 {
 	if (obj_player.x >= x)
 	{

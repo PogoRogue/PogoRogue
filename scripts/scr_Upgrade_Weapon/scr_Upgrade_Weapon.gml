@@ -97,6 +97,12 @@ function scr_Upgrade_Weapon(gunname_string,level){
 			temp_weapon.ammo[0].damage += 8;
 		}else if gunname_string = "Snow Cannon" {
 			var temp_weapon = obj_player.snow_gun;
+			temp_weapon.ammo[0].spd += 4;
+			temp_weapon.ammo[0].grv -= 0.03;
+			temp_weapon.momentum_added += 0.05;
+			temp_weapon.ammo[0].damage += 2;
+			temp_weapon.bullets_per_bounce += 1;
+			temp_weapon.current_bullets += 1;
 		}else if gunname_string = "Balloon Gun" {
 			var temp_weapon = obj_player.balloon_gun;
 		}else if gunname_string = "Magnetic Disks" {
@@ -205,6 +211,11 @@ function scr_Upgrade_Weapon(gunname_string,level){
 			temp_weapon.firerate = 1;        
 		}else if gunname_string = "Snow Cannon" {
 			var temp_weapon = obj_player.snow_gun;
+				temp_weapon.bullets_per_bounce += 1;
+				temp_weapon.current_bullets += 1;
+				temp_weapon.ammo[0].spd += 2;
+				temp_weapon.ammo[0].damage += 2;
+				temp_weapon.momentum_added += 0.075;
 		}else if gunname_string = "Balloon Gun" {
 			var temp_weapon = obj_player.balloon_gun;
 		}else if gunname_string = "Magnetic Disks" {
@@ -275,6 +286,8 @@ function scr_Upgrade_Weapon(gunname_string,level){
 			temp_weapon.current_bullets = round(temp_weapon.current_bullets);
 		}else if gunname_string = "Snow Cannon" {
 			var temp_weapon = obj_player.snow_gun;
+			temp_weapon.spread_number = 3;
+			temp_weapon.spread_angle = 45;
 		}else if gunname_string = "Balloon Gun" {
 			var temp_weapon = obj_player.balloon_gun;
 		}

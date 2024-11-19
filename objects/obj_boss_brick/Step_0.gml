@@ -3,6 +3,11 @@
 // Update position and angle based off boss
 
 if spawned = true {
+	
+	if(snowball_freeze) {
+		snowball_freeze = false;
+		is_dead = true;
+	}
 
 	image_angle = boss.image_angle;
 	rad = degtorad(image_angle);

@@ -466,6 +466,10 @@ if (gun_name = "Magnetic Disks") {
 	init_damage = damage;
 	colliding_with_enemy = false;
 	enemies_array = [];
+	
+	x_prev_array = [0,0,0,0,0];
+	y_prev_array = [0,0,0,0,0];
+	trail = true;
 }
 
 //missile
