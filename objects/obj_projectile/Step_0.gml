@@ -27,7 +27,7 @@ if instance_exists(obj_camera) {
 		if (gun_name = "Bouncy Ball Blaster") and num_of_bounces < max_num_of_bounces {
 			damage = init_damage * (2*(max_num_of_bounces-num_of_bounces));
 			image_index = max_num_of_bounces-num_of_bounces;
-		}else if (gun_name = "Javelins") or gun_name = "Plasma Gun" {
+		}else if (gun_name = "Javelins") or gun_name = "Plasma Gun" or gun_name = "Balloon Gun"  {
 			if created = true {
 				damage = init_damage + ((temp_charge/temp_charge_max)*16);	
 			}
@@ -597,9 +597,73 @@ if (gun_name = "Snow Cannon") {
 	colliding_with_enemy = false;
 	image_angle += 10;
 	destroy_on_impact = false;
-	show_debug_message("hspd: " + string(hspd));
-	show_debug_message("vspd: " + string(vspd));
+}
+
+if (gun_name = "Balloon Gun") {
+	if vspd < -4 {
+		vspd = -4;	
+	}
+	//depth = obj_player.depth+1;
+	if created = false {
+		image_angle = obj_player.angle-90 + angle_offset;
+		//instance_destroy();	
+	}else {
+		if abs(90 - image_angle) < abs(-270 - image_angle) {
+			if image_angle < 90 {
+				image_angle += 3;
+			}else {
+				image_angle = 90;
+				hspd *= 0.75;
+			}
+		}else {
+			if image_angle > -270 {
+				image_angle -= 3;
+			}else {
+				image_angle = -270;
+				hspd *= 0.75;
+			}
+		}
+		//show_debug_message("angle: " + string(image_angle));
+	}
 	
+	if obj_player.balloon_gun.spread_number = 1 {
+		angle_offset = 0;
+	}else if obj_player.balloon_gun.spread_number = 2 { //double shot
+		if spread_index = 0 {
+			angle_offset = -obj_player.balloon_gun.spread_angle/2;
+		}else if spread_index = 1 {
+			angle_offset = obj_player.balloon_gun.spread_angle/2;
+		}
+	}else if obj_player.balloon_gun.spread_number = 3 { //triple shot
+		if spread_index = 0 {
+			angle_offset = -obj_player.balloon_gun.spread_angle;
+		}else if spread_index = 1 {
+			angle_offset = 0;
+		}else if spread_index = 2 {
+			angle_offset = obj_player.balloon_gun.spread_angle;
+		}
+	}
+	
+	if !place_meeting(x,y,obj_ground) and created = true and vspd < 0 {
+		ground_free = true;	
+	}
+	
+	if !global.drilltipbullets  {
+		if place_meeting(x+hspd+hspd,y,obj_ground) and !place_meeting(x,y,obj_ground)  and created = true {
+			hspd *= -1;
+		}
+	
+		if ground_free = true and place_meeting(x,y+vspd,obj_ground) and vspd < 0 and created = true {
+			while !place_meeting(x,y+sign(vspd),obj_ground) {
+				y += sign(vspd);
+			}
+			if abs(vspd) > 0.2 {
+				vspd *= -0.7;
+			}else {
+				vspd = 0;
+			}	
+		}
+	}
 }
 
 if (gun_name = "Magnetic Disks") {

@@ -536,7 +536,7 @@ function scr_Bullets(){
 	
 	balloon_bullet = {
 		sprite: spr_projectile_balloon,
-		gui_sprite: spr_projectile_balloon_gui,
+		gui_sprite: spr_projectile_balloon_gui1,
 		spd: 4,
 		firerate_start: 1,
 		firerate_end: 1,

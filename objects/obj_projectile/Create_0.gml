@@ -401,7 +401,9 @@ or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Ele
 }
 
 //destroy projectile after 30 seconds if still exists
-alarm[2] = 1800;
+if (gun_name != "Balloon Gun") {
+	alarm[2] = 1800;
+}
 
 //Plasma Gun
 if (gun_name = "Plasma Gun") {
@@ -444,12 +446,58 @@ if gun_name = "Bouncy Ball Blaster" {
 	//mask_index = spr_projectile_bouncyball_mask;
 }
 
-//Plasma Gun
+//Snow Cannon
 if (gun_name = "Snow Cannon") {
 	//damage = 0;
 	init_damage = damage;
 	colliding_with_enemy = false;
 	enemies_array = [];
+}
+
+//Balloon Gun
+if (gun_name = "Balloon Gun") {
+	randomize();
+	sprite_index = choose(spr_projectile_balloon,spr_projectile_balloon_orange,spr_projectile_balloon_yellow,
+	spr_projectile_balloon_green,spr_projectile_balloon_blue,spr_projectile_balloon_pink);
+	random_set_seed(global.seed);
+	mask_index = spr_projectile_balloon_mask;
+	damage = 0;
+	max_image_index = 5 + ((obj_player.balloon_gun.level = 2) * 2) + ((obj_player.balloon_gun.level >= 3) * 3);
+	//depth = obj_player.depth+1;
+	temp_charge = 0;
+	temp_charge_max = 9;
+	glow_alpha = -1;
+	glow_up = true;
+	created = false;
+	ground_free = false;
+	with instance_create_depth(x,y,obj_player.depth+1,obj_balloon_charge) {
+		balloon_object = other;
+		spread_index = other.spread_index;
+		//instance_deactivate_object(balloon_object);	
+	}
+	//alarm[2] = 600;
+	
+	init_damage = damage;
+	colliding_with_enemy = false;
+	enemies_array = [];
+	
+	if obj_player.balloon_gun.spread_number = 1 {
+		angle_offset = 0;
+	}else if obj_player.balloon_gun.spread_number = 2 { //doubl shot
+		if spread_index = 0 {
+			angle_offset = -obj_player.balloon_gun.spread_angle/2;
+		}else if spread_index = 1 {
+			angle_offset = obj_player.balloon_gun.spread_angle/2;
+		}
+	}else if obj_player.balloon_gun.spread_number = 3 { //triple shot
+		if spread_index = 0 {
+			angle_offset = -obj_player.balloon_gun.spread_angle;
+		}else if spread_index = 1 {
+			angle_offset = 0;
+		}else if spread_index = 2 {
+			angle_offset = obj_player.balloon_gun.spread_angle;
+		}
+	}
 }
 
 if (gun_name = "Magnetic Disks") {

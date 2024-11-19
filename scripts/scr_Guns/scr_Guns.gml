@@ -254,7 +254,7 @@ function scr_Guns(){
 	
 	missile_gun = {
 		_name: "Missile Launcher",  
-		tagline: "Fire a heat-seeking missile that locks onto nearby enemies.",
+		tagline: "Fire a heat-seeking missile that locks onto nearby enemies for massive damage.",
 		sprite: spr_gun_missile,   
 		ammo: [missile_bullet],
 		inaccuracy: 0,       
@@ -620,7 +620,7 @@ function scr_Guns(){
 	
 	snow_gun = {
 		_name: "Snow Cannon",  
-		tagline: "",
+		tagline: "Briefly pause in the air before launching a giant snowball that freezes enemies at 1HP. Bosses cannot be frozen. Every freeze kill reloads the \nSnow Cannon.",
 		sprite: spr_gun_snow,   
 		ammo: [snow_bullet],
 		inaccuracy: 0,       
@@ -643,7 +643,7 @@ function scr_Guns(){
 	
 	balloon_gun = {
 		_name: "Balloon Gun",
-		tagline: "",
+		tagline: "Inflate colorful helium-filled balloons that float upwards. Balloons will lift you upwards until \nthey are released.",
 		sprite: spr_gun_balloon,
 		ammo: [balloon_bullet],
 		inaccuracy: 0,
@@ -654,19 +654,19 @@ function scr_Guns(){
 		full_auto: false,
 		burst_number: 1,
 		burst_delay: 0,
-		momentum_added: 1.1,
-		reset_momentum: true,
-		bullets_per_bounce: 70 + obj_player.max_ammo_buff,
-		init_bullets_per_bounce: 70,
-		current_bullets: 70 + obj_player.max_ammo_buff,
-		max_added_bullets: 5,
+		momentum_added: 0,
+		reset_momentum: false,
+		bullets_per_bounce: 80,
+		init_bullets_per_bounce: 80,
+		current_bullets: 80,
+		max_added_bullets: 0,
 		max_speed: 7.5,
 		level: 1
 	};
 	
 	frisbee_gun = {
 		_name: "Magnetic Disks",  
-		tagline: "",
+		tagline: "Throw two high-damage discs that stick to the ground on contact. When all disks are thrown, shoot again to quickly summon the disks back to you. Cannot reload on \nbounce/kill.",
 		sprite: spr_gun_frisbees,   
 		ammo: [frisbee_bullet],
 		inaccuracy: 0,       
@@ -689,14 +689,14 @@ function scr_Guns(){
 	
 	dart_gun = {
 		_name: "Tracker Darts",  
-		tagline: "",
+		tagline: "Toss a dart that locks onto a nearby enemy for moderate damage. Don't like aiming? This may be the weapon for you.",
 		sprite: spr_gun_darts,   
 		ammo: [dart_bullet],
 		inaccuracy: 0,       
 		kick: 2,              
 		sound: snd_grenade,
 		spread_number: 1,    
-		spread_angle: 70,    
+		spread_angle: 90,    
 		full_auto: false,     
 		burst_number: 1,     
 		burst_delay: 0,     

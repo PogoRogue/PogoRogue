@@ -110,6 +110,10 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 			line_1 = "Missiles per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 		
+		if weapon._name = "Balloon Gun" {
+			line_1 = "Full balloons per bounce: " + string(round(weapon.bullets_per_bounce/20));// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		}
+		
 		if weapon._name = "Tracker Darts" {
 			line_1 = "Darts per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
@@ -178,6 +182,20 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 			line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + "-" + string(weapon.ammo[0].damage*4) + added_damage;
 		}else if weapon._name = "Plasma Gun" {
 			line_2 = "Damage per orb: " + string(weapon.ammo[0].damage) + "-24" + added_damage;
+		}else if weapon._name = "Snow Cannon" {
+			line_2 = "Damage per snowball: " + string(weapon.ammo[0].damage) + "+" + added_damage;
+		}else if weapon._name = "Balloon Gun" {
+			if weapon.level = 1 {
+				line_2 = "Damage per balloon: " + string(weapon.ammo[0].damage) + "-8" + added_damage;
+			}else if weapon.level = 2 {
+				line_2 = "Damage per balloon: " + string(weapon.ammo[0].damage) + "-12" + added_damage;
+			}else if weapon.level >= 3 {
+				line_2 = "Damage per balloon: " + string(weapon.ammo[0].damage) + "-16" + added_damage;
+			}
+		}else if weapon._name = "Magnetic Disks" {
+			line_2 = "Damage per disk: " + string(weapon.ammo[0].damage) + added_damage;
+		}else if weapon._name = "Tracker Darts" {
+			line_2 = "Damage per dart: " + string(weapon.ammo[0].damage) + added_damage;
 		}
 	
 		if weapon.full_auto = true {
@@ -204,7 +222,8 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		}else {
 			line_3 = "Auto Fire: No";	
 			line_4 = "Shoot: On Press";
-			if weapon._name = "Javelins" or weapon._name = "Plasma Gun" {
+			if weapon._name = "Javelins" or weapon._name = "Plasma Gun"
+			or weapon._name = "Snow Cannon" or weapon._name = "Balloon Gun" {
 				line_4 = "Shoot: On Release";
 			}else if weapon._name = "Yo-yo" {
 				line_4 = "Shoot: Press and Hold";

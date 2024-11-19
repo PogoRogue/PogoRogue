@@ -89,11 +89,16 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	if (gun_array[gun_num] = laser_gun) or (gun_array[gun_num] = water_gun) or (gun_array[gun_num] = plasma_gun)
 	or (gun_array[gun_num] = balloon_gun){
 		value_ = gun_array[gun_num].current_bullets / (gun_array[gun_num].bullets_per_bounce+max_ammo_buff);
-		draw_sprite(ammo.gui_sprite,0,(768-16),36+yy);
-		draw_sprite_part(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(768-16)-sprite_get_width(ammo.gui_sprite),36+yy);
+		draw_sprite(ammo.gui_sprite,0,(768-16-(14*(gun_array[gun_num] = balloon_gun))),36+yy);
+		draw_sprite_part(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(768-16-(14*(gun_array[gun_num] = balloon_gun)))-sprite_get_width(ammo.gui_sprite),36+yy);
 		//darkening
-		draw_sprite_ext(ammo.gui_sprite,0,(768-16),36+yy,1,1,0,c_black,black_alpha);
-		draw_sprite_part_ext(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(768-16)-sprite_get_width(ammo.gui_sprite),36+yy,1,1,c_black,black_alpha);
+		draw_sprite_ext(ammo.gui_sprite,0,(768-16-(14*(gun_array[gun_num] = balloon_gun))),36+yy,1,1,0,c_black,black_alpha);
+		draw_sprite_part_ext(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(768-16-(14*(gun_array[gun_num] = balloon_gun)))-sprite_get_width(ammo.gui_sprite),36+yy,1,1,c_black,black_alpha);
+		
+		if (gun_array[gun_num] = balloon_gun) {
+			draw_sprite(spr_projectile_balloon_gui2,0,(768-16-14),36+yy);
+			draw_sprite_ext(spr_projectile_balloon_gui2,0,(768-16-14),36+yy,1,1,0,c_black,black_alpha);
+		}
 	}
 	
 	//text

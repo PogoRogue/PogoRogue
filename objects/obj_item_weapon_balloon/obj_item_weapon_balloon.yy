@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_projectile_balloon",
-    "path":"sprites/spr_projectile_balloon/spr_projectile_balloon.yy",
+    "name":"spr_gun_balloon",
+    "path":"sprites/spr_gun_balloon/spr_gun_balloon.yy",
   },
   "spriteMaskId":null,
   "visible":true,

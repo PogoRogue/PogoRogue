@@ -218,6 +218,8 @@ function scr_Upgrade_Weapon(gunname_string,level){
 				temp_weapon.momentum_added += 0.075;
 		}else if gunname_string = "Balloon Gun" {
 			var temp_weapon = obj_player.balloon_gun;
+			temp_weapon.bullets_per_bounce += 20;
+			temp_weapon.current_bullets += 20;
 		}else if gunname_string = "Magnetic Disks" {
 			var temp_weapon = obj_player.frisbee_gun;
 			temp_weapon.spread_number = 2;
@@ -290,6 +292,8 @@ function scr_Upgrade_Weapon(gunname_string,level){
 			temp_weapon.spread_angle = 45;
 		}else if gunname_string = "Balloon Gun" {
 			var temp_weapon = obj_player.balloon_gun;
+			temp_weapon.spread_number = 2;
+			temp_weapon.spread_angle = 90;
 		}
 		#endregion
 	}

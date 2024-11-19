@@ -884,6 +884,40 @@ state_plasmacharge = function() {
 	}
 }
 
+state_balloon = function() {
+	can_rotate = true;
+	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
+		sprite_index = player_sprite;
+	}
+	
+	if sprite_index != charging_sprite {
+		speed = speed * 0.9;
+	}else {
+		hspeed = hspeed * 0.9;
+	}
+	
+	if scr_Animation_Complete() and sprite_index = player_sprite {
+		sprite_index = charging_sprite;	
+	}else if sprite_index = player_sprite {
+		image_index += 1;
+	}else {
+		image_index += 0.25;	
+	}
+	scr_Player_Collision();
+	if state = state_bouncing { //dont want to cancel powerup after collision
+		state = state_balloon;	
+	}
+	
+	if sprite_index = charging_sprite {
+		image_speed = 0;
+		if vspeed > -2 {
+			vspeed -= 0.1;
+		}else {
+			vspeed = -2;
+		}
+	}
+}
+
 magnet_index = 0;
 state_magnet = function() {
 	can_rotate = true;
