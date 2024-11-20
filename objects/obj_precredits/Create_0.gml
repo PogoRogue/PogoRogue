@@ -6,3 +6,4 @@ instance_create_depth(x,y,depth,obj_mastercontroller);
 alarm[0] = 120;
 
 audio_group_stop_all(audiogroup_music);
+sprite_index = spr_cutscene_end2;

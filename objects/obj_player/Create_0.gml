@@ -300,7 +300,7 @@ state_free = function() {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			state = state_immobile;
 			//room_persistent = true;
-			scr_Room_Transition(room_boss_2B); //room_proc_gen_test
+			scr_Room_Transition(room_proc_gen_test); //room_proc_gen_test
 			global.total_runs += 1;
 			scr_Save_Real("total_runs",global.total_runs);
 			global.show_tips_screen = true;
