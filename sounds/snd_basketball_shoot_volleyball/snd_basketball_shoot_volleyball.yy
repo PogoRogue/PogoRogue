@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_basketball_shoot_volleyball",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.918503,
+  "name":"snd_basketball_shoot_volleyball",
+  "parent":{
+    "name":"Enemies",
+    "path":"folders/Sounds/Enemies.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_basketball_shoot_volleyball.wav",
+  "type":0,
+  "volume":0.8,
+}

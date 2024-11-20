@@ -58,6 +58,9 @@ fullauto_condtional = true;
 temp_xscale = 1;
 new_angle = 0;
 new_xscale = 1;
+snowball_frames = 0;
+snowball_frames_max = 50;
+snowball_released = false;
 
 //buffs
 damage_buff = 0;
@@ -181,7 +184,7 @@ max_max_hp = 80; //10 hearts
 armor_buff = 0;
 max_armor_buff = 5;
 energy_buff = 0;
-max_energy_buff = 4;
+max_energy_buff = 5;
 stomp_damage = 8;
 num_iframes = (1.5 + iframes_add) * room_speed;
 current_iframes = 0;
@@ -297,7 +300,7 @@ state_free = function() {
 		if (bbox_bottom < 0 and mask_index != spr_nothing) {
 			state = state_immobile;
 			//room_persistent = true;
-			scr_Room_Transition(room_proc_gen_test);
+			scr_Room_Transition(room_proc_gen_test); //room_proc_gen_test
 			global.total_runs += 1;
 			scr_Save_Real("total_runs",global.total_runs);
 			global.show_tips_screen = true;
@@ -483,6 +486,9 @@ state_groundpound = function() {
 		can_rotate = true; //allow rotation again
 		vsp_basicjump = -9;
 		stomp_damage = 40;
+		if room = room_boss_1B {
+			stomp_damage = 20;
+		}
 		//switch states
 		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
 			while !(place_meeting(x,y+sign(vspeed),obj_ground_parent)) and !(place_meeting(x,y+sign(vspeed),obj_enemy_parent)) {
@@ -569,6 +575,10 @@ state_megabounce = function() {
 		vspeed = slam_speed;
 		vsp_basicjump = -9;
 		stomp_damage = 40;
+		if room = room_boss_1B {
+			stomp_damage = 20;
+		}
+		
 		//switch states
 		if place_meeting(x,y+vspeed,obj_ground_parent) or place_meeting(x,y+vspeed,obj_enemy_parent) {
 			if place_meeting(x,y+vspeed,obj_enemy_parent) {
@@ -871,6 +881,145 @@ state_plasmacharge = function() {
 	scr_Player_Collision();
 	if state = state_bouncing { //dont want to cancel powerup after collision
 		state = state_plasmacharge;	
+	}
+}
+
+state_balloon = function() {
+	can_rotate = true;
+	if sprite_index != player_sprite and sprite_index != charging_sprite and sprite_index != falling_sprite {
+		sprite_index = player_sprite;
+	}
+	
+	if sprite_index != charging_sprite {
+		speed = speed * 0.9;
+	}else {
+		hspeed = hspeed * 0.9;
+	}
+	
+	if scr_Animation_Complete() and sprite_index = player_sprite {
+		sprite_index = charging_sprite;	
+	}else if sprite_index = player_sprite {
+		image_index += 1;
+	}else {
+		image_index += 0.25;	
+	}
+	scr_Player_Collision();
+	if state = state_bouncing { //dont want to cancel powerup after collision
+		state = state_balloon;	
+	}
+	
+	if sprite_index = charging_sprite {
+		image_speed = 0;
+		if vspeed > -2 {
+			vspeed -= 0.1;
+		}else {
+			vspeed = -2;
+		}
+	}
+}
+
+magnet_index = 0;
+state_magnet = function() {
+	can_rotate = true;
+	if sprite_index != player_sprite and sprite_index != charging_sprite {
+		sprite_index = player_sprite;
+	}
+
+	speed = speed * 0.9;
+	if scr_Animation_Complete() and sprite_index = player_sprite {
+		sprite_index = charging_sprite;	
+	}else if sprite_index = player_sprite {
+		image_index += 1;
+	}else {
+		image_index += 0.25;	
+	}
+	scr_Player_Collision();
+	if state = state_bouncing { //dont want to cancel powerup after collision
+		state = state_magnet;
+	}
+	
+	var num_of_disks = 0;
+	var num_of_summons = 0;
+	with obj_projectile {
+		if gun_name = "Magnetic Disks" {
+			num_of_disks += 1;
+			if summoned = true {
+				num_of_summons += 1;	
+			}
+		}
+	}
+	
+	if magnet_index < 30 {
+		magnet_index += 0.5;
+	}else {
+		magnet_index = 5;
+	}
+	
+	if num_of_disks = 0 or frisbee_gun.current_bullets > 0 and num_of_summons = 0 {
+		state = state_free;	
+		magnet_index = 6;
+	}
+}
+
+state_snowball = function() {
+	can_rotate = true;
+	if sprite_index != player_sprite and sprite_index != charging_sprite {
+		sprite_index = player_sprite;
+	}
+
+	speed = speed * 0.9;
+	if scr_Animation_Complete() and sprite_index = player_sprite {
+		sprite_index = charging_sprite;	
+	}else if sprite_index = player_sprite {
+		image_index += 1;
+	}else {
+		image_index += 0.25;	
+	}
+	scr_Player_Collision();
+	if state = state_bouncing { //dont want to cancel powerup after collision
+		state = state_snowball;
+	}
+	
+	if snowball_frames < snowball_frames_max {
+		snowball_frames += 1;
+	}
+	
+	if !key_fire_projectile {
+		snowball_released = true;
+	}
+	
+	if sprite_index = charging_sprite and (!key_fire_projectile or snowball_released = true) and snowball_frames >= 20 - ((snow_gun.level > 1) * 10)
+	or snowball_frames >= snowball_frames_max {
+		state = state_free;
+		if audio_is_playing(snd_magnet_on) {
+			audio_stop_sound(snd_magnet_on);
+		}
+		//shoot snowball here
+		if gun._name = "Snow Cannon" {
+			scr_Shoot();
+			audio_play_sound(snd_snowcannon,0,false);
+			if audio_is_playing(snd_javelin_charge) {
+				audio_stop_sound(snd_javelin_charge);	
+			}
+			
+			//decrease ammo count for spread weapons
+			if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+				gun.current_bullets -= 1;
+			}
+			
+			if gun.level = 3 and snowball_frames >= snowball_frames_max {
+
+			}else if gun.level = 4 and snowball_frames >= snowball_frames_max {
+
+			}
+		}
+	}
+	
+	if gun._name != "Snow Cannon" {
+		state = state_free;
+		if audio_is_playing(snd_magnet_on) {
+			audio_stop_sound(snd_magnet_on);
+		}
 	}
 }
 
@@ -1346,7 +1495,11 @@ state_portal = function() {
 			portal_angle_speed += 0.5;
 		}
 			
-		move_towards_point(portal_object.x+48,portal_object.y+52,portal_speed);
+		if !scr_In_Array(global.boss_rooms, room) {
+			move_towards_point(portal_object.x+48,portal_object.y+52,portal_speed);
+		}else {
+			move_towards_point(portal_object.x,portal_object.y,portal_speed);
+		}
 		
 		if portal_speed < 8 {
 			portal_speed += 0.1;
@@ -1388,10 +1541,10 @@ state_portal = function() {
 				room_persistent = false;
 				switch (global.phase) {
 					case 1:
-						scr_Room_Transition(room_boss_1);
+						scr_Room_Transition(global.boss_1_room);
 						break;
 					case 2:
-						scr_Room_Transition(room_boss_2);
+						scr_Room_Transition(global.boss_2_room);
 						break;
 					case 3:
 						scr_Room_Transition(room_boss_3);
@@ -1439,8 +1592,12 @@ state_shop_portal = function() {
 		if portal_angle_speed < 10 {
 			portal_angle_speed += 0.5;
 		}
-			
-		move_towards_point(portal_object.x,portal_object.y-60,portal_speed);
+		
+		if !scr_In_Array(global.boss_rooms, room) {
+			move_towards_point(portal_object.x,portal_object.y-60,portal_speed);
+		}else {
+			move_towards_point(portal_object.x,portal_object.y,portal_speed);
+		}
 		
 		if portal_speed < 8 {
 			portal_speed += 0.1;
@@ -1589,7 +1746,8 @@ all_guns_array = [default_gun,paintball_gun,shotgun_gun,
 				water_gun, machine_gun, grenade_gun,
 				starsucker_gun, yoyo_gun, bubble_gun,
 				slime_gun, sniper_gun, plasma_gun,
-				laser_gun, missile_gun]; //all guns
+				laser_gun, missile_gun,snow_gun,
+				balloon_gun,frisbee_gun,dart_gun]; //all guns
 
 if (random_weapon == true) { //choose random weapons
 	//randomize();
@@ -1721,15 +1879,17 @@ all_buffs_array = [buff_luck,buff_aerialassassin,buff_max_ammo,
 					buff_combomaster,buff_combotime,buff_crit,
 					buff_dmg,buff_doublekill,buff_drilltipbullets,
 					buff_dualwielder,buff_experimentation,buff_fastforward,
-					buff_flamingcoins,buff_hotshells,buff_impatience,
+					buff_flamingcoins,buff_illegalshipment,buff_impatience,
 					buff_invincibilityup,buff_ironproficiency,buff_juggler,
 					buff_lasersight,buff_laststand,buff_magicianstouch,
 					buff_paparazzi,buff_pickybuyer,buff_planetarybullets,
 					buff_psychicbullets,buff_recycling,buff_revive,
 					buff_righteousrevenge, buff_robbery, buff_bouncybullets,
 					buff_sharptip,buff_sharpshooter,buff_steadyhands,
-					buff_strongmuscles,buff_supershield,buff_tightspring,
-					buff_triplethreat];
+					buff_strongmuscles,buff_supershield,buff_snackbreak,
+					buff_triplethreat,buff_treasurehunter,buff_energydrink,
+					buff_capitalist,buff_cactusmode,buff_mirrormode,
+					buff_adrenalinerush,buff_aura,buff_portablecharger];
 
 //create text in proc gen rooms
 if room = room_proc_gen_test || room = room_sprite_level_test {

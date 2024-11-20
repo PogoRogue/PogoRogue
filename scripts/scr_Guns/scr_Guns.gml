@@ -254,7 +254,7 @@ function scr_Guns(){
 	
 	missile_gun = {
 		_name: "Missile Launcher",  
-		tagline: "Fire a heat-seeking missile that locks onto nearby enemies.",
+		tagline: "Fire a heat-seeking missile that locks onto nearby enemies for massive damage.",
 		sprite: spr_gun_missile,   
 		ammo: [missile_bullet],
 		inaccuracy: 0,       
@@ -615,6 +615,98 @@ function scr_Guns(){
 		current_bullets: 1,  
 		max_added_bullets: 0,
 		max_speed: 16,
+		level: 1
+	};
+	
+	snow_gun = {
+		_name: "Snow Cannon",  
+		tagline: "Briefly pause in the air before launching a giant snowball that freezes enemies at 1HP. Bosses cannot be frozen. Every freeze kill reloads the \nSnow Cannon.",
+		sprite: spr_gun_snow,   
+		ammo: [snow_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_nothing,
+		spread_number: 1,    
+		spread_angle: 45,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 5,     
+		momentum_added: 1.15, 
+		reset_momentum: true, 
+		bullets_per_bounce: 4 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 4,
+		current_bullets: 4 + obj_player.max_ammo_buff,  
+		max_added_bullets: 5,
+		max_speed: -vsp_basicjump*1.15,
+		level: 1
+	};	
+	
+	balloon_gun = {
+		_name: "Balloon Gun",
+		tagline: "Inflate colorful helium-filled balloons that float upwards. Balloons will lift you upwards until \nthey are released.",
+		sprite: spr_gun_balloon,
+		ammo: [balloon_bullet],
+		inaccuracy: 0,
+		kick: 2,
+		sound: snd_balloon_inflate,
+		spread_number: 1,
+		spread_angle: 35,
+		full_auto: false,
+		burst_number: 1,
+		burst_delay: 0,
+		momentum_added: 0,
+		reset_momentum: false,
+		bullets_per_bounce: 60,
+		init_bullets_per_bounce: 60,
+		current_bullets: 60,
+		max_added_bullets: 0,
+		max_speed: 7.5,
+		level: 1
+	};
+	
+	frisbee_gun = {
+		_name: "Magnetic Disks",  
+		tagline: "Throw two high-damage discs that stick to the ground on contact. When all disks are thrown, shoot again to quickly summon the disks back to you. Cannot reload on \nbounce/kill.",
+		sprite: spr_gun_frisbees,   
+		ammo: [frisbee_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_disk_throw,
+		spread_number: 1,    
+		spread_angle: 60,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1.1, 
+		reset_momentum: true, 
+		bullets_per_bounce: 2 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 2,
+		current_bullets: 2 + obj_player.max_ammo_buff,  
+		max_added_bullets: 5,
+		max_speed: 8,
+		level: 1
+	};
+	
+	dart_gun = {
+		_name: "Tracker Darts",  
+		tagline: "Toss a dart that locks onto a nearby enemy for moderate damage. Don't like aiming? This may be the weapon for you.",
+		sprite: spr_gun_darts,   
+		ammo: [dart_bullet],
+		inaccuracy: 0,       
+		kick: 2,              
+		sound: snd_dart_throw,
+		spread_number: 1,    
+		spread_angle: 90,    
+		full_auto: false,     
+		burst_number: 1,     
+		burst_delay: 0,     
+		momentum_added: 1, 
+		reset_momentum: true, 
+		bullets_per_bounce: 3 + obj_player.max_ammo_buff,
+		init_bullets_per_bounce: 3,
+		current_bullets: 3 + obj_player.max_ammo_buff,  
+		max_added_bullets: 5,
+		max_speed: 5,
 		level: 1
 	};
 }

@@ -48,3 +48,27 @@ if room = room_starting_area {
 
 aspect_ratio = 1;
 
+if room != room_proc_gen_test and room != room_shop {
+	global.snackbreak_used = false;	
+}
+
+//snack break passive
+if room = room_proc_gen_test and global.snackbreak_used = false or room = room_boss_1 and global.phase = 1 or room = room_boss_1B  and global.phase = 1
+or room = room_boss_2 and global.phase = 2 or room = room_boss_2B and global.phase = 2 or room = room_boss_3 {
+	if room = room_proc_gen_test {
+		global.snackbreak_used = true;	
+	}
+	
+	if global.snackbreak_num > 0 {
+		if hp < max_hp {
+			hp += 8 * global.snackbreak_num;
+			with obj_player_health {
+				heart_gain_num = other.hp;	
+			}
+			audio_play_sound(snd_heartPickup,0,false);
+		}
+		if hp > max_hp {
+			hp = max_hp;
+		}
+	}
+}

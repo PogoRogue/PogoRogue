@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_mole_pipe",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.210885,
+  "name":"snd_mole_pipe",
+  "parent":{
+    "name":"Enemies",
+    "path":"folders/Sounds/Enemies.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_mole_pipe.wav",
+  "type":0,
+  "volume":1.0,
+}

@@ -58,7 +58,11 @@ if room = room_proc_gen_test  {
 	
 }else if room = room_boss_1 {
 	global.current_music = snd_music_boss1
+}else if room = room_boss_1B {
+	global.current_music = snd_music_boss1
 }else if room = room_boss_2 {
+	global.current_music = snd_music_boss2;
+}else if room = room_boss_2B {
 	global.current_music = snd_music_boss2;
 }else if room = room_boss_3 {
 	global.current_music = snd_music_boss3;
@@ -70,10 +74,12 @@ if room = room_proc_gen_test  {
 	global.current_music = snd_music_shop;
 }
 
+
+
 //music test
 if !audio_is_playing(global.current_music) {
 	audio_stop_all();
-	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+	if !scr_In_Array(global.boss_rooms,room) {
 		alarm[1] = 30;
 	}
 }

@@ -1,5 +1,7 @@
 if global.phase > 1 {
-	instance_destroy();	
+	if room != room_boss_2B {
+		instance_destroy();	
+	}
 }
 
 depth -= 1000;
@@ -8,7 +10,7 @@ usable = true;
 select = 1;
 select_max = 3; //max # of rows
 select_x = 1; //passives only
-select_x_max = 5; //number of columns
+select_x_max = 6; //number of columns
 select_y = 1;
 select_y_max = 4; //number of rows
 select_y_added = 0; //bindings menu scrolling
@@ -17,7 +19,7 @@ passive_rows = 8;
 selected_x = false;
 selected_y = false;
 
-x_gap = 72;
+x_gap = 68;
 y_gap = 72;
 
 select_sprite = spr_item_slot_actives;
@@ -68,7 +70,8 @@ if test_mode = false {
 					obj_item_weapon_water, obj_item_weapon_machine, obj_item_weapon_grenade,
 					obj_item_weapon_starsucker, obj_item_weapon_yoyo, obj_item_weapon_bubble,
 					obj_item_weapon_slime, obj_item_weapon_sniper, obj_item_weapon_plasma,
-					obj_item_weapon_laser, obj_item_weapon_missile];
+					obj_item_weapon_laser, obj_item_weapon_missile,obj_item_weapon_snow,
+					obj_item_weapon_balloon, obj_item_weapon_frisbees,obj_item_weapon_darts];
 }
 			
 select_max = array_length(weapons_array);

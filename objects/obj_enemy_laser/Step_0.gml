@@ -26,6 +26,12 @@ if(collide_with_walls) {
 	}
 }
 
+if global.mirrormode_on = true  {
+	damage = 0;
+} else if global.mirrormode_on = false {
+	damage = 8;
+}
+
 // Check if hitting player to deal damage
 var _collision = collision_line(x, y, end_x, end_y, obj_player_mask, true, true);
 if(_collision != noone) {

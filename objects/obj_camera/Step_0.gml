@@ -34,27 +34,38 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 	if obj_player.state = obj_player.state_shop_portal 
 	or follow.object_index = obj_shop_door {
 	//or room != room_proc_gen_test {
-		xTo = follow.x+4;
-		yTo = follow.y-68;
+		if !scr_In_Array(global.boss_rooms, room) {
+			xTo = follow.x+4;
+			yTo = follow.y-68;
+		}else {
+			xTo = follow.x+4;
+			yTo = follow.y-8;
+		}
 		
-		if room != room_shop and room != room_boss_1 and room != room_boss_2 {
+		//if room != room_shop and room != room_boss_1 and room != room_boss_2 {
 			//x += (xTo - x) / readjust_speed;
 			//y += (yTo - y) / readjust_speed;
-		}
+		//}
 	}
 	
 	if obj_player.state = obj_player.state_portal
 	or follow.object_index = obj_boss_door {
-		xTo = follow.x+51;
-		yTo = follow.y+51;
 		
-		if room != room_shop and room != room_boss_1 and room != room_boss_2 {
+		if !scr_In_Array(global.boss_rooms, room) {
+			xTo = follow.x+51;
+			yTo = follow.y+51;
+		}else {
+			xTo = follow.x+3;
+			yTo = follow.y-3;
+		}
+		
+		//if room != room_shop and room != room_boss_1 and room != room_boss_2 {
 			//x += (xTo - x) / readjust_speed;
 			//y += (yTo - y) / readjust_speed;
-		}
+		//}
 	}
 	
-	if room = room_gameplay_video or room = room_boss_1 {
+	if room = room_gameplay_video or room = room_boss_1 or room = room_boss_2B {
 		var hallway_w_half = 280;
 		var hallway_h_half = 176;
 	}else {
@@ -145,7 +156,7 @@ if (instance_exists(follow)) and instance_exists(obj_player) {
 	//center in room (unless proc gen level)
 		
 	if (obj_player.state != obj_player.state_portal and obj_player.state != obj_player.state_shop_portal
-	or room = room_shop or room = room_boss_1 or room = room_boss_2 or room = room_proc_gen_test)
+	or room = room_shop or scr_In_Array(global.boss_rooms,room) or room = room_proc_gen_test)
 	and !(room = room_tutorial and key_lock_camera) {
 		if x_clamp {
 		var xTo2 = clamp(xTo,x_min,x_max);
@@ -201,7 +212,7 @@ camera_set_view_pos(cam,x-view_w_half,y-view_h_half);
 
 if instance_exists(obj_player) {
 	if obj_player.state = obj_player.state_free and (room = room_proc_gen_test
-	or  room = room_tutorial or  room = room_boss_1 or  room = room_boss_2 or  room = room_boss_3
+	or  room = room_tutorial or  scr_In_Array(global.boss_rooms,room)
 	or room = room_starting_area) {
 		follow = obj_player;
 	}

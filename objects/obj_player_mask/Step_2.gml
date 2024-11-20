@@ -46,7 +46,11 @@ if (place_meeting(x,y+parent_index.vspeed,obj_ground) and parent_index.vspeed < 
 					with _list[| i] {
 						if place_meeting(x,bbox_bottom-other.parent_index.vspeed,other) and other.bbox_right > bbox_left+10 and other.bbox_left < bbox_right-10 {
 							if other.parent_index.free = true {
-								other.parent_index.vspeed *= -0.5;
+								if other.parent_index.state != other.parent_index.state_balloon {
+									other.parent_index.vspeed *= -0.5;
+								}else {
+									other.parent_index.vspeed = 2;
+								}
 								other._break3 = true;
 								if !instance_exists(obj_parachute_dragster) {
 									//other.parent_index.dash_time = 0;
@@ -64,7 +68,11 @@ if (place_meeting(x,y+parent_index.vspeed,obj_ground) and parent_index.vspeed < 
 									other.parent_index.invincible = false;
 									scr_Screen_Shake(6, 10, false);
 									audio_play_sound(snd_groundpound,0,false);
-									other.parent_index.vspeed *= 0.5;
+									if other.parent_index.state != other.parent_index.state_balloon {
+										other.parent_index.vspeed *= 0.5;
+									}else {
+										other.parent_index.vspeed = 2;
+									}
 								}
 							}
 						}
@@ -100,7 +108,11 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed >
 				if _list[| i].x > parent_index.x {
 					with _list[| i] {
 						if place_meeting(bbox_left-other.parent_index.hspeed,y,other) and other.bbox_top < bbox_bottom - 12 {
-							other.parent_index.hspeed *= -0.35;
+							if other.parent_index.state != other.parent_index.state_balloon {
+								other.parent_index.hspeed *= -0.35;
+							}else {
+									other.parent_index.hspeed = 2;
+							}
 							other._break = true;
 							if !instance_exists(obj_parachute_dragster) {
 								//other.parent_index.dash_time = 0;
@@ -151,7 +163,11 @@ if (place_meeting(x+parent_index.hspeed,y,obj_ground)) and parent_index.hspeed <
 				if _list[| i].x < parent_index.x {
 					with _list[| i] {
 						if place_meeting(bbox_right-other.parent_index.hspeed,y,other) and other.bbox_top < bbox_bottom - 12 {
-							other.parent_index.hspeed *= -0.35;
+							if other.parent_index.state != other.parent_index.state_balloon {
+								other.parent_index.hspeed *= -0.35;
+							}else {
+									other.parent_index.hspeed = -2;
+							}
 							other._break2 = true;
 							if !instance_exists(obj_parachute_dragster) {
 								//other.parent_index.dash_time = 0;

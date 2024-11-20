@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-if firing = true {
+if firing = true and snowball_freeze = false {
 	
 	image_speed = -1;
 	firing = false;
@@ -26,14 +26,14 @@ if firing = true {
 	}
 }
 
-if image_xscale = 1 and firing_cooldown = false {
+if image_xscale = 1 and firing_cooldown = false and snowball_freeze = false {
 	if abs(obj_player.x - x) < 400 and obj_player.x > x and abs(obj_player.y - y) < 16 {
 		firing = true;
 		image_index = 0;
 		//sprite_index = spr_walk_enemy_idle_1_shooting;
 		image_speed = 1;
 	}
-}else if image_xscale = -1 and firing_cooldown = false {
+}else if image_xscale = -1 and firing_cooldown = false and snowball_freeze = false {
 	if abs(obj_player.x - x) < 400 and obj_player.x < x and abs(obj_player.y - y) < 16 {
 		firing = true;
 		image_index = 0;

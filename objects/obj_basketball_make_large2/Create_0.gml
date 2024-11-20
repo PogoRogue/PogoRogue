@@ -1,0 +1,1 @@
+sprite_index = spr_basketball_hoop_large_mask_make2;

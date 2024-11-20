@@ -68,10 +68,10 @@ if select_y > 0 {
 //passives
 if select = 1 {
 	select_x_max = 8;
-	select_y_max = 5;
+	select_y_max = 6;
 	select_sprite = spr_item_slot_passives;
 	x_gap = 60;
-	y_gap = 60;
+	y_gap = 52;
 	current_array = passives_array;
 }
 
@@ -88,11 +88,11 @@ if select = 2 {
 
 //weapons
 if select = 3 {
-	select_x_max = 5;
+	select_x_max = 6;
 	select_y_max = 4;
-	select_sprite = spr_item_slot_actives;
-	x_gap = 72;
-	y_gap = 72;
+	select_sprite = spr_item_slot_weapons;
+	x_gap = 64;
+	y_gap = 64;
 	current_array = weapons_array;
 	select_y_added = 0;
 }

@@ -156,6 +156,107 @@ function scr_Enemy_Collision_Check(condition){
 								alarm[5] = 15;
 							}
 						}
+						if object_get_name(object_index) = "obj_boss_mole1"  {
+							with obj_boss_mole1 {
+								if is_bomb = true {
+									image_index = 10;
+									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
+								}
+								
+								freeze = true;
+								freeze_x = x;
+								freeze_y = y;
+								freeze_frame = image_index;
+								alarm[5] = 15;
+								
+								scr_Screen_Shake(6,12,false);
+								
+								if poke_direction != "down" and state = state_poke and is_bomb = false {
+									reached_end = true;	
+									bounced_on = true;
+									pause_time = 0;
+								}
+							}
+						}
+						if object_get_name(object_index) = "obj_boss_mole2"  {
+							with obj_boss_mole2 {
+								if is_bomb = true {
+									image_index = 10;
+									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
+								}
+	
+								freeze = true;
+								freeze_x = x;
+								freeze_y = y;
+								freeze_frame = image_index;
+								alarm[5] = 15;
+								
+								scr_Screen_Shake(6,12,false);
+								
+								if poke_direction != "down" and state = state_poke and is_bomb = false {
+									reached_end = true;	
+									bounced_on = true;
+									pause_time = 0;
+								}
+							}
+						}
+						if object_get_name(object_index) = "obj_boss_mole3"  {
+							with obj_boss_mole3 {
+								if is_bomb = true {
+									image_index = 10;
+									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
+								}
+								
+								freeze = true;
+								freeze_x = x;
+								freeze_y = y;
+								freeze_frame = image_index;
+								alarm[5] = 15;
+								
+								scr_Screen_Shake(6,12,false);
+								
+								if poke_direction != "down" and state = state_poke and is_bomb = false {
+									reached_end = true;
+									bounced_on = true;
+									pause_time = 0;
+								}
+							}
+						}
+						
+						if object_get_name(object_index) = "obj_boss_basketball" and megabounce_freeze = false {
+							with obj_boss_basketball {
+								if spin_mode = false {
+									prev_spd2 = speed;
+									next_direction = direction;
+									freeze = true;
+									freeze_x = x;
+									freeze_y = y;
+									freeze_frame = image_index;
+									alarm[5] = 15;
+									scr_Screen_Shake(6,12,false);
+								}
+							}
+							if spin_mode = false {
+								scr_Player_Damaged(damage);
+								prev_spd2 = 14;
+								next_direction = point_direction(obj_player_mask.x,obj_player_mask.y,x,y);
+							}
+						}
 					}
 				}else if other.vspeed > 0 {
 					if other.state != other.state_chargejump {
@@ -264,6 +365,103 @@ function scr_Enemy_Collision_Check(condition){
 								freeze_y = y;
 								freeze_frame = image_index;
 								alarm[5] = 15;
+							}
+						}
+						if object_get_name(object_index) = "obj_boss_mole1" and megabounce_freeze= false {
+							with obj_boss_mole1 {
+								if is_bomb = true {
+									image_index = 10;
+									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
+								}
+								
+								freeze = true;
+								freeze_x = x;
+								freeze_y = y;
+								freeze_frame = image_index;
+								alarm[5] = 15;
+								scr_Screen_Shake(6,12,false);
+								
+								if poke_direction != "down" and state = state_poke and is_bomb = false {
+									reached_end = true;
+									bounced_on = true;
+									pause_time = 0;
+								}
+							}
+						}
+						if object_get_name(object_index) = "obj_boss_mole2"  {
+							with obj_boss_mole2 {
+								if is_bomb = true {
+									image_index = 10;
+									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
+								}
+								
+								freeze = true;
+								freeze_x = x;
+								freeze_y = y;
+								freeze_frame = image_index;
+								alarm[5] = 15;
+								scr_Screen_Shake(6,12,false);
+								
+								if poke_direction != "down" and state = state_poke and is_bomb = false {
+									reached_end = true;
+									bounced_on = true;
+									pause_time = 0;
+								}
+							}
+						}
+						if object_get_name(object_index) = "obj_boss_mole3"  {
+							with obj_boss_mole3 {
+								if is_bomb = true {
+									image_index = 10;
+									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
+								}
+								
+								freeze = true;
+								freeze_x = x;
+								freeze_y = y;
+								freeze_frame = image_index;
+								alarm[5] = 15;
+								scr_Screen_Shake(6,12,false);
+								
+								if poke_direction != "down" and state = state_poke and is_bomb = false {
+									reached_end = true;
+									bounced_on = true;
+									pause_time = 0;
+								}
+							}
+						}
+						if object_get_name(object_index) = "obj_boss_basketball" and megabounce_freeze = false {
+							with obj_boss_basketball {
+								if spin_mode = false {
+									prev_spd2 = speed;
+									next_direction = direction;
+									freeze = true;
+									freeze_x = x;
+									freeze_y = y;
+									freeze_frame = image_index;
+									alarm[5] = 15;
+									scr_Screen_Shake(6,12,false);
+								}
+							}
+							if spin_mode = false {
+								scr_Player_Damaged(damage);
+								prev_spd2 = 14;
+								next_direction = point_direction(obj_player_mask.x,obj_player_mask.y,x,y);
 							}
 						}
 					}

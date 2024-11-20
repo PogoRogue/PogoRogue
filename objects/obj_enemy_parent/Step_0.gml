@@ -29,7 +29,7 @@ if(is_dead) {
 	scr_Screen_Shake(6, 10, false);
 	
 	//combo
-	if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and room != room_tutorial { 
+	if !scr_In_Array(global.boss_rooms,room) and room != room_tutorial { 
 		global.combo += 1;
 		global.combo_length = global.combo_max;
 		
@@ -115,6 +115,18 @@ if(is_dead) {
 	}
 	
 	with obj_player {
+		//portable charger
+		if global.combo <= 10 or obj_player.double_kill = 0 {
+			scr_Portable_Charger_Kill(1);
+		}else if global.combo > 10 and obj_player.double_kill = 1
+		or global.combo > 10 and global.combo <= 20 and obj_player.double_kill > 1 {
+			scr_Portable_Charger_Kill(2);
+		}else if global.combo > 20 and obj_player.double_kill = 2
+		or global.combo > 20 and global.combo <= 30 and obj_player.double_kill > 2 {
+			scr_Portable_Charger_Kill(3);
+		}else if global.combo > 30 and obj_player.double_kill > 2 {
+			scr_Portable_Charger_Kill(4);
+		}
 		//lower enemy kill cooldowns
 		if pickups_array[0].enemies_count_max > 0 and pickups_array[0].enemies_count > 0 {
 			//account for double/triple/quadruple kill passive
@@ -230,6 +242,15 @@ if freeze = true {
 	speed = 0;	
 }
 
+if snowball_freeze = true {
+	x = snowball_x;
+	y = snowball_y;
+	sprite_index = snowball_sprite;
+	image_index = snowball_frame;
+	image_speed = 0;
+	speed = 0;	
+}
+
 // Update iframes
 current_iframes = max(current_iframes - 1, 0);
 
@@ -239,3 +260,34 @@ red_frames = max(red_frames - 1, 0);
 //update center position
 center_x_sprite = bbox_left + ((bbox_right - bbox_left)/2);
 center_y_sprite = bbox_top + ((bbox_bottom - bbox_top)/2);
+
+//aura passive
+if(proc_gen_tag != -1 && instance_exists(obj_proc_gen_location_analysis)) and hp = hp_max and aura_used < global.aura_num
+{
+	//Decrease enemy count for region
+	var location_obj = instance_nearest(x,y,obj_proc_gen_location_analysis);
+	with(location_obj)
+	{
+		//Check gate open condition
+		var gate_list_val2 = ds_list_find_value(region_gate_objects, other.proc_gen_tag);
+		if(gate_list_val2 != 0) //Do something only if there's a gate for this region
+		{
+			if global.aura_num = 1 {
+				if other.hp > other.hp_max * 0.8 {
+					other.hp = other.hp_max * 0.8;
+				}
+				aura_used = 1;
+			}else if global.aura_num = 2 {
+				if other.hp > other.hp_max * 0.6 {
+					other.hp = other.hp_max * 0.6;
+				}
+				aura_used = 2;
+			}else if global.aura_num = 3 {
+				if other.hp > other.hp_max * 0.4 {
+					other.hp = other.hp_max * 0.4;
+				}
+				aura_used = 3;
+			}
+		}
+	}		
+}

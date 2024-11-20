@@ -28,3 +28,8 @@ if global.steam_api = true {
 		steam_set_achievement("ACHIEVEMENT_SLIMON");
 	}
 }	
+
+//stop splits
+with obj_runstats {
+	stop_time = true;
+}

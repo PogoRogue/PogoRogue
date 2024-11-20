@@ -17,7 +17,7 @@ if(is_dead) {
 	spd = 0;	
 }
 
-if scr_In_Camera_View(128) {
+if scr_In_Camera_View(128) and !snowball_freeze {
 
 	// Apply velocity
 	if(is_vertical) {

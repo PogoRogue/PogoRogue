@@ -20,7 +20,7 @@ current_iframes = 0;
 red_frames = 0;
 
 //drop chances
-if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and room != room_tutorial {
+if !scr_In_Array(global.boss_rooms,room) and room != room_tutorial {
 	heart_chance = 5 + (global.luck/2); //percent
 	buff_chance = 2 + (global.luck/2); //percent
 	pickup_chance = (global.luck/2); //percent
@@ -50,6 +50,12 @@ random_set_seed(global.seed);
 shaded = false;
 locked_onto = false;
 
+snowball_freeze = false;
+snowball_x = x;
+snowball_y = y;
+snowball_frame = 0;
+snowball_sprite = sprite_index;
+
 megabounce_freeze = false; //dont despawn right away if killed by megabounce
 freeze_x = x;
 freeze_y = y;
@@ -63,3 +69,4 @@ bounced_times = 0;
 depth = -10;
 
 freeze = false;
+aura_used = 0;

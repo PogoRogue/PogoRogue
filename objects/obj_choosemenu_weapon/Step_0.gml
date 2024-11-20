@@ -193,3 +193,4 @@ if weapons_unlocked = array_length(global.weapon_unlocked_array) {
 	
 }
 
+

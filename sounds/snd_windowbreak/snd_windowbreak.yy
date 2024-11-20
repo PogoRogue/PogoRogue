@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_windowbreak",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":3.09381,
+  "name":"snd_windowbreak",
+  "parent":{
+    "name":"Character",
+    "path":"folders/Sounds/Character.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_windowbreak.wav",
+  "type":0,
+  "volume":1.0,
+}

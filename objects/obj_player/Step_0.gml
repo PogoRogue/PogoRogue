@@ -151,9 +151,49 @@ if room != room_shop and table = false {
 
 //cooldowns
 for (i = 0; i <= 1; i++) {
+	//portable charger passive
+	if global.portablecharger {
+		if pickups_array[i].synergy_equipped = true {
+			if pickups_array[i].is_synergy = true {
+				var item1 = scr_Convert_Sprite_To_Active(pickups_array[i].base_item_sprite_1);
+				var item2 = scr_Convert_Sprite_To_Active(pickups_array[i].base_item_sprite_2);
+						
+				if item1.on_cooldown and item1.cooldown_time > 0 and item1.enemies_count_max = 0 and item1 != pickup_jetpack {
+					item1.cooldown_time -= 1;
+				}
+				if item2.on_cooldown and item2.cooldown_time > 0 and item2.enemies_count_max = 0 and item2 != pickup_jetpack {
+					item2.cooldown_time -= 1;
+				}
+			}else {
+				if i = 0 {
+					var item1 = scr_Convert_Sprite_To_Active(global.parent_synergy1.gui_sprite);
+					if pickups_array[i] = global.item_1_pickup {
+						var item2 = scr_Convert_Sprite_To_Active(global.parent_synergy1.base_item_sprite_2);
+					}else if pickups_array[i] = global.item_2_pickup {
+						var item2 = scr_Convert_Sprite_To_Active(global.parent_synergy1.base_item_sprite_1);
+					}
+				}else {
+					var item1 = scr_Convert_Sprite_To_Active(global.parent_synergy2.gui_sprite);
+					if pickups_array[i] = global.item_3_pickup {
+						var item2 = scr_Convert_Sprite_To_Active(global.parent_synergy2.base_item_sprite_2);
+					}else if pickups_array[i] = global.item_4_pickup {
+						var item2 = scr_Convert_Sprite_To_Active(global.parent_synergy2.base_item_sprite_1);
+					}
+				}
+						
+				if item1.on_cooldown and item1.cooldown_time > 0 and item1.enemies_count_max = 0 and item1 != pickup_jetpack {
+					item1.cooldown_time -= 1;
+				}
+				if item2.on_cooldown and item2.cooldown_time > 0 and item2.enemies_count_max = 0 and item2 != pickup_jetpack {
+					item2.cooldown_time -= 1;
+				}	
+			}
+		}
+	}
 	if pickups_array[i].reload_on_bounce = false {
 		if pickups_array[i].on_cooldown and pickups_array[i].cooldown_time > 0 and pickups_array[i].enemies_count_max = 0 {
 			pickups_array[i].cooldown_time -= 1;
+			
 			if pickups_array[i].cooldown_time <= 0 {
 				if pickups_array[i] != pickup_parachute and pickups_array[i] != pickup_wreckingball
 				and pickups_array[i] != pickup_winners and pickups_array[i] != pickup_hacker {
@@ -389,15 +429,28 @@ if (canshoot > 0) {
 			gun.spread_number = 3;
 		}
 	}else if gun.spread_number = 3 and tripleshot = false and !(gun._name = "Javelins" and gun.level >= 2)  
-	and !(gun._name = "Pistol" and gun.level >= 4) and !(gun._name = "Burst Rifle" and gun.level >= 4) {
+	and !(gun._name = "Pistol" and gun.level >= 4) and !(gun._name = "Burst Rifle" and gun.level >= 4)
+	and !(gun._name = "Snow Cannon" and gun.level >= 4){
 		gun.spread_number = 1;
 	}
 	
 	//lerp firerate to end while shooting
 	ammo.firerate = lerp(ammo.firerate, ammo.firerate_end, ammo.firerate_mult);
 	
-	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_chargejump and table = false) {
+	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_chargejump and table = false and state != state_magnet) {
+	
+	if gun._name != "Snow Cannon" {
 		scr_Shoot();
+	}else if state != state_snowball {
+		if state != state_freeze and state != state_parachute {
+			snowball_released = false;
+			state = state_snowball;	
+			snowball_frames = 0;
+			audio_play_sound(snd_javelin_charge,0,false);
+		}else {
+			scr_Shoot();
+		}
+	}
 	
 		var delay = gun.burst_delay;
 		
@@ -411,10 +464,23 @@ if (canshoot > 0) {
 		}
 		
 		//decrease ammo count for spread weapons
-		if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+		if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" and  gun._name != "Snow Cannon" {
 			gun.current_bullets -= 1;
 		}
 	}else {
+		if ((gun.current_bullets) <= 0 and table = false) and gun._name = "Magnetic Disks" {
+			with obj_projectile {
+				if gun_name = "Magnetic Disks" {
+					if summoned = false {
+						obj_player.state = obj_player.state_magnet;
+						obj_player.magnet_index = 0;
+						summoned = true;
+						enemies_array = [];
+						audio_play_sound(snd_magnet_on,0,false);
+					}
+				}
+			}
+		}
 		if (audio_is_playing(snd_watergun)) {
 			audio_stop_sound(snd_watergun);
 		}
@@ -814,4 +880,8 @@ if room = room_proc_gen_test {
 
 if invincibility_white_alpha > 0 {
 	invincibility_white_alpha -= 0.05;	
+}
+
+if audio_is_playing(snd_magnet_on) and state != state_magnet {
+	audio_stop_sound(snd_magnet_on);
 }

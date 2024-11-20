@@ -1,20 +1,24 @@
 /// @description Rotate and move back and forth
-
-image_angle -= rotation_spd;
+if snowball_freeze = false {
+	image_angle -= rotation_spd;
+}
 
 if(is_dead) {
 	spd = 0;	
-} else if (place_meeting(x + speed, y, obj_ground)) {
+} else if (place_meeting(x + speed, y, obj_ground)) and snowball_freeze = false {
 	spd *= -1;
 	image_xscale = sign(spd);
 }
 
-x += spd;
+if snowball_freeze = false {
+	x += spd;
+}
 
 // If surrounded, brick cannot be damaged
 if(instance_place_list(x, y, obj_boss_brick, ds_list_create(), false) >= 4) {
 	hp = hp_max;
 	is_dead = false;
+	snowball_freeze = false;
 }
 
 // Inherit the parent event

@@ -3,7 +3,8 @@
 //create 16x16 ground objects to check for collisions and draw tiles 
 for(i = 0; i < image_xscale; i++) {
 	for(j = 0; j < image_yscale; j++) {
-		if !instance_exists(obj_boss_sphere) and room != room_tutorial and room != room_gameplay_video and room != room_boss_1 and room != room_boss_2 and room != room_starting_area {
+		if !instance_exists(obj_boss_sphere) and room != room_tutorial and room != room_gameplay_video and room != room_boss_1 and room != room_boss_2 and room != room_starting_area
+		and room != room_boss_1B and room != room_boss_2B {
 			instance_create_depth(x+(i*16),y+(j*16),depth-1,obj_ground_tiles);
 		}
 	}

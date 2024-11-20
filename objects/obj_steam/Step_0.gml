@@ -10,7 +10,7 @@ if steam_initialised()
 }
 
 if (global.steam_api = true) {
-	show_debug_message("STEAM ACTIVE");
+	//show_debug_message("STEAM ACTIVE");
 }else {
-	show_debug_message("ERROR");
+	//show_debug_message("ERROR");
 }

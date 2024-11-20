@@ -21,11 +21,13 @@ if (is_grounded <= 0) {
 
 // Inherit the parent event
 event_inherited();
+
 if(is_dead!=true)
 {
 	sprite_index = spr_B1_Explode_Move;
 }
 if(is_dead) {
+	snowball_freeze = false;
 	spd = 0;
 	if (sprite_index == spr_B1_Explode_Move)
 	{

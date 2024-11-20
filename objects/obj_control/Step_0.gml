@@ -69,16 +69,16 @@ if (skiplevel_button) {
 		room_persistent = false;
 		switch (global.phase) {
 			case 1:
-				scr_Room_Transition(room_boss_1);
+				scr_Room_Transition(global.boss_1_room);
 				break;
 			case 2:
-				scr_Room_Transition(room_boss_2);
+				scr_Room_Transition(global.boss_2_room);
 				break;
 			case 3:
 				scr_Room_Transition(room_boss_3);
 				break;
 		}	
-	}else if room = room_boss_1 or room = room_boss_2 or room = room_boss_3 {
+	}else if scr_In_Array(global.boss_rooms,room) {
 		room_persistent = false;
 		if room = room_boss_1 {
 			global.phase = 2;
@@ -307,4 +307,10 @@ if global.spins_used >= 10 {
 			steam_set_achievement("ACHIEVEMENT_GAMBLER");
 		}
 	}
+}
+
+if global.capitalist = true and global.num_of_coins > 200 {
+	global.capitalist_damage = 1 + ((global.num_of_coins-200)/200);
+}else {
+	global.capitalist_damage = 1;
 }

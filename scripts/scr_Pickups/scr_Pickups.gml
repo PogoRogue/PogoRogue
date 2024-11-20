@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Pickups(){
 	
-	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute,state_shieldbubble,state_plasmacharge,state_megabounce,state_megabounce_charge,state_dragster];
+	var all_states = [state_free,state_bouncing,state_chargejump,state_groundpound,state_firedash,state_bulletblast,state_freeze,state_parachute,state_shieldbubble,state_plasmacharge,state_megabounce,state_megabounce_charge,state_dragster,state_magnet,state_snowball,state_balloon];
 
 	
 	pickup_nothing = {
@@ -280,9 +280,9 @@ function scr_Pickups(){
 		_name: "Magic Stopwatch",
 		tagline: "Slow down time for 15 seconds, allowing for high-precision movement. Slow mo can be canceled on \nre-press.",
 		gui_sprite: spr_pickup_slowmo,
-		max_cooldown_time: 1200,
-		cooldown_time: 1200,
-		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		max_cooldown_time: 1800,
+		cooldown_time: 1800,
+		cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -361,7 +361,7 @@ function scr_Pickups(){
 		on_call: function() {
 			
 			with obj_player {
-				if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun { //reload bullets
+				if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun and gun_1 != frisbee_gun { //reload bullets
 					//reload sound
 					audio_play_sound(snd_reload,0,false);
 					gun_1.current_bullets = gun_1.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
@@ -369,7 +369,7 @@ function scr_Pickups(){
 					other.cooldown_time = other.max_cooldown_time;
 					other.on_cooldown = true;
 				}
-				if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun { //reload bullets
+				if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun and gun_2 != frisbee_gun { //reload bullets
 					//reload sound
 					audio_play_sound(snd_reload,0,false);
 					gun_2.current_bullets = gun_2.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
@@ -377,7 +377,7 @@ function scr_Pickups(){
 					other.cooldown_time = other.max_cooldown_time;
 					other.on_cooldown = true;
 				}
-				if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun { //reload bullets
+				if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun and gun_3 != frisbee_gun { //reload bullets
 					//reload sound
 					audio_play_sound(snd_reload,0,false);
 					gun_3.current_bullets = gun_3.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
@@ -451,7 +451,7 @@ function scr_Pickups(){
 				freeze_time = 180;
 				freeze_angle = angle;
 				//reload current weapon
-				if gun_array[current_gun]._name != "Boomerangs" {
+				if gun_array[current_gun]._name != "Boomerangs" and gun_array[current_gun]._name != "Magnetic Disks" {
 					gun_array[current_gun].current_bullets = gun_array[current_gun].bullets_per_bounce + max_ammo_buff;
 				}
 			}
@@ -556,6 +556,34 @@ function scr_Pickups(){
 						audio_play_sound(snd_ArmorHeart,0,false);
 						with obj_player_health {
 							heart_shield_gain_num = other.armor_buff;	
+						}
+					}
+					
+					if global.energydrink = true { 
+						energy_buff += 2;
+						if energy_buff > 5 {
+							energy_buff = 5;	
+						}
+						audio_play_sound(snd_zap,0,false);
+						with obj_player_health {
+							heart_energy_gain_num += 2;	
+							energy_to_gain += 2;
+							if alarm[0] <= 0 {
+								alarm[0] = 1;
+							}
+						}
+					}else {
+						energy_buff += 1;
+						if energy_buff > 5 {
+							energy_buff = 5;	
+						}
+						audio_play_sound(snd_zap,0,false);
+						with obj_player_health {
+							heart_energy_gain_num += 1;	
+							energy_to_gain += 1;
+							if alarm[0] <= 0 {
+								alarm[0] = 1;
+							}
 						}
 					}
 				}
@@ -1041,21 +1069,21 @@ function scr_Pickups(){
 		base_item_sprite_2: spr_pickup_emergency,
 		item_cost: 115, //only for synergies (item 1 + item 2 costs)
 		on_call: function() {
-			if obj_player.energy_buff = 0 {
+			if obj_player.energy_buff = 0 or global.zap_used = false {
 				with obj_player {
-					if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun { //reload bullets
+					if gun_1.current_bullets != gun_1.bullets_per_bounce+obj_player.max_ammo_buff and gun_1 != boomerang_gun and gun_1 != frisbee_gun { //reload bullets
 						//reload sound
 						audio_play_sound(snd_reload,0,false);
 						gun_1.current_bullets = gun_1.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
 						instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 					}
-					if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun { //reload bullets
+					if gun_2.current_bullets != gun_2.bullets_per_bounce+obj_player.max_ammo_buff and gun_2 != boomerang_gun and gun_2 != frisbee_gun { //reload bullets
 						//reload sound
 						audio_play_sound(snd_reload,0,false);
 						gun_2.current_bullets = gun_2.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
 						instance_create_depth(x+lengthdir_x(16,image_angle+90),y+lengthdir_y(16,image_angle+90),depth-1,obj_bulletcasing);
 					}
-					if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun { //reload bullets
+					if gun_3.current_bullets != gun_3.bullets_per_bounce+obj_player.max_ammo_buff and gun_3 != boomerang_gun and gun_3 != frisbee_gun { //reload bullets
 						//reload sound
 						audio_play_sound(snd_reload,0,false);
 						gun_3.current_bullets = gun_3.bullets_per_bounce+obj_player.max_ammo_buff; //reload bullets	
@@ -1063,10 +1091,16 @@ function scr_Pickups(){
 					}
 				
 					//armored heart
+					global.zap_used = true;
+					global.zap_hearts_lost = 0;
 					energy_buff += 4;
+					if energy_buff > 5 {
+						energy_buff = 5;	
+					}
 					audio_play_sound(snd_zap,0,false);
 					with obj_player_health {
-						heart_energy_gain_num = other.energy_buff;	
+						heart_energy_gain_num += 4;	
+						energy_to_gain += 4;
 						alarm[0] = 1;
 					}
 				}

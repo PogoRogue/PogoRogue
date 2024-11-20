@@ -12,3 +12,4 @@ if !place_meeting(x,y+2,obj_ground_parent) {
 		mask_index = spr_spike_mask_up;	
 	}
 }
+created = true;

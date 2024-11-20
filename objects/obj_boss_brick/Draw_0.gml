@@ -5,6 +5,10 @@ if spawned = true {
 	if(is_dead) {
 		shader_set(sh_tint_red);
 	}
+	
+	if (snowball_freeze) {
+		//shader_set(sh_tint_blue);
+	}
 
 	draw_self();
 

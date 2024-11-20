@@ -114,6 +114,18 @@ if (gun_name = "Javelins") {
 	}
 }
 
+if (gun_name = "Tracker Darts") {
+	if dart_created = false and place_meeting(x,y,obj_ground) {
+		with instance_create_depth(x,y,-5,obj_dart_stuck)	{
+			other_depth = other.depth;
+			depth = -5;
+			image_angle = other.image_angle;
+			damage = other.damage;
+			grounded = true;
+		}
+	}
+}
+
 if gun_name = "Boomerangs" {
 	if audio_is_playing(sound) {
 		audio_stop_sound(sound);
@@ -146,4 +158,18 @@ if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
 
 if (gun_name = "The Portal") {
 	obj_player.portal_gun.current_bullets = 1;
+}
+
+if (gun_name = "Magnetic Disks") {
+	with obj_player {
+		if frisbee_gun.current_bullets < frisbee_gun.bullets_per_bounce+max_ammo_buff {
+			frisbee_gun.current_bullets	+= 1;
+		}
+	}
+	audio_play_sound(snd_reload,0,false);
+}
+
+//create bubble pop
+if (gun_name = "Balloon Gun") and scr_In_Camera_View(96) {
+	audio_play_sound(snd_balloon_pop,0,false);
 }

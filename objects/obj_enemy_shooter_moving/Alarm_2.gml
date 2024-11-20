@@ -1,3 +1,4 @@
 /// @description Reset animation
-
-sprite_index = spr_enemy_shooter_walking;
+if snowball_freeze = false  {
+	sprite_index = spr_enemy_shooter_walking;
+}

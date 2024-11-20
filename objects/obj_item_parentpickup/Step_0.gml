@@ -17,7 +17,7 @@ if instance_exists(obj_player) and room != room_shop {
 
 mask_index = spr_pickup_airbag;
 
-if (room = room_boss_1 or room = room_boss_2 or room = room_boss_3) and slot_machine = false {
+if (scr_In_Array(global.boss_rooms,room)) and slot_machine = false {
 	//instance_destroy();
 	follow_player = false;
 	
@@ -38,4 +38,6 @@ if slot_machine = true {
 	follow_player = true;
 }
 
-pickup.synergy_equipped = false;
+if !pickup.is_synergy {
+	pickup.synergy_equipped = false;
+}

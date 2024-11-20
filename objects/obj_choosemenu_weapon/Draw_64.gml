@@ -60,7 +60,7 @@ for (i = 0; i < array_length(all_weapons); i++) {
 		var yy = 226 + floor(i / select_x_max) * y_gap; //226 //295
 	}
 	if (i = select-1) {
-		var x_offset = 154 + (((select_x_max-4)*(-x_gap))/2);
+		var x_offset = 160 + (((select_x_max-4)*(-x_gap))/2);
 		if select_x <= select_x_max/2 {
 			var xx = (center_x-384) + x_offset;
 		}else {
@@ -73,7 +73,7 @@ for (i = 0; i < array_length(all_weapons); i++) {
 			var y_offset = 0;
 		}
 			
-		scr_Draw_Weapon_Description(xx,yy+y_offset,all_weapons[i],0,(global.weapon_unlocked_array[i] or test_mode = false),all_weapons_costs[i]);
+		scr_Draw_Weapon_Description(xx - ((select_x <= 3) * 3) ,yy+y_offset,all_weapons[i],0,(global.weapon_unlocked_array[i] or test_mode = false),all_weapons_costs[i]);
 	}
 }
 

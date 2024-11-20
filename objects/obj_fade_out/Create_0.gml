@@ -15,7 +15,7 @@ if !instance_exists(obj_fade_in) {
 }
 random_set_seed(global.seed);
 
-if (room != room_starting_area or next_room = room_shop or next_room = room_boss_1 or next_room = room_boss_2 or next_room = room_boss_3) 
+if (room != room_starting_area or next_room = room_shop or scr_In_Array(global.boss_rooms,next_room)) 
 and room != room_menu and room != room_stats
 and room != room_settings and room != room_items
 or room = room_shop  {

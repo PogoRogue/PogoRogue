@@ -22,6 +22,8 @@ if (spd < 0) { image_xscale = -1;}
 
 if(is_dead) {
 	spd = 0;
+	snowball_freeze = false;
+	image_speed = 1;
 	if (sprite_index == spr_enemy_walking_explosion_walk) {
 		image_index = 0;
 		sprite_index = spr_enemy_walking_explosion;

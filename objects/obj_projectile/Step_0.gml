@@ -1,7 +1,8 @@
-x += hspd;
 
+x += hspd;
 y += vspd;
-if place_meeting(x,y,obj_ground) and gun_name != "Javelins" and gun_name != "Plasma Gun" and gun_name != "Laser Gun" and destroy_on_impact {
+
+if place_meeting(x,y,obj_ground) and gun_name != "Javelins" and gun_name != "Plasma Gun" and gun_name != "Snow Cannon" and gun_name != "Laser Gun" and destroy_on_impact {
 	if global.drilltipbullets = false and num_of_bounces > 0 {
 		depth = instance_place(x,y,obj_ground).depth + 20;
 	}else if num_of_bounces > 0 {
@@ -26,7 +27,7 @@ if instance_exists(obj_camera) {
 		if (gun_name = "Bouncy Ball Blaster") and num_of_bounces < max_num_of_bounces {
 			damage = init_damage * (2*(max_num_of_bounces-num_of_bounces));
 			image_index = max_num_of_bounces-num_of_bounces;
-		}else if (gun_name = "Javelins") or gun_name = "Plasma Gun" {
+		}else if (gun_name = "Javelins") or gun_name = "Plasma Gun" or gun_name = "Balloon Gun"  {
 			if created = true {
 				damage = init_damage + ((temp_charge/temp_charge_max)*16);	
 			}
@@ -140,7 +141,7 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) a
 	x += hspd;
 	
 }else if (place_meeting(x,y+vspd+1,obj_ground) and vspd > 0 and num_of_bounces > 0 ) and free = true and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground)) or gun_name != "Plasma Gun")
-or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) /*and gun_name != "Puncher"*/ and free = true  and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground_oneway)) or gun_name != "Plasma Gun"){ //top
+or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) /*and gun_name != "Puncher"*/ and free = true  and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground_oneway)) or gun_name != "Plasma Gun") { //top
 	while !place_meeting(x,y+sign(vspd)+1,obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) /*and gun_name != "Puncher"*/) {
 		y += sign(vspd);
 	}
@@ -162,7 +163,7 @@ or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_g
 	
 	x += hspd;
 
-}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false /*and gun_name != "Puncher"*/) 
+}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false and gun_name != "Snow Cannon" /*and gun_name != "Puncher"*/) 
 or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) 
 or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) {
 	alarm[0] = 1;
@@ -207,7 +208,7 @@ if (gun_name = "Missile Launcher") {
 		}
 		if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces <= 0 and global.drilltipbullets = false {
 			instance_destroy();	
-		}else if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0  {
+		}else if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y,obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0   {
 			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
 			direction = image_angle;
 			num_of_bounces -= 1;
@@ -591,6 +592,181 @@ if (gun_name = "Plasma Gun") {
 		}
 	}
 }
+
+if (gun_name = "Snow Cannon") {
+	colliding_with_enemy = false;
+	image_angle += 10;
+	destroy_on_impact = false;
+}
+
+if (gun_name = "Balloon Gun") {
+	if vspd < -4 {
+		vspd = -4;	
+	}
+	//depth = obj_player.depth+1;
+	if created = false {
+		image_angle = obj_player.angle-90 + angle_offset;
+		//instance_destroy();	
+	}else {
+		if abs(90 - image_angle) < abs(-270 - image_angle) {
+			if image_angle < 90 {
+				image_angle += 3;
+			}else {
+				image_angle = 90;
+				hspd *= 0.75;
+			}
+		}else {
+			if image_angle > -270 {
+				image_angle -= 3;
+			}else {
+				image_angle = -270;
+				hspd *= 0.75;
+			}
+		}
+		//show_debug_message("angle: " + string(image_angle));
+	}
+	
+	if obj_player.balloon_gun.spread_number = 1 {
+		angle_offset = 0;
+	}else if obj_player.balloon_gun.spread_number = 2 { //double shot
+		if spread_index = 0 {
+			angle_offset = -obj_player.balloon_gun.spread_angle/2;
+		}else if spread_index = 1 {
+			angle_offset = obj_player.balloon_gun.spread_angle/2;
+		}
+	}else if obj_player.balloon_gun.spread_number = 3 { //triple shot
+		if spread_index = 0 {
+			angle_offset = -obj_player.balloon_gun.spread_angle;
+		}else if spread_index = 1 {
+			angle_offset = 0;
+		}else if spread_index = 2 {
+			angle_offset = obj_player.balloon_gun.spread_angle;
+		}
+	}
+	
+	if !place_meeting(x,y,obj_ground) and created = true and vspd < 0 {
+		ground_free = true;	
+	}
+	
+	if !global.drilltipbullets  {
+		if place_meeting(x+hspd+hspd,y,obj_ground) and !place_meeting(x,y,obj_ground)  and created = true {
+			hspd *= -1;
+		}
+	
+		if ground_free = true and place_meeting(x,y+vspd,obj_ground) and vspd < 0 and created = true {
+			while !place_meeting(x,y+sign(vspd),obj_ground) {
+				y += sign(vspd);
+			}
+			if abs(vspd) > 0.2 {
+				vspd *= -0.7;
+			}else {
+				vspd = 0;
+			}	
+		}
+	}
+}
+
+if (gun_name = "Magnetic Disks") {
+	if stuck = false or summoned = true {
+		image_angle += 10;
+	}
+	if place_meeting(x+hspd,y+vspd,obj_ground) and summoned = false and stuck = false {
+		while !place_meeting(x+sign(hspd),y+sign(vspd),obj_ground) {
+			x+=hspd;
+			y+=vspd;
+		}
+		audio_play_sound(snd_disk_clank,0,false);
+		hspd = 0;
+		vspd = 0;
+		stuck = true;
+	}
+	
+	if summoned = true {
+		if summon_speed < 24 {
+			summon_speed += 1;
+		}
+		move_towards_point(obj_player.x,obj_player.y,summon_speed);
+		if place_meeting(x+hspeed,y+vspeed,obj_player) or place_meeting(x+hspd,y+vspd,obj_player_mask) {
+			instance_destroy();
+			with obj_player {
+				if state != state_freeze and state != state_parachute {
+					var disks = 0;
+					with obj_projectile {
+						if gun_name = "Magnetic Disks" {
+							disks += 1;
+						}
+					}
+					if disks = 0 { //frisbee_gun.current_bullets = frisbee_gun.bullets_per_bounce+max_ammo_buff {
+						speed = 0;
+						motion_add(angle - 90, vsp_basicjump*1.1);
+					}
+					scr_Screen_Shake(3,6,true);
+				}
+			}
+		}
+	}
+	
+	trail = not trail;
+	
+	if trail = false {
+		x_prev_array[4] = x_prev_array[3];
+		y_prev_array[4] = y_prev_array[3];
+		x_prev_array[3] = x_prev_array[2];
+		y_prev_array[3] = y_prev_array[2];
+		x_prev_array[2] = x_prev_array[1];
+		y_prev_array[2] = y_prev_array[1];
+		x_prev_array[1] = x_prev_array[0];
+		y_prev_array[1] = y_prev_array[0];
+		x_prev_array[0] = x;
+		y_prev_array[0] = y;
+	}
+}
+
+//missile
+if (gun_name = "Tracker Darts") {
+	//speed up
+	if speed < 6 + (6 * (gun_level > 1)) {
+		speed += 0.15 + (0.15 * (gun_level > 1));	
+	}
+	
+	//lock on to enemy
+	if collision_circle(x,y,160,obj_enemy_parent,false,true) != noone {
+		closest_enemy = instance_nearest(x,y,obj_enemy_parent);
+	}else {
+		closest_enemy = noone;
+	}
+	
+	//rotate
+	if closest_enemy != noone {
+		//num_of_bounces = 0;
+		damage = init_damage;
+		scr_Gradually_Turn(self.id,closest_enemy,45,1);
+		direction = image_angle;
+		if place_meeting(x,y,closest_enemy) {
+			//instance_destroy();	
+		}
+	}else {
+		direction = image_angle;
+		
+		if place_meeting(x,y+vspeed,obj_ground) and num_of_bounces > 0  {
+			while !place_meeting(x,y+sign(vspeed),obj_ground) {
+				y += sign(vspeed);
+			}
+			image_angle = point_direction(x,y,x+hspeed,y-vspeed);
+			direction = image_angle;
+			num_of_bounces -= 1;
+		}
+		if place_meeting(x+hspeed,y,obj_ground) and num_of_bounces > 0  {
+			while !place_meeting(x+sign(hspeed),y,obj_ground) {
+				x += sign(hspeed);
+			}
+			image_angle = point_direction(x,y,x-hspeed,y+vspeed);
+			direction = image_angle;
+			num_of_bounces -= 1;
+		}
+	}
+}
+
 if (gun_name = "Six Shooter") or (gun_name = "Seven Shooter") or (gun_name = "Eight Shooter") 
 or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Eleven Shooter") {
 	if place_meeting(x,y,obj_ground) {

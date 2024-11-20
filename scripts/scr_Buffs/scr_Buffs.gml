@@ -47,6 +47,20 @@ function scr_Buffs(){
 					heart_shield_gain_num = other.armor_buff;	
 				}
 			}
+			if global.energydrink = true { 
+				energy_buff += 1;
+				if energy_buff > 5 {
+					energy_buff = 5;	
+				}
+				audio_play_sound(snd_zap,0,false);
+				with obj_player_health {
+					heart_energy_gain_num += 1;	
+					energy_to_gain += 1;
+					if alarm[0] <= 0 {
+						alarm[0] = 1;
+					}
+				}
+			}
 		}
 	}
 	
@@ -296,5 +310,45 @@ function scr_Buffs(){
 			obj_player.bubble_gun.ammo[bullet_index].destroy_time += 25;
 			obj_player.puncher_gun.ammo[bullet_index].spd += 6;
 		}
+	}
+	
+	buff_treasurehunter = function() {
+		global.treasure_hunter_num = 7;
+	}
+	
+	buff_energydrink = function() {
+		global.energydrink = true;
+	}
+	
+	buff_capitalist = function() {
+		global.capitalist = true;
+	}
+	
+	buff_cactusmode = function() {
+		global.cactusmode = true;
+	}
+	
+	buff_mirrormode = function() {
+		global.mirrormode = true;
+	}
+	
+	buff_adrenalinerush = function() {
+		global.adrenalinerush += 1;
+	}
+	
+	buff_aura = function() {
+		global.aura_num += 1;
+	}
+	
+	buff_illegalshipment = function() {
+		global.illegalshipment = true;
+	}
+	
+	buff_portablecharger = function() {
+		global.portablecharger = true;
+	}
+	
+	buff_snackbreak = function() {
+		global.snackbreak_num += 1;
 	}
 }

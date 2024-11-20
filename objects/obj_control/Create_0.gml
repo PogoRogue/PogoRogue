@@ -14,11 +14,19 @@ global.player_spawn_y = 0;
 global.player_spawn_x_prev = 0;
 global.player_spawn_y_prev = 0;
 
+global.boss_rooms = [room_boss_1,room_boss_2,room_boss_3,room_boss_1B,room_boss_2B];
+global.first_boss_rooms = [room_boss_1,room_boss_1B];
+global.second_boss_rooms = [room_boss_2,room_boss_2B];
+
+random_set_seed(global.seed);
+global.boss_1_room = choose(room_boss_1,room_boss_1B);
+global.boss_2_room = choose(room_boss_2,room_boss_2B);
+
 if room = room_starting_area {
 	global.num_of_coins = 0;
 }else if room = room_test {
 	global.num_of_coins = 200;
-}else if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+}else if !scr_In_Array(global.boss_rooms,room) {
 	global.num_of_coins = 0;
 }
 
@@ -115,6 +123,24 @@ global.paparazzi = false;
 global.bar_time_added = 1;
 global.bartime = 25;
 global.strong_muscles = false;
+global.treasure_hunter_num = 0;
+global.energydrink = false;
+global.capitalist = false;
+global.capitalist_damage = 0;
+global.cactusmode = false;
+global.cactusmode_on = false;
+global.mirrormode = false;
+global.mirrormode_on = false;
+global.portable_charger = false;
+global.zap_used = false;
+global.zap_hearts_lost = 0;
+global.adrenalinerush = 0;
+global.aura_num = 0;
+global.illegalshipment = false;
+global.portablecharger = false;
+global.snackbreak_num = 0;
+global.snackbreak_used = false;
+	
 global.synergy_frame = 0;
 
 //items unlockable in the shop
@@ -155,10 +181,11 @@ global.shop_number = 0;
 global.enemy_number = 0;
 global.passive_number = 0;
 global.salesman_number = 0;
-global.fairy_amount = 0;
+global.fairy_amount = 0
+global.mole_number = 0;
 
 if room != room_proc_gen_test and room != room_shop
-and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 {
+and !scr_In_Array(global.boss_rooms,room) {
 	//If you want to manually set the seed to a number, don't call randomize, and instead set seed = ######
 	randomize();
 	global.seed = random_get_seed();
@@ -192,3 +219,5 @@ global.item_4_pickup = 0;
 global.pogosmith_used = 0;
 
 alarm[3] = 1;
+
+global.tennis_balls_left = 8;

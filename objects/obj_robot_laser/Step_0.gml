@@ -21,3 +21,9 @@ if place_meeting(x + h_spd*2,y,obj_ground) {
 if image_speed = -1 and floor(image_index) <= 1 {
 	instance_destroy();
 }
+
+if global.mirrormode_on = true  {
+	damage = 0;
+} else if global.mirrormode_on = false {
+	damage = 8;
+}

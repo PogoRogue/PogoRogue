@@ -13,7 +13,7 @@ function scr_Random_Item_Drops(){
 	pickup_drop = irandom_range(1,100);
 	
 	//heart
-	if (heart_drop <= heart_chance) and room != room_boss_1 and room != room_boss_2 and room != room_boss_3  {
+	if (heart_drop <= heart_chance) and !scr_In_Array(global.boss_rooms,room)  {
 		random_set_seed(global.seed + global.enemy_number + global.fairy_amount);
 		var heart_type = choose(obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_heart,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_armor,obj_item_buff_max_hp);
 				
@@ -129,7 +129,7 @@ function Create_Item_Drops(object_array)
 		
 		var inst = instance_create_depth(object_x, object_y, object_depth, object_to_create);
 		
-		if (room != room_boss_1 and room != room_boss_2 and room != room_boss_3) or inst.slot_machine = true
+		if (!scr_In_Array(global.boss_rooms,room)) or inst.slot_machine = true
 		{
 			with (inst)
 			{
@@ -148,15 +148,17 @@ function scr_Get_Rand_Buff_Object()
 						obj_item_buff_combomaster,obj_item_buff_combotime,obj_item_buff_crit,
 						obj_item_buff_dmg,obj_item_buff_doublekill,obj_item_buff_drilltipbullets,
 						obj_item_buff_dualwielder,obj_item_buff_experimentation,obj_item_buff_fastforward,
-						obj_item_buff_flamingcoins,obj_item_buff_hotshells,obj_item_buff_impatience,
+						obj_item_buff_flamingcoins,obj_item_buff_illegalshipment,obj_item_buff_impatience,
 						obj_item_buff_invincibilityup,obj_item_buff_ironproficiency,obj_item_buff_juggler,
 						obj_item_buff_lasersight,obj_item_buff_laststand,obj_item_buff_magicianstouch,
 						obj_item_buff_paparazzi,obj_item_buff_pickybuyer,obj_item_buff_planetarybullets,
 						obj_item_buff_psychicbullets,obj_item_buff_recycling,obj_item_buff_revive,
 						obj_item_buff_righteousrevenge, obj_item_buff_robbery, obj_item_buff_rubberbullets,
 						obj_item_buff_sharptip,obj_item_buff_sharpshooter,obj_item_buff_steadyhands,
-						obj_item_buff_strongmuscles,obj_item_buff_supershield,obj_item_buff_tightspring,
-						obj_item_buff_triplethreat];
+						obj_item_buff_strongmuscles,obj_item_buff_supershield,obj_item_buff_snackbreak,
+						obj_item_buff_triplethreat,obj_item_buff_treasurehunter,obj_item_buff_energydrink,
+						obj_item_buff_capitalist,obj_item_buff_cactusmode,obj_item_buff_mirrormode,
+						obj_item_buff_adrenalinerush,obj_item_buff_aura,obj_item_buff_portablecharger];
 	random_buff_drop = list_of_possible_buffs[irandom_range(0,array_length(list_of_possible_buffs)-1)];
 	return random_buff_drop;
 	random_set_seed(global.seed);
@@ -178,15 +180,16 @@ function scr_Get_Rand_Weapon_Object()
 	var list_of_possible_weapons = [obj_item_weapon_default,obj_item_weapon_paintball,obj_item_weapon_shotgun,
 							obj_item_weapon_burstfire,obj_item_weapon_javelins,obj_item_weapon_puncher,
 							obj_item_weapon_sixshooter, obj_item_weapon_bouncyball,obj_item_weapon_boomerang,
-							obj_item_weapon_water, obj_item_weapon_machine, obj_item_weapon_grenade,
-							obj_item_weapon_starsucker, obj_item_weapon_yoyo, obj_item_weapon_bubble,
+							obj_item_weapon_water, obj_item_weapon_snow, obj_item_weapon_balloon,
+							obj_item_weapon_machine, obj_item_weapon_grenade,
+							obj_item_weapon_starsucker, obj_item_weapon_yoyo, obj_item_weapon_bubble,obj_item_weapon_frisbees,obj_item_weapon_darts,
 							obj_item_weapon_slime, obj_item_weapon_sniper, obj_item_weapon_plasma,
 							obj_item_weapon_laser, obj_item_weapon_missile];
 	
-	if global.phase <= 1 and room != room_boss_3 or room = room_boss_1 {
-		random_weapon_drop = list_of_possible_weapons[irandom_range(0,7)];
-	}else if global.phase = 2 and room != room_boss_3  or room = room_boss_2 {
-		random_weapon_drop = list_of_possible_weapons[irandom_range(4,11)];
+	if global.phase <= 1 and room != room_boss_3 or scr_In_Array(global.first_boss_rooms,room) {
+		random_weapon_drop = list_of_possible_weapons[irandom_range(0,11)];
+	}else if global.phase = 2 and room != room_boss_3  or scr_In_Array(global.second_boss_rooms,room) {
+		random_weapon_drop = list_of_possible_weapons[irandom_range(5,18)];
 	}else if global.phase = 3 or room = room_boss_3 {
 		random_weapon_drop = list_of_possible_weapons[irandom_range(8,array_length(list_of_possible_weapons)-1)];
 	}else {
@@ -213,9 +216,9 @@ function scr_Get_Rand_Pickup_Object()
 					obj_item_pickup_synergy_tacticalstrike, obj_item_pickup_synergy_blizzard, obj_item_pickup_synergy_pogomode];
 	
 	
-	if global.phase <= 1 and room != room_boss_3 or room = room_boss_1 {
+	if global.phase <= 1 and room != room_boss_3 or scr_In_Array(global.first_boss_rooms,room) {
 		random_pickup_drop = list_of_possible_pickups[irandom_range(0,11)];
-	}else if global.phase = 2 and room != room_boss_3  or room = room_boss_2 {
+	}else if global.phase = 2 and room != room_boss_3  or scr_In_Array(global.second_boss_rooms,room) {
 		random_pickup_drop = list_of_possible_pickups[irandom_range(8,15)];
 	}else if global.phase = 3 or room = room_boss_3 {
 		random_pickup_drop = list_of_possible_pickups[irandom_range(12,19)];

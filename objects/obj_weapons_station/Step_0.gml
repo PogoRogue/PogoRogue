@@ -15,6 +15,6 @@ if (place_meeting(x,y,obj_player) or place_meeting(x,y,obj_player_mask)) {
 
 //image_index = room = room_shop;
 
-if (colliding and key_interact) and !instance_exists(obj_fade_in) {
+if (colliding and key_interact) and (!instance_exists(obj_fade_in)) {
 	instance_create_depth(x,y,depth,obj_choosemenu_weapon);
 }

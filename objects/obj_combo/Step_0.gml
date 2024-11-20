@@ -1,4 +1,4 @@
-if global.combo_length > 0 and room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and obj_player.table = false
+if global.combo_length > 0 and !scr_In_Array(global.boss_rooms,room) and obj_player.table = false
 and obj_player.state != obj_player.state_portal and obj_player.state != obj_player.state_shop_portal 
 and room != room_shop {
 	if global.combo > 0 and global.enemy_killed = true {
@@ -8,7 +8,7 @@ and room != room_shop {
 	}else {
 		global.combo_length = global.combo_max;
 	}
-}else if room != room_boss_1 and room != room_boss_2 and room != room_boss_3 and obj_player.table = false
+}else if !scr_In_Array(global.boss_rooms,room) and obj_player.table = false
 and obj_player.state != obj_player.state_portal and obj_player.state != obj_player.state_shop_portal  {
 	if global.combo > 0 {
 		audio_play_sound(snd_combo_lost,0,false);

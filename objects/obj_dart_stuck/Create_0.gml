@@ -1,0 +1,13 @@
+damage = 4;
+other_depth = 0;
+fade_out = false;
+alarm[0] = 600;
+image_speed = 1;
+parent_obj = noone;
+parent_x_diff = 0;
+parent_y_diff = 0;
+grounded = false;
+basketball_stuck = false;
+parent_angle_init = 0;
+parent_dir_init = 0;
+parent_dist_init = 0;

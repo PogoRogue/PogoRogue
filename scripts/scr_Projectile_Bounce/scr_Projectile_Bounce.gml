@@ -9,7 +9,7 @@ function scr_Projectile_Bounce(name_string){
 		}
 	}
 	
-	if gun_name != "Missile Launcher" {
+	if gun_name != "Missile Launcher" and gun_name != "Tracker Darts" {
 		if ground_below = true and gun_name != name_string {
 			if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) and !(place_meeting(x,y,obj_ground)) {
 				while !place_meeting(x,y+sign(vspd),obj_ground) {

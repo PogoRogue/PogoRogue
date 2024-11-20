@@ -14,10 +14,11 @@ if (drop == false) {
 	}
 }
 
-if (drop == true) {
+if (drop == true)  {
 	event_inherited();
 
-	if(instance_exists(boss)) and is_dead = false {
+
+	if(instance_exists(boss)) and is_dead = false and snowball_freeze = false {
 		// Update position and angle based off boss
 		image_angle = point_direction(boss.x, boss.y, x, y)-90;
 		boss_dir += rot_spd;

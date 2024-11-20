@@ -1,7 +1,11 @@
 /// @description Player collision + button pressed
 if room != room_shop {
 	key_open_door = global.key_interact;
-	sprite_index = spr_portal_shop_new;
+	if !scr_In_Array(global.boss_rooms,room) {
+		sprite_index = spr_portal_shop_new;
+	}else {
+		sprite_index = spr_portal_shop_new3;
+	}
 }else {
 	key_open_door = global.key_interact;
 	sprite_index = spr_portal_shop_new2;

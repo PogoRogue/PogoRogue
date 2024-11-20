@@ -1,6 +1,8 @@
 instance_deactivate_all(true);
 instance_activate_object(obj_steam);
-instance_create_depth(x,y,depth,obj_fade_in);
+if room = room_credits {
+	instance_create_depth(x,y,depth,obj_fade_in);
+}
 if global.credits_watched = true or room = room_credits {
 	instance_create_depth(x,y,depth,obj_gobacktomenu);
 }

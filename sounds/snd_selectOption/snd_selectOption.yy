@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.333333,
+  "duration":0.666735,
   "name":"snd_selectOption",
   "parent":{
     "name":"Menu",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_selectOption.wav",
   "type":1,
-  "volume":0.25,
+  "volume":1.0,
 }

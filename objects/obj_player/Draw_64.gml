@@ -16,8 +16,11 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 	var yy = 48 * gun_num; //add y for other weapons bullets
 	var black_alpha = 0.5 * (gun != gun_array[gun_num]); //darkening for bottom ammo
 	for(i = 0; i < gun_array[gun_num].bullets_per_bounce+max_ammo_buff; i++) {
-		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != machine_gun and gun_array[gun_num] != bubble_gun and gun_array[gun_num] != burstfire_gun) and (gun_array[gun_num] != laser_gun) and (gun_array[gun_num] != water_gun) and (gun_array[gun_num] != plasma_gun) {
-			draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(768-16)-(i*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor(i/gun_array[gun_num].burst_number)*4)),36+yy); 
+		if (gun_array[gun_num] != paintball_gun) and (gun_array[gun_num] != machine_gun and gun_array[gun_num] != bubble_gun and gun_array[gun_num] != burstfire_gun) and (gun_array[gun_num] != laser_gun) and (gun_array[gun_num] != water_gun) and (gun_array[gun_num] != balloon_gun) and (gun_array[gun_num] != plasma_gun) {
+			draw_sprite(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(768-16)-(i*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor(i/gun_array[gun_num].burst_number)*4)),36+yy);
+			if gun_array[gun_num] = frisbee_gun and i % 2 != 0 {
+				draw_sprite(ammo.gui_sprite,2-(i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff),(768-16)-(i*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor(i/gun_array[gun_num].burst_number)*4)),36+yy);
+			}
 			//darkening
 			draw_sprite_ext(ammo.gui_sprite,i+gun_array[gun_num].current_bullets<gun_array[gun_num].bullets_per_bounce+max_ammo_buff,(768-16)-(i*(sprite_get_width(ammo.gui_sprite)+4))-((gun_array[gun_num].burst_number>1)*(floor(i/gun_array[gun_num].burst_number)*4)),36+yy,1,1,0,c_black,black_alpha);
 		}else if (gun_array[gun_num] = paintball_gun) {
@@ -83,13 +86,19 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 		}
 	}
 	//laser/water/plasma
-	if (gun_array[gun_num] = laser_gun) or (gun_array[gun_num] = water_gun) or (gun_array[gun_num] = plasma_gun) {
+	if (gun_array[gun_num] = laser_gun) or (gun_array[gun_num] = water_gun) or (gun_array[gun_num] = plasma_gun)
+	or (gun_array[gun_num] = balloon_gun){
 		value_ = gun_array[gun_num].current_bullets / (gun_array[gun_num].bullets_per_bounce+max_ammo_buff);
-		draw_sprite(ammo.gui_sprite,0,(768-16),36+yy);
-		draw_sprite_part(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(768-16)-sprite_get_width(ammo.gui_sprite),36+yy);
+		draw_sprite(ammo.gui_sprite,0,(768-16-(14*(gun_array[gun_num] = balloon_gun))),36+yy);
+		draw_sprite_part(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(768-16-(14*(gun_array[gun_num] = balloon_gun)))-sprite_get_width(ammo.gui_sprite),36+yy);
 		//darkening
-		draw_sprite_ext(ammo.gui_sprite,0,(768-16),36+yy,1,1,0,c_black,black_alpha);
-		draw_sprite_part_ext(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(768-16)-sprite_get_width(ammo.gui_sprite),36+yy,1,1,c_black,black_alpha);
+		draw_sprite_ext(ammo.gui_sprite,0,(768-16-(14*(gun_array[gun_num] = balloon_gun))),36+yy,1,1,0,c_black,black_alpha);
+		draw_sprite_part_ext(ammo.gui_sprite,1,0,0,sprite_get_width(ammo.gui_sprite)*value_,sprite_height,(768-16-(14*(gun_array[gun_num] = balloon_gun)))-sprite_get_width(ammo.gui_sprite),36+yy,1,1,c_black,black_alpha);
+		
+		if (gun_array[gun_num] = balloon_gun) {
+			draw_sprite(spr_projectile_balloon_gui2,0,(768-16-14),36+yy);
+			draw_sprite_ext(spr_projectile_balloon_gui2,0,(768-16-14),36+yy,1,1,0,c_black,black_alpha);
+		}
 	}
 	
 	//text
@@ -255,7 +264,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		or pickups_array[0] = pickup_pogomode and pogomode = true 
 		or pickups_array[0] = pickup_invincibility and invincibility = true 
 		or pickups_array[0] = pickup_tripleshot and tripleshot = true 
-		or pickups_array[0] = pickup_jolt and energy_buff > 0 
+		or pickups_array[0] = pickup_jolt and (energy_buff > 0 and global.zap_used = true)
 		or pickups_array[0] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)
 		or (pickups_array[0] = pickup_winners) and instance_exists(obj_slot_machine) 
@@ -390,7 +399,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		or pickups_array[1] = pickup_pogomode and pogomode = true 
 		or pickups_array[1] = pickup_invincibility and invincibility = true 
 		or pickups_array[1] = pickup_tripleshot and tripleshot = true 
-		or pickups_array[1] = pickup_jolt and energy_buff > 0 
+		or pickups_array[1] = pickup_jolt and (energy_buff > 0 and global.zap_used = true)
 		or pickups_array[1] = pickup_blink and instance_exists(obj_blink_box) 
 		or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute) 
 		or (pickups_array[1] = pickup_winners) and instance_exists(obj_slot_machine) 
@@ -545,7 +554,7 @@ or (pickups_array[0] = pickup_hacker) and instance_exists(obj_slot_machine2)
 or pickups_array[0] = pickup_frenzy and frenzy = true
 or pickups_array[0] = pickup_invincibility and invincibility = true
 or pickups_array[0] = pickup_tripleshot and tripleshot = true 
-or pickups_array[0] = pickup_jolt and energy_buff > 0 
+or pickups_array[0] = pickup_jolt and (energy_buff > 0 and global.zap_used = true)
 or pickups_array[0] = pickup_pogomode and pogomode = true
 or pickups_array[0] = pickup_parachute and instance_exists(obj_parachute)
 or pickups_array[0] = pickup_chargejump and state = state_chargejump
@@ -567,7 +576,7 @@ or pickups_array[1] = pickup_hacker and  instance_exists(obj_slot_machine2)
 or pickups_array[1] = pickup_frenzy and frenzy = true
 or pickups_array[1] = pickup_invincibility and invincibility = true
 or pickups_array[1] = pickup_tripleshot and tripleshot = true 
-or pickups_array[1] = pickup_jolt and energy_buff > 0 
+or pickups_array[1] = pickup_jolt and (energy_buff > 0 and global.zap_used = true)
 or pickups_array[1] = pickup_pogomode and pogomode = true
 or pickups_array[1] = pickup_parachute and instance_exists(obj_parachute)
 or pickups_array[1] = pickup_chargejump and state = state_chargejump

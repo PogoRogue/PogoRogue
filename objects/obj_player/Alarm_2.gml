@@ -1,8 +1,9 @@
 if room != room_shop {
 	//instance_create_depth(x,y,depth+1,obj_shop_door);
 	//instance_create_depth(x,y,depth+1,obj_boss_door);
+	//instance_create_depth(x,y-54,depth+1,obj_item_buff_illegalshipment);
 	//instance_create_depth(x,y-54,depth+1,obj_item_pickup_synergy_jolt);
-	//instance_create_depth(x,y-54,depth+1,obj_item_buff_flamingcoins);
+	//instance_create_depth(x,y-54,depth+1,obj_item_weapon_balloon);
 }
 //instance_create_depth(x+48,y-128,depth+1,obj_boss_door);
 

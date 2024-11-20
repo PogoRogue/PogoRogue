@@ -7,7 +7,7 @@ draw_cutin = false;
 triggered = false;
 player_freed = false;
 
-screen_width = 720;
+screen_width = 768;
 screen_height = 432;
 
 lerp_destination = 0.0;

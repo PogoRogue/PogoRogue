@@ -20,3 +20,5 @@ image_speed = 0;
 
 not_meeting = false;
 heart_increased = false;
+
+alarm[1] = 600;

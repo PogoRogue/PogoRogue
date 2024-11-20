@@ -53,9 +53,9 @@ function scr_Death_Screen(win){
 	scr_Draw_Text_Outlined(x-78+52,y+37,scr_Convert_Frames_To_Time(global.current_time_elapsed),c_white);
 	if room = room_proc_gen_test {
 		scr_Draw_Text_Outlined(x-78+52,y+74," " + string(global.current_area_reached),c_white);
-	}else if room = room_boss_1 {
+	}else if scr_In_Array(global.first_boss_rooms,room) {
 		scr_Draw_Text_Outlined(x-78+52,y+74," Boss 1",c_white);
-	}else if room = room_boss_2 {
+	}else if scr_In_Array(global.second_boss_rooms,room) {
 		scr_Draw_Text_Outlined(x-78+52,y+74," Boss 2",c_white);
 	}else if room = room_boss_3 {
 		scr_Draw_Text_Outlined(x-78+52,y+74," Boss 3",c_white);

@@ -25,3 +25,9 @@ if vertical = true {
 	}
 }
 depth = 0;
+
+if global.cactusmode_on = true  {
+	damage = 0;
+} else if global.cactusmode_on = false {
+	damage = 8;
+}

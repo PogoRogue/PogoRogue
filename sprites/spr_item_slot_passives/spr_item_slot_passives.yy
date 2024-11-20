@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_item_slot_passives",
   "bboxMode":0,
-  "bbox_bottom":51,
+  "bbox_bottom":47,
   "bbox_left":0,
   "bbox_right":51,
   "bbox_top":0,
