@@ -21,6 +21,7 @@ if !instance_exists(obj_boss_mole_parent) and mole_defeated = false {
 	}
 	
 	mole_defeated = true;
+	audio_group_set_gain(audiogroup_music, 0, 1000);
 }
 
 current_moles_left = instance_number(obj_boss_mole_parent);

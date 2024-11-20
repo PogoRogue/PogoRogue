@@ -93,6 +93,8 @@ state_waiting = function() {
 	}
 }
 
+poke_sound = false;
+
 state_poke = function() {
 	if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
 		sprite_index = spr_mole1;
@@ -115,6 +117,7 @@ state_poke = function() {
 		dist_to_travel = dist_to_travel_poke;
 		reached_end = false;
 		pause_time = pause_time_poke;
+		poke_sound = false;
 		
 		if bounced_on = true {
 			bounced_on = false;
@@ -123,6 +126,12 @@ state_poke = function() {
 	
 	if delay <= 0 and megabounce_freeze = false {
 		if reached_end = false { // poking out
+			//play sound
+			if poke_sound = false {
+				poke_sound = true;
+				audio_play_sound(snd_mole_pokeup,0,false);	
+			}
+		
 			if dist_to_travel > 0 {
 				if poke_direction = "up" {
 					y -= 2;
@@ -141,6 +150,7 @@ state_poke = function() {
 				}else if poke_direction != "down" {
 					if is_bomb = false {
 						reached_end = true;
+						audio_play_sound(snd_mole_pokedown,0,false);
 					}else {
 						if object_get_name(object_index) = "obj_boss_mole1" {
 							var projectile_sprite = spr_mole1_projectile;
@@ -156,6 +166,10 @@ state_poke = function() {
 							image_alpha = 0;
 							//explosion code here
 							instance_create_depth(x,y,610,obj_explosion);
+							
+							if audio_is_playing(snd_mole_bomb_fuse) {
+								audio_stop_sound(snd_mole_bomb_fuse);
+							}
 							if poke_direction = "up" {
 								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0, sprite_index: projectile_sprite});
 								instance_create_depth(x,y-20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 30, sprite_index: projectile_sprite});
@@ -190,6 +204,7 @@ state_poke = function() {
 							state_switched = true;
 						}else {
 							reached_end = true;
+							audio_play_sound(snd_mole_pokedown,0,false);
 						}
 					}else {
 						if object_get_name(object_index) = "obj_boss_mole1" {
@@ -205,6 +220,10 @@ state_poke = function() {
 							reached_end = true;
 							image_alpha = 0;
 							//explosion code here
+							if audio_is_playing(snd_mole_bomb_fuse) {
+								audio_stop_sound(snd_mole_bomb_fuse);
+							}
+							
 							instance_create_depth(x,y,610,obj_explosion);
 							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 0, sprite_index: projectile_sprite});
 							instance_create_depth(x,y+20,depth+1,obj_boss_mole_projectile,{speed: bullet_speed, direction: 180, sprite_index: projectile_sprite});
@@ -218,7 +237,6 @@ state_poke = function() {
 				}
 			}
 		}else { //retreating back in
-			
 			if dist_to_travel < dist_to_travel_poke {
 				if poke_direction = "up" {
 					y += 2;
@@ -257,6 +275,7 @@ state_fall = function() {
 			image_index = 0;
 		}
 		if state_switched = true {
+			pipe_sound = false;
 			state_switched = false;
 			vspd = 0;
 			image_xscale = 1; image_yscale = -1; image_angle = 0;
@@ -280,6 +299,10 @@ state_fall = function() {
 		}else {
 			vspd = 1;
 		}
+		if pipe_sound = false {
+			pipe_sound = true;
+			audio_play_sound(snd_mole_pipe,0,false);	
+		}
 		if object_get_name(object_index) = "obj_boss_mole1" and !is_bomb {
 			sprite_index = spr_mole1_kicking;
 			image_speed = 1;
@@ -295,8 +318,10 @@ state_fall = function() {
 	}
 		
 	y += vspd;
-	
 }
+
+jump_sound = false;
+pipe_sound = false;
 
 state_jump = function() {
 	if sprite_index != spr_mole1_firing and sprite_index != spr_mole2_firing and sprite_index != spr_mole3_firing {
@@ -324,10 +349,19 @@ state_jump = function() {
 			state = state_waiting;
 			state_switched = true;
 			bounced_on = false;
+			jump_sound = true;
+		}else {
+			jump_sound = false;
 		}
+		pipe_sound = false;
 	}
 	
 	if delay <= 0 {
+		
+		if jump_sound = false and bounced_on = false {
+			jump_sound = true;
+			audio_play_sound(snd_mole_jump,0,false);	
+		}
 		
 	
 		if (place_meeting(x,y,pipe1) and y > pipe1.y
@@ -345,6 +379,14 @@ state_jump = function() {
 				vspd -= 1;	
 			}else {
 				vspd = 1;
+			}
+			if pipe_sound = false {
+				pipe_sound = true;
+				audio_play_sound(snd_mole_pipe,0,false);	
+			}
+			if pipe_sound = false {
+				pipe_sound = true;
+				audio_play_sound(snd_mole_pipe,0,false);	
 			}
 		}else if freeze = false {
 			vspd += grav;
@@ -382,6 +424,7 @@ state_jump = function() {
 			
 			if jump_shot = false and (floor(image_index) = 6 or floor(image_index) = 7) and hp > 0 {
 				jump_shot = true;	
+				audio_play_sound(snd_mole_spit,0,false);
 				instance_create_depth(x,y-1,depth - 1,obj_boss_mole_projectile,{speed: bullet_speed, sprite_index: projectile_sprite,
 				direction: point_direction(x,y-20,obj_player.x+lengthdir_x(22,obj_player.angle+90),obj_player.y+lengthdir_y(22,obj_player.angle+90))});
 			}
@@ -434,9 +477,17 @@ state_shoot = function() {
 			state_switched = true;
 			bounced_on = false;
 		}
+		jump_sound = false;
+		pipe_sound = false;
 	}
 	
 	if delay <= 0 {
+		
+		if jump_sound = false {
+			jump_sound = true;
+			audio_play_sound(snd_mole_shoot,0,false);	
+		}
+		
 		if poke_direction = "up" {
 			if (place_meeting(x,y,pipe6) and y < pipe6.y
 			or place_meeting(x,y,pipe7) and y < pipe7.y
@@ -460,6 +511,11 @@ state_shoot = function() {
 				}
 				if shoot_spd > 1 {
 					shoot_spd -= 1;
+				}
+				
+				if pipe_sound = false {
+					pipe_sound = true;
+					audio_play_sound(snd_mole_pipe,0,false);	
 				}
 			}
 			
@@ -488,6 +544,10 @@ state_shoot = function() {
 				if shoot_spd > 1 {
 					shoot_spd -= 1;
 				}
+				if pipe_sound = false {
+					pipe_sound = true;
+					audio_play_sound(snd_mole_pipe,0,false);	
+				}
 			}
 			
 			y += shoot_spd;
@@ -513,6 +573,10 @@ state_shoot = function() {
 				if shoot_spd > 1 {
 					shoot_spd -= 1;
 				}
+				if pipe_sound = false {
+					pipe_sound = true;
+					audio_play_sound(snd_mole_pipe,0,false);	
+				}
 			}
 			
 			x += shoot_spd;
@@ -537,6 +601,10 @@ state_shoot = function() {
 				}
 				if shoot_spd > 1 {
 					shoot_spd -= 1;
+				}
+				if pipe_sound = false {
+					pipe_sound = true;
+					audio_play_sound(snd_mole_pipe,0,false);	
 				}
 			}
 			

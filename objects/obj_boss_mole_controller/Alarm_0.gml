@@ -402,6 +402,7 @@ if instance_exists(mole_1) {
 	}else {
 		mole_1.can_fall = false;
 	}
+	//audio_play_sound(snd_mole_pokeup,0,false);	
 }
 
 if instance_exists(mole_2) {

@@ -5,6 +5,7 @@ if instance_exists(parent_index) {
 	or collision_line(x,y,x+lengthdir_x(512,new_direction),y+lengthdir_y(512,new_direction),obj_player,false,true))
 	and launched = false and direction_set = true and retract = false {
 		launched = true;
+		audio_play_sound(snd_basketball_shoot_volleyball,0,false);
 		parent_index.launched_num += 1;
 		scr_Screen_Shake(4,10,false);
 	}

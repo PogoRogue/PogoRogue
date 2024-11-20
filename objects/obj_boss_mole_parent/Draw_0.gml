@@ -7,7 +7,9 @@ if(!is_dead) and !is_bomb {
 	image_alpha = abs(cos(current_iframes / 5)) + 0.2;
 }
 
-draw_self();
+if !(is_bomb and instance_exists(obj_explosion)) {
+	draw_self();
+}
 if shaded = true {
 	shader_reset();	
 	shaded = false;

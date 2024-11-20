@@ -105,6 +105,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 					enemy_object.snowball_frame = enemy_object.image_index;
 					enemy_object.snowball_sprite = enemy_object.sprite_index;
 					enemy_object.snowball_freeze = true;
+					audio_play_sound(snd_snowcannon_freeze,0,false);
 					exit;
 				}else {
 					enemy_object.hp = 0;
@@ -129,6 +130,10 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 			if crit_chance > 100 - global.crit_percentage {
 				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
 			}
+		}
+		
+		if gun_name = "Balloon Gun" {
+			alarm[0] = 1;
 		}
 	}else if gun_name = "Harpoon Helmet" and damage > 0 {
 		enemy_object = other;
@@ -180,9 +185,8 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 				array_resize(projectile_array,array_length(projectile_array)+1)
 				projectile_array[array_length(projectile_array)-1] = proj_obj;
 
-				if !audio_is_playing(snd_volleyball_hit) {
-					audio_play_sound(snd_volleyball_hit,0,false);
-				}
+				audio_play_sound(snd_basketball_bounce,0,false);
+				audio_play_sound(snd_boss_hitscan,0,false);
 				free = false;
 			}
 		}
@@ -193,6 +197,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 		if (gun_name = "Tracker Darts") {
 			if dart_created = false {
 				var enemy = other;
+				audio_play_sound(snd_boss_hitscan,0,false);
 				with instance_create_depth(x,y,-5,obj_dart_stuck)	{
 					other_depth = other.depth;
 					depth = -5;

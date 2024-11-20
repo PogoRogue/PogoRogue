@@ -14,5 +14,5 @@ obj_player.state = obj_player.state_balloon;
 obj_player.balloon_gun.current_bullets += 1;
 
 if !audio_is_playing(snd_plasma_charge) {
-	audio_play_sound(snd_plasma_charge,0,false);
+	//audio_play_sound(snd_plasma_charge,0,false);
 }

@@ -446,6 +446,7 @@ if (canshoot > 0) {
 			snowball_released = false;
 			state = state_snowball;	
 			snowball_frames = 0;
+			audio_play_sound(snd_javelin_charge,0,false);
 		}else {
 			scr_Shoot();
 		}
@@ -475,6 +476,7 @@ if (canshoot > 0) {
 						obj_player.magnet_index = 0;
 						summoned = true;
 						enemies_array = [];
+						audio_play_sound(snd_magnet_on,0,false);
 					}
 				}
 			}
@@ -878,4 +880,8 @@ if room = room_proc_gen_test {
 
 if invincibility_white_alpha > 0 {
 	invincibility_white_alpha -= 0.05;	
+}
+
+if audio_is_playing(snd_magnet_on) and state != state_magnet {
+	audio_stop_sound(snd_magnet_on);
 }

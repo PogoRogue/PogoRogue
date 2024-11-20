@@ -675,6 +675,7 @@ if (gun_name = "Magnetic Disks") {
 			x+=hspd;
 			y+=vspd;
 		}
+		audio_play_sound(snd_disk_clank,0,false);
 		hspd = 0;
 		vspd = 0;
 		stuck = true;

@@ -15,9 +15,7 @@ if instance_exists(obj_player_mask) {
 		if obj_player.vspeed < 0 {
 			vspeed += obj_player.vspeed/2;
 		}
-		if !audio_is_playing(snd_volleyball_hit) {
-			audio_play_sound(snd_volleyball_hit,0,false);
-		}
+		audio_play_sound(snd_basketball_bounce,0,false);
 		free = false;
 	}
 }
@@ -29,14 +27,13 @@ if instance_exists(obj_basketball_hoop_large_mask_left) {
 		var current_obj = instance_place(x+hspeed,y+vspeed,obj_basketball_hoop_large_mask_left);
 		scale = 1.25;
 		speed = speed * 0.7;
+		speed = max(speed,1.5);
 		direction = point_direction(current_obj.x,current_obj.y,x,y);
 		var prev_spd = speed;
 		var prev_dir = direction;
 		speed = prev_spd;
 		direction = prev_dir;
-		if !audio_is_playing(snd_volleyball_hit) {
-			audio_play_sound(snd_volleyball_hit,0,false);
-		}
+		audio_play_sound(snd_basketball_bounce,0,false);
 	}
 }
 

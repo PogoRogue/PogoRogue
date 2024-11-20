@@ -16,6 +16,10 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 		temp_charge = other.charge;
 		temp_charge_max = other.charge_max;
 		
+		if audio_is_playing(snd_balloon_inflate) {
+			audio_stop_sound(snd_balloon_inflate);
+		}
+		
 		with obj_player {
 			speed = 0;
 			motion_add(angle - 90, vsp_basicjump * (0.7 + ((other.image_index/other.max_image_index)*0.6)));
@@ -28,10 +32,10 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 		}
 		
 		created = true;	
-		alarm[2] = 1800;
-		audio_stop_sound(snd_plasma_charge);
+		alarm[2] = 300;
+		//audio_stop_sound(snd_plasma_charge);
 		if spread_index = 0 {
-			audio_play_sound(snd_plasmagun,0,false);
+			audio_play_sound(snd_balloon_shoot,0,false);
 		}
 		scr_Screen_Shake(3 + ((temp_charge/temp_charge_max)*4), 6 + ((temp_charge/temp_charge_max)*10), true);
 		hspd = lengthdir_x(other.balloon_speed,angle);
@@ -89,6 +93,9 @@ or obj_player.dead = true or obj_player.state = obj_player.state_blink or obj_pl
 			image_speed = 1;
 		}else {
 			image_speed = 0;
+			if audio_is_playing(snd_balloon_inflate) {
+				audio_stop_sound(snd_balloon_inflate);
+			}
 		}
 		//image_xscale = other.balloon_scale;
 		//image_yscale = other.balloon_scale;

@@ -35,8 +35,8 @@ if place_meeting(x+hspeed+sign(hspeed),y,obj_ground) {
 	hspeed *= -bounce_decay;
 	if distance_to_object(obj_player) < 768 {
 		randomize();
-		if spike_mode = false and spin_mode = false {
-			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
+		if spin_mode = false {
+			audio_play_sound(snd_basketball_bounce,0,false);
 		}
 		random_set_seed(global.seed);
 		if distance_to_object(obj_player) > 384 {
@@ -68,8 +68,8 @@ if place_meeting(x,y+vspeed,obj_ground) {
 	grav = 0.21;
 	if distance_to_object(obj_player) < 768 {
 		randomize();
-		if spike_mode = false and spin_mode = false {
-			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
+		if spin_mode = false {
+			audio_play_sound(snd_basketball_bounce,0,false);
 		}
 		random_set_seed(global.seed);
 		if distance_to_object(obj_player) > 384 {
@@ -98,8 +98,8 @@ if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_grou
 	
 	if distance_to_object(obj_player) < 768 {
 		randomize();
-		if spike_mode = false and spin_mode = false { 
-			audio_play_sound(choose(snd_volleyball_bounce,snd_volleyball_bounce2,snd_volleyball_bounce3),0,false);
+		if spin_mode = false { 
+			audio_play_sound(snd_basketball_bounce,0,false);
 		}
 		random_set_seed(global.seed);
 		if distance_to_object(obj_player) > 384 {
@@ -260,6 +260,8 @@ if size = 1 {
 					global.area_3_reached += 1
 					scr_Save_Real("area_3_reached",global.area_3_reached); 
 				}
+				
+				audio_group_set_gain(audiogroup_music, 0, 1000);
 				
 				if global.steam_api = true {
 					if !steam_get_achievement("ACHIEVEMENT_BALLS") {
@@ -458,6 +460,7 @@ if can_die = true {
 			if array_length(hoop_array) >= 3 {
 				if hoop_array[0] = 1 and hoop_array[1] = 2 and hoop_array[2] = 3 and !place_meeting(x,y,obj_basketball_hoop_large_mask_left) {
 					hp = 0;
+					audio_play_sound(snd_basketball_swish,0,false);
 				}
 			}
 		}

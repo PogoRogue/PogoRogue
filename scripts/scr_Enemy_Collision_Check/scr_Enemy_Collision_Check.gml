@@ -161,6 +161,11 @@ function scr_Enemy_Collision_Check(condition){
 								if is_bomb = true {
 									image_index = 10;
 									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
 								}
 								
 								freeze = true;
@@ -183,6 +188,11 @@ function scr_Enemy_Collision_Check(condition){
 								if is_bomb = true {
 									image_index = 10;
 									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
 								}
 	
 								freeze = true;
@@ -205,6 +215,11 @@ function scr_Enemy_Collision_Check(condition){
 								if is_bomb = true {
 									image_index = 10;
 									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
 								}
 								
 								freeze = true;
@@ -357,6 +372,11 @@ function scr_Enemy_Collision_Check(condition){
 								if is_bomb = true {
 									image_index = 10;
 									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
 								}
 								
 								freeze = true;
@@ -378,6 +398,11 @@ function scr_Enemy_Collision_Check(condition){
 								if is_bomb = true {
 									image_index = 10;
 									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
 								}
 								
 								freeze = true;
@@ -399,6 +424,11 @@ function scr_Enemy_Collision_Check(condition){
 								if is_bomb = true {
 									image_index = 10;
 									image_alpha = 0;
+									if audio_is_playing(snd_mole_bomb_fuse) {
+										audio_stop_sound(snd_mole_bomb_fuse);
+									}
+								}else {
+									audio_play_sound(snd_mole_whacked,0,false);
 								}
 								
 								freeze = true;

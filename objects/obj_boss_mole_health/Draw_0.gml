@@ -6,34 +6,34 @@ draw_sprite(spr_boss_health_outline_mole, 0, view_x + 75 + 192 + 192 + 64, view_
 
 var _x = x;
 for(; _x < x + num_segments1; _x+=4) {
-	if _x < x + fragments_num {
+	if _x < x + fragments_num and instance_exists(obj_boss_mole1) {
 		draw_sprite(spr_boss_health_segment, 0, _x, y);
 	}
 }
 
 var _x2 = x2;
 for(; _x2 < x2 + num_segments2; _x2+=4) {
-	if _x2 < x2 + fragments_num {
+	if _x2 < x2 + fragments_num and instance_exists(obj_boss_mole2) {
 		draw_sprite(spr_boss_health_segment, 0, _x2, y);
 	}
 }
 
 var _x3 = x3;
 for(; _x3 < x3 + num_segments3; _x3+=4) {
-	if _x3 < x3 + fragments_num {
+	if _x3 < x3 + fragments_num and instance_exists(obj_boss_mole3) {
 		draw_sprite(spr_boss_health_segment, 0, _x3, y);
 	}
 }
 
-if(num_segments1 > 0 && num_segments1 < total_spaces) {
+if(num_segments1 > 0 && num_segments1 < total_spaces) and instance_exists(obj_boss_mole1) {
 	draw_sprite(spr_boss_health_segment_end, 0, _x, y);
 }
 
-if(num_segments2 > 0 && num_segments2 < total_spaces) {
+if(num_segments2 > 0 && num_segments2 < total_spaces) and instance_exists(obj_boss_mole2) {
 	draw_sprite(spr_boss_health_segment_end, 0, _x2, y);
 }
 
-if(num_segments3 > 0 && num_segments3 < total_spaces) {
+if(num_segments3 > 0 && num_segments3 < total_spaces) and instance_exists(obj_boss_mole3) {
 	draw_sprite(spr_boss_health_segment_end, 0, _x3, y);
 }
 

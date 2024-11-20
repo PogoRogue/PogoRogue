@@ -991,9 +991,16 @@ state_snowball = function() {
 	if sprite_index = charging_sprite and (!key_fire_projectile or snowball_released = true) and snowball_frames >= 20 - ((snow_gun.level > 1) * 10)
 	or snowball_frames >= snowball_frames_max {
 		state = state_free;
+		if audio_is_playing(snd_magnet_on) {
+			audio_stop_sound(snd_magnet_on);
+		}
 		//shoot snowball here
 		if gun._name = "Snow Cannon" {
 			scr_Shoot();
+			audio_play_sound(snd_snowcannon,0,false);
+			if audio_is_playing(snd_javelin_charge) {
+				audio_stop_sound(snd_javelin_charge);	
+			}
 			
 			//decrease ammo count for spread weapons
 			if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
@@ -1010,6 +1017,9 @@ state_snowball = function() {
 	
 	if gun._name != "Snow Cannon" {
 		state = state_free;
+		if audio_is_playing(snd_magnet_on) {
+			audio_stop_sound(snd_magnet_on);
+		}
 	}
 }
 

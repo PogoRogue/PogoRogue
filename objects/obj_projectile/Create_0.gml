@@ -523,7 +523,7 @@ if (gun_name = "Magnetic Disks") {
 //missile
 if (gun_name = "Tracker Darts") {
 	if spread_index = 0 {
-		sound = audio_play_sound(snd_rocketwhoosh,0,false);
+		//sound = audio_play_sound(snd_rocketwhoosh,0,false);
 	}
 	temp_angle = image_angle;
 	if collision_circle(x,y,160,obj_enemy_parent,false,true) != noone {

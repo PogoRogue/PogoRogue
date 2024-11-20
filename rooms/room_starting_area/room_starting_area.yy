@@ -163,8 +163,6 @@
     {"name":"inst_3CA26E0E","path":"rooms/room_starting_area/room_starting_area.yy",},
     {"name":"inst_47001F50","path":"rooms/room_starting_area/room_starting_area.yy",},
     {"name":"inst_3EA6409D","path":"rooms/room_starting_area/room_starting_area.yy",},
-    {"name":"inst_540B62DF","path":"rooms/room_starting_area/room_starting_area.yy",},
-    {"name":"inst_3D2F15F3","path":"rooms/room_starting_area/room_starting_area.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -480,8 +478,6 @@
         {"$GMRInstance":"v1","%Name":"inst_3CA26E0E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3CA26E0E","objectId":{"name":"obj_enemy_tutorial","path":"objects/obj_enemy_tutorial/obj_enemy_tutorial.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_tutorial","path":"objects/obj_enemy_tutorial/obj_enemy_tutorial.yy",},"propertyId":{"name":"add_to_combo","path":"objects/obj_enemy_tutorial/obj_enemy_tutorial.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":160.0,},
-        {"$GMRInstance":"v1","%Name":"inst_540B62DF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_540B62DF","objectId":{"name":"obj_pogosmith_table","path":"objects/obj_pogosmith_table/obj_pogosmith_table.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":1216.0,},
-        {"$GMRInstance":"v1","%Name":"inst_3D2F15F3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3D2F15F3","objectId":{"name":"obj_item_buff_strongmuscles","path":"objects/obj_item_buff_strongmuscles/obj_item_buff_strongmuscles.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1216.0,"y":1120.0,},
       ],"layers":[],"name":"ground","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_D997B31","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_D997B31","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_sign_tutorial","path":"sprites/spr_sign_tutorial/spr_sign_tutorial.yy",},"x":1056.0,"y":1328.0,},

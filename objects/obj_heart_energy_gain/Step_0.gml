@@ -14,7 +14,7 @@ if scr_Animation_Complete() and sprite_index = spr_heart_energy_ui_gain {
 x = 28 + (obj_player.max_hp/8 * 24) + (obj_player.armor_buff*24) + ((heart_number-1) * 24);
 
 if sprite_index = spr_heart_energy_animation {
-	if obj_player.energy_buff = heart_number {
+	if obj_player.energy_buff = heart_number and room != room_shop {
 		image_speed = 1;	
 	}else if obj_player.energy_buff < heart_number {
 		instance_destroy();
@@ -28,6 +28,10 @@ if sprite_index = spr_heart_energy_animation {
 		}
 	}else if obj_player.energy_buff > heart_number {
 		image_index = 0;
+		image_speed = 0;
+	}
+	
+	if room = room_shop {
 		image_speed = 0;
 	}
 	

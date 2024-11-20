@@ -18,3 +18,8 @@ if image_index = 0 {
 	direction = obj_boss_basketball.rot_angle + 135;
 }
 speed = 6;
+
+if audio_is_playing(snd_basketball_charge) {
+	audio_stop_sound(snd_basketball_charge)
+}
+audio_play_sound(snd_basketball_shoot,0,false);

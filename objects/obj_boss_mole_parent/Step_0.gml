@@ -44,7 +44,7 @@ if freeze = true {
 	speed = 0;	
 }
 
-if hp <= 0 and died = false {
+if hp <= 0 and died = false and is_dead {
 	died = true;
 	death_x = x;
 	death_y = y;
@@ -73,6 +73,9 @@ if red_frames > 0 and freeze = false  {
 		image_index = 11;
 		image_alpha = 0;
 		pause_time = 0;
+		if audio_is_playing(snd_mole_bomb_fuse) {
+			audio_stop_sound(snd_mole_bomb_fuse);
+		}
 	}
 	
 	freeze = true;

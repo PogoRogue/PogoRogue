@@ -61,7 +61,7 @@ if centered = true {
 		}
 	}else {
 		if key_select {
-			scr_Room_Transition(room_credits_scrolling);
+			scr_Room_Transition(room_precredits); //room_credits_scrolling
 			audio_play_sound(snd_selectOption,0,false);
 		}
 	}

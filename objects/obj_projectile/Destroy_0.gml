@@ -166,4 +166,10 @@ if (gun_name = "Magnetic Disks") {
 			frisbee_gun.current_bullets	+= 1;
 		}
 	}
+	audio_play_sound(snd_reload,0,false);
+}
+
+//create bubble pop
+if (gun_name = "Balloon Gun") and scr_In_Camera_View(96) {
+	audio_play_sound(snd_balloon_pop,0,false);
 }

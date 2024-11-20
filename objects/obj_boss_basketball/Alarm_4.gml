@@ -7,6 +7,9 @@ if freeze = true or place_meeting(x,y,obj_basketball_hoop_large_mask_left) {
 
 
 spin_mode = true;
+if size = 4 {
+	audio_play_sound(snd_basketball_charge,0,false);
+}
 temp_spin_speed = hspeed;
 if abs(temp_spin_speed) < 3 {
 	temp_spin_speed = sign(temp_spin_speed) * 3;
