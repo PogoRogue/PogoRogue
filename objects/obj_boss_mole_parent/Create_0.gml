@@ -87,9 +87,12 @@ state_waiting = function() {
 		image_index = 0;
 	}
 	if state_switched = true {
+		mask_index = spr_nothing;
 		state_switched = false;
 		is_bomb = false;
-		image_alpha = 1;
+		if hp > 0 {
+			image_alpha = 1;
+		}
 	}
 }
 
@@ -113,6 +116,7 @@ state_poke = function() {
 		freeze = false;
 	}
 	if state_switched = true {
+		mask_index = spr_mole1;
 		state_switched = false;
 		dist_to_travel = dist_to_travel_poke;
 		reached_end = false;
@@ -275,6 +279,7 @@ state_fall = function() {
 			image_index = 0;
 		}
 		if state_switched = true {
+			mask_index = spr_mole1;
 			pipe_sound = false;
 			state_switched = false;
 			vspd = 0;
@@ -341,6 +346,7 @@ state_jump = function() {
 	}
 	
 	if state_switched = true {
+		mask_index = spr_mole1;
 		state_switched = false;
 		image_xscale = 1; image_yscale = -1; image_angle = 0;
 		vspd = jump_spd;
@@ -470,6 +476,7 @@ state_shoot = function() {
 	}
 	
 	if state_switched = true {
+		mask_index = spr_mole1;
 		state_switched = false;
 		shoot_spd = 8;
 		if bounced_on = true {

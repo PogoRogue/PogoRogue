@@ -181,6 +181,15 @@ function scr_Enemy_Collision_Check(condition){
 									bounced_on = true;
 									pause_time = 0;
 								}
+								
+								if state = state_poke {
+									switch (poke_direction) {
+										case "up": instance_create_depth(x,y-48,depth,obj_boss_mole_star,{speed: 2, direction: 90}); instance_create_depth(x-8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 120}); instance_create_depth(x+8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 60}); break;
+										case "down": instance_create_depth(x,y+48,depth,obj_boss_mole_star,{speed: 2, direction: 270}); instance_create_depth(x-8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 240}); instance_create_depth(x+8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 300}); break;
+										case "left": instance_create_depth(x+48,y,depth,obj_boss_mole_star,{speed: 2, direction: 0}); instance_create_depth(x+40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 30}); instance_create_depth(x+40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 330}); break;
+										case "right": instance_create_depth(x-48,y,depth,obj_boss_mole_star,{speed: 2, direction: 180}); instance_create_depth(x-40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 150}); instance_create_depth(x-40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 210}); break;
+									}
+								}
 							}
 						}
 						if object_get_name(object_index) = "obj_boss_mole2"  {
@@ -208,6 +217,15 @@ function scr_Enemy_Collision_Check(condition){
 									bounced_on = true;
 									pause_time = 0;
 								}
+								
+								if state = state_poke {
+									switch (poke_direction) {
+										case "up": instance_create_depth(x,y-48,depth,obj_boss_mole_star,{speed: 2, direction: 90}); instance_create_depth(x-8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 120}); instance_create_depth(x+8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 60}); break;
+										case "down": instance_create_depth(x,y+48,depth,obj_boss_mole_star,{speed: 2, direction: 270}); instance_create_depth(x-8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 240}); instance_create_depth(x+8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 300}); break;
+										case "left": instance_create_depth(x+48,y,depth,obj_boss_mole_star,{speed: 2, direction: 0}); instance_create_depth(x+40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 30}); instance_create_depth(x+40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 330}); break;
+										case "right": instance_create_depth(x-48,y,depth,obj_boss_mole_star,{speed: 2, direction: 180}); instance_create_depth(x-40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 150}); instance_create_depth(x-40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 210}); break;
+									}
+								}
 							}
 						}
 						if object_get_name(object_index) = "obj_boss_mole3"  {
@@ -234,6 +252,15 @@ function scr_Enemy_Collision_Check(condition){
 									reached_end = true;
 									bounced_on = true;
 									pause_time = 0;
+								}
+								
+								if state = state_poke {
+									switch (poke_direction) {
+										case "up": instance_create_depth(x,y-48,depth,obj_boss_mole_star,{speed: 2, direction: 90}); instance_create_depth(x-8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 120}); instance_create_depth(x+8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 60}); break;
+										case "down": instance_create_depth(x,y+48,depth,obj_boss_mole_star,{speed: 2, direction: 270}); instance_create_depth(x-8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 240}); instance_create_depth(x+8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 300}); break;
+										case "left": instance_create_depth(x+48,y,depth,obj_boss_mole_star,{speed: 2, direction: 0}); instance_create_depth(x+40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 30}); instance_create_depth(x+40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 330}); break;
+										case "right": instance_create_depth(x-48,y,depth,obj_boss_mole_star,{speed: 2, direction: 180}); instance_create_depth(x-40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 150}); instance_create_depth(x-40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 210}); break;
+									}
 								}
 							}
 						}
@@ -367,7 +394,7 @@ function scr_Enemy_Collision_Check(condition){
 								alarm[5] = 15;
 							}
 						}
-						if object_get_name(object_index) = "obj_boss_mole1" and megabounce_freeze= false {
+						if object_get_name(object_index) = "obj_boss_mole1" and megabounce_freeze = false {
 							with obj_boss_mole1 {
 								if is_bomb = true {
 									image_index = 10;
@@ -390,6 +417,15 @@ function scr_Enemy_Collision_Check(condition){
 									reached_end = true;
 									bounced_on = true;
 									pause_time = 0;
+								}
+								
+								if state = state_poke {
+									switch (poke_direction) {
+										case "up": instance_create_depth(x,y-48,depth,obj_boss_mole_star,{speed: 2, direction: 90}); instance_create_depth(x-8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 120}); instance_create_depth(x+8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 60}); break;
+										case "down": instance_create_depth(x,y+48,depth,obj_boss_mole_star,{speed: 2, direction: 270}); instance_create_depth(x-8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 240}); instance_create_depth(x+8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 300}); break;
+										case "left": instance_create_depth(x+48,y,depth,obj_boss_mole_star,{speed: 2, direction: 0}); instance_create_depth(x+40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 30}); instance_create_depth(x+40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 330}); break;
+										case "right": instance_create_depth(x-48,y,depth,obj_boss_mole_star,{speed: 2, direction: 180}); instance_create_depth(x-40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 150}); instance_create_depth(x-40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 210}); break;
+									}
 								}
 							}
 						}
@@ -417,6 +453,15 @@ function scr_Enemy_Collision_Check(condition){
 									bounced_on = true;
 									pause_time = 0;
 								}
+								
+								if state = state_poke {
+									switch (poke_direction) {
+										case "up": instance_create_depth(x,y-48,depth,obj_boss_mole_star,{speed: 2, direction: 90}); instance_create_depth(x-8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 120}); instance_create_depth(x+8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 60}); break;
+										case "down": instance_create_depth(x,y+48,depth,obj_boss_mole_star,{speed: 2, direction: 270}); instance_create_depth(x-8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 240}); instance_create_depth(x+8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 300}); break;
+										case "left": instance_create_depth(x+48,y,depth,obj_boss_mole_star,{speed: 2, direction: 0}); instance_create_depth(x+40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 30}); instance_create_depth(x+40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 330}); break;
+										case "right": instance_create_depth(x-48,y,depth,obj_boss_mole_star,{speed: 2, direction: 180}); instance_create_depth(x-40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 150}); instance_create_depth(x-40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 210}); break;
+									}
+								}
 							}
 						}
 						if object_get_name(object_index) = "obj_boss_mole3"  {
@@ -442,6 +487,15 @@ function scr_Enemy_Collision_Check(condition){
 									reached_end = true;
 									bounced_on = true;
 									pause_time = 0;
+								}
+								
+								if state = state_poke {
+									switch (poke_direction) {
+										case "up": instance_create_depth(x,y-48,depth,obj_boss_mole_star,{speed: 2, direction: 90}); instance_create_depth(x-8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 120}); instance_create_depth(x+8,y-40,depth,obj_boss_mole_star,{speed: 2, direction: 60}); break;
+										case "down": instance_create_depth(x,y+48,depth,obj_boss_mole_star,{speed: 2, direction: 270}); instance_create_depth(x-8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 240}); instance_create_depth(x+8,y+40,depth,obj_boss_mole_star,{speed: 2, direction: 300}); break;
+										case "left": instance_create_depth(x+48,y,depth,obj_boss_mole_star,{speed: 2, direction: 0}); instance_create_depth(x+40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 30}); instance_create_depth(x+40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 330}); break;
+										case "right": instance_create_depth(x-48,y,depth,obj_boss_mole_star,{speed: 2, direction: 180}); instance_create_depth(x-40,y-8,depth,obj_boss_mole_star,{speed: 2, direction: 150}); instance_create_depth(x-40,y+8,depth,obj_boss_mole_star,{speed: 2, direction: 210}); break;
+									}
 								}
 							}
 						}

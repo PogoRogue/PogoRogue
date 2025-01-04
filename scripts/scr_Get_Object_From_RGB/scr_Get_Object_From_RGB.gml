@@ -304,6 +304,9 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}else if (Red == 46 && Green == 49 && Blue == 146)
 		{
 			return obj_background_office;
+		}else if (Red == 47 && Green == 49 && Blue == 147)
+		{
+			return obj_background_corporate;
 		}else if (Red == 29 && Green == 74 && Blue == 28)
 		{
 			randomize();
@@ -319,6 +322,9 @@ function scr_Get_Object_From_RGB(Red, Green, Blue, Alpha){
 		}else if (Red == 50 && Green == 50 && Blue == 97)
 		{
 			return obj_office_table;
+		}else if (Red == 125 && Green == 58 && Blue == 84)
+		{
+			return obj_randomasset3;
 		}else if (Red == 85 && Green == 30 && Blue == 125)
 		{
 			return obj_randomasset2;

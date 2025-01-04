@@ -13,6 +13,7 @@ image_xscale = 1;
 angle = 0;
 	
 state = state_free;
+frisbee_gun.current_bullets = frisbee_gun.bullets_per_bounce + max_ammo_buff;
 
 alarm[2] = 10;
 

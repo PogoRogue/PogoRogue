@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_music_level3.wav",
   "type":1,
-  "volume":0.6,
+  "volume":0.5,
 }

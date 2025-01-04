@@ -666,7 +666,7 @@ function scr_Guns(){
 	
 	frisbee_gun = {
 		_name: "Magnetic Disks",  
-		tagline: "Throw two high-damage discs that stick to the ground on contact. When all disks are thrown, shoot again to quickly summon the disks back to you. Cannot reload on \nbounce/kill.",
+		tagline: "Throw two high damage discs that stick to the ground on contact. When all disks are thrown, shoot again to quickly summon the disks back to you. Cannot reload on \nbounce/kill.",
 		sprite: spr_gun_frisbees,   
 		ammo: [frisbee_bullet],
 		inaccuracy: 0,       

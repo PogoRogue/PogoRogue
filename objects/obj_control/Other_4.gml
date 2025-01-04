@@ -57,13 +57,13 @@ if room = room_proc_gen_test  {
 	}
 	
 }else if room = room_boss_1 {
-	global.current_music = snd_music_boss1
+	global.current_music = snd_music_boss1;
 }else if room = room_boss_1B {
-	global.current_music = snd_music_boss1
+	global.current_music = snd_music_boss1_mole;
 }else if room = room_boss_2 {
 	global.current_music = snd_music_boss2;
 }else if room = room_boss_2B {
-	global.current_music = snd_music_boss2;
+	global.current_music = snd_music_boss2_ball;
 }else if room = room_boss_3 {
 	global.current_music = snd_music_boss3;
 }else if room = room_tutorial {

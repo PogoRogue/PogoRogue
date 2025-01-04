@@ -664,6 +664,10 @@ if (gun_name = "Balloon Gun") {
 			}	
 		}
 	}
+	
+	if place_meeting(x,y,obj_spike) and created = true {
+		alarm[0] = 1;	
+	}
 }
 
 if (gun_name = "Magnetic Disks") {

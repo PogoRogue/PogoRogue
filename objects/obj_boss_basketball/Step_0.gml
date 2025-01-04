@@ -35,7 +35,7 @@ if place_meeting(x+hspeed+sign(hspeed),y,obj_ground) {
 	hspeed *= -bounce_decay;
 	if distance_to_object(obj_player) < 768 {
 		randomize();
-		if spin_mode = false {
+		if spin_mode = false and freeze = false {
 			audio_play_sound(snd_basketball_bounce,0,false);
 		}
 		random_set_seed(global.seed);
@@ -68,7 +68,7 @@ if place_meeting(x,y+vspeed,obj_ground) {
 	grav = 0.21;
 	if distance_to_object(obj_player) < 768 {
 		randomize();
-		if spin_mode = false {
+		if spin_mode = false and freeze = false {
 			audio_play_sound(snd_basketball_bounce,0,false);
 		}
 		random_set_seed(global.seed);
@@ -98,7 +98,7 @@ if place_meeting(x,y+vspeed,obj_ground_oneway) and !place_meeting(x,y-1,obj_grou
 	
 	if distance_to_object(obj_player) < 768 {
 		randomize();
-		if spin_mode = false { 
+		if spin_mode = false and freeze = false { 
 			audio_play_sound(snd_basketball_bounce,0,false);
 		}
 		random_set_seed(global.seed);
@@ -461,10 +461,12 @@ if can_die = true {
 				if hoop_array[0] = 1 and hoop_array[1] = 2 and hoop_array[2] = 3 and !place_meeting(x,y,obj_basketball_hoop_large_mask_left) {
 					hp = 0;
 					audio_play_sound(snd_basketball_swish,0,false);
+					with obj_basketball_scoreboard {
+						frame += 1;	
+					}
 				}
-			}
+			}	
 		}
-		show_debug_message(hoop_array);
 	}else {
 		if distance_to_object(obj_basketball_make_large1) > 16
 		and distance_to_object(obj_basketball_make_large2) > 16

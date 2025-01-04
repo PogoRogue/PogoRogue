@@ -2,8 +2,6 @@
 
 event_inherited();
 
-
-
 if pickup != obj_player.pickup_1 and obj_player.num_of_pickups = 1
 or pickup != obj_player.pickup_1 and pickup != obj_player.pickup_2 and obj_player.num_of_pickups = 2 
 or obj_player.num_of_pickups = 0 {

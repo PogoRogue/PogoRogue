@@ -214,11 +214,11 @@ if created_items = false {
 	for (i = 0; i < array_length(slot_items_array); i++) {
 		index = i;
 		if i % 2 = 0 {
-			xx = 272+32;
+			xx = 271+32;
 		}else {
-			xx = 336+32;
+			xx = 337+32;
 		}
-		yy = 104 + 64 * floor(i / 2);
+		yy = 146 + 62 * floor(i / 2) + (2 * (i = 4 or i = 5));
 		with instance_create_depth(xx,yy,depth-1,slot_items_array[i]) {
 			follow_player = false;
 			index = other.index;
@@ -364,11 +364,11 @@ if key_select {
 	if select != 0 and instance_exists(slot_items_array[select-1]) and refresh_button = false {
 		if slot_items_array[select-1].sold_out = false and global.num_of_coins >= round(slot_items_array[select-1].item_cost * global.sale) {
 			audio_play_sound(snd_selectOption,0,false);
+			last_select = select;
+			select = 0;
 		}else {
 			audio_play_sound(snd_unavailable,0,false);
 		}
-		last_select = select;
-		select = 0;
 	}else if select = 0 and refresh_button = false and instance_exists(slot_items_array[last_select-1]) {
 		select = last_select;
 		if global.num_of_coins >= round(slot_items_array[last_select-1].item_cost * global.sale) and slot_items_array[last_select-1].sold_out = false {
@@ -435,11 +435,11 @@ if global.refreshes_used >= 6 {
 if recreated_bought_item = true {
 	audio_play_sound(snd_unavailable,0,false);
 	if (select-1) % 2 = 0 {
-		xx = 272+32;
+		xx = 271+32;
 	}else {
-		xx = 336+32;
+		xx = 337+32;
 	}
-	yy = 104 + 64 * floor((select-1) / 2);
+	yy = 146 + 62 * floor((select-1) / 2);
 	with instance_create_depth(xx,yy,depth-1,last_item_created) {
 		index = other.select-1;
 		follow_player = false;

@@ -3,7 +3,7 @@ if(red_frames > 0 and shaded = false) {
 	shaded = true;
 }
 
-if(!is_dead) and !is_bomb {
+if (!is_dead) and !is_bomb and hp > 0 {
 	image_alpha = abs(cos(current_iframes / 5)) + 0.2;
 }
 

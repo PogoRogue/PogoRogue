@@ -83,7 +83,13 @@ if (skiplevel_button) {
 		if room = room_boss_1 {
 			global.phase = 2;
 			scr_Room_Transition(room_proc_gen_test);
+		}else if room = room_boss_1B {
+			global.phase = 2;
+			scr_Room_Transition(room_proc_gen_test);
 		}else if room = room_boss_2 {
+			global.phase = 3;
+			scr_Room_Transition(room_proc_gen_test);
+		}else if room = room_boss_2B {
 			global.phase = 3;
 			scr_Room_Transition(room_proc_gen_test);
 		}else if room = room_boss_3 {

@@ -8,3 +8,8 @@ item_description = pickup.tagline + cooldown_text;
 item_cost = 80;
 
 image_index = 2;
+
+if room = room_shop {
+	image_index = 3;
+	y -= 3;
+}

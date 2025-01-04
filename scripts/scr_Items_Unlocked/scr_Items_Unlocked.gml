@@ -61,7 +61,9 @@ function scr_Items_Unlocked(){
 									global.passive_unlocked_25,global.passive_unlocked_26,global.passive_unlocked_27,global.passive_unlocked_28,
 									global.passive_unlocked_29,global.passive_unlocked_30,global.passive_unlocked_31,global.passive_unlocked_32,
 									global.passive_unlocked_33,global.passive_unlocked_34,global.passive_unlocked_35,global.passive_unlocked_36,
-									global.passive_unlocked_37,global.passive_unlocked_38,global.passive_unlocked_39,global.passive_unlocked_40];
+									global.passive_unlocked_37,global.passive_unlocked_38,global.passive_unlocked_39,global.passive_unlocked_40,
+									global.passive_unlocked_41,global.passive_unlocked_42,global.passive_unlocked_43,global.passive_unlocked_44,
+									global.passive_unlocked_45,global.passive_unlocked_46,global.passive_unlocked_47,global.passive_unlocked_48];
 	
 	//actives
 	global.active_unlocked_1 = false;
@@ -134,7 +136,8 @@ function scr_Items_Unlocked(){
 									global.weapon_unlocked_5,global.weapon_unlocked_6,global.weapon_unlocked_7,global.weapon_unlocked_8,
 									global.weapon_unlocked_9,global.weapon_unlocked_10,global.weapon_unlocked_11,global.weapon_unlocked_12,
 									global.weapon_unlocked_13,global.weapon_unlocked_14,global.weapon_unlocked_15,global.weapon_unlocked_16,
-									global.weapon_unlocked_17,global.weapon_unlocked_18,global.weapon_unlocked_19,global.weapon_unlocked_20];
+									global.weapon_unlocked_17,global.weapon_unlocked_18,global.weapon_unlocked_19,global.weapon_unlocked_20,
+									global.weapon_unlocked_21,global.weapon_unlocked_22,global.weapon_unlocked_23,global.weapon_unlocked_24];
 	
 	//skins
 	global.skins_unlocked_1 = false;

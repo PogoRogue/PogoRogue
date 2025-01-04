@@ -9,6 +9,11 @@ item_cost = 60;
 
 image_index = 2;
 
+if room = room_shop {
+	image_index = 3;
+	y -= 3;
+}
+
 if room = room_tutorial {
 	global.last_item_menu = 2;	
 }

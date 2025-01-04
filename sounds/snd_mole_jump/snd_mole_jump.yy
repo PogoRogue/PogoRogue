@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.402993,
+  "duration":0.624444,
   "name":"snd_mole_jump",
   "parent":{
     "name":"Enemies",

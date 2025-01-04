@@ -10,3 +10,8 @@ synergy_child1 = obj_player.pickup_parachute;
 synergy_child2 = obj_player.pickup_firedash;
 
 image_index = 2;
+
+if room = room_shop {
+	image_index = 3;
+	y -= 3;
+}

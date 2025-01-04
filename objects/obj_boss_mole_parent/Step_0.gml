@@ -6,6 +6,20 @@ event_inherited();
 
 state();
 
+
+switch current_pipe {
+	case 1:	poke_direction = "up" break;
+	case 2: poke_direction = "up" break;
+	case 3: poke_direction = "up" break;
+	case 4: poke_direction = "right" break;
+	case 5: poke_direction = "right" break;
+	case 6: poke_direction = "down" break;
+	case 7: poke_direction = "down" break;
+	case 8: poke_direction = "down" break;
+	case 9: poke_direction = "left" break;
+	case 10: poke_direction = "left" break;
+}
+
 switch poke_direction {
 	case "up": image_xscale = 1; image_yscale = 1; image_angle = 0; break;
 	case "down": image_xscale = 1; image_yscale = -1; image_angle = 0; break;	
@@ -41,10 +55,10 @@ if freeze = true {
 	x = freeze_x;
 	y = freeze_y;
 	image_index = freeze_frame;
-	speed = 0;	
+	speed = 0;
 }
 
-if hp <= 0 and died = false and is_dead {
+if hp <= 0 and died = false {
 	died = true;
 	death_x = x;
 	death_y = y;
@@ -85,12 +99,6 @@ if red_frames > 0 and freeze = false  {
 	alarm[5] = 3;	
 }
 
-if is_bomb = true {
-	sprite_index = spr_mole_bomb;
-	hp = current_bomb_hp;
-}else {
-	//sprite_index = init_sprite;
-}
 
 depth = 501;
 

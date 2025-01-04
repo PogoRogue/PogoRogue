@@ -111,7 +111,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 					enemy_object.hp = 0;
 				}
 			}else {
-				enemy_object.hp -= ((20 + global.damage_buff - (global.damage_buff)) * global.capitalist_damage) * enemy_object.bullet_defense * crit_dmg_mult;
+				enemy_object.hp -= ((12 + global.damage_buff - (global.damage_buff)) * global.capitalist_damage) * enemy_object.bullet_defense * crit_dmg_mult;
 			}
 			enemy_object.red_frames = 10;
 			scr_Reload_On_Kill();
@@ -132,7 +132,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 			}
 		}
 		
-		if gun_name = "Balloon Gun" {
+		if gun_name = "Balloon Gun" and created = true {
 			alarm[0] = 1;
 		}
 	}else if gun_name = "Harpoon Helmet" and damage > 0 {
