@@ -66,7 +66,7 @@ if select = 1 { //audio
 		//text
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_combo2);
+		draw_set_font(lana);
 		scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i),menu_audio.options_array[i]._text,color);
 		
 		draw_set_halign(fa_center);
@@ -98,7 +98,7 @@ if select = 2 { //video
 		//text
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_combo2);
+		draw_set_font(lana);
 		scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i),menu_video.options_array[i]._text,color);
 		
 		draw_set_halign(fa_right);
@@ -128,7 +128,7 @@ if select = 3 { //gameplay
 		//text
 		
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_combo2);
+		draw_set_font(lana);
 		if menu_gameplay.options_array[i]._type != "doonpress" {
 			draw_set_halign(fa_left);
 			scr_Draw_Text_Outlined(camera_get_view_width(view_camera[0])/2-104,option_1_y+(item_height*i),menu_gameplay.options_array[i]._text,color);
@@ -191,7 +191,7 @@ if select = 4 { //bindings
 		
 		//text
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_combo2);
+		draw_set_font(lana);
 		if menu_bindings.options_array[i]._type = "doonpress" {
 			if (i - select_y_added >= 0 and i - select_y_added < 8) {
 				if (i = 0) {
@@ -248,7 +248,7 @@ if select = 4 { //bindings
 								color = make_color_rgb(242,240,229);
 							}
 							//text
-							draw_set_font(fnt_combo2);
+							draw_set_font(lana);
 							draw_set_halign(fa_right);
 							draw_set_valign(fa_center);
 							scr_Draw_Text_Outlined(binding1_x,binding_y,scr_Keyboard_Get_Key_String(global.keyboard_array[i-1+i_offset][0]),color);
@@ -274,7 +274,7 @@ if select = 4 { //bindings
 								color = make_color_rgb(242,240,229);
 							}
 							//text
-							draw_set_font(fnt_combo2);
+							draw_set_font(lana);
 							draw_set_halign(fa_left);
 							draw_set_valign(fa_center);
 							scr_Draw_Text_Outlined(binding2_x,binding_y,scr_Keyboard_Get_Key_String(global.keyboard_array[i-1+i_offset][1]),color);

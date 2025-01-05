@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Settings_Audio(){
 	option_soundvolume = {
-		_text: "Sound Volume: ",
+		_text: "音量: ",
 		_type: "slider",
 		lowest_value: 0,
 		highest_value: 100,
@@ -25,7 +25,7 @@ function scr_Settings_Audio(){
 	};
 	
 	option_musicvolume = {
-		_text: "Music Volume: ",
+		_text: "音乐: ",
 		_type: "slider",
 		lowest_value: 0,
 		highest_value: 100,

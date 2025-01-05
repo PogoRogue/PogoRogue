@@ -6,11 +6,11 @@ var y_offset2 = 0;
 for (i = 0; i < array_length(credits_text_array); i++) {
 	for (j = 0; j <= 1; j++) {
 		if j = 0 {
-			draw_set_font(fnt_item_popup);
+			draw_set_font(uranus);
 			y_offset2 += string_separation;
 			scr_Draw_Text_Outlined(384,yy+y_offset2,credits_text_array[i][j],make_color_rgb(237,225,158));
 		}else {
-			draw_set_font(fnt_combo2);
+			draw_set_font(lana);
 			if is_string(credits_text_array[i][j]) {
 				scr_Draw_Text_Outlined(384,yy+y_offset2,credits_text_array[i][j],c_white);
 			}else {

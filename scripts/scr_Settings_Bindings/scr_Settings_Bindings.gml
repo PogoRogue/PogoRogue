@@ -3,7 +3,7 @@
 function scr_Settings_Bindings(){
 	
 	option_resetdefaults = {
-		_text: "Reset All Bindings To Default",
+		_text: "恢复默认键位",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -15,7 +15,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_right_player = {
-		_text: "Tilt Right",
+		_text: "向右转向",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -27,7 +27,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_left_player = {
-		_text: "Tilt Left",
+		_text: "向左转向",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -39,7 +39,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_shoot = {
-		_text: "Shoot",
+		_text: "射击",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -51,7 +51,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_recenter = {
-		_text: "Recenter Player",
+		_text: "方向回正",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -63,7 +63,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_pickup1 = {
-		_text: "Active 1",
+		_text: "技能1",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -75,7 +75,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_pickup2 = {
-		_text: "Active 2",
+		_text: "技能2",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -87,7 +87,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_interact = {
-		_text: "Interact",
+		_text: "互动",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -99,7 +99,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_weapon1 = {
-		_text: "Weapon 1",
+		_text: "武器1",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -111,7 +111,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_weapon2 = {
-		_text: "Weapon 2",
+		_text: "武器2",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -123,7 +123,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_weapon3 = {
-		_text: "Weapon 3",
+		_text: "武器3",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -135,7 +135,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_nextweapon = {
-		_text: "Next Weapon",
+		_text: "切换到下一把武器",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -147,7 +147,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_prevweapon = {
-		_text: "Previous Weapon",
+		_text: "切换到上一把武器",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -159,7 +159,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_pause = {
-		_text: "Pause",
+		_text: "暂停",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -171,7 +171,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_item = {
-		_text: "Open Item Menu",
+		_text: "打开物品面板",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -183,7 +183,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_aim = {
-		_text: "Slow Tilt",
+		_text: "放慢转向",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -195,7 +195,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_right_menu = {
-		_text: "Menu Right",
+		_text: "菜单向右",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -207,7 +207,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_left_menu = {
-		_text: "Menu Left",
+		_text: "菜单向左",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -219,7 +219,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_down_menu = {
-		_text: "Menu Down",
+		_text: "菜单向下",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -231,7 +231,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_up_menu = {
-		_text: "Menu Up",
+		_text: "菜单向上",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -243,7 +243,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_select = {
-		_text: "Select",
+		_text: "选择",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -255,7 +255,7 @@ function scr_Settings_Bindings(){
 	};
 	
 	option_back = {
-		_text: "Back",
+		_text: "返回",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {

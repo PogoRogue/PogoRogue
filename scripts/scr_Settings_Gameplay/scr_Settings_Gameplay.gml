@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Settings_Gameplay(){
 	option_tiltspeed = {
-		_text: "Tilt Speed: ",
+		_text: "角色转向速度: ",
 		_type: "slider",
 		lowest_value: 2,
 		highest_value: 5,
@@ -28,7 +28,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_screenshake = {
-		_text: "Screen Shake: ",
+		_text: "屏幕抖动: ",
 		_type: "slider",
 		lowest_value: 0,
 		highest_value: 100,
@@ -46,7 +46,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_controllershake = {
-		_text: "Controller Vibration: ",
+		_text: "手柄震动: ",
 		_type: "slider",
 		lowest_value: 0,
 		highest_value: 100,
@@ -64,7 +64,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_invert = {
-		_text: "Invert Tilt Controls: ",
+		_text: "转向控制反转: ",
 		_type: "checkbox",
 		default_mode: global.invert_controls,
 		current_mode: global.invert_controls,
@@ -81,7 +81,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_showtimer = {
-		_text: "Show Timer: ",
+		_text: "显示计时器: ",
 		_type: "checkbox",
 		default_mode: global.show_timer,
 		current_mode: global.show_timer,
@@ -98,7 +98,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_showsplits = {
-		_text: "Show Splits: ",
+		_text: "显示用时: ",
 		_type: "checkbox",
 		default_mode: global.show_splits,
 		current_mode: global.show_splits,
@@ -115,7 +115,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_showcoins = {
-		_text: "Show Coin Counter: ",
+		_text: "显示金币数量: ",
 		_type: "checkbox",
 		default_mode: global.show_coins,
 		current_mode: global.show_coins,
@@ -132,7 +132,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_showpassives = {
-		_text: "Show Passive Item List: ",
+		_text: "显示道具列表: ",
 		_type: "checkbox",
 		default_mode: global.show_passives,
 		current_mode: global.show_passives,
@@ -149,7 +149,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_deletesavedata = {
-		_text: "Delete All Save Data",
+		_text: "删除全部存档",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {
@@ -163,7 +163,7 @@ function scr_Settings_Gameplay(){
 	};
 	
 	option_resetdefaults = {
-		_text: "Reset All Settings To Default",
+		_text: "恢复默认设置",
 		_type: "doonpress",
 		do_on_press: function() {
 			with obj_settings {

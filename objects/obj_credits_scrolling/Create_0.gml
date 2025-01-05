@@ -15,52 +15,56 @@ string_separation = 32;
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
+font_add_enable_aa(false);
+uranus = font_add("Uranus.ttf", 11, false, false, 32, 128);
+lana = font_add("LanaPixel.ttf", 8, false, false, 32, 128);
+
 artists_text_test = ["Artists:","Rogo Jones\nRogo Jones\nRogo Jones"];
 engineers_text_test = ["Engineers:","Rogo Jones\nRogo Jones\nRogo Jones\nRogo Jones\nRogo Jones\nRogo Jones\nRogo Jones\nRogo Jones\nRogo Jones"];
 designers_text_test = ["Designers:","Rogo Jones\nRogo Jones\nRogo Jones\nRogo Jones"];
 producers_text_test = ["Producers:","Rogo Jones\nRogo Jones\nRogo Jones\nRogo Jones\nRogo Jones\nRogo Jones"];
 
-ft1_artists_text = ["Character / Items Team Artists", "Hannah Suchil\nIsaac White\nJiale Wei\nZekai Lu\nZiteng Zhao"];
-ft1_designers_text = ["Character / Items Team Designers", "Isaac White\nMingzhe Zhu\nYuguang Shi"];
-ft1_engineers_text = ["Character / Items Team Engineers", "Erik Zhang\nIsaac White\nYuguang Shi"]; 
-ft1_player_engineer_text = ["Player Mechanics Engineer", "Isaac White"];
-ft1_lead_designer_text = ["Lead Designer", "Isaac White"];
-ft1_player_producers_text = ["Character / Items Team Producers", "Cleveland Parker\nIan Vokt\nIsaac White"];
+ft1_artists_text = ["角色/物品设计组原画师", "Hannah Suchil\nIsaac White\nJiale Wei\nZekai Lu\nZiteng Zhao"];
+ft1_designers_text = ["角色/物品设计组策划", "Isaac White\nMingzhe Zhu\nYuguang Shi"];
+ft1_engineers_text = ["角色/物品设计组工程师", "Erik Zhang\nIsaac White\nYuguang Shi"]; 
+ft1_player_engineer_text = ["玩家交互开发工程师", "Isaac White"];
+ft1_lead_designer_text = ["主策划", "Isaac White"];
+ft1_player_producers_text = ["角色/物品组项目管理", "Cleveland Parker\nIan Vokt\nIsaac White"];
 
-ft2_artists_text = ["Enemies Team Artists", "Christian Almond\nKarsten Weller\nKim Nguyen"];
-ft2_designers_text = ["Enemies Team Designers", "Daniel He\nYuguang Shi\nZehao Chen"];
-ft2_engineers_text = ["Enemies Team Engineers", "Bingyan Xie\nDaniel He\nJohn Richard\nYuguang Shi"];
-ft2_player_producers_text = ["Enemies Team Producer", "John Richard"];
+ft2_artists_text = ["敌人设计组原画师", "Christian Almond\nKarsten Weller\nKim Nguyen"];
+ft2_designers_text = ["敌人设计组策划", "Daniel He\nYuguang Shi\nZehao Chen"];
+ft2_engineers_text = ["敌人设计组工程师", "Bingyan Xie\nDaniel He\nJohn Richard\nYuguang Shi"];
+ft2_player_producers_text = ["敌人设计组项目管理", "John Richard"];
 
-ft3_artists_text = ["Level Team Artists", "Daming Li\nHyeongkyu Kim"];
-ft3_designers_text = ["Level Team Designers", "Ian Vokt\nSam Klopstad\nTalen Stephens\nZehao Chen"];
-ft3_engineers_text = ["Level Team Engineers", "Cam Knight\nCayden Jensen\nRegie Topham"];
-ft3_procgen_text = ["Proc Gen Engineers", "Cam Knight\nCayden Jensen"];
-ft3_player_producers_text = ["Level Team Producer", "Regie Topham"];
+ft3_artists_text = ["关卡设计组原画师", "Daming Li\nHyeongkyu Kim"];
+ft3_designers_text = ["关卡设计组策划", "Ian Vokt\nSam Klopstad\nTalen Stephens\nZehao Chen"];
+ft3_engineers_text = ["关卡设计组工程师", "Cam Knight\nCayden Jensen\nRegie Topham"];
+ft3_procgen_text = ["程序生成开发工程师", "Cam Knight\nCayden Jensen"];
+ft3_player_producers_text = ["关卡设计组项目管理", "Regie Topham"];
 
-ui_artists_text = ["UI Artists", "Hannah Suchil\nHyeongkyu Kim\nIsaac White\nZekai Lu\nZiteng Zhao"];
-ui_designers_text = ["UI Designer", "Isaac White"];
-ui_engineers_text = ["UI Engineer", "Isaac White"];
+ui_artists_text = ["UI美术", "Hannah Suchil\nHyeongkyu Kim\nIsaac White\nZekai Lu\nZiteng Zhao"];
+ui_designers_text = ["UI设计师", "Isaac White"];
+ui_engineers_text = ["UI工程师", "Isaac White"];
 
-bg_artists_text = ["Background Artists", "Daming Li\nZekai Lu"];
-cg_artists_text = ["CG Artists", "Christian Almond\nZekai Lu"];
-promotional_artists_text = ["Promotional Artists", "Daming Li\nKim Nguyen"];
-art_polish_text = ["Art Polish Team", "Daming Li\nKim Nguyen\nZekai Lu\nZiteng Zhao"];
+bg_artists_text = ["场景设计", "Daming Li\nZekai Lu"];
+cg_artists_text = ["CG制作", "Christian Almond\nZekai Lu"];
+promotional_artists_text = ["宣传原画师", "Daming Li\nKim Nguyen"];
+art_polish_text = ["美术润色", "Daming Li\nKim Nguyen\nZekai Lu\nZiteng Zhao"];
 
-music_text = ["Music Composers", "Daisy Dai\nIsaac White"];
-sound_text = ["Sound Designers", "Josiah Lin (LilLin)\nIsaac White"];
-audio_dir_text = ["Audio Director","Josiah Lin (LilLin)"];
+music_text = ["音乐作曲", "Daisy Dai\nIsaac White"];
+sound_text = ["音效设计", "Josiah Lin (LilLin)\nIsaac White"];
+audio_dir_text = ["音频总监","Josiah Lin (LilLin)"];
 
-marketing_text = ["Marketing Manager", "Cleveland Parker"];
-ur_text = ["User Researcher", "Ian Vokt"];
-art_narrative_text = ["Art / Narrative Producer", "Cleveland Parker"];
-design_producer_text = ["Design Producers", "Ian Vokt\nIsaac White"];
-engineer_producers_text = ["Engineering Producers", "John Richard\nRegie Topham"];
-general_producers_text = ["General Producers", "Cleveland Parker\nIan Vokt\nIsaac White\nJohn Richard\nRegie Topham"];
+marketing_text = ["市场经理", "Cleveland Parker"];
+ur_text = ["用户调研", "Ian Vokt"];
+art_narrative_text = ["美术和叙事管理", "Cleveland Parker"];
+design_producer_text = ["策划项目管理", "Ian Vokt\nIsaac White"];
+engineer_producers_text = ["工程项目管理", "John Richard\nRegie Topham"];
+general_producers_text = ["综合项目管理", "Cleveland Parker\nIan Vokt\nIsaac White\nJohn Richard\nRegie Topham"];
 
-special_thanks_text = ["Special Thanks", "Protostar777 for his help in finding so many bugs\nAbby M\nAlex M\nArchie and Betty\nBrendan L\nBrenna V\nBritt T\nChristina V\nColin V\nDan V\nDraik04\nDylan B\nEddieTheYeti\nEric V\nErik R \nEvan A\nFergus and Gracie\nFrancis W\nGabe F\nJack S\nJess B\nJess R\nJesse H\nJi-hoon T\nJon R\nJordon M\nJoshua R\nJulie V\nKalistapie\nKarifu\nKimball B\nLauren A\nLuke C\nMakaveli\nMarshmallow and Tanuki\nMatt T\nMistakeSenpai\nMr. Orange Cat President Natsu\nNessie\nOwen T\nPayton H\nPriscillia S\nQuinn\nRay P\nRichiachu\nRick S\nRogo Jones\nRuby M\nScott W\nSora R\nStacey W\nStephen H\nStrawbs\nSusan V\nTerry D\nTerry W\nThomas W\nTylerintn\nUsagi M\nWill T\nZorpy\n\nThe IGDA - Utah Chapter for letting us display our game!\n\nBerklee College of Music for our partnership!"];
+special_thanks_text = ["特别鸣谢", "Protostar777\nAbby M\nAlex M\nArchie and Betty\nBrendan L\nBrenna V\nBritt T\nChristina V\nColin V\nDan V\nDraik04\nDylan B\nEddieTheYeti\nEric V\nErik R \nEvan A\nFergus and Gracie\nFrancis W\nGabe F\nJack S\nJess B\nJess R\nJesse H\nJi-hoon T\nJon R\nJordon M\nJoshua R\nJulie V\nKalistapie\nKarifu\nKimball B\nLauren A\nLuke C\nMakaveli\nMarshmallow and Tanuki\nMatt T\nMistakeSenpai\nMr. Orange Cat President Natsu\nNessie\nOwen T\nPayton H\nPriscillia S\nQuinn\nRay P\nRichiachu\nRick S\nRogo Jones\nRuby M\nScott W\nSora R\nStacey W\nStephen H\nStrawbs\nSusan V\nTerry D\nTerry W\nThomas W\nTylerintn\nUsagi M\nWill T\nZorpy\n\nThe IGDA - Utah Chapter for letting us display our game!\n\nBerklee College of Music for our partnership!"];
 
-capstone_text = ["Our Fellow Capstone Studios at the University of Utah",""];
+capstone_text = ["其他毕设制作组（位于犹他大学）",""];
 
 studio_1_text = ["","Bucket Under A Bucket Studios\nCreators of 'Trash Pandamonium'"];
 studio_2_text = ["","Dawesome Studios\nCreators of 'Digital Audio Wasteland'"];
@@ -70,8 +74,8 @@ studio_5_text = ["","Inquiry Games\nCreators of 'Ivorfall'"];
 studio_6_text = ["","Murky Waters Studios\nCreators of 'Terror on the Bayou'"];
 studio_7_text = ["","Resting Place Games\nCreators of 'My Little Cemetery'"];
 
-ta_text = ["Our Teaching Assisstants","Carly Henry\nCraig Nash\nSteven Pasinsky\nYeshwanth Sai Kandula"];
-professors_text = ["Our Professors","Fernando Rodriguez\nGreg Bayles"];
+ta_text = ["助教","Carly Henry\nCraig Nash\nSteven Pasinsky\nYeshwanth Sai Kandula"];
+professors_text = ["教授","Fernando Rodriguez\nGreg Bayles"];
 
 classmates_text = ["All of our fellow Capstone classmates",spr_photo_class];
 

@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Settings_Video(){
 	option_fullscreen = {
-		_text: "Fullscreen: ",
+		_text: "全屏: ",
 		_type: "checkbox",
 		default_mode: global.fullscreen,
 		current_mode: global.fullscreen,
@@ -25,7 +25,7 @@ function scr_Settings_Video(){
 	};
 	
 	option_resolution = {
-		_text: "Window Resolution: ",
+		_text: "分辨率: ",
 		_type: "list_slider",
 		num_of_values: 5,
 		list_of_options: [[768,432],[1280,720],[1536,864],[1760,990],[1920,1080]],
@@ -40,7 +40,7 @@ function scr_Settings_Video(){
 	};
 	
 	option_flash = {
-		_text: "Flash: ",
+		_text: "屏幕闪烁: ",
 		_type: "checkbox",
 		default_mode: global.flash,
 		current_mode: global.flash,
