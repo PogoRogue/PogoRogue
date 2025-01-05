@@ -49,6 +49,8 @@
     {"name":"Timelines","order":15,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fnt_lana","order":1,"path":"fonts/fnt_lana/fnt_lana.yy",},
+    {"name":"fnt_uranus","order":2,"path":"fonts/fnt_uranus/fnt_uranus.yy",},
     {"name":"obj_angled_platform_left","order":4,"path":"objects/obj_angled_platform_left/obj_angled_platform_left.yy",},
     {"name":"obj_angled_platform_right","order":30,"path":"objects/obj_angled_platform_right/obj_angled_platform_right.yy",},
     {"name":"obj_arm_cannon","order":40,"path":"objects/obj_arm_cannon/obj_arm_cannon.yy",},
@@ -678,6 +680,7 @@
     {"name":"spr_mole3_projectile","order":27,"path":"sprites/spr_mole3_projectile/spr_mole3_projectile.yy",},
     {"name":"spr_mole3","order":4,"path":"sprites/spr_mole3/spr_mole3.yy",},
     {"name":"spr_nuke","order":70,"path":"sprites/spr_nuke/spr_nuke.yy",},
+    {"name":"spr_pausemenu_polished_1","order":9,"path":"sprites/spr_pausemenu_polished_1/spr_pausemenu_polished_1.yy",},
     {"name":"spr_pinballbumper_activated_new","order":7,"path":"sprites/spr_pinballbumper_activated_new/spr_pinballbumper_activated_new.yy",},
     {"name":"spr_pinballbumper_new","order":6,"path":"sprites/spr_pinballbumper_new/spr_pinballbumper_new.yy",},
     {"name":"spr_pipe_connect","order":7,"path":"sprites/spr_pipe_connect/spr_pipe_connect.yy",},

@@ -6,14 +6,14 @@ if room != room_credits_scrolling and room != room_credits {
 	draw_set_halign(fa_left);
 }
 draw_set_valign(fa_center);
-draw_set_font(fnt_combo2);
+draw_set_font(uranus);
 
 if global.use_controller = true {
-	scr_Draw_Text_Outlined(xx,416,"Press         To Go Back",c_white);
+	scr_Draw_Text_Outlined(xx,416,"按         返回",c_white);
 	if room != room_credits_scrolling and room != room_credits {
-		draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[19][0]),0,xx-14,416);
+		draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[19][0]),0,xx-8,416);
 	}else {
-		draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[19][0]),0,xx+43,416);
+		draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[19][0]),0,xx+29,416);
 	}
 }else {
 	var keyboard_array_value = global.keyboard_array[19][0];
@@ -21,22 +21,22 @@ if global.use_controller = true {
 			
 	if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
 		if is_string(keyboard_text) {
-			scr_Draw_Text_Outlined(xx,416,"Press " + string(keyboard_text) + " To Go Back",c_white);
+			scr_Draw_Text_Outlined(xx,416,"按 " + string(keyboard_text) + " 返回",c_white);
 		}else {
-			scr_Draw_Text_Outlined(xx,416,"Press         To Go Back",c_white);
+			scr_Draw_Text_Outlined(xx,416,"按         返回",c_white);
 			if room != room_credits_scrolling and room != room_credits {
-				draw_sprite(keyboard_text,0,xx-14,416);
+				draw_sprite(keyboard_text,0,xx-8,416);
 			}else {
-				draw_sprite(keyboard_text,0,xx+43,416);
+				draw_sprite(keyboard_text,0,xx+29,416);
 			}
 		}
 	}else {
 		var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
-		scr_Draw_Text_Outlined(xx,416,"Press         To Go Back",c_white);
+		scr_Draw_Text_Outlined(xx,416,"按         返回",c_white);
 		if room != room_credits_scrolling and room != room_credits {
-			draw_sprite(mouse_sprite,0,xx-14,416);
+			draw_sprite(mouse_sprite,0,xx-8,416);
 		}else {
-			draw_sprite(mouse_sprite,0,xx+43,416);
+			draw_sprite(mouse_sprite,0,xx+29,416);
 		}
 	}
 }
