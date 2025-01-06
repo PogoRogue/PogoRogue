@@ -152,6 +152,7 @@
     {"name":"inst_4C528930","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_4358082E","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_BCD798E","path":"rooms/room_tutorial/room_tutorial.yy",},
+    {"name":"inst_1D5F6499","path":"rooms/room_tutorial/room_tutorial.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -284,6 +285,7 @@
         {"$GMRInstance":"v1","%Name":"inst_75F6034F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_75F6034F","objectId":{"name":"obj_pinballbumper","path":"objects/obj_pinballbumper/obj_pinballbumper.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":2912.0,},
         {"$GMRInstance":"v1","%Name":"inst_4358082E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4358082E","objectId":{"name":"obj_crate1","path":"objects/obj_crate1/obj_crate1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":5552.0,},
         {"$GMRInstance":"v1","%Name":"inst_BCD798E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_BCD798E","objectId":{"name":"obj_room_gate_open","path":"objects/obj_room_gate_open/obj_room_gate_open.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":0.0,},
+        {"$GMRInstance":"v1","%Name":"inst_1D5F6499","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1D5F6499","objectId":{"name":"obj_tutorial_screen","path":"objects/obj_tutorial_screen/obj_tutorial_screen.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-256.0,"y":4992.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_71814189","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_71814189","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":361.0,"spriteId":{"name":"spr_boss1_outerlayer","path":"sprites/spr_boss1_outerlayer/spr_boss1_outerlayer.yy",},"x":-48.0,"y":-48.0,},
