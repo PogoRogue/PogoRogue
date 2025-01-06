@@ -1,6 +1,6 @@
 follow_player = true;
 weapon = obj_player.missile_gun;
-item_name = "Missile Launcher";
+item_name = "导弹发射器";
 item_tagline = weapon.tagline; //add to description
 
 scr_Weapon_Stats();

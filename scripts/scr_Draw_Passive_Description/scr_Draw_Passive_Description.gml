@@ -38,7 +38,7 @@ function scr_Draw_Passive_Description(xx,yy,item_sprite,item_image_index,item_na
 	if unlocked = true {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 	
 		//draw_sprite(spr_coin,0,xx-42+6,yy-27+12);
 		scr_Draw_Text_Outlined(xx-47,yy-25+12,item_cost,make_color_rgb(237,225,158)); //43 - 4
@@ -54,7 +54,7 @@ function scr_Draw_Passive_Description(xx,yy,item_sprite,item_image_index,item_na
 	draw_set_color(white);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
-	draw_set_font(fnt_itemdescription2);
+	draw_set_font(global.lana);
 	scr_Draw_Text_Outlined(xx-58,yy-5,scr_Linebreak(item_description,21,99),c_white);
 			
 	//stackability

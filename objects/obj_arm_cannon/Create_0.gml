@@ -85,7 +85,7 @@ default_gun = {
 };
 
 paintball_gun = {
-	name: "Paintball Gun",  
+	name: "彩弹枪",  
 	sprite: spr_player,   
 	ammo: [paintball_bullet],     
 	inaccuracy: 5,     
@@ -104,7 +104,7 @@ paintball_gun = {
 };
 
 shotgun_gun = {
-	name: "Shotgun",  
+	name: "霰弹枪",  
 	sprite: spr_player,  
 	ammo: [shotgun_bullet],
 	inaccuracy: 0,       
@@ -142,7 +142,7 @@ negev_gun = {
 };
 
 burstfire_gun = {
-	name: "Burst Rifle",  
+	name: "脉冲步枪",  
 	sprite: spr_player,   
 	ammo: [burstfire_bullet],
 	inaccuracy: 10,       

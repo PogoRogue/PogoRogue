@@ -1,9 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_Guns(){
-	default_gun = {
-		_name: "Pistol",  //name of gun
-		tagline: "A very basic 4-shot pistol. It gets the job done.", //short description of weapon
+	default_gun = { //Pistol
+		_name: "手枪",  //name of gun
+		tagline: "如此狂野的武器", //short description of weapon
 		sprite: spr_gun_default,   //gun sprite
 		ammo: [default_bullet],//array of ammo
 		inaccuracy: 0,        //random bullet angle inaccuracy
@@ -92,8 +92,8 @@ function scr_Guns(){
 	};
 
 	paintball_gun = {
-		_name: "Paintball Gun",  
-		tagline: "Fire colorful paintballs at a high speed with high-precision movement.",
+		_name: "彩弹枪",  
+		tagline: "战斗可是门艺术",
 		sprite: spr_gun_paintball,   
 		ammo: [paintball_bullet],     
 		inaccuracy: 5,     
@@ -115,8 +115,8 @@ function scr_Guns(){
 	};
 
 	shotgun_gun = {
-		_name: "Shotgun",  
-		tagline: "2 powerful, short-range blast spreads of 5 shots.",
+		_name: "霰弹枪",  
+		tagline: "足以胜任",
 		sprite: spr_gun_shotgun,  
 		ammo: [shotgun_bullet],
 		inaccuracy: 5,       
@@ -138,8 +138,8 @@ function scr_Guns(){
 	};
 
 	bubble_gun = {
-		_name: "Bubble Gun",  
-		tagline: "Extremely fast bubble shooter with some of the best movement control you'll find. Bubbles pop \nafter a short time.",
+		_name: "泡泡枪",  
+		tagline: "啵",
 		sprite: spr_gun_bubble,   
 		ammo: [bubble_bullet],
 		inaccuracy: 35,       
@@ -161,8 +161,8 @@ function scr_Guns(){
 	};
 
 	burstfire_gun = {
-		_name: "Burst Rifle",  
-		tagline: "Fire quick bursts of 3 bullets.",
+		_name: "脉冲步枪",  
+		tagline: "它充满了爆发的能量！",
 		sprite: spr_gun_burstfire,   
 		ammo: [burstfire_bullet],
 		inaccuracy: 10,       
@@ -184,8 +184,8 @@ function scr_Guns(){
 	};	
 	
 	grenade_gun = {
-		_name: "Grenade Launcher",  
-		tagline: "Fire elastic grenades that explode after one bounce or on enemy contact.",
+		_name: "手雷发射器",  
+		tagline: "全都可以炸完~",
 		sprite: spr_gun_grenade,   
 		ammo: [grenade_bullet],
 		inaccuracy: 0,       
@@ -207,8 +207,8 @@ function scr_Guns(){
 	};	
 	
 	laser_gun = {
-		_name: "Laser Gun",  
-		tagline: "Create a massive, powerful laser that can cut through walls.",
+		_name: "量子冲天炮",  
+		tagline: "势不可挡！",
 		sprite: spr_gun_laser,   
 		ammo: [laser_bullet],
 		inaccuracy: 0,       
@@ -230,8 +230,8 @@ function scr_Guns(){
 	};	
 	
 	bouncyball_gun = {
-		_name: "Bouncy Ball Blaster",  
-		tagline: "Fire bouncy balls that bounce off of walls 2 times, doubling in damage after each bounce.",
+		_name: "弹球枪",  
+		tagline: "橡胶弹？",
 		sprite: spr_gun_bouncyball,   
 		ammo: [bouncyball_bullet],
 		inaccuracy: 15,       
@@ -253,8 +253,8 @@ function scr_Guns(){
 	};	
 	
 	missile_gun = {
-		_name: "Missile Launcher",  
-		tagline: "Fire a heat-seeking missile that locks onto nearby enemies for massive damage.",
+		_name: "导弹发射器",  
+		tagline: "让敌人飞起来！",
 		sprite: spr_gun_missile,   
 		ammo: [missile_bullet],
 		inaccuracy: 0,       
@@ -276,8 +276,8 @@ function scr_Guns(){
 	};
 	
 	boomerang_gun = {
-		_name: "Boomerangs",  
-		tagline: "Can be immediately used again once they return to you, but won't reload on bounce/kills. Don't worry, they always come back.",
+		_name: "回旋镖",  
+		tagline: "出来混迟早要还，你知道的",
 		sprite: spr_gun_boomerang,   
 		ammo: [boomerang_bullet],
 		inaccuracy: 0,       
@@ -299,8 +299,8 @@ function scr_Guns(){
 	};
 	
 	starsucker_gun = {
-		_name: "Star Sucker",  
-		tagline: "Suck in a wide arc of 10 stars from afar. Stars give you a boost once when they make contact with you.",
+		_name: "吸星者",  
+		tagline: "暴风吸入！",
 		sprite: spr_gun_starsucker,  
 		ammo: [starsucker_bullet],
 		inaccuracy: 0,       
@@ -322,8 +322,8 @@ function scr_Guns(){
 	};
 	
 	sniper_gun = {
-		_name: "Sniper Rifle",  
-		tagline: "3 powerful, long-range hitscan laser blasts.",
+		_name: "狙击枪", 
+		tagline: "该去露营了",
 		sprite: spr_gun_sniper,
 		ammo: [sniper_bullet],
 		inaccuracy: 0,       
@@ -345,8 +345,8 @@ function scr_Guns(){
 	};	
 	
 	slime_gun = {
-		_name: "Slime Blaster",  
-		tagline: "Unleash a large blast of slime chunks onto unsuspecting enemies below.",
+		_name: "史莱姆发射器",  
+		tagline: "糊你一脸！",
 		sprite: spr_gun_slime,  
 		ammo: [slime_bullet],
 		inaccuracy: 15,       
@@ -368,8 +368,8 @@ function scr_Guns(){
 	};
 	
 	yoyo_gun = {
-		_name: "Yo-yo",  
-		tagline: "Throw and hold a yo-yo that swings from below you, causing damage to enemies in its path. It can be reused when it retracts, giving you an additional boost when it makes contact.",
+		_name: "悠悠球",  
+		tagline: "恒久的运动, 充满智慧意义",
 		sprite: spr_gun_yoyo,   
 		ammo: [yoyo_bullet],
 		inaccuracy: 0,       
@@ -391,8 +391,8 @@ function scr_Guns(){
 	};
 	
 	javelin_gun = {
-		_name: "Javelins",
-		tagline: "Launch a javelin downwards. Charging your shot results in a faster, more powerful javelin.",
+		_name: "标枪",
+		tagline: "做一个标记……和一个洞",
 		sprite: spr_gun_javelins,
 		ammo: [javelin_bullet],
 		inaccuracy: 0,
@@ -414,8 +414,8 @@ function scr_Guns(){
 	};
 	
 	water_gun = {
-		_name: "Water Gun",  
-		tagline: "Shoot a stream of water that is slowly refilled when not being used. Don't ask where the water comes from.",
+		_name: "小黄鸭水枪",  
+		tagline: "被水淹没, 不知所措",
 		sprite: spr_gun_water,   
 		ammo: [water_bullet],
 		inaccuracy: 0,       
@@ -482,8 +482,8 @@ function scr_Guns(){
 	};	
 	
 	machine_gun = {
-		_name: "Machine Gun",  
-		tagline: "Highly inaccurate but with a massive magazine and rapid fire rate. It takes a bit of time to reach its full firing speed, but c'mon, it's a machine gun!",
+		_name: "机关枪",  
+		tagline: "信仰射击",
 		sprite: spr_gun_machine,   
 		ammo: [machine_bullet],
 		inaccuracy: 20,       
@@ -505,8 +505,8 @@ function scr_Guns(){
 	};
 	
 	puncher_gun = {
-		_name: "Puncher",  
-		tagline: "Fire a large boxing glove that knocks out enemies in its path. It packs a punch! Do you get the joke?",
+		_name: "拳头枪",  
+		tagline: "给你一拳",
 		sprite: spr_gun_puncher,   
 		ammo: [puncher_bullet],
 		inaccuracy: 0,       
@@ -528,8 +528,8 @@ function scr_Guns(){
 	};
 	
 	sixshooter_gun = {
-		_name: "Six Shooter",
-		tagline: "Six shots of pure gunslinging fun! Tap fire to shoot single shots, or hold down the shoot button to unload the remaining clip.",
+		_name: "维和者",
+		tagline: "刻有浪客的标记",
 		sprite: spr_gun_sixshooter,
 		ammo: [sixshooter_bullet],
 		inaccuracy: 10,
@@ -551,8 +551,8 @@ function scr_Guns(){
 	};
 	
 	plasma_gun = {
-		_name: "Plasma Gun",
-		tagline: "Hold down the shoot button to charge up a powerful plasma orb! While charging, you will remain stationary in the air. The longer you charge, the more damage your \nplasma orb will do.",
+		_name: "等离子炮",
+		tagline: "物质的第四形态",
 		sprite: spr_gun_plasma,
 		ammo: [plasma_bullet],
 		inaccuracy: 0,
@@ -619,8 +619,8 @@ function scr_Guns(){
 	};
 	
 	snow_gun = {
-		_name: "Snow Cannon",  
-		tagline: "Briefly pause in the air before launching a giant snowball that freezes enemies at 1HP. Bosses cannot be frozen. Every freeze kill reloads the \nSnow Cannon.",
+		_name: "雪球加农炮",  
+		tagline: "来打雪仗吧！",
 		sprite: spr_gun_snow,   
 		ammo: [snow_bullet],
 		inaccuracy: 0,       
@@ -642,8 +642,8 @@ function scr_Guns(){
 	};	
 	
 	balloon_gun = {
-		_name: "Balloon Gun",
-		tagline: "Inflate colorful helium-filled balloons that float upwards. Balloons will lift you upwards until \nthey are released.",
+		_name: "气球枪",
+		tagline: "敌人'啵'的一声就无啦",
 		sprite: spr_gun_balloon,
 		ammo: [balloon_bullet],
 		inaccuracy: 0,
@@ -665,8 +665,8 @@ function scr_Guns(){
 	};
 	
 	frisbee_gun = {
-		_name: "Magnetic Disks",  
-		tagline: "Throw two high damage discs that stick to the ground on contact. When all disks are thrown, shoot again to quickly summon the disks back to you. Cannot reload on \nbounce/kill.",
+		_name: "磁力飞轮",  
+		tagline: "以气御轮！",
 		sprite: spr_gun_frisbees,   
 		ammo: [frisbee_bullet],
 		inaccuracy: 0,       
@@ -688,8 +688,8 @@ function scr_Guns(){
 	};
 	
 	dart_gun = {
-		_name: "Tracker Darts",  
-		tagline: "Toss a dart that locks onto a nearby enemy for moderate damage. Don't like aiming? This may be the weapon for you.",
+		_name: "追踪飞镖",  
+		tagline: "这玩意带自瞄的",
 		sprite: spr_gun_darts,   
 		ammo: [dart_bullet],
 		inaccuracy: 0,       

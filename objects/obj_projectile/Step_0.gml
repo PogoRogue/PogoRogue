@@ -2,7 +2,7 @@
 x += hspd;
 y += vspd;
 
-if place_meeting(x,y,obj_ground) and gun_name != "Javelins" and gun_name != "Plasma Gun" and gun_name != "Snow Cannon" and gun_name != "Laser Gun" and destroy_on_impact {
+if place_meeting(x,y,obj_ground) and gun_name != "标枪" and gun_name != "等离子炮" and gun_name != "雪球加农炮" and gun_name != "量子冲天炮" and destroy_on_impact {
 	if global.drilltipbullets = false and num_of_bounces > 0 {
 		depth = instance_place(x,y,obj_ground).depth + 20;
 	}else if num_of_bounces > 0 {
@@ -24,10 +24,10 @@ if instance_exists(obj_camera) {
 	}else {
 		damage = init_damage;
 		//damage buff for bouncy ball gun 
-		if (gun_name = "Bouncy Ball Blaster") and num_of_bounces < max_num_of_bounces {
+		if (gun_name = "弹球枪") and num_of_bounces < max_num_of_bounces {
 			damage = init_damage * (2*(max_num_of_bounces-num_of_bounces));
 			image_index = max_num_of_bounces-num_of_bounces;
-		}else if (gun_name = "Javelins") or gun_name = "Plasma Gun" or gun_name = "Balloon Gun"  {
+		}else if (gun_name = "标枪") or gun_name = "等离子炮" or gun_name = "气球枪"  {
 			if created = true {
 				damage = init_damage + ((temp_charge/temp_charge_max)*16);	
 			}
@@ -44,14 +44,14 @@ if instance_exists(obj_camera) {
 if (destroy_on_impact and (num_of_bounces <= 0) and destroyable = true) {
 	if (place_meeting(x,y,obj_ground)) and global.drilltipbullets = false
 	or (place_meeting(x,y,obj_boss_sequence)) and global.drilltipbullets = false and instance_place(x,y,obj_boss_sequence).image_index != 5 {
-		if gun_name = "Paintball Gun" {
+		if gun_name = "彩弹枪" {
 			alarm[0] = 1;
 			//splatter code here
-		}else if gun_name = "Water Gun" {
+		}else if gun_name = "小黄鸭水枪" {
 			alarm[0] = 1;
 			//sprite_index = spr_projectile_water_droplet;
 			
-		}else if gun_name = "Puncher" {
+		}else if gun_name = "拳头枪" {
 			//alarm[0] = 20;
 			spd = 0;
 			hspd = 0;
@@ -69,7 +69,7 @@ if (grav_affected) {
 }
 
 //rotate
-if (gun_name = "Grenade Launcher") {
+if (gun_name = "手雷发射器") {
 	image_angle -= hspd*2;
 }
 
@@ -80,7 +80,7 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) a
 	}
 	hspd *= -bounce_amount;
 	num_of_bounces -= 1;
-	if (gun_name = "Grenade Launcher") {
+	if (gun_name = "手雷发射器") {
 		audio_play_sound(snd_grenade_bounce, 0, false);
 		image_index = 1;
 		alarm[1] = 3;
@@ -88,7 +88,7 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) a
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 	
-	if gun_name = "Bouncy Ball Blaster" {
+	if gun_name = "弹球枪" {
 		randomize();
 		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 		random_set_seed(global.seed);
@@ -102,7 +102,7 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) a
 	}
 	hspd *= -bounce_amount;
 	num_of_bounces -= 1;
-	if (gun_name = "Grenade Launcher") {
+	if (gun_name = "手雷发射器") {
 		audio_play_sound(snd_grenade_bounce, 0, false);
 		image_index = 1;
 		alarm[1] = 5;
@@ -110,7 +110,7 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) a
 		image_angle = point_direction(x,y,x+hspd,y+vspd);	
 	}
 	
-	if gun_name = "Bouncy Ball Blaster" {
+	if gun_name = "弹球枪" {
 		randomize();
 		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 		random_set_seed(global.seed);
@@ -118,13 +118,13 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) a
 	
 	y += vspd;
 	
-}else if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) and free = true and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground)) or gun_name != "Plasma Gun") {
+}else if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) and free = true and ((gun_name = "等离子炮" and !place_meeting(x,y,obj_ground)) or gun_name != "等离子炮") {
 	while !place_meeting(x,y+sign(vspd),obj_ground) {
 		y += sign(vspd);
 	}
 	vspd *= -bounce_amount;
 	num_of_bounces -= 1;
-	if (gun_name = "Grenade Launcher") {
+	if (gun_name = "手雷发射器") {
 		audio_play_sound(snd_grenade_bounce, 0, false);
 		image_index = 1;
 		alarm[1] = 5;
@@ -132,7 +132,7 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) a
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 	
-	if gun_name = "Bouncy Ball Blaster" {
+	if gun_name = "弹球枪" {
 		randomize();
 		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 		random_set_seed(global.seed);	
@@ -140,14 +140,14 @@ if ((place_meeting(x+hspd,y,obj_ground)) and hspd > 0 and num_of_bounces > 0 ) a
 	
 	x += hspd;
 	
-}else if (place_meeting(x,y+vspd+1,obj_ground) and vspd > 0 and num_of_bounces > 0 ) and free = true and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground)) or gun_name != "Plasma Gun")
-or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) /*and gun_name != "Puncher"*/ and free = true  and ((gun_name = "Plasma Gun" and !place_meeting(x,y,obj_ground_oneway)) or gun_name != "Plasma Gun") { //top
-	while !place_meeting(x,y+sign(vspd)+1,obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) /*and gun_name != "Puncher"*/) {
+}else if (place_meeting(x,y+vspd+1,obj_ground) and vspd > 0 and num_of_bounces > 0 ) and free = true and ((gun_name = "等离子炮" and !place_meeting(x,y,obj_ground)) or gun_name != "等离子炮")
+or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_ground_oneway)*/ and vspd > 0 and num_of_bounces > 0) /*and gun_name != "拳头枪"*/ and free = true  and ((gun_name = "等离子炮" and !place_meeting(x,y,obj_ground_oneway)) or gun_name != "等离子炮") { //top
+	while !place_meeting(x,y+sign(vspd)+1,obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) /*and gun_name != "拳头枪"*/) {
 		y += sign(vspd);
 	}
 	vspd *= -bounce_amount;
 	num_of_bounces -= 1;
-	if (gun_name = "Grenade Launcher") {
+	if (gun_name = "手雷发射器") {
 		audio_play_sound(snd_grenade_bounce, 0, false);
 		image_index = 1;
 		alarm[1] = 5;
@@ -155,7 +155,7 @@ or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_g
 		image_angle = point_direction(x,y,x+hspd,y+vspd);
 	}
 	
-	if gun_name = "Bouncy Ball Blaster" {
+	if gun_name = "弹球枪" {
 		randomize();
 		audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 		random_set_seed(global.seed);
@@ -163,9 +163,9 @@ or (place_meeting(x,y+vspd+1,obj_ground_oneway) /*and !place_meeting(x,y-1,obj_g
 	
 	x += hspd;
 
-}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false and gun_name != "Snow Cannon" /*and gun_name != "Puncher"*/) 
-or (place_meeting(x,y,obj_player_mask) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) 
-or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and global.drilltipbullets = false) {
+}else if ((place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0) and num_of_bounces <= 0 and max_num_of_bounces > 0 and global.drilltipbullets = false and gun_name != "雪球加农炮" /*and gun_name != "拳头枪"*/) 
+or (place_meeting(x,y,obj_player_mask) and gun_name = "手雷发射器" and global.drilltipbullets = false) 
+or (place_meeting(x,y,obj_player) and gun_name = "手雷发射器" and global.drilltipbullets = false) {
 	alarm[0] = 1;
 }
 
@@ -173,7 +173,7 @@ or (place_meeting(x,y,obj_player) and gun_name = "Grenade Launcher" and global.d
 
 
 //missile
-if (gun_name = "Missile Launcher") {
+if (gun_name = "导弹发射器") {
 	//speed up
 	if speed < 8 + (8 * (gun_level > 1)) {
 		speed += 0.25 + (0.25 * (gun_level > 1));	
@@ -224,7 +224,7 @@ if (gun_name = "Missile Launcher") {
 	}
 }
 
-if (gun_name = "Boomerangs") {
+if (gun_name = "回旋镖") {
 	hspd = 0;
 	vspd = 0;
 	image_angle += 20;
@@ -244,15 +244,15 @@ if (gun_name = "Boomerangs") {
 			instance_destroy();
 			audio_play_sound(snd_reload,0,false);
 			with obj_player {
-				if gun_1._name = "Boomerangs" {
+				if gun_1._name = "回旋镖" {
 					if gun_1.current_bullets < gun_1.bullets_per_bounce+obj_player.max_ammo_buff {
 						gun_1.current_bullets += 1;
 					}
-				}else if gun_2._name = "Boomerangs" {
+				}else if gun_2._name = "回旋镖" {
 					if gun_2.current_bullets < gun_2.bullets_per_bounce+obj_player.max_ammo_buff {
 						gun_2.current_bullets += 1;
 					}
-				}else if gun_3._name = "Boomerangs" {
+				}else if gun_3._name = "回旋镖" {
 					if gun_3.current_bullets < gun_3.bullets_per_bounce+obj_player.max_ammo_buff {
 						gun_3.current_bullets += 1;
 					}
@@ -276,7 +276,7 @@ if (gun_name = "Boomerangs") {
 	}
 }
 
-if (gun_name = "Yo-yo") {
+if (gun_name = "悠悠球") {
 	if obj_player.yoyo_gun.spread_number = 3 and offset_set = false {
 		if spread_index = 0 {
 			angle_offset = -obj_player.yoyo_gun.spread_angle;
@@ -394,7 +394,7 @@ if (gun_name = "Yo-yo") {
 	}
 }
 
-if (gun_name = "Star Sucker") {
+if (gun_name = "吸星者") {
 	hspd = 0;
 	vspd = 0;
 	spd += 0.1;
@@ -432,14 +432,14 @@ if (gun_name = "Star Sucker") {
 	}
 }
 
-if (gun_name = "Slime Blaster") {
+if (gun_name = "史莱姆发射器") {
 	image_angle -= hspd*2;
 	if place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and num_of_bounces <= 0 and destroy_on_impact = true {
 		alarm[0] = 1;	
 	}
 }
 
-if (gun_name = "Javelins") {
+if (gun_name = "标枪") {
 	if created = false {
 		instance_destroy();	
 	}
@@ -457,7 +457,7 @@ if (gun_name = "Javelins") {
 	}
 }
 
-if (gun_name = "Water Gun") {
+if (gun_name = "小黄鸭水枪") {
 	if (place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and global.drilltipbullets = false) {
 		alarm[0] = 1;
 	}
@@ -474,13 +474,13 @@ if (gun_name = "Water Gun") {
 	}
 }
 
-if (gun_name = "Paintball Gun") {
+if (gun_name = "彩弹枪") {
 	if (place_meeting(x,y+vspd,obj_ground_oneway) and !place_meeting(x,y-1,obj_ground_oneway) and vspd > 0 and global.drilltipbullets = false) {
 		alarm[0] = 1;
 	}
 }
 
-if (gun_name = "Laser Gun" ) {
+if (gun_name = "量子冲天炮" ) {
 	
 	//image_angle = obj_player.image_angle-90;
 	//x = obj_player.x +laser_x;
@@ -488,7 +488,7 @@ if (gun_name = "Laser Gun" ) {
 	
 }
 
-if destroyable = false and num_of_bounces <= 0 and !place_meeting(x,y,obj_ground) and gun_name != "Javelins" {
+if destroyable = false and num_of_bounces <= 0 and !place_meeting(x,y,obj_ground) and gun_name != "标枪" {
 	destroyable = true;	
 }else if destroyable = false and num_of_bounces <= 0 and !place_meeting(x,y,obj_ground) {
 	if created = true {
@@ -496,7 +496,7 @@ if destroyable = false and num_of_bounces <= 0 and !place_meeting(x,y,obj_ground
 	}
 }
 
-if gun_name = "Grenade Launcher" or (gun_name = "The Portal") {
+if gun_name = "手雷发射器" or (gun_name = "The Portal") {
 	destroyable = true;	
 }
 
@@ -514,7 +514,7 @@ if (gun_name = "The Portal") {
 	}
 }
 
-if (gun_name = "Puncher") {
+if (gun_name = "拳头枪") {
 	if gun_level >= 2 {
 		decrease_spd = 0.92;
 	}
@@ -561,7 +561,7 @@ if (gun_name = "Puncher") {
 	}
 }
 
-if (gun_name = "Plasma Gun") {
+if (gun_name = "等离子炮") {
 	//depth = obj_player.depth+1;
 	if created = false {
 		//instance_destroy();	
@@ -593,13 +593,13 @@ if (gun_name = "Plasma Gun") {
 	}
 }
 
-if (gun_name = "Snow Cannon") {
+if (gun_name = "雪球加农炮") {
 	colliding_with_enemy = false;
 	image_angle += 10;
 	destroy_on_impact = false;
 }
 
-if (gun_name = "Balloon Gun") {
+if (gun_name = "气球枪") {
 	if vspd < -4 {
 		vspd = -4;	
 	}
@@ -670,7 +670,7 @@ if (gun_name = "Balloon Gun") {
 	}
 }
 
-if (gun_name = "Magnetic Disks") {
+if (gun_name = "磁力飞轮") {
 	if stuck = false or summoned = true {
 		image_angle += 10;
 	}
@@ -696,7 +696,7 @@ if (gun_name = "Magnetic Disks") {
 				if state != state_freeze and state != state_parachute {
 					var disks = 0;
 					with obj_projectile {
-						if gun_name = "Magnetic Disks" {
+						if gun_name = "磁力飞轮" {
 							disks += 1;
 						}
 					}
@@ -727,7 +727,7 @@ if (gun_name = "Magnetic Disks") {
 }
 
 //missile
-if (gun_name = "Tracker Darts") {
+if (gun_name = "追踪飞镖") {
 	//speed up
 	if speed < 6 + (6 * (gun_level > 1)) {
 		speed += 0.15 + (0.15 * (gun_level > 1));	
@@ -771,8 +771,8 @@ if (gun_name = "Tracker Darts") {
 	}
 }
 
-if (gun_name = "Six Shooter") or (gun_name = "Seven Shooter") or (gun_name = "Eight Shooter") 
-or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Eleven Shooter") {
+if (gun_name = "维和者") or (gun_name = "维和者") or (gun_name = "维和者") 
+or (gun_name = "维和者") or (gun_name = "维和者") or (gun_name = "维和者") {
 	if place_meeting(x,y,obj_ground) {
 		if global.drilltipbullets = false {
 			depth = 10;	

@@ -23,7 +23,7 @@ function scr_Death_Screen(win){
 			//numbers of each passive
 			draw_set_halign(fa_center);
 			draw_set_valign(fa_center);
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 			if i < array_length(global.all_buff_numbers) {
 				if global.all_buff_numbers[i] > 1 {
 					scr_Draw_Text_Outlined(x+18+(20*(i%7))-6,y+75+4+(floor(i/7)*17),global.all_buff_numbers[i],c_white);
@@ -67,27 +67,27 @@ function scr_Death_Screen(win){
 	
 	//new best
 	if (global.current_best_combo > global.init_combo_highscore) { //combo
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		scr_Draw_Text_Outlined(x-78,y-60,"(New Best!)",make_color_rgb(237,225,158));//+15
 	}
 	
 	if (global.current_enemies_killed > global.init_enemies_highscore) { //enemies
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		scr_Draw_Text_Outlined(x-78,y-22,"(New Best!)",make_color_rgb(237,225,158));
 	}
 	
 	if (global.current_total_coins > global.init_coins_highscore) { //coins
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		scr_Draw_Text_Outlined(x-78,y+15,"(New Best!)",make_color_rgb(237,225,158));
 	}
 	
 	if best_time = true { //time
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		scr_Draw_Text_Outlined(x-78,y+52,"(New Best!)",make_color_rgb(237,225,158));
 	}
 	
 	if global.area_2_reached = 1 or global.area_3_reached = 1 { //area
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		//scr_Draw_Text_Outlined(x-78,y+89,"(New Best!)",make_color_rgb(237,225,158));
 	}
 }

@@ -9,7 +9,7 @@ if test_mode = false {
 }
 
 
-draw_set_font(fnt_itemdescription2);
+draw_set_font(global.lana);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 	
@@ -46,7 +46,7 @@ for (i = 0; i < array_length(weapons_array); i++) {
 	if global.weapon_unlocked_array[i] = true or test_mode = false {
 		if (select = i + 1) {
 			scr_Draw_Input_UI(xx,yy+4,18,0,fnt_combo2,fa_center,fa_middle);
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 		}
 	}
 }

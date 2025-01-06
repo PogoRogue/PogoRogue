@@ -86,12 +86,12 @@ function scr_Buffs(){
 			}
 			//change name of six shooter when more bullets
 			switch(sixshooter_gun.bullets_per_bounce) {
-				case 7: sixshooter_gun._name = "Seven Shooter"; break;
-				case 8: sixshooter_gun._name = "Eight Shooter"; break;
-				case 9: sixshooter_gun._name = "Nine Shooter"; break; 
-				case 10: sixshooter_gun._name = "Ten Shooter"; break;
-				case 11: sixshooter_gun._name = "Eleven Shooter"; break;
-				default: sixshooter_gun._name = "Six Shooter"; break;
+				case 7: sixshooter_gun._name = "维和者"; break;
+				case 8: sixshooter_gun._name = "维和者"; break;
+				case 9: sixshooter_gun._name = "维和者"; break; 
+				case 10: sixshooter_gun._name = "维和者"; break;
+				case 11: sixshooter_gun._name = "维和者"; break;
+				default: sixshooter_gun._name = "维和者"; break;
 			}
 		}
 	}

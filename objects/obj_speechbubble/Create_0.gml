@@ -17,12 +17,12 @@ current_text = text_array[current_line-1];
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
-draw_set_font(fnt_itemdescription2);
+draw_set_font(global.lana);
 
 text_pixel_height = 10;
 new_text_pixel_height = text_pixel_height;
 
-draw_set_font(fnt_itemdescription2);
+draw_set_font(global.lana);
 switch (string_height(scr_Linebreak(current_text,chars_per_line,chars_per_line))) {
 	/*case 10: num_of_lines = 1; new_text_pixel_height = 10; break;
 	case 20: num_of_lines = 2; new_text_pixel_height = 20; break;

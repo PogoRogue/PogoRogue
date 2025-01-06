@@ -10,11 +10,11 @@ function scr_Shoot(){
 		var dist = sprite_get_width(gun.sprite) - sprite_get_xoffset(gun.sprite);
 		var damage_multiplier = 1;
 		//sound
-		if gun._name != "Paintball Gun" and gun._name != "Bouncy Ball Blaster" and gun._name != "Burst Rifle" {
+		if gun._name != "彩弹枪" and gun._name != "弹球枪" and gun._name != "脉冲步枪" {
 			audio_play_sound(gun.sound,0,false);
-		}else if gun._name = "Paintball Gun" {
+		}else if gun._name = "彩弹枪" {
 			audio_play_sound(choose(snd_paintball1,snd_paintball2,snd_paintball3),0,false,1,0,random_range(0.8,1.2));
-		}else if gun._name = "Bouncy Ball Blaster" {
+		}else if gun._name = "弹球枪" {
 			audio_play_sound(choose(snd_bbb1,snd_bbb2,snd_bbb3,snd_bbb4),0,false,1,0,random_range(0.9,1.1));
 		}
 		
@@ -69,17 +69,17 @@ function scr_Shoot(){
 			//screen shake
 			
 			scr_Screen_Shake(gun.ammo[bullet_index].screen_shake.magnitude, gun.ammo[bullet_index].screen_shake.frames,true);
-			if (global.allow_screenshake and gun._name != "Water Gun" and gun._name != "Bubble Gun" ) {
+			if (global.allow_screenshake and gun._name != "小黄鸭水枪" and gun._name != "泡泡枪" ) {
 				var controller_vibration = global.controller_vibration/100;
 				gamepad_set_vibration(0, 1*controller_vibration, 1*controller_vibration);
 			}
 			
 			//decrease ammo
-			if gun.spread_number = 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+			if gun.spread_number = 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "标枪" {
 				gun.current_bullets -= 1;
 			}
 			
-			if gun.spread_number = 3 and gun._name = "Burst Rifle" and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+			if gun.spread_number = 3 and gun._name = "脉冲步枪" and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "标枪" {
 				if gun.level = 1 {
 					gun.current_bullets -= 1/3;
 				}else if gun.level = 2 {
@@ -177,7 +177,7 @@ function scr_Shoot(){
 			current_burst = 0;
 		}
 		
-		if gun._name = "Burst Rifle" and (gun.current_bullets % gun.burst_number) != 0 and current_burst = 0 {
+		if gun._name = "脉冲步枪" and (gun.current_bullets % gun.burst_number) != 0 and current_burst = 0 {
 			gun.current_bullets = ceil(gun.current_bullets/gun.burst_number) * gun.burst_number;
 			show_debug_message(gun.current_bullets);
 		}

@@ -51,7 +51,7 @@ for(i = 0; i < num_of_slots; i++) {
 	//draw cost
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_itemdescription2); //fnt_combo2
+	draw_set_font(global.lana); //fnt_combo2
 	
 	if instance_exists(slot_items_array[i]) {
 		//draw_sprite(spr_coin,0,xx+10,yy+21);
@@ -67,12 +67,12 @@ for(i = 0; i < num_of_slots; i++) {
 		if slot_items_array[i].sold_out = true {
 			draw_set_halign(fa_center);
 			draw_set_valign(fa_center);
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 			//scr_Draw_Text_Outlined(xx,yy-28,"Sold Out",make_color_rgb(180,82,82));
 		}else {
 			draw_set_halign(fa_center);
 			draw_set_valign(fa_center);
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 			if global.num_of_coins < round(slot_items_array[i].item_cost * global.sale) {
 				//scr_Draw_Text_Outlined(xx,yy-28,scr_Linebreak(slot_items_array[i].item_name,12,99),make_color_rgb(180,82,82));
 			}else {

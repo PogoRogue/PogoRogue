@@ -451,7 +451,7 @@ function scr_Pickups(){
 				freeze_time = 180;
 				freeze_angle = angle;
 				//reload current weapon
-				if gun_array[current_gun]._name != "Boomerangs" and gun_array[current_gun]._name != "Magnetic Disks" {
+				if gun_array[current_gun]._name != "回旋镖" and gun_array[current_gun]._name != "磁力飞轮" {
 					gun_array[current_gun].current_bullets = gun_array[current_gun].bullets_per_bounce + max_ammo_buff;
 				}
 			}

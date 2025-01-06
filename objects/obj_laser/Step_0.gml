@@ -10,7 +10,7 @@ y = parent_obj.y+lengthdir_y(32*instance,obj_player.image_angle-90);
 //x = obj_player.x +laser_x+lengthdir_x(32*instance,obj_player.image_angle-90);
 //y = obj_player.y +laser_y+lengthdir_y(32*instance,obj_player.image_angle-90);
 
-if (gun_name = "Laser Gun" ) {
+if (gun_name = "量子冲天炮" ) {
 	
 	//image_angle = obj_player.image_angle-90;
 	x = obj_player.x +laser_x + (lengthdir_x(32*instance,obj_player.image_angle-90));

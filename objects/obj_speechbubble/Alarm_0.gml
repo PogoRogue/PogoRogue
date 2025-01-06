@@ -13,4 +13,4 @@ if (current_text != scrolling_text) and retract = false {
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
-draw_set_font(fnt_itemdescription2);
+draw_set_font(global.lana);

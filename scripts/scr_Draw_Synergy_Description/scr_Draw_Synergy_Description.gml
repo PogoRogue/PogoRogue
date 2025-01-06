@@ -14,7 +14,7 @@ function scr_Draw_Synergy_Description(xx,yy,synergy) {
 	//Powerup Name
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_itemdescription2);
+	draw_set_font(global.lana);
 	var _color = synergy.text_color;
 	scr_Draw_Text_Outlined(xx,yy+13-21,scr_Linebreak(item_name,16,99),_color);
 }

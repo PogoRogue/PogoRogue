@@ -1,12 +1,12 @@
 //draw trail
-if (gun_name = "Bouncy Ball Blaster") {
+if (gun_name = "弹球枪") {
 	draw_self();
 	image_angle = direction;
 	with instance_create_depth(x,y,depth+1,obj_bbb_trail) {
 		image_index = other.num_of_bounces+2;
 		image_alpha = 0.95;
 	}
-}else if (gun_name = "Yo-yo") {
+}else if (gun_name = "悠悠球") {
 	//draw string
 	var yscale = (point_distance(x,y,obj_player.x,obj_player.y) / sprite_get_height(spr_projectile_yoyo_string));
 	var dir = point_direction(x,y,obj_player.x,obj_player.y) - 90;
@@ -22,7 +22,7 @@ if (gun_name = "Bouncy Ball Blaster") {
 	var dir = point_direction(x,y,obj_player.x - lengthdir_x(56,obj_player.image_angle-90),obj_player.y - lengthdir_y(56,obj_player.image_angle-90)) - 180;
 	draw_sprite_ext(spr_rope,0,x,y,xscale,sign(obj_player.image_xscale),dir,c_white,1);
 	draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,-sign(obj_player.image_xscale),dir,c_white,1);
-}else if (gun_name = "Water Gun") {
+}else if (gun_name = "小黄鸭水枪") {
 	if image_index = 0 {
 		draw_sprite_ext(sprite_index,3,x,y,1,1,angle2,c_white,image_alpha);
 	}
@@ -49,7 +49,7 @@ if (gun_name = "Bouncy Ball Blaster") {
 	
 	if image_index = 0 or used_as_closest_object = false {
 		with obj_projectile {
-			if (gun_name = "Water Gun" and water_index = other.water_index) {
+			if (gun_name = "小黄鸭水枪" and water_index = other.water_index) {
 				if bullet_num = other.bullet_num + 1 {
 					other.closest_water_object = id;
 					angle2 = point_direction(other.x,other.x,x,y);
@@ -66,7 +66,7 @@ if (gun_name = "Bouncy Ball Blaster") {
 	
 }else if (gun_name = "The Portal") {
 	draw_sprite_ext(sprite_index,image_index,x,y,1,1,spr_angle,c_white,image_alpha);
-}else if (gun_name = "Puncher") or (gun_name = "Magnetic Disks") {
+}else if (gun_name = "拳头枪") or (gun_name = "磁力飞轮") {
 	draw_self();
 	if abs(hspd) > 0.1 or abs(vspd) > 0.1 
 	or abs(hspeed) > 0.1 or abs(vspeed) > 0.1 {
@@ -82,7 +82,7 @@ if (gun_name = "Bouncy Ball Blaster") {
 		}
 	}
 	draw_self();
-}else if (gun_name = "Plasma Gun") {
+}else if (gun_name = "等离子炮") {
 	if hspd = 0 and vspd = 0 {
 		draw_sprite_ext(orb_glow_sprite,0,x,y,image_xscale,image_yscale,image_angle,c_white,glow_alpha);
 	}else {

@@ -29,6 +29,7 @@ list_slider_str = "test";
 alarm2_time = 30;
 alarm3_time = 30;
 
+font_add_enable_aa(false);
 uranus = font_add("Uranus.ttf", 11, false, false, 32, 128);
 lana = font_add("LanaPixel.ttf", 8, false, false, 32, 128);
 

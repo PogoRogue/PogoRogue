@@ -38,7 +38,7 @@ if draw = true {
 		}
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		if global.use_controller = true {
 			draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[button_num][0]),0,x,y-60);
 		}else {
@@ -58,7 +58,7 @@ if draw = true {
 		}
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		scr_Draw_Text_Outlined(x,y-46,"Stop Reel",c_white);
 	}
 }

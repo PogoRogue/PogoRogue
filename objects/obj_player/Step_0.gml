@@ -428,9 +428,9 @@ if (canshoot > 0) {
 		if gun != water_gun and gun != laser_gun {
 			gun.spread_number = 3;
 		}
-	}else if gun.spread_number = 3 and tripleshot = false and !(gun._name = "Javelins" and gun.level >= 2)  
-	and !(gun._name = "Pistol" and gun.level >= 4) and !(gun._name = "Burst Rifle" and gun.level >= 4)
-	and !(gun._name = "Snow Cannon" and gun.level >= 4){
+	}else if gun.spread_number = 3 and tripleshot = false and !(gun._name = "标枪" and gun.level >= 2)  
+	and !(gun._name = "手枪" and gun.level >= 4) and !(gun._name = "脉冲步枪" and gun.level >= 4)
+	and !(gun._name = "雪球加农炮" and gun.level >= 4){
 		gun.spread_number = 1;
 	}
 	
@@ -439,7 +439,7 @@ if (canshoot > 0) {
 	
 	if ((gun.current_bullets) > 0 and state != state_bouncing and state != state_chargejump and table = false and state != state_magnet) {
 	
-	if gun._name != "Snow Cannon" {
+	if gun._name != "雪球加农炮" {
 		scr_Shoot();
 	}else if state != state_snowball {
 		if state != state_freeze and state != state_parachute {
@@ -455,7 +455,7 @@ if (canshoot > 0) {
 		var delay = gun.burst_delay;
 		
 		repeat (gun.burst_number - 1) {
-			if gun._name = "Burst Rifle" and delay = gun.burst_delay {
+			if gun._name = "脉冲步枪" and delay = gun.burst_delay {
 				current_burst = 1;
 				audio_play_sound(gun.sound,0,false);	
 			}
@@ -464,13 +464,13 @@ if (canshoot > 0) {
 		}
 		
 		//decrease ammo count for spread weapons
-		if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" and  gun._name != "Snow Cannon" {
+		if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "标枪" and  gun._name != "雪球加农炮" {
 			gun.current_bullets -= 1;
 		}
 	}else {
-		if ((gun.current_bullets) <= 0 and table = false) and gun._name = "Magnetic Disks" {
+		if ((gun.current_bullets) <= 0 and table = false) and gun._name = "磁力飞轮" {
 			with obj_projectile {
-				if gun_name = "Magnetic Disks" {
+				if gun_name = "磁力飞轮" {
 					if summoned = false {
 						obj_player.state = obj_player.state_magnet;
 						obj_player.magnet_index = 0;
@@ -584,13 +584,13 @@ or gun_array[current_gun] != water_gun and gun_3 = water_gun {
 
 #endregion
 
-if gun_1._name != "Burst Rifle" and gun_2._name != "Burst Rifle" and gun_3._name != "Burst Rifle" {
+if gun_1._name != "脉冲步枪" and gun_2._name != "脉冲步枪" and gun_3._name != "脉冲步枪" {
 	current_burst = 0;
 }
 
 //switch between weapons
 
-if gun_array[current_gun] != burstfire_gun and gun_array[current_gun]._name != "Burst Rifle" {
+if gun_array[current_gun] != burstfire_gun and gun_array[current_gun]._name != "脉冲步枪" {
 	current_burst = 0;
 }
 

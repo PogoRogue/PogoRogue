@@ -29,7 +29,7 @@ max_num_of_bounces = num_of_bounces;
 init_damage = damage;
 sound = audio_play_sound(snd_nothing,0,false);
 colliding_with_enemy = false;
-gun_name = "Missile Launcher";
+gun_name = "导弹发射器";
 
 if destroy_time != 0 {
 	alarm[0] = destroy_time;
@@ -38,7 +38,7 @@ if destroy_time != 0 {
 //specific conditions
 
 //missile
-if (gun_name = "Missile Launcher") {
+if (gun_name = "导弹发射器") {
 	//sound = audio_play_sound(snd_rocketwhoosh,0,false);
 	temp_angle = image_angle;
 	if collision_circle(x,y,160,obj_enemy_parent,false,true) != noone {

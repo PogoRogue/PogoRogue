@@ -46,7 +46,7 @@ if select = 1 {
 		if page_num = 1 and i <= 19 
 		or page_num = 2 and i > 19 {
 			//name
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 			draw_set_halign(fa_center);
 			draw_set_valign(fa_center);
 			
@@ -82,7 +82,7 @@ if select = 1 {
 			//numbers of each buff
 			draw_set_halign(fa_center);
 			draw_set_valign(fa_center);
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 			if global.all_buff_numbers[i] > 1 {
 				scr_Draw_Text_Outlined(xx-8,yy-19,global.all_buff_numbers[i],c_white);
 			}
@@ -100,7 +100,7 @@ if select = 2 {
 	
 	if num_of_pickups = 1 {
 		scr_Draw_Pickup_Description(center_x,yy,pickup_1,1,true,global.all_pickup_costs[0]);
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
 		if select_y = 1 {
@@ -155,7 +155,7 @@ if select = 2 {
 		scr_Draw_Pickup_Description(xx1-12,yy,pickup_1,1,true,global.all_pickup_costs[0]);
 		scr_Draw_Pickup_Description(xx2+12,yy,pickup_2,2,true,global.all_pickup_costs[1]);
 		
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
 		if select_y = 2 {
@@ -237,7 +237,7 @@ if select = 2 {
 		draw_sprite(spr_actives_swap,actives_swap,center_x+2,yy-53);
 		if actives_swap = true {
 			//draw select button
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 			draw_set_halign(fa_center);
 			if global.use_controller = true {
 				draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[18][0]),2,center_x+2,yy-34);
@@ -286,7 +286,7 @@ if select = 3 {
 		draw_sprite(spr_actives_swap,weapons_swap1,center_x+2,yy-17);
 		if weapons_swap1 = true {
 			//draw select button
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 			draw_set_halign(fa_center);
 			if global.use_controller = true {
 				draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[18][0]),2,center_x+2,yy+2);
@@ -317,7 +317,7 @@ if select = 3 {
 		draw_sprite(spr_actives_swap,weapons_swap2,center_x+98+2,yy-17);
 		if weapons_swap1 = true {
 			//draw select button
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 			draw_set_halign(fa_center);
 			if global.use_controller = true {
 				draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[18][0]),2,center_x-98+2,yy+2);
@@ -338,7 +338,7 @@ if select = 3 {
 			}
 		}else if weapons_swap2 = true {
 			//draw select button
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 			draw_set_halign(fa_center);
 			if global.use_controller = true {
 				draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[18][0]),2,center_x+98+2,yy+2);

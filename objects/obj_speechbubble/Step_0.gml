@@ -12,7 +12,7 @@ if distance_to_object(obj_player) < spawn_distance and activated = false and ala
 	y_offset = 0;
 	y = init_y;
 	resize_frames = 4;
-	draw_set_font(fnt_itemdescription2);
+	draw_set_font(global.lana);
 	switch (string_height(scr_Linebreak(current_text,chars_per_line,99))) {
 		/*case 10: num_of_lines = 1; new_text_pixel_height = 10; break;
 		case 20: num_of_lines = 2; new_text_pixel_height = 20; break;
@@ -28,7 +28,7 @@ if distance_to_object(obj_player) < spawn_distance and activated = false and ala
 	
 	new_y_offset_spd = 0;
 }
-draw_set_font(fnt_itemdescription2);
+draw_set_font(global.lana);
 
 //retract
 if (distance_to_object(obj_player) > retract_distance and retract_distance != 0) and activated = true and retract = false {
@@ -115,7 +115,7 @@ if activated = true {
 }
 
 
-draw_set_font(fnt_itemdescription2);
+draw_set_font(global.lana);
 
 
 if scrolling_text != current_text and (current_line > 1 or repeated = true) {

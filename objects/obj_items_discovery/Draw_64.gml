@@ -28,7 +28,7 @@ if select= 3 {
 	//draw_sprite(spr_item_menu_areas,2,center_x-140-36,128+36+144);
 }
 
-draw_set_font(fnt_itemdescription2);
+draw_set_font(global.lana);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 	
@@ -70,11 +70,13 @@ for (i = 0; i < 48; i++) {
 			draw_sprite(select_sprite,2 + ((i = (select_x-1)+((select_y-1)*select_x_max))),xx,yy-27-8);
 		}
 		draw_sprite(weapons_array[i],(sprite_get_number(weapons_array[i])-1)*(global.weapon_unlocked_array[i] = false) /*+ (global.weapon_unlocked_array[i] = true)*/,xx,yy-27-8);
-	
+		
+		draw_set_font(global.lana);
 		if (i < 24 and global.weapon_unlocked_array[i]= true) {
 			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_weapons[i]._name,12,99),c_white);
 		}
 	}
+	draw_set_font(global.lana);
 		
 	//draw item description
 	if i = item_selected-1 {

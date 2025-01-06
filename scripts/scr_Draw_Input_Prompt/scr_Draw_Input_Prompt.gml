@@ -3,7 +3,7 @@
 function scr_Draw_Input_Prompt(xx,yy,button_num,text,text_color){
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	draw_set_font(fnt_itemdescription2);
+	draw_set_font(global.lana);
 	draw_set_color(make_color_rgb(33,33,35));
 	//draw interact button
 	if global.use_controller = true {

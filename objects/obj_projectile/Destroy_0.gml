@@ -1,13 +1,13 @@
 /// @description On destroy
 
 //create bubble pop
-if (gun_name = "Bubble Gun") {
+if (gun_name = "泡泡枪") {
 	instance_create_depth(x,y,depth,obj_projectile_bubble_pop);
 	audio_play_sound(snd_bubblepop,0,false);
 }
 
 //create explosion
-if (gun_name = "Grenade Launcher") or (gun_name = "Missile Launcher") {
+if (gun_name = "手雷发射器") or (gun_name = "导弹发射器") {
 	if instance_exists(obj_camera) {
 		with instance_create_depth(x,y,depth,obj_projectile_explosion) {
 			damage = other.damage;
@@ -17,7 +17,7 @@ if (gun_name = "Grenade Launcher") or (gun_name = "Missile Launcher") {
 }
 
 //give player a boost
-if (gun_name = "Star Sucker") {
+if (gun_name = "吸星者") {
 	with obj_player {
 		if state != state_freeze and state != state_parachute {
 			speed = 0;
@@ -32,9 +32,9 @@ if (gun_name = "Star Sucker") {
 	}
 }
 
-if (gun_name = "Yo-yo") {
+if (gun_name = "悠悠球") {
 	with obj_player {
-		if gun_1._name = "Yo-yo" {
+		if gun_1._name = "悠悠球" {
 			if gun_1.current_bullets < gun_1.bullets_per_bounce+obj_player.max_ammo_buff {
 				gun_1.current_bullets += 1;
 			}
@@ -43,7 +43,7 @@ if (gun_name = "Yo-yo") {
 				speed = 0;
 				motion_add(angle - 90, vsp_basicjump * gun_1.momentum_added);
 			}
-		}else if gun_2._name = "Yo-yo" {
+		}else if gun_2._name = "悠悠球" {
 			if gun_2.current_bullets < gun_2.bullets_per_bounce+obj_player.max_ammo_buff {
 				gun_2.current_bullets += 1;
 			}
@@ -52,7 +52,7 @@ if (gun_name = "Yo-yo") {
 				speed = 0;
 				motion_add(angle - 90, vsp_basicjump * gun_2.momentum_added);
 			}
-		}else if gun_3._name = "Yo-yo" {
+		}else if gun_3._name = "悠悠球" {
 			if gun_3.current_bullets < gun_3.bullets_per_bounce+obj_player.max_ammo_buff {
 				gun_3.current_bullets += 1;
 			}
@@ -70,7 +70,7 @@ if (gun_name = "Yo-yo") {
 	}
 }
 
-if (gun_name = "Water Gun") {
+if (gun_name = "小黄鸭水枪") {
 	for(i = 0; i < 360; i += 45) {
 		with instance_create_depth(x,y,depth-1,obj_water_droplet) {
 			speed = other.spd/1.5;
@@ -87,7 +87,7 @@ if (gun_name = "Water Gun") {
 	}
 }
 
-if (gun_name = "Paintball Gun") {
+if (gun_name = "彩弹枪") {
 	if scr_In_Camera_View(64) {
 	audio_play_sound(snd_paintball_splat,0,false);
 	}
@@ -103,7 +103,7 @@ if (gun_name = "Paintball Gun") {
 	}
 }
 
-if (gun_name = "Javelins") {
+if (gun_name = "标枪") {
 	if place_meeting(x,y,obj_ground) {
 		with instance_create_depth(x,y,depth,obj_javelin_animation)	{
 			other_depth = other.depth;
@@ -114,7 +114,7 @@ if (gun_name = "Javelins") {
 	}
 }
 
-if (gun_name = "Tracker Darts") {
+if (gun_name = "追踪飞镖") {
 	if dart_created = false and place_meeting(x,y,obj_ground) {
 		with instance_create_depth(x,y,-5,obj_dart_stuck)	{
 			other_depth = other.depth;
@@ -126,7 +126,7 @@ if (gun_name = "Tracker Darts") {
 	}
 }
 
-if gun_name = "Boomerangs" {
+if gun_name = "回旋镖" {
 	if audio_is_playing(sound) {
 		audio_stop_sound(sound);
 	}
@@ -160,7 +160,7 @@ if (gun_name = "The Portal") {
 	obj_player.portal_gun.current_bullets = 1;
 }
 
-if (gun_name = "Magnetic Disks") {
+if (gun_name = "磁力飞轮") {
 	with obj_player {
 		if frisbee_gun.current_bullets < frisbee_gun.bullets_per_bounce+max_ammo_buff {
 			frisbee_gun.current_bullets	+= 1;
@@ -170,6 +170,6 @@ if (gun_name = "Magnetic Disks") {
 }
 
 //create bubble pop
-if (gun_name = "Balloon Gun") and scr_In_Camera_View(96) {
+if (gun_name = "气球枪") and scr_In_Camera_View(96) {
 	audio_play_sound(snd_balloon_pop,0,false);
 }

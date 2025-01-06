@@ -941,7 +941,7 @@ state_magnet = function() {
 	var num_of_disks = 0;
 	var num_of_summons = 0;
 	with obj_projectile {
-		if gun_name = "Magnetic Disks" {
+		if gun_name = "磁力飞轮" {
 			num_of_disks += 1;
 			if summoned = true {
 				num_of_summons += 1;	
@@ -995,7 +995,7 @@ state_snowball = function() {
 			audio_stop_sound(snd_magnet_on);
 		}
 		//shoot snowball here
-		if gun._name = "Snow Cannon" {
+		if gun._name = "雪球加农炮" {
 			scr_Shoot();
 			audio_play_sound(snd_snowcannon,0,false);
 			if audio_is_playing(snd_javelin_charge) {
@@ -1003,7 +1003,7 @@ state_snowball = function() {
 			}
 			
 			//decrease ammo count for spread weapons
-			if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "Javelins" {
+			if gun.spread_number > 1 and frenzy = false and pogomode = false and aerial_assassin_frenzy = false and gun._name != "标枪" {
 				gun.current_bullets -= 1;
 			}
 			
@@ -1015,7 +1015,7 @@ state_snowball = function() {
 		}
 	}
 	
-	if gun._name != "Snow Cannon" {
+	if gun._name != "雪球加农炮" {
 		state = state_free;
 		if audio_is_playing(snd_magnet_on) {
 			audio_stop_sound(snd_magnet_on);

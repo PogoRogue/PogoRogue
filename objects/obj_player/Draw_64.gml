@@ -6,7 +6,7 @@ if global.draw_ui = true {
 if aspect_ratio = 1 {
 	display_set_gui_size(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
 }
-draw_set_font(fnt_combo2);
+draw_set_font(global.uranus);
 draw_set_halign(fa_right);
 draw_set_valign(fa_bottom);
 
@@ -140,7 +140,7 @@ for (gun_num = 0; gun_num < weapons_equipped; gun_num++) {
 
 if pogomode_time > 0 {
 	draw_set_color(make_color_rgb(242,240,229));
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
 	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_pogomodemeter)/2),29+(48 * gun_num),"POGO MODE",pickup_pogomode.text_color);
@@ -156,7 +156,7 @@ if pogomode_time > 0 {
 	}
 }else if frenzy_time > 0 { //draw frenzy meter
 	draw_set_color(make_color_rgb(242,240,229));
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
 	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
@@ -172,7 +172,7 @@ if pogomode_time > 0 {
 	}
 }else if aerial_assassin_frenzy_count > 0 {
 	draw_set_color(make_color_rgb(242,240,229));
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
 	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
@@ -188,7 +188,7 @@ if pogomode_time > 0 {
 	}
 }else if frenzy_time > 0 { //draw frenzy meter
 	draw_set_color(make_color_rgb(242,240,229));
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
 	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
@@ -204,7 +204,7 @@ if pogomode_time > 0 {
 	}
 }else if tripleshot_time > 0 { //draw frenzy meter
 	draw_set_color(make_color_rgb(242,240,229));
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
 	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_tripleshotmeter)/2),29+(48 * gun_num),"Triple Shot",pickup_tripleshot.text_color);
@@ -328,7 +328,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		draw_sprite_part(pickups_array[0].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[0].cooldown_time/pickups_array[0].max_cooldown_time),sprite_get_height(spr_pickup_empty),32,72);
 		//draw controls
 		if (pickups_array[0].cooldown_time > 0) {
-			scr_Draw_Input_UI(48,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
+			scr_Draw_Input_UI(48,108,4,0,global.lana,fa_center,fa_middle);
 		}
 	}
 	if pickups_array[0].bounce_reset_max > 1 { //freeze
@@ -465,7 +465,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		draw_sprite_part(pickups_array[1].gui_sprite,1,0,0,sprite_get_width(spr_pickup_empty)*(pickups_array[1].cooldown_time/pickups_array[1].max_cooldown_time),sprite_get_height(spr_pickup_empty),87,72);
 		//draw controls
 		if (pickups_array[1].cooldown_time > 0) {
-			scr_Draw_Input_UI(103,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
+			scr_Draw_Input_UI(103,108,5,0,global.lana,fa_center,fa_middle);
 		}
 	}
 	
@@ -534,12 +534,12 @@ if pickups_array[1] = pickup_nothing {
 }
 
 if pickups_array[0] != pickup_nothing {
-	draw_set_font(fnt_itemdescription2);
+	draw_set_font(global.lana);
 	scr_Draw_Text_Outlined(48,88-13,scr_Linebreak(pickups_array[0]._name,12,99),pickups_array[0].text_color);
 }
 
 if pickups_array[1] != pickup_nothing {
-	draw_set_font(fnt_itemdescription2);
+	draw_set_font(global.lana);
 	scr_Draw_Text_Outlined(103,88-13,scr_Linebreak(pickups_array[1]._name,12,99),pickups_array[1].text_color);
 }
 
@@ -564,7 +564,7 @@ or pickups_array[0] = pickup_grappling and pickup_grappling.uses_per_bounce = 0
 or pickups_array[0] = pickup_harpoon and pickup_harpoon.uses_per_bounce = 0
 or pickups_array[0] = pickup_megabounce and (state = state_megabounce or state = state_megabounce_charge)
 or pickups_array[0] = pickup_blizzard and instance_exists(obj_blizzard)) {
-	scr_Draw_Input_UI(48,108,4,0,fnt_itemdescription2,fa_center,fa_middle);
+	scr_Draw_Input_UI(48,108,4,0,global.lana,fa_center,fa_middle);
 }
 //button 2
 if !(pickups_array[1].on_cooldown) and pickups_array[1] != pickup_nothing 
@@ -586,7 +586,7 @@ or pickups_array[1] = pickup_grappling and pickup_grappling.uses_per_bounce = 0
 or pickups_array[1] = pickup_harpoon and pickup_harpoon.uses_per_bounce = 0
 or pickups_array[1] = pickup_megabounce and (state = state_megabounce or state = state_megabounce_charge)
 or pickups_array[1] = pickup_blizzard and instance_exists(obj_blizzard)) {
-	scr_Draw_Input_UI(103,108,5,0,fnt_itemdescription2,fa_center,fa_middle);
+	scr_Draw_Input_UI(103,108,5,0,global.lana,fa_center,fa_middle);
 }
 
 //all buffs
@@ -599,7 +599,7 @@ if (global.show_passives = true) {
 		//items menu
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_combo2);
+		draw_set_font(global.uranus);
 		draw_set_color(make_color_rgb(242,240,229));
 		scr_Draw_Text_Outlined(16,yy-16,"Passive items: ",c_white);
 
@@ -607,7 +607,7 @@ if (global.show_passives = true) {
 		//numbers of each buff
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		if global.all_buff_numbers[i] > 1 {
 			scr_Draw_Text_Outlined(xx+(i%4)*20-6,yy+4+(18*(floor(i/4))),global.all_buff_numbers[i],c_white);
 		}
@@ -617,7 +617,7 @@ if (global.show_passives = true) {
 //items menu
 draw_set_halign(fa_left);
 draw_set_valign(fa_center);
-draw_set_font(fnt_combo2);
+draw_set_font(global.uranus);
 draw_set_color(make_color_rgb(242,240,229));
 scr_Draw_Text_Outlined(17,124,"Items info: ",c_white);
 if global.use_controller = true {
@@ -643,7 +643,7 @@ draw_set_color(c_white);
 //shield bubble timer
 if instance_exists(obj_shieldbubble) and invincibility_time <= 0 {
 	draw_set_color(make_color_rgb(242,240,229));
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_bottom);
 	if obj_shieldbubble.destroy_time_live > 0 {
@@ -657,7 +657,7 @@ if instance_exists(obj_shieldbubble) and invincibility_time <= 0 {
 //invincibility timer
 if invincibility_time > 0 {
 	draw_set_color(make_color_rgb(242,240,229));
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_bottom);
 	scr_Draw_Text_Outlined(17,156-7,"Invincibility",pickup_invincibility.text_color);

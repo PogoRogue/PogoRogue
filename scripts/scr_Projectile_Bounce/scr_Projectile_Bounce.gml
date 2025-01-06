@@ -4,12 +4,12 @@ function scr_Projectile_Bounce(name_string){
 	//bounces
 	ground_below = false;
 	with obj_player {
-		if place_meeting(x,y+16,obj_ground) or place_meeting(x,y+16,obj_ground_oneway) and other.gun_name != "Puncher" {
+		if place_meeting(x,y+16,obj_ground) or place_meeting(x,y+16,obj_ground_oneway) and other.gun_name != "拳头枪" {
 			other.ground_below = true;
 		}
 	}
 	
-	if gun_name != "Missile Launcher" and gun_name != "Tracker Darts" {
+	if gun_name != "导弹发射器" and gun_name != "追踪飞镖" {
 		if ground_below = true and gun_name != name_string {
 			if ((place_meeting(x,y+vspd,obj_ground) and vspd < 0) and num_of_bounces > 0 ) and !(place_meeting(x,y,obj_ground)) {
 				while !place_meeting(x,y+sign(vspd),obj_ground) {
@@ -17,33 +17,33 @@ function scr_Projectile_Bounce(name_string){
 				}
 				vspd *= -bounce_amount;
 				num_of_bounces -= 1;
-				if (gun_name = "Grenade Launcher") {
+				if (gun_name = "手雷发射器") {
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 5;
 				}else if (gun_name != "The Portal" ) {
 					image_angle = point_direction(x,y,x+hspd,y+vspd);
 				}
-				if gun_name = "Bouncy Ball Blaster" {
+				if gun_name = "弹球枪" {
 					randomize();
 					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 					random_set_seed(global.seed);	
 				}
 			}else if (place_meeting(x,y+vspd,obj_ground) and vspd > 0 and num_of_bounces > 0 ) and !(place_meeting(x,y,obj_ground))
-			or (place_meeting(x,y+sign(vspd),obj_ground_oneway) and vspd > 0 and num_of_bounces > 0 and gun_name != "Puncher") and !(place_meeting(x,y,obj_ground_oneway)) { //top
-				while !place_meeting(x,y+sign(vspd),obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) and gun_name != "Puncher") {
+			or (place_meeting(x,y+sign(vspd),obj_ground_oneway) and vspd > 0 and num_of_bounces > 0 and gun_name != "拳头枪") and !(place_meeting(x,y,obj_ground_oneway)) { //top
+				while !place_meeting(x,y+sign(vspd),obj_ground) and (!place_meeting(x,y+sign(vspd),obj_ground_oneway) and gun_name != "拳头枪") {
 					y += sign(vspd);
 				}
 				vspd *= -bounce_amount;
 				num_of_bounces -= 1;
-				if (gun_name = "Grenade Launcher") {
+				if (gun_name = "手雷发射器") {
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 5;
 				}else if (gun_name != "The Portal" ) {
 					image_angle = point_direction(x,y,x+hspd,y+vspd);
 				}
-				if gun_name = "Bouncy Ball Blaster" {
+				if gun_name = "弹球枪" {
 					randomize();
 					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 					random_set_seed(global.seed);
@@ -59,7 +59,7 @@ function scr_Projectile_Bounce(name_string){
 				}
 				hspd *= -bounce_amount;
 				num_of_bounces -= 1;
-				if (gun_name = "Grenade Launcher") {
+				if (gun_name = "手雷发射器") {
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 3;
@@ -67,7 +67,7 @@ function scr_Projectile_Bounce(name_string){
 					image_angle = point_direction(x,y,x+hspd,y+vspd);
 				}
 				
-				if gun_name = "Bouncy Ball Blaster" {
+				if gun_name = "弹球枪" {
 					randomize();
 					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 					random_set_seed(global.seed);
@@ -81,7 +81,7 @@ function scr_Projectile_Bounce(name_string){
 				}
 				hspd *= -bounce_amount;
 				num_of_bounces -= 1;
-				if (gun_name = "Grenade Launcher") {
+				if (gun_name = "手雷发射器") {
 					audio_play_sound(snd_grenade_bounce, 0, false);
 					image_index = 1;
 					alarm[1] = 5;
@@ -89,7 +89,7 @@ function scr_Projectile_Bounce(name_string){
 					image_angle = point_direction(x,y,x+hspd,y+vspd);	
 				}
 				
-				if gun_name = "Bouncy Ball Blaster" {
+				if gun_name = "弹球枪" {
 					randomize();
 					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 					random_set_seed(global.seed);
@@ -105,19 +105,19 @@ function scr_Projectile_Bounce(name_string){
 				}
 				vspeed *= -bounce_amount;
 				num_of_bounces -= 1;
-				if gun_name = "Bouncy Ball Blaster" {
+				if gun_name = "弹球枪" {
 					randomize();
 					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 					random_set_seed(global.seed);	
 				}
 			}else if (place_meeting(x,y+vspeed,obj_ground) and vspeed > 0 and num_of_bounces > 0 ) and !(place_meeting(x,y,obj_ground))
-			or (place_meeting(x,y+sign(vspeed),obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0 and gun_name != "Puncher")  and !(place_meeting(x,y,obj_ground_oneway)){ //top
-				while !place_meeting(x,y+sign(vspeed),obj_ground) and (!place_meeting(x,y+sign(vspeed),obj_ground_oneway) and gun_name != "Puncher") {
+			or (place_meeting(x,y+sign(vspeed),obj_ground_oneway) and vspeed > 0 and num_of_bounces > 0 and gun_name != "拳头枪")  and !(place_meeting(x,y,obj_ground_oneway)){ //top
+				while !place_meeting(x,y+sign(vspeed),obj_ground) and (!place_meeting(x,y+sign(vspeed),obj_ground_oneway) and gun_name != "拳头枪") {
 					y += sign(vspeed);
 				}
 				vspeed *= -bounce_amount;
 				num_of_bounces -= 1;
-				if gun_name = "Bouncy Ball Blaster" {
+				if gun_name = "弹球枪" {
 					randomize();
 					audio_play_sound(choose(snd_bbb_bounce,snd_bbb_bounce2,snd_bbb_bounce3),0,false);
 					random_set_seed(global.seed);

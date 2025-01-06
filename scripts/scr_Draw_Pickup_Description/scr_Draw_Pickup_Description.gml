@@ -64,7 +64,7 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	if unlocked = true and !instance_exists(obj_item_swap) or instance_exists(obj_item_swap) /*and global.recycling = true*/ {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 	
 		//draw_sprite(spr_coin,0,xx-49+7,yy-97+23);
 		scr_Draw_Text_Outlined(xx-50,yy-97+23,item_cost,make_color_rgb(237,225,158)); //50 - 5
@@ -94,7 +94,7 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	//Powerup Description
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
-	draw_set_font(fnt_itemdescription2);
+	draw_set_font(global.lana);
 	scr_Draw_Text_Outlined(xx-72,yy-68,scr_Linebreak(item_description,28,99),c_white);
 	
 	//draw stats

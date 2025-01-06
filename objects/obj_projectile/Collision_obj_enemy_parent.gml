@@ -2,7 +2,7 @@
 //crit chance
 
 randomize();
-if gun_name != "Laser Gun" and gun_name != "Water Gun" {
+if gun_name != "量子冲天炮" and gun_name != "小黄鸭水枪" {
 	var crit_chance = irandom_range(1,100);
 }else {
 	var crit_chance = 0;
@@ -19,10 +19,10 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
     var laser_damage = 0.9; //apply damage buff differently for laser
 	var slime_damage = 0.7; //apply damage buff differently for slime
 	
-	if gun_name = "Sniper Rifle" {
+	if gun_name = "狙击枪" {
 		if !scr_In_Array(sniped_array,other) {
 			if(!other.is_dead) {
-				other.hp -= ((damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "Laser Gun" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "Slime Blaster" and global.damage_buff > 0))) * global.capitalist_damage) * other.bullet_defense * crit_dmg_mult;
+				other.hp -= ((damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "量子冲天炮" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "史莱姆发射器" and global.damage_buff > 0))) * global.capitalist_damage) * other.bullet_defense * crit_dmg_mult;
 				other.red_frames = 10;
 	
 				scr_Reload_On_Kill();
@@ -30,7 +30,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 			sniped = true;
 			sniped_array[array_length(sniped_array)] = other;
 			with obj_projectile {
-				if gun_name = "Sniper Rifle" {
+				if gun_name = "狙击枪" {
 					sniped_array = other.sniped_array;
 				}
 			}
@@ -38,10 +38,10 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
 			}
 		}
-	}else if gun_name = "Yo-yo" {
+	}else if gun_name = "悠悠球" {
 		if !scr_In_Array(yoyo_array,other) and retracted = false {
 			if(!other.is_dead) {
-				other.hp -= ((damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "Laser Gun" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "Slime Blaster" and global.damage_buff > 0))) * global.capitalist_damage) * other.bullet_defense * crit_dmg_mult;
+				other.hp -= ((damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "量子冲天炮" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "史莱姆发射器" and global.damage_buff > 0))) * global.capitalist_damage) * other.bullet_defense * crit_dmg_mult;
 				other.red_frames = 10;
 	
 				scr_Reload_On_Kill();
@@ -53,7 +53,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 		}
 		if !scr_In_Array(yoyo_array2,other) and retracted = true {
 			if(!other.is_dead) {
-				other.hp -= ((damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "Laser Gun" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "Slime Blaster" and global.damage_buff > 0))) * global.capitalist_damage) * other.bullet_defense * crit_dmg_mult;
+				other.hp -= ((damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "量子冲天炮" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "史莱姆发射器" and global.damage_buff > 0))) * global.capitalist_damage) * other.bullet_defense * crit_dmg_mult;
 				other.red_frames = 10;
 	
 				scr_Reload_On_Kill();
@@ -63,7 +63,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
 			}
 		}
-	}else if gun_name = "Puncher" {
+	}else if gun_name = "拳头枪" {
 		enemy_object = other;
 		if !scr_In_Array(enemies_array,enemy_object) {
 			array_resize(enemies_array,array_length(enemies_array)+1);
@@ -78,7 +78,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
 			}
 		}
-	}else if gun_name = "Plasma Gun" {
+	}else if gun_name = "等离子炮" {
 		enemy_object = other;
 		if !scr_In_Array(enemies_array,enemy_object) {
 			array_resize(enemies_array,array_length(enemies_array)+1);
@@ -90,7 +90,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
 			}
 		}
-	}else if gun_name = "Snow Cannon"  {
+	}else if gun_name = "雪球加农炮"  {
 		
 		enemy_object = other;
 		if !scr_In_Array(enemies_array,enemy_object) {
@@ -119,7 +119,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 				instance_create_depth(x - (hspd*2),y - (vspd*2),depth,obj_criticalhit);
 			}
 		}
-	}else if gun_name = "Magnetic Disks" or gun_name = "Balloon Gun" {
+	}else if gun_name = "磁力飞轮" or gun_name = "气球枪" {
 		enemy_object = other;
 		if !scr_In_Array(enemies_array,enemy_object) {
 			array_resize(enemies_array,array_length(enemies_array)+1);
@@ -132,7 +132,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 			}
 		}
 		
-		if gun_name = "Balloon Gun" and created = true {
+		if gun_name = "气球枪" and created = true {
 			alarm[0] = 1;
 		}
 	}else if gun_name = "Harpoon Helmet" and damage > 0 {
@@ -149,7 +149,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 		}
 	}else {
 		if(!other.is_dead) {
-			other.hp -= ((damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "Laser Gun" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "Slime Blaster" and global.damage_buff > 0))) * global.capitalist_damage) * other.bullet_defense * crit_dmg_mult;
+			other.hp -= ((damage + global.damage_buff - (global.damage_buff * laser_damage * (gun_name = "量子冲天炮" and global.damage_buff > 0)) - (global.damage_buff * slime_damage * (gun_name = "史莱姆发射器" and global.damage_buff > 0))) * global.capitalist_damage) * other.bullet_defense * crit_dmg_mult;
 			other.red_frames = 10;
 	
 			scr_Reload_On_Kill();
@@ -192,9 +192,9 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 		}
 	}
 	
-	if (destroy_on_impact) or (gun_name = "Missile Launcher") or (gun_name = "Tracker Darts") or (gun_name = "Bullet Blast") or (gun_name = "Javelins") {
+	if (destroy_on_impact) or (gun_name = "导弹发射器") or (gun_name = "追踪飞镖") or (gun_name = "Bullet Blast") or (gun_name = "标枪") {
 		alarm[0] = 1;
-		if (gun_name = "Tracker Darts") {
+		if (gun_name = "追踪飞镖") {
 			if dart_created = false {
 				var enemy = other;
 				audio_play_sound(snd_boss_hitscan,0,false);

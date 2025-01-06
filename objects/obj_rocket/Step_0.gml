@@ -34,7 +34,7 @@ if launched = true {
 	}
 
 	//missile
-	if (gun_name = "Missile Launcher") {
+	if (gun_name = "导弹发射器") {
 		//speed up
 		if speed < 8 {
 			speed += 8;	

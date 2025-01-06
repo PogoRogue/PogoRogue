@@ -28,7 +28,7 @@ if destroy_time != 0 {
 
 //specific conditions
 
-if (gun_name = "Bubble Gun") {
+if (gun_name = "泡泡枪") {
 	randomize();
 	spd += irandom_range(-4,0); //random speed for bubbles
 	random_set_seed(global.seed);
@@ -37,14 +37,14 @@ if (gun_name = "Bubble Gun") {
 	
 }
 
-if (gun_name = "Paintball Gun") {
+if (gun_name = "彩弹枪") {
 	with obj_player {
 		other.image_index = ((gun.bullets_per_bounce + max_ammo_buff) - gun.current_bullets);
 	}
 }
 
 
-if (gun_name = "Laser Gun") {
+if (gun_name = "量子冲天炮") {
 	if audio_is_playing(snd_laser) {
 		audio_stop_sound(snd_laser);
 	}
@@ -81,7 +81,7 @@ if (gun_name = "Laser Gun") {
 }
 
 //missile
-if (gun_name = "Missile Launcher") {
+if (gun_name = "导弹发射器") {
 	if spread_index = 0 {
 		sound = audio_play_sound(snd_rocketwhoosh,0,false);
 	}
@@ -98,7 +98,7 @@ if (gun_name = "Missile Launcher") {
 }
 
 //star sucker
-if (gun_name = "Star Sucker") {
+if (gun_name = "吸星者") {
 	suck_distance = 224;
 	init_angle = obj_player.angle;
 	x = obj_player.x + lengthdir_x(suck_distance,image_angle);
@@ -114,7 +114,7 @@ sniped = false;
 sniped_array = [];
 
 //sniper rifle
-if (gun_name = "Sniper Rifle") {
+if (gun_name = "狙击枪") {
 	laser_x = obj_player.x - x;
 	laser_y = obj_player.y - y;
 	full_sprite = spr_projectile_sniper_start_held;
@@ -148,7 +148,7 @@ if (gun_name = "Sniper Rifle") {
 }
 
 //slime blaster
-if (gun_name = "Slime Blaster") {
+if (gun_name = "史莱姆发射器") {
 	randomize();
 	spd += irandom_range(-4,0);
 	hspd = lengthdir_x(spd,angle);
@@ -161,14 +161,14 @@ yoyo_array = [];
 yoyo_array2 = []; //retract array
 
 //yo-yo
-if (gun_name = "Yo-yo") {
+if (gun_name = "悠悠球") {
 	yoyo_spd = 8 + (4 * global.strong_muscles) + (2 * (gun_level > 1)) + (4 * (gun_level > 2));
 	if !audio_is_playing(snd_yoyo1) {
 		audio_play_sound(snd_yoyo1,0,false);
 	}
 	yoyo_num = 0;
 	with obj_projectile {
-		if (gun_name = "Yo-yo") {
+		if (gun_name = "悠悠球") {
 			other.yoyo_num += 1;	
 		}
 	}
@@ -205,7 +205,7 @@ if (gun_name = "Yo-yo") {
 }
 
 //elinelins
-if (gun_name = "Javelins") {
+if (gun_name = "标枪") {
 	temp_charge = 0;
 	temp_charge_max = 9;
 	
@@ -226,12 +226,12 @@ if (gun_name = "Javelins") {
 	}
 }
 
-if gun_name = "Boomerangs" and spread_index = 0 {
+if gun_name = "回旋镖" and spread_index = 0 {
 	sound = audio_play_sound(snd_boomerangs,0,false);
 }
 
 attach_to_player = 0;
-if (gun_name = "Water Gun") {
+if (gun_name = "小黄鸭水枪") {
 	if !audio_is_playing(snd_watergun) {
 		//audio_play_sound(snd_watergun,0,false);	
 	}
@@ -262,7 +262,7 @@ if (gun_name = "Water Gun") {
 	used_as_closest_object = false;
 	first_object = false;
 	with obj_projectile {
-		if (gun_name = "Water Gun" and water_index = other.water_index) {
+		if (gun_name = "小黄鸭水枪" and water_index = other.water_index) {
 			if bullet_num = other.bullet_num + 1 {
 				other.closest_water_object = id;
 				angle2 = point_direction(other.x,other.x,x,y);
@@ -349,7 +349,7 @@ if (gun_name = "The Portal") {
 	image_angle = 0;
 }
 
-if (gun_name = "Puncher") {
+if (gun_name = "拳头枪") {
 	maxspd_frames = 5;
 	decrease_spd = 0.9;
 	still_time = 60;
@@ -378,8 +378,8 @@ if (gun_name = "Puncher") {
 	destroyable = false;
 }
 
-if (gun_name = "Six Shooter") or (gun_name = "Seven Shooter") or (gun_name = "Eight Shooter") 
-or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Eleven Shooter") {
+if (gun_name = "维和者") or (gun_name = "维和者") or (gun_name = "维和者") 
+or (gun_name = "维和者") or (gun_name = "维和者") or (gun_name = "维和者") {
 	randomize();
 	if obj_player.sixshooter_gun.inaccuracy = 5 {
 		random_snd = choose(snd_sixshooter1,snd_sixshooter2,snd_sixshooter3,snd_sixshooter4,snd_sixshooter5,snd_sixshooter6);
@@ -401,12 +401,12 @@ or (gun_name = "Nine Shooter") or (gun_name = "Ten Shooter") or (gun_name = "Ele
 }
 
 //destroy projectile after 30 seconds if still exists
-if (gun_name != "Balloon Gun") {
+if (gun_name != "气球枪") {
 	alarm[2] = 1800;
 }
 
 //Plasma Gun
-if (gun_name = "Plasma Gun") {
+if (gun_name = "等离子炮") {
 	//depth = obj_player.depth+1;
 	temp_charge = 0;
 	temp_charge_max = 9;
@@ -442,12 +442,12 @@ if (gun_name = "Plasma Gun") {
 	create_trail_num = 0;
 }
 
-if gun_name = "Bouncy Ball Blaster" {
+if gun_name = "弹球枪" {
 	//mask_index = spr_projectile_bouncyball_mask;
 }
 
 //Snow Cannon
-if (gun_name = "Snow Cannon") {
+if (gun_name = "雪球加农炮") {
 	//damage = 0;
 	init_damage = damage;
 	colliding_with_enemy = false;
@@ -455,7 +455,7 @@ if (gun_name = "Snow Cannon") {
 }
 
 //Balloon Gun
-if (gun_name = "Balloon Gun") {
+if (gun_name = "气球枪") {
 	randomize();
 	sprite_index = choose(spr_projectile_balloon,spr_projectile_balloon_orange,spr_projectile_balloon_yellow,
 	spr_projectile_balloon_green,spr_projectile_balloon_blue,spr_projectile_balloon_pink);
@@ -500,7 +500,7 @@ if (gun_name = "Balloon Gun") {
 	}
 }
 
-if (gun_name = "Magnetic Disks") {
+if (gun_name = "磁力飞轮") {
 	summoned = false;
 	stuck = false;
 	summon_speed = 0;
@@ -521,7 +521,7 @@ if (gun_name = "Magnetic Disks") {
 }
 
 //missile
-if (gun_name = "Tracker Darts") {
+if (gun_name = "追踪飞镖") {
 	if spread_index = 0 {
 		//sound = audio_play_sound(snd_rocketwhoosh,0,false);
 	}
@@ -540,15 +540,15 @@ if (gun_name = "Tracker Darts") {
 
 free = true //dont bounce if colliding w/ ground on spawn
 
-if gun_name != "Plasma Gun" {
-	scr_Projectile_Bounce("Javelins");
-	scr_Projectile_Bounce("Six Shooter");
-	scr_Projectile_Bounce("Seven Shooter");
-	scr_Projectile_Bounce("Eight Shooter");
-	scr_Projectile_Bounce("Nine Shooter");
-	scr_Projectile_Bounce("Ten Shooter");
-	scr_Projectile_Bounce("Eleven Shooter");
-	scr_Projectile_Bounce("Puncher");
+if gun_name != "等离子炮" {
+	scr_Projectile_Bounce("标枪");
+	scr_Projectile_Bounce("维和者");
+	scr_Projectile_Bounce("维和者");
+	scr_Projectile_Bounce("维和者");
+	scr_Projectile_Bounce("维和者");
+	scr_Projectile_Bounce("维和者");
+	scr_Projectile_Bounce("维和者");
+	scr_Projectile_Bounce("拳头枪");
 }else {
 	destroyable = true;	
 }

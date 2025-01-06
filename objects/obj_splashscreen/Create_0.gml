@@ -12,6 +12,10 @@ global.player_starting_y = 1136;
 global.music_volume_multiplier = 1;
 global.last_item_menu = 1;
 
+font_add_enable_aa(false);
+global.uranus = font_add("Uranus.ttf", 11, false, false, 32, 128);
+global.lana = font_add("LanaPixel.ttf", 8, false, false, 32, 128);
+
 /*
 steam_clear_achievement("ACHIEVEMENT_3D");
 steam_clear_achievement("ACHIEVEMENT_BANDIT");

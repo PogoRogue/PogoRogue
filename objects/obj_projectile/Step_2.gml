@@ -1,6 +1,6 @@
 /// @description laser
 //too many unique properties of the laser compared to other projectiles so I had to make a separate event
-if (gun_name = "Laser Gun" ) {
+if (gun_name = "量子冲天炮" ) {
 	
 	image_angle = obj_player.image_angle-90;
 	x = obj_player.x +laser_x;
@@ -90,7 +90,7 @@ if (gun_name = "Laser Gun" ) {
 		}
 	}
 }
-if (gun_name = "Sniper Rifle" ) {
+if (gun_name = "狙击枪" ) {
 	
 	//image_angle = obj_player.image_angle-90;
 	x = obj_player.x +laser_x;
@@ -153,7 +153,7 @@ if (gun_name = "Sniper Rifle" ) {
 	}
 }
 
-if gun_name = "Water Gun" {
+if gun_name = "小黄鸭水枪" {
 	if (attach_to_player > 0) {
 		x = obj_player.x + lengthdir_x(6,obj_player.angle-90);
 		y = obj_player.y + lengthdir_y(6,obj_player.angle-90);

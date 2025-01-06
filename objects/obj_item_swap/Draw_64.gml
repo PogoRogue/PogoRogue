@@ -17,7 +17,7 @@ if global.use_controller = true {
 	select_sprite = select_sprite_keyboard;
 }
 //get current item text
-draw_set_font(fnt_itemdescription2);
+draw_set_font(global.lana);
 
 for(i = 0; i < num_of_slots; i++) {
 	if num_of_slots = 3 {
@@ -67,7 +67,7 @@ for(i = 0; i < num_of_slots; i++) {
 		scr_Draw_Text_Outlined(x-96+(64*i)-x_adjust,yy-21-16,scr_Linebreak(item3_name,12,99),c_white);
 	}
 	
-	draw_set_font(fnt_itemdescription2);
+	draw_set_font(global.lana);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
 	
@@ -145,7 +145,7 @@ for(i = 0; i < num_of_slots; i++) {
 			}else if num_of_slots = 4 {
 				scr_Draw_Text_Outlined(x-96+(64*i),yy+21-16,"E",c_white);
 			}
-			draw_set_font(fnt_itemdescription2);
+			draw_set_font(global.lana);
 		}
 	}
 	

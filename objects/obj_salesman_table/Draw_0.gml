@@ -70,7 +70,7 @@ if (colliding) and being_used = false {
 				
 					if global.num_of_coins >= passives_array[buff_selected].item_cost and passives_array[buff_selected].sold_out = false {
 						//draw select button
-						draw_set_font(fnt_itemdescription2);
+						draw_set_font(global.lana);
 						draw_set_halign(fa_center);
 						if global.use_controller = true {
 							draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[18][0]),2,passives_array_x[buff_selected],y-20);
@@ -131,7 +131,7 @@ if usable = true {
 		
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 		if other.buff_3_number > 1 {
 			scr_Draw_Text_Outlined(x-6,y+4,"x" + string(other.buff_3_number),c_white);
 		}

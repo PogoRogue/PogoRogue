@@ -15,8 +15,8 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	}
 	
 	//special cases
-	if item_name = "Grenade Launcher" {
-		item_name = "Grenade\nLauncher"
+	if item_name = "手雷发射器" {
+		//item_name = "Grenade\nLauncher"
 	}
 	
 	//upgraded weapons
@@ -45,7 +45,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	if unlocked = true and !instance_exists(obj_item_swap) or instance_exists(obj_item_swap) /*and global.recycling = true*/ {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_itemdescription2);
+		draw_set_font(global.lana);
 	
 		//draw_sprite(spr_coin,0,xx-49+7,yy-105+15);
 		scr_Draw_Text_Outlined(xx-50,yy-101+15,item_cost,make_color_rgb(237,225,158)); //50 - 5
@@ -54,19 +54,19 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	//"Weapon" text
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	draw_set_font(fnt_item_popup);
+	draw_set_font(global.uranus);
 	if weapon_num = 1 {
-		scr_Draw_Text_Outlined(xx,yy-128,"Weapon 1",c_white);
+		scr_Draw_Text_Outlined(xx,yy-128,"武器1",c_white);
 	}else if weapon_num = 2 {
-		scr_Draw_Text_Outlined(xx,yy-128,"Weapon 2",c_white);
+		scr_Draw_Text_Outlined(xx,yy-128,"武器2",c_white);
 	}else if weapon_num = 3 {
-		scr_Draw_Text_Outlined(xx,yy-128,"Weapon 3",c_white);
+		scr_Draw_Text_Outlined(xx,yy-128,"武器3",c_white);
 	}
 	
 	//Weapon Name
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	var white = make_color_rgb(242,240,229);
 	
 	scr_Draw_Text_Outlined(xx+30,yy-105,scr_Linebreak(item_name  + plus_string,16,99),c_white);
@@ -74,7 +74,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	//Weapon Description
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
-	draw_set_font(fnt_itemdescription2);
+	draw_set_font(global.lana);
 	scr_Draw_Text_Outlined(xx-72,yy-80,scr_Linebreak(item_description,28,99),c_white);
 	
 	//Get Weapon Stats
@@ -86,163 +86,99 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	
 	if unlocked = true {
 		
-		line_1 = "Bullets per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		line_1 = "弹容量: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 	
 		//special conditions
 		
-		if weapon._name = "Laser Gun" or weapon._name = "Plasma Gun" {
+		if weapon._name = "量子冲天炮" or weapon._name = "等离子炮" {
 			line_1 = "Time per bounce: " + string(weapon.bullets_per_bounce/60) + "s";// + " (Max " + string((weapon.init_bullets_per_bounce + weapon.max_added_bullets)/60) + "s)";
 		}
 		
-		if weapon._name = "Boomerangs" {
-			line_1 = "Boomerangs: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		if weapon._name = "回旋镖" {
+			line_1 = "爆炸范围: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 		
-		if weapon._name = "Snow Cannon" {
-			line_1 = "Snowballs per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Magnetic Disks" {
-			line_1 = "Disks per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Missile Launcher" {
-			line_1 = "Missiles per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Balloon Gun" {
-			line_1 = "Full balloons per bounce: " + string(round(weapon.bullets_per_bounce/20));// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Tracker Darts" {
-			line_1 = "Darts per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Yo-yo" {
-			line_1 = "Yo-yos: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Javelins" {
-			line_1 = "Javelins per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Shotgun" {
-			line_1 = "Shots per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Slime Blaster" {
-			line_1 = "Shots per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Grenade Launcher" {
-			line_1 = "Grenades per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Star Sucker" {
-			line_1 = "Sucks per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Bubble Gun" {
-			line_1 = "Bubbles per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Puncher" {
-			line_1 = "Punches per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Paintball Gun" {
-			line_1 = "Paintballs per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
-		}
-		
-		if weapon._name = "Bouncy Ball Blaster" {
-			line_1 = "Bouncy balls per bounce: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
+		if weapon._name = "悠悠球" {
+			line_1 = "弹容量: " + string(weapon.bullets_per_bounce);// + " (Max " + string(weapon.init_bullets_per_bounce + weapon.max_added_bullets) + ")";
 		}
 	
 		//additional damage buff
 		if global.damage_buff > 0 {
 			added_damage = " + " + string(global.damage_buff);
 			//special conditions
-			if weapon._name = "Laser Gun" {
+			if weapon._name = "量子冲天炮" {
 				added_damage = " + " + string(global.damage_buff - (global.damage_buff * 0.9));
 			}
 		}else {
 			added_damage = "";
 		}
 	
-		line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + added_damage;
+		line_2 = "单发伤害: " + string(weapon.ammo[0].damage) + added_damage;
 	
 		//special conditions
-		if weapon._name = "Laser Gun" {
+		if weapon._name = "量子冲天炮" { //laser
 			line_2 = "Damage per second: " + string(weapon.ammo[0].damage * 60) + added_damage;
-		}else if weapon._name = "Boomerangs" or weapon._name = "Yo-yo" {
-			line_2 = "Damage per hit: " + string(weapon.ammo[0].damage) + added_damage;
-		}else if weapon._name = "Javelins" {
-			line_2 = "Damage per javelin: " + string(weapon.ammo[0].damage) + "-16" + added_damage;
-		}else if weapon._name = "Bouncy Ball Blaster" {
-			line_2 = "Damage per bullet: " + string(weapon.ammo[0].damage) + "-" + string(weapon.ammo[0].damage*4) + added_damage;
-		}else if weapon._name = "Plasma Gun" {
-			line_2 = "Damage per orb: " + string(weapon.ammo[0].damage) + "-24" + added_damage;
-		}else if weapon._name = "Snow Cannon" {
-			line_2 = "Damage per snowball: " + string(weapon.ammo[0].damage) + "+" + added_damage;
-		}else if weapon._name = "Balloon Gun" {
+		}else if weapon._name = "回旋镖" or weapon._name = "悠悠球" { //boomerang/yoyo
+			line_2 = "单发伤害: " + string(weapon.ammo[0].damage) + added_damage;
+		}else if weapon._name = "弹球枪" { //bbb
+			line_2 = "单发伤害: " + string(weapon.ammo[0].damage) + "-" + string(weapon.ammo[0].damage*4) + added_damage;
+		}else if weapon._name = "气球枪" { //balloon
 			if weapon.level = 1 {
-				line_2 = "Damage per balloon: " + string(weapon.ammo[0].damage) + "-8" + added_damage;
+				line_2 = "单发伤害: " + string(weapon.ammo[0].damage) + "-8" + added_damage;
 			}else if weapon.level = 2 {
-				line_2 = "Damage per balloon: " + string(weapon.ammo[0].damage) + "-12" + added_damage;
+				line_2 = "单发伤害: " + string(weapon.ammo[0].damage) + "-12" + added_damage;
 			}else if weapon.level >= 3 {
-				line_2 = "Damage per balloon: " + string(weapon.ammo[0].damage) + "-16" + added_damage;
+				line_2 = "单发伤害: " + string(weapon.ammo[0].damage) + "-16" + added_damage;
 			}
-		}else if weapon._name = "Magnetic Disks" {
-			line_2 = "Damage per disk: " + string(weapon.ammo[0].damage) + added_damage;
-		}else if weapon._name = "Tracker Darts" {
-			line_2 = "Damage per dart: " + string(weapon.ammo[0].damage) + added_damage;
+		}else if weapon._name = "磁力飞轮" { //disks
+			line_2 = "单发伤害: " + string(weapon.ammo[0].damage) + added_damage;
 		}
 	
 		if weapon.full_auto = true {
-			var not_sixshooter = (weapon._name != "Six Shooter"
-			and weapon._name != "Seven Shooter" and weapon._name != "Eight Shooter"
-			and weapon._name != "Nine Shooter" and weapon._name != "Ten Shooter"
-			and weapon._name != "Eleven Shooter");
-			line_3 = "Auto Fire: Yes";
+			var not_sixshooter = (weapon._name != "维和者"
+			and weapon._name != "维和者" and weapon._name != "维和者"
+			and weapon._name != "维和者" and weapon._name != "维和者"
+			and weapon._name != "维和者");
+			line_3 = "连射: 是";
 			if weapon.ammo[0].firerate_end < 5 and not_sixshooter {
-				line_4 = "Fire Rate: Very High";
+				line_4 = "射速: 极高";
 			}else if weapon.ammo[0].firerate_end < 8 and not_sixshooter{
-				line_4 = "Fire Rate: High";
+				line_4 = "射速: 高";
 			}else if weapon.ammo[0].firerate_end < 15 and not_sixshooter {
-				line_4 = "Fire Rate: Medium";
+				line_4 = "射速: 中";
 			}else if not_sixshooter{
-				if weapon._name != "Burst Rifle" {
-					line_4 = "Fire Rate: Low";
+				if weapon._name != "脉冲步枪" { //burst
+					line_4 = "射速: 低";
 				}else {
-					line_4 = "Fire Rate: Medium";
+					line_4 = "射速: 中";
 				}
 			}else {
-				line_4 = "Shoot: Tap, or burst if held.";
+				line_4 = "开火: 按下点射, 长按连射";
 			}
 		}else {
-			line_3 = "Auto Fire: No";	
-			line_4 = "Shoot: On Press";
-			if weapon._name = "Javelins" or weapon._name = "Plasma Gun"
-			or weapon._name = "Snow Cannon" or weapon._name = "Balloon Gun" {
-				line_4 = "Shoot: On Release";
-			}else if weapon._name = "Yo-yo" {
-				line_4 = "Shoot: Press and Hold";
-			}else if weapon._name = "Laser Gun" {
-				line_4 = "Shoot: Press and Hold";
+			line_3 = "连射: 否";	
+			line_4 = "开火: 按下";
+			if weapon._name = "标枪" or weapon._name = "等离子炮" //jav/plasma
+			or weapon._name = "雪球加农炮" or weapon._name = "气球枪" { //snow/balloon
+				line_4 = "开火: 按下松开";
+			}else if weapon._name = "悠悠球" { //yoyo
+				line_4 = "开火: 长按";
+			}else if weapon._name = "量子冲天炮" { //laser
+				line_4 = "开火: 长按";
 			}
 		}
 	}else {
-		var line_1 = "Bullets per bounce: ???"; //bullets per bounce
-		var line_2 = "Damage: ???"; //damage per bullet
-		var line_3 = "Auto Fire: ???"; //auto fire? y/n
-		var line_4 = "Fire Rate: ???"; //fire rate	
+		var line_1 = "弹容量: ???"; //bullets per bounce
+		var line_2 = "单发伤害: ???"; //damage per bullet
+		var line_3 = "连射: ???"; //auto fire? y/n
+		var line_4 = "射速: ???"; //fire rate	
 	}
 	
 	//draw stats
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	scr_Draw_Text_Outlined(xx+3,yy+7,line_1,c_white);
-	scr_Draw_Text_Outlined(xx+3,yy+31,line_2,c_white);
-	scr_Draw_Text_Outlined(xx+3,yy+55,line_3,c_white);
-	scr_Draw_Text_Outlined(xx+3,yy+79,line_4,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+7+2,line_1,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+31+2,line_2,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+55+2,line_3,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+79+2,line_4,c_white);
 }
