@@ -8,6 +8,6 @@ if instance_exists(speechbubble_obj) {
 	
 	
 	if colliding {
-		scr_Draw_Input_Prompt(x+4*image_xscale,y-43,6,"Talk",make_color_rgb(242,240,229));	
+		scr_Draw_Input_Prompt(x+4*image_xscale,y-43,6,"交谈",make_color_rgb(242,240,229));	
 	}
 }

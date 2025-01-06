@@ -94,7 +94,7 @@ if being_used = true {
 		var arrow_x = x;	
 	}
 	if !(select_x = 0 and gun_1_bought = true) and !(select_x = 1 and gun_2_bought = true) and !(select_x = 2 and gun_3_bought = true)  {
-		scr_Draw_Input_UI(arrow_x,bbox_top+4,18,0,fnt_itemdescription2,fa_center,fa_middle);
+		scr_Draw_Input_UI(arrow_x,bbox_top+4,18,0,global.lana,fa_center,fa_middle);
 	}
 	draw_set_font(global.lana);
 	

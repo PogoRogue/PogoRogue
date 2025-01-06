@@ -89,7 +89,7 @@ if select = 1 {
 		}
 	}
 	
-	scr_Draw_Input_Prompt(center_x,(128+5*60)-18,19,"Back",make_color_rgb(180,82,82));
+	scr_Draw_Input_Prompt(center_x,(128+5*60)-18,19,"返回",make_color_rgb(180,82,82));
 }
 
 //ACTIVES
@@ -112,7 +112,7 @@ if select = 2 {
 					scr_Draw_Text_Outlined(center_x-32+2,yy+64,"Unequip",c_white);
 					//draw_sprite_ext(spr_pickup_empty,2,center_x-32+2,yy+46,1,1,0,c_white,0.75);
 				}
-				scr_Draw_Input_UI(center_x-32+2,yy+76,18,0,fnt_itemdescription2,fa_center,fa_center);
+				scr_Draw_Input_UI(center_x-32+2,yy+76,18,0,global.lana,fa_center,fa_center);
 			}else if synergy_slot_x = 2 {
 				draw_sprite(spr_itemmenu_pickup_slot_synergy,5,center_x,yy);
 				if global.synergy_slot_equipped2 = false {
@@ -121,7 +121,7 @@ if select = 2 {
 					scr_Draw_Text_Outlined(center_x+32+2,yy+64,"Unequip",c_white);
 					//draw_sprite_ext(spr_pickup_empty,2,center_x+32+2,yy+46,1,1,0,c_white,0.75);
 				}
-				scr_Draw_Input_UI(center_x+32+2,yy+76,18,0,fnt_itemdescription2,fa_center,fa_center);
+				scr_Draw_Input_UI(center_x+32+2,yy+76,18,0,global.lana,fa_center,fa_center);
 			}
 			if global.parent_synergy1.is_synergy = true {
 				draw_sprite_ext(global.parent_synergy1.base_item_sprite_1,3,center_x-32+2,yy+46,1,1,0,c_white,1);
@@ -168,7 +168,7 @@ if select = 2 {
 						scr_Draw_Text_Outlined(xx1-12-32+2,yy+64,"Unequip",c_white);
 						//draw_sprite_ext(spr_pickup_empty,2,xx1-12-32+2,yy+46,1,1,0,c_white,0.75);
 					}
-					scr_Draw_Input_UI(xx1-12-32+2,yy+76,18,0,fnt_itemdescription2,fa_center,fa_center);
+					scr_Draw_Input_UI(xx1-12-32+2,yy+76,18,0,global.lana,fa_center,fa_center);
 				}
 			}else if synergy_slot_x = 2 {
 				draw_sprite(spr_itemmenu_pickup_slot_synergy,5,xx1-12,yy);
@@ -179,7 +179,7 @@ if select = 2 {
 						scr_Draw_Text_Outlined(xx1-12+32+2,yy+64,"Unequip",c_white);
 						//draw_sprite_ext(spr_pickup_empty,2,xx1-12+32+2,yy+46,1,1,0,c_white,0.75);
 					}
-					scr_Draw_Input_UI(xx1-12+32+2,yy+76,18,0,fnt_itemdescription2,fa_center,fa_center);
+					scr_Draw_Input_UI(xx1-12+32+2,yy+76,18,0,global.lana,fa_center,fa_center);
 				}
 			}else if synergy_slot_x = 3 {
 				draw_sprite(spr_itemmenu_pickup_slot_synergy,4,xx2+12,yy);
@@ -190,7 +190,7 @@ if select = 2 {
 						scr_Draw_Text_Outlined(xx2+12-32+2,yy+64,"Unequip",c_white);
 						//draw_sprite_ext(spr_pickup_empty,2,xx2+12-32+2,yy+46,1,1,0,c_white,0.75);
 					}
-					scr_Draw_Input_UI(xx2+12-32+2,yy+76,18,0,fnt_itemdescription2,fa_center,fa_center);
+					scr_Draw_Input_UI(xx2+12-32+2,yy+76,18,0,global.lana,fa_center,fa_center);
 				}
 			}else if synergy_slot_x = 4 {
 				draw_sprite(spr_itemmenu_pickup_slot_synergy,5,xx2+12,yy);
@@ -201,7 +201,7 @@ if select = 2 {
 						scr_Draw_Text_Outlined(xx2+12+32+2,yy+64,"Unequip",c_white);
 						//draw_sprite_ext(spr_pickup_empty,2,xx2+12+32+2,yy+46,1,1,0,c_white,0.75);
 					}
-					scr_Draw_Input_UI(xx2+12+32+2,yy+76,18,0,fnt_itemdescription2,fa_center,fa_center);
+					scr_Draw_Input_UI(xx2+12+32+2,yy+76,18,0,global.lana,fa_center,fa_center);
 				}
 			}
 		}
@@ -259,12 +259,12 @@ if select = 2 {
 		}
 	}
 	if num_of_pickups > 1 {
-		scr_Draw_Input_Prompt(center_x,yy+40,19,"Back",make_color_rgb(180,82,82));
+		scr_Draw_Input_Prompt(center_x,yy+40,19,"返回",make_color_rgb(180,82,82));
 	}else if num_of_pickups = 1 { 
 		if pickup_1.synergy_equipped = false {
-			scr_Draw_Input_Prompt(center_x,yy+40,19,"Back",make_color_rgb(180,82,82));
+			scr_Draw_Input_Prompt(center_x,yy+40,19,"返回",make_color_rgb(180,82,82));
 		}else {
-			scr_Draw_Input_Prompt(center_x,yy+88,19,"Back",make_color_rgb(180,82,82));
+			scr_Draw_Input_Prompt(center_x,yy+88,19,"返回",make_color_rgb(180,82,82));
 		}
 	}
 }
@@ -360,6 +360,6 @@ if select = 3 {
 		}
 	}
 	if num_of_weapons >= 1 {
-		scr_Draw_Input_Prompt(center_x,yy+112,19,"Back",make_color_rgb(180,82,82));
+		scr_Draw_Input_Prompt(center_x,yy+112,19,"返回",make_color_rgb(180,82,82));
 	}
 }

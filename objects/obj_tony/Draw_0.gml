@@ -7,6 +7,6 @@ if instance_exists(speechbubble_obj) {
 	draw_sprite(spr_tony_nametag,0,x,y-27);
 	
 	if colliding {
-		scr_Draw_Input_Prompt(x,y-47,6,"Talk",make_color_rgb(242,240,229));	
+		scr_Draw_Input_Prompt(x,y-47,6,"交谈",make_color_rgb(242,240,229));	
 	}
 }

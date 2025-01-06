@@ -24,7 +24,10 @@ if sprite_index = player_sprite {
 }
 
 //hat offset
-if skin_num = 1 {
+if skin_num = 0 {
+	text_offset = 1;
+	popup_offset = 9;
+}else if skin_num = 1 {
 	text_offset = 3;
 	popup_offset = 10;
 }else if skin_num = 2 {
@@ -44,5 +47,5 @@ if skin_num = 1 {
 	popup_offset = 9;
 }else {
 	text_offset = 1;
-	popup_offset = 0;
+	popup_offset = 9;
 }

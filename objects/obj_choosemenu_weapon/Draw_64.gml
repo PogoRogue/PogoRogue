@@ -78,7 +78,7 @@ for (i = 0; i < array_length(all_weapons); i++) {
 }
 
 if test_mode = true {
-	scr_Draw_Input_Prompt(center_x,340+52,19,"Back",make_color_rgb(180,82,82));
+	scr_Draw_Input_Prompt(center_x,340+52,19,"返回",make_color_rgb(180,82,82));
 }else {
-	scr_Draw_Input_Prompt(center_x,340+52-146,19,"Back",make_color_rgb(180,82,82));
+	scr_Draw_Input_Prompt(center_x,340+52-146,19,"返回",make_color_rgb(180,82,82));
 }

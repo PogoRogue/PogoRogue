@@ -19,6 +19,6 @@ if instance_exists(speechbubble_obj) {
 	draw_sprite(spr_shopkeeper_nametag,0,x,y-60+y_offset);
 	
 	if colliding {
-		scr_Draw_Input_Prompt(x,y-76,6,"Talk",make_color_rgb(242,240,229));	
+		scr_Draw_Input_Prompt(x,y-76,6,"交谈",make_color_rgb(242,240,229));	
 	}
 }

@@ -156,7 +156,7 @@ for (i = 0; i < 24; i++) {
 }
 
 //Draw number of items found
-draw_set_font(fnt_combo2);
+draw_set_font(global.uranus);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 if select = 1 {
@@ -166,4 +166,4 @@ if select = 1 {
 }else {
 	var y_text_offset = 70;
 }
-scr_Draw_Text_Outlined(room_width/2,416-y_text_offset,string(total_items_unlocked) + "/" + string(array_length(global.all_buffs) + array_length(global.all_weapons_list) + array_length(global.all_pickups_list)) + " Items Found",make_color_rgb(237,225,158));
+scr_Draw_Text_Outlined(room_width/2,416-y_text_offset,"已发现的物品: " + string(total_items_unlocked) + "/" + string(array_length(global.all_buffs) + array_length(global.all_weapons_list) + array_length(global.all_pickups_list)),make_color_rgb(237,225,158));

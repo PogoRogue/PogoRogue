@@ -31,7 +31,7 @@ if colliding = true and unlocked = true {
 		draw_set_color(make_color_rgb(33,33,35));
 		//draw interact button
 		if global.use_controller = true {
-			scr_Draw_Text_Outlined(x+10,y-(52+14)-text_offset-125+popup_offset,"Swap",make_color_rgb(237,225,158));
+			scr_Draw_Text_Outlined(x+10,y-(52+15)-text_offset-125+popup_offset,"切换",make_color_rgb(237,225,158));
 			draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[6][0]),0,x-11,y-(56+14)-text_offset-125+popup_offset);
 		}else {
 			var keyboard_array_value = global.keyboard_array[6][0];
@@ -39,14 +39,14 @@ if colliding = true and unlocked = true {
 			
 			if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
 				if is_string(keyboard_text) {
-					scr_Draw_Text_Outlined(x,y-(52+14)-text_offset-125+popup_offset,string(keyboard_text) + " Swap",make_color_rgb(237,225,158));
+					scr_Draw_Text_Outlined(x,y-(52+15)-text_offset-125+popup_offset,string(keyboard_text) + " 切换",make_color_rgb(237,225,158));
 				}else {
-					scr_Draw_Text_Outlined(x+10,y-(52+14)-text_offset+popup_offset,"Swap",make_color_rgb(237,225,158));
+					scr_Draw_Text_Outlined(x+10,y-(52+15)-text_offset+popup_offset,"切换",make_color_rgb(237,225,158));
 					draw_sprite(keyboard_text,0,x-11,y-(56+14)-text_offset-125+popup_offset);
 				}
 			}else {
 				var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
-				scr_Draw_Text_Outlined(x+10,y-(52+14)-text_offset-125+popup_offset,"Swap",make_color_rgb(237,225,158));
+				scr_Draw_Text_Outlined(x+10,y-(52+15)-text_offset-125+popup_offset,"切换",make_color_rgb(237,225,158));
 				draw_sprite(mouse_sprite,0,x-11,y-(56+14)-text_offset-125+popup_offset);
 			}
 		}

@@ -48,7 +48,8 @@ if global.combo > 0 {
 			}else {
 				temp_text_color = other.text_color;
 			}
-			scr_Draw_Text_Outlined_Transformed(x + lengthdir_x(distance+5,angle+90),y + lengthdir_y(distance+5,angle+90),"x" + string(global.combo) + " Combo",temp_text_color,other.combometer_scale,other.combometer_scale,angle,1);
+			draw_set_font(global.uranus);
+			scr_Draw_Text_Outlined_Transformed(x + lengthdir_x(distance+5,angle+90),y + lengthdir_y(distance+5,angle+90),"x" + string(global.combo) + " 连击",temp_text_color,other.combometer_scale,other.combometer_scale,angle,1);
 			//draw_text_transformed(x + lengthdir_x(distance+5,angle+90),y + lengthdir_y(distance+5,angle+90),"x" + string(global.combo) + " Combo",other.combometer_scale,other.combometer_scale,angle);
 		}	
 	}

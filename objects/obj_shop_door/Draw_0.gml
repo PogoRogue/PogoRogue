@@ -11,13 +11,13 @@ if (colliding) and global.draw_ui {
 	var temp_x_offset = 0;
 	if obj_player.state != obj_player.state_shop_portal {
 		if room = room_shop {
-			enter_exit_text = "Exit";
+			enter_exit_text = "出口";
 			temp_x_offset = 4;
-			scr_Draw_Input_UI(x,bbox_top+20,6,0,fnt_itemdescription2,fa_center,fa_center);
+			scr_Draw_Input_UI(x,bbox_top+20,6,0,global.lana,fa_center,fa_center);
 		}else {
-			enter_exit_text = "Enter";	
+			enter_exit_text = "进入";	
 			temp_x_offset = 0;
-			scr_Draw_Input_Prompt(x,bbox_top+20,6,"Enter",make_color_rgb(242,240,229));
+			scr_Draw_Input_Prompt(x,bbox_top+20,6,"进入",make_color_rgb(242,240,229));
 		}
 	}
 	

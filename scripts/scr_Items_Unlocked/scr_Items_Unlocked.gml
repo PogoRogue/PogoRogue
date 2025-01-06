@@ -150,7 +150,7 @@ function scr_Items_Unlocked(){
 	global.skins_unlocked_array = [global.skins_unlocked_1,global.skins_unlocked_2,global.skins_unlocked_3,global.skins_unlocked_4,
 									global.skins_unlocked_5,global.skins_unlocked_6];
 									
-	global.skins_names = ["Rogo","KunKun","Nona","Dogo","Robo","Bandit","3D"];
+	global.skins_names = ["罗戈","琨琨","尼可","道格","罗伯","浪客","提可"];
 	global.howtounlock_array = ["Defeat 2 bosses in one run to unlock!","Max out your hearts (10+5) to unlock!","Discover every weapon to unlock!","Beat the game to unlock!","Achieve a combo of 50+ to unlock!","Defeat a boss to unlock!"];
 
 	//save values

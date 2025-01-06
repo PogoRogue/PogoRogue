@@ -74,5 +74,5 @@ if controller = false {
 			}
 		}
 	}
-	scr_Draw_Input_Prompt(center_x,340,19,"Back",make_color_rgb(180,82,82));
+	scr_Draw_Input_Prompt(center_x,340,19,"返回",make_color_rgb(180,82,82));
 }

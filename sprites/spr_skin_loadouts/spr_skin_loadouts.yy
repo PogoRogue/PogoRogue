@@ -25,6 +25,7 @@
   "height":120,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"9a6542b6-a316-4e87-8f81-0c52966ba389","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"9a6542b6-a316-4e87-8f81-0c52966ba389","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"5b4f631c-b6ba-406b-bd00-c47ba5622b82","blendMode":0,"displayName":"Bubble","isLocked":false,"name":"5b4f631c-b6ba-406b-bd00-c47ba5622b82","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_skin_loadouts",

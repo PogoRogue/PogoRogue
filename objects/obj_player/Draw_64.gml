@@ -617,24 +617,25 @@ if (global.show_passives = true) {
 //items menu
 draw_set_halign(fa_left);
 draw_set_valign(fa_center);
-draw_set_font(global.uranus);
+draw_set_font(global.lana);
 draw_set_color(make_color_rgb(242,240,229));
-scr_Draw_Text_Outlined(17,124,"Items info: ",c_white);
+scr_Draw_Text_Outlined(17,125,"物品信息: ",c_white);
+draw_set_font(global.uranus);
 if global.use_controller = true {
-	draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[13][0]),2,83,124);
+	draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[13][0]),2,75,124);
 }else {
 	var keyboard_array_value = global.keyboard_array[13][0];
 	var keyboard_text = scr_Keyboard_Get_Key_String(keyboard_array_value);
 			
 	if !scr_In_Array(global.mouse_button_array,keyboard_array_value) {
 		if is_string(keyboard_text) {
-			scr_Draw_Text_Outlined(78,124,keyboard_text,c_white);
+			scr_Draw_Text_Outlined(70,124,keyboard_text,c_white);
 		}else {
-			draw_sprite(keyboard_text,0,79,124);
+			draw_sprite(keyboard_text,0,71,124);
 		}
 	}else {
 		var mouse_sprite = scr_Mouse_Get_Button_Sprite(keyboard_array_value);
-		draw_sprite(mouse_sprite,0,83,124);	
+		draw_sprite(mouse_sprite,0,75,124);	
 	}
 }
 
