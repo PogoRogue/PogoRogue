@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_coinsup;
-item_name = "Coins Up";
-item_tagline = "Earn an extra coin for each enemy you kill.";
+item_name = "幸运币";
+item_tagline = "每次击杀获得额外金币";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 30;

@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_sharpshooter;
-item_name = "Sharpshooter";
-item_tagline = "Your first shot deals more damage.";
+item_name = "神枪手";
+item_tagline = "你开出的第一枪造成更多\n伤害";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 25;

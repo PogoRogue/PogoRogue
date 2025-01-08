@@ -11,11 +11,11 @@ if global.critchance < max_uses {
 }
 
 if global.critchance = 1 or image_index = 2 {
-	item_tagline = "Your projectiles have a 10% chance of dealing a critical hit.";
+	item_tagline = "增加暴击几率";
 }else if global.critchance = 2 or image_index = 4 {
-	item_tagline = "Your projectiles have a 15% chance of dealing a critical hit.";
+	item_tagline = "增加暴击几率";
 }else if global.critchance = 3 or image_index = 6 {
-	item_tagline ="Your projectiles have a 20% chance of dealing a critical hit.";
+	item_tagline ="增加暴击几率";
 }else if global.critchance = 4 or image_index = 8 {
-	item_tagline ="Your projectiles have a 25% chance of dealing a critical hit.";
+	item_tagline ="增加暴击几率";
 }

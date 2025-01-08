@@ -1,8 +1,8 @@
 spr_image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_aura;
-item_name = "Aura";
-item_tagline = "Enemies in combat rooms begin with 20% less health."; //+ string(global.experimentation_coins) + " coins in return.";
+item_name = "魅力四射 ";
+item_tagline = "房间中敌人的生命值少量\n下降（对Boss无效）"; //+ string(global.experimentation_coins) + " coins in return.";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 35;
@@ -13,9 +13,9 @@ index_add = 0; //declare this variable when there are multiple sprites for this 
 scr_Buff_Stats();
 
 if global.aura_num = 1 {
-	item_tagline = "Enemies in combat rooms begin with 40% less health.";
+	item_tagline = "房间中敌人的生命值少量\n下降（对Boss无效）";
 }else if global.aura_num >= 2 {
-	item_tagline = "Enemies in combat rooms begin with 60% less health.";
+	item_tagline = "房间中敌人的生命值少量\n下降（对Boss无效）";
 }
 
 if scr_In_Array(global.all_buffs, object_index) {

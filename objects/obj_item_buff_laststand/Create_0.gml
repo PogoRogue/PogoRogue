@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_laststand;
-item_name = "Last Stand";
-item_tagline = "Doubles all weapon damage when you have one heart left.";
+item_name = "背水一战";
+item_tagline = "当只剩下1颗红心时, \n造成的伤害翻倍";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 25;

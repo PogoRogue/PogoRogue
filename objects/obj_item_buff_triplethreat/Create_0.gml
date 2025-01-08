@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_triplethreat;
-item_name = "Triple Threat";
-item_tagline = "You can now hold 3 weapons.";
+item_name = "第三武器";
+item_tagline = "你可以拥有三把武器";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 50;

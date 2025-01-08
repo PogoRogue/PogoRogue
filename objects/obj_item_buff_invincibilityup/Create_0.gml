@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_invincibilityup;
-item_name = "Invincibility Up";
-item_tagline = "Increase the duration of your invincibility by 0.75s after taking damage.";
+item_name = "无敌帧";
+item_tagline = "受伤时的无敌时间短暂延长";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 25;

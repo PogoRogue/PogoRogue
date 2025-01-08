@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_aerialassassin;
-item_name = "Aerial Assassin";
-item_tagline = "Killing 3 enemies without touching the ground gives you unlimited ammo for 2s.";
+item_name = "飞天刺客";
+item_tagline = "在空中击杀 3 名敌人，\n可短暂获得无限弹药 ";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 35;

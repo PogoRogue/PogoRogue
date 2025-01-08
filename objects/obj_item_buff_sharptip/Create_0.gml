@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_sharptip;
-item_name = "Sharp Tip";
-item_tagline = "Increases your pogo stick's bounce damage.";
+item_name = "尖刺底座";
+item_tagline = "增加你跳杆踩踏时的伤害";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 25;

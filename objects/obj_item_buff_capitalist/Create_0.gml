@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_capitalist;
-item_name = "Capitalist";
-item_tagline = "If you have more than 200 coins, deal 0.5% more weapon damage for every coin above 200.";
+item_name = "资本家";
+item_tagline = "金币数大于200时你的造\n成的伤害提升";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 30;

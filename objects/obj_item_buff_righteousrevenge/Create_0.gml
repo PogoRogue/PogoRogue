@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_righteousrevenge;
-item_name = "Righteous Revenge";
-item_tagline = "Doubles your damage for 3s after taking damage.";
+item_name = "正当防卫";
+item_tagline = "受伤后你造成的伤害将\n短暂翻倍";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 30;

@@ -5,7 +5,7 @@
 event_inherited();
 
 if global.adrenalinerush = 1 {
-	item_tagline = "Taking damage reduces kill cooldowns by 3.";
+	item_tagline = "受到伤害时减少【击杀冷却】";
 }else if global.adrenalinerush >= 2 {
-	item_tagline = "Taking damage reduces kill cooldowns by 6.";
+	item_tagline = "受到伤害时减少【击杀冷却】";
 }

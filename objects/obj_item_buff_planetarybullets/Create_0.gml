@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_planetarybullets;
-item_name = "Planetary Bullets";
-item_tagline = "Spawns a bullet that circles you, dealing damage to any enemy it touches.";
+item_name = "呼球护卫";
+item_tagline = "生成一个围着你旋转的光\n球, 对碰到的敌人造成伤害";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 35;

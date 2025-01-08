@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_paparazzi;
-item_name = "Paparazzi";
-item_tagline = "After you take damage, take a low damage picture of every enemy on screen."
+item_name = "照相机";
+item_tagline = "受伤时对屏幕内所有敌人\n造成一定伤害"
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 40;

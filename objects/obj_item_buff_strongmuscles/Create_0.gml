@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_strongmuscles;
-item_name = "Strong Muscles";
-item_tagline = "Limited-range projectiles now travel further.";
+item_name = "强健体魄";
+item_tagline = "打出的弹药可以飞的更远";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 30;

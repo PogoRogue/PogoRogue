@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_bartime;
-item_name = "Bar Time Up";
-item_tagline = "Increases the length of all different bar types (Frenzy, 2x Damage, etc.) by 25%.";
+item_name = "内存条";
+item_tagline = "全部带条类的物品都获\n得增长";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 40;
@@ -10,11 +10,11 @@ item_stats = "";
 index_add = 0; //declare this variable when there are multiple sprites for this item
 
 if global.bartime = 50 {
-	item_tagline = "Increases the length of all different bar types (Frenzy, 2x Damage, etc.) by 50%.";
+	item_tagline = "全部带条类的物品都获\n得增长";
 }else if global.bartime = 75 {
-	item_tagline = "Increases the length of all different bar types (Frenzy, 2x Damage, etc.) by 75%.";
+	item_tagline = "全部带条类的物品都获\n得增长";
 }else if global.bartime = 100 {
-	item_tagline = "Increases the length of all different bar types (Frenzy, 2x Damage, etc.) by 100%.";
+	item_tagline = "全部带条类的物品都获\n得增长";
 }
 
 scr_Buff_Stats();

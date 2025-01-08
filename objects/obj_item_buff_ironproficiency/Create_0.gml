@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_ironproficiency;
-item_name = "Iron Proficiency";
-item_tagline = "If your health bar is full, excess healing becomes an armored heart.";
+item_name = "有备无患";
+item_tagline = "在红心满时，多出来的红\n心会变成白心";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 25;

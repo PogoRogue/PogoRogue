@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_supershield;
-item_name = "Super Shield";
-item_tagline = "Armored hearts prevent the combo meter from going down when damaged.";
+item_name = "究极护盾";
+item_tagline = "你的铁心可以防止连击条\n因受伤而消耗";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 20;

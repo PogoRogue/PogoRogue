@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_magicianstouch;
-item_name = "Magician's Touch";
-item_tagline = "You obtain 50% more coins from chests.";
+item_name = "魔术手";
+item_tagline = "从箱子中获取的金币数大\n幅增加";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 30;

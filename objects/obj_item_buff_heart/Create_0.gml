@@ -1,7 +1,7 @@
 follow_player = false;
 buff = obj_player.buff_heart;
-item_name = "Heart";
-item_tagline = "Heal a missing heart.";
+item_name = "生命值";
+item_tagline = "回复失去的1颗红心";
 item_description = item_tagline;
 add_sprite_to_list = false;
 item_cost = 25;

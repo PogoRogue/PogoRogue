@@ -11,11 +11,11 @@ if global.experimentation < max_uses {
 }
 
 if global.experimentation = 1 or image_index = 2 {
-	item_tagline = "Replacing an active item or weapon also gives you 2 hearts.";
+	item_tagline = "替换手中的武器或者物\n品时，回复一颗红心。";
 }else if global.experimentation = 2 or image_index = 4 {
-	item_tagline = "Replacing an active item or weapon also gives you 3 hearts.";
+	item_tagline = "替换手中的武器或者物\n品时，回复一颗红心。";
 }else if global.experimentation = 3 or image_index = 6 {
-	item_tagline = "Replacing an active item or weapon also gives you 4 hearts.";
+	item_tagline = "替换手中的武器或者物\n品时，回复一颗红心。";
 }else if global.experimentation = 4  or image_index = 8 {
-	item_tagline = "Replacing an active item or weapon also gives you 5 hearts.";
+	item_tagline = "替换手中的武器或者物\n品时，回复一颗红心。";
 }

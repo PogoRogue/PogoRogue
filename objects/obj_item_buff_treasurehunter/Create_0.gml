@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_treasurehunter;
-item_name = "Treasure Hunter";
-item_tagline = "Increases the chest spawn rate.";
+item_name = "宝藏猎人";
+item_tagline = "提升箱子的生成率";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 20;

@@ -11,9 +11,9 @@ if global.recycling < max_uses {
 }
 
 if global.recycling = 1 or image_index = 2 {
-	item_tagline = "Replacing an item gives you 50% of the replaced item's cost in return.";
+	item_tagline = "回收一个物品，然后会给\n你返还少量的金币";
 }else if global.recycling = 2 or image_index = 4 {
-	item_tagline = "Replacing an item gives you 75% of the replaced item's cost in return.";
+	item_tagline = "回收一个物品，然后会给\n你返还少量的金币";
 }else if global.recycling = 3 or image_index = 6 {
-	item_tagline = "Replacing an item gives you 100% of the replaced item's cost in return.";
+	item_tagline = "回收一个物品，然后会给\n你返还少量的金币";
 }

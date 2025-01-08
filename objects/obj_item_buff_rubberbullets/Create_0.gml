@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_bouncybullets;
-item_name = "Rubber Bullets";
-item_tagline = "Adds 1 bounce to every solid bullet.";
+item_name = "弹射弹药";
+item_tagline = "使所有武器的子弹拥有\n弹射效果";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 45;

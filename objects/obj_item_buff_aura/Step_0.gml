@@ -5,7 +5,7 @@
 event_inherited();
 
 if global.aura_num = 1 {
-	item_tagline = "Enemies in combat rooms begin with 40% less health.";
+	item_tagline = "房间中敌人的生命值少量\n下降（对Boss无效）";
 }else if global.aura_num >= 2 {
-	item_tagline = "Enemies in combat rooms begin with 60% less health.";
+	item_tagline = "房间中敌人的生命值少量\n下降（对Boss无效）";
 }

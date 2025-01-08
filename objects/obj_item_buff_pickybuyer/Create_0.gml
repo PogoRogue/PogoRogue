@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_pickybuyer;
-item_name = "Picky Buyer";
-item_tagline = "Your next shop refresh is free.";
+item_name = "精挑细选";
+item_tagline = "下次商店刷新免费";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 35;

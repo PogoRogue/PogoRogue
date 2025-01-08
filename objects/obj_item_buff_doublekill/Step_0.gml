@@ -13,9 +13,9 @@ if obj_player.double_kill < max_uses {// and salesman = false {
 }
 
 if obj_player.double_kill = 1 or image_index = 2 {
-	item_name = "Triple Kill";
-	item_tagline = "If your combo is above 10/20, each kill is worth 2/3 for kill cooldowns.";
+	item_name = "双杀";
+	item_tagline = "若连击数在10以上, 你在连击条消耗时的每个\n击杀都算做2个.";
 }else if obj_player.double_kill >= 2 or image_index = 4 {
-	item_name = "Quadruple Kill";
-	item_tagline = "If your combo is above 10/20/30, each kill is worth 2/3/4 for kill cooldowns.";
+	item_name = "双杀";
+	item_tagline = "若连击数在10以上, 你在连击条消耗时的每个\n击杀都算做2个.";
 }

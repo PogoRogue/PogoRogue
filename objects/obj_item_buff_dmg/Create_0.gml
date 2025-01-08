@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_dmg;
-item_name = "Damage Up";
-item_tagline = "Increases your damage.";
+item_name = "攻击提升";
+item_tagline = "提升伤害";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 30;

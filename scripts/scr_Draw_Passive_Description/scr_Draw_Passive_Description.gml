@@ -19,7 +19,7 @@ function scr_Draw_Passive_Description(xx,yy,item_sprite,item_image_index,item_na
 	
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 
 	if item_name = "Heart" {
 		draw_sprite(spr_itemmenu_passive_slot,bg_spr_index+2,xx,yy);
@@ -44,7 +44,7 @@ function scr_Draw_Passive_Description(xx,yy,item_sprite,item_image_index,item_na
 		scr_Draw_Text_Outlined(xx-47,yy-25+12,item_cost,make_color_rgb(237,225,158)); //43 - 4
 	}
 	
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 			
 	//name
 	var white = make_color_rgb(242,240,229);
@@ -55,7 +55,7 @@ function scr_Draw_Passive_Description(xx,yy,item_sprite,item_image_index,item_na
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	draw_set_font(global.lana);
-	scr_Draw_Text_Outlined(xx-58,yy-5,scr_Linebreak(item_description,21,99),c_white);
+	scr_Draw_Text_Outlined(xx-58,yy-3,scr_Linebreak(item_description,21,99),c_white);
 			
 	//stackability
 	draw_set_halign(fa_center);

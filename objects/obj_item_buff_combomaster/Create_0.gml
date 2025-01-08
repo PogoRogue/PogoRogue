@@ -1,8 +1,8 @@
 image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_combomaster;
-item_name = "Combo Master";
-item_tagline = "Heal a missing heart if your combo reaches a multiple \nof 10.";
+item_name = "连击治愈";
+item_tagline = "每达成10次连击回复一\n颗红心.";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 30;
