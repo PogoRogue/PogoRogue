@@ -12,9 +12,9 @@ if (gun_name = "弹球枪") {
 	var dir = point_direction(x,y,obj_player.x,obj_player.y) - 90;
 	draw_sprite_ext(spr_projectile_yoyo_string,0,x,y,sign(obj_player.image_xscale),yscale,dir,c_white,1);
 	draw_self();
-}else if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
+}else if (gun_name = "钩爪帽") or gun_name = "钩爪锐枪" {
 	//draw rope
-	if (gun_name = "Grappling Helmet") {
+	if (gun_name = "钩爪帽") {
 		var xscale = (point_distance(x,y,obj_player.x - lengthdir_x(56,obj_player.image_angle-90),obj_player.y - lengthdir_y(56,obj_player.image_angle-90)) / sprite_get_width(spr_rope));
 	}else {
 		var xscale = (point_distance(x,y,obj_player.x - lengthdir_x(50,obj_player.image_angle-90),obj_player.y - lengthdir_y(50,obj_player.image_angle-90)) / sprite_get_width(spr_rope));

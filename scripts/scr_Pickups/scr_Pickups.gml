@@ -32,12 +32,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_chargejump = {
-		_name: "Charge Jump",
-		tagline: "Hold while bouncing to launch yourself to great heights, damaging enemies in your path. Getting a kill with a charge jump resets its cooldown time.",
+		_name: "蓄力冲击",
+		tagline: "千里之行, 始于跳杆下",
 		gui_sprite: spr_pickup_chargejump,
 		max_cooldown_time: 600,
 		cooldown_time: 600,
-		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
+		cooldown_text: "冷却: " + string(600 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_bouncing],
 		key_held: true,
@@ -70,12 +70,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_groundpound = {
-		_name: "Ground Pound",
-		tagline: "Slam to the ground with massive power. Getting a kill with a ground pound resets its cooldown time.",
+		_name: "泰山压顶",
+		tagline: "重力与你同在",
 		gui_sprite: spr_pickup_groundpound,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
-		cooldown_text: "Cooldown: " + string(300 / 60) + "s",
+		cooldown_text: "冷却: " + string(300 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: false,
@@ -100,12 +100,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_hatgun = {
-		_name: "Hat Gun",
-		tagline: "Shoot bullets from your head.",
+		_name: "帽子枪",
+		tagline: "时尚又实用！",
 		gui_sprite: spr_pickup_hatgun,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: On bounce" + " / kill",
+		cooldown_text: "冷却: 每次弹跳/击杀",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze,state_parachute],
 		key_held: false,
@@ -147,7 +147,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_shieldbubble,
 		max_cooldown_time: 600,
 		cooldown_time: 600,
-		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
+		cooldown_text: "冷却: " + string(600 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -171,12 +171,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_firedash = {
-		_name: "Fire Dash",
-		tagline: "Turn into a fireball and dash upwards, damaging enemies in your path. Each dash kill shortens its cooldown time by 4s.",
+		_name: "火焰冲撞",
+		tagline: "不附带灭火器",
 		gui_sprite: spr_pickup_firedash,
 		max_cooldown_time: 480,
 		cooldown_time: 480,
-		cooldown_text: "Cooldown: " + string(480 / 60) + "s",
+		cooldown_text: "冷却: " + string(480 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: false,
@@ -204,12 +204,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_jetpack = {
-		_name: "Jetpack",
-		tagline: "A jetpack that gives you additional momentum when used. It has limited fuel, but can be easily refueled with bounces or kills.",
+		_name: "飞行背包",
+		tagline: "高高飞起来吧！",
 		gui_sprite: spr_pickup_jetpack,
 		max_cooldown_time: 100,
 		cooldown_time: 100,
-		cooldown_text: "Cooldown: 1/4 every bounce / kill",
+		cooldown_text: "冷却: 1/4 每次弹跳/击杀",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: true,
@@ -277,12 +277,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_slowmo = {
-		_name: "Magic Stopwatch",
-		tagline: "Slow down time for 15 seconds, allowing for high-precision movement. Slow mo can be canceled on \nre-press.",
+		_name: "时间减速",
+		tagline: "跟我左手右手一个慢动作~",
 		gui_sprite: spr_pickup_slowmo,
 		max_cooldown_time: 1800,
 		cooldown_time: 1800,
-		cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
+		cooldown_text: "冷却: " + string(1800 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -305,12 +305,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_bulletblast = {
-		_name: "Bullet Blast",
-		tagline: "Create a massive circular blast of bullets in all directions.",
+		_name: "子弹风暴",
+		tagline: "这还瞄准做什么？",
 		gui_sprite: spr_pickup_bulletblast,
 		max_cooldown_time: 1200,
 		cooldown_time: 1200,
-		cooldown_text: "Cooldown: " + string(1200 / 60) + "s",
+		cooldown_text: "冷却: " + string(1200 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: false,
@@ -338,12 +338,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_reload = {
-		_name: "Quick Reload",
-		tagline: "Instantly reload all of your weapons.",
+		_name: "快速装填",
+		tagline: "只需一瞬间",
 		gui_sprite: spr_pickup_reload,
 		max_cooldown_time: 420,
 		cooldown_time: 420,
-		cooldown_text: "Cooldown: " + string(420 / 60) + "s",
+		cooldown_text: "冷却: " + string(420 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -395,7 +395,7 @@ function scr_Pickups(){
 		gui_sprite: spr_pickup_camera,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 4 kills",
+		cooldown_text: "冷却: 每4次击杀",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -420,12 +420,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_freeze = {
-		_name: "Freeze",
-		tagline: "Reload your current weapon and instantly freeze your movement, allowing you to fire on enemies below. Unfreeze after 3s or on \nre-press.",
+		_name: "冻结",
+		tagline: "暂停一下！",
 		gui_sprite: spr_pickup_freeze,
 		max_cooldown_time: -1,
 		cooldown_time: -1 ,
-		cooldown_text: "Cooldown: Every 3 bounces",
+		cooldown_text: "冷却: 每3次弹跳",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -463,12 +463,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_frenzy = {
-		_name: "Frenzy",
-		tagline: "All weapons are instantly reloaded, and bullets are unlimited without reloading for 5s. Getting a kill during this time lowers its cooldown time by 1s.",
+		_name: "无限弹药",
+		tagline: "嗨起来吧！",
 		gui_sprite: spr_pickup_frenzy,
 		max_cooldown_time: 1800,
 		cooldown_time: 1800,
-		cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
+		cooldown_text: "冷却: " + string(1800 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -499,12 +499,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_target = {
-		_name: "Targeted Assassination",
-		tagline: "Summon a giant crosshair that kills a random enemy on screen.",
+		_name: "精准暗杀",
+		tagline: "一枪一个",
 		gui_sprite: spr_pickup_target,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 8 kills",
+		cooldown_text: "冷却: 每8次击杀",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -527,12 +527,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_emergency = {
-		_name: "Emergency Treatment",
-		tagline: "Instantly generates an armored heart and a temporary energy heart. Getting a kill zaps life back into your energy heart",
+		_name: "紧急抢救",
+		tagline: "记得核对你的医保范围",
 		gui_sprite: spr_pickup_emergency,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 15 kills",
+		cooldown_text: "冷却: 每15次击杀",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -594,12 +594,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_blink = {
-		_name: "Blink",
-		tagline: "Disappear, then reappear from any position on screen after 3s or on re-press. Return to your original position if your final location is off limits.",
+		_name: "闪现",
+		tagline: "突然出现在你背后",
 		gui_sprite: spr_pickup_blink,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 6 kills",
+		cooldown_text: "冷却: 每6次击杀",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -626,12 +626,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_parachute = {
-		_name: "Parachute",
-		tagline: "Open a parachute that straightens you out and slows you down. While your parachute is open, you may move horizontally and fire \nyour weapon.",
+		_name: "缓降",
+		tagline: "帅气的落地",
 		gui_sprite: spr_pickup_parachute,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: None",
+		cooldown_text: "冷却: 无",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -660,12 +660,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_grappling = {
-		_name: "Grappling Helmet",
-		tagline: "Press and hold to shoot a grappling hook from the top of your head, pulling you towards the wall it attaches to.",
+		_name: "钩爪帽",
+		tagline: "小心别扭到脖子",
 		gui_sprite: spr_pickup_grappling,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: None",
+		cooldown_text: "冷却: 无",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze,state_parachute],
 		key_held: false,
@@ -701,12 +701,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_winners = {
-		_name: "Winner's Mentality",
-		tagline: "Spend 25 coins to summon a flying slot machine with a chance to win big. If you don't win, try again. That's what a winner \nwould do.",
+		_name: "跳杀博徒",
+		tagline: "孤注一掷！",
 		gui_sprite: spr_pickup_winners,
 		max_cooldown_time: 0,
 		cooldown_time: 0,
-		cooldown_text: "Cooldown: " + "25 coins",
+		cooldown_text: "冷却: " + "25金币",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -734,12 +734,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_airbag = {
-		_name: "Airbag",
-		tagline: "Create a bouncy floating airbag below you. It reloads your weapon \nwhen bounced on. Every 10th airbag, gain a \nheart on bounce. Beep.",
+		_name: "安全气囊",
+		tagline: "跳上云端",
 		gui_sprite: spr_pickup_airbag,
 		max_cooldown_time: 300,
 		cooldown_time: 300,
-		cooldown_text: "Cooldown: " + string(300 / 60) + "s",
+		cooldown_text: "冷却: " + string(300 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze,state_bulletblast,state_parachute],
 		key_held: false,
@@ -764,12 +764,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_invincibility = {
-	_name: "Invincibility",
-	tagline: "You are invincible to all forms of damage for 5s. Getting a kill during this time lowers its cooldown time \nby 5s.",
+	_name: "无敌时间",
+	tagline: "不明觉厉",
 	gui_sprite: spr_pickup_invincibility,
 	max_cooldown_time: 1800,
 	cooldown_time: 1800,
-	cooldown_text: "Cooldown: " + string(1800 / 60) + "s",
+	cooldown_text: "冷却: " + string(1800 / 60) + "s",
 	on_cooldown: false,
 	states_to_call_in: all_states,
 	key_held: false,
@@ -798,12 +798,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_tripleshot = {
-	_name: "Triple Shot",
-	tagline: "For 8s, your single projectile weapons \nshoot in a spread of 3.",
+	_name: "三重火力",
+	tagline: "霰弹枪DLC",
 	gui_sprite: spr_pickup_tripleshot,
 	max_cooldown_time: 1500, //1800
 	cooldown_time: 1500,
-	cooldown_text: "Cooldown: " + string(1500 / 60) + "s",
+	cooldown_text: "冷却: " + string(1500 / 60) + "s",
 	on_cooldown: false,
 	states_to_call_in: all_states,
 	key_held: false,
@@ -831,12 +831,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_volleyball = {
-		_name: "Volleyball",
-		tagline: "Create a giant bouncy volleyball above your head. It can be bounced around when collided with and damages enemies on \ncontact.",
+		_name: "压缩排球",
+		tagline: "生命在于运动！",
 		gui_sprite: spr_pickup_volleyball,
 		max_cooldown_time: -1,
 		cooldown_time: -1 ,
-		cooldown_text: "Cooldown: Every 10 bounces",
+		cooldown_text: "冷却: 每10次弹跳",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -867,12 +867,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_harpoon = {
-		_name: "Harpoon Helmet",
-		tagline: "Fire a sharp harpoon from the top of your head that attaches to walls. Dash through enemies who dare \nstand in your path.",
+		_name: "钩爪锐枪",
+		tagline: "更时尚实用了！",
 		gui_sprite: spr_pickup_synergy_harpoon,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: None",
+		cooldown_text: "冷却: 无",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_bouncing,state_chargejump,state_freeze,state_parachute,state_groundpound],
 		key_held: false,
@@ -911,12 +911,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_pogomode = {
-		_name: "Pogo Mode",
-		tagline: "Frenzy and Invincibility are combined for 7s. Your other active item has no cooldown during this period. It's time to go pogo mode.",
+		_name: "终极模式",
+		tagline: "*一股洗脑的旋律响起*",
 		gui_sprite: spr_pickup_synergy_pogomode,
 		max_cooldown_time: 2100,
 		cooldown_time: 2100,
-		cooldown_text: "Cooldown: " + string(2100 / 60) + "s",
+		cooldown_text: "冷却: " + string(2100 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -973,12 +973,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_launchpad = {
-		_name: "Launch Pad",
-		tagline: "Create a launch pad below you. It holds two homing missiles that launch when the pad is bounced on.",
+		_name: "导弹平台",
+		tagline: "快踩上去！",
 		gui_sprite: spr_pickup_synergy_launchpad,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 8 kills",
+		cooldown_text: "冷却: 每8次击杀",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze,state_bulletblast,state_parachute,state_groundpound],
 		key_held: false,
@@ -1007,12 +1007,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_megabounce = {
-		_name: "Mega Bounce",
-		tagline: "Instantly slam to the ground with immense power, then aim, ready, and fire with a powerful charge jump! Getting a slam kill resets its cooldown time.",
+		_name: "震天撼地",
+		tagline: "论练腿的重要性",
 		gui_sprite: spr_pickup_synergy_megabounce,
 		max_cooldown_time: 600,
 		cooldown_time: 600,
-		cooldown_text: "Cooldown: " + string(600 / 60) + "s",
+		cooldown_text: "冷却: " + string(600 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free,state_freeze],
 		key_held: false,
@@ -1045,12 +1045,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_jolt = {
-		_name: "Jolt",
-		tagline: "Instantly reload all of your weapons, and generate 4 temporary energy hearts. Getting a kill zaps life back into an energy heart.",
+		_name: "电流过载",
+		tagline: "电能激荡！",
 		gui_sprite: spr_pickup_synergy_jolt,
 		max_cooldown_time: 3000,
 		cooldown_time: 3000,
-		cooldown_text: "Cooldown: " + string(3000 / 60) + "s",
+		cooldown_text: "冷却: " + string(3000 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -1109,12 +1109,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_hacker = {
-		_name: "Hacker",
-		tagline: "Slow down time for 10 seconds and summon a flying slot machine. While spinning, stop each reel with the press of a button.",
+		_name: "开挂玩家",
+		tagline: "*飞快敲代码的声音*",
 		gui_sprite: spr_pickup_synergy_hacker,
 		max_cooldown_time: 0,
 		cooldown_time: 0,
-		cooldown_text: "Cooldown: " + "25 coins",
+		cooldown_text: "冷却: " + "25 金币",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -1148,12 +1148,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_blizzard = {
-		_name: "Blizzard",
-		tagline: "Summon a windy, icy blizzard that cuts through all enemies around you. It doesn't hurt you because you're built different, but it \ncan move you.",
+		_name: "狂风暴雪",
+		tagline: "冷暴力他们！",
 		gui_sprite: spr_pickup_synergy_blizzard,
 		max_cooldown_time: 2400,
 		cooldown_time: 2400,
-		cooldown_text: "Cooldown: " + string(2400 / 60) + "s",
+		cooldown_text: "冷却: " + string(2400 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -1179,12 +1179,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_dragster = {
-		_name: "Dragster",
-		tagline: "Perform a longer, more powerful Fire Dash. You shoot a parachute from your pogo stick to slow momentum and allow mid-dash turning. \nCancel on re-press.",
+		_name: "烈火战车",
+		tagline: "配有降落伞以确保安全",
 		gui_sprite: spr_pickup_synergy_dragster,
 		max_cooldown_time: 900,
 		cooldown_time: 900,
-		cooldown_text: "Cooldown: " + string(900 / 60) + "s",
+		cooldown_text: "冷却: " + string(900 / 60) + "s",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,
@@ -1216,12 +1216,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_wreckingball = {
-		_name: "Wrecking Ball",
-		tagline: "Create a large, spiky wrecking ball that swings from below you. With enough momentum, you can swing it around your head. Re-press \nbutton to retract.",
+		_name: "流星锤",
+		tagline: "去乱砸一气吧！",
 		gui_sprite: spr_pickup_synergy_wreckingball,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: None",
+		cooldown_text: "冷却: 无",
 		on_cooldown: false,
 		states_to_call_in: all_states,
 		key_held: false,
@@ -1249,12 +1249,12 @@ function scr_Pickups(){
 	};
 	
 	pickup_tacticalstrike = {
-		_name: "Stealth Strike",
-		tagline: "Go into Blink form for 5s with 3 missiles to strike enemies with. The camera is no longer constrained, but you can't go through walls.",
+		_name: "核打击",
+		tagline: "不好，导弹来袭",
 		gui_sprite: spr_pickup_synergy_tacticalstrike,
 		max_cooldown_time: -1,
 		cooldown_time: -1,
-		cooldown_text: "Cooldown: Every 12 kills",
+		cooldown_text: "冷却: 每12次击杀",
 		on_cooldown: false,
 		states_to_call_in: [state_free],
 		key_held: false,

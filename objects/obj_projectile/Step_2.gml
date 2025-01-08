@@ -164,7 +164,7 @@ if gun_name = "小黄鸭水枪" {
 	}
 }
 
-if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
+if (gun_name = "钩爪帽") or gun_name = "钩爪锐枪" {
 	
 	hspd = 0;
 	vspd = 0;
@@ -193,7 +193,7 @@ if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
 	}
 	
 	//damage once per enemy
-	if place_meeting(x,y,obj_enemy_parent) and gun_name = "Grappling Helmet" or retract = true {
+	if place_meeting(x,y,obj_enemy_parent) and gun_name = "钩爪帽" or retract = true {
 		damage = 0;
 		init_damage = 0;
 	}
@@ -283,11 +283,11 @@ if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
 		//retract = true;	
 	}
 	
-	if gun_name = "Grappling Helmet" {
+	if gun_name = "钩爪帽" {
 		if distance_traveled >= 320 + (128 * global.strong_muscles) {
 			retract = true;	
 		}
-	}else if gun_name = "Harpoon Helmet" {
+	}else if gun_name = "钩爪锐枪" {
 		if distance_traveled >= 420 + (128 * global.strong_muscles) {
 			retract = true;	
 		}

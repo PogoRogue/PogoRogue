@@ -143,7 +143,7 @@ if pogomode_time > 0 {
 	draw_set_font(global.uranus);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_pogomodemeter)/2),29+(48 * gun_num),"POGO MODE",pickup_pogomode.text_color);
+	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_pogomodemeter)/2),29+(48 * gun_num),"终极模式",pickup_pogomode.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_pogomodemeter,0,768-16,36+(48 * gun_num));
 	draw_sprite_part(spr_pogomodemeter,1,0,0,sprite_get_width(spr_pogomodemeter)*(pogomode_time / (420 * global.bar_time_added)),sprite_get_height(spr_pogomodemeter),768-16-sprite_get_width(spr_pogomodemeter),36+(48 * gun_num)-4);
@@ -159,7 +159,7 @@ if pogomode_time > 0 {
 	draw_set_font(global.uranus);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
+	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"无限弹药",pickup_frenzy.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,768-16,36+(48 * gun_num));
 	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(frenzy_time / (300 * global.bar_time_added)),sprite_get_height(spr_frenzymeter),768-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
@@ -175,7 +175,7 @@ if pogomode_time > 0 {
 	draw_set_font(global.uranus);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
+	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"无限弹药",pickup_frenzy.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,768-16,36+(48 * gun_num));
 	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(aerial_assassin_frenzy_count / (120 * global.bar_time_added)),sprite_get_height(spr_frenzymeter),768-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
@@ -191,7 +191,7 @@ if pogomode_time > 0 {
 	draw_set_font(global.uranus);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"Frenzy",pickup_frenzy.text_color);
+	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_frenzymeter)/2),29+(48 * gun_num),"无限弹药",pickup_frenzy.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_frenzymeter,0,768-16,36+(48 * gun_num));
 	draw_sprite_part(spr_frenzymeter,1,0,0,sprite_get_width(spr_frenzymeter)*(frenzy_time / (300 * global.bar_time_added)),sprite_get_height(spr_frenzymeter),768-16-sprite_get_width(spr_frenzymeter),36+(48 * gun_num)-4);
@@ -207,7 +207,7 @@ if pogomode_time > 0 {
 	draw_set_font(global.uranus);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_tripleshotmeter)/2),29+(48 * gun_num),"Triple Shot",pickup_tripleshot.text_color);
+	scr_Draw_Text_Outlined(768-16-(sprite_get_width(spr_tripleshotmeter)/2),29+(48 * gun_num),"三重火力",pickup_tripleshot.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_tripleshotmeter,0,768-16,36+(48 * gun_num));
 	draw_sprite_part(spr_tripleshotmeter,1,0,0,sprite_get_width(spr_tripleshotmeter)*(tripleshot_time / (480 * global.bar_time_added)),sprite_get_height(spr_tripleshotmeter),768-16-sprite_get_width(spr_tripleshotmeter),36+(48 * gun_num)-4);
@@ -230,10 +230,13 @@ if pogomode_time > 0 {
 //coins
 coin_x = 32;
 coin_y = 66;
+
+draw_set_font(global.lana);
+
 draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
 draw_sprite(spr_coingui,0,coin_x,coin_y);
-scr_Draw_Text_Outlined(coin_x+1,coin_y+1,"x"+string(global.num_of_coins),c_white);
+scr_Draw_Text_Outlined(coin_x+1,coin_y-3,"x"+string(global.num_of_coins),c_white);
 
 //coins
 timer_x = 123;
@@ -242,7 +245,7 @@ draw_set_valign(fa_bottom);
 
 if global.show_timer = true {
 	draw_sprite(spr_timergui,0,timer_x,coin_y);
-	scr_Draw_Text_Outlined(timer_x-1,coin_y+1,scr_Convert_Frames_To_Time(global.current_time_elapsed),c_white);
+	scr_Draw_Text_Outlined(timer_x-1,coin_y-3,scr_Convert_Frames_To_Time(global.current_time_elapsed),c_white);
 }
 
 //PICKUPS
@@ -599,9 +602,9 @@ if (global.show_passives = true) {
 		//items menu
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_center);
-		draw_set_font(global.uranus);
+		draw_set_font(global.lana);
 		draw_set_color(make_color_rgb(242,240,229));
-		scr_Draw_Text_Outlined(16,yy-16,"Passive items: ",c_white);
+		scr_Draw_Text_Outlined(16,yy-16,"道具: ",c_white);
 
 
 		//numbers of each buff
@@ -661,7 +664,7 @@ if invincibility_time > 0 {
 	draw_set_font(global.uranus);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_bottom);
-	scr_Draw_Text_Outlined(17,156-7,"Invincibility",pickup_invincibility.text_color);
+	scr_Draw_Text_Outlined(17,156-7,"无敌时间",pickup_invincibility.text_color);
 	draw_set_color(c_white);
 	draw_sprite(spr_invincibilitymeter,0,17,156);
 	draw_sprite_part(spr_invincibilitymeter,1,0,0,sprite_get_width(spr_invincibilitymeter)*(invincibility_time / (invincibility_time_max * global.bar_time_added)),sprite_get_height(spr_invincibilitymeter),17,156-4);

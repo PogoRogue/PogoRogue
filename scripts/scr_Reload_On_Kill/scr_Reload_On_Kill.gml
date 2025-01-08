@@ -43,7 +43,7 @@ function scr_Reload_On_Kill() {
 		}
 		//reload hat gun on hat gun kill
 		if object_get_name(object_index) = "obj_projectile"  {
-			//if (gun_name = "Hat Gun") {
+			//if (gun_name = "帽子枪") {
 				with obj_player {
 					pickup_hatgun.uses_per_bounce = pickup_hatgun.max_uses_per_bounce;
 					pickup_hatgun.on_cooldown = false;

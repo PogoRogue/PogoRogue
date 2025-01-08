@@ -353,7 +353,7 @@ state_bouncing = function() {
 	}
 	
 	with obj_projectile {
-		if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
+		if gun_name = "钩爪帽" or gun_name = "钩爪锐枪" {
 			//retract = true;
 		}
 	}
@@ -1345,17 +1345,17 @@ state_grappling = function() {
 	var not_grappling_2 = !(global.key_pickup_2) and pickups_array[1] = pickup_grappling or !(global.key_pickup_2) and pickups_array[1] = pickup_harpoon;
 	
 	with obj_projectile {
-		if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
+		if gun_name = "钩爪帽" or gun_name = "钩爪锐枪" {
 			other.grappling_hook = self;	
 		}
 	}
 	
 	if instance_exists(grappling_hook) {
-		if grappling_hook.gun_name = "Grappling Helmet" {
+		if grappling_hook.gun_name = "钩爪帽" {
 			if speed <= 8 {
 				speed += 0.75;
 			}
-		}else if grappling_hook.gun_name = "Harpoon Helmet" {
+		}else if grappling_hook.gun_name = "钩爪锐枪" {
 			harpooning = true;
 			invincible = true;
 			if speed <= 12 {

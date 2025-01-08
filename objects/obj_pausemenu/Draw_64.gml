@@ -14,9 +14,9 @@ if !instance_exists(obj_popup_restart) and !instance_exists(obj_popup_exit) and 
 	
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_item_popup);
+	draw_set_font(global.uranus);
 	if room = room_proc_gen_test or room = room_shop or scr_In_Array(global.boss_rooms,room) {
-		scr_Draw_Text_Outlined(xx,yy-88,"Seed: " + string(global.seed),c_white);
+		scr_Draw_Text_Outlined(xx,yy-88,"种子: " + string(global.seed),c_white);
 	}
 }
 	

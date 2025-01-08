@@ -6,7 +6,7 @@ if (colliding) and being_used = false and sprite_index != spr_pogosmith_workbenc
 	//check if we should draw controller UI or keyboard UI
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.lana);
 	
 	//check if we should draw controller UI or keyboard UI
 	if global.use_controller = true {
@@ -26,7 +26,7 @@ if (colliding) and being_used = false and sprite_index != spr_pogosmith_workbenc
 			draw_sprite(mouse_sprite,0,x,bbox_top+32);
 		}
 	}
-	scr_Draw_Text_Outlined(x,bbox_top+48,"Select Upgrade",c_white);
+	scr_Draw_Text_Outlined(x,bbox_top+48,"选择一项升级",c_white); //Select Upgrade
 }else if sprite_index != spr_pogosmith_workbench_animation and !colliding and !being_used {
 	image_index = 0;	
 }
@@ -56,7 +56,7 @@ if being_used = true {
 		}
 	}
 	draw_set_font(fnt_combo2);
-	scr_Draw_Text_Outlined(x,bbox_top+56,"Exit",c_white);
+	scr_Draw_Text_Outlined(x,bbox_top+56,"出口",c_white);
 		
 		
 	if select_x_max = 1 {

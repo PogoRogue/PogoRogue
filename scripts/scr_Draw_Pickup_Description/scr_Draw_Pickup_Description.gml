@@ -13,7 +13,7 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 		var img_index = sprite_get_number(pickup.gui_sprite)-1;
 		var item_name = "?????";
 		var item_description = "This item has not been discovered yet.";
-		var item_stats = "Cooldown: ???";
+		var item_stats = "冷却: ???";
 	}
 	if !(pickup.synergy_equipped = true and instance_exists(obj_items)) and pickup.is_synergy = false {
 		var slot_sprite = spr_itemmenu_pickup_slot;
@@ -22,8 +22,8 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	}
 	
 	//special cases
-	if item_name = "Magic Stopwatch" {
-		item_name = "Magic\nStopwatch"
+	if item_name = "时间减速" {
+		//item_name = "Magic\nStopwatch"
 	}
 
 	
@@ -73,17 +73,17 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	//"Active" text
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	draw_set_font(fnt_item_popup);
+	draw_set_font(global.uranus);
 	if pickup_num = 1 {
-		scr_Draw_Text_Outlined(xx,yy-128,"Active 1",c_white);
+		scr_Draw_Text_Outlined(xx,yy-128,"技能1",c_white);
 	}else if pickup_num = 2 {
-		scr_Draw_Text_Outlined(xx,yy-128,"Active 2",c_white);
+		scr_Draw_Text_Outlined(xx,yy-128,"技能2",c_white);
 	}
 	
 	//Powerup Name
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	var white = make_color_rgb(242,240,229);
 	if unlocked = true {
 		scr_Draw_Text_Outlined(xx+29,yy-105,scr_Linebreak(item_name,16,99),pickup.text_color);
@@ -100,5 +100,5 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	//draw stats
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	scr_Draw_Text_Outlined(xx+2,yy+7,item_stats,c_white);
+	scr_Draw_Text_Outlined(xx+2,yy+8,item_stats,c_white);
 }

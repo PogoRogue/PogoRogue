@@ -311,11 +311,11 @@ if (gun_name = "小黄鸭水枪") {
 }
 
 //Grappling Helmet
-if (gun_name = "Grappling Helmet") or gun_name = "Harpoon Helmet" {
+if (gun_name = "钩爪帽") or gun_name = "钩爪锐枪" {
 	rope_sound = audio_play_sound(snd_grappling_rope,0,false);
 	init_angle = obj_player.angle;
 	distance_traveled = 0;
-	if (gun_name = "Grappling Helmet") {
+	if (gun_name = "钩爪帽") {
 		damage = 0;
 	}
 	init_damage = damage;

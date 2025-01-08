@@ -16,6 +16,6 @@ if instance_exists(speechbubble_obj) {
 }else {
 	draw_sprite(spr_pogosmith_nametag,0,x,y-40+y_offset);
 	if colliding {
-		scr_Draw_Input_Prompt(x,y-56+y_offset,6,"交谈",make_color_rgb(242,240,229));	
+		scr_Draw_Input_Prompt(x,y-58+y_offset,6,"交谈",make_color_rgb(242,240,229));	
 	}
 }

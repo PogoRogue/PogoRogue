@@ -48,7 +48,7 @@ function scr_Guns(){
 	};
 	
 	hat_gun = {
-		_name: "Hat Gun",
+		_name: "帽子枪",
 		sprite: spr_nothing,
 		ammo: [hatgun_bullet],
 		inaccuracy: 0,
@@ -70,7 +70,7 @@ function scr_Guns(){
 	};
 	
 	bulletblast_gun = {
-		_name: "Bullet Blast",
+		_name: "子弹风暴",
 		sprite: spr_nothing,
 		ammo: [bulletblast_bullet],
 		inaccuracy: 0,
@@ -437,7 +437,7 @@ function scr_Guns(){
 	};	
 	
 	grappling_gun = {
-		_name: "Grappling Helmet",
+		_name: "钩爪帽",
 		sprite: spr_nothing,
 		ammo: [grappling_bullet],
 		inaccuracy: 0,
@@ -574,7 +574,7 @@ function scr_Guns(){
 	};
 	
 	harpoon_gun = {
-		_name: "Harpoon Helmet",
+		_name: "钩爪锐枪",
 		sprite: spr_nothing,
 		ammo: [harpoon_bullet],
 		inaccuracy: 0,
@@ -596,7 +596,7 @@ function scr_Guns(){
 	}
 	
 	wreckingball_gun = {
-		_name: "Wrecking Ball",  
+		_name: "流星锤",  
 		tagline: "",
 		sprite: spr_nothing,   
 		ammo: [wreckingball_bullet],

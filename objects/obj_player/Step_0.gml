@@ -823,14 +823,14 @@ if(place_meeting(x, y, obj_enemy_snail_slime)) {
 //delete grappling hook
 
 with obj_projectile {
-	if gun_name = "Grappling Helmet"  {
+	if gun_name = "钩爪帽"  {
 		var not_grappling_1 = !(other.key_pickup_1) and other.pickups_array[0] = other.pickup_grappling;
 		var not_grappling_2 = !(other.key_pickup_2) and other.pickups_array[1] = other.pickup_grappling;
 		if not_grappling_1 or not_grappling_2 {
 			retract = true;
 			//spd = 0;
 		}
-	}else if gun_name = "Harpoon Helmet"  {
+	}else if gun_name = "钩爪锐枪"  {
 		var not_grappling_1 = !(other.key_pickup_1) and other.pickups_array[0] = other.pickup_harpoon;
 		var not_grappling_2 = !(other.key_pickup_2) and other.pickups_array[1] = other.pickup_harpoon;
 		if not_grappling_1 or not_grappling_2 {

@@ -209,7 +209,7 @@ and !(pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon) {
 if pickups_array[0] = pickup_harpoon or pickups_array[1] = pickup_harpoon {
 	harpoon_empty = false;
 	with obj_projectile {
-		if gun_name = "Harpoon Helmet" {
+		if gun_name = "钩爪锐枪" {
 			other.harpoon_empty = true;
 		}
 	}

@@ -135,7 +135,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 		if gun_name = "气球枪" and created = true {
 			alarm[0] = 1;
 		}
-	}else if gun_name = "Harpoon Helmet" and damage > 0 {
+	}else if gun_name = "钩爪锐枪" and damage > 0 {
 		enemy_object = other;
 		if !scr_In_Array(enemies_array,enemy_object) {
 			array_resize(enemies_array,array_length(enemies_array)+1);
@@ -192,7 +192,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 		}
 	}
 	
-	if (destroy_on_impact) or (gun_name = "导弹发射器") or (gun_name = "追踪飞镖") or (gun_name = "Bullet Blast") or (gun_name = "标枪") {
+	if (destroy_on_impact) or (gun_name = "导弹发射器") or (gun_name = "追踪飞镖") or (gun_name = "子弹风暴") or (gun_name = "标枪") {
 		alarm[0] = 1;
 		if (gun_name = "追踪飞镖") {
 			if dart_created = false {

@@ -151,8 +151,8 @@ function scr_Items_Unlocked(){
 									global.skins_unlocked_5,global.skins_unlocked_6];
 									
 	global.skins_names = ["罗戈","琨琨","尼可","道格","罗伯","浪客","提可"];
-	global.howtounlock_array = ["Defeat 2 bosses in one run to unlock!","Max out your hearts (10+5) to unlock!","Discover every weapon to unlock!","Beat the game to unlock!","Achieve a combo of 50+ to unlock!","Defeat a boss to unlock!"];
-
+	global.howtounlock_array = ["一局游戏中击败两个\nBoss即可解锁！","生命上限达到最大值\n(10+5)时即可解锁！","发现全部武器即可解锁！","通关游戏即可解锁！","连击数到达50及\n以上即可解锁！","击败一个Boss即可解锁！"];
+	
 	//save values
 	for(i = 0; i < array_length(global.passive_unlocked_array); i++) { //passives
 		ini_open("itemsunlocked.ini");

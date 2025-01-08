@@ -132,7 +132,7 @@ if gun_name = "回旋镖" {
 	}
 }
 
-if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
+if gun_name = "钩爪帽" or gun_name = "钩爪锐枪" {
 	obj_player.grappling_hook = noone;	
 	if audio_is_playing(snd_grappling_pull) {
 		audio_stop_sound(snd_grappling_pull);
@@ -144,11 +144,11 @@ if gun_name = "Grappling Helmet" or gun_name = "Harpoon Helmet" {
 	
 	//reload
 	with obj_player {
-		if other.gun_name = "Grappling Helmet" {
+		if other.gun_name = "钩爪帽" {
 			grappling_gun.current_bullets = 1;
 			pickup_grappling.uses_per_bounce = pickup_grappling.max_uses_per_bounce;
 			pickup_grappling.on_cooldown = false;
-		}else if other.gun_name = "Harpoon Helmet" {
+		}else if other.gun_name = "钩爪锐枪" {
 			harpoon_gun.current_bullets = 1;
 			pickup_harpoon.uses_per_bounce = pickup_grappling.max_uses_per_bounce;
 			pickup_harpoon.on_cooldown = false;

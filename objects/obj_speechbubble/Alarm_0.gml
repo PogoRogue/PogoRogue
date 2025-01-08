@@ -1,7 +1,7 @@
 /// @description type text
 if (current_text != scrolling_text) and retract = false {
 	current_character += 1;
-	alarm[0] = 2;
+	alarm[0] = 3;
 	scrolling_text += string_char_at(current_text,current_character);
 	play_sound = not play_sound;
 	if play_sound = true {

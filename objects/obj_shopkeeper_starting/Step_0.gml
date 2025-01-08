@@ -17,9 +17,9 @@ if room = room_starting_area {
 
 if colliding and key_interact and !instance_exists(speechbubble_obj) {
 	speechbubble_obj = instance_create_depth(x-1,bbox_top-16,depth-1,obj_speechbubble,{text_color: make_color_rgb(207,138,203), 
-	text_array: ["Not to brag, but \nmy shop was just \nvoted best business \nfor the 117th \nconsecutive year \nby POGO Digest \nMagazine.", 
-	"Thank goodness the \nSherman Antitrust Act \ndoesn't exist anymore.",
-	"Now I just need \nto figure out where \nmy missing passive \nitem shipments went. \nThen I'll have 118 \nin the bag."],
+	text_array: ["不是我吹牛，但咱的\n店刚刚被《POGO精选》\n杂志评为年度最佳企业.\n 这已经是连续第117年了！", 
+	"幸好《谢尔曼反垄断法》\n已经是历史了，不然\n咱早就关门大吉咯 :)",
+	"现在我得去搞清楚那些\n弄丢的道具去哪了。\n这样，第118个奖杯就\n稳拿了！"],
 	lines_of_text: 3, 
 	size2: true,
 	chars_per_line: 22,

@@ -27,7 +27,7 @@ if(!other.invinsible) and damage != 0 and other.hp > 0 {
 	}
 	
 	
-	if (destroy_on_impact) or (gun_name = "导弹发射器") or (gun_name = "Bullet Blast") or (gun_name = "标枪") {
+	if (destroy_on_impact) or (gun_name = "导弹发射器") or (gun_name = "子弹风暴") or (gun_name = "标枪") {
 		alarm[0] = 1;
 		//instance_destroy();
 	}

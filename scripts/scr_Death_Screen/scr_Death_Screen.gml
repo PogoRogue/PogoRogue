@@ -43,7 +43,7 @@ function scr_Death_Screen(win){
 	scr_Draw_Text_Outlined(x-78-52,y,"Coins:  ",c_white);
 	scr_Draw_Text_Outlined(x-78-52,y+37,"Time:  ",c_white);
 	scr_Draw_Text_Outlined(x-78-52,y+74,"Area:  ",c_white);
-	scr_Draw_Text_Outlined(x-78-52,y+110,"Seed:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y+110,"种子:  ",c_white);
 	
 	draw_set_halign(fa_right);
 	

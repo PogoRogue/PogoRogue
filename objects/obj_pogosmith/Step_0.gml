@@ -19,8 +19,8 @@ if room = room_starting_area {
 
 if colliding and key_interact and !instance_exists(speechbubble_obj) {
 	speechbubble_obj = instance_create_depth(x-1,bbox_top-17,depth-1,obj_speechbubble,{text_color: make_color_rgb(211,160,104), 
-	text_array: ["The Smith family \nlegacy goes back \nfor generations.","My great grandmother \nis actually known as \nthe great grandmother \nof Pogosmithing.",
-	"It's a shame that she died in a tragic \nunicycling accident. \nI try to honor her \nwith my work.", "I've even begun taking unicycling lessons to \nmake sure I don't \nmeet the same fate."],
+	text_array: ["我们家的手艺都已\n经传承好几代了","我的曾祖母事实上就是\n跳杆锻造技术的发明人",
+	"但很遗憾，她在一次悲惨\n的独轮车祸中去世了。\n我决定努力用我的工作\n来纪念她。", "我甚至报了独轮车的课\n程，为了确保自己不会落\n得同样的下场。"],
 	lines_of_text: 4, 
 	size2: true,
 	chars_per_line: 22,

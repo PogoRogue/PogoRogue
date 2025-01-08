@@ -17,8 +17,8 @@ if room = room_starting_area {
 
 if colliding and key_interact and !instance_exists(speechbubble_obj) {
 	speechbubble_obj = instance_create_depth(x-1,bbox_top-16,depth-1,obj_speechbubble,{text_color: make_color_rgb(104,194,211), 
-	text_array: ["It's tough \nbeing the less \nsuccessful twin.", 
-	"Sometimes I \nreally hate \nnominative \ndeterminism..."],
+	text_array: ["做那个没那么\n优秀的双胞胎\n还真是难啊.", 
+	"有时候我真的\n好讨厌那种名\n字决定命运的\n说法……"],
 	lines_of_text: 2, 
 	parent_index: obj_tony});
 }else if distance_to_object(obj_player) > 240 {
