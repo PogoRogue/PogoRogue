@@ -347,7 +347,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 			draw_sprite_general(spr_pickup_empty,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[0].bounce_reset_max-pickups_array[0].bounce_reset)/pickups_array[0].bounce_reset_max),sprite_get_height(spr_pickup_empty),32,72,1,1,0,c_white,c_white,c_white,c_white,0.5);
 			//draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);
 			//draw bounces left
-			draw_set_font(fnt_item_popup);
+			draw_set_font(global.uranus);//
 			scr_Draw_Text_Outlined(48,104,string(pickups_array[0].bounce_reset),make_color_rgb(207,138,203));
 		}else if state = state_freeze {
 			//darkening
@@ -381,7 +381,7 @@ if pickups_array[0].reload_on_bounce = false and pickups_array[0].enemies_count_
 		
 		//draw_sprite_ext(spr_pickup_empty,1,48,88,1,1,0,c_black,0.5);
 		//draw bounces left
-		draw_set_font(fnt_item_popup);
+		draw_set_font(global.uranus);//
 		scr_Draw_Text_Outlined(48,104,string(pickups_array[0].enemies_count),make_color_rgb(180,82,82));
 	}
 	if pickups_array[0] = pickup_tacticalstrike and instance_exists(obj_blink_box_strike)  {
@@ -485,7 +485,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 			draw_sprite_general(spr_pickup_empty,1,0,0,sprite_get_width(spr_pickup_empty)*((pickups_array[1].bounce_reset_max-pickups_array[1].bounce_reset)/pickups_array[1].bounce_reset_max),sprite_get_height(spr_pickup_empty),87,72,1,1,0,c_white,c_white,c_white,c_white,0.5);
 			//draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 			//draw bounces left
-			draw_set_font(fnt_item_popup);
+			draw_set_font(global.uranus);//
 			scr_Draw_Text_Outlined(103,104,string(pickups_array[1].bounce_reset),make_color_rgb(207,138,203));
 		}else if state = state_freeze {
 			//darkening
@@ -519,7 +519,7 @@ if pickups_array[1].reload_on_bounce = false and pickups_array[1].enemies_count_
 		
 		//draw_sprite_ext(spr_pickup_empty,1,103,88,1,1,0,c_black,0.5);
 		//draw bounces left
-		draw_set_font(fnt_item_popup);
+		draw_set_font(global.uranus);//
 		scr_Draw_Text_Outlined(103,104,string(pickups_array[1].enemies_count),make_color_rgb(180,82,82));
 	}
 	

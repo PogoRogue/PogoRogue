@@ -12,7 +12,7 @@ if (colliding) {
 		enter_exit_text = "Enter Boss Room";
 		temp_x_offset = 0;
 	}else {
-		enter_exit_text = "Proceed";
+		enter_exit_text = "进入";
 		temp_x_offset = 23;
 	}
 	
@@ -23,7 +23,7 @@ if (colliding) {
 	}
 	var yy = bbox_top+28;
 	var button_num = 6;
-	var text = "Proceed";
+	var text = "进入";
 	var text_color = make_color_rgb(242,240,229);
 	
 	draw_set_halign(fa_center);

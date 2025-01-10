@@ -61,13 +61,13 @@ if(display_progress_bar)
 	if(kills_left != 0)
 	{
 		if kills_left > 1 {
-			var str_kills = "Kills Remaining";
+			var str_kills = "还需击杀"; //kills remaining
 		}else {
-			var str_kills = "Kill Remaining";
+			var str_kills = "还需击杀"; //kill remaining
 		}
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
-		draw_set_font(fnt_item_popup);
+		draw_set_font(global.uranus);//
 		if obj_player.dead = false and global.draw_ui = true and obj_player.table = false and obj_player.state != obj_player.state_pogosmith {
 			scr_Draw_Text_Outlined(392-(string_width("  " + str_kills)/2),104,string(kills_left),make_color_rgb(180,82,82));
 			scr_Draw_Text_Outlined(390,104,"  " + str_kills,c_white);

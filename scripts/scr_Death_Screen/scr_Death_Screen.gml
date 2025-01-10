@@ -34,15 +34,15 @@ function scr_Death_Screen(win){
 	
 	
 	
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_center);
 	
-	scr_Draw_Text_Outlined(x-78-52,y-75,"Best Combo:  ",c_white);
-	scr_Draw_Text_Outlined(x-78-52,y-37,"Enemies Killed:  ",c_white);
-	scr_Draw_Text_Outlined(x-78-52,y,"Coins:  ",c_white);
-	scr_Draw_Text_Outlined(x-78-52,y+37,"Time:  ",c_white);
-	scr_Draw_Text_Outlined(x-78-52,y+74,"Area:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y-75,"最高连击:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y-37,"击败敌人:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y,"金币:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y+37,"时间:  ",c_white);
+	scr_Draw_Text_Outlined(x-78-52,y+74,"区域:  ",c_white);
 	scr_Draw_Text_Outlined(x-78-52,y+110,"种子:  ",c_white);
 	
 	draw_set_halign(fa_right);
@@ -68,27 +68,27 @@ function scr_Death_Screen(win){
 	//new best
 	if (global.current_best_combo > global.init_combo_highscore) { //combo
 		draw_set_font(global.lana);
-		scr_Draw_Text_Outlined(x-78,y-60,"(New Best!)",make_color_rgb(237,225,158));//+15
+		scr_Draw_Text_Outlined(x-78,y-58,"(新纪录！)",make_color_rgb(237,225,158));//+15
 	}
 	
 	if (global.current_enemies_killed > global.init_enemies_highscore) { //enemies
 		draw_set_font(global.lana);
-		scr_Draw_Text_Outlined(x-78,y-22,"(New Best!)",make_color_rgb(237,225,158));
+		scr_Draw_Text_Outlined(x-78,y-20,"(新纪录！)",make_color_rgb(237,225,158));
 	}
 	
 	if (global.current_total_coins > global.init_coins_highscore) { //coins
 		draw_set_font(global.lana);
-		scr_Draw_Text_Outlined(x-78,y+15,"(New Best!)",make_color_rgb(237,225,158));
+		scr_Draw_Text_Outlined(x-78,y+17,"(新纪录！)",make_color_rgb(237,225,158));
 	}
 	
 	if best_time = true { //time
 		draw_set_font(global.lana);
-		scr_Draw_Text_Outlined(x-78,y+52,"(New Best!)",make_color_rgb(237,225,158));
+		scr_Draw_Text_Outlined(x-78,y+54,"(新纪录！)",make_color_rgb(237,225,158));
 	}
 	
 	if global.area_2_reached = 1 or global.area_3_reached = 1 { //area
 		draw_set_font(global.lana);
-		//scr_Draw_Text_Outlined(x-78,y+89,"(New Best!)",make_color_rgb(237,225,158));
+		//scr_Draw_Text_Outlined(x-78,y+89,"(新纪录！)",make_color_rgb(237,225,158));
 	}
 }
 

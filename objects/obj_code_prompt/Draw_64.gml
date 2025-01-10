@@ -1,6 +1,6 @@
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
-draw_set_font(fnt_item_popup);
+draw_set_font(global.uranus);//
 draw_set_alpha(1); //alpha
 
 if controller = true {
@@ -23,7 +23,7 @@ if controller = false {
 	y_offset = 18;
 }
 
-scr_Draw_Text_Outlined(center_x,center_y+code_string_y-y_offset,"Enter a code:", c_white);
+scr_Draw_Text_Outlined(center_x,center_y+code_string_y-y_offset,"请输入密钥:", c_white);
 
 draw_sprite(spr_button_prompt2,0,center_x,center_y+button_prompt_y-y_offset);
 

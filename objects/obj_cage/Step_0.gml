@@ -13,35 +13,35 @@ if global.skins_unlocked_array[skin_num-1] = true {
 if is_colliding = true and key_interact and !instance_exists(speechbubble_obj) {
 	if skin_num = 1 {
 		speechbubble_obj = instance_create_depth(x-1,y - 128,depth-1,obj_speechbubble,{text_color: make_color_rgb(184,181,185),
-		text_array: ["We've got a \nclass-action \nlawsuit on \nour hands if \nyou can get \nall of us out.", "The problem \nis, we can't \nremember \nwho put us \nin here....."],
+		text_array: ["要是你能把我\n们全都救出去, \n我们就能一起\n让那些家伙吃\n律师函了！", "问题是, 我们想\n不起来是谁把\n我们关在这里\n的了..."],
 		lines_of_text: 2,
 		parent_index: instance_nearest(x,y+128,obj_cage),
 		});
 	}if skin_num = 2 {
 		speechbubble_obj = instance_create_depth(x-1,y - 128,depth-1,obj_speechbubble,{text_color: make_color_rgb(184,181,185), 
-		text_array: ["Meow, meow \nmeow. Meow \nmeow, meow \nmeow meow?"],
+		text_array: ["喵, 喵喵. \n喵喵, 喵喵喵?"],
 		lines_of_text: 1, 
 		parent_index: instance_nearest(x,y+128,obj_cage)});	
 	}else if skin_num = 3 {
 		speechbubble_obj = instance_create_depth(x-1,y - 128,depth-1,obj_speechbubble,{text_color: make_color_rgb(184,181,185), 
-		text_array: ["What kind of god \nwould allow 6 of its \ncreations to be \nsubjected to such \na cruel fate?", "To confine one to a \nspace so restrictive \nnot only degrades the \nbody, but corrodes \nthe very fiber of \none's soul...", "Oops... I mean, bark! \nbark! bark! bark! \nbark! bark! bark!", "bark! bark! bark! \nbark! bark! bark! \nbark! bark! bark!"],
+		text_array: ["什么样的神会\n允许自己的六\n个造物遭受如\n此残酷的命运？", "把一个人关在\n这么狭小的地\n方, 不仅禁锢\n了身体, 还腐蚀\n了每一丝灵魂...", "哦...我是说, \n汪! 汪! 汪! 汪! \n汪! 汪! 汪! 汪! ", "汪! 汪! 汪! 汪! \n汪! 汪! 汪! 汪!"],
 		lines_of_text: 4, 
-		size2: true,
+		size2: false, //true
 		chars_per_line: 22,
 		parent_index: instance_nearest(x,y+128,obj_cage)});	
 	}else if skin_num = 4 {
 		speechbubble_obj = instance_create_depth(x-1,y - 128,depth-1,obj_speechbubble,{text_color: make_color_rgb(184,181,185), 
-		text_array: ["Beep Boop.","Boop Beep.", "ERROR: Out of \ndialogue \noptions.", "Self-destruct \nin 10, 9, 8, 7, 6, 5.......","4.....","3...........","2................................","................................","................................","................................","1................................","Dude, why are \nyou still \nhere?","You got some kinda death \nwish or \nsomething?","Okay, fine. It \nwas a prank. \nYou got me."],
-		lines_of_text: 14, 
+		text_array: ["哔啵","啵哔", "错误: 无法提供\n更多对话内容"],
+		lines_of_text: 3, 
 		parent_index: instance_nearest(x,y+128,obj_cage)});	
 	}else if skin_num = 5 {
 		speechbubble_obj = instance_create_depth(x-1,y - 128,depth-1,obj_speechbubble,{text_color: make_color_rgb(184,181,185), 
-		text_array: [".....","..........","................................","C'mon dude, I'm trying to be mysterious \nover here."],
+		text_array: [".....","..........","................................","拜托伙计, 我正\n试图保持些神\n秘感呢."],
 		lines_of_text: 4, 
 		parent_index: instance_nearest(x,y+128,obj_cage)});	
 	}else if skin_num = 6 {
 		speechbubble_obj = instance_create_depth(x-1,y - 128,depth-1,obj_speechbubble,{text_color: make_color_rgb(184,181,185), 
-		text_array: ["Get me out of here!!!"],
+		text_array: ["放我出去！！！"],
 		lines_of_text: 1, 
 		parent_index: instance_nearest(x,y+128,obj_cage)});	
 	}

@@ -32,7 +32,7 @@ if current_text = scrolling_text and (current_line < lines_of_text or current_li
 		var _x = 3;
 		var _col = make_color_rgb(104,194,211);
 	}else {
-		var _text = "Next"
+		var _text = "继续"
 		var _x = 0;
 		var _col = make_color_rgb(242,240,229);
 	}

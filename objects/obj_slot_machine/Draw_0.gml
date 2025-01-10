@@ -1,6 +1,6 @@
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
-draw_set_font(fnt_item_popup);
+draw_set_font(global.uranus);//
 draw_set_alpha(image_alpha);
 
 x = (obj_camera.x - obj_camera.view_w_half) + player_x;

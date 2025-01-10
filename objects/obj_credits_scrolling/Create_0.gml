@@ -55,6 +55,9 @@ music_text = ["音乐作曲", "Daisy Dai\nIsaac White"];
 sound_text = ["音效设计", "Josiah Lin (LilLin)\nIsaac White"];
 audio_dir_text = ["音频总监","Josiah Lin (LilLin)"];
 
+translationteam_text = ["汉化翻译组", "Cleveland Parker\nIsaac White\nMingzhe Zhu\nZekai Lu"];
+translators_text = ["翻译人员", "Mingzhe Zhu\nZekai Lu"];
+
 marketing_text = ["市场经理", "Cleveland Parker"];
 ur_text = ["用户调研", "Ian Vokt"];
 art_narrative_text = ["美术和叙事管理", "Cleveland Parker"];
@@ -77,12 +80,12 @@ studio_7_text = ["","Resting Place Games\nCreators of 'My Little Cemetery'"];
 ta_text = ["助教","Carly Henry\nCraig Nash\nSteven Pasinsky\nYeshwanth Sai Kandula"];
 professors_text = ["教授","Fernando Rodriguez\nGreg Bayles"];
 
-classmates_text = ["All of our fellow Capstone classmates",spr_photo_class];
+classmates_text = ["我们在犹他大学的同学们",spr_photo_class];
 
-outro_1_text = ["","And finally..."];
-outro_2_text = ["","You!"];
-outro_3_text = ["","Thank you for giving our game a shot!"];
-outro_4_text = ["","From everyone here at Bounce Back Games,\nWe can't thank you enough!"];
+outro_1_text = ["","以及最后还有……"];
+outro_2_text = ["","您！"];
+outro_3_text = ["","感谢游玩我们的游戏！"];
+outro_4_text = ["","本工作室全体成员在这里向您表示诚挚的感谢！"];
 outro_5_text = ["",spr_photo_team];
 
 if room = room_credits_scrolling {
@@ -92,6 +95,7 @@ if room = room_credits_scrolling {
 						ui_artists_text,ui_designers_text,ui_engineers_text,
 						bg_artists_text,cg_artists_text,promotional_artists_text,art_polish_text,
 						music_text,sound_text,audio_dir_text,
+						translationteam_text,translators_text,
 						marketing_text, ur_text, art_narrative_text, design_producer_text, engineer_producers_text, general_producers_text,
 						special_thanks_text,
 						capstone_text,studio_1_text,studio_2_text,studio_3_text,studio_4_text,studio_5_text,studio_6_text,studio_7_text,
@@ -104,6 +108,7 @@ if room = room_credits_scrolling {
 					ui_artists_text,ui_designers_text,ui_engineers_text,
 					bg_artists_text,cg_artists_text,promotional_artists_text,art_polish_text,
 					music_text,sound_text,audio_dir_text,
+					translationteam_text,translators_text,
 					marketing_text, ur_text, art_narrative_text, design_producer_text, engineer_producers_text, general_producers_text,
 					special_thanks_text,
 					capstone_text,studio_1_text,studio_2_text,studio_3_text,studio_4_text,studio_5_text,studio_6_text,studio_7_text,
@@ -113,9 +118,9 @@ total_string_height = 0;
 for (i = 0; i < array_length(credits_text_array); i++) {
 	for (j = 0; j <= 1; j++) {
 		if j = 0 {
-			draw_set_font(fnt_item_popup);	
+			draw_set_font(global.uranus);//	
 		}else {
-			draw_set_font(fnt_combo2);	
+			draw_set_font(global.uranus);	
 		}
 		if is_string(credits_text_array[i][j]) {
 			total_string_height += string_height(credits_text_array[i][j]);

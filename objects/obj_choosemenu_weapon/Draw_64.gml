@@ -1,11 +1,11 @@
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
-draw_set_font(fnt_item_popup);
+draw_set_font(global.uranus);//
 draw_set_alpha(1); //alpha
 if test_mode = false {
-	scr_Draw_Text_Outlined(center_x,center_y-56,"Choose a weapon:", c_white); //center_y - 140 //center_y-56
+	scr_Draw_Text_Outlined(center_x,center_y-56,"选择一把武器:", c_white); //center_y - 140 //center_y-56
 }else {
-	scr_Draw_Text_Outlined(center_x,center_y-140+16,"Choose a weapon:", c_white); //center_y - 140 //center_y-56	
+	scr_Draw_Text_Outlined(center_x,center_y-140+16,"选择一把武器:", c_white); //center_y - 140 //center_y-56	
 }
 
 

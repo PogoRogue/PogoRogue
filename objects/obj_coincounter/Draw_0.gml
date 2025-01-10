@@ -3,7 +3,7 @@ and !(obj_player.state = obj_player.state_shop or obj_player.table = true) {
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
-draw_set_font(fnt_combo2);
+draw_set_font(global.uranus);
 
 var white = make_color_rgb(255,255,255);
 

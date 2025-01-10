@@ -37,7 +37,7 @@ if being_used = true {
 	//draw back button
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.lana);
 	if global.use_controller = true {
 		draw_sprite(scr_Gamepad_Get_Button_Sprite(global.gamepad_array[current_button][0]),0,x,bbox_top+40);
 	}else {
@@ -55,7 +55,7 @@ if being_used = true {
 			draw_sprite(mouse_sprite,0,x,bbox_top+40);
 		}
 	}
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.lana);
 	scr_Draw_Text_Outlined(x,bbox_top+56,"出口",c_white);
 		
 		
@@ -99,7 +99,7 @@ if being_used = true {
 	draw_set_font(global.lana);
 	
 	if !(select_x = 0 and gun_1_bought = true) and !(select_x = 1 and gun_2_bought = true) and !(select_x = 2 and gun_3_bought = true)  {
-		scr_Draw_Text_Outlined(arrow_x,bbox_top+16,"Upgrade",upgrade_color);
+		scr_Draw_Text_Outlined(arrow_x,bbox_top+16,"升级",upgrade_color);
 		scr_Draw_Text_Outlined(arrow_x,bbox_top+26,"(" + string(purchase_cost * obj_player.gun_array[other.select_x].level) + ")",cost_color);
 	}
 }

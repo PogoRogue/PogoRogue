@@ -1,6 +1,6 @@
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
-draw_set_font(fnt_item_popup);
+draw_set_font(global.uranus);//
 draw_set_alpha(1);
 
 display_set_gui_size(768,432);
@@ -20,7 +20,7 @@ if draw = true {
 		draw_set_font(global.lana);
 		draw_set_alpha(1);
 
-		scr_Draw_Text_Outlined((768/2),96-y_subtract,"New discovery!",make_color_rgb(237,225,158));
+		scr_Draw_Text_Outlined((768/2),96-y_subtract,"发现新物品!",make_color_rgb(237,225,158));
 
 		draw_set_alpha(1);
 		draw_set_color(c_white);	

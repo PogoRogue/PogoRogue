@@ -2,10 +2,14 @@
 var yy = y;
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
-draw_set_font(fnt_item_popup);
+draw_set_font(global.uranus);//
 draw_set_alpha(1); //alpha
-scr_Draw_Text_Outlined(x,yy-44,"Choose an item to replace:", c_white);
 
+if pickups_mode = true {
+	scr_Draw_Text_Outlined(x,yy-44,"选择一个物品进行替换:", c_white);
+}else if weapons_mode = true {
+	scr_Draw_Text_Outlined(x,yy-44,"选择一个物品进行替换:", c_white);
+}
 
 //adjust sprite position for pickup sprites
 var x_adjust = 0;
@@ -27,11 +31,11 @@ for(i = 0; i < num_of_slots; i++) {
 	}
 	if i = num_of_slots-1 {
 		if num_of_slots = 3 {
-			scr_Draw_Text_Outlined(x-64+(64*i),yy-21-16,"Discard",make_color_rgb(180,82,82));
+			scr_Draw_Text_Outlined(x-64+(64*i),yy-21-16,"舍弃",make_color_rgb(180,82,82));
 			draw_sprite(spr_cancel,0,x-64+(64*i),yy-16);
 			draw_set_color(c_white);
 		}else if num_of_slots = 4 {
-			scr_Draw_Text_Outlined(x-96+(64*i),yy-21-16,"Discard",make_color_rgb(180,82,82));
+			scr_Draw_Text_Outlined(x-96+(64*i),yy-21-16,"舍弃",make_color_rgb(180,82,82));
 			draw_sprite(spr_cancel,0,x-96+(64*i),yy-16);
 			draw_set_color(c_white);
 		}
@@ -139,7 +143,7 @@ for(i = 0; i < num_of_slots; i++) {
 		}
 	}else {
 		if i = select-1 {
-			draw_set_font(fnt_combo2);
+			draw_set_font(global.uranus);
 			if num_of_slots = 3 {
 				scr_Draw_Text_Outlined(x-64+(64*i),yy+21-16,"E",c_white);
 			}else if num_of_slots = 4 {
@@ -162,10 +166,10 @@ if global.experimentation = 0 and global.recycling = 0 {
 if pickups_mode = true {
 	num_of_slots = 3;
 	scr_Draw_Pickup_Description(x,yy+185-y_offset,new_item,0,true,new_item_cost);
-	draw_set_font(fnt_item_popup);
+	draw_set_font(global.uranus);//
 }else if weapons_mode = true {
 	scr_Draw_Weapon_Description(x,yy+185-y_offset,new_item,0,true,new_item_cost);
-	draw_set_font(fnt_item_popup);
+	draw_set_font(global.uranus);//
 }
 /*
 draw_sprite(spr_item_slot,0,x,yy+64);

@@ -44,8 +44,8 @@ if (colliding) and code_accepted = false and code_denied = false {
 	draw_set_valign(fa_center);
 	draw_set_font(global.uranus);
 	if code_accepted = true {
-		scr_Draw_Text_Outlined(x,bbox_top+16+16,"Code Accepted",make_color_rgb(138,176,96));
+		scr_Draw_Text_Outlined(x,bbox_top+16+16,"密钥输入成功",make_color_rgb(138,176,96));
 	}else if code_denied = true {
-		scr_Draw_Text_Outlined(x,bbox_top+16+16,"Invalid Code",make_color_rgb(180,82,82));
+		scr_Draw_Text_Outlined(x,bbox_top+16+16,"该密钥无效",make_color_rgb(180,82,82));
 	}
 }

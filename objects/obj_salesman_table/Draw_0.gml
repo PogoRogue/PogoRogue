@@ -3,7 +3,7 @@ draw_self();
 if (colliding) and being_used = false {
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_combo2);
+	draw_set_font(global.uranus);
 	if all_out = false {
 		//draw interact button
 		if global.use_controller = true {
@@ -24,7 +24,7 @@ if (colliding) and being_used = false {
 			}
 		}
 		image_index = 1;
-		scr_Draw_Text_Outlined(x,bbox_top+40,"Shop",c_white);
+		scr_Draw_Text_Outlined(x,bbox_top+40,"购买",c_white);
 	}
 }else {
 	image_index = 0;
@@ -51,8 +51,8 @@ if (colliding) and being_used = false {
 				draw_sprite(mouse_sprite,0,x,bbox_top+24);
 			}
 		}
-		draw_set_font(fnt_combo2);
-		scr_Draw_Text_Outlined(x,bbox_top+40,"Exit",c_white);
+		draw_set_font(global.uranus);
+		scr_Draw_Text_Outlined(x,bbox_top+40,"出口",c_white);
 		//draw passive outlines
 		for (i = 0; i < array_length(passives_array); i++) {
 			if instance_exists(passives_array[buff_selected]) {

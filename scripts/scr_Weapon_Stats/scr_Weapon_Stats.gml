@@ -30,9 +30,9 @@ function scr_Weapon_Stats(){
 		added_bullets = "";
 	}
 	//full string
-	item_stats = ("Bullets per bounce: " +
+	item_stats = ("弹容量: " +
 	string(weapon.bullets_per_bounce) + added_bullets +
-	"\nDamage per bullet: " + string(weapon.ammo[0].damage) + added_damage +
+	"\n单发伤害: " + string(weapon.ammo[0].damage) + added_damage +
 	autofire + firerate);
 	
 	item_description = item_tagline + "\n\n" + item_stats;

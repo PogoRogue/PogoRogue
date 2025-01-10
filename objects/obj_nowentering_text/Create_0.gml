@@ -15,13 +15,13 @@ ready = true;
 alarm[0] = 60;
 
 if global.phase = 1 and room = room_proc_gen_test {
-	entering_string = "I. The Factories"
+	entering_string = "1. 工厂"
 }else if global.phase = 2 and room = room_proc_gen_test {
-	entering_string = "II. The Offices"
+	entering_string = "2. 办公室"
 }else if global.phase = 3 and room = room_proc_gen_test {
-	entering_string = "III. Corporate"
+	entering_string = "3. 公司"
 }else if room = room_starting_area {
-	entering_string = "Pogobot Hideout"
+	entering_string = "避难所"
 }else if  room = room_tutorial {
-	entering_string = "Pogobot Training Facility"
+	entering_string = "训练中心"
 }

@@ -11,7 +11,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		var bg_spr_index = 0;
 		var img_index = sprite_get_number(weapon.sprite)-1;
 		var item_name = "?????";
-		var item_description = "This weapon has not been discovered yet.";
+		var item_description = "你还没有发现这把武器.";
 	}
 	
 	//special cases
@@ -91,7 +91,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 		//special conditions
 		
 		if weapon._name = "量子冲天炮" or weapon._name = "等离子炮" {
-			line_1 = "Time per bounce: " + string(weapon.bullets_per_bounce/60) + "s";// + " (Max " + string((weapon.init_bullets_per_bounce + weapon.max_added_bullets)/60) + "s)";
+			line_1 = "每次弹跳时间: " + string(weapon.bullets_per_bounce/60) + "秒";// + " (Max " + string((weapon.init_bullets_per_bounce + weapon.max_added_bullets)/60) + "s)";
 		}
 		
 		if weapon._name = "回旋镖" {
@@ -117,7 +117,7 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	
 		//special conditions
 		if weapon._name = "量子冲天炮" { //laser
-			line_2 = "Damage per second: " + string(weapon.ammo[0].damage * 60) + added_damage;
+			line_2 = "每秒伤害: " + string(weapon.ammo[0].damage * 60) + added_damage;
 		}else if weapon._name = "回旋镖" or weapon._name = "悠悠球" { //boomerang/yoyo
 			line_2 = "单发伤害: " + string(weapon.ammo[0].damage) + added_damage;
 		}else if weapon._name = "弹球枪" { //bbb

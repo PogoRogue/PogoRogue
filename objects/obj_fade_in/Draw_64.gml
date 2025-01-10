@@ -14,6 +14,7 @@ if global.door_color = "purple" {
 	draw_sprite(spr_door_transition_right,0,384+x_offset,0);
 }
 
+/*
 if global.show_tips_screen = true {
 	var xx = 384+30+x_offset+26;
 	var yy = 432-29-20;
@@ -22,8 +23,8 @@ if global.show_tips_screen = true {
 	draw_set_valign(fa_center);
 	var colo = make_color_rgb(242,240,229);	
 	draw_set_halign(fa_right);
-	draw_set_font(fnt_combo2);
-	scr_Draw_Text_Outlined(384-(30+x_offset+26),yy,"Generating level...",colo);
+	draw_set_font(global.uranus);
+	scr_Draw_Text_Outlined(384-(30+x_offset+26),yy,"地图加载中...",colo);
 	draw_set_halign(fa_left);
 	draw_set_font(global.lana);
 	colo = make_color_rgb(237,225,158);	

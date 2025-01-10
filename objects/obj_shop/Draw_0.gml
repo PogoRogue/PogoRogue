@@ -142,7 +142,7 @@ for(i = 0; i < num_of_slots; i++) {
 	//draw item types
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_set_font(fnt_item_popup);
+	draw_set_font(global.uranus);//
 	
 	if i < 2 {
 		//scr_Draw_Text_Outlined(304+32,yy-33,"Health",c_white);
@@ -175,24 +175,24 @@ if refreshes_left > 0 {
 	
 	if global.num_of_coins < global.refresh_cost {
 		scr_Draw_Text_Outlined(xx,yy2+9,global.refresh_cost,make_color_rgb(180,82,82));
-		draw_set_font(fnt_uifont2small);
-		scr_Draw_Text_Outlined(xx,yy2,"REFRESH",make_color_rgb(180,82,82));
+		draw_set_font(global.lana);
+		scr_Draw_Text_Outlined(xx,yy2,"刷新货架",make_color_rgb(180,82,82));
 		draw_set_color(c_white);
 	} else {
-		draw_set_font(fnt_uifont2small);
+		draw_set_font(global.lana);
 		scr_Draw_Text_Outlined(xx,yy2+9,global.refresh_cost,yellow);
-		draw_set_font(fnt_uifont2small);
-		scr_Draw_Text_Outlined(xx,yy2,"REFRESH",make_color_rgb(242,240,229));
+		draw_set_font(global.lana);
+		scr_Draw_Text_Outlined(xx,yy2,"刷新货架",make_color_rgb(242,240,229));
 	}
 	
 	//draw_sprite(spr_coin,0,xx+10,yy2+9);
 }
-draw_set_font(fnt_uifont2small);
+draw_set_font(global.lana);
 
 if global.refreshes_used != 1 {
-	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " REFRESHES USED",c_white);
+	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " 货架已刷新",c_white);
 }else {
-	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " REFRESHES USED",c_white);
+	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " 货架已刷新",c_white);
 }
 
 //draw slot selected

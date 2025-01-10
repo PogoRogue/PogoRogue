@@ -107,18 +107,18 @@ if select = 2 {
 			if synergy_slot_x = 1 {
 				draw_sprite(spr_itemmenu_pickup_slot_synergy,4,center_x,yy);
 				if global.synergy_slot_equipped1 = false {
-					scr_Draw_Text_Outlined(center_x-32+2,yy+64,"Equip",c_white);
+					scr_Draw_Text_Outlined(center_x-32+2,yy+64,"装备",c_white);
 				}else {
-					scr_Draw_Text_Outlined(center_x-32+2,yy+64,"Unequip",c_white);
+					scr_Draw_Text_Outlined(center_x-32+2,yy+64,"卸下",c_white);
 					//draw_sprite_ext(spr_pickup_empty,2,center_x-32+2,yy+46,1,1,0,c_white,0.75);
 				}
 				scr_Draw_Input_UI(center_x-32+2,yy+76,18,0,global.lana,fa_center,fa_center);
 			}else if synergy_slot_x = 2 {
 				draw_sprite(spr_itemmenu_pickup_slot_synergy,5,center_x,yy);
 				if global.synergy_slot_equipped2 = false {
-					scr_Draw_Text_Outlined(center_x+32+2,yy+64,"Equip",c_white);
+					scr_Draw_Text_Outlined(center_x+32+2,yy+64,"装备",c_white);
 				}else {
-					scr_Draw_Text_Outlined(center_x+32+2,yy+64,"Unequip",c_white);
+					scr_Draw_Text_Outlined(center_x+32+2,yy+64,"卸下",c_white);
 					//draw_sprite_ext(spr_pickup_empty,2,center_x+32+2,yy+46,1,1,0,c_white,0.75);
 				}
 				scr_Draw_Input_UI(center_x+32+2,yy+76,18,0,global.lana,fa_center,fa_center);
@@ -163,9 +163,9 @@ if select = 2 {
 				draw_sprite(spr_itemmenu_pickup_slot_synergy,4,xx1-12,yy);
 				if !(global.item_1_pickup = pickup_2) {
 					if global.synergy_slot_equipped1 = false {
-						scr_Draw_Text_Outlined(xx1-12-32+2,yy+64,"Equip",c_white);
+						scr_Draw_Text_Outlined(xx1-12-32+2,yy+64,"装备",c_white);
 					}else {
-						scr_Draw_Text_Outlined(xx1-12-32+2,yy+64,"Unequip",c_white);
+						scr_Draw_Text_Outlined(xx1-12-32+2,yy+64,"卸下",c_white);
 						//draw_sprite_ext(spr_pickup_empty,2,xx1-12-32+2,yy+46,1,1,0,c_white,0.75);
 					}
 					scr_Draw_Input_UI(xx1-12-32+2,yy+76,18,0,global.lana,fa_center,fa_center);
@@ -174,9 +174,9 @@ if select = 2 {
 				draw_sprite(spr_itemmenu_pickup_slot_synergy,5,xx1-12,yy);
 				if !(global.item_2_pickup = pickup_2) {
 					if global.synergy_slot_equipped2 = false {
-						scr_Draw_Text_Outlined(xx1-12+32+2,yy+64,"Equip",c_white);
+						scr_Draw_Text_Outlined(xx1-12+32+2,yy+64,"装备",c_white);
 					}else {
-						scr_Draw_Text_Outlined(xx1-12+32+2,yy+64,"Unequip",c_white);
+						scr_Draw_Text_Outlined(xx1-12+32+2,yy+64,"卸下",c_white);
 						//draw_sprite_ext(spr_pickup_empty,2,xx1-12+32+2,yy+46,1,1,0,c_white,0.75);
 					}
 					scr_Draw_Input_UI(xx1-12+32+2,yy+76,18,0,global.lana,fa_center,fa_center);
@@ -185,9 +185,9 @@ if select = 2 {
 				draw_sprite(spr_itemmenu_pickup_slot_synergy,4,xx2+12,yy);
 				if !(global.item_3_pickup = pickup_1) {
 					if global.synergy_slot_equipped3 = false {
-						scr_Draw_Text_Outlined(xx2+12-32+2,yy+64,"Equip",c_white);
+						scr_Draw_Text_Outlined(xx2+12-32+2,yy+64,"装备",c_white);
 					}else {
-						scr_Draw_Text_Outlined(xx2+12-32+2,yy+64,"Unequip",c_white);
+						scr_Draw_Text_Outlined(xx2+12-32+2,yy+64,"卸下",c_white);
 						//draw_sprite_ext(spr_pickup_empty,2,xx2+12-32+2,yy+46,1,1,0,c_white,0.75);
 					}
 					scr_Draw_Input_UI(xx2+12-32+2,yy+76,18,0,global.lana,fa_center,fa_center);
@@ -196,9 +196,9 @@ if select = 2 {
 				draw_sprite(spr_itemmenu_pickup_slot_synergy,5,xx2+12,yy);
 				if !(global.item_4_pickup = pickup_1) {
 					if global.synergy_slot_equipped4 = false {
-						scr_Draw_Text_Outlined(xx2+12+32+2,yy+64,"Equip",c_white);
+						scr_Draw_Text_Outlined(xx2+12+32+2,yy+64,"装备",c_white);
 					}else {
-						scr_Draw_Text_Outlined(xx2+12+32+2,yy+64,"Unequip",c_white);
+						scr_Draw_Text_Outlined(xx2+12+32+2,yy+64,"卸下",c_white);
 						//draw_sprite_ext(spr_pickup_empty,2,xx2+12+32+2,yy+46,1,1,0,c_white,0.75);
 					}
 					scr_Draw_Input_UI(xx2+12+32+2,yy+76,18,0,global.lana,fa_center,fa_center);
