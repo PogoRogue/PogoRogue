@@ -30,6 +30,10 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"new_x_coordinate","filters":[],"listItems":[],"multiselect":false,"name":"new_x_coordinate","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"480","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"new_y_coordinate","filters":[],"listItems":[],"multiselect":false,"name":"new_y_coordinate","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"3664","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"move_screen","filters":[],"listItems":[],"multiselect":false,"name":"move_screen","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"new_screen_coordinate_x","filters":[],"listItems":[],"multiselect":false,"name":"new_screen_coordinate_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"new_screen_coordinate_y","filters":[],"listItems":[],"multiselect":false,"name":"new_screen_coordinate_y","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"combo_trigger","filters":[],"listItems":[],"multiselect":false,"name":"combo_trigger","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

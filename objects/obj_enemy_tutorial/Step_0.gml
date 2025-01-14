@@ -144,3 +144,7 @@ if image_index < 2 and image_speed = -1 {
 		sprite_index = spr_enemy_tutorial;
 	}
 }
+
+if room = room_tutorial {
+	depth = 50;
+}

@@ -865,6 +865,7 @@
     {"name":"spr_turret_shoot_effect","order":68,"path":"sprites/spr_turret_shoot_effect/spr_turret_shoot_effect.yy",},
     {"name":"spr_turret_shoot_old","order":1,"path":"sprites/spr_turret_shoot_old/spr_turret_shoot_old.yy",},
     {"name":"spr_turret_shoot","order":54,"path":"sprites/spr_turret_shoot/spr_turret_shoot.yy",},
+    {"name":"spr_tutorial_off","order":6,"path":"sprites/spr_tutorial_off/spr_tutorial_off.yy",},
     {"name":"spr_tutorial_screen","order":5,"path":"sprites/spr_tutorial_screen/spr_tutorial_screen.yy",},
     {"name":"spr_tutorial_switchweapons","order":1,"path":"sprites/spr_tutorial_switchweapons/spr_tutorial_switchweapons.yy",},
     {"name":"spr_tutorial_tilt","order":3,"path":"sprites/spr_tutorial_tilt/spr_tutorial_tilt.yy",},

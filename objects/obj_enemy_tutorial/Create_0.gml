@@ -12,6 +12,10 @@ respawn = false;
 doOnce = true;
 image_speed = 0;
 
+if room = room_tutorial {
+	depth = 50;
+}
+
 
 heart_chance = 0; 
 buff_chance = 0; 

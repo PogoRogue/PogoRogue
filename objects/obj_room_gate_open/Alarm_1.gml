@@ -1,0 +1,1 @@
+obj_tutorial_screen.end_x = 208; obj_tutorial_screen.end_y = 4576; obj_tutorial_screen.still = false;  obj_tutorial_screen.y_up = true; obj_tutorial_screen.y_add = 0;

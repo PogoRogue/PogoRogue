@@ -1,4 +1,4 @@
-depth = obj_player.depth + 10;
+depth = -10;
 
 camera_object = obj_camera;
 cam = view_camera[0];
@@ -14,8 +14,8 @@ y_add_spd = y_add_spd_start; //bob at this spee
 y_up = false; //bobbing up or down
 init_x = x;
 init_y = y;
-end_x = 360;
-end_y = 5392;
+end_x = 496;
+end_y = 5248;
 timer = 0;
 
 spd = 0;
@@ -26,3 +26,9 @@ audio_sound_gain(propeller_sound, 0, 0);
 audio_sound_gain(propeller_sound, 1, 750);
 
 animation_frame = 0;
+
+changesprite = false;
+changesprite_close = true;
+changesprite_frame = 0;
+
+next_sprite = spr_tutorial_shoot;

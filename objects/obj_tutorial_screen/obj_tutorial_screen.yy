@@ -6,6 +6,7 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_tutorial_screen",
@@ -30,6 +31,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"animation_sprite","filters":[],"listItems":[],"multiselect":false,"name":"animation_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_tutorial_tilt","path":"sprites/spr_tutorial_tilt/spr_tutorial_tilt.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_tutorial_tilt","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"next_sprite","filters":[],"listItems":[],"multiselect":false,"name":"next_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_tutorial_shoot","path":"sprites/spr_tutorial_shoot/spr_tutorial_shoot.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_tutorial_shoot","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

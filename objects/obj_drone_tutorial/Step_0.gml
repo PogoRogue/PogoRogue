@@ -1,5 +1,5 @@
 /// @description Bob up and down
-if still = true {
+if still = true and !gamepad_button_check(0,gp_face3) {
 	if y_add > -4 and y_up = true {
 		y_add_spd = (4 - abs(y_add))/8 + 0.025;
 		y_add -= y_add_spd;
@@ -79,19 +79,29 @@ if current_speechbubble = 10 and (global.combo >= 5) { //COMBO
 
 if current_speechbubble = 1 and (obj_player.num_of_weapons != 0 or instance_exists(obj_item_weapon_default)) //PISTOL
 or retract_current_bubble and current_speechbubble < array_length(speechbubble_array) {
-	with speechbubble_array[current_speechbubble] {
-		if retract = false {
-			retract = true;
-			audio_play_sound(snd_speechbubble_close,0,false);
+	if still {
+		with speechbubble_array[current_speechbubble] {
+			if retract = false {
+				retract = true;
+				audio_play_sound(snd_speechbubble_close,0,false);
+			}
+			destroy_on_retract = true;
+			activated = false;
+			type_text = false;
+			animation_speed = 0.5;
+			scrolling_text = "";
+			current_character = 0;
 		}
-		destroy_on_retract = true;
-		activated = false;
-		type_text = false;
-		animation_speed = 0.5;
-		scrolling_text = "";
-		current_character = 0;
+		retract_current_bubble = false;
 	}
-	retract_current_bubble = false;
+	
+	with obj_tutorial_screen {
+		if changesprite = false {
+			changesprite = true;
+			changesprite_close = true;
+			changesprite_frame = 0;
+		}
+	}
 }
 
 if current_speechbubble = 6 and (obj_player.num_of_pickups != 0 or instance_exists(obj_item_pickup_firedash)) //FIRE DASH
@@ -141,4 +151,13 @@ if delete_speech_bubble = true and instance_exists(obj_speechbubble) {
 		current_character = 0;
 	}
 	delete_speech_bubble = false;
+}
+
+if y < 1500 and current_speechbubble = 8 {
+	current_speechbubble = 10;
+	if current_speechbubble < array_length(speechbubble_array) {
+		with speechbubble_array[current_speechbubble] {
+			alarm[2] = 75;
+		}
+	}
 }

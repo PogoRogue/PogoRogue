@@ -5,7 +5,7 @@ y_up = false; //bobbing up or down
 init_x = x;
 init_y = y;
 end_x = 360;
-end_y = 5392;
+end_y = 5392+96;
 timer = 0;
 global.salesman_number += 1;
 depth = -5;
@@ -22,12 +22,12 @@ delete_speech_bubble = false;
 //speechbubble_obj = noone;
 
 speechbubble_obj_1 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
-	text_array: ["Aha! Our latest recruit! Welcome to \nthe Pogobot Training \nFacility!",
+	text_array: ["Aha! Our latest \nrecruit! Welcome to \nthe Pogobot Training \nFacility!",
 	"My name is Andronio, \nbut you can call me \nDroney.",
 	"It is my duty and \nhonor to teach you \nthe art of Pogo \ncombat.",
 	"We've been stuck down \nhere in the Factories \nfor too long, and now \nit's time to bounce \nto the top! Yeah! \nFight the power!",
-	"Anyways, let's go over the basics before we \nget carried away.",
-	"First, let's get rid of that strange \nfloating lock above \nyour head..."],
+	"Wait, you don't know \nhow to use your pogo \nstick? Like, at all? \nUhhh... shoot. Okay.",
+	"I guess I can't be \npicky here. I gotta \ngo grab the screen. \nBrb."],
 	lines_of_text: 6, 
 	parent_index: obj_drone_tutorial, 
 	track_y: true,
@@ -39,12 +39,10 @@ speechbubble_obj_1 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubb
 	bubble_num: 1,});
 	
 speechbubble_obj_2 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
-	text_array: ["Huh. That was surprisingly easy.",
-	"To tilt your Pogo \nStick, move the Left \nJoystick sideways, or \npress the Left and \nRight Arrow Keys.",
-	"To re-center yourself, press up.",
-	"You can adjust your tilt speed in the \nGameplay Settings.",
-	"Try bouncing around \nfor a little bit. \nWhen you're ready, \nbounce on over to the \ntop of that blue chest."],
-	lines_of_text: 5, 
+	text_array: ["Sorry for the wait. \nGot caught up with \nmy brother.",
+	"Please see the screen \nfor a demonstration \non how to tilt and \nrecenter your \nPogo Stick.",
+	"For your first test, \nlet's have you bounce \non up to this blue \nchest."],
+	lines_of_text: 3, 
 	parent_index: obj_drone_tutorial, 
 	track_y: true,
 	chars_per_line: 22,
@@ -60,10 +58,8 @@ speechbubble_obj_3 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubb
 	"Your weapons are your primary source of \nboth combat and\n movement.",
 	"Each weapon has a \nlimited amount of \nammo, but worry not!",
 	"Every time you bounce, your ammo gets \nreloaded. Every time! \nThat's a pretty good \ndeal.",
-	"To fire your pistol, \npress the \nRight Trigger or \nSpacebar.",
-	"You can also slow \ndown your tilt speed \nto aim more precisely \nby holding down \nthe Left Trigger \nor Shift.",
 	"Try and get the hang \nof it. I'll meet you \nin the next room."],
-	lines_of_text: 7, 
+	lines_of_text: 5, 
 	parent_index: obj_drone_tutorial, 
 	track_y: true,
 	chars_per_line: 22,
@@ -74,12 +70,10 @@ speechbubble_obj_3 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubb
 	repeat_text: true});
 	
 speechbubble_obj_4 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
-text_array: ["Well done! Next, we'll go over another \nimportant skill: \nwall bouncing.",
-"To perform a wall \nbounce, first, bounce \ntowards a wall.",
-"Before you collide with it, tilt the \nother way and let the \nbottom of your Pogo \nStick make contact.",
-"It may take a while to get the hang of. Wall bouncing is what \nseparates the Pogo \nmasters from the \nPogo masses.",
+text_array: ["Well done! Next, we'll cover another \nimportant skill: \nwall bouncing.",
+"It's a tough skill to \nlearn, but you'll \nnever reach the top \nif it's not in your \nrepertoire.",
 "See if you can make it to the next room. Only then can I trust you with combat training."],
-lines_of_text: 5, 
+lines_of_text: 3, 
 parent_index: obj_drone_tutorial, 
 track_y: true,
 chars_per_line: 22,
@@ -88,7 +82,7 @@ retract_distance: 0,
 spawn_distance: 1000,
 bubble_num: 4,
 repeat_text: true,
-repeat_to_line: 2 });
+repeat_to_line: 1 });
 
 speechbubble_obj_5 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
 text_array: ["Aha! You're a wall \nbouncing prodigy! You \nclearly have what it \ntakes to begin combat \ntraining.",
@@ -194,9 +188,8 @@ text_array: ["Well done. You're \nalmost ready to \njoin the squad! \nLet's go o
 "Coins can be used to \npurchase weapons, \nitems, or health.",
 "Killing enemies before your combo meter \nexpires increases your combo and refills \nthe meter.",
 "Taking damage greatly \nreduces your combo \nmeter. Try not to \ntake damage. Many \nstruggle with this concept.",
-"Because enemies \nususally only drop \nup to 5 coins, you \nmust earn a 5x \ncombo for your \nfinal test.",
-"I also carefully \nhid a couple of \nitem chests for you. \nOne even has a new \nitem type inside!"],
-lines_of_text: 7, 
+"Because enemies \nususally only drop \nup to 5 coins, you \nmust earn a 5x \ncombo for your \nfinal test."],
+lines_of_text: 6, 
 parent_index: obj_drone_tutorial, 
 track_y: true,
 chars_per_line: 22,
