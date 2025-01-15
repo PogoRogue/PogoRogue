@@ -52,7 +52,7 @@ if (colliding) and being_used = false {
 			}
 		}
 		draw_set_font(global.uranus);
-		scr_Draw_Text_Outlined(x,bbox_top+40,"出口",c_white);
+		scr_Draw_Text_Outlined(x,bbox_top+40,"离开",c_white);
 		//draw passive outlines
 		for (i = 0; i < array_length(passives_array); i++) {
 			if instance_exists(passives_array[buff_selected]) {

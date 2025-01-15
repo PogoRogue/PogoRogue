@@ -190,9 +190,9 @@ if refreshes_left > 0 {
 draw_set_font(global.lana);
 
 if global.refreshes_used != 1 {
-	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " 货架已刷新",c_white);
+	scr_Draw_Text_Outlined(xx,yy2+22,"货架已刷新 " + string(global.refreshes_used),c_white);
 }else {
-	scr_Draw_Text_Outlined(xx,yy2+22,string(global.refreshes_used) + " 货架已刷新",c_white);
+	scr_Draw_Text_Outlined(xx,yy2+22,"货架已刷新 "  + string(global.refreshes_used),c_white);
 }
 
 //draw slot selected

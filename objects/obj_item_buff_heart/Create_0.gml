@@ -1,6 +1,6 @@
 follow_player = false;
 buff = obj_player.buff_heart;
-item_name = "生命值";
+item_name = "红心";
 item_tagline = "回复失去的1颗红心";
 item_description = item_tagline;
 add_sprite_to_list = false;
