@@ -1,0 +1,1 @@
+//animation_sprite = spr_tutorial_shoot;

@@ -65,7 +65,7 @@ if global.combo = 0 {
 		with obj_enemy_tutorial {
 			if image_speed = 0 and init_add_to_combo = true and spawned = true and sprite_index = spr_enemy_tutorial_animation  {
 				instance_destroy();
-				with instance_create_layer(self.x,self.y,"Instances",obj_enemy_tutorial) {
+				with instance_create_depth(self.x,self.y,50,obj_enemy_tutorial) {
 					add_to_combo = other.init_add_to_combo;
 					init_add_to_combo = other.init_add_to_combo;
 				}	
