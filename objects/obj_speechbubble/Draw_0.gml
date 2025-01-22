@@ -28,7 +28,7 @@ if type_text = true {
 
 if current_text = scrolling_text and (current_line < lines_of_text or current_line >= lines_of_text and retract_distance = 0) {
 	if repeat_text = true and current_line >= lines_of_text {
-		var _text = "Repeat"
+		var _text = "重复" //repeat
 		var _x = 3;
 		var _col = make_color_rgb(104,194,211);
 	}else {

@@ -29,6 +29,9 @@ if room = room_starting_area {
 		random_set_seed(global.seed);
 	}
 	
+	speechbubble_obj = noone;
+	
+	/*
 	if random_bubble = 1 {
 		speechbubble_obj = instance_create_depth(x-1,bbox_top-17,depth-1,obj_speechbubble,{text_color: make_color_rgb(211,160,104), 
 		text_array: ["That pogo stick could use a few upgrades."],
@@ -63,7 +66,7 @@ if room = room_starting_area {
 		speechbubble_obj = instance_create_depth(x-1,bbox_top-17,depth-1,obj_speechbubble,{text_color: make_color_rgb(211,160,104), 
 		text_array: ["Hello again."],
 		lines_of_text: 1, 
-	
+		
 		parent_index: obj_pogosmith});
-	}
+	}*/
 }

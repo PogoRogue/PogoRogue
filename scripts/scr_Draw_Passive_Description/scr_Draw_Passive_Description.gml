@@ -21,7 +21,7 @@ function scr_Draw_Passive_Description(xx,yy,item_sprite,item_image_index,item_na
 	draw_set_valign(fa_center);
 	draw_set_font(global.uranus);
 
-	if item_name = "生命值" {
+	if item_name = "红心" {
 		draw_sprite(spr_itemmenu_passive_slot,bg_spr_index+2,xx,yy);
 	}else {
 		//slot

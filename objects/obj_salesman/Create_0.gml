@@ -31,7 +31,9 @@ if room = room_starting_area {
 		random_set_seed(global.seed);
 	}
 	
+	speechbubble_obj = noone;
 	
+	/*
 	if random_bubble = 1 {
 		speechbubble_obj = instance_create_depth(x-1,bbox_top-40,depth-1,obj_speechbubble,{text_color: make_color_rgb(138,176,96), 
 		text_array: ["see anything you like?"],
@@ -74,5 +76,5 @@ if room = room_starting_area {
 	
 		parent_index: obj_salesman, 
 		track_y: true});
-	}
+	}*/
 }
