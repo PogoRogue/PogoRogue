@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_armor;
 item_name = "白心";
-item_tagline = "增加一颗白心（最多5颗）";
+item_tagline = "增加一颗白心\n(最多5颗)";
 item_description = item_tagline;
 add_sprite_to_list = false;
 item_cost = 15;

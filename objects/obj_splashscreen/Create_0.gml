@@ -14,9 +14,9 @@ global.last_item_menu = 1;
 
 font_add_enable_aa(false);
 global.uranus = font_add("Uranus.ttf", 11, false, false, 32, 128);
-global.lana = font_add("LanaPixel.ttf", 8, false, false, 32, 128);
+global.lana2 = font_add("LanaPixel.ttf", 8, false, false, 32, 128);
 global.von = font_add("Von.ttf", 12, false, false, 32, 128);
-global.cubic = font_add("Cubic.ttf", 8, false, false, 32, 128);
+global.lana = font_add("Cubic.ttf", 8, false, false, 32, 128);
 
 /*
 steam_clear_achievement("ACHIEVEMENT_3D");

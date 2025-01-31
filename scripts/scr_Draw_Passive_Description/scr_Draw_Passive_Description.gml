@@ -8,7 +8,7 @@ function scr_Draw_Passive_Description(xx,yy,item_sprite,item_image_index,item_na
 		bg_spr_index = 0;
 		item_image_index = sprite_get_number(item_sprite)-1;
 		item_name = "?????";
-		item_description = "This item has not been discovered yet.";
+		item_description = "这个物品尚未被发现.";
 		item_stats = "Stackable: ???";
 	}
 	
@@ -59,6 +59,6 @@ function scr_Draw_Passive_Description(xx,yy,item_sprite,item_image_index,item_na
 			
 	//stackability
 	draw_set_halign(fa_center);
-	scr_Draw_Text_Outlined(xx,yy+41,scr_Linebreak(item_stats,21,99),c_white);
+	scr_Draw_Text_Outlined(xx,yy+41-2,scr_Linebreak(item_stats,21,99),c_white);
 	draw_set_color(c_white);
 }

@@ -5,7 +5,7 @@
 event_inherited();
 
 if global.aura_num = 1 {
-	item_tagline = "房间中敌人的生命值少量\n下降（对Boss无效）";
+	item_tagline = "房间中敌人的生命值少\n量下降（对Boss无效）";
 }else if global.aura_num >= 2 {
-	item_tagline = "房间中敌人的生命值少量\n下降（对Boss无效）";
+	item_tagline = "房间中敌人的生命值少\n量下降（对Boss无效）";
 }

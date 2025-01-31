@@ -11,9 +11,9 @@ if global.recycling < max_uses {
 }
 
 if global.recycling = 1 or image_index = 2 {
-	item_tagline = "回收一个物品，然后会给\n你返还少量的金币";
+	item_tagline = "回收一个物品，然后\n会给你返还少量\n的金币";
 }else if global.recycling = 2 or image_index = 4 {
-	item_tagline = "回收一个物品，然后会给\n你返还少量的金币";
+	item_tagline = "回收一个物品，然后\n会给你返还少量\n的金币";
 }else if global.recycling = 3 or image_index = 6 {
-	item_tagline = "回收一个物品，然后会给\n你返还少量的金币";
+	item_tagline = "回收一个物品，然后\n会给你返还少量\n的金币";
 }

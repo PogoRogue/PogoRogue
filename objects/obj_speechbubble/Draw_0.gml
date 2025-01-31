@@ -14,6 +14,9 @@ if activated = true or retract = true {
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_font(global.lana);
+if room = room_tutorial {
+	draw_set_font(global.lana2);	
+}
 draw_set_color(make_color_rgb(33,33,35));
 
 if size2 = true {

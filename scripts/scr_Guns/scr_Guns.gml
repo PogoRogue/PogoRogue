@@ -139,7 +139,7 @@ function scr_Guns(){
 
 	bubble_gun = {
 		_name: "泡泡枪",  
-		tagline: "啵",
+		tagline: "啵! 啵!",
 		sprite: spr_gun_bubble,   
 		ammo: [bubble_bullet],
 		inaccuracy: 35,       

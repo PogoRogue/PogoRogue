@@ -33,9 +33,9 @@ if distance_to_object(obj_player) < 100 {
 
 if colliding and key_interact and !instance_exists(speechbubble_obj) {
 	speechbubble_obj = instance_create_depth(x,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
-	text_array: ["嗨害, 朋友你来的正好！\n我刚把那些篮球架子装完", 
+	text_array: ["嗨害, 朋友你来的\n正好！我刚把那些\n篮球架子装完", 
 	"我们有空一起去基\n地外面好好浪一圈\n怎么样www", 
-	"噢，对哦，我倒是没想\n到作为一只无人机可能\n会让我稍微占点优势..."],
+	"噢，对哦，我倒是没\n想到作为一只无人机\n可能会让我稍微占\n点优势..."],
 	lines_of_text: 3, 
 	parent_index: obj_drone, 
 	track_y: true,

@@ -101,7 +101,7 @@ repeat_to_line: 2 });
 speechbubble_obj_6 = instance_create_depth(x-1,bbox_top-4,depth-1,obj_speechbubble,{text_color: make_color_rgb(237,225,158), 
 text_array: ["对了, 告诉你个小秘密",
 "你每击败一个敌人时，弹\n药也会自动回满哦！",
-"你可以利用这些知识做\n出一些很酷的玩法.如果\n你喜欢速度，那就以后\n再谢我吧.",
+"如果你是速通型选手, \n那就以后再谢我吧！",
 "现在请试着利用那些敌\n人到达下一个房间吧.",
 "别担心，我上方那些可\n爱的小粉东西会复活\n的。这算是道德的...吧？"],
 lines_of_text: 5, 

@@ -177,8 +177,8 @@ function scr_Draw_Weapon_Description(xx,yy,weapon,weapon_num,unlocked,item_cost)
 	//draw stats
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	scr_Draw_Text_Outlined(xx+3,yy+7+2,line_1,c_white);
-	scr_Draw_Text_Outlined(xx+3,yy+31+2,line_2,c_white);
-	scr_Draw_Text_Outlined(xx+3,yy+55+2,line_3,c_white);
-	scr_Draw_Text_Outlined(xx+3,yy+79+2,line_4,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+7-1,line_1,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+31-1,line_2,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+55-1,line_3,c_white);
+	scr_Draw_Text_Outlined(xx+3,yy+79-1,line_4,c_white);
 }

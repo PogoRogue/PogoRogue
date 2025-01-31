@@ -11,9 +11,9 @@ if global.bartime < 100 {
 }
 
 if image_index = 2 {
-	item_tagline = "全部带条类的物品都获\n得增长";
+	item_tagline = "全部带条类的物品都\n获得增长";
 }else if image_index = 4 {
-	item_tagline = "全部带条类的物品都获\n得增长";
+	item_tagline = "全部带条类的物品都\n获得增长";
 }else if image_index = 6 {
-	item_tagline = "全部带条类的物品都获\n得增长";
+	item_tagline = "全部带条类的物品都\n获得增长";
 }

@@ -1,7 +1,7 @@
 follow_player = true;
 buff = obj_player.buff_impatience;
 item_name = "急迫";
-item_tagline =  "减少任何类型的物品冷却";
+item_tagline =  "减少任何类型的物品\n冷却";
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 35;

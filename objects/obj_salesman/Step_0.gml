@@ -37,7 +37,7 @@ if room = room_starting_area {
 
 if colliding and key_interact and !instance_exists(speechbubble_obj) {
 	speechbubble_obj = instance_create_depth(x-1,bbox_top-40,depth-1,obj_speechbubble,{text_color: make_color_rgb(138,176,96), 
-	text_array: ["嘿客官。你真\n的应该抽空来\n我的小摊看看","不过也不用勉\n强... 随你方便\n就好.", "来不来都没问\n题啦..."],
+	text_array: ["嘿客官。你\n真的应该抽\n空来我的小\n摊看看","不过也不用\n勉强... 随\n你方便就好.", "来不来都没\n问题啦..."],
 	lines_of_text: 3, 
 	
 	parent_index: obj_salesman, 

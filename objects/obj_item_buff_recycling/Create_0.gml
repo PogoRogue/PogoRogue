@@ -2,7 +2,7 @@ image_speed = 0;
 follow_player = true;
 buff = obj_player.buff_recycling;
 item_name = "回收利用";
-item_tagline = "回收一个物品，然后会给\n你返还少量的金币" //"Discarding an item gives you 25% of the discarded item's cost in return."
+item_tagline = "回收一个物品，然后\n会给你返还少量\n的金币" //"Discarding an item gives you 25% of the discarded item's cost in return."
 item_description = item_tagline;
 add_sprite_to_list = true;
 item_cost = 25;
@@ -11,11 +11,11 @@ item_stats = "";
 index_add = 0; //declare this variable when there are multiple sprites for this item
 
 if global.recycling = 1 {
-	item_tagline = "回收一个物品，然后会给\n你返还少量的金币";
+	item_tagline = "回收一个物品，然后\n会给你返还少量\n的金币";
 }else if global.recycling = 2 {
-	item_tagline = "回收一个物品，然后会给\n你返还少量的金币";
+	item_tagline = "回收一个物品，然后\n会给你返还少量\n的金币";
 }else if global.recycling = 3 {
-	item_tagline = "回收一个物品，然后会给\n你返还少量的金币";
+	item_tagline = "回收一个物品，然后\n会给你返还少量\n的金币";
 }
 
 scr_Buff_Stats();

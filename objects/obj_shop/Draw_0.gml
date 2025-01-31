@@ -174,13 +174,13 @@ if refreshes_left > 0 {
 	draw_set_font(fnt_uifont2small);
 	
 	if global.num_of_coins < global.refresh_cost {
-		scr_Draw_Text_Outlined(xx,yy2+9,global.refresh_cost,make_color_rgb(180,82,82));
+		scr_Draw_Text_Outlined(xx,yy2+12,global.refresh_cost,make_color_rgb(180,82,82));
 		draw_set_font(global.lana);
 		scr_Draw_Text_Outlined(xx,yy2,"刷新货架",make_color_rgb(180,82,82));
 		draw_set_color(c_white);
 	} else {
 		draw_set_font(global.lana);
-		scr_Draw_Text_Outlined(xx,yy2+9,global.refresh_cost,yellow);
+		scr_Draw_Text_Outlined(xx,yy2+12,global.refresh_cost,yellow);
 		draw_set_font(global.lana);
 		scr_Draw_Text_Outlined(xx,yy2,"刷新货架",make_color_rgb(242,240,229));
 	}

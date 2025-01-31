@@ -28,9 +28,15 @@ for (i = 0; i < array_length(weapons_array); i++) {
 		draw_sprite(select_sprite,(select = (i+1)) + (2 * (global.weapon_unlocked_array[i] = true or test_mode = false)),xx,yy-27);
 		draw_sprite(all_weapons[i].sprite,(sprite_get_number(all_weapons[i].sprite)-1)*(global.weapon_unlocked_array[i] = false and test_mode = true),xx,yy-27);
 	
+		if all_weapons[i]._name = "回旋镖" {
+			draw_set_font(global.lana2);
+		}
+		
 		if (i < array_length(all_weapons)) and (global.weapon_unlocked_array[i] = true or test_mode = false) {
 			scr_Draw_Text_Outlined(xx,yy-56,scr_Linebreak(all_weapons[i]._name,12,99),c_white);
 		}
+		
+		draw_set_font(global.lana);
 	}
 }
 

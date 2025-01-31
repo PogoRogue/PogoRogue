@@ -12,7 +12,7 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 		var bg_spr_index = 0;
 		var img_index = sprite_get_number(pickup.gui_sprite)-1;
 		var item_name = "?????";
-		var item_description = "This item has not been discovered yet.";
+		var item_description = "这个物品尚未被发现.";
 		var item_stats = "冷却: ???";
 	}
 	if !(pickup.synergy_equipped = true and instance_exists(obj_items)) and pickup.is_synergy = false {
@@ -100,5 +100,5 @@ function scr_Draw_Pickup_Description(xx,yy,pickup,pickup_num,unlocked,item_cost)
 	//draw stats
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	scr_Draw_Text_Outlined(xx+2,yy+8,item_stats,c_white);
+	scr_Draw_Text_Outlined(xx+2,yy+8-2,item_stats,c_white);
 }
