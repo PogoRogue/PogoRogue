@@ -72,10 +72,6 @@ The level generation system turns hand-drawn room "blueprints" into a different 
 | 🟦 Blues | Hazards: fans, spikes, conveyors, electric floors, bumpers |
 | ⬛ Black / brown | Solid ground / one-way platforms |
 
-<p align="center">
-  <img src="media/procgen-room-blueprints.png" alt="Four Pogo Rogue combat-room blueprints drawn as pixel art" width="720"><br>
-  <sub><i>Combat-room blueprints. Each 64x64 image becomes a 1024x1024 room in game.</i></sub>
-</p>
 
 At load time the game reads each image pixel by pixel and spawns the matching objects. Designers can lay out and iterate on rooms in any image editor, with no code changes and no fiddly editor placement.
 
