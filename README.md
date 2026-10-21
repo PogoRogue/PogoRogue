@@ -8,7 +8,7 @@
   <a href="https://store.steampowered.com/app/2870280/Pogo_Rogue/">
     <img src="https://cdn.akamai.steamstatic.com/steam/apps/2870280/header.jpg" alt="Pogo Rogue" width="560">
   </a><br>
-  <sub><i> <a href="https://store.steampowered.com/app/2870280/Pogo_Rogue/">Play free on Steam</a>
+  <sub> <a href="https://store.steampowered.com/app/2870280/Pogo_Rogue/">Play free on Steam</a>
 </p>
 
 <!--  MEDIA PLACEHOLDER 
