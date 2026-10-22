@@ -11,10 +11,7 @@
   <sub> <a href="https://store.steampowered.com/app/2870280/Pogo_Rogue/">Play free on Steam</a>
 </p>
 
-<!--  MEDIA PLACEHOLDER 
-
-<p align="center"><img src="media/pogo-rogue-demo.gif" alt="Pogo Rogue gameplay" width="560"></p>
- -->
+<p align="center"><img src="media/PogoRogue15sec.gif" alt="Pogo Rogue gameplay" width="560"></p>
 
 > **About this repo:** this is the development repository for *Pogo Rogue*. It holds the full GameMaker project: code, sprites, rooms, and audio.
 
@@ -42,9 +39,19 @@ Every weapon is defined as data: bullets per bounce, spread, burst, inaccuracy, 
 
 Active items work the same way. Each one is a small definition that declares its cooldown, which player states it can be used in, and an `on_call` function that does the work. Carrying two specific actives can unlock one of 10 synergies, combined items with their own effects, such as Pogo Mode or Harpoon Helmet. On top of that, 40+ stacking passive items modify the player's stats and weapons for the rest of the run.
 
+<p align="center">
+  <img src="media/screenshot3.jpeg" alt="Pogo Rogue shop selling weapons and items" width="640"><br>
+  <sub><i>The shop, where coins buy weapons, active items, and healing</i></sub>
+</p>
+
 ### Enemies
 
 All enemies inherit from a shared parent that handles health, invincibility frames, damage flashing, and loot. Each enemy then adds its own behavior: flying, jumping, charging, shooting, exploding, burrowing, and more. Separate damage scalars for stomps, bullets, and explosions let designers make enemies resistant to one play style, which pushes players to mix up their approach. Killing enemies in quick succession builds a **combo** that multiplies the coins they drop.
+
+<p align="center">
+  <img src="media/screenshot2.jpeg" alt="Pogo Rogue combat room with a kill counter and combo" width="640"><br>
+  <sub><i>A locked combat room: clear the kill count to open the gates, and chain kills to build a combo</i></sub>
+</p>
 
 ### Bosses
 
@@ -53,6 +60,11 @@ Each phase ends in a boss built around its own mechanic:
 - **The Sequence:** a memory boss that shows a pattern the player has to reproduce. Each time its health crosses a third, the pattern gets longer.
 - **The Marionette:** a physics-driven puppet. It swings from an anchor on a damped spring, with separately simulated arms and legs, and it fights using the player's own abilities and weapons.
 - **The Sphere:** a rotating core that breaks apart into pieces the player has to deal with.
+
+<p align="center">
+  <img src="media/screenshot1.jpeg" alt="Pogo Rogue boss fight against Slimon Says" width="640"><br>
+  <sub><i>Fighting Slimon Says, the Memory Maestro</i></sub>
+</p>
 
 ### Procedural level generation
 
